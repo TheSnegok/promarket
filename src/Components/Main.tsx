@@ -1,9 +1,10 @@
 import React from 'react'
+import s from '../Styles/blocks/header.module.sass';
 
-type Props = {}
-
-const Main = (props: Props) => {
+const Main = () => {
   return (
-    <div>Main</div>
+    <div className={s.main}>Main</div>
   )
 }
+
+export default Main;
