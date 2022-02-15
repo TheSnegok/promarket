@@ -2,6 +2,10 @@ import React from 'react'
 import s from '../Styles/blocks/header.module.sass';
 import logo from '../Image/logo.svg';
 import mark from '../Image/Subtract.svg';
+import loop from '../Image/search.svg'
+import cabinet from '../Image/Group.svg'
+import desired from '../Image/heart.svg'
+import shoppingCart from '../Image/Cart.svg'
 
 const Main = () => {
 	return (
@@ -30,6 +34,35 @@ const Main = () => {
 					<div className={s.menuitem}>Контакты</div>
 				</div>
 			</header>
+			<menu className={s.menu}>
+				<div className={s.menuItems}>
+					<div className={s.catalog}>
+						<div className={s.burger}>
+							<div className={s.line}></div>
+							<div className={s.line}></div>
+							<div className={s.line}></div>
+						</div>
+						<div className={s.catalogText}>КАТАЛОГ ТОВАРОВ</div>
+					</div>
+					<div className={s.stonks}>
+						<div className={s.stonksText}>АКЦИИ</div>
+					</div>
+					<div className={s.brands}>
+						<div className={s.brandsText}>БРЕНДЫ</div>
+					</div>
+				</div>
+				<div className={s.menuSearcher}>
+					<input type="text" className={s.searchInput} />
+					<div className={s.searchIcon}>
+						<img src={loop} alt="search" className={s.loop} />
+					</div>
+				</div>
+				<div className={s.menuActions}>
+					<img src={cabinet} alt="cabinet" className={s.cabinet} />
+					<img src={desired} alt="desired" className={s.desired} />
+					<img src={shoppingCart} alt="shoppingCart" className={s.shoppingCart} />
+				</div>
+			</menu>
 		</div>
 	)
 }
