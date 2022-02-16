@@ -4,7 +4,7 @@ import logo from '../Image/logo.svg';
 import mark from '../Image/Subtract.svg';
 import loop from '../Image/search.svg'
 import cabinet from '../Image/Group.svg'
-import desired from '../Image/heart.svg'
+import desire from '../Image/heart.svg'
 import shoppingCart from '../Image/Cart.svg'
 
 const Main = () => {
@@ -38,9 +38,9 @@ const Main = () => {
 				<div className={s.menuItems}>
 					<div className={s.catalog}>
 						<div className={s.burger}>
-							<div className={s.line}></div>
-							<div className={s.line}></div>
-							<div className={s.line}></div>
+							<div className={s.line1}></div>
+							<div className={s.line2}></div>
+							<div className={s.line3}></div>
 						</div>
 						<div className={s.catalogText}>КАТАЛОГ ТОВАРОВ</div>
 					</div>
@@ -52,15 +52,23 @@ const Main = () => {
 					</div>
 				</div>
 				<div className={s.menuSearcher}>
-					<input type="text" className={s.searchInput} />
-					<div className={s.searchIcon}>
+					<input type="text" className={s.input} placeholder='Что вы ищете?' />
+					<div className={s.icon}>
 						<img src={loop} alt="search" className={s.loop} />
 					</div>
 				</div>
 				<div className={s.menuActions}>
-					<img src={cabinet} alt="cabinet" className={s.cabinet} />
-					<img src={desired} alt="desired" className={s.desired} />
-					<img src={shoppingCart} alt="shoppingCart" className={s.shoppingCart} />
+					<div className={s.cabinet}>
+						<img src={cabinet} alt="cabinet" className={s.cabinetImg} />
+					</div>
+					<div className={s.desired}>
+						<img src={desire} alt="desired" className={s.desiredImg} />
+						{/* <div className={s.desiredAlert}>4</div> */}
+					</div>
+					<div className={s.shopping}>
+						<img src={shoppingCart} alt="shoppingCart" className={s.shoppingImg} />
+						{/* <div className={s.shoppingAlert}>2</div> */}
+					</div>
 				</div>
 			</menu>
 		</div>
