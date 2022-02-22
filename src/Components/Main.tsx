@@ -11,6 +11,13 @@ import Shield from '../Image/Shield.svg';
 import loader from '../Image/loader.svg';
 import currency from '../Image/currency.svg';
 import like from '../Image/like.png';
+// img for block hits
+import sink from '../Image/hits/image 1.png';
+import bathroom from '../Image/hits/image 2.png';
+import shower from '../Image/hits/image 3.png';
+import toilet from '../Image/hits/image 4.png';
+import heatedTowelRail from '../Image/hits/image 5.png';
+import chat from '../Image/hits/messageLogo.svg';
 
 const Main = () => {
 	return (
@@ -219,7 +226,248 @@ const Main = () => {
 				</div>
 			</section>
 			<section className={s.hits}>
-				
+				<h1 className={s.hitsHeader}>Коллекции плитки</h1>
+				<div className={s.hitsMenu}>
+					<div className={s.tag}>Любые товары</div>
+					<div className={s.tag}>Раковины</div>
+					<div className={s.tag}>Ванны</div>
+					<div className={s.tag}>Унитазы</div>
+					<div className={s.tag}>Душевые системы</div>
+					<div className={s.tag}>Смесители</div>
+					<div className={s.tag}>Зеркала</div>
+					<div className={s.tag}>Душевые кабины</div>
+					<div className={s.tag}>Стиральные машины</div>
+				</div>
+				<div className={s.hitsWrapper}>
+					<div className={s.items}>
+						<div className={s.itemsImg}>
+							<div className={s.itemsImgTags}>
+								<div className={s.hot}>Хит</div>
+							</div>
+							<img src={sink} alt="firstItem" />
+						</div>
+						<div className={s.itemsStars}>
+							<div className={s.starsWrapper}>
+								<div className={s.stars}>
+									<span className={s.starsFull}></span>
+								</div>
+								<div className={s.stars}>
+									<span className={s.starsFull}></span>
+								</div>
+								<div className={s.stars}>
+									<span className={s.starsFull}></span>
+								</div>
+								<div className={s.stars}>
+									<span className={s.starsFull}></span>
+								</div>
+								<div className={s.stars}>
+									<span className={s.starsHalf}></span>
+								</div>
+							</div>
+							<div className={s.message}>
+								<img src={chat} alt="chat" />
+								<span className={s.messageCount}>12</span>
+							</div>
+						</div>
+						<div className={s.itemsDescription}>
+							<span>Акриловая ванна AM.PM Bliss L 180х80 W53A-180-080W-ARB</span>
+						</div>
+						<div className={s.itemsCountry}>
+							<span>Испания</span>
+						</div>
+						<div className={s.itemsBuy}>
+							<div className={s.price} data-diuscount='28 601 ₽'>
+								<span>2 601 ₽</span>
+							</div>
+							<div className={s.buy}>
+								<span>В КОРЗИНУ</span>
+							</div>
+						</div>
+					</div>
+					<div className={s.items}>
+						<div className={s.itemsImg}>
+							<div className={s.itemsImgTags}>
+								<div className={s.hot}>Хит</div>
+								<div className={s.tagTip}>Акция</div>
+							</div>
+							<img src={bathroom} alt="firstItem" />
+						</div>
+						<div className={s.itemsStars}>
+							<div className={s.starsWrapper}>
+								<div className={s.stars}>
+									<span className={s.starsFull}></span>
+								</div>
+								<div className={s.stars}>
+									<span className={s.starsFull}></span>
+								</div>
+								<div className={s.stars}>
+									<span className={s.starsFull}></span>
+								</div>
+								<div className={s.stars}>
+									<span className={s.starsFull}></span>
+								</div>
+								<div className={s.stars}>
+									<span className={s.starsHalf}></span>
+								</div>
+							</div>
+							<div className={s.message}>
+								<img src={chat} alt="chat" />
+								<span className={s.messageCount}>12</span>
+							</div>
+						</div>
+						<div className={s.itemsDescription}>
+							<span>Акриловая ванна AM.PM Bliss L 180х80 W53A-180-080W-ARB</span>
+						</div>
+						<div className={s.itemsCountry}>
+							<span>Испания</span>
+						</div>
+						<div className={s.itemsBuy}>
+							<div className={s.price} data-diuscount='28 601 ₽'>
+								<span>2 601 ₽</span>
+							</div>
+							<div className={s.buy}>
+								<span>В КОРЗИНУ</span>
+							</div>
+						</div>
+					</div>
+					<div className={s.items}>
+						<div className={s.itemsImg}>
+							<div className={s.itemsImgTags}>
+								<div className={s.hot}>Хит</div>
+							</div>
+							<img src={shower} alt="firstItem" />
+						</div>
+						<div className={s.itemsStars}>
+							<div className={s.starsWrapper}>
+								<div className={s.stars}>
+									<span className={s.starsFull}></span>
+								</div>
+								<div className={s.stars}>
+									<span className={s.starsFull}></span>
+								</div>
+								<div className={s.stars}>
+									<span className={s.starsFull}></span>
+								</div>
+								<div className={s.stars}>
+									<span className={s.starsFull}></span>
+								</div>
+								<div className={s.stars}>
+									<span className={s.starsHalf}></span>
+								</div>
+							</div>
+							<div className={s.message}>
+								<img src={chat} alt="chat" />
+								<span className={s.messageCount}>12</span>
+							</div>
+						</div>
+						<div className={s.itemsDescription}>
+							<span>Акриловая ванна AM.PM Bliss L 180х80 W53A-180-080W-ARB</span>
+						</div>
+						<div className={s.itemsCountry}>
+							<span>Испания</span>
+						</div>
+						<div className={s.itemsBuy}>
+							<div className={s.price} data-diuscount='28 601 ₽'>
+								<span>2 601 ₽</span>
+							</div>
+							<div className={s.buy}>
+								<span>В КОРЗИНУ</span>
+							</div>
+						</div>
+					</div>
+					<div className={s.items}>
+						<div className={s.itemsImg}>
+							<div className={s.itemsImgTags}>
+								<div className={s.hot}>Хит</div>
+							</div>
+							<img src={toilet} alt="firstItem" />
+						</div>
+						<div className={s.itemsStars}>
+							<div className={s.starsWrapper}>
+								<div className={s.stars}>
+									<span className={s.starsFull}></span>
+								</div>
+								<div className={s.stars}>
+									<span className={s.starsFull}></span>
+								</div>
+								<div className={s.stars}>
+									<span className={s.starsFull}></span>
+								</div>
+								<div className={s.stars}>
+									<span className={s.starsFull}></span>
+								</div>
+								<div className={s.stars}>
+									<span className={s.starsHalf}></span>
+								</div>
+							</div>
+							<div className={s.message}>
+								<img src={chat} alt="chat" />
+								<span className={s.messageCount}>12</span>
+							</div>
+						</div>
+						<div className={s.itemsDescription}>
+							<span>Акриловая ванна AM.PM Bliss L 180х80 W53A-180-080W-ARB</span>
+						</div>
+						<div className={s.itemsCountry}>
+							<span>Испания</span>
+						</div>
+						<div className={s.itemsBuy}>
+							<div className={s.price} data-diuscount='28 601 ₽'>
+								<span>2 601 ₽</span>
+							</div>
+							<div className={s.buy}>
+								<span>В КОРЗИНУ</span>
+							</div>
+						</div>
+					</div>
+					<div className={s.items}>
+						<div className={s.itemsImg}>
+							<div className={s.itemsImgTags}>
+								<div className={s.hot}>Хит</div>
+							</div>
+							<img src={heatedTowelRail} alt="firstItem" />
+						</div>
+						<div className={s.itemsStars}>
+							<div className={s.starsWrapper}>
+								<div className={s.stars}>
+									<span className={s.starsFull}></span>
+								</div>
+								<div className={s.stars}>
+									<span className={s.starsFull}></span>
+								</div>
+								<div className={s.stars}>
+									<span className={s.starsFull}></span>
+								</div>
+								<div className={s.stars}>
+									<span className={s.starsFull}></span>
+								</div>
+								<div className={s.stars}>
+									<span className={s.starsHalf}></span>
+								</div>
+							</div>
+							<div className={s.message}>
+								<img src={chat} alt="chat" />
+								<span className={s.messageCount}>12</span>
+							</div>
+						</div>
+						<div className={s.itemsDescription}>
+							<span>Акриловая ванна AM.PM Bliss L 180х80 W53A-180-080W-ARB</span>
+						</div>
+						<div className={s.itemsCountry}>
+							<span>Испания</span>
+						</div>
+						<div className={s.itemsBuy}>
+							<div className={s.price} data-diuscount='28 601 ₽'>
+								<span>2 601 ₽</span>
+							</div>
+							<div className={s.buy}>
+								<span>В КОРЗИНУ</span>
+							</div>
+						</div>
+					</div>
+					{/* <div className={s.wrapperArrowRight}></div>
+						<div className={s.wrapperArrowLeft}></div> */}
+				</div>
 			</section>
 		</div>
 	)

@@ -619,3 +619,106 @@
                         font-size: 14px
                         line-height: 24px
                         color: #FFFFFF
+.hits
+    &Header
+        display: inline-block
+        text-align: left
+        position: relative
+        font-family: Montserrat
+        font-style: normal
+        font-weight: bold
+        font-size: 30px
+        line-height: 36px
+        color: #000000
+        margin-bottom: 36px
+        &::after
+            content: ''
+            position: absolute
+            width: 100%
+            height: 1px
+            bottom: -5px
+            left: 50%
+            transform: translateX(-50%)
+            background-color: var(--blue-second)
+    &Menu
+        max-width: 100%
+        display: flex
+        justify-content: flex-start
+        column-gap: 10px
+        height: 36px
+        .tag
+            height: 100%
+            padding: 0 16px
+            background-color: #fff
+            display: flex
+            align-items: center
+            font-family: Montserrat
+            font-style: normal
+            font-weight: 500
+            font-size: 14px
+            line-height: 24px
+            display: flex
+            align-items: center
+            color: var(--blue-third)
+            border-radius: 4px
+            &:first-child
+                color: #fff
+                background-color: var(--green-blue)
+    &Wrapper
+        width: 100%
+        height: 540px
+        display: flex
+        .items
+            width: 100%
+            &Stars
+                display: flex
+                .starsWrapper
+                    position: relative
+                    display: flex
+                    row-gap: 20px
+                    width: 100%
+                    height: 20px
+                    .stars
+                        width: 20px
+                        height: 20px
+                        position: relative
+                        &span:last-child
+                            margin-right: 0
+                        &Off
+                            font-size: x-large
+                            height: 100%
+                            display: block
+                            color: gray
+                            position: relative
+                            &:before
+                                position: absolute
+                                top: -50%
+                                content: '\2605'
+                        &Full
+                            color: var(--yellow)
+                            font-size: x-large
+                            height: 100%
+                            display: block
+                            position: relative
+                            &::before
+                                position: absolute
+                                top: -50%
+                                content: '\2605'
+                        &Half
+                            font-size: x-large
+                            height: 100%
+                            width: 20px
+                            display: block
+                            color: gray
+                            position: relative
+                            &:after
+                                content: '\2605'
+                                color: var(--yellow)
+                                top: -50%
+                                width: 10px
+                                position: absolute
+                                overflow: hidden
+                            &:before
+                                position: absolute
+                                top: -50%
+                                content: '\2605'
