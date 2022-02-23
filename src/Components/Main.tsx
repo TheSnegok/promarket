@@ -249,19 +249,19 @@ const Main = () => {
 						<div className={s.itemsStars}>
 							<div className={s.starsWrapper}>
 								<div className={s.stars}>
-									<span className={s.starsFull}></span>
+									<div className={s.starsFull}></div>
 								</div>
 								<div className={s.stars}>
-									<span className={s.starsFull}></span>
+									<div className={s.starsFull}></div>
 								</div>
 								<div className={s.stars}>
-									<span className={s.starsFull}></span>
+									<div className={s.starsFull}></div>
 								</div>
 								<div className={s.stars}>
-									<span className={s.starsFull}></span>
+									<div className={s.starsFull}></div>
 								</div>
 								<div className={s.stars}>
-									<span className={s.starsHalf}></span>
+									<div className={s.starsHalf}></div>
 								</div>
 							</div>
 							<div className={s.message}>
@@ -270,13 +270,13 @@ const Main = () => {
 							</div>
 						</div>
 						<div className={s.itemsDescription}>
-							<span>Акриловая ванна AM.PM Bliss L 180х80 W53A-180-080W-ARB</span>
+							<span>Раковина Roca Debba 32799400Y, 60x48 см</span>
 						</div>
 						<div className={s.itemsCountry}>
 							<span>Испания</span>
 						</div>
 						<div className={s.itemsBuy}>
-							<div className={s.price} data-diuscount='28 601 ₽'>
+							<div className={s.price}>
 								<span>2 601 ₽</span>
 							</div>
 							<div className={s.buy}>
@@ -295,19 +295,19 @@ const Main = () => {
 						<div className={s.itemsStars}>
 							<div className={s.starsWrapper}>
 								<div className={s.stars}>
-									<span className={s.starsFull}></span>
+									<div className={s.starsFull}></div>
 								</div>
 								<div className={s.stars}>
-									<span className={s.starsFull}></span>
+									<div className={s.starsFull}></div>
 								</div>
 								<div className={s.stars}>
-									<span className={s.starsFull}></span>
+									<div className={s.starsFull}></div>
 								</div>
 								<div className={s.stars}>
-									<span className={s.starsFull}></span>
+									<div className={s.starsFull}></div>
 								</div>
 								<div className={s.stars}>
-									<span className={s.starsHalf}></span>
+									<div className={s.starsHalf}></div>
 								</div>
 							</div>
 							<div className={s.message}>
@@ -319,11 +319,11 @@ const Main = () => {
 							<span>Акриловая ванна AM.PM Bliss L 180х80 W53A-180-080W-ARB</span>
 						</div>
 						<div className={s.itemsCountry}>
-							<span>Испания</span>
+							<span>Германия</span>
 						</div>
 						<div className={s.itemsBuy}>
 							<div className={s.price} data-diuscount='28 601 ₽'>
-								<span>2 601 ₽</span>
+								<span>26 990 ₽</span>
 							</div>
 							<div className={s.buy}>
 								<span>В КОРЗИНУ</span>
@@ -340,19 +340,19 @@ const Main = () => {
 						<div className={s.itemsStars}>
 							<div className={s.starsWrapper}>
 								<div className={s.stars}>
-									<span className={s.starsFull}></span>
+									<div className={s.starsFull}></div>
 								</div>
 								<div className={s.stars}>
-									<span className={s.starsFull}></span>
+									<div className={s.starsFull}></div>
 								</div>
 								<div className={s.stars}>
-									<span className={s.starsFull}></span>
+									<div className={s.starsFull}></div>
 								</div>
 								<div className={s.stars}>
-									<span className={s.starsFull}></span>
+									<div className={s.starsFull}></div>
 								</div>
 								<div className={s.stars}>
-									<span className={s.starsHalf}></span>
+									<div className={s.starsHalf}></div>
 								</div>
 							</div>
 							<div className={s.message}>
@@ -361,14 +361,14 @@ const Main = () => {
 							</div>
 						</div>
 						<div className={s.itemsDescription}>
-							<span>Акриловая ванна AM.PM Bliss L 180х80 W53A-180-080W-ARB</span>
+							<span>Душевая система Raiber R0808, хром</span>
 						</div>
 						<div className={s.itemsCountry}>
-							<span>Испания</span>
+							<span>Германия</span>
 						</div>
 						<div className={s.itemsBuy}>
-							<div className={s.price} data-diuscount='28 601 ₽'>
-								<span>2 601 ₽</span>
+							<div className={s.price}>
+								<span>12 207 ₽</span>
 							</div>
 							<div className={s.buy}>
 								<span>В КОРЗИНУ</span>
@@ -385,19 +385,19 @@ const Main = () => {
 						<div className={s.itemsStars}>
 							<div className={s.starsWrapper}>
 								<div className={s.stars}>
-									<span className={s.starsFull}></span>
+									<div className={s.starsFull}></div>
 								</div>
 								<div className={s.stars}>
-									<span className={s.starsFull}></span>
+									<div className={s.starsFull}></div>
 								</div>
 								<div className={s.stars}>
-									<span className={s.starsFull}></span>
+									<div className={s.starsFull}></div>
 								</div>
 								<div className={s.stars}>
-									<span className={s.starsFull}></span>
+									<div className={s.starsFull}></div>
 								</div>
 								<div className={s.stars}>
-									<span className={s.starsHalf}></span>
+									<div className={s.starsHalf}></div>
 								</div>
 							</div>
 							<div className={s.message}>
@@ -406,14 +406,14 @@ const Main = () => {
 							</div>
 						</div>
 						<div className={s.itemsDescription}>
-							<span>Акриловая ванна AM.PM Bliss L 180х80 W53A-180-080W-ARB</span>
+							<span>Унитаз AM.PM Spirit V2.0 C708607SC компакт с сиденьем микролифт</span>
 						</div>
 						<div className={s.itemsCountry}>
 							<span>Испания</span>
 						</div>
 						<div className={s.itemsBuy}>
-							<div className={s.price} data-diuscount='28 601 ₽'>
-								<span>2 601 ₽</span>
+							<div className={s.price}>
+								<span>14 764 ₽</span>
 							</div>
 							<div className={s.buy}>
 								<span>В КОРЗИНУ</span>
@@ -430,19 +430,19 @@ const Main = () => {
 						<div className={s.itemsStars}>
 							<div className={s.starsWrapper}>
 								<div className={s.stars}>
-									<span className={s.starsFull}></span>
+									<div className={s.starsFull}></div>
 								</div>
 								<div className={s.stars}>
-									<span className={s.starsFull}></span>
+									<div className={s.starsFull}></div>
 								</div>
 								<div className={s.stars}>
-									<span className={s.starsFull}></span>
+									<div className={s.starsFull}></div>
 								</div>
 								<div className={s.stars}>
-									<span className={s.starsFull}></span>
+									<div className={s.starsFull}></div>
 								</div>
 								<div className={s.stars}>
-									<span className={s.starsHalf}></span>
+									<div className={s.starsHalf}></div>
 								</div>
 							</div>
 							<div className={s.message}>
@@ -451,14 +451,14 @@ const Main = () => {
 							</div>
 						</div>
 						<div className={s.itemsDescription}>
-							<span>Акриловая ванна AM.PM Bliss L 180х80 W53A-180-080W-ARB</span>
+							<span>Полотенцесушитель электрический Laris Кватро П7 40 x 60 см, 85 Вт, со...</span>
 						</div>
 						<div className={s.itemsCountry}>
-							<span>Испания</span>
+							<span>Россия, Украина</span>
 						</div>
 						<div className={s.itemsBuy}>
-							<div className={s.price} data-diuscount='28 601 ₽'>
-								<span>2 601 ₽</span>
+							<div className={s.price} >
+								<span>12 730 ₽</span>
 							</div>
 							<div className={s.buy}>
 								<span>В КОРЗИНУ</span>
