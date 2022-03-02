@@ -43,6 +43,11 @@ import dyson from '../Image/brands/image 30.png';
 import goronje from '../Image/brands/image 31.png';
 import jado from '../Image/brands/image 32.png';
 import lvi from '../Image/brands/image 33.png';
+// img for block article 
+import article1 from '../Image/article/image 12.png'
+import article2 from '../Image/article/image 13.png'
+import article3 from '../Image/article/image 14.png'
+import article4 from '../Image/article/image 15.png'
 
 const Main = () => {
 	return (
@@ -84,8 +89,8 @@ const Main = () => {
 					<div className={s.stonks}>
 						<div className={s.stonksText}>АКЦИИ</div>
 					</div>
-					<div className={s.brands}>
-						<div className={s.brandsText}>БРЕНДЫ</div>
+					<div className={s.brand}>
+						<div className={s.brandText}>БРЕНДЫ</div>
 					</div>
 				</div>
 				<div className={s.menuSearcher}>
@@ -763,6 +768,37 @@ const Main = () => {
 					<div className={s.brandsLogo}><img src={goronje} alt="brand logo" /></div>
 					<div className={s.brandsLogo}><img src={jado} alt="brand logo" /></div>
 					<div className={s.brandsLogo}><img src={lvi} alt="brand logo" /></div>
+				</div>
+			</section>
+			<section className={s.article}>
+				<h1 className={s.articleHeader}>Статьи</h1>
+				<div className={s.articleWrapper}>
+					<article className={s.itemArticle}>
+						<img src={article1} alt="article img" />
+						<div className={s.itemArticleHeader}>
+							<span>Актуальные и необычные аксессуары для ванной комнаты</span>
+						</div>
+					</article>
+					<article className={s.itemArticle}>
+						<img src={article2} alt="article img" />
+						<div className={s.itemArticleHeader}>
+							<span>Какой температуры должна быть горячая вода?</span>
+						</div>
+					</article>
+					<article className={s.itemArticle}>
+						<img src={article3} alt="article img" />
+						<div className={s.itemArticleHeader}>
+							<span>Конденсат на бачке унитаза: причины появления и способы устранения</span>
+						</div>
+					</article>
+					<article className={s.itemArticle}>
+						<img src={article4} alt="article img" />
+						<div className={s.itemArticleHeader}>
+							<span>Анаэробный герметик для резьбовых соединений</span>
+						</div>
+					</article>
+					{/* <div className={s.wrapperArrowRight}></div>
+						<div className={s.wrapperArrowLeft}></div> */}
 				</div>
 			</section>
 		</div>
