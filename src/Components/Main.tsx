@@ -50,6 +50,11 @@ import article3 from '../Image/article/image 14.png'
 import article4 from '../Image/article/image 15.png'
 // img for block seo
 import seoImg from '../Image/seoBlock.png'
+// img for footer
+import telegram from '../Image/logo/telegram 1.svg'
+import instagram from '../Image/logo/instagram 2.svg'
+import whatsApp from '../Image/logo/whatsApp.svg'
+import yandex from '../Image/yandex.png'
 
 const Main = () => {
 	return (
@@ -806,22 +811,83 @@ const Main = () => {
 			<section className={s.seo}>
 				<div className={s.seoBlock}>
 					<h2 className={s.seoBlockHeader}>Блок SEO-текста про магазин</h2>
-					<span className={s.seoBlockText}>GG Promarket — крупный ритейлер сантехнического оборудования, плитки <br/>
-					и аксессуаров. Мы нацелены на то, чтобы сделать процесс выбора <br/>
-					и покупки сантехники максимально простым и интуитивно понятным. <br/>
-					При создании и обновлении сайта santehnika-online.ru мы продумали <br/>
-					логичную структуру каталога, организовали систему поиска, снабдили <br/>
-					карточки товаров подробными описаниями и характеристиками. <br/>
-					<br/>
-					Выбирать оборудование в нашем магазине легко даже тем, кто впервые<br/>
-					имеет дело с сантехникой. А уточнить детали и получить информацию<br/> 
-					о совместимости товаров круглосуточно помогут опытные консультанты<br/> 
-					нашего контакт-центра. С нами вы полюбите выбирать!</span>
+					<span className={s.seoBlockText}>GG Promarket — крупный ритейлер сантехнического оборудования, плитки <br />
+						и аксессуаров. Мы нацелены на то, чтобы сделать процесс выбора <br />
+						и покупки сантехники максимально простым и интуитивно понятным. <br />
+						При создании и обновлении сайта santehnika-online.ru мы продумали <br />
+						логичную структуру каталога, организовали систему поиска, снабдили <br />
+						карточки товаров подробными описаниями и характеристиками. <br />
+						<br />
+						Выбирать оборудование в нашем магазине легко даже тем, кто впервые<br />
+						имеет дело с сантехникой. А уточнить детали и получить информацию<br />
+						о совместимости товаров круглосуточно помогут опытные консультанты<br />
+						нашего контакт-центра. С нами вы полюбите выбирать!</span>
 				</div>
 				<div className={s.seoImage}>
 					<img src={seoImg} alt="seo img" />
 				</div>
 			</section>
+			<footer className={s.footer}>
+				<div className={s.footerSection}>
+					<div className={s.footerSectionList}>
+						<ul >
+							<li>Плитка</li>
+							<li>Сантехника</li>
+							<li>Мебель для ванной</li>
+							<li>Электроника и бытовая техника</li>
+							<li>Отопление</li>
+							<li>Напольное покрытие</li>
+						</ul>
+					</div>
+					<div className={s.footerSectionLogo}>
+						<img src={logo} alt="logo" className={s.logo} />
+						<span>© 2020 <a href="/">ggpromarket.ru</a></span>
+					</div>
+				</div>
+				<div className={s.footerMenu}>
+					<div className={s.footerMenu}>
+						<ul>
+							<li>Оплата</li>
+							<li>Доставка</li>
+							<li>Поставщикам</li>
+							<li>Статьи</li>
+							<li>Контакты</li>
+						</ul>
+					</div>
+				</div>
+				<div className={s.footerContacts}>
+					<div className={s.footerContactsPhone}>8 495 018-32-10</div>
+					<div className={s.footerContactsButton}>
+						<button><span>ЗАКАЗАТЬ ЗВОНОК</span></button>
+					</div>
+					<div className={s.footerContactsWorkshedule}>
+						<span>Пн-Пт: 10:00 — 20:00</span>
+						<span>Сб: 10:00 — 18:00</span>
+						<span>Вс: выходной</span>
+					</div>
+					<div className={s.footerContactsSocial}>
+						<div>
+							<img src={whatsApp} alt="whatsApp" />
+						</div>
+						<div>
+							<img src={instagram} alt="instagram" />
+						</div>
+						<div>
+							<img src={telegram} alt="telegram" />
+						</div>
+					</div>
+				</div>
+				<div className={s.footerLocation}>
+					<div className={s.footerLocationStreet}>
+						<span>Склад:</span>
+						<span>Москва, ул. Салтыковская, 6 стр 11</span>
+						<span>zakaz@ggpromarket.ru</span>
+					</div>
+					<div className={s.footerLocationYandex}>
+						<img src={yandex} alt="yandex" />
+					</div>
+				</div>
+			</footer>
 		</div>
 	)
 }
