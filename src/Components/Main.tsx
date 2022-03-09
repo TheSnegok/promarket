@@ -831,16 +831,16 @@ const Main = () => {
 				<div className={s.footerSection}>
 					<div className={s.footerSectionList}>
 						<ul >
-							<li>Плитка</li>
-							<li>Сантехника</li>
-							<li>Мебель для ванной</li>
-							<li>Электроника и бытовая техника</li>
-							<li>Отопление</li>
-							<li>Напольное покрытие</li>
+							<a href="/"><li>Плитка</li></a>
+							<a href="/"><li>Сантехника</li></a>
+							<a href="/"><li>Мебель для ванной</li></a>
+							<a href="/"><li>Электроника и бытовая техника</li></a>
+							<a href="/"><li>Отопление</li></a>
+							<a href="/"><li>Напольное покрытие</li></a>
 						</ul>
 					</div>
 					<div className={s.footerSectionLogo}>
-						<img src={logo} alt="logo" className={s.logo} />
+						<img src={logo} alt="logo" />
 						<span>© 2020 <a href="/">ggpromarket.ru</a></span>
 					</div>
 				</div>
@@ -858,36 +858,35 @@ const Main = () => {
 				<div className={s.footerContacts}>
 					<div className={s.footerContactsPhone}>8 495 018-32-10</div>
 					<div className={s.footerContactsButton}>
-						<button><span>ЗАКАЗАТЬ ЗВОНОК</span></button>
+						<button>ЗАКАЗАТЬ ЗВОНОК</button>
 					</div>
-					<div className={s.footerContactsWorkshedule}>
+					<div className={s.footerContactsShedule}>
 						<span>Пн-Пт: 10:00 — 20:00</span>
 						<span>Сб: 10:00 — 18:00</span>
 						<span>Вс: выходной</span>
 					</div>
 					<div className={s.footerContactsSocial}>
-						<div>
-							<img src={whatsApp} alt="whatsApp" />
-						</div>
-						<div>
-							<img src={instagram} alt="instagram" />
-						</div>
-						<div>
-							<img src={telegram} alt="telegram" />
-						</div>
+						<a href="/"><img src={whatsApp} alt="whatsApp" /></a>
+						<a href="/"><img src={instagram} alt="instagram" /></a>
+						<a href="/"><img src={telegram} alt="telegram" /></a>
 					</div>
 				</div>
 				<div className={s.footerLocation}>
 					<div className={s.footerLocationStreet}>
 						<span>Склад:</span>
 						<span>Москва, ул. Салтыковская, 6 стр 11</span>
-						<span>zakaz@ggpromarket.ru</span>
+						<span><a href="/">zakaz@ggpromarket.ru</a></span>
 					</div>
 					<div className={s.footerLocationYandex}>
 						<img src={yandex} alt="yandex" />
 					</div>
 				</div>
 			</footer>
+			<section className={s.rules}>
+				<span>Копирование всех составляющих частей сайта в какой бы то ни было форме без письменного разрешения владельцев авторских прав запрещено. Сайт носит исключительно информационный характер, и ни при каких условиях не является публичной офертой, определяемой положениями статьи 437(2) Гражданского кодекса Российской Федерации.Наличие и цены уточняйте у наших операторов.</span>
+				<br /><br />
+				<span>Сайт использует технологию cookie. Используя сайт, Вы соглашаетесь с <a href="/">правилами использования cookie</a>, а также даете <a href="/">согласие на обработку персональных данных</a></span>
+			</section>
 		</div>
 	)
 }

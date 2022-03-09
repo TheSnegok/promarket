@@ -1252,3 +1252,154 @@
         img
             width: 100%
             height: 100%
+.footer
+    min-height: 420px
+    width: 100%
+    display: flex
+    position: relative
+    z-index: 10
+    padding-top: 36px
+    margin-bottom: 41px
+    &::after
+        content: ''
+        width: 200vw
+        height: 100%
+        position: absolute
+        top: 0
+        left: -50vw
+        background-color: #fff
+        z-index: -1
+    &Section
+        max-width: 240px
+        margin-right: 157px
+        &List
+            margin-bottom: 36px
+            width: 100%
+            max-height: 240px
+            ul
+                li
+                    list-style-type: none
+                    font-family: Montserrat
+                    font-style: normal
+                    font-weight: 500
+                    font-size: 14px
+                    line-height: 40px
+                    color: var(--blue-third)
+        &Logo
+            width: 100%
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            gap: 17px
+            img
+                height: 24px
+            span
+                font-family: Montserrat
+                font-style: normal
+                font-weight: 500
+                font-size: 14px
+                line-height: 20px
+                color: var(--gray-blue-second)
+                a
+                    font-family: Montserrat
+                    font-style: normal
+                    font-weight: 500
+                    font-size: 14px
+                    line-height: 20px
+                    color: var(--gray-blue-second)
+    &Menu
+        max-width: 105px
+        max-height: 200px
+        margin-right: 256px
+        ul
+            li
+                list-style-type: none
+                font-family: Montserrat
+                font-style: normal
+                font-weight: 500
+                font-size: 14px
+                line-height: 40px
+                color: var(--blue-third)
+    &Contacts
+        max-width: 178px
+        margin-right: 210px
+        &Phone
+            font-family: Montserrat
+            font-style: normal
+            font-weight: 600
+            font-size: 21px
+            line-height: 40px
+            color: #000000
+            margin-bottom: 18px
+        &Button
+            width: 178px
+            height: 36px
+            margin-bottom: 18px
+            button
+                width: 100%
+                height: 100%
+                border: 1px solid #1061AB
+                box-sizing: border-box
+                border-radius: 4px
+                background-color: #fff
+                font-family: Montserrat
+                font-style: normal
+                font-weight: 600
+                font-size: 12px
+                line-height: 24px
+                text-align: center
+                letter-spacing: 0.15em
+                text-transform: uppercase
+                color: var(--blue-second)
+        &Shedule
+            display: flex
+            flex-direction: column
+            max-width: 150px
+            max-height: 90px
+            margin-bottom: 74px
+            span
+                font-family: Montserrat
+                font-style: normal
+                font-weight: 500
+                font-size: 14px
+                line-height: 30px
+                color: #000000
+        &Social
+            display: flex
+            gap: 29px
+            img
+                width: 30px
+                height: 30px
+    &Location
+        max-width: 250px
+        &Street
+            display: flex
+            flex-direction: column
+            font-family: Montserrat
+            font-style: normal
+            font-weight: 500
+            font-size: 14px
+            line-height: 30px
+            color: #000000
+            margin-bottom: 118px
+            span
+                a
+                    color: var(--blue-second)
+        &Yandex
+            width: 160px
+            height: 118px
+            img
+                width: 100%
+                height: 100%
+.rules
+    width: 100%
+    padding-bottom: 49px
+    span
+        font-family: Montserrat
+        font-style: normal
+        font-weight: 500
+        font-size: 14px
+        line-height: 24px
+        color: var(--gray-blue-second)
+        a
+            color: var(--blue-second)
