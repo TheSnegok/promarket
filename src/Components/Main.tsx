@@ -76,11 +76,11 @@ const Main = () => {
 					<div className={s.phoneCall}>Заказать звонок</div>
 				</div>
 				<div className={s.headerMenu}>
-					<div className={s.menuitem}>Оплата</div>
-					<div className={s.menuitem}>Доставка</div>
-					<div className={s.menuitem}>Поставщикам</div>
-					<div className={s.menuitem}>Статьи</div>
-					<div className={s.menuitem}>Контакты</div>
+					<div className={s.menuitem}><a href="/">Оплата</a></div>
+					<div className={s.menuitem}><a href="/">Доставка</a></div>
+					<div className={s.menuitem}><a href="/">Поставщикам</a></div>
+					<div className={s.menuitem}><a href="/">Статьи</a></div>
+					<div className={s.menuitem}><a href="/">Контакты</a></div>
 				</div>
 			</header>
 			<menu className={s.menu}>
@@ -91,14 +91,41 @@ const Main = () => {
 							<div className={s.line2}></div>
 							<div className={s.line3}></div>
 						</div>
-						<div className={s.catalogText}>КАТАЛОГ ТОВАРОВ</div>
+						<div className={s.catalogText}>
+							<span>каталог товаров</span>
+							<div className={s.border}></div>
+							<div className={s.hover}>
+								<div className={s.hoverSections}>
+									<div className={s.wrapperSections}></div>
+									<div className={s.wrapperSections}></div>
+									<div className={s.wrapperSections}></div>
+									<div className={s.wrapperSections}></div>
+									<div className={s.wrapperSections}></div>
+									<div className={s.wrapperSections}></div>
+								</div>
+								<div className={s.hoverInfo}>
+									<div className={s.wrapperInfo}></div>
+									<div className={s.wrapperInfo}></div>
+									<div className={s.wrapperInfo}></div>
+									<div className={s.wrapperInfo}></div>
+									<div className={s.wrapperInfo}></div>
+									<div className={s.wrapperInfo}></div>
+									<div className={s.wrapperInfo}></div>
+									<div className={s.wrapperInfo}></div>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div className={s.stonks}>
-						<div className={s.stonksText}>АКЦИИ</div>
-					</div>
-					<div className={s.brand}>
-						<div className={s.brandText}>БРЕНДЫ</div>
-					</div>
+					<a href="/">
+						<div className={s.stonks}>
+							<div className={s.stonksText}>АКЦИИ</div>
+						</div>
+					</a>
+					<a href="/">
+						<div className={s.brand}>
+							<div className={s.brandText}>БРЕНДЫ</div>
+						</div>
+					</a>
 				</div>
 				<div className={s.menuSearcher}>
 					<input type="text" className={s.input} placeholder='Что вы ищете?' />
