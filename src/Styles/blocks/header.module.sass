@@ -13,17 +13,18 @@
         transform: translateX(-50%)
         width: 100vw
         height: 370px
-        background-color: var(--main-bg)
-        z-index: -9999
+        background: rgba(225, 238, 251, 1)
     .headerLogo
         display: flex
         align-items: center
         height: 100%
         margin-right: 149px
+        z-index: 10
     .headerLocation
         display: flex
         min-width: 74px
         margin-right: 141px
+        z-index: 10
         .mark
             margin-top: 4px
             width: 10px
@@ -51,6 +52,7 @@
         display: flex
         min-width: 322px
         margin-right: 132px
+        z-index: 10
         .number
             font-family: Montserrat
             font-style: normal
@@ -107,6 +109,7 @@
         display: flex
         justify-content: space-between
         width: 100%
+        z-index: 10
         a
             color: var(--blue-third)
             font-family: Montserrat
@@ -119,6 +122,7 @@
     width: 100%
     height: 60px
     margin-bottom: 14px
+    z-index: 10
     &Items
         display: flex
         width: 554px
@@ -130,6 +134,7 @@
             background-color: var(--blue-first)
             padding: 0 24px
             position: relative
+            cursor: pointer
             .burger
                 width: 24px
                 height: 18px
@@ -161,10 +166,10 @@
                         background-color: #fff
                         transform: translateX(-50%)
             &Text
-                height: 20px
-                width: 203px
-                overflow: hidden
-                span
+                &Header
+                    height: 20px
+                    width: 203px
+                    overflow: hidden
                     font-family: Montserrat
                     font-style: normal
                     font-weight: 600
@@ -173,8 +178,13 @@
                     color: #fff
                     letter-spacing: 0.14em
                     text-transform: uppercase
+                .border
+                    display: none
+                .hover
+                    display: none
             &:hover
                 .border
+                    display: block
                     position: absolute
                     top: 60px
                     left: 0
@@ -182,6 +192,7 @@
                     height: 3px
                     width: 296px
                 .hover
+                    display: block
                     position: absolute
                     top: 63px
                     left: 0
@@ -194,45 +205,89 @@
                         width: 296px
                         height: 100%
                         background: rgba(241, 248, 255, 1)
-        a
+                        padding-top: 17px
+                        .wrapperSections
+                            width: 296px
+                            height: 56px
+                            display: flex
+                            align-items: center
+                            padding-left: 21px
+                            cursor: pointer
+                            &:hover
+                                background-color: #fff
+                            img
+                                width: 30px
+                                height: 30px
+                                margin-right: 18px
+                            span
+                                font-family: Montserrat
+                                font-style: normal
+                                font-weight: 600
+                                font-size: 14px
+                                line-height: 20px
+                                color: #000000
+                            &:nth-child(2)
+                                img
+                                    width: 30px
+                                    height: 33px
+                                    margin-right: 18px
+                            &:nth-child(3)
+                                img
+                                    width: 26px
+                                    height: 32px
+                                    margin-right: 20px
+                            &:nth-child(4)
+                                img
+                                    width: 26px
+                                    height: 32px
+                                    margin-right: 20px
+                            &:nth-child(5)
+                                img
+                                    width: 28px
+                                    height: 32px
+                                    margin-right: 19px
+                            &:nth-child(6)
+                                img
+                                    width: 30px
+                                    height: 30px
+                                    margin-right: 18px
+        .stonks
+            display: flex
+            justify-content: center
+            align-items: center
+            background-color: var(--blue-second)
             height: 100%
             width: 121px
-            &:last-child
-                width: 137px
-            .stonks
-                width: 100%
-                height: 100%
-                display: flex
-                justify-content: center
-                align-items: center
-                background-color: var(--blue-second)
-                &Text
-                    font-family: Montserrat
-                    font-style: normal
-                    font-weight: 600
-                    font-size: 16px
-                    line-height: 20px
-                    letter-spacing: 0.15em
-                    color: #fff
-            .brand
-                width: 100%
-                height: 100%
-                display: flex
-                justify-content: center
-                align-items: center
-                background-color: var(--blue-third)
-                &Text
-                    font-family: Montserrat
-                    font-style: normal
-                    font-weight: 600
-                    font-size: 16px
-                    line-height: 20px
-                    letter-spacing: 0.15em
-                    color: #fff
+            z-index: 10
+            &Text
+                font-family: Montserrat
+                font-style: normal
+                font-weight: 600
+                font-size: 16px
+                line-height: 20px
+                letter-spacing: 0.15em
+                color: #fff
+        .brand
+            width: 137px
+            height: 100%
+            display: flex
+            justify-content: center
+            align-items: center
+            background-color: var(--blue-third)
+            z-index: 10
+            &Text
+                font-family: Montserrat
+                font-style: normal
+                font-weight: 600
+                font-size: 16px
+                line-height: 20px
+                letter-spacing: 0.15em
+                color: #fff
     &Searcher
         position: relative
         width: 746px
         height: 100%
+        z-index: 10
         .input
             width: 746px
             height: 100%
@@ -262,6 +317,7 @@
         display: flex
         justify-content: space-between
         align-items: center
+        z-index: 10
         .cabinet
             width: 26px
             height: 29px

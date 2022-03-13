@@ -55,6 +55,13 @@ import telegram from '../Image/logo/telegram 1.svg'
 import instagram from '../Image/logo/instagram 2.svg'
 import whatsApp from '../Image/logo/whatsApp.svg'
 import yandex from '../Image/yandex.png'
+// svg for hover menu
+import tile from '../Image/hoverMenu/icon1.svg';
+import plumbing from '../Image/hoverMenu/icon2.svg';
+import bathroomFurniture from '../Image/hoverMenu/icon3.svg';
+import Electronics from '../Image/hoverMenu/icon4.svg';
+import heating from '../Image/hoverMenu/icon5.svg';
+import flooring from '../Image/hoverMenu/icon6.svg';
 
 const Main = () => {
 	return (
@@ -92,16 +99,34 @@ const Main = () => {
 							<div className={s.line3}></div>
 						</div>
 						<div className={s.catalogText}>
-							<span>каталог товаров</span>
+							<span className={s.catalogTextHeader}>каталог товаров</span>
 							<div className={s.border}></div>
 							<div className={s.hover}>
 								<div className={s.hoverSections}>
-									<div className={s.wrapperSections}></div>
-									<div className={s.wrapperSections}></div>
-									<div className={s.wrapperSections}></div>
-									<div className={s.wrapperSections}></div>
-									<div className={s.wrapperSections}></div>
-									<div className={s.wrapperSections}></div>
+									<div className={s.wrapperSections}>
+										<img src={tile} alt="" />
+										<span>Плитка</span>
+									</div>
+									<div className={s.wrapperSections}>
+										<img src={plumbing} alt="" />
+										<span>Сантехника</span>
+									</div>
+									<div className={s.wrapperSections}>
+										<img src={bathroomFurniture} alt="" />
+										<span>Мебель для ванной</span>
+									</div>
+									<div className={s.wrapperSections}>
+										<img src={Electronics} alt="" />
+										<span>Электроника и бытовая техника</span>
+									</div>
+									<div className={s.wrapperSections}>
+										<img src={heating} alt="" />
+										<span>Отопление</span>
+									</div>
+									<div className={s.wrapperSections}>
+										<img src={flooring} alt="" />
+										<span>Напольное покрытие</span>
+									</div>
 								</div>
 								<div className={s.hoverInfo}>
 									<div className={s.wrapperInfo}></div>
@@ -116,15 +141,11 @@ const Main = () => {
 							</div>
 						</div>
 					</div>
-					<a href="/">
-						<div className={s.stonks}>
-							<div className={s.stonksText}>АКЦИИ</div>
-						</div>
+					<a href="/" className={s.stonks}>
+						<div className={s.stonksText}>АКЦИИ</div>
 					</a>
-					<a href="/">
-						<div className={s.brand}>
+					<a href="/" className={s.brand}>
 							<div className={s.brandText}>БРЕНДЫ</div>
-						</div>
 					</a>
 				</div>
 				<div className={s.menuSearcher}>
