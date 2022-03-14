@@ -1,1497 +1,1540 @@
 .header
-    position: relative
-    width: 100%
-    height: 37px
-    display: flex
-    align-items: center
-    margin-bottom: 24px
-    &::before
-        content: ''
-        position: absolute
-        top: -45px
-        left: 50%
-        transform: translateX(-50%)
-        width: 100vw
-        height: 370px
-        background: rgba(225, 238, 251, 1)
-    .headerLogo
-        display: flex
-        align-items: center
-        height: 100%
-        margin-right: 149px
-        z-index: 10
-    .headerLocation
-        display: flex
-        min-width: 74px
-        margin-right: 141px
-        z-index: 10
-        .mark
-            margin-top: 4px
-            width: 10px
-            height: 13px
-            margin-right: 8px
-        .regions
-            position: relative
-            font-family: 'Montserrat'
-            font-style: normal
-            font-weight: 500
-            font-size: 14px
-            line-height: 17px
-            color: var(--blue-third)
-            &::after
-                content: ''
-                position: absolute
-                bottom: -2.5px
-                left: 0
-                width: 100%
-                height: 1px
-                background-image: linear-gradient(90deg, var(--blue-third), var(--blue-third) 75%, transparent 75%, transparent 100%)
-                background-size: 5px 1px
-                background-position: -1.5px 0
-    .headerPhone
-        display: flex
-        min-width: 322px
-        margin-right: 132px
-        z-index: 10
-        .number
-            font-family: Montserrat
-            font-style: normal
-            font-weight: 500
-            font-size: 21px
-            line-height: 21px
-            margin-right: 12px
-        .popup
-            position: relative
-            width: 16px
-            height: 16px
-            border-radius: 50%
-            background-color: var(--yellow)
-            margin-right: 13px
-            &::after
-                content: ''
-                position: absolute
-                top: 50%
-                left: 50%
-                width: 1px
-                height: 4px
-                transform: translate(-50%, -50%) rotate(-45deg)
-                transform-origin: right bottom
-                background-color: var(--blue-third)
-            &::before
-                content: ''
-                position: absolute
-                top: 50%
-                left: 50%
-                width: 1px
-                height: 4px
-                transform: translate(-50%, -50%) rotate(45deg)
-                transform-origin: left bottom
-                background-color: var(--blue-third)
-        .phoneCall
-            position: relative
-            font-family: Montserrat
-            font-style: normal
-            font-weight: 500
-            font-size: 14px
-            line-height: 17px
-            color: var(--blue-third)
-            &::after
-                content: ''
-                position: absolute
-                bottom: -2px
-                left: 0
-                width: 100%
-                height: 1px
-                background-image: linear-gradient(90deg, var(--blue-third), var(--blue-third) 75%, transparent 75%, transparent 100%)
-                background-size: 5px 1px
-                background-position: -1.5px 0
-    .headerMenu
-        display: flex
-        justify-content: space-between
-        width: 100%
-        z-index: 10
-        a
-            color: var(--blue-third)
-            font-family: Montserrat
-            font-style: normal
-            font-weight: 500
-            font-size: 14px
-            line-height: 17px
+	position: relative
+	width: 100%
+	height: 37px
+	display: flex
+	align-items: center
+	margin-bottom: 24px
+	&::before
+		content: ''
+		position: absolute
+		top: -45px
+		left: 50%
+		transform: translateX(-50%)
+		width: 100vw
+		height: 370px
+		background: rgba(225, 238, 251, 1)
+	.headerLogo
+		display: flex
+		align-items: center
+		height: 100%
+		margin-right: 149px
+		z-index: 10
+	.headerLocation
+		display: flex
+		min-width: 74px
+		margin-right: 141px
+		z-index: 10
+		.mark
+			margin-top: 4px
+			width: 10px
+			height: 13px
+			margin-right: 8px
+		.regions
+			position: relative
+			font-family: 'Montserrat'
+			font-style: normal
+			font-weight: 500
+			font-size: 14px
+			line-height: 17px
+			color: var(--blue-third)
+			&::after
+				content: ''
+				position: absolute
+				bottom: -2.5px
+				left: 0
+				width: 100%
+				height: 1px
+				background-image: linear-gradient(90deg, var(--blue-third), var(--blue-third) 75%, transparent 75%, transparent 100%)
+				background-size: 5px 1px
+				background-position: -1.5px 0
+	.headerPhone
+		display: flex
+		min-width: 322px
+		margin-right: 132px
+		z-index: 10
+		.number
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 500
+			font-size: 21px
+			line-height: 21px
+			margin-right: 12px
+		.popup
+			position: relative
+			width: 16px
+			height: 16px
+			border-radius: 50%
+			background-color: var(--yellow)
+			margin-right: 13px
+			&::after
+				content: ''
+				position: absolute
+				top: 50%
+				left: 50%
+				width: 1px
+				height: 4px
+				transform: translate(-50%, -50%) rotate(-45deg)
+				transform-origin: right bottom
+				background-color: var(--blue-third)
+			&::before
+				content: ''
+				position: absolute
+				top: 50%
+				left: 50%
+				width: 1px
+				height: 4px
+				transform: translate(-50%, -50%) rotate(45deg)
+				transform-origin: left bottom
+				background-color: var(--blue-third)
+		.phoneCall
+			position: relative
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 500
+			font-size: 14px
+			line-height: 17px
+			color: var(--blue-third)
+			&::after
+				content: ''
+				position: absolute
+				bottom: -2px
+				left: 0
+				width: 100%
+				height: 1px
+				background-image: linear-gradient(90deg, var(--blue-third), var(--blue-third) 75%, transparent 75%, transparent 100%)
+				background-size: 5px 1px
+				background-position: -1.5px 0
+	.headerMenu
+		display: flex
+		justify-content: space-between
+		width: 100%
+		z-index: 10
+		a
+			color: var(--blue-third)
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 500
+			font-size: 14px
+			line-height: 17px
 .menu
-    display: flex
-    width: 100%
-    height: 60px
-    margin-bottom: 14px
-    z-index: 10
-    &Items
-        display: flex
-        width: 554px
-        .catalog
-            display: flex
-            align-items: center
-            width: 296px
-            height: 100%
-            background-color: var(--blue-first)
-            padding: 0 24px
-            position: relative
-            cursor: pointer
-            .burger
-                width: 24px
-                height: 18px
-                position: relative
-                margin-right: 21px
-                .line
-                    &1
-                        position: absolute
-                        top: 0
-                        left: 50%
-                        width: 100%
-                        height: 2px
-                        background-color: #fff
-                        transform: translateX(-50%)
-                    &2
-                        position: absolute
-                        top: calc(50% - 1px)
-                        left: 50%
-                        width: 100%
-                        height: 2px
-                        background-color: #fff
-                        transform: translateX(-50%)
-                    &3
-                        position: absolute
-                        top: calc(100% - 1px)
-                        left: 50%
-                        width: 100%
-                        height: 2px
-                        background-color: #fff
-                        transform: translateX(-50%)
-            &Text
-                &Header
-                    height: 20px
-                    width: 203px
-                    overflow: hidden
-                    font-family: Montserrat
-                    font-style: normal
-                    font-weight: 600
-                    font-size: 16px
-                    line-height: 20px
-                    color: #fff
-                    letter-spacing: 0.14em
-                    text-transform: uppercase
-                .border
-                    display: none
-                .hover
-                    display: none
-            &:hover
-                .border
-                    display: block
-                    position: absolute
-                    top: 60px
-                    left: 0
-                    background-color: rgba(234, 22, 73, 1)
-                    height: 3px
-                    width: 296px
-                .hover
-                    display: block
-                    position: absolute
-                    top: 63px
-                    left: 0
-                    width: 1540px
-                    height: 740px
-                    background-color: #fff
-                    z-index: 9999
-                    display: flex
-                    &Sections
-                        width: 296px
-                        height: 100%
-                        background: rgba(241, 248, 255, 1)
-                        padding-top: 17px
-                        .wrapperSections
-                            width: 296px
-                            height: 56px
-                            display: flex
-                            align-items: center
-                            padding-left: 21px
-                            cursor: pointer
-                            &:hover
-                                background-color: #fff
-                            img
-                                width: 30px
-                                height: 30px
-                                margin-right: 18px
-                            span
-                                font-family: Montserrat
-                                font-style: normal
-                                font-weight: 600
-                                font-size: 14px
-                                line-height: 20px
-                                color: #000000
-                            &:nth-child(2)
-                                img
-                                    width: 30px
-                                    height: 33px
-                                    margin-right: 18px
-                            &:nth-child(3)
-                                img
-                                    width: 26px
-                                    height: 32px
-                                    margin-right: 20px
-                            &:nth-child(4)
-                                img
-                                    width: 26px
-                                    height: 32px
-                                    margin-right: 20px
-                            &:nth-child(5)
-                                img
-                                    width: 28px
-                                    height: 32px
-                                    margin-right: 19px
-                            &:nth-child(6)
-                                img
-                                    width: 30px
-                                    height: 30px
-                                    margin-right: 18px
-        .stonks
-            display: flex
-            justify-content: center
-            align-items: center
-            background-color: var(--blue-second)
-            height: 100%
-            width: 121px
-            z-index: 10
-            &Text
-                font-family: Montserrat
-                font-style: normal
-                font-weight: 600
-                font-size: 16px
-                line-height: 20px
-                letter-spacing: 0.15em
-                color: #fff
-        .brand
-            width: 137px
-            height: 100%
-            display: flex
-            justify-content: center
-            align-items: center
-            background-color: var(--blue-third)
-            z-index: 10
-            &Text
-                font-family: Montserrat
-                font-style: normal
-                font-weight: 600
-                font-size: 16px
-                line-height: 20px
-                letter-spacing: 0.15em
-                color: #fff
-    &Searcher
-        position: relative
-        width: 746px
-        height: 100%
-        z-index: 10
-        .input
-            width: 746px
-            height: 100%
-            border: none
-            padding: 20px 24px
-            font-family: Montserrat
-            font-style: normal
-            font-weight: 600
-            font-size: 16px
-            line-height: 20px
-            color: var(--dark-gray)
-        .icon
-            width: 22px
-            height: 23px
-            position: absolute
-            top: 50%
-            right: 24px
-            transform: translate(-50%, -50%)
-            .loop
-                width: 100%
-                height: 100%
-    &Actions
-        width: 240px
-        height: 100%
-        background-color: rgba(241, 248, 255, 1)
-        padding: 15px 40px
-        display: flex
-        justify-content: space-between
-        align-items: center
-        z-index: 10
-        .cabinet
-            width: 26px
-            height: 29px
-            &Img
-                height: 100%
-                width: 100%
-        .desired
-            position: relative
-            width: 32px
-            height: 29px
-            &Img
-                height: 100%
-                width: 100%
-        .shopping
-            position: relative
-            width: 35px
-            height: 29px
-            &Img
-                height: 100%
-                width: 100%
-        .desired, .shopping
-            &Alert
-                position: absolute
-                bottom: calc(100% + 5px)
-                left: 50%
-                width: 22px
-                height: 22px
-                border-radius: 50%
-                transform: translateX(-50%)
-                background-color: var(--yellow)
-                display: flex
-                justify-content: center
-                align-items: center
-                font-family: Montserrat
-                font-style: normal
-                font-weight: 600
-                font-size: 12px
-                line-height: 15px
-                color: var(--blue-first)
+	display: flex
+	width: 100%
+	height: 60px
+	margin-bottom: 14px
+	z-index: 10
+	&Items
+		display: flex
+		width: 554px
+		.catalog
+			display: flex
+			align-items: center
+			width: 296px
+			height: 100%
+			background-color: var(--blue-first)
+			padding: 0 24px
+			position: relative
+			.burger
+				width: 24px
+				height: 18px
+				position: relative
+				margin-right: 21px
+				.line
+					&1
+						position: absolute
+						top: 0
+						left: 50%
+						width: 100%
+						height: 2px
+						background-color: #fff
+						transform: translateX(-50%)
+					&2
+						position: absolute
+						top: calc(50% - 1px)
+						left: 50%
+						width: 100%
+						height: 2px
+						background-color: #fff
+						transform: translateX(-50%)
+					&3
+						position: absolute
+						top: calc(100% - 1px)
+						left: 50%
+						width: 100%
+						height: 2px
+						background-color: #fff
+						transform: translateX(-50%)
+			&Text
+				&Header
+					height: 20px
+					width: 203px
+					overflow: hidden
+					font-family: Montserrat
+					font-style: normal
+					font-weight: 600
+					font-size: 16px
+					line-height: 20px
+					color: #fff
+					letter-spacing: 0.14em
+					text-transform: uppercase
+					cursor: default
+				.border
+					display: none
+				.hover
+					display: none
+			&:hover
+				.border
+					display: block
+					position: absolute
+					top: 60px
+					left: 0
+					background-color: rgba(234, 22, 73, 1)
+					height: 3px
+					width: 296px
+				.hover
+					display: block
+					position: absolute
+					top: 63px
+					left: 0
+					width: 1540px
+					height: 740px
+					background-color: #fff
+					z-index: 9999
+					display: flex
+					&Sections
+						width: 296px
+						height: 100%
+						background: rgba(241, 248, 255, 1)
+						padding-top: 17px
+						.wrapperSections
+							width: 296px
+							height: 56px
+							display: flex
+							align-items: center
+							padding-left: 21px
+							cursor: pointer
+							&:hover
+								background-color: #fff
+							img
+								width: 30px
+								height: 30px
+								margin-right: 18px
+							span
+								font-family: Montserrat
+								font-style: normal
+								font-weight: 600
+								font-size: 14px
+								line-height: 20px
+								color: #000000
+							&:nth-child(2)
+								img
+									width: 30px
+									height: 33px
+									margin-right: 18px
+							&:nth-child(3)
+								img
+									width: 26px
+									height: 32px
+									margin-right: 20px
+							&:nth-child(4)
+								img
+									width: 26px
+									height: 32px
+									margin-right: 20px
+							&:nth-child(5)
+								img
+									width: 28px
+									height: 32px
+									margin-right: 19px
+							&:nth-child(6)
+								img
+									width: 30px
+									height: 30px
+									margin-right: 18px
+					&Info
+						width: 100%
+						height: 100%
+						padding: 31px 0 0 50px
+						.wrapperTile
+							height: 100%
+							width: 100%
+							&Header
+								margin-bottom: 30px
+								span
+									font-family: 'Montserrat'
+									font-style: normal
+									font-weight: 600
+									font-size: 24px
+									line-height: 30px
+									color: #000000
+							&Menu
+								width: 250px
+								height: 100%
+								.firstColumnWrapper
+									margin-bottom: 30px
+									&:last-child
+										margin-bottom: 0
+									span
+										display: block
+										font-family: 'Montserrat'
+										font-style: normal
+										font-weight: 600
+										font-size: 14px
+										line-height: 20px
+										color: #000000
+										margin-bottom: 6px
+									ul
+										list-style-type: none
+										a
+											font-family: 'Montserrat'
+											font-style: normal
+											font-weight: 500
+											font-size: 14px
+											line-height: 24px
+											color: var(--blue-third)
+											&:hover
+												text-decoration: underline
+		.stonks
+			display: flex
+			justify-content: center
+			align-items: center
+			background-color: var(--blue-second)
+			height: 100%
+			width: 121px
+			z-index: 10
+			&Text
+				font-family: Montserrat
+				font-style: normal
+				font-weight: 600
+				font-size: 16px
+				line-height: 20px
+				letter-spacing: 0.15em
+				color: #fff
+		.brand
+			width: 137px
+			height: 100%
+			display: flex
+			justify-content: center
+			align-items: center
+			background-color: var(--blue-third)
+			z-index: 10
+			&Text
+				font-family: Montserrat
+				font-style: normal
+				font-weight: 600
+				font-size: 16px
+				line-height: 20px
+				letter-spacing: 0.15em
+				color: #fff
+	&Searcher
+		position: relative
+		width: 746px
+		height: 100%
+		z-index: 10
+		.input
+			width: 746px
+			height: 100%
+			border: none
+			padding: 20px 24px
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 600
+			font-size: 16px
+			line-height: 20px
+			color: var(--dark-gray)
+		.icon
+			width: 22px
+			height: 23px
+			position: absolute
+			top: 50%
+			right: 24px
+			transform: translate(-50%, -50%)
+			.loop
+				width: 100%
+				height: 100%
+	&Actions
+		width: 240px
+		height: 100%
+		background-color: rgba(241, 248, 255, 1)
+		padding: 15px 40px
+		display: flex
+		justify-content: space-between
+		align-items: center
+		z-index: 10
+		.cabinet
+			width: 26px
+			height: 29px
+			&Img
+				height: 100%
+				width: 100%
+		.desired
+			position: relative
+			width: 32px
+			height: 29px
+			&Img
+				height: 100%
+				width: 100%
+		.shopping
+			position: relative
+			width: 35px
+			height: 29px
+			&Img
+				height: 100%
+				width: 100%
+		.desired, .shopping
+			&Alert
+				position: absolute
+				bottom: calc(100% + 5px)
+				left: 50%
+				width: 22px
+				height: 22px
+				border-radius: 50%
+				transform: translateX(-50%)
+				background-color: var(--yellow)
+				display: flex
+				justify-content: center
+				align-items: center
+				font-family: Montserrat
+				font-style: normal
+				font-weight: 600
+				font-size: 12px
+				line-height: 15px
+				color: var(--blue-first)
 .banners
-    display: grid
-    width: 1540px
-    height: 380px
-    grid-template-columns: 1040px 500px
-    grid-template-rows: repeat(2, 190px)
-    margin-bottom: 42px
-    &Slider
-        position: relative
-        padding: 76px 0 0 646px
-        background-color: var(--blue-first)
-        grid-area: 1 / 1 / 3 / 2
-        .sliderHeader
-            font-family: Montserrat
-            font-style: normal
-            font-weight: bold
-            font-size: 36px
-            line-height: 48px
-            letter-spacing: 0.15em
-            color: #fff
-            margin-bottom: 13px
-        .sliderSubheader
-            font-family: Montserrat
-            font-style: normal
-            font-weight: bold
-            font-size: 24px
-            line-height: 36px
-            color: #FFFFFF
-            margin-bottom: 31px
-        .sliderButton
-            width: 162px
-            height: 52px
-            border: none
-            background-color: var(--yellow)
-            font-family: Montserrat
-            font-style: normal
-            font-weight: 500
-            font-size: 14px
-            line-height: 24px
-            text-align: center
-            letter-spacing: 0.15em
-        .dots
-            position: absolute
-            bottom: 40px
-            left: 50%
-            transform: translateX(-50%)
-            width: 130px
-            height: 10px
-            display: flex
-            justify-content: space-between
-            .firstDot
-                width: 10px
-                height: 10px
-                background-color: #fff
-                border-radius: 50%
-            .secondDot
-                width: 10px
-                height: 10px
-                background-color: #fff
-                border-radius: 50%
-            .thirdDot
-                width: 10px
-                height: 10px
-                background-color: #fff
-                border-radius: 50%
-            .fourthDot
-                width: 10px
-                height: 10px
-                background-color: #fff
-                border-radius: 50%
-            .fivethDot
-                width: 10px
-                height: 10px
-                background-color: #fff
-                border-radius: 50%
-    &Top
-        padding: 50px 0 0 260px
-        position: relative
-        background-color: var(--blue-second)
-        grid-area: 1 / 2 / 2 / 3
-        .bannerHeader
-            font-family: Montserrat
-            font-style: normal
-            font-weight: bold
-            font-size: 24px
-            line-height: 36px
-            letter-spacing: 0.15em
-            color: #FFFFFF
-            margin-bottom: 13px
-            p
-                letter-spacing: 0
-        .bannerSubheader
-            font-family: Montserrat
-            font-style: normal
-            font-weight: 500
-            font-size: 12px
-            line-height: 24px
-            letter-spacing: 0.15em
-            color: #FFFFFF
-    &Bot
-        padding: 39px 0 0 260px
-        position: relative
-        background-color: var(--green-blue)
-        grid-area: 2 / 2 / 3 / 3
-        .bannerHeader
-            font-family: Montserrat
-            font-style: normal
-            font-weight: bold
-            font-size: 24px
-            line-height: 36px
-            letter-spacing: 0.15em
-            color: #FFFFFF
-            margin-bottom: 13px
-            p
-                letter-spacing: 0
-        .bannerSubheader
-            font-family: Montserrat
-            font-style: normal
-            font-weight: 500
-            font-size: 12px
-            line-height: 24px
-            letter-spacing: 0.15em
-            color: #FFFFFF
+	display: grid
+	width: 1540px
+	height: 380px
+	grid-template-columns: 1040px 500px
+	grid-template-rows: repeat(2, 190px)
+	margin-bottom: 42px
+	&Slider
+		position: relative
+		padding: 76px 0 0 646px
+		background-color: var(--blue-first)
+		grid-area: 1 / 1 / 3 / 2
+		.sliderHeader
+			font-family: Montserrat
+			font-style: normal
+			font-weight: bold
+			font-size: 36px
+			line-height: 48px
+			letter-spacing: 0.15em
+			color: #fff
+			margin-bottom: 13px
+		.sliderSubheader
+			font-family: Montserrat
+			font-style: normal
+			font-weight: bold
+			font-size: 24px
+			line-height: 36px
+			color: #FFFFFF
+			margin-bottom: 31px
+		.sliderButton
+			width: 162px
+			height: 52px
+			border: none
+			background-color: var(--yellow)
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 500
+			font-size: 14px
+			line-height: 24px
+			text-align: center
+			letter-spacing: 0.15em
+		.dots
+			position: absolute
+			bottom: 40px
+			left: 50%
+			transform: translateX(-50%)
+			width: 130px
+			height: 10px
+			display: flex
+			justify-content: space-between
+			.firstDot
+				width: 10px
+				height: 10px
+				background-color: #fff
+				border-radius: 50%
+			.secondDot
+				width: 10px
+				height: 10px
+				background-color: #fff
+				border-radius: 50%
+			.thirdDot
+				width: 10px
+				height: 10px
+				background-color: #fff
+				border-radius: 50%
+			.fourthDot
+				width: 10px
+				height: 10px
+				background-color: #fff
+				border-radius: 50%
+			.fivethDot
+				width: 10px
+				height: 10px
+				background-color: #fff
+				border-radius: 50%
+	&Top
+		padding: 50px 0 0 260px
+		position: relative
+		background-color: var(--blue-second)
+		grid-area: 1 / 2 / 2 / 3
+		.bannerHeader
+			font-family: Montserrat
+			font-style: normal
+			font-weight: bold
+			font-size: 24px
+			line-height: 36px
+			letter-spacing: 0.15em
+			color: #FFFFFF
+			margin-bottom: 13px
+			p
+				letter-spacing: 0
+		.bannerSubheader
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 500
+			font-size: 12px
+			line-height: 24px
+			letter-spacing: 0.15em
+			color: #FFFFFF
+	&Bot
+		padding: 39px 0 0 260px
+		position: relative
+		background-color: var(--green-blue)
+		grid-area: 2 / 2 / 3 / 3
+		.bannerHeader
+			font-family: Montserrat
+			font-style: normal
+			font-weight: bold
+			font-size: 24px
+			line-height: 36px
+			letter-spacing: 0.15em
+			color: #FFFFFF
+			margin-bottom: 13px
+			p
+				letter-spacing: 0
+		.bannerSubheader
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 500
+			font-size: 12px
+			line-height: 24px
+			letter-spacing: 0.15em
+			color: #FFFFFF
 .icons
-    display: flex
-    width: 1521px
-    height: 66px
-    justify-content: space-between
-    align-items: center
-    margin-bottom: 54px
-    &Wrapper
-        display: flex
-        align-items: center
-        .deskription
-            display: flex
-            align-items: center
-            font-family: Montserrat
-            font-style: normal
-            font-weight: 500
-            font-size: 14px
-            line-height: 20px
-            color: #000
-        .car
-            width: 70px
-            height: 50px
-            margin-right: 21px
-            img
+	display: flex
+	width: 1521px
+	height: 66px
+	justify-content: space-between
+	align-items: center
+	margin-bottom: 54px
+	&Wrapper
+		display: flex
+		align-items: center
+		.deskription
+			display: flex
+			align-items: center
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 500
+			font-size: 14px
+			line-height: 20px
+			color: #000
+		.car
+			width: 70px
+			height: 50px
+			margin-right: 21px
+			img
 
-        .Shield
-            width: 56px
-            height: 66px
-            margin-right: 28px
-            img
-                width: 56px
-                height: 66px
-        .loader
-            width: 65px
-            height: 59px
-            margin-right: 21px
-            img
-                width: 65px
-                height: 59px
-        .currency
-            width: 64px
-            height: 64px
-            margin-right: 23px
-            img
-                width: 64px
-                height: 64px
-        .like
-            width: 60px
-            height: 58px
-            margin-right: 25px
-            img
-                width: 60px
-                height: 58px
+		.Shield
+			width: 56px
+			height: 66px
+			margin-right: 28px
+			img
+				width: 56px
+				height: 66px
+		.loader
+			width: 65px
+			height: 59px
+			margin-right: 21px
+			img
+				width: 65px
+				height: 59px
+		.currency
+			width: 64px
+			height: 64px
+			margin-right: 23px
+			img
+				width: 64px
+				height: 64px
+		.like
+			width: 60px
+			height: 58px
+			margin-right: 25px
+			img
+				width: 60px
+				height: 58px
 .collections
-    width: 100%
-    margin-bottom: 52px
-    &Header
-        display: inline-block
-        text-align: left
-        position: relative
-        font-family: Montserrat
-        font-style: normal
-        font-weight: bold
-        font-size: 30px
-        line-height: 36px
-        color: #000000
-        margin-bottom: 42px
-        &::after
-            content: ''
-            position: absolute
-            width: 100%
-            height: 1px
-            bottom: -5px
-            left: 50%
-            transform: translateX(-50%)
-            background-color: var(--blue-second)
-    &Wrapper
-        display: flex
-        column-gap: 18px
-        .left
-            width: 50%
-            height: 500px
-            background-image: url('../../Image/collection/bigImg.png')
-            background-size: cover
-            padding: 401px 0 0 0
-            &Header
-                width: 139px
-                height: 58px
-                background-color: rgba(59, 185, 184, 0.8)
-                display: flex
-                justify-content: center
-                align-items: center
-                margin-bottom: 6px
-                h2
-                    font-family: Montserrat
-                    font-style: normal
-                    font-weight: bold
-                    font-size: 24px
-                    line-height: 30px
-                    color: #FFFFFF
-            &Desckription
-                padding-left: 21px
-                font-family: Montserrat
-                font-style: normal
-                font-weight: 500
-                font-size: 14px
-                line-height: 24px
-                color: #FFFFFF
-        .right
-            width: 50%
-            display: flex
-            flex-direction: column
-            row-gap: 20px
-            &Up
-                height: 240px
-                width: 100%
-                display: flex
-                column-gap: 20px
-                &Left
-                    width: 500px
-                    height: 100%
-                    background-image: url('../../Image/collection/image 36.png')
-                    background-size: cover
-                    padding: 152px 0 0 0
-                    .leftHeader
-                        width: 158px
-                        height: 48px
-                        display: flex
-                        justify-content: center
-                        align-items: center
-                        font-family: Montserrat
-                        font-style: normal
-                        font-weight: bold
-                        font-size: 18px
-                        line-height: 24px
-                        color: #FFFFFF
-                        background-color: rgba(59, 185, 184, 0.8)
-                    .leftDesckription
-                        padding-left: 20px
-                        font-family: Montserrat
-                        font-style: normal
-                        font-weight: 500
-                        font-size: 14px
-                        line-height: 24px
-                        color: #FFFFFF
-                &Right
-                    height: 100%
-                    width: 240px
-                    background-image: url('../../Image/collection/image 37.png')
-                    background-size: cover
-                    padding: 152px 0 0 0
-                    .rightHeader
-                        width: 142px
-                        height: 48px
-                        display: flex
-                        justify-content: center
-                        align-items: center
-                        font-family: Montserrat
-                        font-style: normal
-                        font-weight: bold
-                        font-size: 18px
-                        line-height: 24px
-                        color: #FFFFFF
-                        background-color: rgba(59, 185, 184, 0.8)
-                    .rightDesckription
-                        padding-left: 22px
-                        font-family: Montserrat
-                        font-style: normal
-                        font-weight: 500
-                        font-size: 14px
-                        line-height: 24px
-                        color: #FFFFFF
-            &Bot
-                height: 240px
-                width: 100%
-                display: flex
-                column-gap: 20px
-                &Left
-                    height: 100%
-                    width: 240px
-                    background-image: url('../../Image/collection/image 39.png')
-                    background-size: cover
-                    padding: 151px 0 0 0
-                    .leftHeader
-                        width: 89px
-                        height: 48px
-                        display: flex
-                        justify-content: center
-                        align-items: center
-                        font-family: Montserrat
-                        font-style: normal
-                        font-weight: bold
-                        font-size: 18px
-                        line-height: 24px
-                        color: #FFFFFF
-                        background-color: rgba(59, 185, 184, 0.8)
-                    .leftDesckription
-                        padding-left: 20px
-                        font-family: Montserrat
-                        font-style: normal
-                        font-weight: 500
-                        font-size: 14px
-                        line-height: 24px
-                        color: #FFFFFF
-                &Right
-                    width: 500px
-                    height: 100%
-                    background-image: url('../../Image/collection/image 38.png')
-                    background-size: cover
-                    padding: 152px 0 0 0
-                    .rightHeader
-                        width: 123px
-                        height: 48px
-                        display: flex
-                        justify-content: center
-                        align-items: center
-                        font-family: Montserrat
-                        font-style: normal
-                        font-weight: bold
-                        font-size: 18px
-                        line-height: 24px
-                        color: #FFFFFF
-                        background-color: rgba(59, 185, 184, 0.8)
-                    .rightDesckription
-                        padding-left: 20px
-                        font-family: Montserrat
-                        font-style: normal
-                        font-weight: 500
-                        font-size: 14px
-                        line-height: 24px
-                        color: #FFFFFF
+	width: 100%
+	margin-bottom: 52px
+	&Header
+		display: inline-block
+		text-align: left
+		position: relative
+		font-family: Montserrat
+		font-style: normal
+		font-weight: bold
+		font-size: 30px
+		line-height: 36px
+		color: #000000
+		margin-bottom: 42px
+		&::after
+			content: ''
+			position: absolute
+			width: 100%
+			height: 1px
+			bottom: -5px
+			left: 50%
+			transform: translateX(-50%)
+			background-color: var(--blue-second)
+	&Wrapper
+		display: flex
+		column-gap: 18px
+		.left
+			width: 50%
+			height: 500px
+			background-image: url('../../Image/collection/bigImg.png')
+			background-size: cover
+			padding: 401px 0 0 0
+			&Header
+				width: 139px
+				height: 58px
+				background-color: rgba(59, 185, 184, 0.8)
+				display: flex
+				justify-content: center
+				align-items: center
+				margin-bottom: 6px
+				h2
+					font-family: Montserrat
+					font-style: normal
+					font-weight: bold
+					font-size: 24px
+					line-height: 30px
+					color: #FFFFFF
+			&Desckription
+				padding-left: 21px
+				font-family: Montserrat
+				font-style: normal
+				font-weight: 500
+				font-size: 14px
+				line-height: 24px
+				color: #FFFFFF
+		.right
+			width: 50%
+			display: flex
+			flex-direction: column
+			row-gap: 20px
+			&Up
+				height: 240px
+				width: 100%
+				display: flex
+				column-gap: 20px
+				&Left
+					width: 500px
+					height: 100%
+					background-image: url('../../Image/collection/image 36.png')
+					background-size: cover
+					padding: 152px 0 0 0
+					.leftHeader
+						width: 158px
+						height: 48px
+						display: flex
+						justify-content: center
+						align-items: center
+						font-family: Montserrat
+						font-style: normal
+						font-weight: bold
+						font-size: 18px
+						line-height: 24px
+						color: #FFFFFF
+						background-color: rgba(59, 185, 184, 0.8)
+					.leftDesckription
+						padding-left: 20px
+						font-family: Montserrat
+						font-style: normal
+						font-weight: 500
+						font-size: 14px
+						line-height: 24px
+						color: #FFFFFF
+				&Right
+					height: 100%
+					width: 240px
+					background-image: url('../../Image/collection/image 37.png')
+					background-size: cover
+					padding: 152px 0 0 0
+					.rightHeader
+						width: 142px
+						height: 48px
+						display: flex
+						justify-content: center
+						align-items: center
+						font-family: Montserrat
+						font-style: normal
+						font-weight: bold
+						font-size: 18px
+						line-height: 24px
+						color: #FFFFFF
+						background-color: rgba(59, 185, 184, 0.8)
+					.rightDesckription
+						padding-left: 22px
+						font-family: Montserrat
+						font-style: normal
+						font-weight: 500
+						font-size: 14px
+						line-height: 24px
+						color: #FFFFFF
+			&Bot
+				height: 240px
+				width: 100%
+				display: flex
+				column-gap: 20px
+				&Left
+					height: 100%
+					width: 240px
+					background-image: url('../../Image/collection/image 39.png')
+					background-size: cover
+					padding: 151px 0 0 0
+					.leftHeader
+						width: 89px
+						height: 48px
+						display: flex
+						justify-content: center
+						align-items: center
+						font-family: Montserrat
+						font-style: normal
+						font-weight: bold
+						font-size: 18px
+						line-height: 24px
+						color: #FFFFFF
+						background-color: rgba(59, 185, 184, 0.8)
+					.leftDesckription
+						padding-left: 20px
+						font-family: Montserrat
+						font-style: normal
+						font-weight: 500
+						font-size: 14px
+						line-height: 24px
+						color: #FFFFFF
+				&Right
+					width: 500px
+					height: 100%
+					background-image: url('../../Image/collection/image 38.png')
+					background-size: cover
+					padding: 152px 0 0 0
+					.rightHeader
+						width: 123px
+						height: 48px
+						display: flex
+						justify-content: center
+						align-items: center
+						font-family: Montserrat
+						font-style: normal
+						font-weight: bold
+						font-size: 18px
+						line-height: 24px
+						color: #FFFFFF
+						background-color: rgba(59, 185, 184, 0.8)
+					.rightDesckription
+						padding-left: 20px
+						font-family: Montserrat
+						font-style: normal
+						font-weight: 500
+						font-size: 14px
+						line-height: 24px
+						color: #FFFFFF
 .hits
-    max-height: 696px
-    margin-bottom: 40px
-    &Header
-        display: inline-block
-        text-align: left
-        position: relative
-        font-family: Montserrat
-        font-style: normal
-        font-weight: bold
-        font-size: 30px
-        line-height: 36px
-        color: #000000
-        margin-bottom: 42px
-        &::after
-            content: ''
-            position: absolute
-            width: 100%
-            height: 1px
-            bottom: -5px
-            left: 50%
-            transform: translateX(-50%)
-            background-color: var(--blue-second)
-    &Menu
-        max-width: 100%
-        display: flex
-        justify-content: flex-start
-        column-gap: 10px
-        height: 36px
-        margin-bottom: 30px
-        .tag
-            height: 100%
-            padding: 0 16px
-            background-color: #fff
-            display: flex
-            align-items: center
-            font-family: Montserrat
-            font-style: normal
-            font-weight: 500
-            font-size: 14px
-            line-height: 24px
-            display: flex
-            align-items: center
-            color: var(--blue-third)
-            border-radius: 4px
-            &:first-child
-                color: #fff
-                background-color: var(--green-blue)
-    &Wrapper
-        width: 100%
-        height: 540px
-        display: flex
-        .items
-            background-color: #fff
-            border-left: 1px solid rgba(232, 233, 233, 1)
-            width: 100%
-            padding: 10px 10px 0 10px
-            &:first-child
-                border: none
-            &Img
-                position: relative
-                width: 100%
-                height: 288px
-                margin-bottom: 20px
-                img
-                    height: 288px
-                    width: 288px
-                &Tags
-                    display: flex
-                    position: absolute
-                    top: 10px
-                    left: 10px
-                    .hot
-                        background-color: var(--yellow)
-                        width: 49px
-                        height: 24px
-                        display: flex
-                        justify-content: center
-                        align-items: center
-                        font-family: Montserrat
-                        font-style: normal
-                        font-weight: 500
-                        font-size: 12px
-                        line-height: 18px
-                        letter-spacing: 0.15em
-                        color: #000000
-                        text-transform: uppercase
-                    .tagTip
-                        width: 73px
-                        height: 24px
-                        display: flex
-                        justify-content: center
-                        align-items: center
-                        font-family: Montserrat
-                        font-style: normal
-                        font-weight: 500
-                        font-size: 12px
-                        line-height: 18px
-                        letter-spacing: 0.15em
-                        color: #FFFFFF
-                        background-color: var(--red)
-                        text-transform: uppercase
-            &Stars
-                display: flex
-                width: 128px
-                height: 14px
-                margin-left: 10px
-                margin-bottom: 16px
-                .starsWrapper
-                    position: relative
-                    display: flex
-                    align-items: center
-                    column-gap: 5px
-                    height: 100%
-                    margin-right: 8px
-                    .stars
-                        width: 13px
-                        height: 14px
-                        position: relative
-                        &Off
-                            height: 100%
-                            width: 100%
-                            display: block
-                            color: gray
-                            position: relative
-                            &:before
-                                position: absolute
-                                top: 0
-                                left: 0
-                                content: url('../../Image/hits/sterGrey.svg')
-                                width: 100%
-                                height: 100%
-                        &Full
-                            color: var(--yellow)
-                            height: 100%
-                            width: 100%
-                            position: relative
-                            &::before
-                                position: absolute
-                                top: 0
-                                left: 0
-                                content: url('../../Image/hits/star.svg')
-                                width: 100%
-                                height: 100%
-                        &Half
-                            height: 100%
-                            width: 100%
-                            position: relative
-                            &:after
-                                position: absolute
-                                top: 0
-                                left: 0
-                                content: url('../../Image/hits/star.svg')
-                                width: 53%
-                                height: 105%
-                                overflow: hidden
-                            &:before
-                                position: absolute
-                                top: 0
-                                left: 0
-                                content: url('../../Image/hits/sterGrey.svg')
-                                width: 100%
-                                height: 100%
-                .message
-                    height: 100%
-                    display: flex
-                    column-gap: 5px
-                    align-items: center
-                    img
-                        height: 13px
-                    &Count
-                        font-family: Montserrat
-                        font-style: normal
-                        font-weight: 500
-                        font-size: 12px
-                        line-height: 14px
-                        color: #000000
-            &Description
-                width: 100%
-                height: 60px
-                padding: 0 10px
-                font-family: Montserrat
-                font-style: normal
-                font-weight: 500
-                font-size: 14px
-                line-height: 20px
-                color: #000000
-                margin-bottom: 15px
-            &Country
-                padding: 0 10px
-                font-family: Montserrat
-                font-style: normal
-                font-weight: 500
-                font-size: 14px
-                line-height: 24px
-                color: #000000
-                margin-bottom: 13px
-            &Buy
-                display: flex
-                padding: 0 10px
-                justify-content: space-between
-                .price
-                    position: relative
-                    display: flex
-                    align-items: center
-                    justify-content: center
-                    font-family: Montserrat
-                    font-style: normal
-                    font-weight: bold
-                    font-size: 24px
-                    line-height: 30px
-                    color: #000000
-                    &::after
-                        content: attr(data-diuscount)
-                        position: absolute
-                        top: 34px
-                        left: 0
-                        font-family: Montserrat
-                        font-style: normal
-                        font-weight: bold
-                        font-size: 18px
-                        line-height: 24px
-                        text-decoration-line: line-through
-                        color: var(--red)
-                .buy
-                    width: 116px
-                    height: 36px
-                    border: 1px solid #2B7BC6
-                    border-radius: 4px
-                    display: flex
-                    justify-content: center
-                    align-items: center
-                    font-family: Montserrat
-                    font-style: normal
-                    font-weight: bold
-                    font-size: 12px
-                    line-height: 24px
-                    letter-spacing: 0.15em
-                    color: var(--blue-third)
+	max-height: 696px
+	margin-bottom: 40px
+	&Header
+		display: inline-block
+		text-align: left
+		position: relative
+		font-family: Montserrat
+		font-style: normal
+		font-weight: bold
+		font-size: 30px
+		line-height: 36px
+		color: #000000
+		margin-bottom: 42px
+		&::after
+			content: ''
+			position: absolute
+			width: 100%
+			height: 1px
+			bottom: -5px
+			left: 50%
+			transform: translateX(-50%)
+			background-color: var(--blue-second)
+	&Menu
+		max-width: 100%
+		display: flex
+		justify-content: flex-start
+		column-gap: 10px
+		height: 36px
+		margin-bottom: 30px
+		.tag
+			height: 100%
+			padding: 0 16px
+			background-color: #fff
+			display: flex
+			align-items: center
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 500
+			font-size: 14px
+			line-height: 24px
+			display: flex
+			align-items: center
+			color: var(--blue-third)
+			border-radius: 4px
+			&:first-child
+				color: #fff
+				background-color: var(--green-blue)
+	&Wrapper
+		width: 100%
+		height: 540px
+		display: flex
+		.items
+			background-color: #fff
+			border-left: 1px solid rgba(232, 233, 233, 1)
+			width: 100%
+			padding: 10px 10px 0 10px
+			&:first-child
+				border: none
+			&Img
+				position: relative
+				width: 100%
+				height: 288px
+				margin-bottom: 20px
+				img
+					height: 288px
+					width: 288px
+				&Tags
+					display: flex
+					position: absolute
+					top: 10px
+					left: 10px
+					.hot
+						background-color: var(--yellow)
+						width: 49px
+						height: 24px
+						display: flex
+						justify-content: center
+						align-items: center
+						font-family: Montserrat
+						font-style: normal
+						font-weight: 500
+						font-size: 12px
+						line-height: 18px
+						letter-spacing: 0.15em
+						color: #000000
+						text-transform: uppercase
+					.tagTip
+						width: 73px
+						height: 24px
+						display: flex
+						justify-content: center
+						align-items: center
+						font-family: Montserrat
+						font-style: normal
+						font-weight: 500
+						font-size: 12px
+						line-height: 18px
+						letter-spacing: 0.15em
+						color: #FFFFFF
+						background-color: var(--red)
+						text-transform: uppercase
+			&Stars
+				display: flex
+				width: 128px
+				height: 14px
+				margin-left: 10px
+				margin-bottom: 16px
+				.starsWrapper
+					position: relative
+					display: flex
+					align-items: center
+					column-gap: 5px
+					height: 100%
+					margin-right: 8px
+					.stars
+						width: 13px
+						height: 14px
+						position: relative
+						&Off
+							height: 100%
+							width: 100%
+							display: block
+							color: gray
+							position: relative
+							&:before
+								position: absolute
+								top: 0
+								left: 0
+								content: url('../../Image/hits/sterGrey.svg')
+								width: 100%
+								height: 100%
+						&Full
+							color: var(--yellow)
+							height: 100%
+							width: 100%
+							position: relative
+							&::before
+								position: absolute
+								top: 0
+								left: 0
+								content: url('../../Image/hits/star.svg')
+								width: 100%
+								height: 100%
+						&Half
+							height: 100%
+							width: 100%
+							position: relative
+							&:after
+								position: absolute
+								top: 0
+								left: 0
+								content: url('../../Image/hits/star.svg')
+								width: 53%
+								height: 105%
+								overflow: hidden
+							&:before
+								position: absolute
+								top: 0
+								left: 0
+								content: url('../../Image/hits/sterGrey.svg')
+								width: 100%
+								height: 100%
+				.message
+					height: 100%
+					display: flex
+					column-gap: 5px
+					align-items: center
+					img
+						height: 13px
+					&Count
+						font-family: Montserrat
+						font-style: normal
+						font-weight: 500
+						font-size: 12px
+						line-height: 14px
+						color: #000000
+			&Description
+				width: 100%
+				height: 60px
+				padding: 0 10px
+				font-family: Montserrat
+				font-style: normal
+				font-weight: 500
+				font-size: 14px
+				line-height: 20px
+				color: #000000
+				margin-bottom: 15px
+			&Country
+				padding: 0 10px
+				font-family: Montserrat
+				font-style: normal
+				font-weight: 500
+				font-size: 14px
+				line-height: 24px
+				color: #000000
+				margin-bottom: 13px
+			&Buy
+				display: flex
+				padding: 0 10px
+				justify-content: space-between
+				.price
+					position: relative
+					display: flex
+					align-items: center
+					justify-content: center
+					font-family: Montserrat
+					font-style: normal
+					font-weight: bold
+					font-size: 24px
+					line-height: 30px
+					color: #000000
+					&::after
+						content: attr(data-diuscount)
+						position: absolute
+						top: 34px
+						left: 0
+						font-family: Montserrat
+						font-style: normal
+						font-weight: bold
+						font-size: 18px
+						line-height: 24px
+						text-decoration-line: line-through
+						color: var(--red)
+				.buy
+					width: 116px
+					height: 36px
+					border: 1px solid #2B7BC6
+					border-radius: 4px
+					display: flex
+					justify-content: center
+					align-items: center
+					font-family: Montserrat
+					font-style: normal
+					font-weight: bold
+					font-size: 12px
+					line-height: 24px
+					letter-spacing: 0.15em
+					color: var(--blue-third)
 .stock
-    max-height: 776px
-    width: 100%
-    position: relative
-    z-index: 10
-    padding: 52px 0 40px 0
-    &::before
-        content: ''
-        width: 200vw
-        height: 100%
-        position: absolute
-        top: 0
-        left: -100vw
-        background-color: rgba(234, 244, 255, 1)
-        z-index: -1
-    &Header
-        display: inline-block
-        text-align: left
-        position: relative
-        font-family: Montserrat
-        font-style: normal
-        font-weight: bold
-        font-size: 30px
-        line-height: 36px
-        color: #000000
-        margin-bottom: 42px
-        &::after
-            content: ''
-            position: absolute
-            width: 100%
-            height: 1px
-            bottom: -5px
-            left: 50%
-            transform: translateX(-50%)
-            background-color: var(--blue-second)
-    &Menu
-        max-width: 100%
-        display: flex
-        justify-content: flex-start
-        column-gap: 10px
-        height: 36px
-        margin-bottom: 30px
-        .tag
-            height: 100%
-            padding: 0 16px
-            background-color: #fff
-            display: flex
-            align-items: center
-            font-family: Montserrat
-            font-style: normal
-            font-weight: 500
-            font-size: 14px
-            line-height: 24px
-            display: flex
-            align-items: center
-            color: var(--blue-third)
-            border-radius: 4px
-            &:first-child
-                color: #fff
-                background-color: var(--green-blue)
-    &Wrapper
-        width: 100%
-        height: 540px
-        display: flex
-        .items
-            background-color: #fff
-            border-left: 1px solid rgba(232, 233, 233, 1)
-            width: 100%
-            padding: 10px 10px 0 10px
-            &:first-child
-                border: none
-            &Img
-                position: relative
-                width: 100%
-                height: 288px
-                margin-bottom: 20px
-                img
-                    height: 288px
-                    width: 288px
-                &Tags
-                    display: flex
-                    position: absolute
-                    top: 10px
-                    left: 10px
-                    .hot
-                        background-color: var(--yellow)
-                        width: 49px
-                        height: 24px
-                        display: flex
-                        justify-content: center
-                        align-items: center
-                        font-family: Montserrat
-                        font-style: normal
-                        font-weight: 500
-                        font-size: 12px
-                        line-height: 18px
-                        letter-spacing: 0.15em
-                        color: #000000
-                        text-transform: uppercase
-                    .tagTip
-                        width: 73px
-                        height: 24px
-                        display: flex
-                        justify-content: center
-                        align-items: center
-                        font-family: Montserrat
-                        font-style: normal
-                        font-weight: 500
-                        font-size: 12px
-                        line-height: 18px
-                        letter-spacing: 0.15em
-                        color: #FFFFFF
-                        background-color: var(--red)
-                        text-transform: uppercase
-            &Stars
-                display: flex
-                width: 128px
-                height: 14px
-                margin-left: 10px
-                margin-bottom: 16px
-                .starsWrapper
-                    position: relative
-                    display: flex
-                    align-items: center
-                    column-gap: 5px
-                    height: 100%
-                    margin-right: 8px
-                    .stars
-                        width: 13px
-                        height: 14px
-                        position: relative
-                        &Off
-                            height: 100%
-                            width: 100%
-                            display: block
-                            color: gray
-                            position: relative
-                            &:before
-                                position: absolute
-                                top: 0
-                                left: 0
-                                content: url('../../Image/hits/sterGrey.svg')
-                                width: 100%
-                                height: 100%
-                        &Full
-                            color: var(--yellow)
-                            height: 100%
-                            width: 100%
-                            position: relative
-                            &::before
-                                position: absolute
-                                top: 0
-                                left: 0
-                                content: url('../../Image/hits/star.svg')
-                                width: 100%
-                                height: 100%
-                        &Half
-                            height: 100%
-                            width: 100%
-                            position: relative
-                            &:after
-                                position: absolute
-                                top: 0
-                                left: 0
-                                content: url('../../Image/hits/star.svg')
-                                width: 53%
-                                height: 105%
-                                overflow: hidden
-                            &:before
-                                position: absolute
-                                top: 0
-                                left: 0
-                                content: url('../../Image/hits/sterGrey.svg')
-                                width: 100%
-                                height: 100%
-                .message
-                    height: 100%
-                    display: flex
-                    column-gap: 5px
-                    align-items: center
-                    img
-                        height: 13px
-                    &Count
-                        font-family: Montserrat
-                        font-style: normal
-                        font-weight: 500
-                        font-size: 12px
-                        line-height: 14px
-                        color: #000000
-            &Description
-                width: 100%
-                height: 60px
-                padding: 0 10px
-                font-family: Montserrat
-                font-style: normal
-                font-weight: 500
-                font-size: 14px
-                line-height: 20px
-                color: #000000
-                margin-bottom: 15px
-            &Country
-                padding: 0 10px
-                font-family: Montserrat
-                font-style: normal
-                font-weight: 500
-                font-size: 14px
-                line-height: 24px
-                color: #000000
-                margin-bottom: 13px
-            &Buy
-                display: flex
-                padding: 0 10px
-                justify-content: space-between
-                .price
-                    position: relative
-                    display: flex
-                    align-items: center
-                    justify-content: center
-                    font-family: Montserrat
-                    font-style: normal
-                    font-weight: bold
-                    font-size: 24px
-                    line-height: 30px
-                    color: #000000
-                    &::after
-                        content: attr(data-diuscount)
-                        position: absolute
-                        top: 34px
-                        left: 0
-                        font-family: Montserrat
-                        font-style: normal
-                        font-weight: bold
-                        font-size: 18px
-                        line-height: 24px
-                        text-decoration-line: line-through
-                        color: var(--red)
-                .buy
-                    width: 116px
-                    height: 36px
-                    border: 1px solid #2B7BC6
-                    border-radius: 4px
-                    display: flex
-                    justify-content: center
-                    align-items: center
-                    font-family: Montserrat
-                    font-style: normal
-                    font-weight: bold
-                    font-size: 12px
-                    line-height: 24px
-                    letter-spacing: 0.15em
-                    color: var(--blue-third)
+	max-height: 776px
+	width: 100%
+	position: relative
+	z-index: 10
+	padding: 52px 0 40px 0
+	&::before
+		content: ''
+		width: 200vw
+		height: 100%
+		position: absolute
+		top: 0
+		left: -100vw
+		background-color: rgba(234, 244, 255, 1)
+		z-index: -1
+	&Header
+		display: inline-block
+		text-align: left
+		position: relative
+		font-family: Montserrat
+		font-style: normal
+		font-weight: bold
+		font-size: 30px
+		line-height: 36px
+		color: #000000
+		margin-bottom: 42px
+		&::after
+			content: ''
+			position: absolute
+			width: 100%
+			height: 1px
+			bottom: -5px
+			left: 50%
+			transform: translateX(-50%)
+			background-color: var(--blue-second)
+	&Menu
+		max-width: 100%
+		display: flex
+		justify-content: flex-start
+		column-gap: 10px
+		height: 36px
+		margin-bottom: 30px
+		.tag
+			height: 100%
+			padding: 0 16px
+			background-color: #fff
+			display: flex
+			align-items: center
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 500
+			font-size: 14px
+			line-height: 24px
+			display: flex
+			align-items: center
+			color: var(--blue-third)
+			border-radius: 4px
+			&:first-child
+				color: #fff
+				background-color: var(--green-blue)
+	&Wrapper
+		width: 100%
+		height: 540px
+		display: flex
+		.items
+			background-color: #fff
+			border-left: 1px solid rgba(232, 233, 233, 1)
+			width: 100%
+			padding: 10px 10px 0 10px
+			&:first-child
+				border: none
+			&Img
+				position: relative
+				width: 100%
+				height: 288px
+				margin-bottom: 20px
+				img
+					height: 288px
+					width: 288px
+				&Tags
+					display: flex
+					position: absolute
+					top: 10px
+					left: 10px
+					.hot
+						background-color: var(--yellow)
+						width: 49px
+						height: 24px
+						display: flex
+						justify-content: center
+						align-items: center
+						font-family: Montserrat
+						font-style: normal
+						font-weight: 500
+						font-size: 12px
+						line-height: 18px
+						letter-spacing: 0.15em
+						color: #000000
+						text-transform: uppercase
+					.tagTip
+						width: 73px
+						height: 24px
+						display: flex
+						justify-content: center
+						align-items: center
+						font-family: Montserrat
+						font-style: normal
+						font-weight: 500
+						font-size: 12px
+						line-height: 18px
+						letter-spacing: 0.15em
+						color: #FFFFFF
+						background-color: var(--red)
+						text-transform: uppercase
+			&Stars
+				display: flex
+				width: 128px
+				height: 14px
+				margin-left: 10px
+				margin-bottom: 16px
+				.starsWrapper
+					position: relative
+					display: flex
+					align-items: center
+					column-gap: 5px
+					height: 100%
+					margin-right: 8px
+					.stars
+						width: 13px
+						height: 14px
+						position: relative
+						&Off
+							height: 100%
+							width: 100%
+							display: block
+							color: gray
+							position: relative
+							&:before
+								position: absolute
+								top: 0
+								left: 0
+								content: url('../../Image/hits/sterGrey.svg')
+								width: 100%
+								height: 100%
+						&Full
+							color: var(--yellow)
+							height: 100%
+							width: 100%
+							position: relative
+							&::before
+								position: absolute
+								top: 0
+								left: 0
+								content: url('../../Image/hits/star.svg')
+								width: 100%
+								height: 100%
+						&Half
+							height: 100%
+							width: 100%
+							position: relative
+							&:after
+								position: absolute
+								top: 0
+								left: 0
+								content: url('../../Image/hits/star.svg')
+								width: 53%
+								height: 105%
+								overflow: hidden
+							&:before
+								position: absolute
+								top: 0
+								left: 0
+								content: url('../../Image/hits/sterGrey.svg')
+								width: 100%
+								height: 100%
+				.message
+					height: 100%
+					display: flex
+					column-gap: 5px
+					align-items: center
+					img
+						height: 13px
+					&Count
+						font-family: Montserrat
+						font-style: normal
+						font-weight: 500
+						font-size: 12px
+						line-height: 14px
+						color: #000000
+			&Description
+				width: 100%
+				height: 60px
+				padding: 0 10px
+				font-family: Montserrat
+				font-style: normal
+				font-weight: 500
+				font-size: 14px
+				line-height: 20px
+				color: #000000
+				margin-bottom: 15px
+			&Country
+				padding: 0 10px
+				font-family: Montserrat
+				font-style: normal
+				font-weight: 500
+				font-size: 14px
+				line-height: 24px
+				color: #000000
+				margin-bottom: 13px
+			&Buy
+				display: flex
+				padding: 0 10px
+				justify-content: space-between
+				.price
+					position: relative
+					display: flex
+					align-items: center
+					justify-content: center
+					font-family: Montserrat
+					font-style: normal
+					font-weight: bold
+					font-size: 24px
+					line-height: 30px
+					color: #000000
+					&::after
+						content: attr(data-diuscount)
+						position: absolute
+						top: 34px
+						left: 0
+						font-family: Montserrat
+						font-style: normal
+						font-weight: bold
+						font-size: 18px
+						line-height: 24px
+						text-decoration-line: line-through
+						color: var(--red)
+				.buy
+					width: 116px
+					height: 36px
+					border: 1px solid #2B7BC6
+					border-radius: 4px
+					display: flex
+					justify-content: center
+					align-items: center
+					font-family: Montserrat
+					font-style: normal
+					font-weight: bold
+					font-size: 12px
+					line-height: 24px
+					letter-spacing: 0.15em
+					color: var(--blue-third)
 .banner
-    width: 100%
-    max-height: 160px
-    padding-top: 40px
-    margin-bottom: 52px
-    &Wrapper
-        width: 100%
-        height: 120px
-        background-color: var(--blue-third)
-        display: flex
-        justify-content: center
-        align-items: center
-        span
-            font-family: Montserrat
-            font-style: normal
-            font-weight: 500
-            font-size: 16px
-            line-height: 20px
-            letter-spacing: 0.15em
-            color: #FFFFFF
-            text-transform: uppercase
+	width: 100%
+	max-height: 160px
+	padding-top: 40px
+	margin-bottom: 52px
+	&Wrapper
+		width: 100%
+		height: 120px
+		background-color: var(--blue-third)
+		display: flex
+		justify-content: center
+		align-items: center
+		span
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 500
+			font-size: 16px
+			line-height: 20px
+			letter-spacing: 0.15em
+			color: #FFFFFF
+			text-transform: uppercase
 .brands
-    max-height: 514px
-    width: 100%
-    margin-bottom: 52px
-    &Header
-        display: inline-block
-        text-align: left
-        position: relative
-        font-family: Montserrat
-        font-style: normal
-        font-weight: bold
-        font-size: 30px
-        line-height: 36px
-        color: #000000
-        margin-bottom: 42px
-        &::after
-            content: ''
-            position: absolute
-            width: 100%
-            height: 1px
-            bottom: -5px
-            left: 50%
-            transform: translateX(-50%)
-            background-color: var(--blue-second)
-    &Wrapper
-        width: 100%
-        max-height: 436px
-        display: flex
-        gap: 20px
-        flex-wrap: wrap
-    &Logo
-        display: flex
-        justify-content: center
-        align-items: center
-        width: 240px
-        height: 132px
-        background-color: #fff
+	max-height: 514px
+	width: 100%
+	margin-bottom: 52px
+	&Header
+		display: inline-block
+		text-align: left
+		position: relative
+		font-family: Montserrat
+		font-style: normal
+		font-weight: bold
+		font-size: 30px
+		line-height: 36px
+		color: #000000
+		margin-bottom: 42px
+		&::after
+			content: ''
+			position: absolute
+			width: 100%
+			height: 1px
+			bottom: -5px
+			left: 50%
+			transform: translateX(-50%)
+			background-color: var(--blue-second)
+	&Wrapper
+		width: 100%
+		max-height: 436px
+		display: flex
+		gap: 20px
+		flex-wrap: wrap
+	&Logo
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 240px
+		height: 132px
+		background-color: #fff
 .article
-    width: 100%
-    max-height: 456px
-    margin-bottom: 70px
-    &Header
-        display: inline-block
-        text-align: left
-        position: relative
-        font-family: Montserrat
-        font-style: normal
-        font-weight: bold
-        font-size: 30px
-        line-height: 36px
-        color: #000000
-        margin-bottom: 42px
-        &::after
-            content: ''
-            position: absolute
-            width: 100%
-            height: 1px
-            bottom: -5px
-            left: 50%
-            transform: translateX(-50%)
-            background-color: var(--blue-second)
-    &Wrapper
-        width: 100%
-        height: 377px
-        display: flex
-        overflow: hidden
-        column-gap: 20px
-        .itemArticle
-            display: flex
-            flex-direction: column
-            width: 370px
-            height: 100%
-            background-color: rgba(255, 255, 255, 1)
-            img
-                width: 100%
-                height: 247px
-            &Header
-                width: 100%
-                height: 100%
-                padding: 30px 30px 0 30px
-                span
-                    font-family: Montserrat
-                    font-style: normal
-                    font-weight: bold
-                    font-size: 16px
-                    line-height: 24px
-                    color: #000000
+	width: 100%
+	max-height: 456px
+	margin-bottom: 70px
+	&Header
+		display: inline-block
+		text-align: left
+		position: relative
+		font-family: Montserrat
+		font-style: normal
+		font-weight: bold
+		font-size: 30px
+		line-height: 36px
+		color: #000000
+		margin-bottom: 42px
+		&::after
+			content: ''
+			position: absolute
+			width: 100%
+			height: 1px
+			bottom: -5px
+			left: 50%
+			transform: translateX(-50%)
+			background-color: var(--blue-second)
+	&Wrapper
+		width: 100%
+		height: 377px
+		display: flex
+		overflow: hidden
+		column-gap: 20px
+		.itemArticle
+			display: flex
+			flex-direction: column
+			width: 370px
+			height: 100%
+			background-color: rgba(255, 255, 255, 1)
+			img
+				width: 100%
+				height: 247px
+			&Header
+				width: 100%
+				height: 100%
+				padding: 30px 30px 0 30px
+				span
+					font-family: Montserrat
+					font-style: normal
+					font-weight: bold
+					font-size: 16px
+					line-height: 24px
+					color: #000000
 .seo
-    width: 100%
-    height: 550px
-    position: relative
-    padding-left: 390px
-    margin-bottom: 70px
-    &Block
-        width: 100%
-        height: 100%
-        background-color: var(--green-blue)
-        padding: 62px 100px 70px 389px
-        &Header
-            font-family: Montserrat
-            font-style: normal
-            font-weight: bold
-            font-size: 30px
-            line-height: 36px
-            color: #FFFFFF
-            margin-bottom: 49px
-        &Text
-            font-family: Montserrat
-            font-style: normal
-            font-weight: 500
-            font-size: 16px
-            line-height: 30px
-            color: #FFFFFF
-    &Image
-        position: absolute
-        top: 0
-        left: 0
-        width: 629px
-        height: 471px
-        img
-            width: 100%
-            height: 100%
+	width: 100%
+	height: 550px
+	position: relative
+	padding-left: 390px
+	margin-bottom: 70px
+	&Block
+		width: 100%
+		height: 100%
+		background-color: var(--green-blue)
+		padding: 62px 100px 70px 389px
+		&Header
+			font-family: Montserrat
+			font-style: normal
+			font-weight: bold
+			font-size: 30px
+			line-height: 36px
+			color: #FFFFFF
+			margin-bottom: 49px
+		&Text
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 500
+			font-size: 16px
+			line-height: 30px
+			color: #FFFFFF
+	&Image
+		position: absolute
+		top: 0
+		left: 0
+		width: 629px
+		height: 471px
+		img
+			width: 100%
+			height: 100%
 .footer
-    min-height: 420px
-    width: 100%
-    display: flex
-    position: relative
-    z-index: 10
-    padding-top: 36px
-    margin-bottom: 41px
-    &::after
-        content: ''
-        width: 200vw
-        height: 100%
-        position: absolute
-        top: 0
-        left: -50vw
-        background-color: #fff
-        z-index: -1
-    &Section
-        max-width: 240px
-        margin-right: 157px
-        &List
-            margin-bottom: 36px
-            width: 100%
-            max-height: 240px
-            ul
-                li
-                    list-style-type: none
-                    font-family: Montserrat
-                    font-style: normal
-                    font-weight: 500
-                    font-size: 14px
-                    line-height: 40px
-                    color: var(--blue-third)
-        &Logo
-            width: 100%
-            display: flex
-            flex-direction: column
-            align-items: flex-start
-            gap: 17px
-            img
-                height: 24px
-            span
-                font-family: Montserrat
-                font-style: normal
-                font-weight: 500
-                font-size: 14px
-                line-height: 20px
-                color: var(--gray-blue-second)
-                a
-                    font-family: Montserrat
-                    font-style: normal
-                    font-weight: 500
-                    font-size: 14px
-                    line-height: 20px
-                    color: var(--gray-blue-second)
-    &Menu
-        max-width: 105px
-        max-height: 200px
-        margin-right: 256px
-        ul
-            li
-                list-style-type: none
-                font-family: Montserrat
-                font-style: normal
-                font-weight: 500
-                font-size: 14px
-                line-height: 40px
-                color: var(--blue-third)
-    &Contacts
-        max-width: 178px
-        margin-right: 210px
-        &Phone
-            font-family: Montserrat
-            font-style: normal
-            font-weight: 600
-            font-size: 21px
-            line-height: 40px
-            color: #000000
-            margin-bottom: 18px
-        &Button
-            width: 178px
-            height: 36px
-            margin-bottom: 18px
-            button
-                width: 100%
-                height: 100%
-                border: 1px solid #1061AB
-                box-sizing: border-box
-                border-radius: 4px
-                background-color: #fff
-                font-family: Montserrat
-                font-style: normal
-                font-weight: 600
-                font-size: 12px
-                line-height: 24px
-                text-align: center
-                letter-spacing: 0.15em
-                text-transform: uppercase
-                color: var(--blue-second)
-        &Shedule
-            display: flex
-            flex-direction: column
-            max-width: 150px
-            max-height: 90px
-            margin-bottom: 74px
-            span
-                font-family: Montserrat
-                font-style: normal
-                font-weight: 500
-                font-size: 14px
-                line-height: 30px
-                color: #000000
-        &Social
-            display: flex
-            gap: 29px
-            img
-                width: 30px
-                height: 30px
-    &Location
-        max-width: 250px
-        &Street
-            display: flex
-            flex-direction: column
-            font-family: Montserrat
-            font-style: normal
-            font-weight: 500
-            font-size: 14px
-            line-height: 30px
-            color: #000000
-            margin-bottom: 118px
-            span
-                a
-                    color: var(--blue-second)
-        &Yandex
-            width: 160px
-            height: 118px
-            img
-                width: 100%
-                height: 100%
+	min-height: 420px
+	width: 100%
+	display: flex
+	position: relative
+	z-index: 10
+	padding-top: 36px
+	margin-bottom: 41px
+	&::after
+		content: ''
+		width: 200vw
+		height: 100%
+		position: absolute
+		top: 0
+		left: -50vw
+		background-color: #fff
+		z-index: -1
+	&Section
+		max-width: 240px
+		margin-right: 157px
+		&List
+			margin-bottom: 36px
+			width: 100%
+			max-height: 240px
+			ul
+				li
+					list-style-type: none
+					font-family: Montserrat
+					font-style: normal
+					font-weight: 500
+					font-size: 14px
+					line-height: 40px
+					color: var(--blue-third)
+		&Logo
+			width: 100%
+			display: flex
+			flex-direction: column
+			align-items: flex-start
+			gap: 17px
+			img
+				height: 24px
+			span
+				font-family: Montserrat
+				font-style: normal
+				font-weight: 500
+				font-size: 14px
+				line-height: 20px
+				color: var(--gray-blue-second)
+				a
+					font-family: Montserrat
+					font-style: normal
+					font-weight: 500
+					font-size: 14px
+					line-height: 20px
+					color: var(--gray-blue-second)
+	&Menu
+		max-width: 105px
+		max-height: 200px
+		margin-right: 256px
+		ul
+			li
+				list-style-type: none
+				font-family: Montserrat
+				font-style: normal
+				font-weight: 500
+				font-size: 14px
+				line-height: 40px
+				color: var(--blue-third)
+	&Contacts
+		max-width: 178px
+		margin-right: 210px
+		&Phone
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 600
+			font-size: 21px
+			line-height: 40px
+			color: #000000
+			margin-bottom: 18px
+		&Button
+			width: 178px
+			height: 36px
+			margin-bottom: 18px
+			button
+				width: 100%
+				height: 100%
+				border: 1px solid #1061AB
+				box-sizing: border-box
+				border-radius: 4px
+				background-color: #fff
+				font-family: Montserrat
+				font-style: normal
+				font-weight: 600
+				font-size: 12px
+				line-height: 24px
+				text-align: center
+				letter-spacing: 0.15em
+				text-transform: uppercase
+				color: var(--blue-second)
+		&Shedule
+			display: flex
+			flex-direction: column
+			max-width: 150px
+			max-height: 90px
+			margin-bottom: 74px
+			span
+				font-family: Montserrat
+				font-style: normal
+				font-weight: 500
+				font-size: 14px
+				line-height: 30px
+				color: #000000
+		&Social
+			display: flex
+			gap: 29px
+			img
+				width: 30px
+				height: 30px
+	&Location
+		max-width: 250px
+		&Street
+			display: flex
+			flex-direction: column
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 500
+			font-size: 14px
+			line-height: 30px
+			color: #000000
+			margin-bottom: 118px
+			span
+				a
+					color: var(--blue-second)
+		&Yandex
+			width: 160px
+			height: 118px
+			img
+				width: 100%
+				height: 100%
 .rules
-    width: 100%
-    padding-bottom: 49px
-    span
-        font-family: Montserrat
-        font-style: normal
-        font-weight: 500
-        font-size: 14px
-        line-height: 24px
-        color: var(--gray-blue-second)
-        a
-            color: var(--blue-second)
+	width: 100%
+	padding-bottom: 49px
+	span
+		font-family: Montserrat
+		font-style: normal
+		font-weight: 500
+		font-size: 14px
+		line-height: 24px
+		color: var(--gray-blue-second)
+		a
+			color: var(--blue-second)

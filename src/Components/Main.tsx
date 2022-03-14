@@ -129,14 +129,97 @@ const Main = () => {
 									</div>
 								</div>
 								<div className={s.hoverInfo}>
-									<div className={s.wrapperInfo}></div>
-									<div className={s.wrapperInfo}></div>
-									<div className={s.wrapperInfo}></div>
-									<div className={s.wrapperInfo}></div>
-									<div className={s.wrapperInfo}></div>
-									<div className={s.wrapperInfo}></div>
-									<div className={s.wrapperInfo}></div>
-									<div className={s.wrapperInfo}></div>
+									<div className={s.wrapperTile}>
+										<div className={s.wrapperTileHeader}>
+											<span>Сантехника</span>
+										</div>
+										<div className={s.wrapperTileMenu}>
+											<div className={s.firstColumn}>
+												<div className={s.firstColumnWrapper}>
+													<span>Ванны</span>
+													<ul>
+														<a href="/">
+															<li>Ванны 150 см</li>
+														</a>
+														<a href="/">
+															<li>Ванны 160 см</li>
+														</a>
+														<a href="/">
+															<li>Ванны 170 см</li>
+														</a>
+														<a href="/">
+															<li>Еще</li>
+														</a>
+													</ul>
+												</div>
+												<div className={s.firstColumnWrapper}>
+													<span>Унитазы</span>
+													<ul>
+														<a href="/">
+															<li>2 режима смыва</li>
+														</a>
+														<a href="/">
+															<li>Без ободка</li>
+														</a>
+														<a href="/">
+															<li>Подвесные</li>
+														</a>
+														<a href="/">
+															<li>Еще</li>
+														</a>
+													</ul>
+												</div>
+												<div className={s.firstColumnWrapper}>
+													<span>Раковины</span>
+													<ul>
+														<a href="/">
+															<li>Шириной 40 см</li>
+														</a>
+														<a href="/">
+															<li>Шириной 50 см</li>
+														</a>
+														<a href="/">
+															<li>Шириной 60 см</li>
+														</a>
+														<a href="/">
+															<li>Еще</li>
+														</a>
+													</ul>
+												</div>
+												<div className={s.firstColumnWrapper}>
+													<span>Смесители</span>
+													<ul>
+														<a href="/">
+															<li>Кухонные мойки Ulgran</li>
+														</a>
+														<a href="/">
+															<li>Однорычажные для кухни</li>
+														</a>
+														<a href="/">
+															<li>Премиальные бренда Webert</li>
+														</a>
+														<a href="/">
+															<li>Еще</li>
+														</a>
+													</ul>
+												</div>
+											</div>
+											<div className={s.secondColumn}>
+
+											</div>
+											<div className={s.thirdColumn}>
+
+											</div>
+											<div className={s.fourthColumn}>
+
+											</div>
+										</div>
+									</div>
+									<div className={s.wrapperPlumbing}></div>
+									<div className={s.wrapperBathroomFurniture}></div>
+									<div className={s.wrapperElectronics}></div>
+									<div className={s.wrapperHeating}></div>
+									<div className={s.wrapperFlooring}></div>
 								</div>
 							</div>
 						</div>
@@ -145,7 +228,7 @@ const Main = () => {
 						<div className={s.stonksText}>АКЦИИ</div>
 					</a>
 					<a href="/" className={s.brand}>
-							<div className={s.brandText}>БРЕНДЫ</div>
+						<div className={s.brandText}>БРЕНДЫ</div>
 					</a>
 				</div>
 				<div className={s.menuSearcher}>
