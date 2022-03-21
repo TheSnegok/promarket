@@ -129,97 +129,174 @@ const Main = () => {
 									</div>
 								</div>
 								<div className={s.hoverInfo}>
-									<div className={s.wrapperTile}>
-										<div className={s.wrapperTileHeader}>
-											<span>Сантехника</span>
-										</div>
-										<div className={s.wrapperTileMenu}>
-											<div className={s.firstColumn}>
-												<div className={s.firstColumnWrapper}>
-													<span>Ванны</span>
-													<ul>
-														<a href="/">
-															<li>Ванны 150 см</li>
-														</a>
-														<a href="/">
-															<li>Ванны 160 см</li>
-														</a>
-														<a href="/">
-															<li>Ванны 170 см</li>
-														</a>
-														<a href="/">
-															<li>Еще</li>
-														</a>
-													</ul>
-												</div>
-												<div className={s.firstColumnWrapper}>
-													<span>Унитазы</span>
-													<ul>
-														<a href="/">
-															<li>2 режима смыва</li>
-														</a>
-														<a href="/">
-															<li>Без ободка</li>
-														</a>
-														<a href="/">
-															<li>Подвесные</li>
-														</a>
-														<a href="/">
-															<li>Еще</li>
-														</a>
-													</ul>
-												</div>
-												<div className={s.firstColumnWrapper}>
-													<span>Раковины</span>
-													<ul>
-														<a href="/">
-															<li>Шириной 40 см</li>
-														</a>
-														<a href="/">
-															<li>Шириной 50 см</li>
-														</a>
-														<a href="/">
-															<li>Шириной 60 см</li>
-														</a>
-														<a href="/">
-															<li>Еще</li>
-														</a>
-													</ul>
-												</div>
-												<div className={s.firstColumnWrapper}>
-													<span>Смесители</span>
-													<ul>
-														<a href="/">
-															<li>Кухонные мойки Ulgran</li>
-														</a>
-														<a href="/">
-															<li>Однорычажные для кухни</li>
-														</a>
-														<a href="/">
-															<li>Премиальные бренда Webert</li>
-														</a>
-														<a href="/">
-															<li>Еще</li>
-														</a>
-													</ul>
-												</div>
-											</div>
-											<div className={s.secondColumn}>
-
-											</div>
-											<div className={s.thirdColumn}>
-
-											</div>
-											<div className={s.fourthColumn}>
-
-											</div>
-										</div>
+									<div className={s.hoverInfoHeader}>
+										<span>Сантехника</span>
 									</div>
-									<div className={s.wrapperPlumbing}></div>
-									<div className={s.wrapperBathroomFurniture}></div>
-									<div className={s.wrapperElectronics}></div>
-									<div className={s.wrapperHeating}></div>
-									<div className={s.wrapperFlooring}></div>
+									<div className={s.wrapper}>
+										<div className={s.wrapperFirst}>
+											<div className={s.columnWrapper}>
+												<span className={s.columnWrapperHeader}>Ванны</span>
+												<ul>
+													<li>
+														<a href="/">
+															<span>Ванны 150 см</span>
+														</a>
+													</li>
+													<li>
+														<a href="/">
+															<span>Ванны 160 см</span>
+														</a>
+													</li>
+													<li>
+														<a href="/">
+															<span>Ванны 170 см</span>
+														</a>
+													</li>
+													<li>
+														<a href="/">
+															<span>Еще</span>
+														</a>
+													</li>
+												</ul>
+											</div>
+											<div className={s.columnWrapper}>
+												<span className={s.columnWrapperHeader}>Унитазы</span>
+												<ul>
+													<li>
+														<a href="/">
+															<span>2 режима смыва</span>
+														</a>
+													</li>
+													<li>
+														<a href="/">
+															<span>Без ободка</span>
+														</a>
+													</li>
+													<li>
+														<a href="/">
+															<span>Подвесные</span>
+														</a>
+													</li>
+													<li>
+														<a href="/">
+															<span>Еще</span>
+														</a>
+													</li>
+												</ul>
+											</div>
+											<div className={s.columnWrapper}>
+												<span className={s.columnWrapperHeader}>Раковины</span>
+												<ul>
+													<li>
+														<a href="/">
+															<span>Шириной 40 см</span>
+														</a>
+													</li>
+													<li>
+														<a href="/">
+															<span>Шириной 50 см</span>
+														</a>
+													</li>
+													<li>
+														<a href="/">
+															<span>Шириной 60 см</span>
+														</a>
+													</li>
+													<li>
+														<a href="/">
+															<span>Еще</span>
+														</a>
+													</li>
+												</ul>
+											</div>
+											<div className={s.columnWrapper}>
+												<span className={s.columnWrapperHeader}>Смесители</span>
+												<ul>
+													<li>
+														<a href="/">
+															<span>Кухонные мойки Ulgran</span>
+														</a>
+													</li>
+													<li>
+														<a href="/">
+															<span>Однорычажные для кухни</span>
+														</a>
+													</li>
+													<li>
+														<a href="/">
+															<span>Премиальные бренда Webert</span>
+														</a>
+													</li>
+													<li>
+														<a href="/">
+															<span>Еще</span>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div className={s.wrapperSecond}>
+											<ul>
+												<li>
+													<a href="/">Душевые кабины, уголки</a>
+												</li>
+												<li>
+													<a href="/">Биде</a>
+												</li>
+												<li>
+													<a href="/">Душевые боксы</a>
+												</li>
+												<li>
+													<a href="/">Душевые ограждения</a>
+												</li>
+												<li>
+													<a href="/">Душевые поддоны</a>
+												</li>
+												<li>
+													<a href="/">Душевые трапы и лотки</a>
+												</li>
+												<li>
+													<a href="/">Инсталляции</a>
+												</li>
+												<li>
+													<a href="/">Сливные трапы, желоба</a>
+												</li>
+												<li>
+													<a href="/">Душевые гарнитуры</a>
+												</li>
+												<li>
+													<a href="/">Душевые системы</a>
+												</li>
+												<li>
+													<a href="/">Душевые панели</a>
+												</li>
+												<li>
+													<a href="/">Верхние души</a>
+												</li>
+												<li>
+													<a href="/">Гигиенические души</a>
+												</li>
+												<li>
+													<a href="/">Аксессуары для ванной</a>
+												</li>
+											</ul>
+										</div>
+										<div className={s.wrapperThird}>
+											<ul>
+												<li><a href="/">Аксессуары для
+													общественных санузлов</a></li>
+												<li><a href="/">Комплектующие</a></li>
+												<li><a href="/">Кухонные мойки</a></li>
+												<li><a href="/">Гидромассаж</a></li>
+												<li><a href="/">Трубы и фитинги</a></li>
+												<li><a href="/">Изделия для инвалидов</a></li>
+												<li><a href="/">Инструменты сантехнические</a></li>
+												<li><a href="/">Писсуары</a></li>
+												<li><a href="/">Фильтры</a></li>
+											</ul>
+										</div>
+										<div className={s.wrapperBanner}></div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -250,7 +327,7 @@ const Main = () => {
 						{/* <div className={s.shoppingAlert}>2</div> */}
 					</div>
 				</div>
-			</menu>
+			</menu >
 			<section className={s.banners}>
 				<div className={s.bannersSlider}>
 					<div className={s.sliderHeader}>
@@ -1018,7 +1095,7 @@ const Main = () => {
 				<br /><br />
 				<span>Сайт использует технологию cookie. Используя сайт, Вы соглашаетесь с <a href="/">правилами использования cookie</a>, а также даете <a href="/">согласие на обработку персональных данных</a></span>
 			</section>
-		</div>
+		</div >
 	)
 }
 

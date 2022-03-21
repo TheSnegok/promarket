@@ -254,46 +254,114 @@
 					&Info
 						width: 100%
 						height: 100%
-						padding: 31px 0 0 50px
-						.wrapperTile
-							height: 100%
+						padding: 31px 0 57px 50px
+						z-index: 10
+						background: #fff
+						&Header
+							margin-bottom: 30px
+							span
+								font-family: 'Montserrat'
+								font-style: normal
+								font-weight: 600
+								font-size: 24px
+								line-height: 30px
+								color: #000000
+						.wrapper
 							width: 100%
-							&Header
+							height: 100%
+							display: flex
+							&First
+								height: 100%
+								width: 250px
+							.columnWrapper
 								margin-bottom: 30px
-								span
+								&:last-child
+									margin-bottom: 0
+								&Header
+									display: block
 									font-family: 'Montserrat'
 									font-style: normal
 									font-weight: 600
-									font-size: 24px
-									line-height: 30px
+									font-size: 14px
+									line-height: 20px
 									color: #000000
-							&Menu
-								width: 250px
+									margin-bottom: 6px
+								ul
+									list-style-type: none
+									span
+										position: relative
+										font-family: 'Montserrat'
+										font-style: normal
+										font-weight: 500
+										font-size: 14px
+										line-height: 24px
+										color: var(--blue-third)
+										&:hover::after
+											content: ''
+											position: absolute
+											width: 100%
+											height: 1px
+											bottom: -3px
+											left: 0
+											background-color: var(--blue-third)
+							&Second
 								height: 100%
-								.firstColumnWrapper
-									margin-bottom: 30px
+								width: 230px
+								margin-right: 20px
+								li
+									list-style-type: none
+									margin-bottom: 24px
 									&:last-child
 										margin-bottom: 0
-									span
-										display: block
+									a
+										position: relative
 										font-family: 'Montserrat'
 										font-style: normal
 										font-weight: 600
 										font-size: 14px
 										line-height: 20px
 										color: #000000
-										margin-bottom: 6px
-									ul
-										list-style-type: none
-										a
-											font-family: 'Montserrat'
-											font-style: normal
-											font-weight: 500
-											font-size: 14px
-											line-height: 24px
+										&:hover
 											color: var(--blue-third)
-											&:hover
-												text-decoration: underline
+											&::after
+												content: ''
+												position: absolute
+												width: 100%
+												height: 1px
+												bottom: -3px
+												left: 0
+												background-color: var(--blue-third)
+							&Third
+								width: 230px
+								height: 100%
+								margin-right: 114px
+								li
+									list-style-type: none
+									margin-bottom: 24px
+									&:last-child
+										margin-bottom: 0
+									a
+										position: relative
+										font-family: 'Montserrat'
+										font-style: normal
+										font-weight: 600
+										font-size: 14px
+										line-height: 20px
+										color: #000000
+										&:hover
+											color: var(--blue-third)
+											&::after
+												content: ''
+												position: absolute
+												width: 100%
+												height: 1px
+												bottom: -3px
+												left: 0
+												background-color: var(--blue-third)
+							&Banner
+								width: 300px
+								height: 380px
+								background-color: var(--yellow)
 		.stonks
 			display: flex
 			justify-content: center
