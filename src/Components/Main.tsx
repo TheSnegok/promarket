@@ -301,6 +301,7 @@ const Main = () => {
 							</div>
 						</div>
 					</div>
+					<div className={s.catalogHover}></div>
 					<a href="/" className={s.stonks}>
 						<div className={s.stonksText}>АКЦИИ</div>
 					</a>
@@ -327,6 +328,7 @@ const Main = () => {
 						{/* <div className={s.shoppingAlert}>2</div> */}
 					</div>
 				</div>
+				<div className={s.catalogHover}></div>
 			</menu >
 			<section className={s.banners}>
 				<div className={s.bannersSlider}>
