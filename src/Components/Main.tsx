@@ -1,7 +1,8 @@
-import React from 'react'
+import { FC } from 'react';
 import s from '../Styles/blocks/header.module.sass';
+import Header from "./Header/Header";
+
 import logo from '../Image/logo.svg';
-import mark from '../Image/Subtract.svg';
 import loop from '../Image/search.svg';
 import cabinet from '../Image/Group.svg';
 import desire from '../Image/heart.svg';
@@ -63,33 +64,10 @@ import Electronics from '../Image/hoverMenu/icon4.svg';
 import heating from '../Image/hoverMenu/icon5.svg';
 import flooring from '../Image/hoverMenu/icon6.svg';
 
-const Main = () => {
+const Main: FC = () => {
 	return (
-		<div className="container">
-			<header className={s.header}>
-				<div className={s.headerLogo}>
-					<img src={logo} alt="logo" className={s.logo} />
-				</div>
-				<div className={s.headerLocation}>
-					<img src={mark} alt="mark" className={s.mark} />
-					<div className={s.regions}>Москва</div>
-				</div>
-				<div className={s.headerPhone}>
-					<div className={s.number}>
-						8 495 018-32-10
-					</div>
-					<div className={s.popup}>
-					</div>
-					<div className={s.phoneCall}>Заказать звонок</div>
-				</div>
-				<div className={s.headerMenu}>
-					<div className={s.menuitem}><a href="/">Оплата</a></div>
-					<div className={s.menuitem}><a href="/">Доставка</a></div>
-					<div className={s.menuitem}><a href="/">Поставщикам</a></div>
-					<div className={s.menuitem}><a href="/">Статьи</a></div>
-					<div className={s.menuitem}><a href="/">Контакты</a></div>
-				</div>
-			</header>
+		<main className="container">
+			<Header />
 			<menu className={s.menu}>
 				<div className={s.menuItems}>
 					<div className={s.catalog}>
@@ -1097,7 +1075,7 @@ const Main = () => {
 				<br /><br />
 				<span>Сайт использует технологию cookie. Используя сайт, Вы соглашаетесь с <a href="/">правилами использования cookie</a>, а также даете <a href="/">согласие на обработку персональных данных</a></span>
 			</section>
-		</div >
+		</main>
 	)
 }
 
