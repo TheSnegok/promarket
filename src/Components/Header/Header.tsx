@@ -1,6 +1,5 @@
 import { FC } from 'react'
 import s from "./Header.module.sass"
-// svg image
 import logo from '../../Image/logo.svg';
 import mark from '../../Image/Subtract.svg';
 

@@ -1,6 +1,5 @@
 import { FC } from "react";
 import s from "./Menu.module.sass";
-// import img for Menu
 import tile from '../../Image/hoverMenu/icon1.svg';
 import plumbing from '../../Image/hoverMenu/icon2.svg';
 import bathroomFurniture from '../../Image/hoverMenu/icon3.svg';
