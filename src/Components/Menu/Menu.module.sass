@@ -1,0 +1,363 @@
+.menu
+	display: flex
+	width: 100%
+	height: 60px
+	margin-bottom: 14px
+	z-index: 10
+	&Items
+		display: flex
+		width: 554px
+		position: relative
+		.catalog
+			display: flex
+			align-items: center
+			width: 296px
+			height: 100%
+			background-color: var(--blue-first)
+			padding: 0 24px
+			position: relative
+			.burger
+				width: 24px
+				height: 18px
+				position: relative
+				margin-right: 21px
+				.line
+					&1
+						position: absolute
+						top: 0
+						left: 50%
+						width: 100%
+						height: 2px
+						background-color: #fff
+						transform: translateX(-50%)
+					&2
+						position: absolute
+						top: calc(50% - 1px)
+						left: 50%
+						width: 100%
+						height: 2px
+						background-color: #fff
+						transform: translateX(-50%)
+					&3
+						position: absolute
+						top: calc(100% - 1px)
+						left: 50%
+						width: 100%
+						height: 2px
+						background-color: #fff
+						transform: translateX(-50%)
+			&Text
+				&Header
+					height: 20px
+					width: 203px
+					overflow: hidden
+					font-family: Montserrat
+					font-style: normal
+					font-weight: 600
+					font-size: 16px
+					line-height: 20px
+					color: #fff
+					letter-spacing: 0.14em
+					text-transform: uppercase
+					cursor: default
+				.border
+					display: none
+				.hover
+					display: none
+			&:hover
+				.border
+					display: block
+					position: absolute
+					top: 60px
+					left: 0
+					background-color: rgba(234, 22, 73, 1)
+					height: 3px
+					width: 296px
+				.hover
+					display: block
+					position: absolute
+					top: 63px
+					left: 0
+					width: 1540px
+					height: 740px
+					background-color: #fff
+					z-index: 9999
+					display: flex
+					&Sections
+						width: 296px
+						height: 100%
+						background: rgba(241, 248, 255, 1)
+						padding-top: 17px
+						.wrapperSections
+							width: 296px
+							height: 56px
+							display: flex
+							align-items: center
+							padding-left: 21px
+							cursor: pointer
+							&:hover
+								background-color: #fff
+							img
+								width: 30px
+								height: 30px
+								margin-right: 18px
+							span
+								font-family: Montserrat
+								font-style: normal
+								font-weight: 600
+								font-size: 14px
+								line-height: 20px
+								color: #000000
+							&:nth-child(2)
+								img
+									width: 30px
+									height: 33px
+									margin-right: 18px
+							&:nth-child(3)
+								img
+									width: 26px
+									height: 32px
+									margin-right: 20px
+							&:nth-child(4)
+								img
+									width: 26px
+									height: 32px
+									margin-right: 20px
+							&:nth-child(5)
+								img
+									width: 28px
+									height: 32px
+									margin-right: 19px
+							&:nth-child(6)
+								img
+									width: 30px
+									height: 30px
+									margin-right: 18px
+					&Info
+						width: 100%
+						height: 100%
+						padding: 31px 0 57px 50px
+						z-index: 10
+						background: #fff
+						&Header
+							margin-bottom: 30px
+							span
+								font-family: 'Montserrat'
+								font-style: normal
+								font-weight: 600
+								font-size: 24px
+								line-height: 30px
+								color: #000000
+						.wrapper
+							width: 100%
+							height: 100%
+							display: flex
+							&First
+								height: 100%
+								width: 250px
+							.columnWrapper
+								margin-bottom: 30px
+								&:last-child
+									margin-bottom: 0
+								&Header
+									display: block
+									font-family: 'Montserrat'
+									font-style: normal
+									font-weight: 600
+									font-size: 14px
+									line-height: 20px
+									color: #000000
+									margin-bottom: 6px
+								ul
+									list-style-type: none
+									span
+										position: relative
+										font-family: 'Montserrat'
+										font-style: normal
+										font-weight: 500
+										font-size: 14px
+										line-height: 24px
+										color: var(--blue-third)
+										&:hover::after
+											content: ''
+											position: absolute
+											width: 100%
+											height: 1px
+											bottom: -3px
+											left: 0
+											background-color: var(--blue-third)
+							&Second
+								height: 100%
+								width: 230px
+								margin-right: 20px
+								li
+									list-style-type: none
+									margin-bottom: 24px
+									&:last-child
+										margin-bottom: 0
+									a
+										position: relative
+										font-family: 'Montserrat'
+										font-style: normal
+										font-weight: 600
+										font-size: 14px
+										line-height: 20px
+										color: #000000
+										&:hover
+											color: var(--blue-third)
+											&::after
+												content: ''
+												position: absolute
+												width: 100%
+												height: 1px
+												bottom: -3px
+												left: 0
+												background-color: var(--blue-third)
+							&Third
+								width: 230px
+								height: 100%
+								margin-right: 114px
+								li
+									list-style-type: none
+									margin-bottom: 24px
+									&:last-child
+										margin-bottom: 0
+									a
+										position: relative
+										font-family: 'Montserrat'
+										font-style: normal
+										font-weight: 600
+										font-size: 14px
+										line-height: 20px
+										color: #000000
+										&:hover
+											color: var(--blue-third)
+											&::after
+												content: ''
+												position: absolute
+												width: 100%
+												height: 1px
+												bottom: -3px
+												left: 0
+												background-color: var(--blue-third)
+							&Banner
+								width: 300px
+								height: 380px
+								background-color: var(--yellow)
+		.catalogHover
+			display: none
+		.catalog:hover + .catalogHover
+			display: block
+			position: absolute
+			top: 64px
+			left: -50vw
+			z-index: 9
+			background: rgba(212, 228, 243, 0.7)
+			width: 200vw
+			height: 500vh
+		.stonks
+			display: flex
+			justify-content: center
+			align-items: center
+			background-color: var(--blue-second)
+			height: 100%
+			width: 121px
+			z-index: 10
+			&Text
+				font-family: Montserrat
+				font-style: normal
+				font-weight: 600
+				font-size: 16px
+				line-height: 20px
+				letter-spacing: 0.15em
+				color: #fff
+		.brand
+			width: 137px
+			height: 100%
+			display: flex
+			justify-content: center
+			align-items: center
+			background-color: var(--blue-third)
+			z-index: 10
+			&Text
+				font-family: Montserrat
+				font-style: normal
+				font-weight: 600
+				font-size: 16px
+				line-height: 20px
+				letter-spacing: 0.15em
+				color: #fff
+	&Searcher
+		position: relative
+		width: 746px
+		height: 100%
+		z-index: 10
+		.input
+			width: 746px
+			height: 100%
+			border: none
+			padding: 20px 24px
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 600
+			font-size: 16px
+			line-height: 20px
+			color: var(--dark-gray)
+		.icon
+			width: 22px
+			height: 23px
+			position: absolute
+			top: 50%
+			right: 24px
+			transform: translate(-50%, -50%)
+			.loop
+				width: 100%
+				height: 100%
+	&Actions
+		width: 240px
+		height: 100%
+		background-color: rgba(241, 248, 255, 1)
+		padding: 15px 40px
+		display: flex
+		justify-content: space-between
+		align-items: center
+		z-index: 10
+		.cabinet
+			width: 26px
+			height: 29px
+			&Img
+				height: 100%
+				width: 100%
+		.desired
+			position: relative
+			width: 32px
+			height: 29px
+			&Img
+				height: 100%
+				width: 100%
+		.shopping
+			position: relative
+			width: 35px
+			height: 29px
+			&Img
+				height: 100%
+				width: 100%
+		.desired, .shopping
+			&Alert
+				position: absolute
+				bottom: calc(100% + 5px)
+				left: 50%
+				width: 22px
+				height: 22px
+				border-radius: 50%
+				transform: translateX(-50%)
+				background-color: var(--yellow)
+				display: flex
+				justify-content: center
+				align-items: center
+				font-family: Montserrat
+				font-style: normal
+				font-weight: 600
+				font-size: 12px
+				line-height: 15px
+				color: var(--blue-first)
