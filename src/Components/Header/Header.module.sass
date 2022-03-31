@@ -27,54 +27,54 @@
 				height: 100%
 	.headerLocation
 		display: flex
+		position: relative
 		align-items: center
 		height: 100%
 		min-width: 74px
 		margin-right: 141px
-		z-index: 10
+		z-index: 8
+		cursor: default
 		.mark
 			margin-top: 4px
 			width: 10px
 			height: 13px
 			margin-right: 8px
 		.regions
-			position: relative
-			cursor: pointer
+			cursor: default
 			font-family: 'Montserrat'
 			font-style: normal
 			font-weight: 500
 			font-size: 14px
 			line-height: 17px
 			color: var(--blue-third)
-			&::after
-				content: ''
-				position: absolute
-				bottom: -2.5px
-				left: 0
-				width: 100%
-				height: 1px
-				background-image: linear-gradient(90deg, var(--blue-third), var(--blue-third) 75%, transparent 75%, transparent 100%)
-				background-size: 5px 1px
-				background-position: -1.5px 0
+			span
+				position: relative
+				&::after
+					content: ''
+					position: absolute
+					bottom: -2.5px
+					left: 0
+					width: 100%
+					height: 1px
+					background-image: linear-gradient(90deg, var(--blue-third), var(--blue-third) 75%, transparent 75%, transparent 100%)
+					background-size: 5px 1px
+					background-position: -1.5px 0
 			&List
 				display: none
-			&:hover > .regionsList
-					position: absolute
-					top: 110%
-					display: block
-					z-index: 9
-					ul
-						padding: 10px
-						background-color: var(--yellow)
-						li
-							cursor: pointer
-							margin-bottom: 10px
-							margin-top: 10px
-							&:last-child
-								margin-bottom: 0
-								margin-top: 10px
-							&:hover
-								color: red
+		&:hover .regionsList
+			position: absolute
+			top: 100%
+			left: 0
+			display: block
+			z-index: 9
+			ul
+				background-color: var(--yellow)
+				li
+					cursor: pointer
+					padding: 5px
+					&:hover
+						background-color: var(--green-blue)
+						color: var(--yellow)
 	.headerPhone
 		display: flex
 		min-width: 322px

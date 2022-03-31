@@ -19,12 +19,14 @@ const Header: FC = () => {
 			<div className={s.headerLocation}>
 				<img src={mark} alt="mark" className={s.mark} />
 				<div className={s.regions}>
-					{city}
+					<span>{city}</span>
 					<div className={s.regionsList}>
 						<ul>
 							{regions.map((item, index) => {
 								return (
-									<li key={index} onClick={() => setCity(item)}>{item}</li>
+									<li key={index} onClick={() => setCity(item)}>
+										{item}
+									</li>
 								)
 							})}
 						</ul>
