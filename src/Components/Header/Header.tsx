@@ -1,9 +1,14 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import s from "./Header.module.sass"
 import logo from '../../Image/logo.svg';
 import mark from '../../Image/Subtract.svg';
 
+const regions = ["Київ", "Харків", "Запоріжжя", "Суми", "Чернігів", "Полтава", "Дніпропетровськ", "Кропівницький", "Херсон", "Миколаїв", "Черкаси", "Одесса", "Вінниця"];
+
 const Header: FC = () => {
+
+	const [city, setCity] = useState('Київ');
+
 	return (
 		<header className={s.header}>
 			<div className={s.headerLogo}>
@@ -13,7 +18,18 @@ const Header: FC = () => {
 			</div>
 			<div className={s.headerLocation}>
 				<img src={mark} alt="mark" className={s.mark} />
-				<div className={s.regions}>Москва</div>
+				<div className={s.regions}>
+					{city}
+					<div className={s.regionsList}>
+						<ul>
+							{regions.map((item, index) => {
+								return (
+									<li key={index} onClick={() => setCity(item)}>{item}</li>
+								)
+							})}
+						</ul>
+					</div>
+				</div>
 			</div>
 			<div className={s.headerPhone}>
 				<div className={s.number}>
