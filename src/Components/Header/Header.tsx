@@ -50,11 +50,21 @@ const Header: FC = () => {
 				</div>
 			</div>
 			<div className={s.headerMenu}>
-				<div className={s.menuitem}><a href="/">Оплата</a></div>
-				<div className={s.menuitem}><a href="/">Доставка</a></div>
-				<div className={s.menuitem}><a href="/">Поставщикам</a></div>
-				<div className={s.menuitem}><a href="/">Статьи</a></div>
-				<div className={s.menuitem}><a href="/">Контакты</a></div>
+				<div className={s.menuitem}>
+					<a href="/">Оплата</a>
+				</div>
+				<div className={s.menuitem}>
+					<a href="/">Доставка</a>
+				</div>
+				<div className={s.menuitem}>
+					<a href="/">Поставщикам</a>
+				</div>
+				<div className={s.menuitem}>
+					<a href="/">Статьи</a>
+				</div>
+				<div className={s.menuitem}>
+					<a href="/">Контакты</a>
+				</div>
 			</div>
 		</header>
 	)
