@@ -11,7 +11,7 @@ import cabinet from '../../Image/Group.svg';
 import desire from '../../Image/heart.svg';
 import shoppingCart from '../../Image/Cart.svg';
 
-const MenuItems = [
+const MenuItems: any = [
     {
         "Плитка": {
             "Tile": tile,
@@ -63,14 +63,12 @@ const Menu: FC = () => {
                         <div className={s.border}></div>
                         <div className={s.hover}>
                             <div className={s.hoverSections}>
-                                {MenuItems.forEach((item) => {
-                                    for (let [headers, headersItems] of Object.entries(item)) {
-                                        <div className={s.wrapperSections}>
-                                            <img src={tile} alt={Object.entries(headersItems)[0][0]} />
-                                            <span>{headers}</span>
-                                        </div>
-                                    }
-                                })}
+                                {MenuItems.map((item: object) => Object.entries(item).map(([headers, headersItems]) => (
+                                    <div className={s.wrapperSections}>
+                                        <img src={Object.entries(headersItems)[0][1]} alt={Object.entries(headersItems)[0][0]} />
+                                        <span>{headers}</span>
+                                    </div>
+                                )))}
                                 {/* <div className={s.wrapperSections}>
                                     <img src={tile} alt="" />
                                     <span>Плитка</span>
