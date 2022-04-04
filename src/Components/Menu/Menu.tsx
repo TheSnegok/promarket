@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import s from "./Menu.module.sass";
 import tile from '../../Image/hoverMenu/icon1.svg';
 import plumbing from '../../Image/hoverMenu/icon2.svg';
@@ -11,7 +11,44 @@ import cabinet from '../../Image/Group.svg';
 import desire from '../../Image/heart.svg';
 import shoppingCart from '../../Image/Cart.svg';
 
+const MenuItems = [
+    {
+        "Плитка": {
+            "Tile": tile,
+            "Ванны": ["Ванны 150 см", "Ванны 160 см", "Ванны 170 см", "Ещё"],
+        }
+    },
+    {
+        "Сантехника": {
+            "Plumbing": plumbing,
+        }
+    },
+    {
+        "Мебель для ванной": {
+            "Bathroom Furniture": bathroomFurniture,
+        }
+    },
+    {
+        "Электроника и бытовая техника": {
+            "Electronics": Electronics,
+        }
+    },
+    {
+        "Отопление": {
+            "Heating": heating,
+        }
+    },
+    {
+        "Напольное покрытие": {
+            "Flooring": flooring,
+        }
+    },
+];
+
 const Menu: FC = () => {
+
+    const [first, setfirst] = useState("second");
+
     return (
         <menu className={s.menu}>
             <div className={s.menuItems}>
@@ -26,7 +63,15 @@ const Menu: FC = () => {
                         <div className={s.border}></div>
                         <div className={s.hover}>
                             <div className={s.hoverSections}>
-                                <div className={s.wrapperSections}>
+                                {MenuItems.forEach((item) => {
+                                    for (let [headers, headersItems] of Object.entries(item)) {
+                                        <div className={s.wrapperSections}>
+                                            <img src={tile} alt={Object.entries(headersItems)[0][0]} />
+                                            <span>{headers}</span>
+                                        </div>
+                                    }
+                                })}
+                                {/* <div className={s.wrapperSections}>
                                     <img src={tile} alt="" />
                                     <span>Плитка</span>
                                 </div>
@@ -45,7 +90,7 @@ const Menu: FC = () => {
                                 <div className={s.wrapperSections}>
                                     <img src={heating} alt="" />
                                     <span>Отопление</span>
-                                </div>
+                                </div> */}
                                 <div className={s.wrapperSections}>
                                     <img src={flooring} alt="" />
                                     <span>Напольное покрытие</span>

@@ -3,11 +3,11 @@ import s from "./Header.module.sass"
 import logo from '../../Image/logo.svg';
 import mark from '../../Image/Subtract.svg';
 
-const regions = ["Київ", "Харків", "Запоріжжя", "Суми", "Чернігів", "Полтава", "Дніпропетровськ", "Кропівницький", "Херсон", "Миколаїв", "Черкаси", "Одесса", "Вінниця"];
+const regions: String[] = ["Київ", "Харків", "Запоріжжя", "Суми", "Чернігів", "Полтава", "Дніпропетровськ", "Кропівницький", "Херсон", "Миколаїв", "Черкаси", "Одесса", "Вінниця"];
 
 const Header: FC = () => {
 
-	const [city, setCity] = useState('Київ');
+	const [city, setCity] = useState<String>('Київ');
 
 	return (
 		<header className={s.header}>
