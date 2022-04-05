@@ -12,7 +12,7 @@ import desire from '../../Image/heart.svg';
 import shoppingCart from '../../Image/Cart.svg';
 
 interface NameItem {
-    [key: string]: string | string[];
+    [key: string]:  string[] | string;
 }
 
 interface IMenuItem {
@@ -22,33 +22,33 @@ interface IMenuItem {
 const MenuItems: IMenuItem[] = [
     {
         "Плитка": {
-            "Tile": '../../Image/hoverMenu/icon1.svg',
+            "Tile": tile,
             "Ванны": ["Ванны 150 см", "Ванны 160 см", "Ванны 170 см", "Ещё"],
         }
     },
     {
         "Сантехника": {
-            "Plumbing": '../../Image/hoverMenu/icon2.svg',
+            "Plumbing": plumbing,
         }
     },
     {
         "Мебель для ванной": {
-            "Bathroom Furniture": '../../Image/hoverMenu/icon3.svg',
+            "Bathroom Furniture": bathroomFurniture,
         }
     },
     {
         "Электроника и бытовая техника": {
-            "Electronics": '../../Image/hoverMenu/icon4.svg',
+            "Electronics": Electronics,
         }
     },
     {
         "Отопление": {
-            "Heating": '../../Image/hoverMenu/icon5.svg',
+            "Heating": heating,
         }
     },
     {
         "Напольное покрытие": {
-            "Flooring": '../../Image/hoverMenu/icon6.svg',
+            "Flooring": flooring,
         }
     },
 ];
@@ -71,13 +71,13 @@ const Menu: FC = () => {
                         <div className={s.border}></div>
                         <div className={s.hover}>
                             <div className={s.hoverSections}>
-                                {/* {MenuItems.map((item) => Object.entries(item).map(([headers, headersItems]) => (
+                                {MenuItems.map((item) => Object.entries(item).map(([headers, headersItems]) => (
                                     <div key={headers} className={s.wrapperSections}>
-                                        <img src={Object.entries(headersItems)[0][1]} alt={Object.entries(headersItems)[0][0]} />
+                                        <img src={Object.entries(headersItems)[0][1].toString()} alt={Object.entries(headersItems)[0][0]} />
                                         <span>{headers}</span>
                                     </div>
-                                )))} */}
-                                <div className={s.wrapperSections}>
+                                )))}
+                                {/* <div className={s.wrapperSections}>
                                     <img src={tile} alt="" />
                                     <span>Плитка</span>
                                 </div>
@@ -100,7 +100,7 @@ const Menu: FC = () => {
                                 <div className={s.wrapperSections}>
                                     <img src={flooring} alt="" />
                                     <span>Напольное покрытие</span>
-                                </div>
+                                </div> */}
                             </div>
                             <div className={s.hoverInfo}>
                                 <div className={s.hoverInfoHeader}>
