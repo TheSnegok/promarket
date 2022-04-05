@@ -11,36 +11,44 @@ import cabinet from '../../Image/Group.svg';
 import desire from '../../Image/heart.svg';
 import shoppingCart from '../../Image/Cart.svg';
 
-const MenuItems: any = [
+interface NameItem {
+    [key: string]: string | string[];
+}
+
+interface IMenuItem {
+    [key: string]: NameItem;
+}
+
+const MenuItems: IMenuItem[] = [
     {
         "Плитка": {
-            "Tile": tile,
+            "Tile": '../../Image/hoverMenu/icon1.svg',
             "Ванны": ["Ванны 150 см", "Ванны 160 см", "Ванны 170 см", "Ещё"],
         }
     },
     {
         "Сантехника": {
-            "Plumbing": plumbing,
+            "Plumbing": '../../Image/hoverMenu/icon2.svg',
         }
     },
     {
         "Мебель для ванной": {
-            "Bathroom Furniture": bathroomFurniture,
+            "Bathroom Furniture": '../../Image/hoverMenu/icon3.svg',
         }
     },
     {
         "Электроника и бытовая техника": {
-            "Electronics": Electronics,
+            "Electronics": '../../Image/hoverMenu/icon4.svg',
         }
     },
     {
         "Отопление": {
-            "Heating": heating,
+            "Heating": '../../Image/hoverMenu/icon5.svg',
         }
     },
     {
         "Напольное покрытие": {
-            "Flooring": flooring,
+            "Flooring": '../../Image/hoverMenu/icon6.svg',
         }
     },
 ];
@@ -63,13 +71,13 @@ const Menu: FC = () => {
                         <div className={s.border}></div>
                         <div className={s.hover}>
                             <div className={s.hoverSections}>
-                                {MenuItems.map((item: object) => Object.entries(item).map(([headers, headersItems]) => (
-                                    <div className={s.wrapperSections}>
+                                {/* {MenuItems.map((item) => Object.entries(item).map(([headers, headersItems]) => (
+                                    <div key={headers} className={s.wrapperSections}>
                                         <img src={Object.entries(headersItems)[0][1]} alt={Object.entries(headersItems)[0][0]} />
                                         <span>{headers}</span>
                                     </div>
-                                )))}
-                                {/* <div className={s.wrapperSections}>
+                                )))} */}
+                                <div className={s.wrapperSections}>
                                     <img src={tile} alt="" />
                                     <span>Плитка</span>
                                 </div>
@@ -88,7 +96,7 @@ const Menu: FC = () => {
                                 <div className={s.wrapperSections}>
                                     <img src={heating} alt="" />
                                     <span>Отопление</span>
-                                </div> */}
+                                </div>
                                 <div className={s.wrapperSections}>
                                     <img src={flooring} alt="" />
                                     <span>Напольное покрытие</span>
