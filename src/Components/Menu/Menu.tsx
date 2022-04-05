@@ -77,30 +77,6 @@ const Menu: FC = () => {
                                         <span>{headers}</span>
                                     </div>
                                 )))}
-                                {/* <div className={s.wrapperSections}>
-                                    <img src={tile} alt="" />
-                                    <span>Плитка</span>
-                                </div>
-                                <div className={s.wrapperSections}>
-                                    <img src={plumbing} alt="" />
-                                    <span>Сантехника</span>
-                                </div>
-                                <div className={s.wrapperSections}>
-                                    <img src={bathroomFurniture} alt="" />
-                                    <span>Мебель для ванной</span>
-                                </div>
-                                <div className={s.wrapperSections}>
-                                    <img src={Electronics} alt="" />
-                                    <span>Электроника и бытовая техника</span>
-                                </div>
-                                <div className={s.wrapperSections}>
-                                    <img src={heating} alt="" />
-                                    <span>Отопление</span>
-                                </div>
-                                <div className={s.wrapperSections}>
-                                    <img src={flooring} alt="" />
-                                    <span>Напольное покрытие</span>
-                                </div> */}
                             </div>
                             <div className={s.hoverInfo}>
                                 <div className={s.hoverInfoHeader}>
