@@ -11,51 +11,24 @@ import cabinet from '../../Image/Group.svg';
 import desire from '../../Image/heart.svg';
 import shoppingCart from '../../Image/Cart.svg';
 
-interface NameItem {
-    [key: string]:  string[] | string;
-}
+const MenuListItems: string[][] = [
+    [tile, "Tile", "Плитка"],
+    [plumbing, "Plumbing", "Сантехника"],
+    [bathroomFurniture, "Bathroom Furniture", "Мебель для ванной"],
+    [Electronics, "Electronics", "Электроника и бытовая техника"],
+    [heating, "Heating", "Отопление"],
+    [flooring, "Flooring", "Напольное покрытие"]];
 
-interface IMenuItem {
-    [key: string]: NameItem;
-}
-
-const MenuItems: IMenuItem[] = [
-    {
-        "Плитка": {
-            "Tile": tile,
-            "Ванны": ["Ванны 150 см", "Ванны 160 см", "Ванны 170 см", "Ещё"],
-        }
-    },
-    {
-        "Сантехника": {
-            "Plumbing": plumbing,
-        }
-    },
-    {
-        "Мебель для ванной": {
-            "Bathroom Furniture": bathroomFurniture,
-        }
-    },
-    {
-        "Электроника и бытовая техника": {
-            "Electronics": Electronics,
-        }
-    },
-    {
-        "Отопление": {
-            "Heating": heating,
-        }
-    },
-    {
-        "Напольное покрытие": {
-            "Flooring": flooring,
-        }
-    },
+const MenuInfoItems: string[][] = [
+    ["Ванны", "Ванны 150 см", "Ванны 160 см", "Ванны 170 см", "Еще"],
+    ["Унитазы", "2 режима смыва", "Без ободка", "Подвесные", "Еще"],
+    ["Раковины", "Шириной 40 см", "Шириной 50 см", "Шириной 60 см", "Еще"],
+    ["Смесители", "Кухонные мойки Ulgran", "Однорычажные для кухни", "Премиальные бренда Webert", "Еще"]
 ];
 
 const Menu: FC = () => {
 
-    const [first, setfirst] = useState("second");
+    const [info, setInfo] = useState<number>(0);
 
     return (
         <menu className={s.menu}>
@@ -71,119 +44,46 @@ const Menu: FC = () => {
                         <div className={s.border}></div>
                         <div className={s.hover}>
                             <div className={s.hoverSections}>
-                                {MenuItems.map((item) => Object.entries(item).map(([headers, headersItems]) => (
-                                    <div key={headers} className={s.wrapperSections}>
-                                        <img src={Object.entries(headersItems)[0][1].toString()} alt={Object.entries(headersItems)[0][0]} />
-                                        <span>{headers}</span>
+                                {MenuListItems.map((item, index) => (
+                                    <div key={item[2]} className={s.wrapperSections} onMouseEnter={() => setInfo(index)}>
+                                        <img src={item[0]} alt={item[1]} />
+                                        <span>{item[2]}</span>
                                     </div>
-                                )))}
+                                ))}
                             </div>
                             <div className={s.hoverInfo}>
                                 <div className={s.hoverInfoHeader}>
-                                    <span>Сантехника</span>
+                                    <span>{MenuListItems[info][2]}</span>
                                 </div>
                                 <div className={s.wrapper}>
                                     <div className={s.wrapperFirst}>
-                                        <div className={s.columnWrapper}>
-                                            <span className={s.columnWrapperHeader}>Ванны</span>
-                                            <ul>
-                                                <li>
-                                                    <a href="/">
-                                                        <span>Ванны 150 см</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="/">
-                                                        <span>Ванны 160 см</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="/">
-                                                        <span>Ванны 170 см</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="/">
-                                                        <span>Еще</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div className={s.columnWrapper}>
-                                            <span className={s.columnWrapperHeader}>Унитазы</span>
-                                            <ul>
-                                                <li>
-                                                    <a href="/">
-                                                        <span>2 режима смыва</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="/">
-                                                        <span>Без ободка</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="/">
-                                                        <span>Подвесные</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="/">
-                                                        <span>Еще</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div className={s.columnWrapper}>
-                                            <span className={s.columnWrapperHeader}>Раковины</span>
-                                            <ul>
-                                                <li>
-                                                    <a href="/">
-                                                        <span>Шириной 40 см</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="/">
-                                                        <span>Шириной 50 см</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="/">
-                                                        <span>Шириной 60 см</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="/">
-                                                        <span>Еще</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div className={s.columnWrapper}>
-                                            <span className={s.columnWrapperHeader}>Смесители</span>
-                                            <ul>
-                                                <li>
-                                                    <a href="/">
-                                                        <span>Кухонные мойки Ulgran</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="/">
-                                                        <span>Однорычажные для кухни</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="/">
-                                                        <span>Премиальные бренда Webert</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="/">
-                                                        <span>Еще</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                        {MenuInfoItems.map(item => (
+                                            <div className={s.columnWrapper} key={item[0]}>
+                                                <span className={s.columnWrapperHeader}>{item[0]}</span>
+                                                <ul>
+                                                    <li>
+                                                        <a href="/">
+                                                            <span>{item[1]}</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/">
+                                                            <span>{item[2]}</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/">
+                                                            <span>{item[3]}</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/">
+                                                            <span>{item[4]}</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        ))}
                                     </div>
                                     <div className={s.wrapperSecond}>
                                         <ul>
@@ -245,7 +145,8 @@ const Menu: FC = () => {
                                             <li><a href="/">Фильтры</a></li>
                                         </ul>
                                     </div>
-                                    <div className={s.wrapperBanner}></div>
+                                    <div className={s.wrapperBanner}>
+                                    </div>
                                 </div>
                             </div>
                         </div>
