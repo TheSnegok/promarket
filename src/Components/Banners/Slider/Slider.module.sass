@@ -8,8 +8,24 @@
 		display: flex
 		position: absolute
 		top: 0
-		left: 0px
+		left: 0%
 		height: 100%
+		transition: 1s
+		&Dots
+			position: absolute
+			bottom: 40px
+			left: 50%
+			transform: translateX(-50%)
+			width: 130px
+			height: 10px
+			display: flex
+			justify-content: space-between
+			.Dot
+				width: 10px
+				height: 10px
+				background-color: #fff
+				border-radius: 50%
+				cursor: pointer
 	.arrowLeft
 		position: absolute
 		top: 50%

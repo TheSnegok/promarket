@@ -1,9 +1,13 @@
-import { FC } from "react";
+import { useRef } from "react";
 import s from './Slide.module.sass';
 
-const Slide: FC = () => {
+const Slide = ({ bgColor }: { bgColor: string }) => {
+    const slidesRef = useRef<HTMLHeadingElement | null>(null)
+    if(slidesRef && slidesRef.current) {
+        slidesRef.current.style.backgroundColor = bgColor;
+    }
     return (
-        <div className={s.slidesItem}>
+        <div className={s.slidesItem} ref={slidesRef}>
             <div className={s.slidesHeader}>
                 СМЕСИТЕЛИ<br />
                 RAIBER
@@ -12,13 +16,6 @@ const Slide: FC = () => {
                 уже в наличии
             </div>
             <button className={s.slidesButton}>ПОДРОБНЕЕ</button>
-            <div className={s.slideDots}>
-                <div className={s.firstDot}></div>
-                <div className={s.secondDot}></div>
-                <div className={s.thirdDot}></div>
-                <div className={s.fourthDot}></div>
-                <div className={s.fivethDot}></div>
-            </div>
         </div>
     )
 }
