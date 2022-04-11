@@ -2,10 +2,8 @@ import { useRef } from "react";
 import s from './Slide.module.sass';
 
 const Slide = ({ bgColor }: { bgColor: string }) => {
-    const slidesRef = useRef<HTMLHeadingElement | null>(null)
-    if(slidesRef && slidesRef.current) {
-        slidesRef.current.style.backgroundColor = bgColor;
-    }
+    const slidesRef = useRef<HTMLDivElement | null>(null)
+    if((slidesRef && slidesRef.current) && bgColor !== "") slidesRef.current.style.backgroundColor = bgColor;
     return (
         <div className={s.slidesItem} ref={slidesRef}>
             <div className={s.slidesHeader}>

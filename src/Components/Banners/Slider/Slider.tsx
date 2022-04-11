@@ -4,29 +4,29 @@ import s from "./Slider.module.sass";
 
 const Slider: FC = () => {
 
-    const slideRef = useRef<HTMLHeadingElement | null>(null); 
+    let position: number = 0;
+    const slideRef = useRef<HTMLHeadingElement | null>(null);
+    const DotRef = useRef<HTMLHeadingElement | null>(null);
     const [slidesPosition, setPosition] = useState<number>(0);
     const [slide, setSlide] = useState<number>(1);
 
-    // const changePosition = (operation: boolean) => {
-    //     if(operation) {
-    //         setPosition(slidesPosition - 100);
-    //         if(slideRef && slideRef.current) {
-    //             slideRef.current.style.left = slidesPosition.toString() + "%";
-    //         }
-    //     } else {
-
-    //     }
-        
-    // }
-
-    const changeSlideDots = (position: number) => {
-        if(slideRef && slideRef.current) {
-            slideRef.current.style.left = `${position}%`;
+    const changeSlide = (option: string, dot?: number) => {
+        if (slideRef && slideRef.current) {
+            if (option === "dot" && dot !== undefined) {
+                slideRef.current.style.left = `${dot}%`;
+                position = dot;
+            }
+            if (option === "minus") {
+                slideRef.current.style.left = `${position === 0 ? position = -400 : position += 100}%`;
+            }
+            if (option === "plus") {
+                slideRef.current.style.left = `${position === -400 ? position = 0 : position -= 100}%`;
+            }
         }
     }
 
-    const slides: string[] = ["blue", "black", "orange", "yellow", 'red'];
+    const slides: string[] = ["", "black", "orange", "yellow", 'red'];
+    const dots: number[] = [0, -100, -200, -300, -400];
 
     return (
         <div className={s.slider}>
@@ -36,16 +36,12 @@ const Slider: FC = () => {
                 ))}
             </div>
             <div className={s.slidesDots}>
-                <div className={s.Dot} onClick={() => changeSlideDots(0)}></div>
-                <div className={s.Dot} onClick={() => changeSlideDots(-100)}></div>
-                <div className={s.Dot} onClick={() => changeSlideDots(-200)}></div>
-                <div className={s.Dot} onClick={() => changeSlideDots(-300)}></div>
-                <div className={s.Dot} onClick={() => changeSlideDots(-400)}></div>
+                {dots.map((item, index) => <div key={index} className={s.Dot} ref={DotRef} onClick={() => changeSlide("dot", item)}></div>)}
             </div>
-            {/* <div className={s.arrowLeft} onClick={() => changePosition(true)}>
+            <div className={s.arrowLeft} onClick={() => changeSlide("minus")}>
             </div>
-            <div className={s.arrowRight} onClick={() => changePosition(false)}>
-            </div> */}
+            <div className={s.arrowRight} onClick={() => changeSlide("plus")}>
+            </div>
         </div>
     )
 }
