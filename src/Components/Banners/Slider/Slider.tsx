@@ -6,11 +6,13 @@ const Slider: FC = () => {
 
     let position: number = 0;
     const slideRef = useRef<HTMLHeadingElement | null>(null);
+    const [checked, setChecked] = useState<number>(0);
     const [slide, setSlide] = useState<number>(1);
 
-    const changeSlide = (option: string, dot?: number) => {
+    const changeSlide = (option: string, dot?: number, index?: number) => {
         if (slideRef && slideRef.current) {
-            if (option === "dot" && dot !== undefined) {
+            if (option === "dot" && dot !== undefined && index !== undefined) {
+                setChecked(index);
                 slideRef.current.style.left = `${dot}%`;
                 position = dot;
             }
@@ -34,7 +36,7 @@ const Slider: FC = () => {
                 ))}
             </div>
             <div className={s.slidesDots}>
-                {dots.map((item: number, index: number) => <input checked type='radio' name="dot" key={index} className={s.Dot} onClick={() => changeSlide("dot", item)} />)}
+                {dots.map((item: number, index: number) => <input checked={index === checked} type='radio' name="dot" key={index} className={s.Dot} onClick={() => changeSlide("dot", item, index)} />)}
             </div>
             <div className={s.arrowLeft} onClick={() => changeSlide("minus")}>
             </div>
