@@ -6,8 +6,6 @@ const Slider: FC = () => {
 
     let position: number = 0;
     const slideRef = useRef<HTMLHeadingElement | null>(null);
-    const DotRef = useRef<HTMLHeadingElement | null>(null);
-    const [slidesPosition, setPosition] = useState<number>(0);
     const [slide, setSlide] = useState<number>(1);
 
     const changeSlide = (option: string, dot?: number) => {
@@ -25,18 +23,18 @@ const Slider: FC = () => {
         }
     }
 
-    const slides: string[] = ["", "black", "orange", "yellow", 'red'];
+    const slides: [][] = [[], [], [], [], []];
     const dots: number[] = [0, -100, -200, -300, -400];
 
     return (
         <div className={s.slider}>
             <div className={s.slides} ref={slideRef}>
-                {slides.map((item: string, index: number) => (
-                    <Slide key={index} bgColor={item} />
+                {slides.map((item, index: number) => (
+                    <Slide key={index} />
                 ))}
             </div>
             <div className={s.slidesDots}>
-                {dots.map((item, index) => <div key={index} className={s.Dot} ref={DotRef} onClick={() => changeSlide("dot", item)}></div>)}
+                {dots.map((item: number, index: number) => <input checked type='radio' name="dot" key={index} className={s.Dot} onClick={() => changeSlide("dot", item)} />)}
             </div>
             <div className={s.arrowLeft} onClick={() => changeSlide("minus")}>
             </div>

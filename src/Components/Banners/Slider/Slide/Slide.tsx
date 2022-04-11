@@ -1,11 +1,8 @@
-import { useRef } from "react";
 import s from './Slide.module.sass';
 
-const Slide = ({ bgColor }: { bgColor: string }) => {
-    const slidesRef = useRef<HTMLDivElement | null>(null)
-    if((slidesRef && slidesRef.current) && bgColor !== "") slidesRef.current.style.backgroundColor = bgColor;
+const Slide = () => {
     return (
-        <div className={s.slidesItem} ref={slidesRef}>
+        <div className={s.slidesItem}>
             <div className={s.slidesHeader}>
                 СМЕСИТЕЛИ<br />
                 RAIBER
