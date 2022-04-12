@@ -1,38 +1,43 @@
-import { FC, InputHTMLAttributes, useRef, useState } from "react";
+import { FC, useRef, useState } from "react";
 import Slide from "./Slide/Slide";
 import s from "./Slider.module.sass";
 
 const Slider: FC = () => {
 
-    let position: number = 0;
+    const position = useRef<number>(0);
     const slideRef = useRef<HTMLHeadingElement | null>(null);
     const [dot, setDot] = useState<number>(0)
     const [slide, setSlide] = useState<number>(1);
 
     const changeSlide = (option: string, item?: number, index?: number) => {
         if (slideRef && slideRef.current) {
-            if (option === "dot" && item !== undefined && index !== undefined) {
-                setDot(index);
-                slideRef.current.style.left = `${item}%`;
-                position = item;
-            }
-            if (option === "minus") {
-                if (position === 0) {
-                    setDot(4);
-                    slideRef.current.style.left = `${position = -400}%`;
-                } else {
-                    setDot(dot => dot - 1);
-                    slideRef.current.style.left = `${position += 100}%`;
-                }
-            }
-            if (option === "plus") {
-                if (position === -400) {
-                    setDot(0);
-                    slideRef.current.style.left = `${position = 0}%`;
-                } else {
-                    setDot(dot + 1);
-                    slideRef.current.style.left = `${position -= 100}%`;
-                }
+            switch (option) {
+                case "dot":
+                    if (item !== undefined && index !== undefined) {
+                        slideRef.current.style.left = `${position.current = item}%`;
+                        setDot(index);
+                    }
+                    break;
+                case "minus":
+                    if (position.current === 0) {
+                        slideRef.current.style.left = `${position.current = -400}%`;
+                        setDot(4);
+                    } else {
+                        slideRef.current.style.left = `${position.current += 100}%`;
+                        setDot(dot => dot - 1);
+                    }
+                    break;
+                case "plus":
+                    if (position.current === -400) {
+                        slideRef.current.style.left = `${position.current = 0}%`;
+                        setDot(0);
+                    } else {
+                        slideRef.current.style.left = `${position.current -= 100}%`;
+                        setDot(dot => dot + 1 );
+                    }
+                    break;
+                default:
+                    break;
             }
             console.log(position, dot);
         }
@@ -49,7 +54,7 @@ const Slider: FC = () => {
                 ))}
             </div>
             <div className={s.slidesDots}>
-                {dots.map((item: number, index: number) => <div key={index} className={dot === index ? s.DotActive : s.Dot}  onClick={() => changeSlide("dot", item, index)} />)}
+                {dots.map((item: number, index: number) => <div key={index} className={dot === index ? s.DotActive : s.Dot} onClick={() => changeSlide("dot", item, index)} />)}
             </div>
             <div className={s.arrowLeft} onClick={() => changeSlide("minus")}>
             </div>
