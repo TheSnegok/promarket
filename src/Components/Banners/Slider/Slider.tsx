@@ -6,8 +6,7 @@ const Slider: FC = () => {
 
     const position = useRef<number>(0);
     const slideRef = useRef<HTMLHeadingElement | null>(null);
-    const [dot, setDot] = useState<number>(0)
-    const [slide, setSlide] = useState<number>(1);
+    const [dot, setDot] = useState<number>(0);
 
     const changeSlide = (option: string, item?: number, index?: number) => {
         if (slideRef && slideRef.current) {
@@ -33,25 +32,27 @@ const Slider: FC = () => {
                         setDot(0);
                     } else {
                         slideRef.current.style.left = `${position.current -= 100}%`;
-                        setDot(dot => dot + 1 );
+                        setDot(dot => dot + 1);
                     }
                     break;
                 default:
                     break;
             }
-            console.log(position, dot);
         }
     }
 
-    const slides: [][] = [[], [], [], [], []];
+    const slides: string[][] = [
+        ['СМЕСИТЕЛИ\n RAIBER', 'уже в наличии', 'ПОДРОБНЕЕ'],
+        ['РАКОВИНЫ\n ROCA', 'скоро в наличии', 'ПОДРОБНЕЕ'],
+        ['УНИТАЗЫ \n SPIRIT', 'скоро в наличии', 'ПОДРОБНЕЕ'],
+        ['ДУШЕВЫЕ КАБИНКИ\n RAIBER', 'уже в наличии', 'ПОДРОБНЕЕ'],
+        ['ПАНЕЛЬ\n Аm.Pm', 'скоро в наличии', 'ПОДРОБНЕЕ']];
     const dots: number[] = [0, -100, -200, -300, -400];
 
     return (
         <div className={s.slider}>
             <div className={s.slides} ref={slideRef}>
-                {slides.map((item, index: number) => (
-                    <Slide key={index} />
-                ))}
+                {slides.map((item: string[], index: number) => <Slide key={index} headerText={item[0]} subHeaderText={item[1]} buttonText={item[2]} /> )}
             </div>
             <div className={s.slidesDots}>
                 {dots.map((item: number, index: number) => <div key={index} className={dot === index ? s.DotActive : s.Dot} onClick={() => changeSlide("dot", item, index)} />)}
