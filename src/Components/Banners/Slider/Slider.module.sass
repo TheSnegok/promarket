@@ -20,16 +20,18 @@
 			height: 10px
 			display: flex
 			justify-content: space-between
-			input
+			.Dot
 				width: 10px
 				height: 10px
-				// webkit-appearance: none
-				// -moz-appearance: none
-				// appearance: none
 				cursor: pointer
-				background-color: var(--blue-first)
-				&[type="radio" i]
-					background-color: var(--blue-first)
+				border-radius: 50%
+				background-color: white
+				&Active
+					width: 10px
+					height: 10px
+					cursor: pointer
+					border-radius: 50%
+					background-color: red
 	.arrowLeft
 		position: absolute
 		top: 50%
