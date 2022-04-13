@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import s from './Hits.module.sass';
 import sink from '../../Image/hits/image 1.png';
 import bathroom from '../../Image/hits/image 2.png';
@@ -8,19 +8,18 @@ import heatedTowelRail from '../../Image/hits/image 5.png';
 import chat from '../../Image/hits/messageLogo.svg';
 
 const Hits: FC = () => {
+
+    const [menuName, setMenuName] = useState<number>(0);
+
+    const menu: string[] = ["Любые товары", "Раковины", "Ванны", "Унитазы", "Душевые системы", "Смесители", "Зеркала", "Душевые кабины", "Стиральные машины"];
+
     return (
         <section className={s.hits}>
             <h1 className={s.hitsHeader}>Хиты продаж</h1>
             <div className={s.hitsMenu}>
-                <div className={s.tag}>Любые товары</div>
-                <div className={s.tag}>Раковины</div>
-                <div className={s.tag}>Ванны</div>
-                <div className={s.tag}>Унитазы</div>
-                <div className={s.tag}>Душевые системы</div>
-                <div className={s.tag}>Смесители</div>
-                <div className={s.tag}>Зеркала</div>
-                <div className={s.tag}>Душевые кабины</div>
-                <div className={s.tag}>Стиральные машины</div>
+                {menu.map((item, index) => (
+                    <div className={menuName === index ? s.tagActive : s.tag} onClick={() => setMenuName(index)}>{item}</div>
+                ))}
             </div>
             <div className={s.hitsWrapper}>
                 <div className={s.items}>
