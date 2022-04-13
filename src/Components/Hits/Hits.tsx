@@ -10,7 +10,7 @@ import chat from '../../Image/hits/messageLogo.svg';
 const Hits: FC = () => {
     return (
         <section className={s.hits}>
-            <h1 className={s.hitsHeader}>Коллекции плитки</h1>
+            <h1 className={s.hitsHeader}>Хиты продаж</h1>
             <div className={s.hitsMenu}>
                 <div className={s.tag}>Любые товары</div>
                 <div className={s.tag}>Раковины</div>
