@@ -69,10 +69,12 @@ const Hits: FC = () => {
                     <div className={menuName === index ? s.tagActive : s.tag} onClick={() => setMenuName(index)}>{item}</div>
                 ))}
             </div>
-            <div className={s.hitsWrapper}>
-                {item.map((item, index) => <Item index={index} tags={item[0]} itemImg={item[1]} itemStars={Array.isArray(item[2]) ? item[2]: undefined} message={item[3]} itemDesc={item[4]} itemCountry={item[5]} price={item[6]} />)}
-                {/* <div className={s.wrapperArrowRight}></div>
-						<div className={s.wrapperArrowLeft}></div> */}
+            <div className={s.hitsSlider}>
+                <div className={s.hitsWrapper}>
+                    {item.map((item, index) => <Item index={index} tags={item[0]} itemImg={item[1]} itemStars={Array.isArray(item[2]) ? item[2] : undefined} message={item[3]} itemDesc={item[4]} itemCountry={item[5]} price={item[6]} />)}
+                </div>
+                <div className={s.arrowRight}></div>
+                <div className={s.arrowLeft}></div>
             </div>
         </section>
     )
