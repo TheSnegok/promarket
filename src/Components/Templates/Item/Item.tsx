@@ -17,7 +17,7 @@ const Item = ({ index, tags, itemImg, itemStars, message, itemDesc, itemCountry,
             <div className={s.itemImg}>
                 {tags.length === 1 ? (
                     <div className={s.itemImgTags}>
-                        <div className={s.hot}>{tags[0]}</div>
+                        {tags[0].toLowerCase() === "хит" ? <div className={s.hot}>{tags[0]}</div> : <div className={s.tagTip}>{tags[0]}</div>}
                     </div>
                 ) : (
                     <div className={s.itemImgTags}>

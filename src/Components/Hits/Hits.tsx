@@ -6,7 +6,7 @@ import shower from '../../Image/hits/image 3.png';
 import toilet from '../../Image/hits/image 4.png';
 import heatedTowelRail from '../../Image/hits/image 5.png';
 import chat from '../../Image/hits/messageLogo.svg';
-import Item from "./Item/Item";
+import Item from "../Templates/Item/Item";
 
 const Hits: FC = () => {
 
