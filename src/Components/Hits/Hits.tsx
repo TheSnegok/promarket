@@ -10,6 +10,9 @@ import Item from "./Item/Item";
 
 const Hits: FC = () => {
 
+    const [position, setPosition] = useState<number>(0);
+    const [slide, setSlide] = useState<number>(0);
+
     const [menuName, setMenuName] = useState<number>(0);
     const menu: string[] = ["Любые товары", "Раковины", "Ванны", "Унитазы", "Душевые системы", "Смесители", "Зеркала", "Душевые кабины", "Стиральные машины"];
 
@@ -59,6 +62,33 @@ const Hits: FC = () => {
             "Россия, Украина",
             ["12 730 ₽"]
         ],
+        [
+            ["Хит"],
+            heatedTowelRail,
+            ["full", "full", "full", "full", "half"],
+            [chat, "10"],
+            "Полотенцесушитель электрический Laris Кватро П7 40 x 60 см, 85 Вт, со...",
+            "Россия, Украина",
+            ["12 730 ₽"]
+        ],
+        [
+            ["Хит"],
+            heatedTowelRail,
+            ["full", "full", "full", "half", "Off"],
+            [chat, "10"],
+            "Полотенцесушитель электрический Laris Кватро П7 40 x 60 см, 85 Вт, со...",
+            "Россия, Украина",
+            ["12 730 ₽"]
+        ],
+        [
+            ["Хит"],
+            heatedTowelRail,
+            ["full", "full", "full", "half", "Off"],
+            [chat, "10"],
+            "Полотенцесушитель электрический Laris Кватро П7 40 x 60 см, 85 Вт, со...",
+            "Россия, Украина",
+            ["12 730 ₽"]
+        ],
     ];
 
     return (
@@ -66,15 +96,17 @@ const Hits: FC = () => {
             <h1 className={s.hitsHeader}>Хиты продаж</h1>
             <div className={s.hitsMenu}>
                 {menu.map((item, index) => (
-                    <div className={menuName === index ? s.tagActive : s.tag} onClick={() => setMenuName(index)}>{item}</div>
+                    <div key={index} className={menuName === index ? s.tagActive : s.tag} onClick={() => setMenuName(index)}>{item}</div>
                 ))}
             </div>
             <div className={s.hitsSlider}>
                 <div className={s.hitsWrapper}>
-                    {item.map((item, index) => <Item index={index} tags={item[0]} itemImg={item[1]} itemStars={Array.isArray(item[2]) ? item[2] : undefined} message={item[3]} itemDesc={item[4]} itemCountry={item[5]} price={item[6]} />)}
+                    <div className={s.hitsWrapperSlider} style={{left: position + 'px'}}>
+                        {item.map((item, index) => <Item index={index} tags={item[0]} itemImg={item[1]} itemStars={Array.isArray(item[2]) ? item[2] : undefined} message={item[3]} itemDesc={item[4]} itemCountry={item[5]} price={item[6]} />)}
+                    </div>
                 </div>
-                <div className={s.arrowRight}></div>
-                <div className={s.arrowLeft}></div>
+                <div className={s.arrowRight} onClick={() => setPosition(position => position - 309)}></div>
+                <div className={s.arrowLeft} onClick={() => setPosition(position => position + 309)}></div>
             </div>
         </section>
     )

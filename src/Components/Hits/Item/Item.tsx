@@ -1,6 +1,4 @@
-import { FC } from "react";
 import s from './Item.module.sass';
-import chat from '../../../Image/hits/messageLogo.svg';
 
 interface IItemProps {
     index: number;
@@ -14,7 +12,6 @@ interface IItemProps {
 }
 
 const Item = ({ index, tags, itemImg, itemStars, message, itemDesc, itemCountry, price }: IItemProps) => {
-    console.log(itemStars)
     return (
         <div key={index} className={s.item}>
             <div className={s.itemImg}>
@@ -37,10 +34,16 @@ const Item = ({ index, tags, itemImg, itemStars, message, itemDesc, itemCountry,
                             <div key={index} className={s.stars}>
                                 <div className={s.starsFull}></div>
                             </div>
-                        ) : (
+                        ) : (item === "half" ? (
                             <div key={index} className={s.stars}>
                                 <div className={s.starsHalf}></div>
                             </div>
+                        ) :
+                            (
+                                <div key={index} className={s.stars}>
+                                    <div className={s.starsOff}></div>
+                                </div>
+                            )
                         )
                     )) : null}
                 </div>

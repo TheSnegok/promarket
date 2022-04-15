@@ -69,8 +69,15 @@
         .hitsWrapper
             width: 100%
             height: 100%
+            position: relative
             display: flex
             overflow: hidden
+            &Slider
+                position: absolute
+                height: 100%
+                top: 0
+                left: 0
+                display: flex
         .arrowLeft
             position: absolute
             top: 50%
@@ -100,6 +107,8 @@
                 width: 3px
                 height: 24px
                 background-color: rgba(157, 164, 168, 1)
+            &:hover
+                background-color: rgba(200, 200, 190, 1)
         .arrowRight
             position: absolute
             top: 50%
@@ -129,3 +138,5 @@
                 width: 3px
                 height: 24px
                 background-color: rgba(157, 164, 168, 1)
+            &:hover
+                background-color: rgba(200, 200, 190, 1)
