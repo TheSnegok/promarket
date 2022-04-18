@@ -5,7 +5,9 @@ const Banner: FC = () => {
     return (
         <section className={s.banner}>
             <div className={s.bannerWrapper}>
-                <span>ЕЩЕ ОДИН БАННЕР</span>
+                <a href="/">
+                    <span>ЕЩЕ ОДИН БАННЕР</span>
+                </a>
             </div>
         </section>
     )
