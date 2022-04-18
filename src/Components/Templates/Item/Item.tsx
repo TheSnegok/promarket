@@ -48,12 +48,14 @@ const Item = ({ index, tags, itemImg, itemStars, message, itemDesc, itemCountry,
                     )) : null}
                 </div>
                 <div className={s.message}>
-                    <img src={message[0]} alt="chat" />
-                    <span className={s.messageCount}>{message[1]}</span>
+                    <a href="/">
+                        <img src={message[0]} alt="chat" />
+                        <span className={s.messageCount}>{message[1]}</span>
+                    </a>
                 </div>
             </div>
             <div className={s.itemDescription}>
-                <span>{itemDesc}</span>
+                <a href="/">{itemDesc}</a>
             </div>
             <div className={s.itemCountry}>
                 <span>{itemCountry}</span>
