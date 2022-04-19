@@ -25,7 +25,9 @@ const Brands: FC = () => {
             <h1 className={s.brandsHeader}>Популярные бренды</h1>
             <div className={s.brandsWrapper}>
                 <div className={s.brandsLogo}>
-                    <img src={hansgrohe} alt="brand logo" />
+                    <a href="/">
+                        <img src={hansgrohe} alt="brand logo" />
+                    </a>
                 </div>
                 <div className={s.brandsLogo}>
                     <img src={grohe} alt="brand logo" />
