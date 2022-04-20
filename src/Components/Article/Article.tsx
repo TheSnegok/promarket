@@ -31,6 +31,12 @@ const articleList: string[][] = [
     [
         article4, "Анаэробный герметик для резьбовых соединений"
     ],
+    [
+        article3, "Конденсат на бачке унитаза: причины появления и способы устранения"
+    ],
+    [
+        article4, "Анаэробный герметик для резьбовых соединений"
+    ],
 ];
 
 const Article: FC = () => {
@@ -48,8 +54,8 @@ const Article: FC = () => {
                         ))}
                     </div>
                 </div>
-                <div className={s.arrowRight} onClick={() => setPosition(position => position - 390)}></div>
-                <div className={s.arrowLeft} onClick={() => setPosition(position => position + 390)}></div>
+                <div className={s.arrowRight} onClick={() => (articleList.length * -390) + 1560 === position ? null : setPosition(position => position - 390)}></div>
+                <div className={s.arrowLeft} onClick={() => position === 0 ? null : setPosition(position => position + 390)}></div>
             </div>
         </section>
     )
