@@ -26,6 +26,8 @@ const Item = ({ index, tags, itemImg, itemStars, message, itemDesc, itemCountry,
                     </div>
                 )}
                 <img src={`${itemImg}`} alt={`${itemImg}`} />
+                <button className={s.itemImgFastLook}>Быстрый просмотр</button>
+                <div className={s.itemImgLike}><img src="" alt="" /></div>
             </div>
             <div className={s.itemStars}>
                 <div className={s.starsWrapper}>
