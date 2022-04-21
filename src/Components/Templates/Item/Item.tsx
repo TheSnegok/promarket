@@ -1,4 +1,5 @@
 import s from './Item.module.sass';
+import heart from "../../../Image/heart.svg";
 
 interface IItemProps {
     index: number;
@@ -25,9 +26,9 @@ const Item = ({ index, tags, itemImg, itemStars, message, itemDesc, itemCountry,
                         <div className={s.tagTip}>{tags[1]}</div>
                     </div>
                 )}
-                <img src={`${itemImg}`} alt={`${itemImg}`} />
+                <img src={`${itemImg}`} alt={`${itemImg}`} className={s.itemImgMain} />
                 <button className={s.itemImgFastLook}>Быстрый просмотр</button>
-                <div className={s.itemImgLike}><img src="" alt="" /></div>
+                <div className={s.itemImgLike}><img src={heart} alt="heart" /></div>
             </div>
             <div className={s.itemStars}>
                 <div className={s.starsWrapper}>
