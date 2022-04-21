@@ -43,8 +43,8 @@ const Slider: FC = () => {
         ['РАКОВИНЫ\n ROCA', 'скоро в наличии', 'ПОДРОБНЕЕ'],
         ['УНИТАЗЫ \n SPIRIT', 'скоро в наличии', 'ПОДРОБНЕЕ'],
         ['ДУШЕВЫЕ КАБИНКИ\n RAIBER', 'уже в наличии', 'ПОДРОБНЕЕ'],
-        ['ПАНЕЛЬ\n Аm.Pm', 'скоро в наличии', 'ПОДРОБНЕЕ']];
-    const dots: number[] = [0, -100, -200, -300, -400];
+        ['ПАНЕЛЬ\n Аm.Pm', 'скоро в наличии', 'ПОДРОБНЕЕ']
+    ];
 
     return (
         <div className={s.slider}>
@@ -52,7 +52,7 @@ const Slider: FC = () => {
                 {slides.map((item: string[], index: number) => <Slide key={index} headerText={item[0]} subHeaderText={item[1]} buttonText={item[2]} />)}
             </div>
             <div className={s.slidesDots}>
-                {dots.map((item: number, index: number) => <div key={index} className={dot === index ? s.DotActive : s.Dot} onClick={() => changeSlide("dot", item, index)} />)}
+                {slides.map((item, index: number) => <div key={index} className={dot === index ? s.DotActive : s.Dot} onClick={() => changeSlide("dot", (index * -100), index)} />)}
             </div>
             <div className={s.arrowLeft} onClick={() => changeSlide("minus")}>
             </div>
