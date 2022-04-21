@@ -16,18 +16,20 @@ const Item = ({ index, tags, itemImg, itemStars, message, itemDesc, itemCountry,
     return (
         <div key={index} className={s.item}>
             <div className={s.itemImg}>
-                {tags.length === 1 ? (
-                    <div className={s.itemImgTags}>
-                        {tags[0].toLowerCase() === "хит" ? <div className={s.hot}>{tags[0]}</div> : <div className={s.tagTip}>{tags[0]}</div>}
-                    </div>
-                ) : (
-                    <div className={s.itemImgTags}>
-                        <div className={s.hot}>{tags[0]}</div>
-                        <div className={s.tagTip}>{tags[1]}</div>
-                    </div>
-                )}
-                <img src={`${itemImg}`} alt={`${itemImg}`} className={s.itemImgMain} />
-                <button className={s.itemImgFastLook}>Быстрый просмотр</button>
+                <a href="/">
+                    {tags.length === 1 ? (
+                        <div className={s.itemImgTags}>
+                            {tags[0].toLowerCase() === "хит" ? <div className={s.hot}>{tags[0]}</div> : <div className={s.tagTip}>{tags[0]}</div>}
+                        </div>
+                    ) : (
+                        <div className={s.itemImgTags}>
+                            <div className={s.hot}>{tags[0]}</div>
+                            <div className={s.tagTip}>{tags[1]}</div>
+                        </div>
+                    )}
+                    <img src={`${itemImg}`} alt={`${itemImg}`} className={s.itemImgMain} />
+                    <button className={s.itemImgFastLook}>Быстрый просмотр</button>
+                </a>
                 <div className={s.itemImgLike}><img src={heart} alt="heart" /></div>
             </div>
             <div className={s.itemStars}>

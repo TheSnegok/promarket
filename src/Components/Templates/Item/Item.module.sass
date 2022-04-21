@@ -3,8 +3,9 @@
     border-left: 1px solid rgba(232, 233, 233, 1)
     width: 308px
     padding: 10px 10px 0 10px
-    &:hover .itemImgLike, .itemImgFastLook
-        display: block
+    &:hover
+        .itemImgLike, .itemImgFastLook
+            display: block
     &:first-child
         border-left: none
     &Img
@@ -33,6 +34,9 @@
             line-height: 24px
             letter-spacing: 0.15em
             color: #FFFFFF
+            &:hover
+                cursor: pointer
+                opacity: .8
         &Like
             display: none
             position: absolute
@@ -40,6 +44,9 @@
             height: 19px
             right: 10px
             top: 11px
+            opacity: .5
+            &:hover
+                opacity: 1
             img
                 height: 22px
                 width: 19px
