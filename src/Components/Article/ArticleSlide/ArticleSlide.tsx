@@ -9,10 +9,12 @@ interface IArticleSlideProps {
 const ArticleSlide = ({ index, image, articleHeader }: IArticleSlideProps) => {
     return (
         <article className={s.itemArticle} key={index}>
-            <img src={image} alt="header-image(" />
-            <div className={s.itemArticleHeader}>
-                <span>{articleHeader}</span>
-            </div>
+            <a href="/">
+                <img src={image} alt={articleHeader} />
+                <div className={s.itemArticleHeader}>
+                    <span>{articleHeader}</span>
+                </div>
+            </a>
         </article>
     )
 }
