@@ -24,13 +24,26 @@
             max-height: 240px
             ul
                 li
-                    list-style-type: none
-                    font-family: Montserrat
-                    font-style: normal
-                    font-weight: 500
-                    font-size: 14px
-                    line-height: 40px
-                    color: var(--blue-third)
+                    a
+                        position: relative
+                        list-style-type: none
+                        font-family: Montserrat
+                        font-style: normal
+                        font-weight: 500
+                        font-size: 14px
+                        line-height: 40px
+                        color: var(--blue-third)
+                        &::after
+                            content: ''
+                            position: absolute
+                            bottom: -5%
+                            left: 0
+                            width: 0%
+                            height: 1px
+                            transition: 1s
+                        &:hover::after
+                            width: 100%
+                            background-color: var(--blue-third)
         &Logo
             width: 100%
             display: flex
@@ -66,6 +79,19 @@
                 font-size: 14px
                 line-height: 40px
                 color: var(--blue-third)
+                a
+                    position: relative
+                    &::after
+                        content: ''
+                        position: absolute
+                        bottom: -5%
+                        left: 0
+                        width: 0%
+                        height: 1px
+                        transition: 1s
+                    &:hover::after
+                        width: 100%
+                        background-color: var(--blue-third)
     &Contacts
         max-width: 178px
         margin-right: 210px
@@ -84,19 +110,24 @@
             button
                 width: 100%
                 height: 100%
-                border: 1px solid #1061AB
-                box-sizing: border-box
+                border: 1px solid #2B7BC6
                 border-radius: 4px
-                background-color: #fff
+                display: flex
+                justify-content: center
+                align-items: center
                 font-family: Montserrat
                 font-style: normal
-                font-weight: 600
+                font-weight: bold
                 font-size: 12px
                 line-height: 24px
-                text-align: center
                 letter-spacing: 0.15em
-                text-transform: uppercase
-                color: var(--blue-second)
+                color: var(--blue-third)
+                background-color: #fff
+                transition: .5s
+                cursor: pointer
+                &:hover
+                    background-color: #2B7BC6
+                    color: white
         &Shedule
             display: flex
             flex-direction: column

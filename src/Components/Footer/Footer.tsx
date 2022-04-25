@@ -6,39 +6,31 @@ import instagram from '../../Image/logo/instagram 2.svg'
 import whatsApp from '../../Image/logo/whatsApp.svg'
 import yandex from '../../Image/yandex.png'
 
-const Footer:FC = () => {
+const footerSectionList: string[][] = [['/', 'Плитка'], ['/', 'Сантехника'], ['/', 'Мебель для ванной'], ['/', 'Электроника и бытовая техника'], ['/', 'Отопление'], ['/', 'Напольное покрытие']];
+const footerMenu: string[][] = [['/', 'Оплата'], ['/', 'Доставка'], ['/', 'Поставщикам'], ['/', 'Статьи'], ['/', 'Контакты']];
+
+const Footer: FC = () => {
     return (
         <>
             <footer className={s.footer}>
                 <div className={s.footerSection}>
                     <div className={s.footerSectionList}>
-                        <ul >
-                            <a href="/"><li>Плитка</li></a>
-                            <a href="/"><li>Сантехника</li></a>
-                            <a href="/"><li>Мебель для ванной</li></a>
-                            <a href="/"><li>Электроника и бытовая техника</li></a>
-                            <a href="/"><li>Отопление</li></a>
-                            <a href="/"><li>Напольное покрытие</li></a>
+                        <ul>
+                            {footerSectionList.map((item, index) => <li key={index}><a href={item[0]}>{item[1]}</a></li>)}
                         </ul>
                     </div>
                     <div className={s.footerSectionLogo}>
-                        <img src={logo} alt="logo" />
+                        <a href="/"><img src={logo} alt="logo" /></a>
                         <span>© 2020 <a href="/">ggpromarket.ru</a></span>
                     </div>
                 </div>
                 <div className={s.footerMenu}>
-                    <div className={s.footerMenu}>
-                        <ul>
-                            <li>Оплата</li>
-                            <li>Доставка</li>
-                            <li>Поставщикам</li>
-                            <li>Статьи</li>
-                            <li>Контакты</li>
-                        </ul>
-                    </div>
+                    <ul>
+                        {footerMenu.map((item, index) => <li key={index}><a href={item[0]}>{item[1]}</a></li>)}
+                    </ul>
                 </div>
                 <div className={s.footerContacts}>
-                    <div className={s.footerContactsPhone}>8 495 018-32-10</div>
+                    <a href="tel:+84950183210" className={s.footerContactsPhone}>8 495 018-32-10</a>
                     <div className={s.footerContactsButton}>
                         <button>ЗАКАЗАТЬ ЗВОНОК</button>
                     </div>
@@ -56,11 +48,15 @@ const Footer:FC = () => {
                 <div className={s.footerLocation}>
                     <div className={s.footerLocationStreet}>
                         <span>Склад:</span>
-                        <span>Москва, ул. Салтыковская, 6 стр 11</span>
-                        <span><a href="/">zakaz@ggpromarket.ru</a></span>
+                        <span>
+                            <a href="https://goo.gl/maps/je6Thfut32U1v1zk8">Москва, ул. Салтыковская, 6 стр 11</a>
+                        </span>
+                        <span>
+                            <a href="mail:zakaz@ggpromarket.ru">zakaz@ggpromarket.ru</a>
+                        </span>
                     </div>
                     <div className={s.footerLocationYandex}>
-                        <img src={yandex} alt="yandex" />
+                        <a href="/"><img src={yandex} alt="yandex" /></a>
                     </div>
                 </div>
             </footer>
