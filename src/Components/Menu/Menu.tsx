@@ -130,7 +130,7 @@ const Menu: FC = () => {
                                                 <li key={index}>
                                                     <a href={item[0]}>{item[1]}</a>
                                                 </li>
-                                            ))}    
+                                            ))}
                                         </ul>
                                     </div>
                                     <div className={s.wrapperBanner}>
@@ -156,15 +156,21 @@ const Menu: FC = () => {
             </div>
             <div className={s.menuActions}>
                 <div className={s.cabinet}>
-                    <img src={cabinet} alt="cabinet" className={s.cabinetImg} />
+                    <a href="/">
+                        <img src={cabinet} alt="cabinet" className={s.cabinetImg} />
+                    </a>
                 </div>
                 <div className={s.desired}>
-                    <img src={desire} alt="desired" className={s.desiredImg} />
-                    {/* <div className={s.desiredAlert}>4</div> */}
+                    <a href="/">
+                        <img src={desire} alt="desired" className={s.desiredImg} />
+                        {/* <div className={s.desiredAlert}>4</div> */}
+                    </a>
                 </div>
                 <div className={s.shopping}>
-                    <img src={shoppingCart} alt="shoppingCart" className={s.shoppingImg} />
-                    {/* <div className={s.shoppingAlert}>2</div> */}
+                    <a href="/">
+                        <img src={shoppingCart} alt="shoppingCart" className={s.shoppingImg} />
+                        {/* <div className={s.shoppingAlert}>2</div> */}
+                    </a>
                 </div>
             </div>
             <div className={s.catalogHover}></div>
