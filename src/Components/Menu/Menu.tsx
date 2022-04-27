@@ -163,13 +163,13 @@ const Menu: FC = () => {
                 <div className={s.desired}>
                     <a href="/">
                         <img src={desire} alt="desired" className={s.desiredImg} />
-                        {/* <div className={s.desiredAlert}>4</div> */}
+                        <div className={s.desiredAlert}>4</div>
                     </a>
                 </div>
                 <div className={s.shopping}>
                     <a href="/">
                         <img src={shoppingCart} alt="shoppingCart" className={s.shoppingImg} />
-                        {/* <div className={s.shoppingAlert}>2</div> */}
+                        <div className={s.shoppingAlert}>2</div>
                     </a>
                 </div>
             </div>

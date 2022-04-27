@@ -13,6 +13,7 @@ import Seo from './Seo/Seo';
 import Footer from './Footer/Footer';
 
 const Main: FC = () => {
+	
 	return (
 		<main className="container">
 			<Header />
