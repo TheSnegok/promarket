@@ -1,9 +1,9 @@
-import { FC, ReactHTMLElement, useState } from 'react'
+import { FC, useState } from 'react'
 import s from "./Header.module.sass"
 import logo from '../../Image/logo.svg';
 import mark from '../../Image/Subtract.svg';
 
-const regions: String[] = ["Київ", "Харків", "Запоріжжя", "Суми", "Чернігів", "Полтава", "Дніпропетровськ", "Кропівницький", "Херсон", "Миколаїв", "Черкаси", "Одесса", "Вінниця"];
+const regions: string[] = ["Київ", "Харків", "Запоріжжя", "Суми", "Чернігів", "Полтава", "Дніпропетровськ", "Кропівницький", "Херсон", "Миколаїв", "Черкаси", "Одесса", "Вінниця"];
 
 const Header: FC = () => {
 
