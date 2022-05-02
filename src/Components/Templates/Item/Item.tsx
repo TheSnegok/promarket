@@ -2,7 +2,6 @@ import { useState } from 'react';
 import s from './Item.module.sass';
 
 interface IItemProps {
-    index: number;
     tags: string | string[];
     itemImg: string | string[];
     itemStars: string[] | undefined;
@@ -12,14 +11,12 @@ interface IItemProps {
     price: string | string[];
 }
 
-const Item = ({ index, tags, itemImg, itemStars, message, itemDesc, itemCountry, price }: IItemProps) => {
-
-    
+const Item = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, price }: IItemProps) => {
 
     const [fill, setFill] = useState<string>("#2B7BC6");
 
     return (
-        <div key={index} className={s.item}>
+        <div className={s.item}>
             <div className={s.itemImg}>
                 <a href="/">
                     {tags.length === 1 ? (

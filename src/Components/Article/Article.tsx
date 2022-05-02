@@ -50,7 +50,7 @@ const Article: FC = () => {
                 <div className={s.articleWrapperSlider}>
                     <div className={s.articleWrapperSliderItem} style={{left: position + "px"}}>                   
                         {articleList.map((item, index) => (
-                            <ArticleSlide index={index} image={item[0]} articleHeader={item[1]} />
+                            <ArticleSlide key={index} image={item[0]} articleHeader={item[1]} />
                         ))}
                     </div>
                 </div>

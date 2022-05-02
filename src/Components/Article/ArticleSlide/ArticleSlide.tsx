@@ -1,14 +1,13 @@
 import s from "./ArticleSlide.module.sass";
 
 interface IArticleSlideProps {
-    index: number;
     image: string;
     articleHeader: string;
 }
 
-const ArticleSlide = ({ index, image, articleHeader }: IArticleSlideProps) => {
+const ArticleSlide = ({ image, articleHeader }: IArticleSlideProps) => {
     return (
-        <article className={s.itemArticle} key={index}>
+        <article className={s.itemArticle} key={articleHeader + `${Math.floor(Math.random() * 100)}`}>
             <img src={image} alt={articleHeader} />
             <a href="/">
                 <div className={s.itemArticleHeader}>

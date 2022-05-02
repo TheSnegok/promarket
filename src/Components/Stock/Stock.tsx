@@ -131,7 +131,7 @@ const Stock: FC = () => {
             <div className={s.stockSlider}>
                 <div className={s.stockWrapper}>
                     <div className={s.stockWrapperSlider} style={{ left: position + 'px' }}>
-                        {item.map((item, index) => <Item index={index} tags={item[0]} itemImg={item[1]} itemStars={Array.isArray(item[2]) ? item[2] : undefined} message={item[3]} itemDesc={item[4]} itemCountry={item[5]} price={item[6]} />)}
+                        {item.map((item, index) => <Item key={index} tags={item[0]} itemImg={item[1]} itemStars={Array.isArray(item[2]) ? item[2] : undefined} message={item[3]} itemDesc={item[4]} itemCountry={item[5]} price={item[6]} />)}
                     </div>
                 </div>
                 <div className={s.arrowRight} onClick={() => changeSlide("plus")}></div>
