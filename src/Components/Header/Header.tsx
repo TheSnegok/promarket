@@ -42,11 +42,11 @@ const Header: FC = () => {
 					</div>
 					<div className={s.phoneCall}>
 						<span>Заказать звонок</span>
-						<div className={s.phoneCallInput}>
+						<form action='/' className={s.phoneCallInput}>
 							<input type="text" pattern={'^([\u0401\u0451\u0410-\u044f]{1,20})'} title={'Ваше имя должно содержать от 2 букв до 24 букв!'} placeholder={'Введите ваше имя...'} />
 							<input type="tel" pattern={'^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$'} title={`Введите настоящий номер телефона содержащий 10 цифр!`} placeholder={'Введите номер телофона...'} />
 							<button>Заказать звонок</button>
-						</div>
+						</form>
 					</div>
 				</div>
 			</div>

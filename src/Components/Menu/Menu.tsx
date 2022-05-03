@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, Fragment, useState } from "react";
 import s from "./Menu.module.sass";
 import tile from '../../Image/hoverMenu/icon1.svg';
 import plumbing from '../../Image/hoverMenu/icon2.svg';
@@ -59,6 +59,7 @@ const MenuInfoItemsThird: string[][] = [
 const Menu: FC = () => {
 
     const [info, setInfo] = useState<number>(0);
+    console.log(info);
 
     return (
         <menu className={s.menu}>
@@ -75,7 +76,7 @@ const Menu: FC = () => {
                         <div className={s.hover}>
                             <div className={s.hoverSections}>
                                 {MenuListItems.map((item, index) => (
-                                    <div key={item[2]} className={s.wrapperSections} onMouseEnter={() => setInfo(index)}>
+                                    <div key={item[2]} className={s.wrapperSections} onMouseEnter={() => setInfo(index) }>
                                         <img src={item[0]} alt={item[1]} />
                                         <span>{item[2]}</span>
                                     </div>
@@ -86,53 +87,64 @@ const Menu: FC = () => {
                                     <span>{MenuListItems[info][2]}</span>
                                 </div>
                                 <div className={s.wrapper}>
-                                    <div className={s.wrapperFirst}>
-                                        {MenuInfoItems.map(item => (
-                                            <div className={s.columnWrapper} key={item[0]}>
-                                                <span className={s.columnWrapperHeader}>{item[0]}</span>
-                                                <ul>
-                                                    <li>
-                                                        <a href="/">
-                                                            <span>{item[1]}</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="/">
-                                                            <span>{item[2]}</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="/">
-                                                            <span>{item[3]}</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="/">
-                                                            <span>{item[4]}</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
+                                    {info === 1 ?
+                                        (
+                                            <Fragment>
+                                                <div className={s.wrapperFirst}>
+                                                    {MenuInfoItems.map(item => (
+                                                        <div className={s.columnWrapper} key={item[0]}>
+                                                            <span className={s.columnWrapperHeader}>{item[0]}</span>
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="/">
+                                                                        <span>{item[1]}</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="/">
+                                                                        <span>{item[2]}</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="/">
+                                                                        <span>{item[3]}</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="/">
+                                                                        <span>{item[4]}</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                                <div className={s.wrapperSecond}>
+                                                    <ul>
+                                                        {MenuInfoItemsSecond.map((item, index) => (
+                                                            <li key={index} >
+                                                                <a href={item[0]}>{item[1]}</a>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                                <div className={s.wrapperThird}>
+                                                    <ul>
+                                                        {MenuInfoItemsThird.map((item, index) => (
+                                                            <li key={index}>
+                                                                <a href={item[0]}>{item[1]}</a>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+
+                                            </Fragment>
+                                        ) : (
+                                            <div className={s.wrapperFirst}>
+                                                Comming soon...
                                             </div>
-                                        ))}
-                                    </div>
-                                    <div className={s.wrapperSecond}>
-                                        <ul>
-                                            {MenuInfoItemsSecond.map((item, index) => (
-                                                <li key={index} >
-                                                    <a href={item[0]}>{item[1]}</a>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                    <div className={s.wrapperThird}>
-                                        <ul>
-                                            {MenuInfoItemsThird.map((item, index) => (
-                                                <li key={index}>
-                                                    <a href={item[0]}>{item[1]}</a>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
+                                        )
+                                    }
                                     <div className={s.wrapperBanner}>
                                     </div>
                                 </div>
