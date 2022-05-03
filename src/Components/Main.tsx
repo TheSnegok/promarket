@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { createContext, FC } from 'react';
 import Header from "./Header/Header";
 import Menu from './Menu/Menu';
 import Banners from './Banners/Banners';
@@ -13,22 +13,31 @@ import Seo from './Seo/Seo';
 import Footer from './Footer/Footer';
 
 const Main: FC = () => {
-	
+
+	const memoryApp = {
+		likes: null,
+		basket: null
+	}
+
+	const ContextApp = createContext(memoryApp);
+
 	return (
-		<main className="container">
-			<Header />
-			<Menu />
-			<Banners />
-			<Icons />
-			<Collections />
-			<Hits />
-			<Stock />
-			<Banner />
-			<Brands />
-			<Article />
-			<Seo />
-			<Footer />
-		</main>
+		<ContextApp.Provider value={memoryApp}>
+			<main className="container">
+				<Header />
+				<Menu />
+				<Banners />
+				<Icons />
+				<Collections />
+				<Hits />
+				<Stock />
+				<Banner />
+				<Brands />
+				<Article />
+				<Seo />
+				<Footer />
+			</main>
+		</ContextApp.Provider>
 	)
 }
 
