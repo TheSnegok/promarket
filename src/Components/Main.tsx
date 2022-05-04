@@ -11,18 +11,12 @@ import Brands from './Brands/Brands';
 import Article from './Article/Article';
 import Seo from './Seo/Seo';
 import Footer from './Footer/Footer';
+import Context from './Context/Context';
 
 const Main: FC = () => {
 
-	const memoryApp = {
-		likes: null,
-		basket: null
-	}
-
-	const ContextApp = createContext(memoryApp);
-
 	return (
-		<ContextApp.Provider value={memoryApp}>
+		<Context.Provider value={{ likes: [1, null], basket: [1, null] }} >
 			<main className="container">
 				<Header />
 				<Menu />
@@ -37,7 +31,7 @@ const Main: FC = () => {
 				<Seo />
 				<Footer />
 			</main>
-		</ContextApp.Provider>
+		</Context.Provider>
 	)
 }
 
