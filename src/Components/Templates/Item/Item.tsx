@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import Context from '../../Context/Context';
 import s from './Item.module.sass';
 
@@ -17,7 +17,7 @@ const Item = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, price 
     const [fill, setFill] = useState<string>("#2B7BC6");
 
     const value: any = useContext(Context);
-
+    
     console.log(value);
 
     return (

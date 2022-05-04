@@ -59,8 +59,7 @@ const MenuInfoItemsThird: string[][] = [
 const Menu: FC = () => {
 
     const [info, setInfo] = useState<number>(0);
-    console.log(info);
-
+    
     return (
         <menu className={s.menu}>
             <div className={s.menuItems}>

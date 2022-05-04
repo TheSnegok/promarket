@@ -1,4 +1,4 @@
-import { createContext, FC } from 'react';
+import { FC } from 'react';
 import Header from "./Header/Header";
 import Menu from './Menu/Menu';
 import Banners from './Banners/Banners';
