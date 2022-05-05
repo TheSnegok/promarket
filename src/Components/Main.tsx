@@ -16,7 +16,7 @@ import Context from './Context/Context';
 const Main: FC = () => {
 
 	return (
-		<Context.Provider value={{ likes: [1, null], basket: [1, null] }} >
+		<Context.Provider value={{ likes: [1, null], basket: [0, null] }} >
 			<main className="container">
 				<Header />
 				<Menu />

@@ -1,5 +1,4 @@
-import { useState, useContext, useEffect } from 'react';
-import Context from '../../Context/Context';
+import { useState } from 'react';
 import s from './Item.module.sass';
 
 interface IItemProps {
@@ -15,10 +14,6 @@ interface IItemProps {
 const Item = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, price }: IItemProps) => {
 
     const [fill, setFill] = useState<string>("#2B7BC6");
-
-    const value: any = useContext(Context);
-    
-    console.log(value);
 
     return (
         <div className={s.item}>

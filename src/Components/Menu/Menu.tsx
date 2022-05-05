@@ -1,4 +1,4 @@
-import { FC, Fragment, useState } from "react";
+import { FC, Fragment, useContext, useState } from "react";
 import s from "./Menu.module.sass";
 import tile from '../../Image/hoverMenu/icon1.svg';
 import plumbing from '../../Image/hoverMenu/icon2.svg';
@@ -10,6 +10,7 @@ import loop from '../../Image/search.svg';
 import cabinet from '../../Image/Group.svg';
 import desire from '../../Image/heart.svg';
 import shoppingCart from '../../Image/Cart.svg';
+import Context from "../Context/Context";
 
 const MenuListItems: string[][] = [
     [tile, "Tile", "Плитка"],
@@ -59,6 +60,10 @@ const MenuInfoItemsThird: string[][] = [
 const Menu: FC = () => {
 
     const [info, setInfo] = useState<number>(0);
+
+    const value = useContext(Context);
+    
+    console.log(value);
     
     return (
         <menu className={s.menu}>
@@ -174,13 +179,13 @@ const Menu: FC = () => {
                 <div className={s.desired}>
                     <a href="/">
                         <img src={desire} alt="desired" className={s.desiredImg} />
-                        <div className={s.desiredAlert}>4</div>
+                        {value.likes[0] === 0 ? null : <div className={s.desiredAlert}>{value.likes[0]}</div>}
                     </a>
                 </div>
                 <div className={s.shopping}>
                     <a href="/">
                         <img src={shoppingCart} alt="shoppingCart" className={s.shoppingImg} />
-                        <div className={s.shoppingAlert}>2</div>
+                        {value.basket[0] === 0 ? null : <div className={s.shoppingAlert}>{value.basket[0]}</div>}
                     </a>
                 </div>
             </div>
