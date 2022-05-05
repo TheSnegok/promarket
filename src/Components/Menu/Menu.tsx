@@ -61,9 +61,9 @@ const Menu: FC = () => {
 
     const [info, setInfo] = useState<number>(0);
 
-    const value = useContext(Context);
+    const { likes, basket } = useContext(Context);
     
-    console.log(value);
+    console.log(likes, basket);
     
     return (
         <menu className={s.menu}>
@@ -80,7 +80,7 @@ const Menu: FC = () => {
                         <div className={s.hover}>
                             <div className={s.hoverSections}>
                                 {MenuListItems.map((item, index) => (
-                                    <div key={item[2]} className={s.wrapperSections} onMouseEnter={() => setInfo(index) }>
+                                    <div key={item[2]} className={info === index ? s.wrapperSectionsActive : s.wrapperSections} onMouseEnter={() => setInfo(index)}>
                                         <img src={item[0]} alt={item[1]} />
                                         <span>{item[2]}</span>
                                     </div>
@@ -179,13 +179,13 @@ const Menu: FC = () => {
                 <div className={s.desired}>
                     <a href="/">
                         <img src={desire} alt="desired" className={s.desiredImg} />
-                        {value.likes[0] === 0 ? null : <div className={s.desiredAlert}>{value.likes[0]}</div>}
+                        {likes[0] === 0 ? null : <div className={s.desiredAlert}>{likes[0]}</div>}
                     </a>
                 </div>
                 <div className={s.shopping}>
                     <a href="/">
                         <img src={shoppingCart} alt="shoppingCart" className={s.shoppingImg} />
-                        {value.basket[0] === 0 ? null : <div className={s.shoppingAlert}>{value.basket[0]}</div>}
+                        {basket[0] === 0 ? null : <div className={s.shoppingAlert}>{basket[0]}</div>}
                     </a>
                 </div>
             </div>
