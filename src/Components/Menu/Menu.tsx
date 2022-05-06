@@ -61,9 +61,7 @@ const Menu: FC = () => {
 
     const [info, setInfo] = useState<number>(0);
 
-    const { likes, basket } = useContext(Context);
-    
-    console.log(likes, basket);
+    const { likes, setLikes,basket } = useContext(Context);
     
     return (
         <menu className={s.menu}>
@@ -170,7 +168,7 @@ const Menu: FC = () => {
                     <img src={loop} alt="search" className={s.loop} />
                 </div>
             </div>
-            <div className={s.menuActions}>
+            <div className={s.menuActions} onClick={() => setLikes()}>
                 <div className={s.cabinet}>
                     <a href="/">
                         <img src={cabinet} alt="cabinet" className={s.cabinetImg} />
