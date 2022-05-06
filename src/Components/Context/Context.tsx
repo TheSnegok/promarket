@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, FC } from "react";
 
 interface IContext {
     likes: (number | null | string[])[];
@@ -12,4 +12,14 @@ const memoryApp = {
 
 const Context = createContext<IContext>(memoryApp);
 
-export default Context;
+const Provider: FC = ({ children }: any) => {
+    return (
+        <Context.Provider value={memoryApp} >
+            {children}
+        </Context.Provider>
+    )
+}
+
+
+
+export { Provider, Context };

@@ -10,7 +10,7 @@ import loop from '../../Image/search.svg';
 import cabinet from '../../Image/Group.svg';
 import desire from '../../Image/heart.svg';
 import shoppingCart from '../../Image/Cart.svg';
-import Context from "../Context/Context";
+import  { Context } from "../Context/Context";
 
 const MenuListItems: string[][] = [
     [tile, "Tile", "Плитка"],

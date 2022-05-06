@@ -11,12 +11,11 @@ import Brands from './Brands/Brands';
 import Article from './Article/Article';
 import Seo from './Seo/Seo';
 import Footer from './Footer/Footer';
-import Context from './Context/Context';
+import { Provider } from './Context/Context';
 
 const Main: FC = () => {
-
 	return (
-		<Context.Provider value={{ likes: [1, null], basket: [0, null] }} >
+		<Provider>
 			<main className="container">
 				<Header />
 				<Menu />
@@ -31,7 +30,7 @@ const Main: FC = () => {
 				<Seo />
 				<Footer />
 			</main>
-		</Context.Provider>
+		</Provider>
 	)
 }
 
