@@ -6,11 +6,7 @@ interface IContext {
     setLikes: (c: number) => void;
 }
 
-const Context = createContext<IContext>({
-    likes: 0,
-    basket: 0,
-    setLikes: () => {},
-});
+export const Context = createContext<IContext>({likes: 0, basket: 0, setLikes: () => {}});
 
 export const useGlobalContext = () => useContext(Context);
 

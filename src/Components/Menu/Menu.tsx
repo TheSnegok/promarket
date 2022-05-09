@@ -59,14 +59,8 @@ const MenuInfoItemsThird: string[][] = [
 
 const Menu: FC = () => {
     
-    const { likes, setLikes, basket } = useGlobalContext();
+    const { likes, basket } = useGlobalContext();
     const [info, setInfo] = useState<number>(0);
-    const [showLikes, setShowLikes] = useState<number>(likes)
-
-    useEffect(() => {
-        setShowLikes(likes);
-        setLikes(likes);
-    },[likes]);
     
     return (
         <menu className={s.menu}>
@@ -173,7 +167,7 @@ const Menu: FC = () => {
                     <img src={loop} alt="search" className={s.loop} />
                 </div>
             </div>
-            <div className={s.menuActions} onClick={() => setShowLikes(likes => likes + 1)}>
+            <div className={s.menuActions} >
                 <div className={s.cabinet}>
                     <a href="/">
                         <img src={cabinet} alt="cabinet" className={s.cabinetImg} />
@@ -182,7 +176,7 @@ const Menu: FC = () => {
                 <div className={s.desired}>
                     <a href="/">
                         <img src={desire} alt="desired" className={s.desiredImg} />
-                        {showLikes === 0 ? null : <div className={s.desiredAlert}>{showLikes}</div>}
+                        {likes === 0 ? null : <div className={s.desiredAlert}>{likes}</div>}
                     </a>
                 </div>
                 <div className={s.shopping}>
