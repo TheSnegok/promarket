@@ -1,30 +1,26 @@
-import { createContext, FC } from "react";
+import { createContext, FC, useContext, useState } from "react";
 
 interface IContext {
-    likes: (number | string[] | null)[];
-    setLikes: () => void;
-    basket: (number | string[] | null)[];
+    likes: number;
+    basket: number;
+    setLikes: (c: number) => void;
 }
 
-let memoryApp = {
-    likes: [0, null],
-    setLikes: () => {
-        if(memoryApp.likes[0] !== null) {
-            memoryApp.likes[0] += 1;
-        }
-        console.log(memoryApp.likes[0]);
-    },
-    basket: [0, null]
-}
+const Context = createContext<IContext>({
+    likes: 0,
+    basket: 0,
+    setLikes: () => {},
+});
 
-const Context = createContext<IContext>(memoryApp);
+export const useGlobalContext = () => useContext(Context);
 
-const Provider: FC = ({ children }) => {
+export const Provider: FC = ({ children }) => {
+
+    const [likes, setLikes] = useState<number>(0);
+
     return (
-        <Context.Provider value={memoryApp} >
+        <Context.Provider value={{likes, basket: 0, setLikes}} >
             {children}
         </Context.Provider>
     )
 }
-
-export { Provider, Context };

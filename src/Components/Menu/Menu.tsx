@@ -1,4 +1,4 @@
-import { FC, Fragment, useContext, useState } from "react";
+import { FC, Fragment, useContext, useEffect, useState } from "react";
 import s from "./Menu.module.sass";
 import tile from '../../Image/hoverMenu/icon1.svg';
 import plumbing from '../../Image/hoverMenu/icon2.svg';
@@ -10,7 +10,7 @@ import loop from '../../Image/search.svg';
 import cabinet from '../../Image/Group.svg';
 import desire from '../../Image/heart.svg';
 import shoppingCart from '../../Image/Cart.svg';
-import  { Context } from "../Context/Context";
+import { useGlobalContext } from "../Context/Context";
 
 const MenuListItems: string[][] = [
     [tile, "Tile", "Плитка"],
@@ -58,10 +58,15 @@ const MenuInfoItemsThird: string[][] = [
 ]
 
 const Menu: FC = () => {
-
+    
+    const { likes, setLikes, basket } = useGlobalContext();
     const [info, setInfo] = useState<number>(0);
+    const [showLikes, setShowLikes] = useState<number>(likes)
 
-    const { likes, setLikes,basket } = useContext(Context);
+    useEffect(() => {
+        setShowLikes(likes);
+        setLikes(likes);
+    },[likes]);
     
     return (
         <menu className={s.menu}>
@@ -168,7 +173,7 @@ const Menu: FC = () => {
                     <img src={loop} alt="search" className={s.loop} />
                 </div>
             </div>
-            <div className={s.menuActions} onClick={() => setLikes()}>
+            <div className={s.menuActions} onClick={() => setShowLikes(likes => likes + 1)}>
                 <div className={s.cabinet}>
                     <a href="/">
                         <img src={cabinet} alt="cabinet" className={s.cabinetImg} />
@@ -177,13 +182,13 @@ const Menu: FC = () => {
                 <div className={s.desired}>
                     <a href="/">
                         <img src={desire} alt="desired" className={s.desiredImg} />
-                        {likes[0] === 0 ? null : <div className={s.desiredAlert}>{likes[0]}</div>}
+                        {showLikes === 0 ? null : <div className={s.desiredAlert}>{showLikes}</div>}
                     </a>
                 </div>
                 <div className={s.shopping}>
                     <a href="/">
                         <img src={shoppingCart} alt="shoppingCart" className={s.shoppingImg} />
-                        {basket[0] === 0 ? null : <div className={s.shoppingAlert}>{basket[0]}</div>}
+                        {basket === 0 ? null : <div className={s.shoppingAlert}>{basket}</div>}
                     </a>
                 </div>
             </div>
