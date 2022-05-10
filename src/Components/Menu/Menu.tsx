@@ -1,4 +1,4 @@
-import { FC, Fragment, useContext, useEffect, useState } from "react";
+import { FC, Fragment, useState } from "react";
 import s from "./Menu.module.sass";
 import tile from '../../Image/hoverMenu/icon1.svg';
 import plumbing from '../../Image/hoverMenu/icon2.svg';
@@ -12,7 +12,9 @@ import desire from '../../Image/heart.svg';
 import shoppingCart from '../../Image/Cart.svg';
 import { useGlobalContext } from "../Context/Context";
 
-const MenuListItems: string[][] = [
+type IMenu = string[][];
+
+const MenuListItems: IMenu = [
     [tile, "Tile", "Плитка"],
     [plumbing, "Plumbing", "Сантехника"],
     [bathroomFurniture, "Bathroom Furniture", "Мебель для ванной"],
@@ -21,14 +23,14 @@ const MenuListItems: string[][] = [
     [flooring, "Flooring", "Напольное покрытие"]
 ];
 
-const MenuInfoItems: string[][] = [
+const MenuInfoItems: IMenu = [
     ["Ванны", "Ванны 150 см", "Ванны 160 см", "Ванны 170 см", "Еще"],
     ["Унитазы", "2 режима смыва", "Без ободка", "Подвесные", "Еще"],
     ["Раковины", "Шириной 40 см", "Шириной 50 см", "Шириной 60 см", "Еще"],
     ["Смесители", "Кухонные мойки Ulgran", "Однорычажные для кухни", "Премиальные бренда Webert", "Еще"]
 ];
 
-const MenuInfoItemsSecond: string[][] = [
+const MenuInfoItemsSecond: IMenu = [
     ["/", 'Душевые кабины, уголки'],
     ["/", 'Биде'],
     ["/", 'Душевые боксы'],
@@ -45,7 +47,7 @@ const MenuInfoItemsSecond: string[][] = [
     ["/", 'Аксессуары для ванной']
 ]
 
-const MenuInfoItemsThird: string[][] = [
+const MenuInfoItemsThird: IMenu = [
     ["/", "Аксессуары для общественных санузлов"],
     ["/", "Комплектующие"],
     ["/", "Кухонные мойки"],
