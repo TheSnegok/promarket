@@ -16,7 +16,7 @@ const Item = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, price 
 
 	const [fill, setFill] = useState<string>("#2B7BC6");
 
-	const { likes, setLikes } = useGlobalContext();
+	const { likes, setLikes, basket, setBasket } = useGlobalContext();
 
 	const funcSetLikes = () => {
 		if (fill === "rgb(235 47 92)") {
@@ -81,9 +81,11 @@ const Item = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, price 
 					</a>
 				</div>
 			</div>
-			<div className={s.itemDescription}>
-				<a href="/">{itemDesc}</a>
-			</div>
+			<a href="/">
+				<div className={s.itemDescription}>
+					{itemDesc}
+				</div>
+			</a>
 			<div className={s.itemCountry}>
 				<span>{itemCountry}</span>
 			</div>
@@ -97,9 +99,9 @@ const Item = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, price 
 						<span>{price[0]}</span>
 					</div>
 				)}
-				<div className={s.buy}>
-					<span>В КОРЗИНУ</span>
-				</div>
+				<button className={s.buy}>
+					В КОРЗИНУ
+				</button>
 			</div>
 		</div>
 	)
