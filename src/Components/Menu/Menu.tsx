@@ -12,58 +12,135 @@ import desire from '../../Image/heart.svg';
 import shoppingCart from '../../Image/Cart.svg';
 import { useGlobalContext } from "../Context/Context";
 
-type IMenu = string[][];
+interface IMenuListItems {
+    src: string;
+    description: string;
+    text: string;
+};
 
-const MenuListItems: IMenu = [
-    [tile, "Tile", "Плитка"],
-    [plumbing, "Plumbing", "Сантехника"],
-    [bathroomFurniture, "Bathroom Furniture", "Мебель для ванной"],
-    [Electronics, "Electronics", "Электроника и бытовая техника"],
-    [heating, "Heating", "Отопление"],
-    [flooring, "Flooring", "Напольное покрытие"]
+interface IMenuInfoItems {
+    text: string;
+    url: string;
+};
+
+const MenuListItems: IMenuListItems[] = [
+    { src: tile, description: "Tile", text: "Плитка" },
+    { src: plumbing, description: "Plumbing", text: "Сантехника" },
+    { src: bathroomFurniture, description: "Bathroom Furniture", text: "Мебель для ванной" },
+    { src: Electronics, description: "Electronics", text: "Электроника и бытовая техника" },
+    { src: heating, description: "Heating", text: "Отопление" },
+    { src: flooring, description: "Flooring", text: "Напольное покрытие" }
 ];
 
-const MenuInfoItems: IMenu = [
-    ["Ванны", "Ванны 150 см", "Ванны 160 см", "Ванны 170 см", "Еще"],
-    ["Унитазы", "2 режима смыва", "Без ободка", "Подвесные", "Еще"],
-    ["Раковины", "Шириной 40 см", "Шириной 50 см", "Шириной 60 см", "Еще"],
-    ["Смесители", "Кухонные мойки Ulgran", "Однорычажные для кухни", "Премиальные бренда Webert", "Еще"]
+const MenuInfoItems: IMenuInfoItems[][] = [
+    [
+        {
+            text: "Ванны",
+            url: "/"
+        }, {
+            text: "Ванны 150 см",
+            url: "/"
+        }, {
+            text: "Ванны 160 см",
+            url: "/"
+        }, {
+            text: "Ванны 170 см",
+            url: "/"
+        }, {
+            text: "Еще",
+            url: "/"
+        }
+    ],
+    [
+        {
+            text: "Унитазы",
+            url: "/"
+        }, {
+            text: "2 режима смыва",
+            url: "/"
+        }, {
+            text: "Без ободка",
+            url: "/"
+        }, {
+            text: "Подвесные",
+            url: "/"
+        }, {
+            text: "Еще",
+            url: "/"
+        }
+    ],
+    [
+        {
+            text: "Раковины",
+            url: "/"
+        }, {
+            text: "Шириной 40 см",
+            url: "/"
+        }, {
+            text: "Шириной 50 см",
+            url: "/"
+        }, {
+            text: "Шириной 60 см",
+            url: "/"
+        }, {
+            text: "Еще",
+            url: "/"
+        }
+    ],
+    [
+        {
+            text: "Смесители",
+            url: "/"
+        }, {
+            text: "Кухонные мойки Ulgran",
+            url: "/"
+        }, {
+            text: "Однорычажные для кухни",
+            url: "/"
+        }, {
+            text: "Премиальные бренда Webert",
+            url: "/"
+        }, {
+            text: "Еще",
+            url: "/"
+        }
+    ],
 ];
 
-const MenuInfoItemsSecond: IMenu = [
-    ["/", 'Душевые кабины, уголки'],
-    ["/", 'Биде'],
-    ["/", 'Душевые боксы'],
-    ["/", 'Душевые ограждения'],
-    ["/", 'Душевые поддоны'],
-    ["/", 'Душевые трапы и лотки'],
-    ["/", 'Инсталляции'],
-    ["/", 'Сливные трапы, желоба'],
-    ["/", 'Душевые гарнитуры'],
-    ["/", 'Душевые системы'],
-    ["/", 'Душевые панели'],
-    ["/", 'Верхние души'],
-    ["/", 'Гигиенические души'],
-    ["/", 'Аксессуары для ванной']
-]
+const MenuInfoItemsSecond: IMenuInfoItems[] = [
+    { url: "/", text: 'Душевые кабины, уголки' },
+    { url: "/", text: 'Биде' },
+    { url: "/", text: 'Душевые боксы' },
+    { url: "/", text: 'Душевые ограждения' },
+    { url: "/", text: 'Душевые поддоны' },
+    { url: "/", text: 'Душевые трапы и лотки' },
+    { url: "/", text: 'Инсталляции' },
+    { url: "/", text: 'Сливные трапы, желоба' },
+    { url: "/", text: 'Душевые гарнитуры' },
+    { url: "/", text: 'Душевые системы' },
+    { url: "/", text: 'Душевые панели' },
+    { url: "/", text: 'Верхние души' },
+    { url: "/", text: 'Гигиенические души' },
+    { url: "/", text: 'Аксессуары для ванной' }
+];
 
-const MenuInfoItemsThird: IMenu = [
-    ["/", "Аксессуары для общественных санузлов"],
-    ["/", "Комплектующие"],
-    ["/", "Кухонные мойки"],
-    ["/", "Гидромассаж"],
-    ["/", "Трубы и фитинги"],
-    ["/", "Изделия для инвалидов"],
-    ["/", "Инструменты сантехнические"],
-    ["/", "Писсуары"],
-    ["/", "Фильтры"],
-]
+const MenuInfoItemsThird: IMenuInfoItems[] = [
+    { url: "/", text: "Аксессуары для общественных санузлов" },
+    { url: "/", text: "Комплектующие" },
+    { url: "/", text: "Кухонные мойки" },
+    { url: "/", text: "Гидромассаж" },
+    { url: "/", text: "Трубы и фитинги" },
+    { url: "/", text: "Изделия для инвалидов" },
+    { url: "/", text: "Инструменты сантехнические" },
+    { url: "/", text: "Писсуары" },
+    { url: "/", text: "Фильтры" },
+];
 
 const Menu: FC = () => {
-    
+
     const { likes, basket } = useGlobalContext();
     const [info, setInfo] = useState<number>(0);
-    
+
     return (
         <menu className={s.menu}>
             <div className={s.menuItems}>
@@ -79,43 +156,43 @@ const Menu: FC = () => {
                         <div className={s.hover}>
                             <div className={s.hoverSections}>
                                 {MenuListItems.map((item, index) => (
-                                    <div key={item[2]} className={info === index ? s.wrapperSectionsActive : s.wrapperSections} onMouseEnter={() => setInfo(index)}>
-                                        <img src={item[0]} alt={item[1]} />
-                                        <span>{item[2]}</span>
+                                    <div key={item.description} className={info === index ? s.wrapperSectionsActive : s.wrapperSections} onMouseEnter={() => setInfo(index)}>
+                                        <img src={item.src} alt={item.description} />
+                                        <span>{item.text}</span>
                                     </div>
                                 ))}
                             </div>
                             <div className={s.hoverInfo}>
                                 <div className={s.hoverInfoHeader}>
-                                    <span>{MenuListItems[info][2]}</span>
+                                    <span>{MenuListItems[info].text}</span>
                                 </div>
                                 <div className={s.wrapper}>
                                     {info === 1 ?
                                         (
                                             <Fragment>
                                                 <div className={s.wrapperFirst}>
-                                                    {MenuInfoItems.map(item => (
-                                                        <div className={s.columnWrapper} key={item[0]}>
-                                                            <span className={s.columnWrapperHeader}>{item[0]}</span>
+                                                    {MenuInfoItems.map(mas => (
+                                                        <div className={s.columnWrapper} key={mas[0].text}>
+                                                            <span className={s.columnWrapperHeader}>{mas[0].text}</span>
                                                             <ul>
                                                                 <li>
-                                                                    <a href="/">
-                                                                        <span>{item[1]}</span>
+                                                                    <a href={mas[1].url}>
+                                                                        <span>{mas[1].text}</span>
                                                                     </a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="/">
-                                                                        <span>{item[2]}</span>
+                                                                    <a href={mas[2].url}>
+                                                                        <span>{mas[2].text}</span>
                                                                     </a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="/">
-                                                                        <span>{item[3]}</span>
+                                                                    <a href={mas[2].url}>
+                                                                        <span>{mas[3].text}</span>
                                                                     </a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="/">
-                                                                        <span>{item[4]}</span>
+                                                                    <a href={mas[2].url}>
+                                                                        <span>{mas[4].text}</span>
                                                                     </a>
                                                                 </li>
                                                             </ul>
@@ -126,7 +203,7 @@ const Menu: FC = () => {
                                                     <ul>
                                                         {MenuInfoItemsSecond.map((item, index) => (
                                                             <li key={index} >
-                                                                <a href={item[0]}>{item[1]}</a>
+                                                                <a href={item.url}>{item.text}</a>
                                                             </li>
                                                         ))}
                                                     </ul>
@@ -135,7 +212,7 @@ const Menu: FC = () => {
                                                     <ul>
                                                         {MenuInfoItemsThird.map((item, index) => (
                                                             <li key={index}>
-                                                                <a href={item[0]}>{item[1]}</a>
+                                                                <a href={item.url}>{item.text}</a>
                                                             </li>
                                                         ))}
                                                     </ul>
