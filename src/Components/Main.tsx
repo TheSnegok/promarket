@@ -13,24 +13,32 @@ import Seo from './Seo/Seo';
 import Footer from './Footer/Footer';
 import { Provider } from './Context/Context';
 
-const Main: FC = () => {
+const MainComponentsPage: FC = ({ children }) => {
 	return (
 		<Provider>
 			<main className="container">
 				<Header />
 				<Menu />
-				<Banners />
-				<Icons />
-				<Collections />
-				<Hits />
-				<Stock />
-				<Banner />
-				<Brands />
-				<Article />
-				<Seo />
+				{children}
 				<Footer />
 			</main>
 		</Provider>
+	)
+}
+
+const Main: FC = () => {
+	return (
+		<MainComponentsPage>
+			<Banners />
+			<Icons />
+			<Collections />
+			<Hits />
+			<Stock />
+			<Banner />
+			<Brands />
+			<Article />
+			<Seo />
+		</MainComponentsPage>
 	)
 }
 
