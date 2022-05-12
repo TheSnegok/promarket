@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import { useGlobalContext } from '../../Context/Context';
 import s from './Item.module.sass';
+import chat from '../../../Image/hits/messageLogo.svg';
 
 interface IItemProps {
-	tags: string | string[];
-	itemImg: string | string[];
-	itemStars: string[] | undefined;
-	message: string | string[];
-	itemDesc: string | string[];
-	itemCountry: string | string[];
-	price: string | string[];
+	tags: string[];
+	itemImg: string;
+	itemStars: string[];
+	message: number;
+	itemDesc: string;
+	itemCountry: string;
+	price: number[];
 }
 
 const Item = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, price }: IItemProps) => {
@@ -22,10 +23,10 @@ const Item = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, price 
 	const clickSetLikes = () => {
 		if (fill === "rgb(235 47 92)") {
 			setFill("#2B7BC6");
-			setLikes(likes.count === 0 ? { count: 0 } : {count: likes.count - 1});
+			setLikes(likes.count === 0 ? { count: 0, items: { ...likes.items } } : { count: likes.count - 1, items: { ...likes.items } });
 		} else {
 			setFill("rgb(235 47 92)");
-			setLikes({ count: likes.count + 1});
+			setLikes({ count: likes.count + 1, items: { ...likes.items } });
 		}
 	}
 
@@ -62,7 +63,7 @@ const Item = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, price 
 			</div>
 			<div className={s.itemStars}>
 				<div className={s.starsWrapper}>
-					{itemStars ? itemStars.map((item, index) => (
+					{itemStars.map((item, index) => (
 						item === "full" ? (
 							<div key={index} className={s.stars}>
 								<div className={s.starsFull}></div>
@@ -78,12 +79,12 @@ const Item = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, price 
 								</div>
 							)
 						)
-					)) : null}
+					))}
 				</div>
 				<div className={s.message}>
 					<a href="/">
-						<img src={message[0]} alt="chat" />
-						<span className={s.messageCount}>{message[1]}</span>
+						<img src={chat} alt="chat" />
+						<span className={s.messageCount}>{message}</span>
 					</a>
 				</div>
 			</div>
@@ -98,11 +99,11 @@ const Item = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, price 
 			<div className={s.itemBuy}>
 				{price.length === 1 ? (
 					<div className={s.price}>
-						<span>{price[0]}</span>
+						<span>{price[0] + ` ₽`}</span>
 					</div>
 				) : (
 					<div className={s.price} data-diuscount={price[1]}>
-						<span>{price[0]}</span>
+						<span>{price[0] + ` ₽`}</span>
 					</div>
 				)}
 				<button className={itemBuy ? s.buyActive : s.buy} onClick={() => clickSetInBasket()}>

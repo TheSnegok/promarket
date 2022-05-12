@@ -5,93 +5,102 @@ import showerCabin from '../../Image/stock/image 2.png';
 import bathroomAcr from '../../Image/stock/image 3.png';
 import toilet2 from '../../Image/stock/image 4.png';
 import sink2 from '../../Image/stock/image 5.png';
-import chat from '../../Image/hits/messageLogo.svg';
 import Item from "../Templates/Item/Item";
+
+interface IItem {
+    tags: string[];
+	imgSrc: string ;
+	stars: string[];
+	reviews: number;
+	description: string;
+	country: string;
+	price: number[];
+}
 
 const menu: string[] = ["Любые товары", "Смесители", "Полотенцесушители", "Биде", "Душевые системы", "Ванны", "Унитазы", "Отопители", "Посудомоечные машины"];
 
-const item: (string | string[])[][] = [
-    [
-        ["Акция"],
-        mixer,
-        ["full", "full", "full", "full", "half"],
-        [chat, "12"],
-        "Смеситель Hansgrohe Logis 71070000 для раковины",
-        "Испания",
-        ["6 050 ₽", "7 601 ₽"]
-    ],
-    [
-        ["Акция"],
-        showerCabin,
-        ["full", "full", "full", "full", "half"],
-        [chat, "12"],
-        "Душевая кабина Black&White Galaxy G8800, 80 x 110 см",
-        "Германия",
-        ["84 000 ₽", "90 580 ₽"]
-    ],
-    [
-        ["Акция"],
-        bathroomAcr,
-        ["full", "full", "full", "full", "half"],
-        [chat, "12"],
-        "Ванна акриловая Am.Pm Spirit W72A-160L100W-A2, 160 x 100 см, левосторонняя",
-        "Германия",
-        ["29 990 ₽", "36 900 ₽"]
-    ],
-    [
-        ["Акция"],
-        toilet2,
-        ["full", "full", "full", "full", "half"],
-        [chat, "12"],
-        "Унитаз Laguraty 8074 крышка микролифт, с функцией биде",
-        "Испания",
-        ["32 108 ₽", "34 900 ₽"]
-    ],
-    [
-        ["Акция"],
-        sink2,
-        ["full", "full", "full", "full", "half"],
-        [chat, "10"],
-        "Раковина Laufen Palace 120 см 8.1170.4.000.104.1",
-        "Швейцария",
-        ["53 458 ₽", "58 601 ₽"]
-    ],
-    [
-        ["Акция"],
-        mixer,
-        ["full", "full", "full", "full", "half"],
-        [chat, "12"],
-        "Смеситель Hansgrohe Logis 71070000 для раковины",
-        "Испания",
-        ["6 050 ₽", "7 601 ₽"]
-    ],
-    [
-        ["Акция"],
-        showerCabin,
-        ["full", "full", "full", "full", "half"],
-        [chat, "12"],
-        "Душевая кабина Black&White Galaxy G8800, 80 x 110 см",
-        "Германия",
-        ["84 000 ₽", "90 580 ₽"]
-    ],
-    [
-        ["Акция"],
-        bathroomAcr,
-        ["full", "full", "full", "full", "half"],
-        [chat, "12"],
-        "Ванна акриловая Am.Pm Spirit W72A-160L100W-A2, 160 x 100 см, левосторонняя",
-        "Германия",
-        ["29 990 ₽", "36 900 ₽"]
-    ],
-    [
-        ["Акция"],
-        toilet2,
-        ["full", "full", "full", "full", "half"],
-        [chat, "12"],
-        "Унитаз Laguraty 8074 крышка микролифт, с функцией биде",
-        "Испания",
-        ["32 108 ₽", "34 900 ₽"]
-    ],
+const item: IItem[] = [
+    {
+        tags: ["Акция"],
+        imgSrc: mixer,
+        stars: ["full", "full", "full", "full", "half"],
+        reviews: 12,
+        description: "Смеситель Hansgrohe Logis 71070000 для раковины",
+        country: "Испания",
+        price: [6050, 7601]
+    },
+    {
+        tags: ["Акция"],
+        imgSrc: showerCabin,
+        stars: ["full", "full", "full", "full", "half"],
+        reviews: 12,
+        description: "Душевая кабина Black&White Galaxy G8800, 80 x 110 см",
+        country: "Германия",
+        price: [84000, 90580]
+    },
+    {
+        tags: ["Акция"],
+        imgSrc: bathroomAcr,
+        stars: ["full", "full", "full", "full", "half"],
+        reviews: 12,
+        description: "Ванна акриловая Am.Pm Spirit W72A-160L100W-A2, 160 x 100 см, левосторонняя",
+        country: "Германия",
+        price: [29990, 36900]
+    },
+    {
+        tags: ["Акция"],
+        imgSrc: toilet2,
+        stars: ["full", "full", "full", "full", "half"],
+        reviews: 12,
+        description: "Унитаз Laguraty 8074 крышка микролифт, с функцией биде",
+        country: "Испания",
+        price: [32108, 34900]
+    },
+    {
+        tags: ["Акция"],
+        imgSrc: sink2,
+        stars: ["full", "full", "full", "full", "half"],
+        reviews: 10,
+        description: "Раковина Laufen Palace 120 см 8.1170.4.000.104.1",
+        country: "Швейцария",
+        price: [53458, 58601]
+    },
+    {
+        tags: ["Акция"],
+        imgSrc: mixer,
+        stars: ["full", "full", "full", "full", "half"],
+        reviews: 12,
+        description: "Смеситель Hansgrohe Logis 71070000 для раковины",
+        country: "Испания",
+        price: [6050, 7601]
+    },
+    {
+        tags: ["Акция"],
+        imgSrc: showerCabin,
+        stars: ["full", "full", "full", "full", "half"],
+        reviews: 12,
+        description: "Душевая кабина Black&White Galaxy G8800, 80 x 110 см",
+        country: "Германия",
+        price: [84000, 90580]
+    },
+    {
+        tags: ["Акция"],
+        imgSrc: bathroomAcr,
+        stars: ["full", "full", "full", "full", "half"],
+        reviews: 12,
+        description: "Ванна акриловая Am.Pm Spirit W72A-160L100W-A2, 160 x 100 см, левосторонняя",
+        country: "Германия",
+        price: [29990, 36900]
+    },
+    {
+        tags: ["Акция"],
+        imgSrc: toilet2,
+        stars: ["full", "full", "full", "full", "half"],
+        reviews: 12,
+        description: "Унитаз Laguraty 8074 крышка микролифт, с функцией биде",
+        country: "Испания",
+        price: [32108, 34900]
+    },
 ];
 
 const Stock: FC = () => {
@@ -131,7 +140,7 @@ const Stock: FC = () => {
             <div className={s.stockSlider}>
                 <div className={s.stockWrapper}>
                     <div className={s.stockWrapperSlider} style={{ left: position + 'px' }}>
-                        {item.map((item, index) => <Item key={index} tags={item[0]} itemImg={item[1]} itemStars={Array.isArray(item[2]) ? item[2] : undefined} message={item[3]} itemDesc={item[4]} itemCountry={item[5]} price={item[6]} />)}
+                        {item.map((item, index) => <Item key={index} tags={item.tags} itemImg={item.imgSrc} itemStars={item.stars} message={item.reviews} itemDesc={item.description} itemCountry={item.country} price={item.price} />)}
                     </div>
                 </div>
                 <div className={s.arrowRight} onClick={() => changeSlide("plus")}></div>

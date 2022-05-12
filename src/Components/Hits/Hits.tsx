@@ -5,8 +5,17 @@ import bathroom from '../../Image/hits/image 2.png';
 import shower from '../../Image/hits/image 3.png';
 import toilet from '../../Image/hits/image 4.png';
 import heatedTowelRail from '../../Image/hits/image 5.png';
-import chat from '../../Image/hits/messageLogo.svg';
 import Item from "../Templates/Item/Item";
+
+interface IItem {
+    tags: string[];
+	imgSrc: string ;
+	stars: string[];
+	reviews: number;
+	description: string;
+	country: string;
+	price: number[];
+}
 
 const Hits: FC = () => {
 
@@ -35,88 +44,88 @@ const Hits: FC = () => {
     }
     const menu: string[] = ["Любые товары", "Раковины", "Ванны", "Унитазы", "Душевые системы", "Смесители", "Зеркала", "Душевые кабины", "Стиральные машины"];
 
-    const item: (string | string[])[][] = [
-        [
-            ["Хит"],
-            sink,
-            ["full", "full", "full", "full", "half"],
-            [chat, "12"],
-            "Раковина Roca Debba 32799400Y, 60x48 см",
-            "Испания",
-            ["2 601 ₽"]
-        ],
-        [
-            ["Хит", "Акция"],
-            bathroom,
-            ["full", "full", "full", "full", "half"],
-            [chat, "2"],
-            "Акриловая ванна AM.PM Bliss L 180х80 W53A-180-080W-ARB",
-            "Германия",
-            ["26 990 ₽", "28 601 ₽"]
-        ],
-        [
-            ["Хит"],
-            shower,
-            ["full", "full", "full", "full", "half"],
-            [chat, "24"],
-            "Душевая система Raiber R0808, хром",
-            "Германия",
-            ["12 207 ₽"]
-        ],
-        [
-            ["Хит"],
-            toilet,
-            ["full", "full", "full", "full", "half"],
-            [chat, "4"],
-            "Унитаз AM.PM Spirit V2.0 C708607SC компакт с сиденьем микролифт",
-            "Испания",
-            ["14 764 ₽"]
-        ],
-        [
-            ["Хит"],
-            heatedTowelRail,
-            ["full", "full", "full", "full", "half"],
-            [chat, "10"],
-            "Полотенцесушитель электрический Laris Кватро П7 40 x 60 см, 85 Вт, со...",
-            "Россия, Украина",
-            ["12 730 ₽"]
-        ],
-        [
-            ["Хит"],
-            sink,
-            ["full", "full", "full", "full", "half"],
-            [chat, "12"],
-            "Раковина Roca Debba 32799400Y, 60x48 см",
-            "Испания",
-            ["2 601 ₽"]
-        ],
-        [
-            ["Хит", "Акция"],
-            bathroom,
-            ["full", "full", "full", "full", "half"],
-            [chat, "2"],
-            "Акриловая ванна AM.PM Bliss L 180х80 W53A-180-080W-ARB",
-            "Германия",
-            ["26 990 ₽", "28 601 ₽"]
-        ],
-        [
-            ["Хит"],
-            shower,
-            ["full", "full", "full", "full", "half"],
-            [chat, "24"],
-            "Душевая система Raiber R0808, хром",
-            "Германия",
-            ["12 207 ₽"]
-        ],
-        [
-            ["Хит"],
-            toilet,
-            ["full", "full", "full", "full", "half"],
-            [chat, "4"],
-            "Унитаз AM.PM Spirit V2.0 C708607SC компакт с сиденьем микролифт",
-            "Испания",
-            ["14 764 ₽"]
-        ],
+    const item: IItem[] = [
+        {
+            tags: ["Хит"],
+            imgSrc: sink,
+            stars: ["full", "full", "full", "full", "half"],
+            reviews: 12,
+            description: "Раковина Roca Debba 32799400Y, 60x48 см",
+            country: "Испания",
+            price: [2601]
+        },
+        {
+            tags: ["Хит", "Акция"],
+            imgSrc: bathroom,
+            stars: ["full", "full", "full", "full", "half"],
+            reviews: 2,
+            description: "Акриловая ванна AM.PM Bliss L 180х80 W53A-180-080W-ARB",
+            country: "Германия",
+            price: [26990, 28601]
+        },
+        {
+            tags: ["Хит"],
+            imgSrc: shower,
+            stars: ["full", "full", "full", "full", "half"],
+            reviews: 24,
+            description: "Душевая система Raiber R0808, хром",
+            country: "Германия",
+            price: [12207]
+        },
+        {
+            tags: ["Хит"],
+            imgSrc: toilet,
+            stars: ["full", "full", "full", "full", "half"],
+            reviews: 4,
+            description: "Унитаз AM.PM Spirit V2.0 C708607SC компакт с сиденьем микролифт",
+            country: "Испания",
+            price: [14764]
+        },
+        {
+            tags: ["Хит"],
+            imgSrc: heatedTowelRail,
+            stars: ["full", "full", "full", "full", "half"],
+            reviews: 10,
+            description: "Полотенцесушитель электрический Laris Кватро П7 40 x 60 см, 85 Вт, со...",
+            country: "Россия, Украина",
+            price: [12730]
+        },
+        {
+            tags: ["Хит"],
+            imgSrc: sink,
+            stars: ["full", "full", "full", "full", "half"],
+            reviews: 12,
+            description: "Раковина Roca Debba 32799400Y, 60x48 см",
+            country: "Испания",
+            price: [2601]
+        },
+        {
+            tags: ["Хит", "Акция"],
+            imgSrc: bathroom,
+            stars: ["full", "full", "full", "full", "half"],
+            reviews: 2,
+            description: "Акриловая ванна AM.PM Bliss L 180х80 W53A-180-080W-ARB",
+            country: "Германия",
+            price: [26990, 28601]
+        },
+        {
+            tags: ["Хит"],
+            imgSrc: shower,
+            stars: ["full", "full", "full", "full", "half"],
+            reviews: 24,
+            description: "Душевая система Raiber R0808, хром",
+            country: "Германия",
+            price: [12207]
+        },
+        {
+            tags: ["Хит"],
+            imgSrc: toilet,
+            stars: ["full", "full", "full", "full", "half"],
+            reviews: 4,
+            description: "Унитаз AM.PM Spirit V2.0 C708607SC компакт с сиденьем микролифт",
+            country: "Испания",
+            price: [14764]
+        },
     ];
 
     return (
@@ -130,7 +139,7 @@ const Hits: FC = () => {
             <div className={s.hitsSlider}>
                 <div className={s.hitsWrapper}>
                     <div className={s.hitsWrapperSlider} style={{left: position + 'px'}}>
-                        {item.map((item, index) => <Item key={index} tags={item[0]} itemImg={item[1]} itemStars={Array.isArray(item[2]) ? item[2] : undefined} message={item[3]} itemDesc={item[4]} itemCountry={item[5]} price={item[6]} />)}
+                        {item.map((item, index) => <Item key={index} tags={item.tags} itemImg={item.imgSrc} itemStars={item.stars} message={item.reviews} itemDesc={item.description} itemCountry={item.country} price={item.price} />)}
                     </div>
                 </div>
                 <div className={s.arrowRight} onClick={() => changeSlide("plus")}></div>
