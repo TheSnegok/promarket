@@ -255,7 +255,7 @@ const Menu: FC = () => {
                 <div className={s.desired}>
                     <a href="/">
                         <img src={desire} alt="desired" className={s.desiredImg} />
-                        {likes === 0 ? null : <div className={s.desiredAlert}>{likes}</div>}
+                        {likes.count === 0 ? null : <div className={s.desiredAlert}>{likes.count}</div>}
                     </a>
                 </div>
                 <div className={s.shopping}>

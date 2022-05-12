@@ -22,10 +22,10 @@ const Item = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, price 
 	const clickSetLikes = () => {
 		if (fill === "rgb(235 47 92)") {
 			setFill("#2B7BC6");
-			setLikes(likes === 0 ? 0 : likes - 1);
+			setLikes(likes.count === 0 ? { count: 0 } : {count: likes.count - 1});
 		} else {
 			setFill("rgb(235 47 92)");
-			setLikes(likes + 1);
+			setLikes({ count: likes.count + 1});
 		}
 	}
 
