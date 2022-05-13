@@ -20,10 +20,36 @@ const Item = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, price 
 
 	const { likes, setLikes, basket, setBasket } = useGlobalContext();
 
+	const mapObject = (thisObject: object) => {
+		for(let key in thisObject) {
+			console.log(key);
+		}
+	}
+	
+	mapObject(likes.items);
+
 	const clickSetLikes = () => {
 		if (fill === "rgb(235 47 92)") {
 			setFill("#2B7BC6");
-			setLikes(likes.count === 0 ? { count: 0, items: { ...likes.items } } : { count: likes.count - 1, items: { ...likes.items } });
+			setLikes(likes.count === 0 ? {
+				count: 0, items: {
+					url: '',
+					imgUrl: '',
+					type: '',
+					stars: [],
+					review: [],
+					price: 0,
+				}
+			} : {
+				count: likes.count - 1, items: {
+					url: '',
+					imgUrl: itemImg,
+					type: '',
+					stars: [],
+					review: [],
+					price: 0,
+				}
+			});
 		} else {
 			setFill("rgb(235 47 92)");
 			setLikes({ count: likes.count + 1, items: { ...likes.items } });

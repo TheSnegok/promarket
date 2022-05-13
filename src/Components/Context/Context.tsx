@@ -3,6 +3,7 @@ import { createContext, FC, useContext, useState } from "react";
 interface IItemProps {
     count: number;
     items: {
+        [key: string]: string | string[] | number;
         url: string;
         imgUrl: string;
         type: string;
@@ -58,6 +59,7 @@ export const Provider: FC = ({ children }) => {
             price: 0,
         }
     });
+    
     const [basket, setBasket] = useState<IItemProps>({
         count: 0,
         items: {
