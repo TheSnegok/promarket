@@ -6,6 +6,7 @@ import shower from '../../Image/hits/image 3.png';
 import toilet from '../../Image/hits/image 4.png';
 import heatedTowelRail from '../../Image/hits/image 5.png';
 import Item from "../Templates/Item/Item";
+import getPersonalKey from "../Templates/KeyGenerator/KeyGenerator";
 
 interface IItem {
     tags: string[];
@@ -15,6 +16,7 @@ interface IItem {
 	description: string;
 	country: string;
 	price: number[];
+    personalKey: string;
 }
 
 const Hits: FC = () => {
@@ -42,6 +44,7 @@ const Hits: FC = () => {
                 break;
         }
     }
+
     const menu: string[] = ["Любые товары", "Раковины", "Ванны", "Унитазы", "Душевые системы", "Смесители", "Зеркала", "Душевые кабины", "Стиральные машины"];
 
     const item: IItem[] = [
@@ -52,7 +55,8 @@ const Hits: FC = () => {
             reviews: 12,
             description: "Раковина Roca Debba 32799400Y, 60x48 см",
             country: "Испания",
-            price: [2601]
+            price: [2601],
+            personalKey: getPersonalKey()
         },
         {
             tags: ["Хит", "Акция"],
@@ -61,7 +65,8 @@ const Hits: FC = () => {
             reviews: 2,
             description: "Акриловая ванна AM.PM Bliss L 180х80 W53A-180-080W-ARB",
             country: "Германия",
-            price: [26990, 28601]
+            price: [26990, 28601],
+            personalKey: getPersonalKey()
         },
         {
             tags: ["Хит"],
@@ -70,7 +75,8 @@ const Hits: FC = () => {
             reviews: 24,
             description: "Душевая система Raiber R0808, хром",
             country: "Германия",
-            price: [12207]
+            price: [12207],
+            personalKey: getPersonalKey()
         },
         {
             tags: ["Хит"],
@@ -79,7 +85,8 @@ const Hits: FC = () => {
             reviews: 4,
             description: "Унитаз AM.PM Spirit V2.0 C708607SC компакт с сиденьем микролифт",
             country: "Испания",
-            price: [14764]
+            price: [14764],
+            personalKey: getPersonalKey()
         },
         {
             tags: ["Хит"],
@@ -88,7 +95,8 @@ const Hits: FC = () => {
             reviews: 10,
             description: "Полотенцесушитель электрический Laris Кватро П7 40 x 60 см, 85 Вт, со...",
             country: "Россия, Украина",
-            price: [12730]
+            price: [12730],
+            personalKey: getPersonalKey()
         },
         {
             tags: ["Хит"],
@@ -97,7 +105,8 @@ const Hits: FC = () => {
             reviews: 12,
             description: "Раковина Roca Debba 32799400Y, 60x48 см",
             country: "Испания",
-            price: [2601]
+            price: [2601],
+            personalKey: getPersonalKey()
         },
         {
             tags: ["Хит", "Акция"],
@@ -106,7 +115,8 @@ const Hits: FC = () => {
             reviews: 2,
             description: "Акриловая ванна AM.PM Bliss L 180х80 W53A-180-080W-ARB",
             country: "Германия",
-            price: [26990, 28601]
+            price: [26990, 28601],
+            personalKey: getPersonalKey()
         },
         {
             tags: ["Хит"],
@@ -115,7 +125,8 @@ const Hits: FC = () => {
             reviews: 24,
             description: "Душевая система Raiber R0808, хром",
             country: "Германия",
-            price: [12207]
+            price: [12207],
+            personalKey: getPersonalKey()
         },
         {
             tags: ["Хит"],
@@ -124,7 +135,8 @@ const Hits: FC = () => {
             reviews: 4,
             description: "Унитаз AM.PM Spirit V2.0 C708607SC компакт с сиденьем микролифт",
             country: "Испания",
-            price: [14764]
+            price: [14764],
+            personalKey: getPersonalKey()
         },
     ];
 
@@ -139,7 +151,7 @@ const Hits: FC = () => {
             <div className={s.hitsSlider}>
                 <div className={s.hitsWrapper}>
                     <div className={s.hitsWrapperSlider} style={{left: position + 'px'}}>
-                        {item.map((item, index) => <Item key={index} tags={item.tags} itemImg={item.imgSrc} itemStars={item.stars} message={item.reviews} itemDesc={item.description} itemCountry={item.country} price={item.price} />)}
+                        {item.map((item, index) => <Item key={index} tags={item.tags} itemImg={item.imgSrc} itemStars={item.stars} message={item.reviews} itemDesc={item.description} itemCountry={item.country} price={item.price} personalKey={item.personalKey} />)}
                     </div>
                 </div>
                 <div className={s.arrowRight} onClick={() => changeSlide("plus")}></div>
