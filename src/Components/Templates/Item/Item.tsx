@@ -32,7 +32,7 @@ const Item = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, price 
 
 	const clickSetInBasket = () => {
 		setItemBuy(itemBuy => !itemBuy);
-		setBasket(!itemBuy ? basket + 1 : basket - 1);
+		setBasket(!itemBuy ? { count: basket.count + 1, items: { ...basket.items } } : { count: basket.count - 1, items: { ...basket.items } });
 	}
 
 	return (

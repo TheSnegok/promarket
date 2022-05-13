@@ -1,6 +1,6 @@
 import { createContext, FC, useContext, useState } from "react";
 
-interface ILikes {
+interface IItemProps {
     count: number;
     items: {
         url: string;
@@ -13,10 +13,10 @@ interface ILikes {
 }
 
 interface IContext {
-    likes: ILikes;
-    basket: number;
-    setLikes: (c: ILikes) => void;
-    setBasket: (c: number) => void;
+    likes: IItemProps;
+    basket: IItemProps;
+    setLikes: (c: IItemProps) => void;
+    setBasket: (c: IItemProps) => void;
 }
 
 export const Context = createContext<IContext>({
@@ -30,14 +30,24 @@ export const Context = createContext<IContext>({
             review: [],
             price: 0,
         }
-    }, basket: 0, setLikes: () => { }, setBasket: () => { }
+    }, basket: {
+        count: 0,
+        items: {
+            url: '',
+            imgUrl: '',
+            type: '',
+            stars: [],
+            review: [],
+            price: 0,
+        }
+    }, setLikes: () => { }, setBasket: () => { }
 });
 
 export const useGlobalContext = () => useContext(Context);
 
 export const Provider: FC = ({ children }) => {
 
-    const [likes, setLikes] = useState<ILikes>({
+    const [likes, setLikes] = useState<IItemProps>({
         count: 0,
         items: {
             url: '',
@@ -48,7 +58,17 @@ export const Provider: FC = ({ children }) => {
             price: 0,
         }
     });
-    const [basket, setBasket] = useState<number>(0);
+    const [basket, setBasket] = useState<IItemProps>({
+        count: 0,
+        items: {
+            url: '',
+            imgUrl: '',
+            type: '',
+            stars: [],
+            review: [],
+            price: 0,
+        }
+    });
 
     return (
         <Context.Provider value={{ likes, basket, setLikes, setBasket }} >
