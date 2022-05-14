@@ -11,6 +11,7 @@ interface IItemProps {
 		price: number[];
 		description: string;
 		country: string;
+		personalKey: string;
 	}[] | [];
 }
 

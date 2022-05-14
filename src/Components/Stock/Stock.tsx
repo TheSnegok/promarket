@@ -6,6 +6,7 @@ import bathroomAcr from '../../Image/stock/image 3.png';
 import toilet2 from '../../Image/stock/image 4.png';
 import sink2 from '../../Image/stock/image 5.png';
 import Item from "../Templates/Item/Item";
+import getPersonalKey from "../Templates/KeyGenerator/KeyGenerator";
 
 interface IItem {
     tags: string[];
@@ -15,6 +16,7 @@ interface IItem {
 	description: string;
 	country: string;
 	price: number[];
+    personalKey: string;
 }
 
 const menu: string[] = ["Любые товары", "Смесители", "Полотенцесушители", "Биде", "Душевые системы", "Ванны", "Унитазы", "Отопители", "Посудомоечные машины"];
@@ -27,7 +29,8 @@ const item: IItem[] = [
         reviews: 12,
         description: "Смеситель Hansgrohe Logis 71070000 для раковины",
         country: "Испания",
-        price: [6050, 7601]
+        price: [6050, 7601],
+        personalKey: getPersonalKey()
     },
     {
         tags: ["Акция"],
@@ -36,7 +39,8 @@ const item: IItem[] = [
         reviews: 12,
         description: "Душевая кабина Black&White Galaxy G8800, 80 x 110 см",
         country: "Германия",
-        price: [84000, 90580]
+        price: [84000, 90580],
+        personalKey: getPersonalKey()
     },
     {
         tags: ["Акция"],
@@ -45,7 +49,8 @@ const item: IItem[] = [
         reviews: 12,
         description: "Ванна акриловая Am.Pm Spirit W72A-160L100W-A2, 160 x 100 см, левосторонняя",
         country: "Германия",
-        price: [29990, 36900]
+        price: [29990, 36900],
+        personalKey: getPersonalKey()
     },
     {
         tags: ["Акция"],
@@ -54,7 +59,8 @@ const item: IItem[] = [
         reviews: 12,
         description: "Унитаз Laguraty 8074 крышка микролифт, с функцией биде",
         country: "Испания",
-        price: [32108, 34900]
+        price: [32108, 34900],
+        personalKey: getPersonalKey()
     },
     {
         tags: ["Акция"],
@@ -63,7 +69,8 @@ const item: IItem[] = [
         reviews: 10,
         description: "Раковина Laufen Palace 120 см 8.1170.4.000.104.1",
         country: "Швейцария",
-        price: [53458, 58601]
+        price: [53458, 58601],
+        personalKey: getPersonalKey()
     },
     {
         tags: ["Акция"],
@@ -72,7 +79,8 @@ const item: IItem[] = [
         reviews: 12,
         description: "Смеситель Hansgrohe Logis 71070000 для раковины",
         country: "Испания",
-        price: [6050, 7601]
+        price: [6050, 7601],
+        personalKey: getPersonalKey()
     },
     {
         tags: ["Акция"],
@@ -81,7 +89,8 @@ const item: IItem[] = [
         reviews: 12,
         description: "Душевая кабина Black&White Galaxy G8800, 80 x 110 см",
         country: "Германия",
-        price: [84000, 90580]
+        price: [84000, 90580],
+        personalKey: getPersonalKey()
     },
     {
         tags: ["Акция"],
@@ -90,7 +99,8 @@ const item: IItem[] = [
         reviews: 12,
         description: "Ванна акриловая Am.Pm Spirit W72A-160L100W-A2, 160 x 100 см, левосторонняя",
         country: "Германия",
-        price: [29990, 36900]
+        price: [29990, 36900],
+        personalKey: getPersonalKey()
     },
     {
         tags: ["Акция"],
@@ -99,7 +109,8 @@ const item: IItem[] = [
         reviews: 12,
         description: "Унитаз Laguraty 8074 крышка микролифт, с функцией биде",
         country: "Испания",
-        price: [32108, 34900]
+        price: [32108, 34900],
+        personalKey: getPersonalKey()
     },
 ];
 
@@ -140,7 +151,7 @@ const Stock: FC = () => {
             <div className={s.stockSlider}>
                 <div className={s.stockWrapper}>
                     <div className={s.stockWrapperSlider} style={{ left: position + 'px' }}>
-                        {item.map((item, index) => <Item key={index} tags={item.tags} itemImg={item.imgSrc} itemStars={item.stars} message={item.reviews} itemDesc={item.description} itemCountry={item.country} price={item.price} />)}
+                        {item.map((item, index) => <Item key={index} tags={item.tags} itemImg={item.imgSrc} itemStars={item.stars} message={item.reviews} itemDesc={item.description} itemCountry={item.country} price={item.price} personalKey={item.personalKey} />)}
                     </div>
                 </div>
                 <div className={s.arrowRight} onClick={() => changeSlide("plus")}></div>
