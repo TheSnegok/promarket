@@ -11,6 +11,7 @@ import cabinet from '../../Image/Group.svg';
 import desire from '../../Image/heart.svg';
 import shoppingCart from '../../Image/Cart.svg';
 import { useGlobalContext } from "../Context/Context";
+import { Link } from "react-router-dom";
 
 interface IMenuListItems {
     src: string;
@@ -233,12 +234,12 @@ const Menu: FC = () => {
                     </div>
                 </div>
                 <div className={s.catalogHover}></div>
-                <a href="/" className={s.stonks}>
+                <Link to={"/"} className={s.stonks}>
                     <div className={s.stonksText}>АКЦИИ</div>
-                </a>
-                <a href="/" className={s.brand}>
+                </Link>
+                <Link to={"/"} className={s.brand}>
                     <div className={s.brandText}>БРЕНДЫ</div>
-                </a>
+                </Link>
             </div>
             <div className={s.menuSearcher}>
                 <input type="text" className={s.input} placeholder='Что вы ищете?' />
@@ -248,25 +249,25 @@ const Menu: FC = () => {
             </div>
             <div className={s.menuActions} >
                 <div className={s.cabinet}>
-                    <a href="/">
+                    <Link to={"/"} >
                         <img src={cabinet} alt="cabinet" className={s.cabinetImg} />
-                    </a>
+                    </Link>
                 </div>
                 <div className={s.desired}>
-                    <a href="/">
+                    <Link to={"/likes"} >
                         <img src={desire} alt="desired" className={s.desiredImg} />
                         {likes.count === 0 ? null : <div className={s.desiredAlert}>{likes.count}</div>}
-                    </a>
+                    </Link>
                 </div>
                 <div className={s.shopping}>
-                    <a href="/">
+                    <Link to={"/"} >
                         <img src={shoppingCart} alt="shoppingCart" className={s.shoppingImg} />
                         {basket.count === 0 ? null : <div className={s.shoppingAlert}>{basket.count}</div>}
-                    </a>
+                    </Link>
                 </div>
-            </div>
+            </div >
             <div className={s.catalogHover}></div>
-        </menu >
+        </menu>
     )
 }
 
