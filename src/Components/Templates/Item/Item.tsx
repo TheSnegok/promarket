@@ -76,7 +76,7 @@ const Item = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, price,
 							<div className={s.tagTip}>{tags[1]}</div>
 						</div>
 					)}
-					<img src={`${itemImg}`} alt={`${itemImg}`} className={s.itemImgMain} />
+					<img src={itemImg} alt={itemImg} className={s.itemImgMain} />
 					<button className={s.itemImgFastLook}>Быстрый просмотр</button>
 				</a>
 				<div className={s.itemImgLike}>

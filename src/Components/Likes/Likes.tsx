@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useRef, useState } from "react";
 import s from './Likes.module.sass';
 import { useGlobalContext } from "../Context/Context";
 import { Link } from "react-router-dom";
@@ -6,8 +6,12 @@ import { Link } from "react-router-dom";
 const Likes: FC = () => {
 
 	const { likes, setLikes } = useGlobalContext();
-
+	const buttonRef = useRef<HTMLButtonElement | null>(null);
 	console.log(likes.items);
+
+	const onChangeClass = () => {
+		
+	}
 
 	return (
 		<div className={s.likes}>
@@ -35,15 +39,10 @@ const Likes: FC = () => {
 									<span>{item.country}</span>
 								</div>
 								<div className={s.likesItemPrice}>
-									{item.price.length === 1 ? (
-										<span>{item.price[0]}</span>
-									) : (
-										<span className={s.likesItemPriceDiscount} data-discount={item.price[1]}>{item.price[0]}</span>
-									)}
-									
+									<span>{item.price[0]}</span>
 								</div>
-								<button className={s.likesItemBuy}>
-									Купить
+								<button ref={buttonRef} className={s.likesItemBuyActive} onClick={() => onChangeClass()}>
+									в корзину
 								</button>
 							</li>
 						))}
