@@ -4,16 +4,32 @@
     overflow: hidden
 
 .likes
+    position: relative
     display: flex
     flex-direction: column
     width: 100%
+    min-height: 80vh
+    background-color: var(--blue-third)
+    margin-bottom: 20px
+    padding: 2vh 5vw
+    z-index: 2
+    color: white
+    font-family: Montserrat
     h1
-        font-size: 30px
+        font-size: 5vh
+        margin-bottom: 1vh
         z-index: 2
+    &Empty
+        height: 74vh
+        display: flex
+        justify-content: center
+        align-items: center
+        span
+            position: relative
+            font-size: 3vh
     &List
         z-index: 2
         width: 100%
-        min-height: 50vh
         .likesItem
             display: flex
             width: 100%
