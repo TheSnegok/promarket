@@ -1,17 +1,11 @@
-import { FC, useRef, useState } from "react";
+import { FC } from "react";
 import s from './Likes.module.sass';
 import { useGlobalContext } from "../Context/Context";
-import { Link } from "react-router-dom";
+import { LikesItem } from "../Templates/LikesItem/LikesItem";
 
 const Likes: FC = () => {
 
 	const { likes, setLikes } = useGlobalContext();
-	const buttonRef = useRef<HTMLButtonElement | null>(null);
-	console.log(likes.items);
-
-	const onChangeClass = () => {
-		
-	}
 
 	return (
 		<div className={s.likes}>
@@ -23,29 +17,7 @@ const Likes: FC = () => {
 					</div>
 				) : (
 					<ul className={s.likesList}>
-						{likes.items.map((item, index) => (
-							<li className={s.likesItem} key={index}>
-								<div className={s.likesItemImg}>
-									<Link to={item.url}>
-										<img src={item.imgUrl} alt={item.description} />
-									</Link>
-								</div>
-								<div className={s.likesItemDescription}>
-									<Link to={item.url}>
-										<span>{item.description}</span>
-									</Link>
-								</div>
-								<div className={s.likesItemCountry}>
-									<span>{item.country}</span>
-								</div>
-								<div className={s.likesItemPrice}>
-									<span>{item.price[0]}</span>
-								</div>
-								<button ref={buttonRef} className={s.likesItemBuyActive} onClick={() => onChangeClass()}>
-									в корзину
-								</button>
-							</li>
-						))}
+						{likes.items.map((item, index) => <LikesItem content={item} key={index} />)}
 					</ul>
 				)}
 		</div >

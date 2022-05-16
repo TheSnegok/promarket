@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useGlobalContext } from '../../Context/Context';
-import s from './Item.module.sass';
+import s from './SliderItem.module.sass';
 import chat from '../../../Image/hits/messageLogo.svg';
 
 interface IItemProps {
@@ -14,7 +14,7 @@ interface IItemProps {
 	personalKey: string;
 }
 
-const Item = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, price, personalKey }: IItemProps) => {
+const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, price, personalKey }: IItemProps) => {
 
 	const [fill, setFill] = useState<string>("#2B7BC6");
 	const [itemBuy, setItemBuy] = useState<boolean>(false);
@@ -141,4 +141,4 @@ const Item = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, price,
 	)
 }
 
-export default Item;
+export default SliderItem;

@@ -5,7 +5,7 @@ import bathroom from '../../Image/hits/image 2.png';
 import shower from '../../Image/hits/image 3.png';
 import toilet from '../../Image/hits/image 4.png';
 import heatedTowelRail from '../../Image/hits/image 5.png';
-import Item from "../Templates/Item/Item";
+import SliderItem from "../Templates/SliderItem/SliderItem";
 import getPersonalKey from "../Templates/KeyGenerator/KeyGenerator";
 
 interface IItem {
@@ -151,7 +151,7 @@ const Hits: FC = () => {
             <div className={s.hitsSlider}>
                 <div className={s.hitsWrapper}>
                     <div className={s.hitsWrapperSlider} style={{left: position + 'px'}}>
-                        {item.map((item, index) => <Item key={index} tags={item.tags} itemImg={item.imgSrc} itemStars={item.stars} message={item.reviews} itemDesc={item.description} itemCountry={item.country} price={item.price} personalKey={item.personalKey} />)}
+                        {item.map((item, index) => <SliderItem key={index} tags={item.tags} itemImg={item.imgSrc} itemStars={item.stars} message={item.reviews} itemDesc={item.description} itemCountry={item.country} price={item.price} personalKey={item.personalKey} />)}
                     </div>
                 </div>
                 <div className={s.arrowRight} onClick={() => changeSlide("plus")}></div>

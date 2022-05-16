@@ -2,6 +2,7 @@ import { FC, useState } from 'react'
 import s from "./Header.module.sass"
 import logo from '../../Image/logo.svg';
 import mark from '../../Image/Subtract.svg';
+import { Link } from 'react-router-dom';
 
 const regions: string[] = ["Київ", "Харків", "Запоріжжя", "Суми", "Чернігів", "Полтава", "Дніпропетровськ", "Кропівницький", "Херсон", "Миколаїв", "Черкаси", "Одесса", "Вінниця"];
 
@@ -12,9 +13,9 @@ const Header: FC = () => {
 	return (
 		<header className={s.header}>
 			<div className={s.headerLogo}>
-				<a href="/">
+				<Link to={'/'}>
 					<img src={logo} alt="logo" className={s.logo} />
-				</a>
+				</Link>
 			</div>
 			<div className={s.headerLocation}>
 				<img src={mark} alt="mark" className={s.mark} />
