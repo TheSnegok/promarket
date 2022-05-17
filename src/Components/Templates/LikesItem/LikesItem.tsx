@@ -1,5 +1,6 @@
-import { useRef } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { numberWithSpaces } from "../NumberWithSpaces/NumberWithSpaces";
 import s from './LikesItem.module.sass';
 
 interface IItemProps {
@@ -18,7 +19,7 @@ interface IItemProps {
 
 const LikesItem = ({ content }: IItemProps) => {
 
-    const buttonRef = useRef<HTMLButtonElement | null>(null);
+    const [buy, setBuy] = useState(false);
 
     return (
         <li className={s.likesItem}>
@@ -36,10 +37,10 @@ const LikesItem = ({ content }: IItemProps) => {
                 <span>{content.country}</span>
             </div>
             <div className={s.likesItemPrice}>
-                <span>{content.price[0]}</span>
+                <span>{numberWithSpaces(content.price[0]) + ' ₽'}</span>
             </div>
-            <button ref={buttonRef} className={s.likesItemBuy}>
-                в корзину
+            <button className={buy ? s.likesItemBuyActive : s.likesItemBuy } onClick={() => setBuy(buy => !buy)}>
+                {buy ? 'в корзинe': 'в корзину'}
             </button>
         </li>
     )
