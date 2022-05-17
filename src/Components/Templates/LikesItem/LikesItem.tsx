@@ -37,7 +37,7 @@ const LikesItem = ({ content }: IItemProps) => {
                 <span>{content.country}</span>
             </div>
             <div className={s.likesItemPrice}>
-                <span>{numberWithSpaces(content.price[0]) + ' ₽'}</span>
+                <span>{numberWithSpaces(content.price[0], true)}</span>
             </div>
             <button className={buy ? s.likesItemBuyActive : s.likesItemBuy } onClick={() => setBuy(buy => !buy)}>
                 {buy ? 'в корзинe': 'в корзину'}

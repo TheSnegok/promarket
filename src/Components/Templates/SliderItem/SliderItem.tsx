@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useGlobalContext } from '../../Context/Context';
 import s from './SliderItem.module.sass';
 import chat from '../../../Image/hits/messageLogo.svg';
+import { numberWithSpaces } from '../NumberWithSpaces/NumberWithSpaces';
 
 interface IItemProps {
 	tags: string[];
@@ -126,11 +127,11 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 			<div className={s.itemBuy}>
 				{price.length === 1 ? (
 					<div className={s.price}>
-						<span>{price[0] + ` ₽`}</span>
+						<span>{numberWithSpaces(price[0], true)}</span>
 					</div>
 				) : (
-					<div className={s.price} data-diuscount={price[1] + ` ₽`}>
-						<span>{price[0] + ` ₽`}</span>
+					<div className={s.price} data-diuscount={numberWithSpaces(price[1], true)}>
+						<span>{numberWithSpaces(price[0], true)}</span>
 					</div>
 				)}
 				<button className={itemBuy ? s.buyActive : s.buy} onClick={() => clickSetInBasket()}>
