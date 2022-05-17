@@ -53,19 +53,29 @@ const Header: FC = () => {
 			</div>
 			<div className={s.headerMenu}>
 				<div className={s.menuitem}>
-					<a href="/">Оплата</a>
+					<Link to={"/"}>
+						Оплата
+					</Link>
 				</div>
 				<div className={s.menuitem}>
-					<a href="/">Доставка</a>
+					<Link to={"/"}>
+						Доставка
+					</Link>
 				</div>
 				<div className={s.menuitem}>
-					<a href="/">Поставщикам</a>
+					<Link to={"/"}>
+						Поставщикам
+					</Link>
 				</div>
 				<div className={s.menuitem}>
-					<a href="/">Статьи</a>
+					<Link to={"/"}>
+						Статьи
+					</Link>
 				</div>
 				<div className={s.menuitem}>
-					<a href="/">Контакты</a>
+					<Link to={"/"}>
+						Контакты
+					</Link>
 				</div>
 			</div>
 		</header>
