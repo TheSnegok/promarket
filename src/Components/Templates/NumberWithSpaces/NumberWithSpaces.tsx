@@ -1,4 +1,4 @@
-const numberWithSpaces = (x: number) => {
+const numberWithSpaces = (x: number): string => {
     const response = x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     return response;
 }
