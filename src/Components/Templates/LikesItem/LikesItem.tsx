@@ -15,7 +15,7 @@ interface IItemProps {
         country: string;
         personalKey: string;
     },
-    setImage: (value: string) => void
+    setImage: (value: string | null) => void
 }
 
 const LikesItem = ({ content, setImage }: IItemProps) => {
@@ -23,7 +23,7 @@ const LikesItem = ({ content, setImage }: IItemProps) => {
     const [buy, setBuy] = useState(false);
 
     return (
-        <li className={s.likesItem} onMouseEnter={() => setImage(content.imgUrl)}>
+        <li className={s.likesItem} onMouseEnter={() => setImage(content.imgUrl)} onMouseLeave={() => setImage(null)}>
             <div className={s.likesItemImg}>
                 <Link to={content.url}>
                     <img src={content.imgUrl} alt={content.description} />
@@ -40,8 +40,8 @@ const LikesItem = ({ content, setImage }: IItemProps) => {
             <div className={s.likesItemPrice}>
                 <span>{numberWithSpaces(content.price[0], true)}</span>
             </div>
-            <button className={buy ? s.likesItemBuyActive : s.likesItemBuy } onClick={() => setBuy(buy => !buy)}>
-                {buy ? 'в корзинe': 'в корзину'}
+            <button className={buy ? s.likesItemBuyActive : s.likesItemBuy} onClick={() => setBuy(buy => !buy)}>
+                {buy ? 'в корзинe' : 'в корзину'}
             </button>
         </li>
     )
