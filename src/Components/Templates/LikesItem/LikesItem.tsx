@@ -14,15 +14,16 @@ interface IItemProps {
         description: string;
         country: string;
         personalKey: string;
-    }
+    },
+    setImage: (value: string) => void
 }
 
-const LikesItem = ({ content }: IItemProps) => {
+const LikesItem = ({ content, setImage }: IItemProps) => {
 
     const [buy, setBuy] = useState(false);
 
     return (
-        <li className={s.likesItem}>
+        <li className={s.likesItem} onMouseEnter={() => setImage(content.imgUrl)}>
             <div className={s.likesItemImg}>
                 <Link to={content.url}>
                     <img src={content.imgUrl} alt={content.description} />
