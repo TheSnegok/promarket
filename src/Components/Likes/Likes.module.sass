@@ -1,8 +1,6 @@
 .likes
 	position: relative
-	display: flex
 	width: 100%
-	gap: 1%
 	min-height: 80vh
 	background-color: var(--blue-third)
 	margin-bottom: 20px
@@ -10,26 +8,31 @@
 	z-index: 2
 	color: white
 	font-family: Montserrat
-	h1
-		font-size: 5vh
-		margin-bottom: 2vh
+	&Header
+		h1
+			font-size: 5vh
+			margin-bottom: 2vh
+			z-index: 2
+	&Items
+		display: flex
+		gap: 1%
 		z-index: 2
+		width: 100%
+		ul
+			width: 80%
 	&Preview
 		width: 19%
 		height: 200px
 		&Null
 			height: 100%
 			width: 100%
-			opacity: 0
-			transition: all 2s
 		&Wrapper
 			height: 100%
 			width: 100%
-			opacity: 1
-			transition: all 5s
 			display: flex
 			justify-content: center
 			align-items: center
+			animation: slide-in 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
 			img
 				height: 90%
 	&Empty
@@ -40,6 +43,14 @@
 		span
 			position: relative
 			font-size: 3vh
-	&Items
-		z-index: 2
-		width: 80%
+	
+
+@keyframes slide-in
+	0%
+		transform: translateY(-300px) rotateX(-30deg) scale(0)
+		transform-origin: 50% 100%
+		opacity: 0
+	100%
+		transform: translateY(0) rotateX(0) scale(1)
+		transform-origin: 50% 1000px
+		opacity: 1

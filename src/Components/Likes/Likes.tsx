@@ -10,31 +10,33 @@ const Likes: FC = () => {
 
 	return (
 		<div className={s.likes}>
-			<div className={s.likesItems}>
+			<div className={s.likesHeader}>
 				<h1>Понравившиеся</h1>
-				{likes.items.length === 0
-					? (
-						<div className={s.likesEmpty}>
-							<span>Вам ничего не понравилось :(</span>
-						</div>
-					) : (
+			</div>
+			{likes.items.length === 0
+				? (
+					<div className={s.likesEmpty}>
+						<span>Вам ничего не понравилось :(</span>
+					</div>
+				) : (
+					<div className={s.likesItems}>
 						<ul className={s.likesList}>
 							{likes.items.map((item, index) => <LikesItem content={item} setImage={setImage} key={index} />)}
 						</ul>
-					)}
-			</div>
-			<div className={s.likesPreview}>
-				{!image ?
-					(
-						<div className={s.likesPreviewNull}>
+						<div className={s.likesPreview}>
+							{!image ?
+								(
+									<div className={s.likesPreviewNull}>
+									</div>
+								) : (
+									<div className={s.likesPreviewWrapper}>
+										{image && <img src={image} alt='preview-like-item' />}
+									</div>
+								)}
 						</div>
-					) : (
-						<div className={s.likesPreviewWrapper}>
-							{image && <img src={image} alt='preview-like-item' />}
-						</div>
-					)}
-			</div>
-		</div >
+					</div>
+				)}
+		</div>
 	)
 }
 
