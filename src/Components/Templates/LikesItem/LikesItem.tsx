@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { numberWithSpaces } from "../NumberWithSpaces/NumberWithSpaces";
 import s from './LikesItem.module.sass';
 
-interface IItemProps {
+interface ILikesItemProps {
     content: {
         url: string;
         imgUrl: string;
@@ -15,15 +15,16 @@ interface IItemProps {
         country: string;
         personalKey: string;
     },
-    setImage: (value: string | null) => void
+    setIndexItem: (value: number | null) => void,
+    index: number
 }
 
-const LikesItem = ({ content, setImage }: IItemProps) => {
+const LikesItem = ({ content, setIndexItem, index }: ILikesItemProps) => {
 
     const [buy, setBuy] = useState(false);
 
     return (
-        <li className={s.likesItem} onMouseEnter={() => setImage(content.imgUrl)} onMouseLeave={() => setImage(null)}>
+        <li className={s.likesItem} onMouseOver={() => setIndexItem(index)} onMouseLeave={() => setIndexItem(null)}>
             <div className={s.likesItemImg}>
                 <Link to={content.url}>
                     <img src={content.imgUrl} alt={content.description} />

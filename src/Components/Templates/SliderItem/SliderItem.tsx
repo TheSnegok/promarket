@@ -25,7 +25,7 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 	const findRight = () => {
 		return ({
 			count: likes.count - 1,
-			items:  likes.items.filter(item => item.personalKey !== personalKey)
+			items: likes.items.filter(item => item.personalKey !== personalKey)
 		})
 	}
 
@@ -54,7 +54,6 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 					}
 				]
 			});
-			console.log(likes);
 		}
 	}
 

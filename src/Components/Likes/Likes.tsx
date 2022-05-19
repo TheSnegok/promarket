@@ -6,7 +6,7 @@ import { LikesItem } from "../Templates/LikesItem/LikesItem";
 const Likes: FC = () => {
 
 	const { likes, setLikes } = useGlobalContext();
-	const [image, setImage] = useState<null | string>(null);
+	const [indexItem, setIndexItem] = useState<null | number>(null);
 
 	return (
 		<div className={s.likes}>
@@ -21,16 +21,16 @@ const Likes: FC = () => {
 				) : (
 					<div className={s.likesItems}>
 						<ul className={s.likesList}>
-							{likes.items.map((item, index) => <LikesItem content={item} setImage={setImage} key={index} />)}
+							{likes.items.map((item, index) => <LikesItem content={item} setIndexItem={setIndexItem} index={index} key={index} />)}
 						</ul>
 						<div className={s.likesPreview}>
-							{!image ?
+							{indexItem === null ?
 								(
 									<div className={s.likesPreviewNull}>
 									</div>
 								) : (
 									<div className={s.likesPreviewWrapper}>
-										{image && <img src={image} alt='preview-like-item' />}
+										{indexItem !== null && <img src={likes.items[indexItem].imgUrl} alt='preview-like-item' />}
 									</div>
 								)}
 						</div>
