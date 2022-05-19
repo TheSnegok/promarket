@@ -24,7 +24,15 @@ const Likes: FC = () => {
 					)}
 			</div>
 			<div className={s.likesPreview}>
-				{image ? <img src={image} alt='preview-like-item' /> : null}
+				{!image ?
+					(
+						<div className={s.likesPreviewNull}>
+						</div>
+					) : (
+						<div className={s.likesPreviewWrapper}>
+							{image && <img src={image} alt='preview-like-item' />}
+						</div>
+					)}
 			</div>
 		</div >
 	)
