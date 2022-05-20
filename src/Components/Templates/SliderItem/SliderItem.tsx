@@ -20,8 +20,6 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 
 	const { likes, setLikes, basket, setBasket } = useGlobalContext();
 
-	console.log(likes.items.find(item => item.personalKey === personalKey));
-
 	const [fill, setFill] = useState<string>(likes.items.find(item => item.personalKey == personalKey) === undefined ? "#2B7BC6" : "rgb(235 47 92)");
 	const [itemBuy, setItemBuy] = useState<boolean>(false);
 
