@@ -3,6 +3,7 @@ import { useGlobalContext } from '../../Context/Context';
 import s from './SliderItem.module.sass';
 import chat from '../../../Image/hits/messageLogo.svg';
 import { numberWithSpaces } from '../NumberWithSpaces/NumberWithSpaces';
+import { Link } from 'react-router-dom';
 
 interface IItemProps {
 	tags: string[];
@@ -17,10 +18,12 @@ interface IItemProps {
 
 const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, price, personalKey }: IItemProps) => {
 
-	const [fill, setFill] = useState<string>("#2B7BC6");
-	const [itemBuy, setItemBuy] = useState<boolean>(false);
-
 	const { likes, setLikes, basket, setBasket } = useGlobalContext();
+
+	console.log(likes.items.find(item => item.personalKey === personalKey));
+
+	const [fill, setFill] = useState<string>(likes.items.find(item => item.personalKey == personalKey) === undefined ? "#2B7BC6" : "rgb(235 47 92)");
+	const [itemBuy, setItemBuy] = useState<boolean>(false);
 
 	const findRight = () => {
 		return ({
@@ -65,7 +68,7 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 	return (
 		<div className={s.item}>
 			<div className={s.itemImg}>
-				<a href="/">
+				<Link to={"/"}>
 					{tags.length === 1 ? (
 						<div className={s.itemImgTags}>
 							{tags[0].toLowerCase() === "хит" ? <div className={s.hot}>{tags[0]}</div> : <div className={s.tagTip}>{tags[0]}</div>}
@@ -78,7 +81,7 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 					)}
 					<img src={itemImg} alt={itemImg} className={s.itemImgMain} />
 					<button className={s.itemImgFastLook}>Быстрый просмотр</button>
-				</a>
+				</Link>
 				<div className={s.itemImgLike}>
 					<svg
 						width="32" height="29" viewBox="0 0 32 29"
@@ -115,11 +118,11 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 					</a>
 				</div>
 			</div>
-			<a href="/">
+			<Link to="/">
 				<div className={s.itemDescription}>
 					{itemDesc}
 				</div>
-			</a>
+			</Link>
 			<div className={s.itemCountry}>
 				<span>{itemCountry}</span>
 			</div>
