@@ -37,17 +37,21 @@ interface IData {
 	personalKey: string;
 }
 
+interface IHits {
+	menu: string[] | null;
+	slideItems: IData[] | null;
+};
+
+interface IStock {
+	menu: string[] | null;
+	slideItems: IData[] | null;
+};
+
 interface IContext {
 	data: {
-		hits: {
-			menu: string[] | null;
-			slideItems: IData[] | null;
-		},
-		stock: {
-			menu: string[] | null;
-			slideItems: IData[] | null;
-		}
-	},
+		hits: IHits,
+		stock: IStock,
+	}
 	likes: ILikes;
 	basket: ILikes;
 	setLikes: (c: ILikes) => void;
@@ -275,7 +279,7 @@ export const Provider: FC = ({ children }) => {
 		},
 		stock: {
 			menu: stockMenu,
-			slideItems: stockSlideItems 
+			slideItems: stockSlideItems
 		}
 	}
 
