@@ -2,6 +2,7 @@ import { FC, useState } from "react";
 import s from './Likes.module.sass';
 import { useGlobalContext } from "../Context/Context";
 import { LikesItem } from "../Templates/LikesItem/LikesItem";
+import { ItemStars } from "../Templates/ItemStars/ItemStars";
 
 const Likes: FC = () => {
 
@@ -31,7 +32,13 @@ const Likes: FC = () => {
 								) : (
 									<div className={s.likesPreviewWrapper}>
 										{indexItem !== null && (
-											<img src={likes.items[indexItem].imgUrl} className={s.previewImg} alt='preview-like-item' />
+											<div className={s.preview}>
+												<img src={likes.items[indexItem].imgUrl} className={s.previewImg} alt='preview-like-item' />
+												<div className={s.previewStars}>
+													<ItemStars stars={likes.items[indexItem].stars} />
+												</div>
+												<div className={s.previewDescription}>{likes.items[indexItem].description}</div>
+											</div>
 										)}
 									</div>
 								)}

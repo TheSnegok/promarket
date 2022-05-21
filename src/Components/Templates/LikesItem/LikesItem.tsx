@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { numberWithSpaces } from "../NumberWithSpaces/NumberWithSpaces";
 import s from './LikesItem.module.sass';
 
-interface ILikesItemProps {
+interface ILikesItem {
     content: {
         url: string;
         imgUrl: string;
@@ -19,7 +19,7 @@ interface ILikesItemProps {
     index: number
 }
 
-const LikesItem = ({ content, setIndexItem, index }: ILikesItemProps) => {
+const LikesItem = ({ content, setIndexItem, index }: ILikesItem) => {
 
     const [buy, setBuy] = useState(false);
 

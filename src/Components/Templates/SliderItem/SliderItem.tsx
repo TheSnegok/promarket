@@ -4,6 +4,7 @@ import s from './SliderItem.module.sass';
 import chat from '../../../Image/hits/messageLogo.svg';
 import { numberWithSpaces } from '../NumberWithSpaces/NumberWithSpaces';
 import { Link } from 'react-router-dom';
+import { ItemStars } from '../ItemStars/ItemStars';
 
 interface IItemProps {
 	tags: string[];
@@ -91,23 +92,7 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 			</div>
 			<div className={s.itemStars}>
 				<div className={s.starsWrapper}>
-					{itemStars.map((item, index) => (
-						item === "full" ? (
-							<div key={index} className={s.stars}>
-								<div className={s.starsFull}></div>
-							</div>
-						) : (item === "half" ? (
-							<div key={index} className={s.stars}>
-								<div className={s.starsHalf}></div>
-							</div>
-						) :
-							(
-								<div key={index} className={s.stars}>
-									<div className={s.starsOff}></div>
-								</div>
-							)
-						)
-					))}
+					<ItemStars stars={itemStars} />
 				</div>
 				<div className={s.message}>
 					<a href="/">
