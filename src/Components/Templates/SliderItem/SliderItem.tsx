@@ -60,6 +60,7 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 	}
 
 	const clickSetInBasket = () => {
+		console.log(basket.items);
 		setItemBuy(itemBuy => !itemBuy);
 		setBasket(!itemBuy ? ({
 			count: basket.count + 1,
