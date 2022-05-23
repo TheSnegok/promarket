@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useGlobalContext } from '../../Context/Context';
+import { useGlobalContext, ILikes } from '../../Context/Context';
 import s from './SliderItem.module.sass';
 import chat from '../../../Image/hits/messageLogo.svg';
 import { numberWithSpaces } from '../NumberWithSpaces/NumberWithSpaces';
@@ -24,10 +24,10 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 	const [fill, setFill] = useState<string>(likes.items.find(item => item.personalKey == personalKey) === undefined ? "#2B7BC6" : "rgb(235 47 92)");
 	const [itemBuy, setItemBuy] = useState<boolean>(false);
 
-	const findRight = () => {
+	const findRight = (item: ILikes) => {
 		return ({
-			count: likes.count - 1,
-			items: likes.items.filter(item => item.personalKey !== personalKey)
+			count: item.count - 1,
+			items: item.items.filter(item => item.personalKey !== personalKey)
 		})
 	}
 
@@ -37,7 +37,7 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 			setLikes(likes.count === 0 ? ({
 				count: 0,
 				items: []
-			}) : findRight());
+			}) : findRight(likes));
 		} else {
 			setFill("rgb(235 47 92)");
 			setLikes({
@@ -61,7 +61,28 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 
 	const clickSetInBasket = () => {
 		setItemBuy(itemBuy => !itemBuy);
-		setBasket(!itemBuy ? { count: basket.count + 1, items: { ...basket.items } } : { count: basket.count - 1, items: { ...basket.items } });
+		setBasket(!itemBuy ? ({
+			count: basket.count + 1,
+			items: [
+				...basket.items,
+				{
+					url: "/",
+					imgUrl: itemImg,
+					type: tags,
+					stars: itemStars,
+					review: message,
+					price,
+					description: itemDesc,
+					country: itemCountry,
+					personalKey: personalKey
+				}
+			]
+		}) : (
+			basket.count === 0 ?
+				{
+					count: 0,
+					items: []
+				} : findRight(basket)));
 	}
 
 	return (

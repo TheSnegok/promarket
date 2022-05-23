@@ -11,7 +11,7 @@ import bathroomAcr from '../../Image/stock/image 3.png';
 import toilet2 from '../../Image/stock/image 4.png';
 import sink2 from '../../Image/stock/image 5.png';
 
-interface ILikes {
+export interface ILikes {
 	count: number;
 	items: {
 		url: string;
@@ -265,7 +265,8 @@ export const Context = createContext<IContext>({
 	}, basket: {
 		count: 0,
 		items: []
-	}, setLikes: () => { }, setBasket: () => { }
+	}, setLikes: () => { },
+	setBasket: () => { }
 });
 
 export const useGlobalContext = () => useContext(Context);
