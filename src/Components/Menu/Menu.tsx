@@ -260,7 +260,7 @@ const Menu: FC = () => {
                     </Link>
                 </div>
                 <div className={s.shopping}>
-                    <Link to={"/"} >
+                    <Link to={"/basket"} >
                         <img src={shoppingCart} alt="shoppingCart" className={s.shoppingImg} />
                         {basket.count === 0 ? null : <div className={s.shoppingAlert}>{basket.count}</div>}
                     </Link>

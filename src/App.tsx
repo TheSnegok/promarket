@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Route, Routes } from "react-router";
+import { Basket } from "./Components/Basket/Basket";
 import { Provider } from "./Components/Context/Context";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
@@ -17,6 +18,7 @@ const App: FC = () => {
                 <Routes>
                     <Route path="/" element={<Main />} />
                     <Route path="/likes" element={<Likes />} />
+                    <Route path="/basket" element={<Basket />} />
                 </Routes>
                 <Footer />
             </main>
