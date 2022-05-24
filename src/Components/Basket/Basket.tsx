@@ -1,11 +1,10 @@
 import { useGlobalContext } from "../Context/Context";
+import { BasketItem } from "../Templates/BasketItem/BasketItem";
 import s from "./Basket.module.sass";
 
 export const Basket = () => {
 
     const { basket } = useGlobalContext();
-
-    console.log(basket.items);
 
     return (
         <div className={s.basket}>
@@ -16,12 +15,7 @@ export const Basket = () => {
                 <div className={s.content}>
                     <ul>
                         {basket.items.map((item, index) => (
-                            <li key={index}>
-                                <img src={item.imgUrl} alt={item.description} />
-                                <span>{item.description}</span>
-                                <span>{item.country}</span>
-                                <span>{item.price}</span>
-                            </li>
+                            <BasketItem key={index} item={item}/>
                         ))}
                     </ul>
                 </div>

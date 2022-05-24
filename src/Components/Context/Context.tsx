@@ -11,19 +11,21 @@ import bathroomAcr from '../../Image/stock/image 3.png';
 import toilet2 from '../../Image/stock/image 4.png';
 import sink2 from '../../Image/stock/image 5.png';
 
+export interface ILikesItems {
+	url: string;
+	imgUrl: string;
+	type: string[];
+	stars: string[];
+	review: number;
+	price: number[];
+	description: string;
+	country: string;
+	personalKey: string;
+}
+
 export interface ILikes {
 	count: number;
-	items: {
-		url: string;
-		imgUrl: string;
-		type: string[];
-		stars: string[];
-		review: number;
-		price: number[];
-		description: string;
-		country: string;
-		personalKey: string;
-	}[] | [];
+	items: ILikesItems[] | [];
 }
 
 interface IData {
