@@ -12,14 +12,23 @@ export const Basket = () => {
                 Корзина
             </h1>
             <section>
-                <div className={s.content}>
-                    <ul>
-                        {basket.items.map((item, index) => (
-                            <BasketItem key={index} item={item}/>
-                        ))}
-                    </ul>
-                </div>
-                <div className={s.preview}></div>
+                {
+                    basket.items.length === 0 ? (
+                        <div className={s.basketEmpty}>
+                            Ваша корзина пуста(
+                        </div>
+                    ) : (
+                        <div className={s.content}>
+                            <ul>
+                                {basket.items.map((item, index) => (
+                                    <BasketItem key={index} item={item} />
+                                ))}
+                            </ul>
+                            <div className={s.preview}></div>
+                        </div>
+                    )
+                }
+
             </section>
         </div>
     )

@@ -21,8 +21,8 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 
 	const { likes, setLikes, basket, setBasket } = useGlobalContext();
 
-	const [fill, setFill] = useState<string>(likes.items.find(item => item.personalKey == personalKey) === undefined ? "#2B7BC6" : "rgb(235 47 92)");
-	const [itemBuy, setItemBuy] = useState<boolean>(basket.items.find(item => item.personalKey == personalKey) === undefined ? false : true);
+	const [fill, setFill] = useState<string>(likes.items.find(item => item.personalKey === personalKey) === undefined ? "#2B7BC6" : "rgb(235 47 92)");
+	const [itemBuy, setItemBuy] = useState<boolean>(basket.items.find(item => item.personalKey === personalKey) === undefined ? false : true);
 
 	const findRight = (item: ILikes) => {
 		return ({
