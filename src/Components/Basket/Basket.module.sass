@@ -1,12 +1,26 @@
 .basket
     position: relative
+    padding: 2vh 5vw
     width: 100%
-    min-height: 50vh
+    min-height: 80vh
     background-color: var(--blue-third)
     z-index: 2
-    .content
+    font-family: Montserrat
+    color: white
+    margin-bottom: 20px
+    &Header
+        font-size: 30px
+        margin-bottom: 2vh
+        z-index: 2
+    section
         position: relative
         z-index: 2
-        ul
-            position: relative
-            z-index: 2
+        min-height: 74vh
+    &Empty
+        height: 74vh
+        width: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+        span
+            font-size: 3vh

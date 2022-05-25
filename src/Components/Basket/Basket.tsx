@@ -15,7 +15,7 @@ export const Basket = () => {
                 {
                     basket.items.length === 0 ? (
                         <div className={s.basketEmpty}>
-                            Ваша корзина пуста(
+                            <span>Ваша корзина пуста :(</span>
                         </div>
                     ) : (
                         <div className={s.content}>
