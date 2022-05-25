@@ -1,10 +1,12 @@
+import { useState } from "react";
 import { useGlobalContext } from "../Context/Context";
-import { BasketItem } from "../Templates/BasketItem/BasketItem";
+import { ListItem } from "../Templates/ListItem/ListItem";
 import s from "./Basket.module.sass";
 
 export const Basket = () => {
 
     const { basket } = useGlobalContext();
+    const [indexItem, setIndexItem] = useState<null | number>(null);
 
     return (
         <div className={s.basket}>
@@ -21,7 +23,7 @@ export const Basket = () => {
                         <div className={s.content}>
                             <ul>
                                 {basket.items.map((item, index) => (
-                                    <BasketItem key={index} item={item} />
+                                    <ListItem key={index} content={item} setIndexItem={setIndexItem} index={index} />
                                 ))}
                             </ul>
                             <div className={s.preview}>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { numberWithSpaces } from "../NumberWithSpaces/NumberWithSpaces";
-import s from './LikesItem.module.sass';
+import s from './ListItem.module.sass';
 
 interface ILikesItem {
     content: {
@@ -19,7 +19,7 @@ interface ILikesItem {
     index: number
 }
 
-const LikesItem = ({ content, setIndexItem, index }: ILikesItem) => {
+export const ListItem = ({ content, setIndexItem, index }: ILikesItem) => {
 
     const [buy, setBuy] = useState(false);
 
@@ -50,5 +50,3 @@ const LikesItem = ({ content, setIndexItem, index }: ILikesItem) => {
         </>
     )
 }
-
-export { LikesItem }

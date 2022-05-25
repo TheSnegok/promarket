@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import s from './Likes.module.sass';
 import { useGlobalContext } from "../Context/Context";
-import { LikesItem } from "../Templates/LikesItem/LikesItem";
+import { ListItem } from "../Templates/ListItem/ListItem";
 import { ItemStars } from "../Templates/ItemStars/ItemStars";
 import { numberWithSpaces } from "../Templates/NumberWithSpaces/NumberWithSpaces";
 
@@ -23,7 +23,7 @@ const Likes: FC = () => {
 				) : (
 					<div className={s.likesItems}>
 						<ul className={s.likesList}>
-							{likes.items.map((item, index) => <LikesItem content={item} setIndexItem={setIndexItem} index={index} key={index} />)}
+							{likes.items.map((item, index) => <ListItem content={item} setIndexItem={setIndexItem} index={index} key={index} />)}
 						</ul>
 						<div className={s.likesPreview}>
 							{indexItem === null ?
