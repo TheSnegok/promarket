@@ -24,7 +24,8 @@ export const Basket = () => {
                                     <BasketItem key={index} item={item} />
                                 ))}
                             </ul>
-                            <div className={s.preview}></div>
+                            <div className={s.preview}>
+                            </div>
                         </div>
                     )
                 }

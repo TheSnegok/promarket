@@ -13,20 +13,25 @@
 		text-align: center
 		line-height: 90%
 
+hr
+	color: #dd80ff
+
 .likesItem
 	display: flex
 	align-items: center
 	width: 100%
 	height: 10vh
-	margin-bottom: 1vh
-	border-bottom: 2px solid #e0e0e0
+	margin: 1vh 0
 	z-index: 2
 	overflow: hidden
-	&:last-child
-		border-bottom: none
+	transition: background-color .5s
+	padding: 0 1vw
+	&:first-child
+		margin-top: 0
 	&:hover
-		border: 2px solid var(--green-blue)
+		border: 2px solid white
 		border-radius: 5px
+		background-color: #0084ff
 	&Img
 		@include itemSize(7%)
 		a
@@ -38,6 +43,11 @@
 		@include itemSize(60%)
 		@include itemLocation(left)
 		@include spanItem()
+		a
+			max-height: 100%
+			overflow: hidden
+			white-space: nowrap
+			text-overflow: ellipsis
 	&Country
 		@include itemSize(13%)
 		@include itemLocation()
