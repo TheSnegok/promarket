@@ -267,10 +267,13 @@ export const Context = createContext<IContext>({
 	}, basket: {
 		count: 0,
 		items: []
-	}, setLikes: () => { },
+	}, setLikes: () => { }, 
 	setBasket: () => { }
 });
 
+/* 
+Plans for tomorrow: Change setLikes and setBasket for pushing new products into the likes and basket, also need changing style regions list, added preview for basket
+*/
 export const useGlobalContext = () => useContext(Context);
 
 export const Provider: FC = ({ children }) => {
