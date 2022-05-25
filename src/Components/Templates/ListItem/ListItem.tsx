@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useGlobalContext } from "../../Context/Context";
 import { numberWithSpaces } from "../NumberWithSpaces/NumberWithSpaces";
 import s from './ListItem.module.sass';
 
@@ -16,12 +17,35 @@ interface ILikesItem {
         personalKey: string;
     },
     setIndexItem: (value: number | null) => void,
-    index: number
+    index: number,
+    isBasket?: boolean
 }
 
-export const ListItem = ({ content, setIndexItem, index }: ILikesItem) => {
+export const ListItem = ({ content, setIndexItem, index, isBasket }: ILikesItem) => {
 
-    const [buy, setBuy] = useState(false);
+    const {likes, setLikes, basket, setBasket} = useGlobalContext();
+    const inBasket = basket.items.find(item => item.personalKey === content.personalKey) === undefined; 
+    const inLikes = likes.items.find(item => item.personalKey === content.personalKey) === undefined; 
+
+    const pushInLikes = () => {
+        setLikes({
+            count: likes.count + 1, 
+            items: [
+                ...likes.items,
+                content
+            ]
+        })
+    };
+    
+    const pushInBasket = () => {
+        setBasket({
+            count: basket.count + 1, 
+            items: [
+                ...basket.items,
+                content
+            ]
+        })
+    };
 
     return (
         <>
@@ -43,9 +67,17 @@ export const ListItem = ({ content, setIndexItem, index }: ILikesItem) => {
                 <div className={s.likesItemPrice}>
                     <span>{numberWithSpaces(content.price[0], true)}</span>
                 </div>
-                <button className={buy ? s.likesItemBuyActive : s.likesItemBuy} onClick={() => setBuy(buy => !buy)}>
-                    {buy ? 'в корзинe' : 'в корзину'}
-                </button>
+                {
+                    isBasket ? (
+                        <button className={inLikes ? s.likesItemBuyActive : s.likesItemBuy} onClick={pushInLikes}>
+                            {inLikes ? 'нравится' : 'не нравится'}
+                        </button>
+                    ) : (
+                        <button className={inBasket ? s.likesItemBuyActive : s.likesItemBuy} onClick={pushInBasket}>
+                            {inBasket ? 'в корзину' : 'в корзинe'}
+                        </button>
+                    )
+                }
             </li>
         </>
     )

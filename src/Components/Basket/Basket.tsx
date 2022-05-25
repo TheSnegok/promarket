@@ -23,7 +23,7 @@ export const Basket = () => {
                         <div className={s.content}>
                             <ul>
                                 {basket.items.map((item, index) => (
-                                    <ListItem key={index} content={item} setIndexItem={setIndexItem} index={index} />
+                                    <ListItem key={index} content={item} setIndexItem={setIndexItem} index={index} isBasket />
                                 ))}
                             </ul>
                             <div className={s.preview}>
