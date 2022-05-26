@@ -279,7 +279,7 @@ export const Context = createContext<IContext>({
 });
 
 /* 
-Plans for tomorrow: Change setLikes and setBasket for pushing new products into the likes and basket, also need changing style regions list, added preview for basket
+Plans for tomorrow: need changing style regions list, added preview for basket
 */
 export const useGlobalContext = () => useContext(Context);
 

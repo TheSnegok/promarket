@@ -26,52 +26,6 @@
 		&Null
 			height: 100%
 			width: 100%
-		&Animation
-			height: 100%
-			width: 100%
-			display: flex
-			justify-content: center
-			animation: slide-in 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) both
-			.preview
-				width: 100%
-				&Wrapper
-					display: flex
-					align-items: center
-					justify-content: space-between
-					margin-bottom: 2%
-					&Stars
-						display: flex
-						gap: 5%
-						width: 50%
-					&Country
-						width: 50%
-						text-align: right
-						letter-spacing: 1px
-					&Price
-						width: 50%
-						text-align: left
-						font-size: 20px
-						line-height: 26px
-					&Stock
-						width: 50%
-						text-align: right
-						font-size: 18px
-						line-height: 24px
-						text-decoration-line: line-through
-						color: #ff0084
-				&Img
-					width: 100%
-					img
-						height: 90%
-						width: 90%
-				&Description
-					word-break: break-all
-					margin-bottom: 3%
-				&Price
-					width: 100%
-					text-align: left
-					font-size: 20px
-					line-height: 26px
 	&Empty
 		height: 74vh
 		display: flex
@@ -80,11 +34,3 @@
 		span
 			position: relative
 			font-size: 3vh
-
-@keyframes slide-in
-	0%
-		transform: translateY(-50px)
-		opacity: 0
-	100%
-		transform: translateY(0)
-		opacity: 1
