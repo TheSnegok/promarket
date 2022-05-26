@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { useGlobalContext, ILikes } from '../../Context/Context';
 import s from './SliderItem.module.sass';
 import chat from '../../../Image/hits/messageLogo.svg';
 import { numberWithSpaces } from '../NumberWithSpaces/NumberWithSpaces';
 import { Link } from 'react-router-dom';
 import { ItemStars } from '../ItemStars/ItemStars';
+import { useGlobalContext } from '../../Context/Context';
 
 interface IItemProps {
 	tags: string[];
@@ -19,71 +19,42 @@ interface IItemProps {
 
 const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, price, personalKey }: IItemProps) => {
 
-	const { likes, setLikes, basket, setBasket } = useGlobalContext();
+	const { contextFindItem, contextPushItem, contextRemoveItem } = useGlobalContext();
 
-	const [fill, setFill] = useState<string>(likes.items.find(item => item.personalKey === personalKey) === undefined ? "#2B7BC6" : "rgb(235 47 92)");
-	const [itemBuy, setItemBuy] = useState<boolean>(basket.items.find(item => item.personalKey === personalKey) === undefined ? false : true);
-
-	const findRight = (item: ILikes) => {
-		return ({
-			count: item.count - 1,
-			items: item.items.filter(item => item.personalKey !== personalKey)
-		})
+	const productObject = {
+		url: "/",
+		imgUrl: itemImg,
+		type: tags,
+		stars: itemStars,
+		review: message,
+		price,
+		description: itemDesc,
+		country: itemCountry,
+		personalKey: personalKey
 	}
 
-	const clickSetLikes = () => {
-		if (fill === "rgb(235 47 92)") {
-			setFill("#2B7BC6");
-			setLikes(likes.count === 0 ? ({
-				count: 0,
-				items: []
-			}) : findRight(likes));
-		} else {
-			setFill("rgb(235 47 92)");
-			setLikes({
-				count: likes.count + 1, items: [
-					...likes.items,
-					{
-						url: "/",
-						imgUrl: itemImg,
-						type: tags,
-						stars: itemStars,
-						review: message,
-						price,
-						description: itemDesc,
-						country: itemCountry,
-						personalKey: personalKey
-					}
-				]
-			});
+	const [fill, setFill] = useState<boolean>(contextFindItem('likes', personalKey) ? true : false);
+	const [itemBuy, setItemBuy] = useState<boolean>(contextFindItem('basket', personalKey) ? false : true);
+
+	const clickSetIn = (itemName: string) => {
+		if (itemName === 'likes') {
+			if (fill) {
+				setFill(false);
+				contextPushItem('likes', productObject);
+			} else {
+				setFill(true);
+				contextRemoveItem('likes', personalKey);
+			}
+		} else if (itemName === 'basket') {
+			if (itemBuy) {
+				setItemBuy(false);
+				contextRemoveItem('basket', personalKey);
+			} else {
+				setItemBuy(true);
+				contextPushItem('basket', productObject);
+			}
 		}
-	}
-
-	const clickSetInBasket = () => {
-		setItemBuy(itemBuy => !itemBuy);
-		setBasket(!itemBuy ? ({
-			count: basket.count + 1,
-			items: [
-				...basket.items,
-				{
-					url: "/",
-					imgUrl: itemImg,
-					type: tags,
-					stars: itemStars,
-					review: message,
-					price,
-					description: itemDesc,
-					country: itemCountry,
-					personalKey: personalKey
-				}
-			]
-		}) : (
-			basket.count === 0 ?
-				{
-					count: 0,
-					items: []
-				} : findRight(basket)));
-	}
+	};
 
 	return (
 		<div className={s.item}>
@@ -105,9 +76,9 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 				<div className={s.itemImgLike}>
 					<svg
 						width="32" height="29" viewBox="0 0 32 29"
-						onClick={() => clickSetLikes()}
+						onClick={() => clickSetIn('likes')}
 						fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path fill={fill} d="M16 29C15.5 29 15 28.8 14.6 28.5C11.2 25.5 0 15.2 0 8.9C0 4 3.9 0 8.6 0C11.7 0 14.5 1.7 16 4.3C17.5 1.7 20.3 0 23.4 0C28.1 0 32 4 32 8.9C32 15.2 20.8 25.5 17.4 28.5C17 28.8 16.5 29 16 29ZM8.6 2C5 2 2 5.1 2 8.9C2 13.3 9.5 21.4 15.9 27H16C22.5 21.4 30 13.3 30 8.9C30 5.1 27 2 23.4 2C20.7 2 18.3 3.7 17.3 6.3C17.1 6.6 16.8 7 16 7C15.3 7 14.9 6.8 14.7 6.3C13.7 3.7 11.3 2 8.6 2Z" />
+						<path fill={fill ? "#2B7BC6" : "rgb(235 47 92)"} d="M16 29C15.5 29 15 28.8 14.6 28.5C11.2 25.5 0 15.2 0 8.9C0 4 3.9 0 8.6 0C11.7 0 14.5 1.7 16 4.3C17.5 1.7 20.3 0 23.4 0C28.1 0 32 4 32 8.9C32 15.2 20.8 25.5 17.4 28.5C17 28.8 16.5 29 16 29ZM8.6 2C5 2 2 5.1 2 8.9C2 13.3 9.5 21.4 15.9 27H16C22.5 21.4 30 13.3 30 8.9C30 5.1 27 2 23.4 2C20.7 2 18.3 3.7 17.3 6.3C17.1 6.6 16.8 7 16 7C15.3 7 14.9 6.8 14.7 6.3C13.7 3.7 11.3 2 8.6 2Z" />
 					</svg>
 				</div>
 			</div>
@@ -140,7 +111,7 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 						<span>{numberWithSpaces(price[0], true)}</span>
 					</div>
 				)}
-				<button className={itemBuy ? s.buyActive : s.buy} onClick={() => clickSetInBasket()}>
+				<button className={itemBuy ? s.buyActive : s.buy} onClick={() => clickSetIn('basket')}>
 					В КОРЗИНУ
 				</button>
 			</div>

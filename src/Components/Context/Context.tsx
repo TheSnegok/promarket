@@ -58,6 +58,9 @@ interface IContext {
 	basket: ILikes;
 	setLikes: (c: ILikes) => void;
 	setBasket: (c: ILikes) => void;
+	contextFindItem: (itemName: string, wantedKey: string) => boolean | void,
+	contextRemoveItem: (itemName: string, wantedKey: string) => void,
+	contextPushItem: (itemName: string, content: ILikesItems) => void,
 }
 
 const hitsSlideItems = [
@@ -267,8 +270,12 @@ export const Context = createContext<IContext>({
 	}, basket: {
 		count: 0,
 		items: []
-	}, setLikes: () => { }, 
-	setBasket: () => { }
+	},
+	setLikes: () => { },
+	setBasket: () => { },
+	contextFindItem: () => { },
+	contextRemoveItem: () => { },
+	contextPushItem: () => { }
 });
 
 /* 
@@ -299,8 +306,50 @@ export const Provider: FC = ({ children }) => {
 		items: []
 	});
 
+	const contextFindItem = (itemName: string, wantedKey: string) => {
+		if (itemName === 'likes') {
+			return likes.items.find(item => item.personalKey === wantedKey) === undefined;
+		} else if (itemName === 'basket') {
+			return basket.items.find(item => item.personalKey === wantedKey) === undefined;
+		}
+	}
+
+	const contextRemoveItem = (itemName: string, wantedKey: string) => {
+		if (itemName === 'likes') {
+			setLikes({
+				count: likes.count === 0 ? 0 : likes.count - 1,
+				items: likes.count === 0 ? [] : likes.items.filter(item => item.personalKey !== wantedKey)
+			});
+		} else if (itemName === 'basket') {
+			setBasket({
+				count: basket.count === 0 ? 0 : basket.count - 1,
+				items: basket.count === 0 ? [] : basket.items.filter(item => item.personalKey !== wantedKey)
+			});
+		}
+	};
+
+	const contextPushItem = (itemName: string, content: ILikesItems) => {
+		if (itemName === 'likes') {
+			setLikes({
+				count: likes.count + 1,
+				items: [
+					...likes.items,
+					content
+				]
+			});
+		} else if (itemName === 'basket') {
+			setBasket({
+				count: basket.count + 1,
+				items: [
+					...basket.items,
+					content
+				]
+			});
+		}
+	};
+
 	return (
-		<Context.Provider value={{ data, likes, basket, setLikes, setBasket }} >
+		<Context.Provider value={{ data, likes, basket, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
 			{children}
 		</Context.Provider>
 	)

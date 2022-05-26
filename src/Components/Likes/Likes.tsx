@@ -7,7 +7,7 @@ import { numberWithSpaces } from "../Templates/NumberWithSpaces/NumberWithSpaces
 
 const Likes: FC = () => {
 
-	const { likes, setLikes } = useGlobalContext();
+	const { likes } = useGlobalContext();
 	const [indexItem, setIndexItem] = useState<null | number>(null);
 
 	return (

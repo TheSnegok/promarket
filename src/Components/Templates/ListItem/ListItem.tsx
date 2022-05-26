@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../../Context/Context";
 import { numberWithSpaces } from "../NumberWithSpaces/NumberWithSpaces";
@@ -23,29 +22,7 @@ interface ILikesItem {
 
 export const ListItem = ({ content, setIndexItem, index, isBasket }: ILikesItem) => {
 
-    const {likes, setLikes, basket, setBasket} = useGlobalContext();
-    const inBasket = basket.items.find(item => item.personalKey === content.personalKey) === undefined; 
-    const inLikes = likes.items.find(item => item.personalKey === content.personalKey) === undefined; 
-
-    const pushInLikes = () => {
-        setLikes({
-            count: likes.count + 1, 
-            items: [
-                ...likes.items,
-                content
-            ]
-        })
-    };
-    
-    const pushInBasket = () => {
-        setBasket({
-            count: basket.count + 1, 
-            items: [
-                ...basket.items,
-                content
-            ]
-        })
-    };
+    const {contextFindItem, contextPushItem} = useGlobalContext();
 
     return (
         <>
@@ -69,12 +46,12 @@ export const ListItem = ({ content, setIndexItem, index, isBasket }: ILikesItem)
                 </div>
                 {
                     isBasket ? (
-                        <button className={inLikes ? s.likesItemBuyActive : s.likesItemBuy} onClick={pushInLikes}>
-                            {inLikes ? 'нравится' : 'не нравится'}
+                        <button className={contextFindItem('likes', content.personalKey) ? s.likesItemBuyActive : s.likesItemBuy} onClick={() => contextPushItem('likes', content)}>
+                            {contextFindItem('likes', content.personalKey) ? 'нравится' : 'не нравится'}
                         </button>
                     ) : (
-                        <button className={inBasket ? s.likesItemBuyActive : s.likesItemBuy} onClick={pushInBasket}>
-                            {inBasket ? 'в корзину' : 'в корзинe'}
+                        <button className={contextFindItem('basket', content.personalKey) ? s.likesItemBuyActive : s.likesItemBuy} onClick={() => contextPushItem('basket', content)}>
+                            {contextFindItem('basket', content.personalKey) ? 'в корзину' : 'в корзинe'}
                         </button>
                     )
                 }

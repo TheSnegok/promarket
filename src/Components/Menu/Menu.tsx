@@ -142,6 +142,8 @@ const Menu: FC = () => {
     const { likes, basket } = useGlobalContext();
     const [info, setInfo] = useState<number>(0);
 
+    console.log(likes)
+
     return (
         <menu className={s.menu}>
             <div className={s.menuItems}>
