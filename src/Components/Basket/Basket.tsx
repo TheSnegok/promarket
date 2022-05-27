@@ -7,7 +7,7 @@ import s from "./Basket.module.sass";
 export const Basket = () => {
 
     const { basket } = useGlobalContext();
-    const [indexItem, setIndexItem] = useState<null | number>(null);
+    const [indexItem, setIndexItem] = useState<undefined | number>(undefined);
 
     return (
         <div className={s.basket}>

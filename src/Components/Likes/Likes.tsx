@@ -7,7 +7,7 @@ import { Preview } from "../Templates/Preview/Preview";
 const Likes: FC = () => {
 
 	const { likes } = useGlobalContext();
-	const [indexItem, setIndexItem] = useState<null | number>(null);
+	const [indexItem, setIndexItem] = useState<undefined | number>(undefined);
 
 	return (
 		<div className={s.likes}>

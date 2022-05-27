@@ -4,7 +4,7 @@ import { useGlobalContext } from "../../Context/Context";
 import { numberWithSpaces } from "../NumberWithSpaces/NumberWithSpaces";
 import s from './ListItem.module.sass';
 
-interface ILikesItem {
+interface IItem {
 	content: {
 		url: string;
 		imgUrl: string;
@@ -16,14 +16,14 @@ interface ILikesItem {
 		country: string;
 		personalKey: string;
 	},
-	setIndexItem: (value: number | null) => void,
+	setIndexItem: (value: number | undefined) => void,
 	index: number,
 	isBasket?: boolean
 }
 
-export const ListItem = ({ content, setIndexItem, index, isBasket }: ILikesItem) => {
+export const ListItem = ({ content, setIndexItem, index, isBasket }: IItem) => {
 
-	const { contextFindItem, contextPushItem, contextRemoveItem, likes, basket } = useGlobalContext();
+	const { contextFindItem, contextPushItem, contextRemoveItem } = useGlobalContext();
 
 	const [liked, setLiked] = useState<boolean>(contextFindItem('likes', content.personalKey) ? false : true);
 	const [basketed, setBasketed] = useState<boolean>(contextFindItem('basket', content.personalKey) ? false : true);
@@ -48,37 +48,48 @@ export const ListItem = ({ content, setIndexItem, index, isBasket }: ILikesItem)
 		}
 	}
 
+	const removeProduct = (productItem: string) => {
+		setIndexItem(undefined);
+		contextRemoveItem(productItem, content.personalKey);
+	}
+
 	return (
 		<>
 			{index !== 0 && <hr />}
-			<li className={s.likesItem} onMouseOver={() => setIndexItem(index)} onMouseLeave={() => setIndexItem(null)}>
-				<div className={s.likesItemImg}>
+			<li className={s.Item} onMouseOver={() => setIndexItem(index)} onMouseLeave={() => setIndexItem(undefined)}>
+				<div className={s.ItemImg}>
 					<Link to={content.url}>
 						<img src={content.imgUrl} alt={content.description} />
 					</Link>
 				</div>
-				<div className={s.likesItemDescription}>
+				<div className={s.ItemDescription}>
 					<Link to={content.url}>
 						<span>{content.description}</span>
 					</Link>
 				</div>
-				<div className={s.likesItemCountry}>
+				<div className={s.ItemCountry}>
 					<span>{content.country}</span>
 				</div>
-				<div className={s.likesItemPrice}>
+				<div className={s.ItemPrice}>
 					<span>{numberWithSpaces(content.price[0], true)}</span>
 				</div>
 				{
 					isBasket ? (
-						<button className={liked ? s.likesItemBuyActive : s.likesItemBuy} onClick={() => changedButton('likes')}>
+						<button className={liked ? s.ItemBuyActive : s.ItemBuy} onClick={() => changedButton('likes')}>
 							{liked ? 'не нравится' : 'нравится'}
 						</button>
 					) : (
-						<button className={basketed ? s.likesItemBuyActive : s.likesItemBuy} onClick={() => changedButton('basket')}>
+						<button className={basketed ? s.ItemBuyActive : s.ItemBuy} onClick={() => changedButton('basket')}>
 							{basketed ? 'в корзинe' : 'в корзину'}
 						</button>
 					)
 				}
+				<div className={s.ItemRemove}>
+					<div className={s.ItemRemoveArrow} onClick={() => removeProduct(isBasket ? 'basket' : 'likes')}>
+						<div className={s.ItemRemoveArrowTop}></div>
+						<div className={s.ItemRemoveArrowBottom}></div>
+					</div>
+				</div>
 			</li>
 		</>
 	)

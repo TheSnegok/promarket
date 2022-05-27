@@ -4,7 +4,7 @@ import { numberWithSpaces } from "../NumberWithSpaces/NumberWithSpaces";
 import { useGlobalContext } from "../../Context/Context";
 
 interface IPreview {
-    indexItem: number;
+    indexItem: number | undefined;
     isBasket?: boolean;
 }
 
@@ -15,7 +15,7 @@ export const Preview = ({ indexItem, isBasket }: IPreview) => {
 
     return (
         <div className={s.preview}>
-            {indexItem !== null && (
+            {indexItem !== undefined && (
                 <div className={s.previewBlock}>
                     <img src={contextItems[indexItem].imgUrl} className={s.previewImg} alt='preview-like-item' />
                     <div className={s.previewWrapper}>
