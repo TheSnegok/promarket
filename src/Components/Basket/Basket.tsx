@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useGlobalContext } from "../Context/Context";
 import { ListItem } from "../Templates/ListItem/ListItem";
+import { Preview } from "../Templates/Preview/Preview";
 import s from "./Basket.module.sass";
 
 export const Basket = () => {
@@ -26,7 +27,14 @@ export const Basket = () => {
                                     <ListItem key={index} content={item} setIndexItem={setIndexItem} index={index} isBasket />
                                 ))}
                             </ul>
-                            <div className={s.preview}>
+                            <div className={s.basketPreview}>
+                                {indexItem === null ?
+                                    (
+                                        <div className={s.basketPreviewNull}>
+                                        </div>
+                                    ) : (
+                                        <Preview indexItem={indexItem} isBasket />
+                                    )}
                             </div>
                         </div>
                     )

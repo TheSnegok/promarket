@@ -279,7 +279,7 @@ export const Context = createContext<IContext>({
 });
 
 /* 
-Plans for tomorrow: need changing style regions list, added preview for basket
+Plans for tomorrow: need changing style regions list
 */
 export const useGlobalContext = () => useContext(Context);
 

@@ -5,32 +5,34 @@ import { useGlobalContext } from "../../Context/Context";
 
 interface IPreview {
     indexItem: number;
+    isBasket?: boolean;
 }
 
-export const Preview = ({ indexItem }: IPreview) => {
+export const Preview = ({ indexItem, isBasket }: IPreview) => {
 
-    const { likes } = useGlobalContext();
+    const { likes, basket } = useGlobalContext();
+    const contextItems = isBasket ? basket.items : likes.items;
 
     return (
         <div className={s.preview}>
             {indexItem !== null && (
                 <div className={s.previewBlock}>
-                    <img src={likes.items[indexItem].imgUrl} className={s.previewImg} alt='preview-like-item' />
+                    <img src={contextItems[indexItem].imgUrl} className={s.previewImg} alt='preview-like-item' />
                     <div className={s.previewWrapper}>
                         <div className={s.previewWrapperStars}>
-                            <ItemStars stars={likes.items[indexItem].stars} />
+                            <ItemStars stars={contextItems[indexItem].stars} />
                         </div>
                         <div className={s.previewWrapperCountry}>
-                            {likes.items[indexItem].country}
+                            {contextItems[indexItem].country}
                         </div>
                     </div>
-                    <div className={s.previewDescription}>{likes.items[indexItem].description}</div>
-                    {likes.items[indexItem].price.length === 1 ? (
-                        <div className={s.previewPrice}>{numberWithSpaces(likes.items[indexItem].price[0], true)}</div>
+                    <div className={s.previewDescription}>{contextItems[indexItem].description}</div>
+                    {contextItems[indexItem].price.length === 1 ? (
+                        <div className={s.previewPrice}>{numberWithSpaces(contextItems[indexItem].price[0], true)}</div>
                     ) : (
                         <div className={s.previewWrapper}>
-                            <div className={s.previewWrapperPrice}>{numberWithSpaces(likes.items[indexItem].price[0], true)}</div>
-                            <div className={s.previewWrapperStock}>{numberWithSpaces(likes.items[indexItem].price[1], true)}</div>
+                            <div className={s.previewWrapperPrice}>{numberWithSpaces(contextItems[indexItem].price[0], true)}</div>
+                            <div className={s.previewWrapperStock}>{numberWithSpaces(contextItems[indexItem].price[1], true)}</div>
                         </div>
                     )}
                 </div>
