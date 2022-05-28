@@ -177,24 +177,24 @@ const Menu: FC = () => {
                                                             <span className={s.columnWrapperHeader}>{mas[0].text}</span>
                                                             <ul>
                                                                 <li>
-                                                                    <a href={mas[1].url}>
+                                                                    <Link to={mas[1].url}>
                                                                         <span>{mas[1].text}</span>
-                                                                    </a>
+                                                                    </Link>
                                                                 </li>
                                                                 <li>
-                                                                    <a href={mas[2].url}>
+                                                                    <Link to={mas[2].url}>
                                                                         <span>{mas[2].text}</span>
-                                                                    </a>
+                                                                    </Link>
                                                                 </li>
                                                                 <li>
-                                                                    <a href={mas[2].url}>
+                                                                    <Link to={mas[2].url}>
                                                                         <span>{mas[3].text}</span>
-                                                                    </a>
+                                                                    </Link>
                                                                 </li>
                                                                 <li>
-                                                                    <a href={mas[2].url}>
+                                                                    <Link to={mas[2].url}>
                                                                         <span>{mas[4].text}</span>
-                                                                    </a>
+                                                                    </Link>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -204,7 +204,7 @@ const Menu: FC = () => {
                                                     <ul>
                                                         {MenuInfoItemsSecond.map((item, index) => (
                                                             <li key={index} >
-                                                                <a href={item.url}>{item.text}</a>
+                                                                <Link to={item.url}>{item.text}</Link>
                                                             </li>
                                                         ))}
                                                     </ul>
@@ -213,7 +213,7 @@ const Menu: FC = () => {
                                                     <ul>
                                                         {MenuInfoItemsThird.map((item, index) => (
                                                             <li key={index}>
-                                                                <a href={item.url}>{item.text}</a>
+                                                                <Link to={item.url}>{item.text}</Link>
                                                             </li>
                                                         ))}
                                                     </ul>

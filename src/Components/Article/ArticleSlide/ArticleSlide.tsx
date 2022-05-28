@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import s from "./ArticleSlide.module.sass";
 
 interface IArticleSlideProps {
@@ -9,11 +10,11 @@ const ArticleSlide = ({ image, articleHeader }: IArticleSlideProps) => {
     return (
         <article className={s.itemArticle} key={articleHeader + `${Math.floor(Math.random() * 100)}`}>
             <img src={image} alt={articleHeader} />
-            <a href="/">
+            <Link to="/">
                 <div className={s.itemArticleHeader}>
                     <span>{articleHeader}</span>
                 </div>
-            </a>
+            </Link>
         </article>
     )
 }

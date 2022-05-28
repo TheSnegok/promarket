@@ -5,6 +5,7 @@ import telegram from '../../Image/logo/telegram 1.svg'
 import instagram from '../../Image/logo/instagram 2.svg'
 import whatsApp from '../../Image/logo/whatsApp.svg'
 import yandex from '../../Image/yandex.png'
+import { Link } from "react-router-dom";
 
 const footerSectionList: string[][] = [['/', 'Плитка'], ['/', 'Сантехника'], ['/', 'Мебель для ванной'], ['/', 'Электроника и бытовая техника'], ['/', 'Отопление'], ['/', 'Напольное покрытие']];
 const footerMenu: string[][] = [['/', 'Оплата'], ['/', 'Доставка'], ['/', 'Поставщикам'], ['/', 'Статьи'], ['/', 'Контакты']];
@@ -16,17 +17,17 @@ const Footer: FC = () => {
                 <div className={s.footerSection}>
                     <div className={s.footerSectionList}>
                         <ul>
-                            {footerSectionList.map((item, index) => <li key={index}><a href={item[0]}>{item[1]}</a></li>)}
+                            {footerSectionList.map((item, index) => <li key={index}><Link to={item[0]}>{item[1]}</Link></li>)}
                         </ul>
                     </div>
                     <div className={s.footerSectionLogo}>
-                        <a href="/"><img src={logo} alt="logo" /></a>
-                        <span>© 2020 <a href="/">ggpromarket.ru</a></span>
+                        <Link to="/"><img src={logo} alt="logo" /></Link>
+                        <span>© 2020 <Link to="/">ggpromarket.ru</Link></span>
                     </div>
                 </div>
                 <div className={s.footerMenu}>
                     <ul>
-                        {footerMenu.map((item, index) => <li key={index}><a href={item[0]}>{item[1]}</a></li>)}
+                        {footerMenu.map((item, index) => <li key={index}><Link to={item[0]}>{item[1]}</Link></li>)}
                     </ul>
                 </div>
                 <div className={s.footerContacts}>
@@ -52,7 +53,7 @@ const Footer: FC = () => {
                             <a href="https://goo.gl/maps/je6Thfut32U1v1zk8">Москва, ул. Салтыковская, 6 стр 11</a>
                         </span>
                         <span>
-                            <a href="mail:zakaz@ggpromarket.ru">zakaz@ggpromarket.ru</a>
+                            <Link to="mail:zakaz@ggpromarket.ru">zakaz@ggpromarket.ru</Link>
                         </span>
                     </div>
                     <div className={s.footerLocationYandex}>
@@ -63,7 +64,7 @@ const Footer: FC = () => {
             <section className={s.rules}>
                 <span>Копирование всех составляющих частей сайта в какой бы то ни было форме без письменного разрешения владельцев авторских прав запрещено. Сайт носит исключительно информационный характер, и ни при каких условиях не является публичной офертой, определяемой положениями статьи 437(2) Гражданского кодекса Российской Федерации.Наличие и цены уточняйте у наших операторов.</span>
                 <br /><br />
-                <span>Сайт использует технологию cookie. Используя сайт, Вы соглашаетесь с <a href="/">правилами использования cookie</a>, а также даете <a href="/">согласие на обработку персональных данных</a></span>
+                <span>Сайт использует технологию cookie. Используя сайт, Вы соглашаетесь с <Link to="/">правилами использования cookie</Link>, а также даете <Link to="/">согласие на обработку персональных данных</Link></span>
             </section>
         </>
     )

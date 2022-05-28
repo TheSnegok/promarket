@@ -18,6 +18,7 @@ import dyson from '../../Image/brands/image 30.png';
 import goronje from '../../Image/brands/image 31.png';
 import jado from '../../Image/brands/image 32.png';
 import lvi from '../../Image/brands/image 33.png';
+import { Link } from "react-router-dom";
 
 const listLogoBrands: string[][] = [
         [hansgrohe,"/"],
@@ -47,9 +48,9 @@ const Brands: FC = () => {
             <div className={s.brandsWrapper}>
                 {listLogoBrands.map((item, index) => (
                     <div className={s.brandsLogo} key={index}>
-                        <a href={item[1]}>
+                        <Link to={item[1]}>
                             <img src={item[0]} alt={item[0]} />
-                        </a>
+                        </Link>
                     </div>
                 ))}
 

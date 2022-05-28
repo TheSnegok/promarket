@@ -87,10 +87,10 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 					<ItemStars stars={itemStars} />
 				</div>
 				<div className={s.message}>
-					<a href="/">
+					<Link to="/">
 						<img src={chat} alt="chat" />
 						<span className={s.messageCount}>{message}</span>
-					</a>
+					</Link>
 				</div>
 			</div>
 			<Link to="/">
