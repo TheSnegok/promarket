@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useGlobalContext } from "../Context/Context";
 import { ListItem } from "../Templates/ListItem/ListItem";
+import { numberWithSpaces } from "../Templates/NumberWithSpaces/NumberWithSpaces";
 import { Preview } from "../Templates/Preview/Preview";
 import s from "./Basket.module.sass";
 
@@ -8,6 +9,12 @@ export const Basket = () => {
 
     const { basket } = useGlobalContext();
     const [indexItem, setIndexItem] = useState<undefined | number>(undefined);
+
+    const totalPrice = (): number => {
+        let totalPrice = 0;
+        basket.items.forEach(item => totalPrice += item.price[0]);
+        return totalPrice;
+    }
 
     return (
         <div className={s.basket}>
@@ -39,8 +46,12 @@ export const Basket = () => {
                         </div>
                     )
                 }
-
             </section>
+            <div className={s.basketTotal}>
+                <h3>Итог:</h3>
+                <span>{numberWithSpaces(totalPrice(), true)}</span>
+            </div>
+            <button className={s.basketOrder}>Сделать заказ</button>
         </div>
     )
 }
