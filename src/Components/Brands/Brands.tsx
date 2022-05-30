@@ -21,24 +21,24 @@ import lvi from '../../Image/brands/image 33.png';
 import { Link } from "react-router-dom";
 
 const listLogoBrands: string[][] = [
-        [hansgrohe,"/"],
-        [grohe,"/"],
-        [stworki,"/"],
-        [ampm,"/"],
-        [jacot,"/"],
-        [cersanit,"/"],
-        [geberit,"/"],
-        [roca,"/"],
-        [vitra,"/"],
-        [villeroy,"/"],
-        [isideal,"/"],
-        [aquanika,"/"],
-        [benetto,"/"],
-        [colombo,"/"],
-        [dyson,"/"],
-        [goronje,"/"],
-        [jado,"/"],
-        [lvi,"/"],
+    [hansgrohe, "/"],
+    [grohe, "/"],
+    [stworki, "/"],
+    [ampm, "/"],
+    [jacot, "/"],
+    [cersanit, "/"],
+    [geberit, "/"],
+    [roca, "/"],
+    [vitra, "/"],
+    [villeroy, "/"],
+    [isideal, "/"],
+    [aquanika, "/"],
+    [benetto, "/"],
+    [colombo, "/"],
+    [dyson, "/"],
+    [goronje, "/"],
+    [jado, "/"],
+    [lvi, "/"],
 ];
 
 const Brands: FC = () => {
@@ -53,7 +53,6 @@ const Brands: FC = () => {
                         </Link>
                     </div>
                 ))}
-
             </div>
         </section>
     )
