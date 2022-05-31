@@ -53,6 +53,7 @@
         display: flex
         width: 100%
         justify-content: space-between
+        margin-bottom: 1vw
         h3
             font-family: Montserrat
             color: white
@@ -61,15 +62,29 @@
             font-family: Montserrat
             color: white
             font-size: 1.3vw
+    &Order
+        width: 130px
+        height: 36px
+        border: 1px solid #2B7BC6
+        border-radius: 4px
+        display: flex
+        justify-content: center
+        align-items: center
+        font-family: Montserrat
+        font-style: normal
+        font-weight: bold
+        font-size: 12px
+        line-height: 14px
+        letter-spacing: 0.15em
+        color: var(--blue-third)
+        background-color: #fff
+        transition: .5s
+        cursor: pointer
+        &:hover
+            animation: shadowPeek 2s cubic-bezier(0.175, 0.885, 0.320, 1.275) both infinite alternate
 
-
-// .section::-webkit-scrollbar-track
-//     background-color: #e4e4e4
-//     border-radius: 100px
-
-// .section::-webkit-scrollbar-thumb
-//     border-radius: 100px
-//     border: 6px solid rgba(0, 0, 0, 0.18)
-//     border-left: 0
-//     border-right: 0
-//     background-color: #8070d4
+@keyframes shadowPeek
+    0%
+        box-shadow: 0px 0px 1px 1px rgba(250, 250, 250, 1)
+    100%
+        box-shadow: 0px 0px 13px 6px rgba(250, 250, 250, 1)

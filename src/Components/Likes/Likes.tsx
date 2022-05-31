@@ -21,9 +21,11 @@ const Likes: FC = () => {
 					</div>
 				) : (
 					<div className={s.likesItems}>
-						<ul className={s.likesList}>
-							{likes.items.map((item, index) => <ListItem content={item} setIndexItem={setIndexItem} index={index} key={index} />)}
-						</ul>
+						<div className={s.likesList}>
+							<ul>
+								{likes.items.map((item, index) => <ListItem content={item} setIndexItem={setIndexItem} index={index} key={index} />)}
+							</ul>
+						</div>
 						<div className={s.likesPreview}>
 							{indexItem === null ?
 								(

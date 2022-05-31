@@ -28,32 +28,34 @@ export const Basket = () => {
                             <span>Ваша корзина пуста :(</span>
                         </div>
                     ) : (
-                        <div className={s.content}>
-                            <div className={s.contentList}>
-                                <ul>
-                                    {basket.items.map((item, index) => (
-                                        <ListItem key={index} content={item} setIndexItem={setIndexItem} index={index} isBasket />
-                                    ))}
-                                </ul>
+                        <>
+                            <div className={s.content}>
+                                <div className={s.contentList}>
+                                    <ul>
+                                        {basket.items.map((item, index) => (
+                                            <ListItem key={index} content={item} setIndexItem={setIndexItem} index={index} isBasket />
+                                        ))}
+                                    </ul>
+                                </div>
+                                <div className={s.basketPreview}>
+                                    {indexItem === null ?
+                                        (
+                                            <div className={s.basketPreviewNull}>
+                                            </div>
+                                        ) : (
+                                            <Preview indexItem={indexItem} isBasket />
+                                        )}
+                                </div>
                             </div>
-                            <div className={s.basketPreview}>
-                                {indexItem === null ?
-                                    (
-                                        <div className={s.basketPreviewNull}>
-                                        </div>
-                                    ) : (
-                                        <Preview indexItem={indexItem} isBasket />
-                                    )}
+                            <div className={s.basketTotal}>
+                                <h3>Итог:</h3>
+                                <span>{numberWithSpaces(totalPrice(), true)}</span>
                             </div>
-                        </div>
+                            <button className={s.basketOrder}>Сделать заказ</button>
+                        </>
                     )
                 }
             </section>
-            <div className={s.basketTotal}>
-                <h3>Итог:</h3>
-                <span>{numberWithSpaces(totalPrice(), true)}</span>
-            </div>
-            <button className={s.basketOrder}>Сделать заказ</button>
         </div>
     )
 }
