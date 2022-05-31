@@ -16,6 +16,12 @@ export const Basket = () => {
         return totalPrice;
     }
 
+    const totalPriceStock = (): number => {
+        let totalPrice = 0;
+        basket.items.forEach(item => totalPrice += item.price[1] ? item.price[1] : item.price[0]);
+        return totalPrice;
+    }
+
     return (
         <div className={s.basket}>
             <h1 className={s.basketHeader}>
@@ -49,7 +55,12 @@ export const Basket = () => {
                             </div>
                             <div className={s.basketTotal}>
                                 <h3>Итог:</h3>
-                                <span>{numberWithSpaces(totalPrice(), true)}</span>
+                                <div className={s.basketTotalPrice}>
+                                    <span>{numberWithSpaces(totalPrice(), true)}</span>
+                                    {totalPriceStock() === totalPrice() ? null : (
+                                        <span className={s.basketTotalPriceStock}>{numberWithSpaces(totalPriceStock(), true)}</span>
+                                    )}
+                                </div>
                             </div>
                             <button className={s.basketOrder}>Сделать заказ</button>
                         </>

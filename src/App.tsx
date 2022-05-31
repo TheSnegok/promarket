@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Route, Routes } from "react-router";
+import { ArcticleItem } from "./Components/ArcticleItem/ArcticleItem";
 import { Basket } from "./Components/Basket/Basket";
 import { Provider } from "./Components/Context/Context";
 import Footer from "./Components/Footer/Footer";
@@ -19,6 +20,7 @@ const App: FC = () => {
                     <Route path="/" element={<Main />} />
                     <Route path="/likes" element={<Likes />} />
                     <Route path="/basket" element={<Basket />} />
+                    <Route path="/article" element={<ArcticleItem article="Hi!" />} />
                 </Routes>
                 <Footer />
             </main>
