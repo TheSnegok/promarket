@@ -45,7 +45,7 @@ interface IStock {
 	slideItems: IDataTemplate[] | null;
 };
 
-interface IArticle {
+export interface IArticle {
 	articleHeader: string;
 	articleText: string;
 };

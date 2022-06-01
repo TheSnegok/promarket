@@ -1,10 +1,14 @@
+import { useGlobalContext } from "../Context/Context";
 import s from "./ArcticleItem.module.sass";
 
 export const ArcticleItem = () => {
+
+    const { article } = useGlobalContext();
+
     return (
         <section className={s.article}>
-            <h1 className={s.articleHeader}>Hi i'm Paul!</h1>
-            <span>em</span>
+            <h1 className={s.articleHeader}>{article?.articleHeader}</h1>
+            <span>{article?.articleText}</span>
         </section>
     )
 }

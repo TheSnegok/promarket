@@ -5,7 +5,7 @@ import ArticleSlide from "./ArticleSlide/ArticleSlide";
 
 const Article: FC = () => {
 
-    const { data } = useGlobalContext();
+    const { data, setArticle } = useGlobalContext();
 
     const [position, setPosition] = useState<number>(0);
 
@@ -16,7 +16,7 @@ const Article: FC = () => {
                 <div className={s.articleWrapperSlider}>
                     <div className={s.articleWrapperSliderItem} style={{ left: position + "px" }}>
                         {data.articleList && data.articleList.map((item, index) => (
-                            <ArticleSlide key={index} image={item[0]} articleHeader={item[1]} />
+                            <ArticleSlide key={index} image={item[0]} articleHeader={item[1]} setArticle={setArticle} indexText={index} />
                         ))}
                     </div>
                 </div>
