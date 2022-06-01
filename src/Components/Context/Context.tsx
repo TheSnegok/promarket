@@ -11,6 +11,15 @@ import bathroomAcr from '../../Image/stock/image 3.png';
 import toilet2 from '../../Image/stock/image 4.png';
 import sink2 from '../../Image/stock/image 5.png';
 
+interface IData {
+	hits: IHits;
+	stock: IStock;
+	article: {
+		header: "",
+		text: ""
+	}
+}
+
 export interface ILikesItems {
 	url: string;
 	imgUrl: string;
@@ -28,7 +37,7 @@ export interface ILikes {
 	items: ILikesItems[] | [];
 }
 
-interface IData {
+interface IDataTemplate {
 	tags: string[];
 	imgSrc: string;
 	stars: string[];
@@ -41,21 +50,19 @@ interface IData {
 
 interface IHits {
 	menu: string[] | null;
-	slideItems: IData[] | null;
+	slideItems: IDataTemplate[] | null;
 };
 
 interface IStock {
 	menu: string[] | null;
-	slideItems: IData[] | null;
+	slideItems: IDataTemplate[] | null;
 };
 
 interface IContext {
-	data: {
-		hits: IHits,
-		stock: IStock,
-	}
+	data: IData;
 	likes: ILikes;
 	basket: ILikes;
+	setData: (c: IData) => void;
 	setLikes: (c: ILikes) => void;
 	setBasket: (c: ILikes) => void;
 	contextFindItem: (itemName: string, wantedKey: string) => boolean | void,
@@ -262,6 +269,10 @@ export const Context = createContext<IContext>({
 		stock: {
 			menu: null,
 			slideItems: null
+		},
+		article: {
+			header: "",
+			text: ""
 		}
 	},
 	likes: {
@@ -271,6 +282,7 @@ export const Context = createContext<IContext>({
 		count: 0,
 		items: []
 	},
+	setData: () => { },
 	setLikes: () => { },
 	setBasket: () => { },
 	contextFindItem: () => { },
@@ -285,7 +297,7 @@ export const useGlobalContext = () => useContext(Context);
 
 export const Provider: FC = ({ children }) => {
 
-	const data = {
+	const [data, setData] = useState<IData>({
 		hits: {
 			menu: hitsMenu,
 			slideItems: hitsSlideItems,
@@ -293,8 +305,12 @@ export const Provider: FC = ({ children }) => {
 		stock: {
 			menu: stockMenu,
 			slideItems: stockSlideItems
+		},
+		article: {
+			header: "",
+			text: ""
 		}
-	}
+	})
 
 	const [likes, setLikes] = useState<ILikes>({
 		count: 0,
@@ -349,7 +365,7 @@ export const Provider: FC = ({ children }) => {
 	};
 
 	return (
-		<Context.Provider value={{ data, likes, basket, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
+		<Context.Provider value={{ data, likes, basket, setData, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
 			{children}
 		</Context.Provider>
 	)
