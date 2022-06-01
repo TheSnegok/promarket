@@ -1,9 +1,10 @@
 import { createContext, FC, useContext, useState } from "react";
-import { hitsMenu, hitsSlideItems, stockMenu, stockSlideItems } from '../../api/api';
+import { articleList, hitsMenu, hitsSlideItems, stockMenu, stockSlideItems } from '../../api/api';
 
 interface IData {
 	hits: IHits;
 	stock: IStock;
+	articleList: string[][];
 }
 
 export interface ILikesItems {
@@ -45,15 +46,15 @@ interface IStock {
 };
 
 interface IArticle {
-	header: string;
-	text: string;
+	articleHeader: string;
+	articleText: string;
 };
 
 interface IContext {
 	data: IData;
 	likes: ILikes;
 	basket: ILikes;
-	article: IArticle;
+	article: IArticle | null;
 	setArticle: (c: IArticle) => void;
 	setLikes: (c: ILikes) => void;
 	setBasket: (c: ILikes) => void;
@@ -71,7 +72,8 @@ export const Context = createContext<IContext>({
 		stock: {
 			menu: null,
 			slideItems: null
-		}
+		},
+		articleList
 	},
 	likes: {
 		count: 0,
@@ -81,10 +83,7 @@ export const Context = createContext<IContext>({
 		count: 0,
 		items: []
 	},
-	article: {
-		header: "",
-		text: ""
-	},
+	article: null,
 	setArticle: () => { },
 	setLikes: () => { },
 	setBasket: () => { },
@@ -108,13 +107,11 @@ export const Provider: FC = ({ children }) => {
 		stock: {
 			menu: stockMenu,
 			slideItems: stockSlideItems
-		}
+		},
+		articleList
 	}
 
-	const [article, setArticle] = useState<IArticle>({
-		header: '',
-		text: ''
-	});
+	const [article, setArticle] = useState<IArticle | null>(null);
 
 	const [likes, setLikes] = useState<ILikes>({
 		count: 0,
