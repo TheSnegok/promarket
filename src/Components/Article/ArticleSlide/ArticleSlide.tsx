@@ -10,7 +10,7 @@ const ArticleSlide = ({ image, articleHeader }: IArticleSlideProps) => {
     return (
         <article className={s.itemArticle} key={articleHeader + `${Math.floor(Math.random() * 100)}`}>
             <img src={image} alt={articleHeader} />
-            <Link to="/">
+            <Link to="/article">
                 <div className={s.itemArticleHeader}>
                     <span>{articleHeader}</span>
                 </div>

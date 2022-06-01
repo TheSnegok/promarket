@@ -1,7 +1,9 @@
+import s from "./ArcticleItem.module.sass";
+
 export const ArcticleItem = ({ article }: {article: string}) => {
     return (
-        <section>
-            <h1>{article}</h1>
+        <section className={s.article}>
+            <h1 className={s.articleHeader}>{article}</h1>
         </section>
     )
 }
