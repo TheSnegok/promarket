@@ -2,7 +2,7 @@ import { Navigate } from "react-router";
 import { useGlobalContext } from "../Context/Context";
 import s from "./ArcticleItem.module.sass";
 
-export const ArcticleItem = () => {
+export const ArcticlePage = () => {
 
     const { article } = useGlobalContext();
 
