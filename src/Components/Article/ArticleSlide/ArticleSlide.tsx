@@ -7,13 +7,12 @@ interface IArticleSlideProps {
     image: string;
     articleHeader: string;
     setArticle: (c: IArticle) => void;
-    indexText: number;
 }
 
-const ArticleSlide = ({ image, articleHeader, setArticle, indexText }: IArticleSlideProps) => {
+const ArticleSlide = ({ image, articleHeader, setArticle }: IArticleSlideProps) => {
     
     const pushArticle = () => {
-        setArticle({ articleHeader: articleHeader, articleText: articleText[indexText].text });
+        setArticle({ articleHeader: articleHeader, articleText: articleText[articleText.findIndex(element => element.header === articleHeader)].text});
     }
 
     return (
