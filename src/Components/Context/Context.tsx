@@ -93,7 +93,7 @@ export const Context = createContext<IContext>({
 });
 
 /* 
-Plans for tomorrow: basket sum with stock and without, creates products page, search page, profile page, authorization, responsible design, add article page
+Plans for tomorrow: creates products page, search page, profile page, authorization, responsible design,
 */
 export const useGlobalContext = () => useContext(Context);
 
