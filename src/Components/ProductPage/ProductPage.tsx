@@ -90,10 +90,10 @@ export const ProductPage = () => {
 							</div>
 						</div>
 						<div className={s.productSimilars}>
-							// same type, +-price, 
 						</div>
 					</section>
 				)}
 		</>
 	)
 }
+// same type, +-price in product similars
