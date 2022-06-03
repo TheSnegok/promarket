@@ -54,7 +54,9 @@ interface IContext {
 	data: IData;
 	likes: ILikes;
 	basket: ILikes;
+	product: ILikesItems | null;
 	article: IArticle | null;
+	setProduct: (c:ILikesItems) => void;
 	setArticle: (c: IArticle) => void;
 	setLikes: (c: ILikes) => void;
 	setBasket: (c: ILikes) => void;
@@ -83,7 +85,9 @@ export const Context = createContext<IContext>({
 		count: 0,
 		items: []
 	},
+	product: null,
 	article: null,
+	setProduct: () => {},
 	setArticle: () => { },
 	setLikes: () => { },
 	setBasket: () => { },
@@ -110,6 +114,8 @@ export const Provider: FC = ({ children }) => {
 		},
 		articleList
 	}
+
+	const [product, setProduct] = useState<ILikesItems | null>(null);
 
 	const [article, setArticle] = useState<IArticle | null>(null);
 
@@ -166,7 +172,7 @@ export const Provider: FC = ({ children }) => {
 	};
 
 	return (
-		<Context.Provider value={{ data, likes, basket, article, setArticle, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
+		<Context.Provider value={{ data, likes, basket, product, setProduct, article, setArticle, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
 			{children}
 		</Context.Provider>
 	)

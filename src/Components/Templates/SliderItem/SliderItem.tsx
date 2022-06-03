@@ -19,7 +19,7 @@ interface IItemProps {
 
 const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, price, personalKey }: IItemProps) => {
 
-	const { contextFindItem, contextPushItem, contextRemoveItem } = useGlobalContext();
+	const { setProduct, contextFindItem, contextPushItem, contextRemoveItem } = useGlobalContext();
 
 	const productObject = {
 		url: "/",
@@ -55,6 +55,10 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 			}
 		}
 	};
+
+	const pushProduct = () => {
+		setProduct(productObject);
+	}
 
 	return (
 		<div className={s.item}>
@@ -93,7 +97,7 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 					</Link>
 				</div>
 			</div>
-			<Link to="/">
+			<Link to="/product" onClick={pushProduct}>
 				<div className={s.itemDescription}>
 					{itemDesc}
 				</div>
