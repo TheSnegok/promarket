@@ -9,8 +9,14 @@
     margin-bottom: 1vw
     font-family: Montserrat
     &Header
-        font-size: 2vw
-        margin-bottom: 1vw
+        width: 80vw
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
+        margin-bottom: 2vw
+        h1
+            display: inline
+            font-size: 2vw
     &Info
         display: flex
         gap: 1%
@@ -32,13 +38,36 @@
                     height: 5vw
                     width: 20%
         &Main
+            display: flex
+            flex-direction: column
+            align-items: flex-end
             width: 59%
             &Fullname
-                font-size: 1vw
-        &Reviews
-            width: 200px
-            display: flex
-            &Stars
+                font-size: 1.3vw
+                line-height: 2vw
+                text-align: right
+            &Reviews
+                width: 200px
                 display: flex
-                gap: 5px
+                gap: 1vw
+                justify-content: flex-end
+                margin-bottom: 2vw
+                &Stars
+                    display: flex
+                    gap: 5px
+            &Price
+                font-size: 2vw
+    &Characteristic
+        display: flex
+        height: 80vh
+        margin-bottom: 2vw
+        &Video
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 80%
+            height: 100%
+        &Reviews
+            width: 20%
+            height: 100%
 
