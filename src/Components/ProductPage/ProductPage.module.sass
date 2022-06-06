@@ -9,14 +9,21 @@
     margin-bottom: 1vw
     font-family: Montserrat
     &Header
-        width: 80vw
-        overflow: hidden
-        white-space: nowrap
-        text-overflow: ellipsis
+        width: 100%
         margin-bottom: 2vw
-        h1
-            display: inline
-            font-size: 2vw
+        display: flex
+        gap: 2vw
+        justify-content: space-between
+        &Text
+            width: 70vw
+            overflow: hidden
+            white-space: nowrap
+            text-overflow: ellipsis
+            h1
+                display: inline
+                font-size: 2vw
+        &Types
+            display: flex
     &Info
         display: flex
         gap: 1%
@@ -70,4 +77,3 @@
         &Reviews
             width: 20%
             height: 100%
-

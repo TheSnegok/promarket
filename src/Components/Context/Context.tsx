@@ -97,7 +97,7 @@ export const Context = createContext<IContext>({
 });
 
 /* 
-Plans for tomorrow: creates products page, search page, profile page, authorization, responsible design,
+Plans for tomorrow: search page, profile page, authorization, responsible design,
 */
 export const useGlobalContext = () => useContext(Context);
 

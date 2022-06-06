@@ -15,9 +15,11 @@ export const ProductPage = () => {
 				: (
 					<section className={s.product}>
 						<div className={s.productHeader}>
-							<h1>{product.description}</h1>
+							<div className={s.productHeaderText}>
+								<h1>{product.description}</h1>
+							</div>
 							<div className={s.productHeaderTypes}>
-								{product.type[0]}
+								{product.type.map(element => <div key={element} className={s.tag}>{element}</div>)}
 							</div>
 						</div>
 						<div className={s.productInfo}>
