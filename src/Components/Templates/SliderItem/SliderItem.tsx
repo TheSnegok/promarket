@@ -60,20 +60,21 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 		setProduct(productObject);
 	}
 
+	const findClassTag = (tag: string) => {
+		switch (tag.toLowerCase()) {
+			case "хит": return <div key={Math.floor(Math.random() * 100)} className={s.hot}>{tag}</div>;
+			case "акция": return <div key={Math.floor(Math.random() * 100)} className={s.tagTip}>{tag}</div>;
+			default: return null;
+		}
+	}
+
 	return (
 		<div className={s.item}>
 			<div className={s.itemImg}>
 				<Link to={"/"}>
-					{tags.length === 1 ? (
-						<div className={s.itemImgTags}>
-							{tags[0].toLowerCase() === "хит" ? <div className={s.hot}>{tags[0]}</div> : <div className={s.tagTip}>{tags[0]}</div>}
-						</div>
-					) : (
-						<div className={s.itemImgTags}>
-							<div className={s.hot}>{tags[0]}</div>
-							<div className={s.tagTip}>{tags[1]}</div>
-						</div>
-					)}
+					<div className={s.itemImgTags}>
+						{tags.map(tag => findClassTag(tag))}
+					</div>
 					<img src={itemImg} alt={itemImg} className={s.itemImgMain} />
 					<button className={s.itemImgFastLook}>Быстрый просмотр</button>
 				</Link>

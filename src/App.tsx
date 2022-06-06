@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { Route, Routes } from "react-router";
+import { FC, useEffect } from "react";
+import { Route, Routes, useLocation } from "react-router";
 import { ArcticlePage } from "./Components/ArcticlePage/ArcticlePage";
 import { Basket } from "./Components/Basket/Basket";
 import Footer from "./Components/Footer/Footer";
@@ -10,6 +10,13 @@ import Menu from "./Components/Menu/Menu";
 import { ProductPage } from "./Components/ProductPage/ProductPage";
 
 const App: FC = () => {
+
+    let location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location])
+
     return (
         <main className="container">
             <Header />

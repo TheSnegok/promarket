@@ -16,6 +16,9 @@ export const ProductPage = () => {
 					<section className={s.product}>
 						<div className={s.productHeader}>
 							<h1>{product.description}</h1>
+							<div className={s.productHeaderTypes}>
+								{product.type[0]}
+							</div>
 						</div>
 						<div className={s.productInfo}>
 							<div className={s.productInfoImg}>
