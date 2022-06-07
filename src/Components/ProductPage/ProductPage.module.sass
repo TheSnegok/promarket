@@ -26,7 +26,7 @@
             display: flex
     &Info
         display: flex
-        gap: 1%
+        gap: 5%
         &Img
             width: 40%
             display: flex
@@ -50,20 +50,70 @@
             align-items: flex-end
             width: 59%
             &Fullname
+                padding-left: 5vw
                 font-size: 1.3vw
                 line-height: 2vw
-                text-align: right
+                margin-bottom: 1vw
             &Reviews
                 width: 200px
                 display: flex
                 gap: 1vw
                 justify-content: flex-end
-                margin-bottom: 2vw
+                margin-bottom: 3vw
                 &Stars
                     display: flex
                     gap: 5px
             &Price
                 font-size: 2vw
+                margin-bottom: 5vw
+            &Add
+                display: flex
+                justify-content: space-around
+                gap: 2vw
+                &Buy
+                    position: relative
+                    padding: .5vw 2vw .5vw 1vw
+                    font-size: .9vw
+                    border-radius: .3vw
+                    background-color: #fff
+                    color: black
+                    outline: none
+                    border: none
+                    font-family: Montserrat
+                    text-transform: uppercase
+                    &::after
+                        content: ''
+                        position: absolute
+                        top: 50%
+                        right: .7vw
+                        transform: translateY(-50%)
+                        background-image: url('../../Image/Cart.svg')
+                        background-size: contain
+                        background-repeat: no-repeat
+                        height: 1vw
+                        width: 1vw
+                &Like
+                    position: relative
+                    padding: .5vw 2vw .5vw 1vw
+                    font-size: .9vw
+                    border-radius: .3vw
+                    background-color: #fff
+                    color: black
+                    outline: none
+                    border: none
+                    font-family: Montserrat
+                    text-transform: uppercase
+                    &::after
+                        content: ''
+                        background-image: url('../../Image/heart.svg')
+                        position: absolute
+                        top: 50%
+                        right: .7vw
+                        transform: translateY(-50%)
+                        background-size: contain
+                        background-repeat: no-repeat
+                        height: 1vw
+                        width: 1vw
     &Characteristic
         display: flex
         height: 80vh
