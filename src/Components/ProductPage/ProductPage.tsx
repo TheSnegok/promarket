@@ -4,6 +4,7 @@ import { ItemStars } from "../Templates/ItemStars/ItemStars";
 import s from "./ProductPage.module.sass"
 import chat from "../../Image/hits/messageLogo.svg"
 import { numberWithSpaces } from "../Templates/NumberWithSpaces/NumberWithSpaces";
+import { AddsClassForTags } from "../Templates/AddedClassForTag/AddsClassForTags";
 
 export const ProductPage = () => {
 
@@ -19,7 +20,7 @@ export const ProductPage = () => {
 								<h1>{product.description}</h1>
 							</div>
 							<div className={s.productHeaderTypes}>
-								{product.type.map(element => <div key={element} className={s.tag}>{element}</div>)}
+								{product.type.map(element => AddsClassForTags(element))}
 							</div>
 						</div>
 						<div className={s.productInfo}>

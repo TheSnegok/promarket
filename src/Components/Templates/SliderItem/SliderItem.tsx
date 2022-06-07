@@ -5,6 +5,7 @@ import { numberWithSpaces } from '../NumberWithSpaces/NumberWithSpaces';
 import { Link } from 'react-router-dom';
 import { ItemStars } from '../ItemStars/ItemStars';
 import { useGlobalContext } from '../../Context/Context';
+import { AddsClassForTags } from '../AddedClassForTag/AddsClassForTags';
 
 interface IItemProps {
 	tags: string[];
@@ -60,20 +61,12 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 		setProduct(productObject);
 	}
 
-	const findClassTag = (tag: string) => {
-		switch (tag.toLowerCase()) {
-			case "хит": return <div key={Math.floor(Math.random() * 100)} className={s.hot}>{tag}</div>;
-			case "акция": return <div key={Math.floor(Math.random() * 100)} className={s.tagTip}>{tag}</div>;
-			default: return null;
-		}
-	}
-
 	return (
 		<div className={s.item}>
 			<div className={s.itemImg}>
 				<Link to={"/"}>
 					<div className={s.itemImgTags}>
-						{tags.map(tag => findClassTag(tag))}
+						{tags.map(tag => AddsClassForTags(tag))}
 					</div>
 					<img src={itemImg} alt={itemImg} className={s.itemImgMain} />
 					<button className={s.itemImgFastLook}>Быстрый просмотр</button>
