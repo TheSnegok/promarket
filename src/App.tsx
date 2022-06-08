@@ -2,6 +2,7 @@ import { FC, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router";
 import { ArcticlePage } from "./Components/ArcticlePage/ArcticlePage";
 import { Basket } from "./Components/Basket/Basket";
+import { ErrorPage } from "./Components/ErrorPage/ErrorPage";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import Likes from "./Components/Likes/Likes";
@@ -27,6 +28,7 @@ const App: FC = () => {
                 <Route path="/basket" element={<Basket />} />
                 <Route path="/article" element={<ArcticlePage />} />
                 <Route path="/product" element={<ProductPage />} />
+                <Route path="*" element={<ErrorPage />} />
             </Routes>
             <Footer />
         </main>
