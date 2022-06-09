@@ -54,6 +54,7 @@
                 font-size: 1.3vw
                 line-height: 2vw
                 margin-bottom: 1vw
+                text-align: right
             &Reviews
                 width: 200px
                 display: flex
@@ -81,6 +82,31 @@
                     border: none
                     font-family: Montserrat
                     text-transform: uppercase
+                    transition: 1s
+                    &::after
+                        content: ''
+                        position: absolute
+                        top: 50%
+                        right: .7vw
+                        transform: translateY(-50%)
+                        background-image: url('../../Image/Cart.svg')
+                        background-size: contain
+                        background-repeat: no-repeat
+                        height: 1vw
+                        width: 1vw
+                &BuyActive
+                    position: relative
+                    padding: .5vw 2vw .5vw 1vw
+                    font-size: .9vw
+                    border-radius: .3vw
+                    background-color: rgb(255, 255, 255)
+                    box-shadow: 0px 0px 5px 4px rgba(242, 255, 54, 0.5) inset
+                    color: black
+                    outline: none
+                    border: none
+                    font-family: Montserrat
+                    text-transform: uppercase
+                    transition: 1s
                     &::after
                         content: ''
                         position: absolute
@@ -103,6 +129,31 @@
                     border: none
                     font-family: Montserrat
                     text-transform: uppercase
+                    transition: 1s
+                    &::after
+                        content: ''
+                        background-image: url('../../Image/heart.svg')
+                        position: absolute
+                        top: 50%
+                        right: .7vw
+                        transform: translateY(-50%)
+                        background-size: contain
+                        background-repeat: no-repeat
+                        height: 1vw
+                        width: 1vw
+                &LikeActive
+                    position: relative
+                    padding: .5vw 2vw .5vw 1vw
+                    font-size: .9vw
+                    border-radius: .3vw
+                    background-color: rgb(255, 255, 255)
+                    box-shadow: 0px 0px 5px 4px rgba(255, 64, 54, 0.5) inset
+                    color: black
+                    outline: none
+                    border: none
+                    font-family: Montserrat
+                    text-transform: uppercase
+                    transition: 1s
                     &::after
                         content: ''
                         background-image: url('../../Image/heart.svg')

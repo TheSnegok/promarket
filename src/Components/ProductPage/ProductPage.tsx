@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Navigate, useNavigate } from "react-router";
+import { Navigate } from "react-router";
 import { useGlobalContext } from "../Context/Context"
 import { ItemStars } from "../Templates/ItemStars/ItemStars";
 import s from "./ProductPage.module.sass"
@@ -39,7 +39,7 @@ export const ProductPage = () => {
 			setLike(contextFindItem('likes', product!.personalKey) ? false : true);
 			setBuy(contextFindItem('basket', product!.personalKey) ? false : true);
 		}
-	}, []);
+	}, [contextFindItem, product]);
 
 	return (
 		<>
@@ -87,8 +87,8 @@ export const ProductPage = () => {
 								</div>
 							)}
 							<div className={s.productInfoMainAdd}>
-								<button className={s.productInfoMainAddBuy} onClick={() => clickSetIn('basket')}>{buy ? 'В корзине' : 'В корзину'}</button>
-								<button className={s.productInfoMainAddLike} onClick={() => clickSetIn('likes')}>{like ? 'Нравится' : 'Не нравится'}</button>
+								<button className={buy ? s.productInfoMainAddBuyActive : s.productInfoMainAddBuy} onClick={() => clickSetIn('basket')}>{buy ? 'В корзине' : 'В корзину'}</button>
+								<button className={like ? s.productInfoMainAddLikeActive : s.productInfoMainAddLike} onClick={() => clickSetIn('likes')}>{like ? 'Не нравится' : 'Нравится'}</button>
 							</div>
 						</div>
 					</div>
