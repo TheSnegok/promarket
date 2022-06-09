@@ -24,7 +24,7 @@ export interface ILikes {
 	items: ILikesItems[] | [];
 }
 
-interface IDataTemplate {
+export interface IDataTemplate {
 	tags: string[];
 	imgSrc: string;
 	stars: string[];

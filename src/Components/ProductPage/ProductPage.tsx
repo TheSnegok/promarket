@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router";
-import { useGlobalContext } from "../Context/Context"
+import { IDataTemplate, useGlobalContext } from "../Context/Context"
 import { ItemStars } from "../Templates/ItemStars/ItemStars";
 import s from "./ProductPage.module.sass"
 import chat from "../../Image/hits/messageLogo.svg"
 import { numberWithSpaces } from "../Templates/NumberWithSpaces/NumberWithSpaces";
 import { AddsClassForTags } from "../Templates/AddedClassForTag/AddsClassForTags";
+import SliderItem from "../Templates/SliderItem/SliderItem";
 
 export const ProductPage = () => {
 
-	const { product, contextFindItem, contextRemoveItem, contextPushItem } = useGlobalContext();
+	const { product, contextFindItem, contextRemoveItem, contextPushItem, data } = useGlobalContext();
 
 	const [like, setLike] = useState<boolean | null>(null);
 	const [buy, setBuy] = useState<boolean | null>(null);
@@ -94,46 +95,56 @@ export const ProductPage = () => {
 					</div>
 					<div className={s.productCharacteristic}>
 						<div className={s.productCharacteristicVideo}>
-							<iframe width="90%" height="90%" src="https://www.youtube.com/embed/KOqs4WUhgVk" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+							<div className={s.productCharacteristicVideoHeader}>
+								<h3>Видеообзор</h3>
+							</div>
+							<div className={s.productCharacteristicVideoPlayer}>
+								<iframe width="90%" height="90%" src="https://www.youtube.com/embed/KOqs4WUhgVk" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+							</div>
 						</div>
 						<div className={s.productCharacteristicReviews}>
-							<div className={s.productCharacteristicReviewsItem}>
-								<span>Vasya Pupkin</span>
-								<span>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, magni ea debitis sapiente blanditiis maiores non ipsum itaque illum fugit, quo assumenda quia? Molestias incidunt, assumenda corporis ratione itaque voluptatem?
-								</span>
+							<div className={s.productCharacteristicReviewsHeader}>
+								<h3>Отзывы</h3>
 							</div>
-							<div className={s.productCharacteristicReviewsItem}>
-								<span>Vasya Pupkin</span>
-								<span>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, magni ea debitis sapiente blanditiis maiores non ipsum itaque illum fugit, quo assumenda quia? Molestias incidunt, assumenda corporis ratione itaque voluptatem?
-								</span>
-							</div>
-							<div className={s.productCharacteristicReviewsItem}>
-								<span>Vasya Pupkin</span>
-								<span>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, magni ea debitis sapiente blanditiis maiores non ipsum itaque illum fugit, quo assumenda quia? Molestias incidunt, assumenda corporis ratione itaque voluptatem?
-								</span>
-							</div>
-							<div className={s.productCharacteristicReviewsItem}>
-								<span>Vasya Pupkin</span>
-								<span>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, magni ea debitis sapiente blanditiis maiores non ipsum itaque illum fugit, quo assumenda quia? Molestias incidunt, assumenda corporis ratione itaque voluptatem?
-								</span>
-							</div>
-							<div className={s.productCharacteristicReviewsItem}>
-								<span>Vasya Pupkin</span>
-								<span>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, magni ea debitis sapiente blanditiis maiores non ipsum itaque illum fugit, quo assumenda quia? Molestias incidunt, assumenda corporis ratione itaque voluptatem?
-								</span>
+							<div className={s.productCharacteristicReviewsList}>
+								<div className={s.productCharacteristicReviewsListItem}>
+									<span>Vasya Pupkin</span>
+									<span>
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, magni ea debitis sapiente blanditiis maiores non ipsum itaque illum fugit, quo assumenda quia? Molestias incidunt, assumenda corporis ratione itaque voluptatem?
+									</span>
+								</div>
+								<div className={s.productCharacteristicReviewsListItem}>
+									<span>Vasya Pupkin</span>
+									<span>
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, magni ea debitis sapiente blanditiis maiores non ipsum itaque illum fugit, quo assumenda quia? Molestias incidunt, assumenda corporis ratione itaque voluptatem?
+									</span>
+								</div>
+								<div className={s.productCharacteristicReviewsListItem}>
+									<span>Vasya Pupkin</span>
+									<span>
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, magni ea debitis sapiente blanditiis maiores non ipsum itaque illum fugit, quo assumenda quia? Molestias incidunt, assumenda corporis ratione itaque voluptatem?
+									</span>
+								</div>
+								<div className={s.productCharacteristicReviewsListItem}>
+									<span>Vasya Pupkin</span>
+									<span>
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, magni ea debitis sapiente blanditiis maiores non ipsum itaque illum fugit, quo assumenda quia? Molestias incidunt, assumenda corporis ratione itaque voluptatem?
+									</span>
+								</div>
+								<div className={s.productCharacteristicReviewsListItem}>
+									<span>Vasya Pupkin</span>
+									<span>
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, magni ea debitis sapiente blanditiis maiores non ipsum itaque illum fugit, quo assumenda quia? Molestias incidunt, assumenda corporis ratione itaque voluptatem?
+									</span>
+								</div>
 							</div>
 						</div>
 					</div>
 					<div className={s.productSimilars}>
+						{data.hits.slideItems!.filter(item => item.price[0] < product!.price[0]+5000 && item.price[0] > product!.price[0]-1000 && item.personalKey !== product!.personalKey).map((item, index) => <SliderItem key={index} tags={item.tags} itemImg={item.imgSrc} itemStars={item.stars} message={item.reviews} itemDesc={item.description} itemCountry={item.country} price={item.price} personalKey={item.personalKey} />)}
 					</div>
 				</section>
 			)}
 		</>
 	)
 }
-// same type, +-price in product similars, product.reviews.slice(0, 5).map()
