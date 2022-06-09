@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router";
-import { IDataTemplate, useGlobalContext } from "../Context/Context"
+import { useGlobalContext } from "../Context/Context"
 import { ItemStars } from "../Templates/ItemStars/ItemStars";
 import s from "./ProductPage.module.sass"
 import chat from "../../Image/hits/messageLogo.svg"

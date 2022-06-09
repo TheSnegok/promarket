@@ -65,8 +65,17 @@
                     display: flex
                     gap: 5px
             &Price
-                font-size: 2vw
                 margin-bottom: 5vw
+                &Previous
+                    text-align: right    
+                    font-size: 2.5vw
+                    line-height: 3.5vw
+                &Stock
+                    text-align: right
+                    font-size: 2vw
+                    line-height: 3vw
+                    color: var(--red)
+                    text-decoration: line-through 
             &Add
                 display: flex
                 justify-content: space-around
@@ -208,7 +217,7 @@
                     background-color: rgba(86, 0, 147, .8)
                     border-radius: 5px
     &Similars
-        height: 550px
+        max-height: 550px
         display: flex
         overflow-x: auto
         overflow-y: hidden
