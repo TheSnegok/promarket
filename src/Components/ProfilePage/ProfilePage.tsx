@@ -4,7 +4,7 @@ export const ProfilePage = () => {
     return (
         <section className={s.profilePage}>
             <div className={s.profilePageHeader}>
-                Профиль
+                <h3>Профиль</h3>
             </div>
             <div className={s.profilePageMain}>
                 <div className={s.profilePageMainAva}>
@@ -23,7 +23,7 @@ export const ProfilePage = () => {
                     <div className={s.profilePageMainInfoPassword}>
                         <input type="password" />
                     </div>
-                    
+
                 </div>
             </div>
         </section>
