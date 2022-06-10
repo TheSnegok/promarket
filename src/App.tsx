@@ -9,6 +9,7 @@ import Likes from "./Components/Likes/Likes";
 import { Main } from "./Components/Main";
 import Menu from "./Components/Menu/Menu";
 import { ProductPage } from "./Components/ProductPage/ProductPage";
+import { ProfilePage } from "./Components/ProfilePage/ProfilePage";
 
 const App: FC = () => {
 
@@ -28,6 +29,7 @@ const App: FC = () => {
                 <Route path="/basket" element={<Basket />} />
                 <Route path="/article" element={<ArcticlePage />} />
                 <Route path="/product" element={<ProductPage />} />
+                <Route path="/profile" element={<ProfilePage />} />
                 <Route path="*" element={<ErrorPage />} />
             </Routes>
             <Footer />

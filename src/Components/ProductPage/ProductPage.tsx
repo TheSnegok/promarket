@@ -80,7 +80,7 @@ export const ProductPage = () => {
 							{product!.price[1] ? (
 								<div className={s.productInfoMainPrice}>
 									<div className={s.productInfoMainPricePrevious}><span>{numberWithSpaces(product!.price[0], true)}</span></div>
-									<div className={s.productInfoMainPriceStock}><span>{numberWithSpaces(product!.price[1], true)}</span></div>
+									<div className={s.productInfoMainPriceStock}><span>{numberWithSpaces(product!.price[1	], true)}</span></div>
 								</div>
 							) : (
 								<div className={s.productInfoMainPrice}>
