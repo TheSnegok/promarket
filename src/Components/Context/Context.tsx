@@ -1,11 +1,30 @@
 import { createContext, FC, useContext, useState } from "react";
-import { articleList, hitsMenu, hitsSlideItems, stockMenu, stockSlideItems, regions } from '../../api/api';
+import { articleList, hitsMenu, hitsSlideItems, stockMenu, stockSlideItems, regions, MenuListItems, MenuInfoItems, MenuInfoItemsSecond, MenuInfoItemsThird } from '../../api/api';
+
+interface IMenuListItems {
+	src: string;
+	description: string;
+	text: string;
+};
+
+interface IMenuInfoItems {
+	text: string;
+	url: string;
+};
+
+interface IMenu {
+	MenuListItems: IMenuListItems[];
+	MenuInfoItems: IMenuInfoItems[][];
+	MenuInfoItemsSecond: IMenuInfoItems[];
+	MenuInfoItemsThird: IMenuInfoItems[];
+}
 
 interface IData {
 	hits: IHits;
 	stock: IStock;
 	articleList: string[][];
 	regionsList: string[];
+	menu: IMenu;
 }
 
 export interface ILikesItems {
@@ -57,7 +76,7 @@ interface IContext {
 	basket: ILikes;
 	product: ILikesItems | null;
 	article: IArticle | null;
-	setProduct: (c:ILikesItems) => void;
+	setProduct: (c: ILikesItems) => void;
 	setArticle: (c: IArticle) => void;
 	setLikes: (c: ILikes) => void;
 	setBasket: (c: ILikes) => void;
@@ -77,7 +96,13 @@ export const Context = createContext<IContext>({
 			slideItems: null
 		},
 		articleList,
-		regionsList: regions
+		regionsList: regions,
+		menu: {
+			MenuListItems,
+			MenuInfoItems,
+			MenuInfoItemsSecond,
+			MenuInfoItemsThird
+		}
 	},
 	likes: {
 		count: 0,
@@ -89,7 +114,7 @@ export const Context = createContext<IContext>({
 	},
 	product: null,
 	article: null,
-	setProduct: () => {},
+	setProduct: () => { },
 	setArticle: () => { },
 	setLikes: () => { },
 	setBasket: () => { },
@@ -115,7 +140,13 @@ export const Provider: FC = ({ children }) => {
 			slideItems: stockSlideItems
 		},
 		articleList,
-		regionsList: regions
+		regionsList: regions,
+		menu: {
+			MenuListItems,
+			MenuInfoItems,
+			MenuInfoItemsSecond,
+			MenuInfoItemsThird
+		}
 	}
 
 	const [product, setProduct] = useState<ILikesItems | null>(null);
