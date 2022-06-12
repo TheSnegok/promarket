@@ -3,10 +3,11 @@ import s from "./Header.module.sass"
 import logo from '../../Image/logo.svg';
 import mark from '../../Image/Subtract.svg';
 import { Link } from 'react-router-dom';
-
-const regions: string[] = ["Київ", "Харків", "Запоріжжя", "Суми", "Чернігів", "Полтава", "Дніпропетровськ", "Кропівницький", "Херсон", "Миколаїв", "Черкаси", "Одесса", "Вінниця"];
+import { useGlobalContext } from '../Context/Context';
 
 const Header: FC = () => {
+
+	const { data } = useGlobalContext();
 
 	const [city, setCity] = useState<String>('Київ');
 
@@ -23,7 +24,7 @@ const Header: FC = () => {
 					<span>{city}</span>
 					<div className={s.regionsList}>
 						<ul>
-							{regions.map((item, index) => {
+							{data.regionsList.map((item, index) => {
 								return (
 									<li key={index} onClick={() => setCity(item)}>
 										{item}

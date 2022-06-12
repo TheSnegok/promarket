@@ -14,6 +14,8 @@ import article2 from '../Image/article/image 13.png'
 import article3 from '../Image/article/image 14.png'
 import article4 from '../Image/article/image 15.png'
 
+export const regions = ["Київ", "Харків", "Запоріжжя", "Суми", "Чернігів", "Полтава", "Дніпропетровськ", "Кропівницький", "Херсон", "Миколаїв", "Черкаси", "Одесса", "Вінниця"];
+
 export const articleText = [
 	{
 		header: "Актуальные и необычные аксессуары для ванной комнаты",

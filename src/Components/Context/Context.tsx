@@ -1,10 +1,11 @@
 import { createContext, FC, useContext, useState } from "react";
-import { articleList, hitsMenu, hitsSlideItems, stockMenu, stockSlideItems } from '../../api/api';
+import { articleList, hitsMenu, hitsSlideItems, stockMenu, stockSlideItems, regions } from '../../api/api';
 
 interface IData {
 	hits: IHits;
 	stock: IStock;
 	articleList: string[][];
+	regionsList: string[];
 }
 
 export interface ILikesItems {
@@ -75,7 +76,8 @@ export const Context = createContext<IContext>({
 			menu: null,
 			slideItems: null
 		},
-		articleList
+		articleList,
+		regionsList: regions
 	},
 	likes: {
 		count: 0,
@@ -112,7 +114,8 @@ export const Provider: FC = ({ children }) => {
 			menu: stockMenu,
 			slideItems: stockSlideItems
 		},
-		articleList
+		articleList,
+		regionsList: regions
 	}
 
 	const [product, setProduct] = useState<ILikesItems | null>(null);
