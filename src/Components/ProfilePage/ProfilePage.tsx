@@ -10,27 +10,32 @@ export const ProfilePage = () => {
             <div className={s.profilePageMain}>
                 <div className={s.profilePageMainAva}>
                     <img src={cabinet} alt="ava" />
+                    <input type="file" name="ava" />
                 </div>
                 <div className={s.profilePageMainInfo}>
                     <div className={s.profilePageMainInfoName}>
-                        <label>Ваше имя:</label>
-                        <input type="text" value="Max" />
+                        <label htmlFor="name" >Ваше имя:</label>
+                        <input name="name" type="text" defaultValue="Max" />
                     </div>
-                    <div className={s.profilePageMainInfoSecondname}>
-                        <label>Ваша фамилия:</label>
-                        <input type="text" value="Pfjsdof"/>
+                    <div className={s.profilePageMainInfoSurname}>
+                        <label htmlFor="surname">Ваша фамилия:</label>
+                        <input name="Surname" type="text" defaultValue="Pfjsdof"/>
                     </div>
                     <div className={s.profilePageMainInfoNumber}>
-                        <label>Ваш телефон:</label>
-                        <input type="tel" name="" />
+                        <label htmlFor="tel">Ваш телефон:</label>
+                        <input type="tel" name="tel" />
+                    </div>
+                    <div className={s.profilePageMainInfoEmail}>
+                        <label htmlFor="email">Ваш емеил:</label>
+                        <input type="email" name="email" />
                     </div>
                     <div className={s.profilePageMainInfoPassword}>
-                        <label>Ваш пароль:</label>
-                        <input type="password" />
+                        <label htmlFor="password">Ваш пароль:</label>
+                        <input type="password" name="password"/>
                     </div>
-
                 </div>
             </div>
+            <button className={s.profilePageSave}>Сохранить</button>
         </section>
     )
 }

@@ -12,7 +12,20 @@
         h1
             font-size: 4vh
             color: #fff
-            
+    &Save
+        width: 9vw
+        height: 2vw
+        outline: none
+        background-color: #fff
+        border: 2px dashed green
+        padding: 5px
+        border-radius: 5px
+        box-shadow: 0 0 0 6px #ffffff, 2px 1px 6px 8px rgba(53, 53, 53, 0.5)
+        margin-bottom: 1vw
+        transition: background-color .3s, box-shadow .3s
+        &:hover
+            background-color: rgb(221, 255, 207)
+            box-shadow: 0 0 0 6px rgb(221, 255, 207), 4px 3px 6px 9px rgba(10, 10, 0, 0.5)
     &Main
         display: flex
         gap: 3vw
@@ -20,6 +33,7 @@
             width: 40%
             height: 50vh
             display: flex
+            flex-direction: column
             justify-content: center
             align-items: center
             background-color: #fff
@@ -29,11 +43,22 @@
                 height: 50%
         &Info
             width: calc(60% - 3vw)
-            height: 50vw
+            height: 30vw
             display: flex
+            align-items: center
             flex-direction: column
             gap: 3vw
             padding-left: 4vw
+            font-size: 1vw
             label
                 display: inline-block
                 width: 10vw
+                color: #fff
+            input
+                padding: 0 0 0 .5vw
+                font-size: 1vw
+                height: 1.2vw
+                width: 15vw
+                outline: none
+                border: none
+                border-radius: 5px
