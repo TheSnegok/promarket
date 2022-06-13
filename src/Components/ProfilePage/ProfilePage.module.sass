@@ -3,14 +3,16 @@
     z-index: 2
     margin-bottom: 2vw
     background-color: var(--blue-third)
-    padding: 2vw 5vw
+    padding: 2vh 5vw
     min-height: 80vh
+    font-family: Montserrat
     &Header
         height: 3vw
         margin-bottom: 2vw
-        h3
-            font-size: 2vw
-            line-height: 3vw
+        h1
+            font-size: 4vh
+            color: #fff
+            
     &Main
         display: flex
         gap: 3vw
@@ -20,6 +22,18 @@
             display: flex
             justify-content: center
             align-items: center
+            background-color: #fff
+            border-radius: 50px
+            img
+                width: 50%
+                height: 50%
         &Info
-            width: calc(60% - 3vw)  
+            width: calc(60% - 3vw)
             height: 50vw
+            display: flex
+            flex-direction: column
+            gap: 3vw
+            padding-left: 4vw
+            label
+                display: inline-block
+                width: 10vw
