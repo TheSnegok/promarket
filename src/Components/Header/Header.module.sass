@@ -67,7 +67,6 @@
 			left: -50%
 			display: block
 			z-index: 9
-			animation: PopUpTop 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) alternate both
 			ul
 				border-radius: 3px
 				background-color: var(--yellow)
@@ -203,12 +202,3 @@
 				bottom: -3px
 				left: 0
 				background-color: var(--blue-third)
-
-@keyframes PopUpTop
-	0%
-		transform: translateZ(-1400px) translateY(-100px)
-		opacity: 0
-
-	100%
-		transform: translateZ(0) translateY(0)
-		opacity: 1
