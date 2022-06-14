@@ -29,18 +29,45 @@
     &Main
         display: flex
         gap: 3vw
-        &Ava
+        &Block
             width: 40%
             height: 50vh
             display: flex
             flex-direction: column
-            justify-content: center
             align-items: center
-            background-color: #fff
-            border-radius: 50px
-            img
-                width: 50%
-                height: 50%
+            &Ava
+                display: flex
+                justify-content: center
+                align-items: center
+                position: relative
+                width: 15vw
+                overflow: hidden
+                &Img
+                    width: 100%
+                    height: 15vw
+                    background-color: #fff
+                    border-radius: 5px
+                input[type=file]
+                    display: none
+                label
+                    position: absolute
+                    bottom: -.3vw
+                    left: 0
+                    height: 2.3vw
+                    width: 100%
+                    border-radius: 1vw 1vw 0 0
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    background-color: rgba(169, 169, 169, .7)
+                    transition: height .3s
+                    img
+                        width: 1.5vw
+                        height: 1.5vw
+                        margin-right: 1vw
+                &:hover
+                    label
+                        height: 2.8vw
         &Info
             width: calc(60% - 3vw)
             height: 30vw
