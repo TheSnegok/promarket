@@ -19,7 +19,7 @@ export const ProfilePage = () => {
                         <input type="file" id="ava" />
                     </div>
                 </div>
-                <div className={s.profilePageMainInfo}>
+                <form className={s.profilePageMainInfo}>
                     <div className={s.profilePageMainInfoName}>
                         <label htmlFor="name" >Ваше имя:</label>
                         <input id="name" type="text" defaultValue="Max" />
@@ -40,7 +40,7 @@ export const ProfilePage = () => {
                         <label htmlFor="password">Ваш пароль:</label>
                         <input type="password" id="password" />
                     </div>
-                </div>
+                </form>
             </div>
             <button className={s.profilePageSave}>Сохранить</button>
         </section>

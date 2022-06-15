@@ -76,7 +76,12 @@ interface IContext {
 	basket: ILikes;
 	product: ILikesItems | null;
 	article: IArticle | null;
-	authorization: null | number;
+	authData: {
+		authorization: boolean;
+		email: null | number;
+		password: null | number;
+		key: null | string;
+	} | null;
 	setProduct: (c: ILikesItems) => void;
 	setArticle: (c: IArticle) => void;
 	setLikes: (c: ILikes) => void;
@@ -115,7 +120,7 @@ export const Context = createContext<IContext>({
 	},
 	product: null,
 	article: null,
-	authorization: null,
+	authData: null,
 	setProduct: () => { },
 	setArticle: () => { },
 	setLikes: () => { },
@@ -151,7 +156,7 @@ export const Provider: FC = ({ children }) => {
 		}
 	}
 
-	const authorization = null;
+	const authData = null;
 
 	const [product, setProduct] = useState<ILikesItems | null>(null);
 
@@ -210,7 +215,7 @@ export const Provider: FC = ({ children }) => {
 	};
 
 	return (
-		<Context.Provider value={{ data, likes, basket, product, setProduct, article, authorization, setArticle, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
+		<Context.Provider value={{ data, likes, basket, authData, product, setProduct, article, setArticle, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
 			{children}
 		</Context.Provider>
 	)
