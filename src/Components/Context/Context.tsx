@@ -76,6 +76,13 @@ interface IContext {
 	basket: ILikes;
 	product: ILikesItems | null;
 	article: IArticle | null;
+	profile: {
+		avatar: string | null;
+		name: null;
+		surname: null;
+		email: null;
+		password: null;
+	} | null;
 	authData: {
 		authorization: boolean;
 		email: null | number;
@@ -120,6 +127,7 @@ export const Context = createContext<IContext>({
 	},
 	product: null,
 	article: null,
+	profile: null,
 	authData: null,
 	setProduct: () => { },
 	setArticle: () => { },
@@ -155,6 +163,7 @@ export const Provider: FC = ({ children }) => {
 			MenuInfoItemsThird
 		}
 	}
+	const profile = null;
 
 	const authData = null;
 
@@ -215,7 +224,7 @@ export const Provider: FC = ({ children }) => {
 	};
 
 	return (
-		<Context.Provider value={{ data, likes, basket, authData, product, setProduct, article, setArticle, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
+		<Context.Provider value={{ data, likes, basket, profile, authData, product, setProduct, article, setArticle, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
 			{children}
 		</Context.Provider>
 	)
