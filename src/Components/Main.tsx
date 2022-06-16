@@ -7,6 +7,7 @@ import Stock from './Stock/Stock';
 import Brands from './Brands/Brands';
 import Article from './Article/Article';
 import Seo from './Seo/Seo';
+import { ModalLayout } from './ModalLayout/ModalLayout';
 
 const Main: FC = () => {
     return (
@@ -19,6 +20,7 @@ const Main: FC = () => {
             <Brands />
             <Article />
             <Seo />
+            <ModalLayout />
         </>
     )
 }

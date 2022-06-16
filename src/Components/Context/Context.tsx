@@ -83,6 +83,7 @@ interface IContext {
 		email: null;
 		password: null;
 	} | null;
+	modal: boolean;
 	authData: {
 		authorization: boolean;
 		email: null | number;
@@ -128,6 +129,7 @@ export const Context = createContext<IContext>({
 	product: null,
 	article: null,
 	profile: null,
+	modal: false,
 	authData: null,
 	setProduct: () => { },
 	setArticle: () => { },
@@ -164,6 +166,8 @@ export const Provider: FC = ({ children }) => {
 		}
 	}
 	const profile = null;
+
+	const modal = false; 
 
 	const authData = null;
 
@@ -224,7 +228,7 @@ export const Provider: FC = ({ children }) => {
 	};
 
 	return (
-		<Context.Provider value={{ data, likes, basket, profile, authData, product, setProduct, article, setArticle, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
+		<Context.Provider value={{ data, likes, basket, profile, modal,authData, product, setProduct, article, setArticle, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
 			{children}
 		</Context.Provider>
 	)
