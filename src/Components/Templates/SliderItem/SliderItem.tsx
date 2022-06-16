@@ -20,7 +20,7 @@ interface IItemProps {
 
 const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, price, personalKey }: IItemProps) => {
 
-	const { setProduct, contextFindItem, contextPushItem, contextRemoveItem } = useGlobalContext();
+	const { setProduct, setModal, contextFindItem, contextPushItem, contextRemoveItem } = useGlobalContext();
 
 	const productObject = {
 		url: "/",
@@ -69,8 +69,8 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 						{tags.map(tag => AddsClassForTags(tag))}
 					</div>
 					<img src={itemImg} alt={itemImg} className={s.itemImgMain} />
-					<button className={s.itemImgFastLook}>Быстрый просмотр</button>
 				</Link>
+				<button className={s.itemImgFastLook} onClick={() => setModal(true)}>Быстрый просмотр</button>
 				<div className={s.itemImgLike}>
 					<svg
 						width="32" height="29" viewBox="0 0 32 29"

@@ -90,6 +90,7 @@ interface IContext {
 		password: null | number;
 		key: null | string;
 	} | null;
+	setModal: (c: boolean) => void;
 	setProduct: (c: ILikesItems) => void;
 	setArticle: (c: IArticle) => void;
 	setLikes: (c: ILikes) => void;
@@ -131,6 +132,7 @@ export const Context = createContext<IContext>({
 	profile: null,
 	modal: false,
 	authData: null,
+	setModal: () => { },
 	setProduct: () => { },
 	setArticle: () => { },
 	setLikes: () => { },
@@ -167,7 +169,7 @@ export const Provider: FC = ({ children }) => {
 	}
 	const profile = null;
 
-	const modal = false; 
+	const [modal, setModal] = useState(false);
 
 	const authData = null;
 
@@ -228,7 +230,7 @@ export const Provider: FC = ({ children }) => {
 	};
 
 	return (
-		<Context.Provider value={{ data, likes, basket, profile, modal,authData, product, setProduct, article, setArticle, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
+		<Context.Provider value={{ data, likes, basket, profile, modal, setModal, authData, product, setProduct, article, setArticle, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
 			{children}
 		</Context.Provider>
 	)
