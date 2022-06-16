@@ -116,7 +116,9 @@ const Menu: FC = () => {
             <div className={s.menuSearcher}>
                 <input type="text" className={s.input} placeholder='Что вы ищете?' />
                 <div className={s.icon}>
-                    <img src={loop} alt="search" className={s.loop} />
+                    <Link to="/search">
+                        <img src={loop} alt="search" className={s.loop} />
+                    </Link>
                 </div>
             </div>
             <div className={s.menuActions} >
