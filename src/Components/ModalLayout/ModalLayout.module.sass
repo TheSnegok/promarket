@@ -7,7 +7,10 @@
     left: 0
     background-color: rgba(145, 145, 145, .5)
     visibility: visible
-    overflow: hidden
+    animation: slide-in-fwd-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+    display: flex
+    justify-content: center
+    align-items: center
     &Hidden
         position: fixed
         z-index: 10
@@ -17,3 +20,17 @@
         left: 0
         background-color: rgba(145, 145, 145, .5)
         visibility: hidden
+    &Block
+        width: 50vw
+        height: 75vh
+        background-color: rgb(255, 255, 255)
+
+@keyframes slide-in-fwd-center
+    0%
+        -webkit-transform: translateZ(-1400px)
+        transform: translateZ(-1400px)
+        opacity: 0
+    100%
+        -webkit-transform: translateZ(0)
+        transform: translateZ(0)
+        opacity: 1

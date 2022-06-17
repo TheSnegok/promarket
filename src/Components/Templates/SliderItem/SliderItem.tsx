@@ -70,7 +70,10 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 					</div>
 					<img src={itemImg} alt={itemImg} className={s.itemImgMain} />
 				</Link>
-				<button className={s.itemImgFastLook} onClick={() => setModal(true)}>Быстрый просмотр</button>
+				<button className={s.itemImgFastLook} onClick={() => setModal({
+					visible: true,
+					item: productObject
+				})}>Быстрый просмотр</button>
 				<div className={s.itemImgLike}>
 					<svg
 						width="32" height="29" viewBox="0 0 32 29"

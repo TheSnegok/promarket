@@ -7,12 +7,15 @@ export const ModalLayout = () => {
     const { modal, setModal } = useGlobalContext();
 
     useEffect(() => {
-        modal ? document.body.style.overflow = "hidden" : document.body.style.overflow = "unset"; 
+        modal.visible ? document.body.style.overflow = "hidden" : document.body.style.overflow = "unset";
     }, [modal]);
 
     return (
-        <section className={modal ? s.modal : s.modalHidden}>
-            <div onClick={() => setModal(false)}>close</div>
+        <section className={modal.visible ? s.modal : s.modalHidden}>
+            <div className={s.modalBlock} onClick={() => setModal({
+                visible: false,
+                item: null
+            })}>close</div>
         </section>
     )
 }

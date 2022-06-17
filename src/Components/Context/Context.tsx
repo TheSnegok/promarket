@@ -70,27 +70,36 @@ export interface IArticle {
 	articleText: string;
 };
 
+export interface IProfile {
+	avatar: string | null;
+	name: null;
+	surname: null;
+	email: null;
+	password: null;
+}
+
+export interface IModal {
+	visible: boolean;
+	item: ILikesItems | null;
+}
+
+export interface IAuthData {
+	authorization: boolean;
+	email: null | number;
+	password: null | number;
+	key: null | string;
+}
+
 interface IContext {
 	data: IData;
 	likes: ILikes;
 	basket: ILikes;
 	product: ILikesItems | null;
 	article: IArticle | null;
-	profile: {
-		avatar: string | null;
-		name: null;
-		surname: null;
-		email: null;
-		password: null;
-	} | null;
-	modal: boolean;
-	authData: {
-		authorization: boolean;
-		email: null | number;
-		password: null | number;
-		key: null | string;
-	} | null;
-	setModal: (c: boolean) => void;
+	profile: IProfile | null;
+	modal: IModal;
+	authData: IAuthData | null;
+	setModal: (c: IModal) => void;
 	setProduct: (c: ILikesItems) => void;
 	setArticle: (c: IArticle) => void;
 	setLikes: (c: ILikes) => void;
@@ -130,7 +139,10 @@ export const Context = createContext<IContext>({
 	product: null,
 	article: null,
 	profile: null,
-	modal: false,
+	modal: {
+		visible: false,
+		item: null
+	},
 	authData: null,
 	setModal: () => { },
 	setProduct: () => { },
@@ -169,7 +181,10 @@ export const Provider: FC = ({ children }) => {
 	}
 	const profile = null;
 
-	const [modal, setModal] = useState(false);
+	const [modal, setModal] = useState<IModal>({
+		visible: false,
+		item: null
+	});
 
 	const authData = null;
 
