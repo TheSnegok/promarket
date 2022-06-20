@@ -19,6 +19,10 @@ export const ModalLayout = () => {
                         visible: false,
                         item: null
                     })}>Close</div>
+
+                </div>
+                <div className={s.modalBlockHeaderImage}>
+                    <img src={modal.item?.imgUrl} alt="product-preview-ploto" />
                 </div>
             </div>
         </section>
