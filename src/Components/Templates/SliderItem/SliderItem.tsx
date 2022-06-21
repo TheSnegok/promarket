@@ -64,7 +64,7 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 	return (
 		<div className={s.item}>
 			<div className={s.itemImg}>
-				<Link to={"/"}>
+				<Link to="/product" onClick={pushProduct}>
 					<div className={s.itemImgTags}>
 						{tags.map(tag => AddsClassForTags(tag))}
 					</div>
