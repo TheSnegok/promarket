@@ -27,7 +27,7 @@ export const ModalLayout = () => {
                     </div>
                     <div className={s.modalBlockInfoOptions}>
                         <div className={s.modalBlockInfoOptionsStars}>
-                            <ItemStars  />
+                            <ItemStars stars={modal.item!.stars}  />
                         </div>
                     </div>
                 </div>
