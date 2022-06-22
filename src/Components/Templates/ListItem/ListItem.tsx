@@ -84,11 +84,9 @@ export const ListItem = ({ content, setIndexItem, index, isBasket }: IItem) => {
 						</button>
 					)
 				}
-				<div className={s.ItemRemove}>
-					<div className={s.ItemRemoveArrow} onClick={() => removeProduct(isBasket ? 'basket' : 'likes')}>
-						<div className={s.ItemRemoveArrowTop}></div>
-						<div className={s.ItemRemoveArrowBottom}></div>
-					</div>
+				<div className={s.ItemRemove} onClick={() => removeProduct(isBasket ? 'basket' : 'likes')} >
+					<div className={s.ItemRemoveTop}></div>
+					<div className={s.ItemRemoveBottom}></div>
 				</div>
 			</li>
 		</>

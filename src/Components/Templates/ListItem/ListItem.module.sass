@@ -103,30 +103,27 @@ hr
 	&Remove
 		@include itemSize(3%)
 		@include itemLocation()
-		&Arrow
-			position: relative
-			height: 50%
-			width: 80%
-			&Top
-				position: absolute
-				height: 2px
-				width: 70%
-				top: 50%
-				left: 50%
-				transform-origin: top left
-				transform: rotate(45deg) translate(-50%, -50%)
-				background-color: rgba(255,255,255, 1)
-				transition: background-color 0.7s
-			&Bottom
-				position: absolute
-				height: 2px
-				width: 70%
-				top: 50%
-				left: 50%
-				transform-origin: top left
-				transform: rotate(-45deg) translate(-50%, -50%)
-				background-color: rgba(255,255,255, 1)
-				transition: background-color 0.7s
-			&:hover
-				.ItemRemoveArrowTop, .ItemRemoveArrowBottom
-					background-color: rgba(255,60,60, 1)
+		position: relative
+		&Top
+			position: absolute
+			height: 2px
+			width: 70%
+			top: 50%
+			left: 50%
+			transform-origin: top left
+			transform: rotate(45deg) translate(-50%, -50%)
+			background-color: rgba(255,255,255, 1)
+			transition: background-color 0.7s
+		&Bottom
+			position: absolute
+			height: 2px
+			width: 70%
+			top: 50%
+			left: 50%
+			transform-origin: top left
+			transform: rotate(-45deg) translate(-50%, -50%)
+			background-color: rgba(255,255,255, 1)
+			transition: background-color 0.7s
+		&:hover
+			.ItemRemoveTop, .ItemRemoveBottom
+				background-color: rgba(255,60,60, 1)
