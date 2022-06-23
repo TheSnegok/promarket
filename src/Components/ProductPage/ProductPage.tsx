@@ -4,9 +4,9 @@ import { useGlobalContext } from "../Context/Context"
 import { ItemStars } from "../Templates/ItemStars/ItemStars";
 import s from "./ProductPage.module.sass"
 import chat from "../../Image/hits/messageLogo.svg"
-import { numberWithSpaces } from "../Templates/NumberWithSpaces/NumberWithSpaces";
 import { AddsClassForTags } from "../Templates/AddedClassForTag/AddsClassForTags";
 import SliderItem from "../Templates/SliderItem/SliderItem";
+import { PriceDivision } from "../Templates/PriceDivision/PriceDivision";
 
 export const ProductPage = () => {
 
@@ -77,16 +77,9 @@ export const ProductPage = () => {
 									<img src={chat} alt="chat" />
 								</div>
 							</div>
-							{product!.price[1] ? (
-								<div className={s.productInfoMainPrice}>
-									<div className={s.productInfoMainPricePrevious}><span>{numberWithSpaces(product!.price[0], true)}</span></div>
-									<div className={s.productInfoMainPriceStock}><span>{numberWithSpaces(product!.price[1	], true)}</span></div>
-								</div>
-							) : (
-								<div className={s.productInfoMainPrice}>
-									<div className={s.productInfoMainPriceDefault}><span>{numberWithSpaces(product!.price[0], true)}</span></div>
-								</div>
-							)}
+							{product && <div className={s.productInfoMainPrice}>
+								<PriceDivision price={product.price} />
+							</div>}
 							<div className={s.productInfoMainAdd}>
 								<button className={buy ? s.productInfoMainAddBuyActive : s.productInfoMainAddBuy} onClick={() => clickSetIn('basket')}>{buy ? 'В корзине' : 'В корзину'}</button>
 								<button className={like ? s.productInfoMainAddLikeActive : s.productInfoMainAddLike} onClick={() => clickSetIn('likes')}>{like ? 'Не нравится' : 'Нравится'}</button>
@@ -141,7 +134,7 @@ export const ProductPage = () => {
 						</div>
 					</div>
 					<div className={s.productSimilars}>
-						{data.hits.slideItems!.filter(item => item.price[0] < product!.price[0]+5000 && item.price[0] > product!.price[0]-1000 && item.personalKey !== product!.personalKey).map((item, index) => <SliderItem key={index} tags={item.tags} itemImg={item.imgSrc} itemStars={item.stars} message={item.reviews} itemDesc={item.description} itemCountry={item.country} price={item.price} personalKey={item.personalKey} />)}
+						{data.hits.slideItems!.filter(item => item.price[0] < product!.price[0] + 5000 && item.price[0] > product!.price[0] - 1000 && item.personalKey !== product!.personalKey).map((item, index) => <SliderItem key={index} tags={item.tags} itemImg={item.imgSrc} itemStars={item.stars} message={item.reviews} itemDesc={item.description} itemCountry={item.country} price={item.price} personalKey={item.personalKey} />)}
 					</div>
 				</section>
 			)}
