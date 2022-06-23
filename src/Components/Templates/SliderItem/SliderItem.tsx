@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import s from './SliderItem.module.sass';
 import chat from '../../../Image/hits/messageLogo.svg';
-import { numberWithSpaces } from '../NumberWithSpaces/NumberWithSpaces';
 import { Link } from 'react-router-dom';
 import { ItemStars } from '../ItemStars/ItemStars';
 import { useGlobalContext } from '../../Context/Context';
 import { AddsClassForTags } from '../AddedClassForTag/AddsClassForTags';
+import { PriceDivision } from '../PriceDivision/PriceDivision';
 
 interface IItemProps {
 	tags: string[];
@@ -103,15 +103,7 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 				<span>{itemCountry}</span>
 			</div>
 			<div className={s.itemBuy}>
-				{price.length === 1 ? (
-					<div className={s.price}>
-						<span>{numberWithSpaces(price[0], true)}</span>
-					</div>
-				) : (
-					<div className={s.price} data-diuscount={numberWithSpaces(price[1], true)}>
-						<span>{numberWithSpaces(price[0], true)}</span>
-					</div>
-				)}
+				<PriceDivision price={price} />
 				<button className={itemBuy ? s.buyActive : s.buy} onClick={() => clickSetIn('basket')}>
 					В КОРЗИНУ
 				</button>

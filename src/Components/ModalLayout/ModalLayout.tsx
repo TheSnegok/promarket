@@ -4,6 +4,7 @@ import { ItemStars } from "../Templates/ItemStars/ItemStars";
 import s from "./ModalLayout.module.sass";
 import chat from "../../Image/hits/messageLogo.svg";
 import { AddsClassForTags } from "../Templates/AddedClassForTag/AddsClassForTags";
+import { PriceDivision } from "../Templates/PriceDivision/PriceDivision";
 
 export const ModalLayout = () => {
 
@@ -18,13 +19,18 @@ export const ModalLayout = () => {
 			<div className={s.modalBlock}>
 				<div className={s.modalBlockHeader}>
 					<div className={s.modalBlockHeaderName}>
-						{modal.item?.description}
-						{modal.item?.type.map(tag => AddsClassForTags(tag))}
+						<span>{modal.item?.description}</span>
+						<div className={s.modalBlockHeaderNameTags}>
+							{modal.item?.type.map(tag => AddsClassForTags(tag))}
+						</div>
 					</div>
 					<div className={s.modalBlockHeaderClose} onClick={() => setModal({
 						visible: false,
 						item: null
-					})}>Close</div>
+					})}>
+						<div className={s.modalBlockHeaderCloseTop}></div>
+						<div className={s.modalBlockHeaderCloseBottom}></div>
+					</div>
 				</div>
 				<div className={s.modalBlockInfo}>
 					<div className={s.modalBlockHeaderImage}>
@@ -38,7 +44,7 @@ export const ModalLayout = () => {
 								<span className={s.messageCount}>{modal.item?.review}</span>
 							</div>
 						</div>
-
+						{modal.item && <PriceDivision price={modal.item.price} />}
 					</div>
 				</div>
 			</div>
