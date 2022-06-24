@@ -33,12 +33,14 @@ export const ModalLayout = () => {
 					</div>
 				</div>
 				<div className={s.modalBlockInfo}>
-					<div className={s.modalBlockHeaderImage}>
+					<div className={s.modalBlockInfoImage}>
 						<img src={modal.item?.imgUrl} alt="product-preview-ploto" />
 					</div>
 					<div className={s.modalBlockInfoOptions}>
 						<div className={s.modalBlockInfoOptionsReviews}>
-							{modal.item && <ItemStars stars={modal.item.stars} />}
+							<div className={s.modalBlockInfoOptionsReviewsStars}>
+								{modal.item && <ItemStars stars={modal.item.stars} />}
+							</div>
 							<div className={s.modalBlockInfoOptionsReviewsMessage}>
 								<img src={chat} alt="chat" />
 								<span className={s.messageCount}>{modal.item?.review}</span>

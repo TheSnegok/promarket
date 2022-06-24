@@ -77,9 +77,12 @@ export const ProductPage = () => {
 									<img src={chat} alt="chat" />
 								</div>
 							</div>
-							{product && <div className={s.productInfoMainPrice}>
+							<div className={s.productInfoMainCountry}>
+								<span>{product.country}</span>
+							</div>
+							<div className={s.productInfoMainPrice}>
 								<PriceDivision price={product.price} />
-							</div>}
+							</div>
 							<div className={s.productInfoMainAdd}>
 								<button className={buy ? s.productInfoMainAddBuyActive : s.productInfoMainAddBuy} onClick={() => clickSetIn('basket')}>{buy ? 'В корзине' : 'В корзину'}</button>
 								<button className={like ? s.productInfoMainAddLikeActive : s.productInfoMainAddLike} onClick={() => clickSetIn('likes')}>{like ? 'Не нравится' : 'Нравится'}</button>

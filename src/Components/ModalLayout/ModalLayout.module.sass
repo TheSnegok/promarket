@@ -21,6 +21,8 @@
         background-color: rgba(145, 145, 145, .5)
         visibility: hidden
     &Block
+        display: flex
+        flex-direction: column
         width: 50vw
         height: 75vh
         padding: 2vh 3vw
@@ -71,6 +73,21 @@
                     overflow: hidden
                     white-space: nowrap
                     text-overflow: ellipsis
+        &Info
+            display: flex
+            &Image
+                width: 50%
+            &Options
+                width: 50%
+                display: flex
+                flex-direction: column
+                align-items: flex-end
+                &Reviews
+                    display: flex
+                    gap: 5px
+                    &Stars
+                        display: flex
+                        gap: 4px
 
 @keyframes slide-in-fwd-center
     0%
