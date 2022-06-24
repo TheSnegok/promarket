@@ -15,41 +15,54 @@ export const ModalLayout = () => {
 	}, [modal]);
 
 	return (
-		<section className={modal.visible ? s.modal : s.modalHidden}>
-			<div className={s.modalBlock}>
-				<div className={s.modalBlockHeader}>
-					<div className={s.modalBlockHeaderName}>
-						<span>{modal.item?.description}</span>
-						<div className={s.modalBlockHeaderNameTags}>
-							{modal.item?.type.map(tag => AddsClassForTags(tag))}
-						</div>
-					</div>
-					<div className={s.modalBlockHeaderClose} onClick={() => setModal({
-						visible: false,
-						item: null
-					})}>
-						<div className={s.modalBlockHeaderCloseTop}></div>
-						<div className={s.modalBlockHeaderCloseBottom}></div>
-					</div>
-				</div>
-				<div className={s.modalBlockInfo}>
-					<div className={s.modalBlockInfoImage}>
-						<img src={modal.item?.imgUrl} alt="product-preview-ploto" />
-					</div>
-					<div className={s.modalBlockInfoOptions}>
-						<div className={s.modalBlockInfoOptionsReviews}>
-							<div className={s.modalBlockInfoOptionsReviewsStars}>
-								{modal.item && <ItemStars stars={modal.item.stars} />}
+		<>
+			{
+				modal.item !== null && (<section className={modal.visible ? s.modal : s.modalHidden}>
+					<div className={s.modalBlock}>
+						<div className={s.modalBlockHeader}>
+							<div className={s.modalBlockHeaderName}>
+								<span>{modal.item?.description}</span>
 							</div>
-							<div className={s.modalBlockInfoOptionsReviewsMessage}>
-								<img src={chat} alt="chat" />
-								<span className={s.messageCount}>{modal.item?.review}</span>
+							<div className={s.modalBlockHeaderClose} onClick={() => setModal({
+								visible: false,
+								item: null
+							})}>
+								<div className={s.modalBlockHeaderCloseTop}></div>
+								<div className={s.modalBlockHeaderCloseBottom}></div>
 							</div>
 						</div>
-						{modal.item && <PriceDivision price={modal.item.price} />}
+						<div className={s.modalBlockInfo}>
+							<div className={s.modalBlockInfoImage}>
+								<img src={modal.item?.imgUrl} alt="product-preview-ploto" />
+							</div>
+							<div className={s.modalBlockInfoOptions}>
+								<div className={s.modalBlockInfoOptionsTags}>
+									{modal.item?.type.map(tag => AddsClassForTags(tag))}
+								</div>
+								<div className={s.modalBlockInfoOptionsPrice}>
+									<PriceDivision price={modal.item.price} />
+								</div>
+								<div className={s.modalBlockInfoOptionsReviews}>
+									<div className={s.modalBlockInfoOptionsReviewsStars}>
+										{modal.item && <ItemStars stars={modal.item.stars} />}
+									</div>
+									<div className={s.modalBlockInfoOptionsReviewsMessage}>
+										<img src={chat} alt="chat" />
+										<span className={s.messageCount}>{modal.item?.review}</span>
+									</div>
+								</div>
+								<div className={s.modalBlockInfoOptionsCountry}>
+									<span>{modal.item.country}</span>
+								</div>
+								<div className={s.modalBlockInfoOptionsButtons}>
+									<button className={s.modalBlockInfoOptionsButtonsBasket}>В корзину</button>
+									<button className={s.modalBlockInfoOptionsButtonsLikes}>Нравится</button>
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-		</section>
+				</section>)
+			}
+		</>
 	)
 }

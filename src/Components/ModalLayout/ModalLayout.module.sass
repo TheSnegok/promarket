@@ -65,16 +65,19 @@
                 align-items: center
                 gap: 1vw
                 width: 80%
-                &Tags
-                    display: flex
                 span
                     font-family: 'Montserrat'
                     font-size: 2.5vh
                     overflow: hidden
                     white-space: nowrap
                     text-overflow: ellipsis
+        &Img
+            height: 100%
         &Info
+            height: 100%
             display: flex
+            align-items: center
+            font-family: 'Montserrat'
             &Image
                 width: 50%
             &Options
@@ -82,12 +85,48 @@
                 display: flex
                 flex-direction: column
                 align-items: flex-end
+                &Tags
+                    display: flex
+                    margin-bottom: 1vw
                 &Reviews
                     display: flex
                     gap: 5px
+                    margin-bottom: 1vw
                     &Stars
                         display: flex
                         gap: 4px
+                        margin-right: 1vw
+                    &Message
+                        font-size: .9em
+                        display: flex
+                        align-items: center
+                        img
+                            margin-right: .3vw
+                &Country
+                    margin-bottom: 2vw
+                &Price
+                    margin-bottom: 3vw
+                &Buttons
+                    display: flex
+                    column-gap: 2vw
+                    &Basket
+                        width: 6vw
+                        height: 2vw
+                        background-color: var(--blue-third)
+                        border-radius: 8px
+                        outline: none
+                        color: white
+                        font-family: "Montserrat"
+                        border: none 
+                    &Likes
+                        width: 6vw
+                        height: 2vw
+                        background-color: var(--blue-third)
+                        border-radius: 8px
+                        outline: none
+                        color: white
+                        font-family: "Montserrat"
+                        border: none 
 
 @keyframes slide-in-fwd-center
     0%
