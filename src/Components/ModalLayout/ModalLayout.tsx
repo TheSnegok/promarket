@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useGlobalContext } from "../Context/Context";
 import { ItemStars } from "../Templates/ItemStars/ItemStars";
 import s from "./ModalLayout.module.sass";
@@ -8,7 +8,30 @@ import { PriceDivision } from "../Templates/PriceDivision/PriceDivision";
 
 export const ModalLayout = () => {
 
-	const { modal, setModal } = useGlobalContext();
+	const { modal, setModal, contextRemoveItem, contextPushItem } = useGlobalContext();
+
+	const [like, setLike] = useState<boolean | null>(null);
+	const [buy, setBuy] = useState<boolean | null>(null);
+
+	const clickSetIn = (itemName: string) => {
+		if (itemName === 'likes') {
+			if (like) {
+				setLike(false);
+				contextRemoveItem('likes', modal.item!.personalKey);
+			} else {
+				setLike(true);
+				contextPushItem('likes', modal.item!);
+			}
+		} else if (itemName === 'basket') {
+			if (buy) {
+				setBuy(false);
+				contextRemoveItem('basket', modal.item!.personalKey);
+			} else {
+				setBuy(true);
+				contextPushItem('basket', modal.item!);
+			}
+		}
+	};
 
 	useEffect(() => {
 		modal.visible ? document.body.style.overflow = "hidden" : document.body.style.overflow = "unset";
@@ -55,8 +78,8 @@ export const ModalLayout = () => {
 									<span>{modal.item.country}</span>
 								</div>
 								<div className={s.modalBlockInfoOptionsButtons}>
-									<button className={s.modalBlockInfoOptionsButtonsBasket}>В корзину</button>
-									<button className={s.modalBlockInfoOptionsButtonsLikes}>Нравится</button>
+									<button className={buy ? s.modalBlockInfoOptionsButtonsBasketActive : s.modalBlockInfoOptionsButtonsBasket} onClick={() => clickSetIn('basket')}>{buy ? 'В корзине' : 'В корзину'}</button>
+									<button className={like ? s.modalBlockInfoOptionsButtonsLikesActive : s.modalBlockInfoOptionsButtonsLikes} onClick={() => clickSetIn('likes')}>{like ? 'Не нравится' : 'Нравится'}</button>
 								</div>
 							</div>
 						</div>
