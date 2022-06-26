@@ -99,6 +99,8 @@ interface IContext {
 	profile: IProfile | null;
 	modal: IModal;
 	authData: IAuthData | null;
+	region: string;
+	setRegion: (c: string) => void;
 	setModal: (c: IModal) => void;
 	setProduct: (c: ILikesItems) => void;
 	setArticle: (c: IArticle) => void;
@@ -144,6 +146,8 @@ export const Context = createContext<IContext>({
 		item: null
 	},
 	authData: null,
+	region: 'Київ',
+	setRegion: () => { },
 	setModal: () => { },
 	setProduct: () => { },
 	setArticle: () => { },
@@ -187,6 +191,8 @@ export const Provider: FC = ({ children }) => {
 	});
 
 	const authData = null;
+
+	const [region, setRegion] = useState<string>('Київ');
 
 	const [product, setProduct] = useState<ILikesItems | null>(null);
 
@@ -245,7 +251,7 @@ export const Provider: FC = ({ children }) => {
 	};
 
 	return (
-		<Context.Provider value={{ data, likes, basket, profile, modal, setModal, authData, product, setProduct, article, setArticle, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
+		<Context.Provider value={{ data, likes, basket, profile, modal, setModal, authData, region, setRegion, product, setProduct, article, setArticle, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
 			{children}
 		</Context.Provider>
 	)
