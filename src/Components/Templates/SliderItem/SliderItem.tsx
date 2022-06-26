@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import s from './SliderItem.module.sass';
 import chat from '../../../Image/hits/messageLogo.svg';
 import { Link } from 'react-router-dom';
@@ -20,7 +20,7 @@ interface IItemProps {
 
 const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, price, personalKey }: IItemProps) => {
 
-	const { setProduct, setModal, contextFindItem, contextPushItem, contextRemoveItem } = useGlobalContext();
+	const { setProduct, setModal, basket, likes, contextFindItem, contextPushItem, contextRemoveItem } = useGlobalContext();
 
 	const productObject = {
 		url: "/",
@@ -60,6 +60,11 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 	const pushProduct = () => {
 		setProduct(productObject);
 	}
+
+	useEffect(() => {
+		setFill(contextFindItem('likes', personalKey) ? false : true);
+		setItemBuy(contextFindItem('basket', personalKey) ? false : true);
+	}, [basket, likes]) // eslint-disable-line
 
 	return (
 		<div className={s.item}>

@@ -8,10 +8,19 @@ import { PriceDivision } from "../Templates/PriceDivision/PriceDivision";
 
 export const ModalLayout = () => {
 
-	const { modal, setModal, contextRemoveItem, contextPushItem } = useGlobalContext();
+	const { modal, setModal, contextRemoveItem, contextPushItem, contextFindItem } = useGlobalContext();
+	
+	const [like, setLike] = useState<boolean>(false);
+	const [buy, setBuy] = useState<boolean>(false);
 
-	const [like, setLike] = useState<boolean | null>(null);
-	const [buy, setBuy] = useState<boolean | null>(null);
+	useEffect(() => {
+		if(modal.visible) {
+			document.body.style.overflow = "hidden";
+			setLike(contextFindItem("likes", modal.item!.personalKey) ? false : true);
+			setBuy(contextFindItem("basket", modal.item!.personalKey) ? false : true);
+		}
+		document.body.style.overflow = "unset";
+	}, [modal]);
 
 	const clickSetIn = (itemName: string) => {
 		if (itemName === 'likes') {
@@ -32,10 +41,6 @@ export const ModalLayout = () => {
 			}
 		}
 	};
-
-	useEffect(() => {
-		modal.visible ? document.body.style.overflow = "hidden" : document.body.style.overflow = "unset";
-	}, [modal]);
 
 	return (
 		<>
