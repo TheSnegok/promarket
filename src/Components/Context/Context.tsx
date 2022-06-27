@@ -90,6 +90,11 @@ export interface IAuthData {
 	key: null | string;
 }
 
+export interface ICallInput {
+	phone: string;
+	name: string;
+}
+
 interface IContext {
 	data: IData;
 	likes: ILikes;
@@ -98,7 +103,9 @@ interface IContext {
 	article: IArticle | null;
 	profile: IProfile | null;
 	modal: IModal;
-	authData: IAuthData | null;
+	callInput: ICallInput;
+	setCallInput: (c: ICallInput) => void;
+	authInput: IAuthData | null;
 	region: string;
 	setRegion: (c: string) => void;
 	setModal: (c: IModal) => void;
@@ -145,7 +152,12 @@ export const Context = createContext<IContext>({
 		visible: false,
 		item: null
 	},
-	authData: null,
+	callInput: {
+		phone: '',
+		name: ''
+	},
+	setCallInput: () => { },
+	authInput: null,
 	region: 'Київ',
 	setRegion: () => { },
 	setModal: () => { },
@@ -190,7 +202,9 @@ export const Provider: FC = ({ children }) => {
 		item: null
 	});
 
-	const authData = null;
+	const [callInput, setCallInput] = useState<ICallInput>({ name: '', phone: '' });
+
+	const authInput = null;
 
 	const [region, setRegion] = useState<string>('Київ');
 
@@ -251,7 +265,7 @@ export const Provider: FC = ({ children }) => {
 	};
 
 	return (
-		<Context.Provider value={{ data, likes, basket, profile, modal, setModal, authData, region, setRegion, product, setProduct, article, setArticle, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
+		<Context.Provider value={{ data, likes, basket, profile, modal, setModal, authInput, callInput, setCallInput, region, setRegion, product, setProduct, article, setArticle, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
 			{children}
 		</Context.Provider>
 	)

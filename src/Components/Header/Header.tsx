@@ -7,9 +7,7 @@ import { useGlobalContext } from '../Context/Context';
 
 const Header: FC = () => {
 
-	const { data } = useGlobalContext();
-
-	const [city, setCity] = useState<String>('Київ');
+	const { data, callInput, setCallInput, region, setRegion } = useGlobalContext();
 
 	return (
 		<header className={s.header}>
@@ -21,12 +19,12 @@ const Header: FC = () => {
 			<div className={s.headerLocation}>
 				<img src={mark} alt="mark" className={s.mark} />
 				<div className={s.regions}>
-					<span>{city}</span>
+					<span>{region}</span>
 					<div className={s.regionsList}>
 						<ul>
 							{data.regionsList.map((item, index) => {
 								return (
-									<li key={index} onClick={() => setCity(item)}>
+									<li key={index} onClick={() => setRegion(item)}>
 										{item}
 									</li>
 								)
@@ -45,8 +43,8 @@ const Header: FC = () => {
 					<div className={s.phoneCall}>
 						<span>Заказать звонок</span>
 						<form action='/' className={s.phoneCallInput}>
-							<input type="text" pattern={'^([\u0401\u0451\u0410-\u044f]{1,20})'} title={'Ваше имя должно содержать от 2 букв до 24 букв!'} placeholder={'Введите ваше имя...'} />
-							<input type="tel" pattern={'^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$'} title={`Введите настоящий номер телефона содержащий 10 цифр!`} placeholder={'Введите номер телофона...'} />
+							<input type="text" pattern={'^([\u0401\u0451\u0410-\u044f]{1,20})'} title={'Ваше имя должно содержать от 2 букв до 24 букв!'} placeholder={'Введите ваше имя...'} value={callInput.name} onChange={e => setCallInput({name: e.target.value, phone: callInput.phone})} />
+							<input type="tel" pattern={'^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$'} title={`Введите настоящий номер телефона содержащий 10 цифр!`} placeholder={'Введите номер телофона...'} value={callInput.phone} onChange={e => setCallInput({name: callInput.name, phone: e.target.value})} />
 							<button>Заказать звонок</button>
 						</form>
 					</div>
