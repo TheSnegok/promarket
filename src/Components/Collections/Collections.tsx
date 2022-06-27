@@ -8,7 +8,8 @@ const Collections: FC = () => {
                 Коллекции плитки
             </h1>
             <div className={s.collectionsWrapper}>
-                <div className={s.left}>
+                <div className={s.WrapperLeft}>
+                    <div className={s.left}></div>
                     <div className={s.leftHeader}>
                         <h2>
                             Сияние
@@ -20,7 +21,9 @@ const Collections: FC = () => {
                 </div>
                 <div className={s.right}>
                     <div className={s.rightUp}>
-                        <div className={s.rightUpLeft}>
+                        <div className={s.WrapperUpLeft}>
+                            <div className={s.rightUpLeft}>
+                            </div>
                             <div className={s.leftHeader}>
                                 Вестанвинд
                             </div>
@@ -28,7 +31,9 @@ const Collections: FC = () => {
                                 LB-Ceramics
                             </div>
                         </div>
-                        <div className={s.rightUpRight}>
+                        <div className={s.WrapperUpRight}>
+                            <div className={s.rightUpRight}>
+                            </div>
                             <div className={s.rightHeader}>
                                 Rotterdam
                             </div>
@@ -38,7 +43,9 @@ const Collections: FC = () => {
                         </div>
                     </div>
                     <div className={s.rightBot}>
-                        <div className={s.rightBotLeft}>
+                        <div className={s.WrapperBotLeft}>
+                            <div className={s.rightBotLeft}>
+                            </div>
                             <div className={s.leftHeader}>
                                 Rane
                             </div>
@@ -46,7 +53,9 @@ const Collections: FC = () => {
                                 Alma Ceramica
                             </div>
                         </div>
-                        <div className={s.rightBotRight}>
+                        <div className={s.WrapperBotRight}>
+                            <div className={s.rightBotRight}>
+                            </div>
                             <div className={s.rightHeader}>
                                 Гинардо
                             </div>
