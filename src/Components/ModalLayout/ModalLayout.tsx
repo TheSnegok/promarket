@@ -18,8 +18,9 @@ export const ModalLayout = () => {
 			document.body.style.overflow = "hidden";
 			setLike(contextFindItem("likes", modal.item!.personalKey) ? false : true);
 			setBuy(contextFindItem("basket", modal.item!.personalKey) ? false : true);
+		} else {
+			document.body.style.overflow = "unset";
 		}
-		document.body.style.overflow = "unset";
 	}, [modal]);//eslint-disable-line
 
 	const clickSetIn = (itemName: string) => {
