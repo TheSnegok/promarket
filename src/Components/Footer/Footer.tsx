@@ -6,28 +6,29 @@ import instagram from '../../Image/logo/instagram 2.svg'
 import whatsApp from '../../Image/logo/whatsApp.svg'
 import yandex from '../../Image/yandex.png'
 import { Link } from "react-router-dom";
-
-const footerSectionList: string[][] = [['/', 'Плитка'], ['/', 'Сантехника'], ['/', 'Мебель для ванной'], ['/', 'Электроника и бытовая техника'], ['/', 'Отопление'], ['/', 'Напольное покрытие']];
-const footerMenu: string[][] = [['/', 'Оплата'], ['/', 'Доставка'], ['/', 'Поставщикам'], ['/', 'Статьи'], ['/', 'Контакты']];
+import { useGlobalContext } from "../Context/Context";
 
 const Footer: FC = () => {
+
+    const { data } = useGlobalContext();
+
     return (
         <>
             <footer className={s.footer}>
                 <div className={s.footerSection}>
                     <div className={s.footerSectionList}>
                         <ul>
-                            {footerSectionList.map((item, index) => <li key={index}><Link to={item[0]}>{item[1]}</Link></li>)}
+                            {data.footer.footerSectionList.map((item, index) => <li key={index}><Link to={item[0]}>{item[1]}</Link></li>)}
                         </ul>
                     </div>
                     <div className={s.footerSectionLogo}>
                         <Link to="/"><img src={logo} alt="logo" /></Link>
-                        <span>© 2020 <Link to="/">ggpromarket.ru</Link></span>
+                        <span>© 2022 <Link to="/">ggpromarket.surge.sh</Link></span>
                     </div>
                 </div>
                 <div className={s.footerMenu}>
                     <ul>
-                        {footerMenu.map((item, index) => <li key={index}><Link to={item[0]}>{item[1]}</Link></li>)}
+                        {data.footer.footerMenu.map((item, index) => <li key={index}><Link to={item[0]}>{item[1]}</Link></li>)}
                     </ul>
                 </div>
                 <div className={s.footerContacts}>
@@ -50,10 +51,10 @@ const Footer: FC = () => {
                     <div className={s.footerLocationStreet}>
                         <span>Склад:</span>
                         <span>
-                            <a href="https://goo.gl/maps/je6Thfut32U1v1zk8">Москва, ул. Салтыковская, 6 стр 11</a>
+                            <a href="https://goo.gl/maps/je6Thfut32U1v1zk8">Київ, ул. Радосинська, 6 стр 11</a>
                         </span>
                         <span>
-                            <Link to="mail:zakaz@ggpromarket.ru">zakaz@ggpromarket.ru</Link>
+                            <Link to="mail:zakaz@ggpromarket.com">zakaz@ggpromarket.com</Link>
                         </span>
                     </div>
                     <div className={s.footerLocationYandex}>

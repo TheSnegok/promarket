@@ -20,6 +20,11 @@ import Electronics from '../Image/hoverMenu/icon4.svg';
 import heating from '../Image/hoverMenu/icon5.svg';
 import flooring from '../Image/hoverMenu/icon6.svg';
 
+
+export const footerSectionList = [['/', 'Плитка'], ['/', 'Сантехника'], ['/', 'Мебель для ванной'], ['/', 'Электроника и бытовая техника'], ['/', 'Отопление'], ['/', 'Напольное покрытие']];
+
+export const footerMenu = [['/', 'Оплата'], ['/', 'Доставка'], ['/', 'Поставщикам'], ['/', 'Статьи'], ['/', 'Контакты']];
+
 export const MenuListItems = [
     { src: tile, description: "Tile", text: "Плитка" },
     { src: plumbing, description: "Plumbing", text: "Сантехника" },

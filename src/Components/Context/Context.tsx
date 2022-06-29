@@ -1,5 +1,5 @@
 import { createContext, FC, useContext, useState } from "react";
-import { articleList, hitsMenu, hitsSlideItems, stockMenu, stockSlideItems, regions, MenuListItems, MenuInfoItems, MenuInfoItemsSecond, MenuInfoItemsThird } from '../../api/api';
+import { articleList, hitsMenu, hitsSlideItems, stockMenu, stockSlideItems, regions, MenuListItems, MenuInfoItems, MenuInfoItemsSecond, MenuInfoItemsThird, footerSectionList, footerMenu } from '../../api/api';
 
 interface IMenuListItems {
 	src: string;
@@ -25,6 +25,10 @@ interface IData {
 	articleList: string[][];
 	regionsList: string[];
 	menu: IMenu;
+	footer: {
+		footerSectionList: string[][];
+		footerMenu: string[][]; 
+	};
 }
 
 export interface ILikesItems {
@@ -85,8 +89,8 @@ export interface IModal {
 
 export interface IAuthData {
 	authorization: boolean;
-	email: null | number;
-	password: null | number;
+	email: null | string;
+	password: null | string;
 	key: null | string;
 }
 
@@ -105,7 +109,8 @@ interface IContext {
 	modal: IModal;
 	callInput: ICallInput;
 	setCallInput: (c: ICallInput) => void;
-	authInput: IAuthData | null;
+	authentication: IAuthData | null;
+	setAuthentication: (c: IAuthData) => void;
 	region: string;
 	setRegion: (c: string) => void;
 	setModal: (c: IModal) => void;
@@ -135,6 +140,10 @@ export const Context = createContext<IContext>({
 			MenuInfoItems,
 			MenuInfoItemsSecond,
 			MenuInfoItemsThird
+		},
+		footer: {
+			footerSectionList, 
+			footerMenu
 		}
 	},
 	likes: {
@@ -157,7 +166,8 @@ export const Context = createContext<IContext>({
 		name: ''
 	},
 	setCallInput: () => { },
-	authInput: null,
+	authentication: null,
+	setAuthentication: () => { },
 	region: 'Київ',
 	setRegion: () => { },
 	setModal: () => { },
@@ -193,6 +203,10 @@ export const Provider: FC = ({ children }) => {
 			MenuInfoItems,
 			MenuInfoItemsSecond,
 			MenuInfoItemsThird
+		},
+		footer: {
+			footerSectionList, 
+			footerMenu
 		}
 	}
 	const profile = null;
@@ -204,7 +218,12 @@ export const Provider: FC = ({ children }) => {
 
 	const [callInput, setCallInput] = useState<ICallInput>({ name: '', phone: '' });
 
-	const authInput = null;
+	const [authentication, setAuthentication] = useState<IAuthData>({
+		authorization: false, //we may get from cookies or session
+		email: '', // there for inputs * 2 
+		password: '',
+		key: ''
+	});
 
 	const [region, setRegion] = useState<string>('Київ');
 
@@ -265,7 +284,7 @@ export const Provider: FC = ({ children }) => {
 	};
 
 	return (
-		<Context.Provider value={{ data, likes, basket, profile, modal, setModal, authInput, callInput, setCallInput, region, setRegion, product, setProduct, article, setArticle, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
+		<Context.Provider value={{ data, likes, basket, profile, modal, setModal, authentication, setAuthentication, callInput, setCallInput, region, setRegion, product, setProduct, article, setArticle, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
 			{children}
 		</Context.Provider>
 	)
