@@ -1,6 +1,7 @@
 import { FC, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router";
 import { ArcticlePage } from "./Components/ArcticlePage/ArcticlePage";
+import { Authentication } from "./Components/Authentication/Authentication";
 import { Basket } from "./Components/Basket/Basket";
 import { ErrorPage } from "./Components/ErrorPage/ErrorPage";
 import Footer from "./Components/Footer/Footer";
@@ -32,6 +33,7 @@ const App: FC = () => {
                 <Route path="/product" element={<ProductPage />} />
                 <Route path="/profile" element={<ProfilePage />} />
                 <Route path="/search" element={<SearchPage />} />
+                <Route path="/login" element={<Authentication />} />
                 <Route path="*" element={<ErrorPage />} />
             </Routes>
             <Footer />
