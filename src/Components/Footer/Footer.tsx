@@ -54,7 +54,7 @@ const Footer: FC = () => {
                             <a href="https://goo.gl/maps/je6Thfut32U1v1zk8">Київ, ул. Радосинська, 6 стр 11</a>
                         </span>
                         <span>
-                            <Link to="mail:zakaz@ggpromarket.com">zakaz@ggpromarket.com</Link>
+                            <Link to="mail:zakaz@ggpromarket.surge.sh">zakaz@ggpromarket.surge.sh</Link>
                         </span>
                     </div>
                     <div className={s.footerLocationYandex}>

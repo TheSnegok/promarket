@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import { useGlobalContext } from "../Context/Context";
 import { ListItem } from "../Templates/ListItem/ListItem";
 import { numberWithSpaces } from "../Templates/NumberWithSpaces/NumberWithSpaces";
@@ -7,8 +8,9 @@ import s from "./Basket.module.sass";
 
 export const Basket = () => {
 
-    const { basket } = useGlobalContext();
+    const { basket, authentication } = useGlobalContext();
     const [indexItem, setIndexItem] = useState<undefined | number>(undefined);
+    let redirect = useNavigate();
 
     const totalPrice = (): number => {
         let totalPrice = 0;
@@ -62,7 +64,7 @@ export const Basket = () => {
                                     )}
                                 </div>
                             </div>
-                            <button className={s.basketOrder}>Сделать заказ</button>
+                            <button className={s.basketOrder} onClick={() => !authentication?.authorization ? redirect('/login') : null} >Сделать заказ</button>
                         </>
                     )
                 }
