@@ -27,7 +27,7 @@ interface IData {
 	menu: IMenu;
 	footer: {
 		footerSectionList: string[][];
-		footerMenu: string[][]; 
+		footerMenu: string[][];
 	};
 }
 
@@ -89,9 +89,9 @@ export interface IModal {
 
 export interface IAuthData {
 	authorization: boolean;
-	email: null | string;
-	password: null | string;
-	key: null | string;
+	email: string;
+	password: string;
+	key: string;
 }
 
 export interface ICallInput {
@@ -109,7 +109,7 @@ interface IContext {
 	modal: IModal;
 	callInput: ICallInput;
 	setCallInput: (c: ICallInput) => void;
-	authentication: IAuthData | null;
+	authentication: IAuthData;
 	setAuthentication: (c: IAuthData) => void;
 	region: string;
 	setRegion: (c: string) => void;
@@ -142,7 +142,7 @@ export const Context = createContext<IContext>({
 			MenuInfoItemsThird
 		},
 		footer: {
-			footerSectionList, 
+			footerSectionList,
 			footerMenu
 		}
 	},
@@ -166,7 +166,12 @@ export const Context = createContext<IContext>({
 		name: ''
 	},
 	setCallInput: () => { },
-	authentication: null,
+	authentication: {
+		authorization: false, //we may get from cookies or session
+		email: '', // there for inputs * 2 
+		password: '',
+		key: ''
+	},
 	setAuthentication: () => { },
 	region: 'Київ',
 	setRegion: () => { },
@@ -181,7 +186,7 @@ export const Context = createContext<IContext>({
 });
 
 /* 
-Plans for tomorrow: search page, authorization, responsible design,
+Plans for tomorrow: search page, responsible design,
 */
 export const useGlobalContext = () => useContext(Context);
 
@@ -205,7 +210,7 @@ export const Provider: FC = ({ children }) => {
 			MenuInfoItemsThird
 		},
 		footer: {
-			footerSectionList, 
+			footerSectionList,
 			footerMenu
 		}
 	}

@@ -1,8 +1,12 @@
 import s from "./ProfilePage.module.sass";
 import cabinet from '../../Image/Group.svg';
 import camera from '../../Image/CameraPhoto.svg';
+import { useGlobalContext } from "../Context/Context";
 
 export const ProfilePage = () => {
+
+    const { authentication, setAuthentication } = useGlobalContext();
+
     return (
         <section className={s.profilePage}>
             <div className={s.profilePageHeader}>
@@ -43,7 +47,8 @@ export const ProfilePage = () => {
                         </div>
                     </div>
                 </div>
-                <button type="submit" className={s.profilePageSave}>Сохранить</button>
+                <button className={s.profilePageSave}>Сохранить</button>
+                <button className={s.profilePageSave} onClick={() => setAuthentication({ authorization: false, email: '', password: '', key: '' })}>Выйти</button>
             </form>
         </section>
     )
