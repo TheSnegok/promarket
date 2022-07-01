@@ -16,12 +16,23 @@ export const Authentication = () => {
 				authorization: true,
 				key: authentication.key,
 				password: authentication.password,
-				email: authentication.email
+				email: authentication.email,
+				rememberMe: false
 			})
 			redirect('/');
 		} else {
 			console.error('Invalid email or password!');
 		}
+	}
+
+	const toogleCheck = (e: FormEvent) => {
+		setAuthentication({
+			authorization: authentication.authorization,
+			key: authentication.key,
+			password: authentication.password,
+			email: authentication.email,
+			rememberMe: !authentication.rememberMe
+		})
 	}
 
 	return (
@@ -39,7 +50,8 @@ export const Authentication = () => {
 									authorization: authentication.authorization,
 									key: authentication.key,
 									password: authentication.password,
-									email: e.target.value
+									email: e.target.value,
+									rememberMe: false
 								}
 							)} required />
 					</div>
@@ -49,12 +61,13 @@ export const Authentication = () => {
 								authorization: authentication.authorization,
 								key: authentication.key,
 								password: e.target.value,
-								email: authentication.email
+								email: authentication.email,
+								rememberMe: false
 							}
 						)} required />
 					</div>
 					<div className={s.autenticationFormInputsRemember}>
-						<input type="checkbox" name='rememberMe' />
+						<input type="checkbox" name='rememberMe' checked={authentication.rememberMe} onChange={(e) => toogleCheck(e)} />
 						<label htmlFor="rememberMe">Remember me?</label>
 					</div>
 				</div>

@@ -92,6 +92,7 @@ export interface IAuthData {
 	email: string;
 	password: string;
 	key: string;
+	rememberMe: boolean;
 }
 
 export interface ICallInput {
@@ -170,7 +171,8 @@ export const Context = createContext<IContext>({
 		authorization: false, //we may get from cookies or session
 		email: '', // there for inputs * 2 
 		password: '',
-		key: ''
+		key: '',
+		rememberMe: false
 	},
 	setAuthentication: () => { },
 	region: 'Київ',
@@ -227,7 +229,8 @@ export const Provider: FC = ({ children }) => {
 		authorization: false, //we may get from cookies or session
 		email: '', // there for inputs * 2 
 		password: '',
-		key: ''
+		key: '',
+		rememberMe: false
 	});
 
 	const [region, setRegion] = useState<string>('Київ');

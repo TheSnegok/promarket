@@ -48,7 +48,7 @@ export const ProfilePage = () => {
                     </div>
                 </div>
                 <button className={s.profilePageSave}>Сохранить</button>
-                <button className={s.profilePageSave} onClick={() => setAuthentication({ authorization: false, email: '', password: '', key: '' })}>Выйти</button>
+                <button className={s.profilePageSave} onClick={() => setAuthentication({ authorization: false, email: '', password: '', key: '', rememberMe: false })}>Выйти</button>
             </form>
         </section>
     )
