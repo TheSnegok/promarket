@@ -28,28 +28,31 @@ export const Authentication = () => {
 		<section className={s.autentication}>
 			<form className={s.autenticationForm}>
 				<div className={s.autenticationFormInputs}>
-					<input
-						type="email"
-						name="email"
-						className={s.autenticationFormInputsEmail}
-						placeholder="admin@surge.sh"
-						value={authentication.email}
-						onChange={(e) => setAuthentication(
+					<div className={s.autenticationFormInputsEmail}>
+						<input
+							type="email"
+							name="email"
+							placeholder="admin@surge.sh"
+							value={authentication.email}
+							onChange={(e) => setAuthentication(
+								{
+									authorization: authentication.authorization,
+									key: authentication.key,
+									password: authentication.password,
+									email: e.target.value
+								}
+							)} required />
+					</div>
+					<div className={s.autenticationFormInputsPassword}>
+						<input type="pass" name="password" placeholder="admin" value={authentication.password} onChange={(e) => setAuthentication(
 							{
 								authorization: authentication.authorization,
 								key: authentication.key,
-								password: authentication.password,
-								email: e.target.value
+								password: e.target.value,
+								email: authentication.email
 							}
 						)} required />
-					<input type="pass" name="password" className={s.autenticationFormInputsPassword} placeholder="admin" value={authentication.password} onChange={(e) => setAuthentication(
-						{
-							authorization: authentication.authorization,
-							key: authentication.key,
-							password: e.target.value,
-							email: authentication.email
-						}
-					)} required />
+					</div>
 					<div className={s.autenticationFormInputsRemember}>
 						<input type="checkbox" name='rememberMe' />
 						<label htmlFor="rememberMe">Remember me?</label>
