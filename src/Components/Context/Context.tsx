@@ -76,10 +76,11 @@ export interface IArticle {
 
 export interface IProfile {
 	avatar: string | null;
-	name: null;
-	surname: null;
-	email: null;
-	password: null;
+	name: string;
+	surname: string;
+	phone: string;
+	email: string;
+	password: string;
 }
 
 export interface IModal {
@@ -106,7 +107,8 @@ interface IContext {
 	basket: ILikes;
 	product: ILikesItems | null;
 	article: IArticle | null;
-	profile: IProfile | null;
+	profile: IProfile;
+	setProfile: (c: IProfile) => void;
 	modal: IModal;
 	callInput: ICallInput;
 	setCallInput: (c: ICallInput) => void;
@@ -157,7 +159,15 @@ export const Context = createContext<IContext>({
 	},
 	product: null,
 	article: null,
-	profile: null,
+	profile: {
+		avatar: null,
+		name: 'admin',
+		surname: '',
+		phone: '',
+		email: '',
+		password: ''
+	},
+	setProfile: () => { },
 	modal: {
 		visible: false,
 		item: null
@@ -216,7 +226,15 @@ export const Provider: FC = ({ children }) => {
 			footerMenu
 		}
 	}
-	const profile = null;
+
+	const [profile, setProfile] = useState<IProfile>({
+		avatar: null,
+		name: 'admin',
+		surname: '',
+		phone: '',
+		email: '',
+		password: ''
+	});
 
 	const [modal, setModal] = useState<IModal>({
 		visible: false,
@@ -227,7 +245,7 @@ export const Provider: FC = ({ children }) => {
 
 	const [authentication, setAuthentication] = useState<IAuthData>({
 		authorization: localStorage.getItem('rememberMe') === 'true',
-		email: '', 
+		email: '',
 		password: '',
 		key: '',
 		rememberMe: false
@@ -292,7 +310,7 @@ export const Provider: FC = ({ children }) => {
 	};
 
 	return (
-		<Context.Provider value={{ data, likes, basket, profile, modal, setModal, authentication, setAuthentication, callInput, setCallInput, region, setRegion, product, setProduct, article, setArticle, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
+		<Context.Provider value={{ data, likes, basket, profile, setProfile, modal, setModal, authentication, setAuthentication, callInput, setCallInput, region, setRegion, product, setProduct, article, setArticle, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
 			{children}
 		</Context.Provider>
 	)
