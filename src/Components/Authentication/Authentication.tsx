@@ -1,4 +1,4 @@
-import { FormEvent } from 'react';
+import { FormEvent, useRef } from 'react';
 import { useNavigate } from 'react-router';
 import { useGlobalContext } from '../Context/Context';
 import s from './Authentication.module.sass';
@@ -8,6 +8,7 @@ export const Authentication = () => {
 	const { authentication, setAuthentication } = useGlobalContext();
 
 	let redirect = useNavigate();
+	const rememberMe = useRef(null);
 
 	const checkDate = (e: FormEvent) => {
 		e.preventDefault();
@@ -19,13 +20,16 @@ export const Authentication = () => {
 				email: authentication.email,
 				rememberMe: false
 			})
+			if(authentication.rememberMe) {
+				localStorage.setItem('rememberMe', 'true')
+			}
 			redirect('/');
 		} else {
 			console.error('Invalid email or password!');
 		}
 	}
 
-	const toogleCheck = (e: FormEvent) => {
+	const toogleCheck = () => {
 		setAuthentication({
 			authorization: authentication.authorization,
 			key: authentication.key,
@@ -67,7 +71,7 @@ export const Authentication = () => {
 						)} required />
 					</div>
 					<div className={s.autenticationFormInputsRemember}>
-						<input type="checkbox" name='rememberMe' checked={authentication.rememberMe} onChange={(e) => toogleCheck(e)} />
+						<input type="checkbox" name='rememberMe' checked={authentication.rememberMe} ref={rememberMe} onChange={() => toogleCheck()} />
 						<label htmlFor="rememberMe">Remember me?</label>
 					</div>
 				</div>

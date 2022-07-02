@@ -7,6 +7,15 @@ export const ProfilePage = () => {
 
     const { authentication, setAuthentication } = useGlobalContext();
 
+    const save = () => {
+        localStorage.setItem(, '');
+    }
+
+    const logout = () => {
+        setAuthentication({ authorization: false, email: '', password: '', key: '', rememberMe: false });
+        localStorage.removeItem('rememberMe');
+    }
+
     return (
         <section className={s.profilePage}>
             <div className={s.profilePageHeader}>
@@ -47,8 +56,8 @@ export const ProfilePage = () => {
                         </div>
                     </div>
                 </div>
-                <button className={s.profilePageSave}>Сохранить</button>
-                <button className={s.profilePageSave} onClick={() => setAuthentication({ authorization: false, email: '', password: '', key: '', rememberMe: false })}>Выйти</button>
+                <button className={s.profilePageSave} onClick={() => save()>Сохранить</button>
+                <button className={s.profilePageExit} onClick={() => logout()}>Выйти</button>
             </form>
         </section>
     )

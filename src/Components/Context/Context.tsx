@@ -226,8 +226,8 @@ export const Provider: FC = ({ children }) => {
 	const [callInput, setCallInput] = useState<ICallInput>({ name: '', phone: '' });
 
 	const [authentication, setAuthentication] = useState<IAuthData>({
-		authorization: false, //we may get from cookies or session
-		email: '', // there for inputs * 2 
+		authorization: localStorage.getItem('rememberMe') === 'true',
+		email: '', 
 		password: '',
 		key: '',
 		rememberMe: false
