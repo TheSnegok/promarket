@@ -114,6 +114,8 @@ interface IContext {
 	setCallInput: (c: ICallInput) => void;
 	authentication: IAuthData;
 	setAuthentication: (c: IAuthData) => void;
+	findInput: string;
+	setFindInput: (c: string) => void;
 	region: string;
 	setRegion: (c: string) => void;
 	setModal: (c: IModal) => void;
@@ -184,6 +186,8 @@ export const Context = createContext<IContext>({
 		key: '',
 		rememberMe: false
 	},
+	findInput: '',
+	setFindInput: () => {},
 	setAuthentication: () => { },
 	region: 'Київ',
 	setRegion: () => { },
@@ -242,6 +246,8 @@ export const Provider: FC = ({ children }) => {
 	});
 
 	const [callInput, setCallInput] = useState<ICallInput>({ name: '', phone: '' });
+
+	const [findInput, setFindInput] = useState<string>('');
 
 	const [authentication, setAuthentication] = useState<IAuthData>({
 		authorization: localStorage.getItem('rememberMe') === 'true',
@@ -310,7 +316,7 @@ export const Provider: FC = ({ children }) => {
 	};
 
 	return (
-		<Context.Provider value={{ data, likes, basket, profile, setProfile, modal, setModal, authentication, setAuthentication, callInput, setCallInput, region, setRegion, product, setProduct, article, setArticle, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
+		<Context.Provider value={{ data, likes, basket, profile, setProfile, modal, setModal, authentication, setAuthentication, callInput, setCallInput,findInput, setFindInput, region, setRegion, product, setProduct, article, setArticle, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
 			{children}
 		</Context.Provider>
 	)

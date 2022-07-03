@@ -11,7 +11,7 @@ const Menu: FC = () => {
 
     const { data } = useGlobalContext();
 
-    const { likes, basket } = useGlobalContext();
+    const { likes, basket, findInput, setFindInput } = useGlobalContext();
     const [info, setInfo] = useState<number>(0);
 
     return (
@@ -114,7 +114,7 @@ const Menu: FC = () => {
                 </Link>
             </div>
             <div className={s.menuSearcher}>
-                <input type="text" className={s.input} placeholder='Что вы ищете?' />
+                <input type="text" className={s.input} placeholder='Что вы ищете?' value={findInput} onChange={(e) => setFindInput(e.target.value)} />
                 <div className={s.icon}>
                     <Link to="/search">
                         <img src={loop} alt="search" className={s.loop} />
