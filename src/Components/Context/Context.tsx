@@ -101,6 +101,11 @@ export interface ICallInput {
 	name: string;
 }
 
+export interface ISearch {
+	text: string,
+	mathFound: [] | IDataTemplate[]
+}
+
 interface IContext {
 	data: IData;
 	likes: ILikes;
@@ -114,8 +119,8 @@ interface IContext {
 	setCallInput: (c: ICallInput) => void;
 	authentication: IAuthData;
 	setAuthentication: (c: IAuthData) => void;
-	findInput: string;
-	setFindInput: (c: string) => void;
+	findInput: ISearch;
+	setFindInput: (c: ISearch) => void;
 	region: string;
 	setRegion: (c: string) => void;
 	setModal: (c: IModal) => void;
@@ -186,8 +191,11 @@ export const Context = createContext<IContext>({
 		key: '',
 		rememberMe: false
 	},
-	findInput: '',
-	setFindInput: () => {},
+	findInput: {
+		text: '',
+		mathFound: []
+	},
+	setFindInput: () => { },
 	setAuthentication: () => { },
 	region: 'Київ',
 	setRegion: () => { },
@@ -247,7 +255,10 @@ export const Provider: FC = ({ children }) => {
 
 	const [callInput, setCallInput] = useState<ICallInput>({ name: '', phone: '' });
 
-	const [findInput, setFindInput] = useState<string>('');
+	const [findInput, setFindInput] = useState<ISearch>({
+		text: '',
+		mathFound: []
+	});
 
 	const [authentication, setAuthentication] = useState<IAuthData>({
 		authorization: localStorage.getItem('rememberMe') === 'true',
@@ -316,7 +327,7 @@ export const Provider: FC = ({ children }) => {
 	};
 
 	return (
-		<Context.Provider value={{ data, likes, basket, profile, setProfile, modal, setModal, authentication, setAuthentication, callInput, setCallInput,findInput, setFindInput, region, setRegion, product, setProduct, article, setArticle, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
+		<Context.Provider value={{ data, likes, basket, profile, setProfile, modal, setModal, authentication, setAuthentication, callInput, setCallInput, findInput, setFindInput, region, setRegion, product, setProduct, article, setArticle, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
 			{children}
 		</Context.Provider>
 	)

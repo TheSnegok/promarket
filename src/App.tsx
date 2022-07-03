@@ -12,7 +12,6 @@ import { Main } from "./Components/Main";
 import Menu from "./Components/Menu/Menu";
 import { ProductPage } from "./Components/ProductPage/ProductPage";
 import { ProfilePage } from "./Components/ProfilePage/ProfilePage";
-import { SearchPage } from "./Components/SearchPage/SearchPage";
 
 const App: FC = () => {
 
@@ -34,7 +33,6 @@ const App: FC = () => {
                 <Route path="/article" element={<ArcticlePage />} />
                 <Route path="/product" element={<ProductPage />} />
                 <Route path="/profile" element={authentication?.authorization ? <ProfilePage /> : <Authentication />} />
-                <Route path="/search" element={<SearchPage />} />
                 <Route path="/login" element={<Authentication />} />
                 <Route path="*" element={<ErrorPage />} />
             </Routes>

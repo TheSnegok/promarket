@@ -42,7 +42,7 @@ export const ProfilePage = () => {
 								<img src={camera} alt="camera" />
 								<span>Добавить фото</span>
 							</label>
-							<input type="file" id="ava" accept=".png, .jpg, .jpeg, .gif" ref={input} onChange={save} />
+							<input type="file" id="ava" accept=".png, .jpg, .jpeg, .gif" ref={input} onChange={(e) => save(e)} />
 						</div>
 					</div>
 					<div className={s.profilePageMainInfo}>
@@ -103,7 +103,7 @@ export const ProfilePage = () => {
 						</div>
 					</div>
 				</div>
-				<button className={s.profilePageSave} onClick={save}>Сохранить</button>
+				<button className={s.profilePageSave} onClick={(e) => save(e)}>Сохранить</button>
 				<button className={s.profilePageExit} onClick={logout}>Выйти</button>
 			</form>
 		</section>

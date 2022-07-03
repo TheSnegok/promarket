@@ -1,4 +1,4 @@
-import { FC, Fragment, useState } from "react";
+import { FC, FormEvent, useState } from "react";
 import s from "./Menu.module.sass";
 import loop from '../../Image/search.svg';
 import cabinet from '../../Image/Group.svg';
@@ -13,6 +13,10 @@ const Menu: FC = () => {
 
     const { likes, basket, findInput, setFindInput } = useGlobalContext();
     const [info, setInfo] = useState<number>(0);
+
+    const checkMatch = (e: FormEvent<HTMLInputElement>) => {
+        setFindInput({ text: e.currentTarget.value, mathFound: findInput.mathFound })
+    }
 
     return (
         <menu className={s.menu}>
@@ -42,7 +46,7 @@ const Menu: FC = () => {
                                 <div className={s.wrapper}>
                                     {info === 1 ?
                                         (
-                                            <Fragment>
+                                            <>
                                                 <div className={s.wrapperFirst}>
                                                     {data.menu.MenuInfoItems.map(mas => (
                                                         <div className={s.columnWrapper} key={mas[0].text}>
@@ -91,7 +95,7 @@ const Menu: FC = () => {
                                                     </ul>
                                                 </div>
 
-                                            </Fragment>
+                                            </>
                                         ) : (
                                             <div className={s.wrapperFirst}>
                                                 Comming soon...
@@ -114,12 +118,13 @@ const Menu: FC = () => {
                 </Link>
             </div>
             <div className={s.menuSearcher}>
-                <input type="text" className={s.input} placeholder='Что вы ищете?' value={findInput} onChange={(e) => setFindInput(e.target.value)} />
+                <input type="text" className={s.input} placeholder='Что вы ищете?' value={findInput.text} onChange={(e) => checkMatch(e)} />
                 <div className={s.icon}>
                     <Link to="/search">
                         <img src={loop} alt="search" className={s.loop} />
                     </Link>
                 </div>
+                <div className={s.menuSearcherMatches}></div>
             </div>
             <div className={s.menuActions} >
                 <div className={s.cabinet}>
