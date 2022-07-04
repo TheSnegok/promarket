@@ -44,7 +44,7 @@ const Hits: FC = () => {
             <div className={s.hitsSlider}>
                 <div className={s.hitsWrapper}>
                     <div className={s.hitsWrapperSlider} style={{ left: position + 'px' }}>
-                        {data.hits.slideItems !== null ? data.hits.slideItems.map((item, index) => <SliderItem key={index} tags={item.tags} itemImg={item.imgSrc} itemStars={item.stars} message={item.reviews} itemDesc={item.description} itemCountry={item.country} price={item.price} personalKey={item.personalKey} />) : null}
+                        {data.hits.slideItems !== null ? data.hits.slideItems.map((slide, index) => <SliderItem key={index} item={slide} />) : null}
                     </div>
                 </div>
                 <div className={s.arrowRight} onClick={() => changeSlide("plus")}></div>

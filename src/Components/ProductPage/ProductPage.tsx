@@ -51,18 +51,18 @@ export const ProductPage = () => {
 							<h1>{product!.description}</h1>
 						</div>
 						<div className={s.productHeaderTypes}>
-							{product!.type.map(element => AddsClassForTags(element))}
+							{product!.tags.map(element => AddsClassForTags(element))}
 						</div>
 					</div>
 					<div className={s.productInfo}>
 						<div className={s.productInfoImg}>
-							<img src={product!.imgUrl} alt={product!.description} />
+							<img src={product.imgSrc} alt={product.description} />
 							<div className={s.productInfoImgOther}>
-								<img src={product!.imgUrl} alt={product!.description} />
-								<img src={product!.imgUrl} alt={product!.description} />
-								<img src={product!.imgUrl} alt={product!.description} />
-								<img src={product!.imgUrl} alt={product!.description} />
-								<img src={product!.imgUrl} alt={product!.description} />
+								<img src={product.imgSrc} alt={product!.description} />
+								<img src={product.imgSrc} alt={product!.description} />
+								<img src={product.imgSrc} alt={product!.description} />
+								<img src={product.imgSrc} alt={product!.description} />
+								<img src={product.imgSrc} alt={product!.description} />
 							</div>
 						</div>
 						<div className={s.productInfoMain}>
@@ -137,7 +137,7 @@ export const ProductPage = () => {
 						</div>
 					</div>
 					<div className={s.productSimilars}>
-						{data.hits.slideItems!.filter(item => item.price[0] < product!.price[0] + 5000 && item.price[0] > product!.price[0] - 1000 && item.personalKey !== product!.personalKey).map((item, index) => <SliderItem key={index} tags={item.tags} itemImg={item.imgSrc} itemStars={item.stars} message={item.reviews} itemDesc={item.description} itemCountry={item.country} price={item.price} personalKey={item.personalKey} />)}
+						{data.hits.slideItems!.filter(item => item.price[0] < product!.price[0] + 5000 && item.price[0] > product!.price[0] - 1000 && item.personalKey !== product!.personalKey).map((item, index) => <SliderItem key={index} item={item}/>)}
 					</div>
 				</section>
 			)}

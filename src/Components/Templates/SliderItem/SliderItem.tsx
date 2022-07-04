@@ -3,67 +3,44 @@ import s from './SliderItem.module.sass';
 import chat from '../../../Image/hits/messageLogo.svg';
 import { Link } from 'react-router-dom';
 import { ItemStars } from '../ItemStars/ItemStars';
-import { useGlobalContext } from '../../Context/Context';
+import { IDataTemplate, useGlobalContext } from '../../Context/Context';
 import { AddsClassForTags } from '../AddedClassForTag/AddsClassForTags';
 import { PriceDivision } from '../PriceDivision/PriceDivision';
 
-interface IItemProps {
-	tags: string[];
-	itemImg: string;
-	itemStars: string[];
-	message: number;
-	itemDesc: string;
-	itemCountry: string;
-	price: number[];
-	personalKey: string;
-}
-
-const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, price, personalKey }: IItemProps) => {
+const SliderItem = ({ item }: {item: IDataTemplate}) => {
 
 	const { setProduct, setModal, basket, likes, contextFindItem, contextPushItem, contextRemoveItem } = useGlobalContext();
 
-	const productObject = {
-		url: "/",
-		imgUrl: itemImg,
-		type: tags,
-		stars: itemStars,
-		review: message,
-		price,
-		description: itemDesc,
-		country: itemCountry,
-		personalKey: personalKey
-	}
-
-	const [fill, setFill] = useState<boolean>(contextFindItem('likes', personalKey) ? false : true);
-	const [itemBuy, setItemBuy] = useState<boolean>(contextFindItem('basket', personalKey) ? false : true);
+	const [fill, setFill] = useState<boolean>(contextFindItem('likes', item.personalKey) ? false : true);
+	const [itemBuy, setItemBuy] = useState<boolean>(contextFindItem('basket', item.personalKey) ? false : true);
 
 	const clickSetIn = (itemName: string) => {
 		if (itemName === 'likes') {
 			if (fill) {
 				setFill(false);
-				contextRemoveItem('likes', personalKey);
+				contextRemoveItem('likes', item.personalKey);
 			} else {
 				setFill(true);
-				contextPushItem('likes', productObject);
+				contextPushItem('likes', item);
 			}
 		} else if (itemName === 'basket') {
 			if (itemBuy) {
 				setItemBuy(false);
-				contextRemoveItem('basket', personalKey);
+				contextRemoveItem('basket', item.personalKey);
 			} else {
 				setItemBuy(true);
-				contextPushItem('basket', productObject);
+				contextPushItem('basket', item);
 			}
 		}
 	};
 
 	const pushProduct = () => {
-		setProduct(productObject);
+		setProduct(item);
 	}
 
 	useEffect(() => {
-		setFill(contextFindItem('likes', personalKey) ? false : true);
-		setItemBuy(contextFindItem('basket', personalKey) ? false : true);
+		setFill(contextFindItem('likes', item.personalKey) ? false : true);
+		setItemBuy(contextFindItem('basket', item.personalKey) ? false : true);
 	}, [basket, likes]) // eslint-disable-line
 
 	return (
@@ -71,13 +48,13 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 			<div className={s.itemImg}>
 				<Link to="/product" onClick={pushProduct}>
 					<div className={s.itemImgTags}>
-						{tags.map(tag => AddsClassForTags(tag))}
+						{item.tags.map(tag => AddsClassForTags(tag))}
 					</div>
-					<img src={itemImg} alt={itemImg} className={s.itemImgMain} />
+					<img src={item.imgSrc} alt={item.imgSrc} className={s.itemImgMain} />
 				</Link>
 				<button className={s.itemImgFastLook} onClick={() => setModal({
 					visible: true,
-					item: productObject
+					item: item
 				})}>Быстрый просмотр</button>
 				<div className={s.itemImgLike}>
 					<svg
@@ -90,25 +67,25 @@ const SliderItem = ({ tags, itemImg, itemStars, message, itemDesc, itemCountry, 
 			</div>
 			<div className={s.itemStars}>
 				<div className={s.starsWrapper}>
-					<ItemStars stars={itemStars} />
+					<ItemStars stars={item.stars} />
 				</div>
 				<div className={s.message}>
 					<Link to="/">
 						<img src={chat} alt="chat" />
-						<span className={s.messageCount}>{message}</span>
+						<span className={s.messageCount}>{item.reviews}</span>
 					</Link>
 				</div>
 			</div>
 			<Link to="/product" onClick={pushProduct}>
 				<div className={s.itemDescription}>
-					{itemDesc}
+					{item.description}
 				</div>
 			</Link>
 			<div className={s.itemCountry}>
-				<span>{itemCountry}</span>
+				<span>{item.country}</span>
 			</div>
 			<div className={s.itemBuy}>
-				<PriceDivision price={price} />
+				<PriceDivision price={item.price} color />
 				<button className={itemBuy ? s.buyActive : s.buy} onClick={() => clickSetIn('basket')}>
 					В КОРЗИНУ
 				</button>

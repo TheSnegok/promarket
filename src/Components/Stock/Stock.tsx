@@ -44,7 +44,7 @@ const Stock: FC = () => {
             <div className={s.stockSlider}>
                 <div className={s.stockWrapper}>
                     <div className={s.stockWrapperSlider} style={{ left: position + 'px' }}>
-                        {data.stock.slideItems !== null ? data.stock.slideItems.map((item, index) => <SliderItem key={index} tags={item.tags} itemImg={item.imgSrc} itemStars={item.stars} message={item.reviews} itemDesc={item.description} itemCountry={item.country} price={item.price} personalKey={item.personalKey} />) : null}
+                        {data.stock.slideItems !== null ? data.stock.slideItems.map((item, index) => <SliderItem key={index} item={item} />) : null}
                     </div>
                 </div>
                 <div className={s.arrowRight} onClick={() => changeSlide("plus")}></div>

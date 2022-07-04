@@ -4,19 +4,24 @@ import loop from '../../Image/search.svg';
 import cabinet from '../../Image/Group.svg';
 import desire from '../../Image/heart.svg';
 import shoppingCart from '../../Image/Cart.svg';
-import { useGlobalContext } from "../Context/Context";
-import { Link } from "react-router-dom";
+import { IDataTemplate, useGlobalContext } from "../Context/Context";
+import { Link, useNavigate } from "react-router-dom";
 
 const Menu: FC = () => {
 
-	const { data } = useGlobalContext();
-
-	const { likes, basket, findInput, setFindInput } = useGlobalContext();
+	const { data, setProduct, likes, basket, findInput, setFindInput } = useGlobalContext();
 	const [info, setInfo] = useState<number>(0);
+	let redirect = useNavigate();
 
 	const checkMatch = (e: FormEvent<HTMLInputElement>) => {
 		setFindInput({ text: e.currentTarget.value, matchFound: findInput.matchFound });
 	}
+
+	const selectedItem = (item: IDataTemplate) => {
+		setProduct(item);
+		setFindInput({ text: '', matchFound: [] })
+		redirect('/product');
+	};
 
 	useEffect(() => {
 		if (findInput.text !== '') {
@@ -136,7 +141,7 @@ const Menu: FC = () => {
 				</div>
 				{findInput.matchFound === [] ? null :
 					(findInput.matchFound.map((find, index) => (
-						<div className={s.menuSearcherMatches} key={index}>
+						<div className={s.menuSearcherMatches} key={index} onClick={() => selectedItem(find)}>
 							{find.description}
 						</div>
 					)))

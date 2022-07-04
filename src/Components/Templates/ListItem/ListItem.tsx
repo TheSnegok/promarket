@@ -1,21 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useGlobalContext } from "../../Context/Context";
+import { IDataTemplate, useGlobalContext } from "../../Context/Context";
 import { numberWithSpaces } from "../NumberWithSpaces/NumberWithSpaces";
 import s from './ListItem.module.sass';
 
 interface IItem {
-	content: {
-		url: string;
-		imgUrl: string;
-		type: string[];
-		stars: string[];
-		review: number;
-		price: number[];
-		description: string;
-		country: string;
-		personalKey: string;
-	},
+	content: IDataTemplate,
 	setIndexItem: (value: number | undefined) => void,
 	index: number,
 	isBasket?: boolean
@@ -59,7 +49,7 @@ export const ListItem = ({ content, setIndexItem, index, isBasket }: IItem) => {
 			<li className={s.Item} onMouseOver={() => setIndexItem(index)} onMouseLeave={() => setIndexItem(undefined)}>
 				<div className={s.ItemImg}>
 					<Link to={content.url}>
-						<img src={content.imgUrl} alt={content.description} />
+						<img src={content.imgSrc} alt={content.description} />
 					</Link>
 				</div>
 				<div className={s.ItemDescription}>

@@ -26,116 +26,116 @@ export const footerSectionList = [['/', 'Плитка'], ['/', 'Сантехни
 export const footerMenu = [['/', 'Оплата'], ['/', 'Доставка'], ['/', 'Поставщикам'], ['/', 'Статьи'], ['/', 'Контакты']];
 
 export const MenuListItems = [
-    { src: tile, description: "Tile", text: "Плитка" },
-    { src: plumbing, description: "Plumbing", text: "Сантехника" },
-    { src: bathroomFurniture, description: "Bathroom Furniture", text: "Мебель для ванной" },
-    { src: Electronics, description: "Electronics", text: "Электроника и бытовая техника" },
-    { src: heating, description: "Heating", text: "Отопление" },
-    { src: flooring, description: "Flooring", text: "Напольное покрытие" }
+	{ src: tile, description: "Tile", text: "Плитка" },
+	{ src: plumbing, description: "Plumbing", text: "Сантехника" },
+	{ src: bathroomFurniture, description: "Bathroom Furniture", text: "Мебель для ванной" },
+	{ src: Electronics, description: "Electronics", text: "Электроника и бытовая техника" },
+	{ src: heating, description: "Heating", text: "Отопление" },
+	{ src: flooring, description: "Flooring", text: "Напольное покрытие" }
 ];
 
 export const MenuInfoItems = [
-    [
-        {
-            text: "Ванны",
-            url: "/"
-        }, {
-            text: "Ванны 150 см",
-            url: "/"
-        }, {
-            text: "Ванны 160 см",
-            url: "/"
-        }, {
-            text: "Ванны 170 см",
-            url: "/"
-        }, {
-            text: "Еще",
-            url: "/"
-        }
-    ],
-    [
-        {
-            text: "Унитазы",
-            url: "/"
-        }, {
-            text: "2 режима смыва",
-            url: "/"
-        }, {
-            text: "Без ободка",
-            url: "/"
-        }, {
-            text: "Подвесные",
-            url: "/"
-        }, {
-            text: "Еще",
-            url: "/"
-        }
-    ],
-    [
-        {
-            text: "Раковины",
-            url: "/"
-        }, {
-            text: "Шириной 40 см",
-            url: "/"
-        }, {
-            text: "Шириной 50 см",
-            url: "/"
-        }, {
-            text: "Шириной 60 см",
-            url: "/"
-        }, {
-            text: "Еще",
-            url: "/"
-        }
-    ],
-    [
-        {
-            text: "Смесители",
-            url: "/"
-        }, {
-            text: "Кухонные мойки Ulgran",
-            url: "/"
-        }, {
-            text: "Однорычажные для кухни",
-            url: "/"
-        }, {
-            text: "Премиальные бренда Webert",
-            url: "/"
-        }, {
-            text: "Еще",
-            url: "/"
-        }
-    ],
+	[
+		{
+			text: "Ванны",
+			url: "/"
+		}, {
+			text: "Ванны 150 см",
+			url: "/"
+		}, {
+			text: "Ванны 160 см",
+			url: "/"
+		}, {
+			text: "Ванны 170 см",
+			url: "/"
+		}, {
+			text: "Еще",
+			url: "/"
+		}
+	],
+	[
+		{
+			text: "Унитазы",
+			url: "/"
+		}, {
+			text: "2 режима смыва",
+			url: "/"
+		}, {
+			text: "Без ободка",
+			url: "/"
+		}, {
+			text: "Подвесные",
+			url: "/"
+		}, {
+			text: "Еще",
+			url: "/"
+		}
+	],
+	[
+		{
+			text: "Раковины",
+			url: "/"
+		}, {
+			text: "Шириной 40 см",
+			url: "/"
+		}, {
+			text: "Шириной 50 см",
+			url: "/"
+		}, {
+			text: "Шириной 60 см",
+			url: "/"
+		}, {
+			text: "Еще",
+			url: "/"
+		}
+	],
+	[
+		{
+			text: "Смесители",
+			url: "/"
+		}, {
+			text: "Кухонные мойки Ulgran",
+			url: "/"
+		}, {
+			text: "Однорычажные для кухни",
+			url: "/"
+		}, {
+			text: "Премиальные бренда Webert",
+			url: "/"
+		}, {
+			text: "Еще",
+			url: "/"
+		}
+	],
 ];
 
 export const MenuInfoItemsSecond = [
-    { url: "/", text: 'Душевые кабины, уголки' },
-    { url: "/", text: 'Биде' },
-    { url: "/", text: 'Душевые боксы' },
-    { url: "/", text: 'Душевые ограждения' },
-    { url: "/", text: 'Душевые поддоны' },
-    { url: "/", text: 'Душевые трапы и лотки' },
-    { url: "/", text: 'Инсталляции' },
-    { url: "/", text: 'Сливные трапы, желоба' },
-    { url: "/", text: 'Душевые гарнитуры' },
-    { url: "/", text: 'Душевые системы' },
-    { url: "/", text: 'Душевые панели' },
-    { url: "/", text: 'Верхние души' },
-    { url: "/", text: 'Гигиенические души' },
-    { url: "/", text: 'Аксессуары для ванной' }
+	{ url: "/", text: 'Душевые кабины, уголки' },
+	{ url: "/", text: 'Биде' },
+	{ url: "/", text: 'Душевые боксы' },
+	{ url: "/", text: 'Душевые ограждения' },
+	{ url: "/", text: 'Душевые поддоны' },
+	{ url: "/", text: 'Душевые трапы и лотки' },
+	{ url: "/", text: 'Инсталляции' },
+	{ url: "/", text: 'Сливные трапы, желоба' },
+	{ url: "/", text: 'Душевые гарнитуры' },
+	{ url: "/", text: 'Душевые системы' },
+	{ url: "/", text: 'Душевые панели' },
+	{ url: "/", text: 'Верхние души' },
+	{ url: "/", text: 'Гигиенические души' },
+	{ url: "/", text: 'Аксессуары для ванной' }
 ];
 
 export const MenuInfoItemsThird = [
-    { url: "/", text: "Аксессуары для общественных санузлов" },
-    { url: "/", text: "Комплектующие" },
-    { url: "/", text: "Кухонные мойки" },
-    { url: "/", text: "Гидромассаж" },
-    { url: "/", text: "Трубы и фитинги" },
-    { url: "/", text: "Изделия для инвалидов" },
-    { url: "/", text: "Инструменты сантехнические" },
-    { url: "/", text: "Писсуары" },
-    { url: "/", text: "Фильтры" },
+	{ url: "/", text: "Аксессуары для общественных санузлов" },
+	{ url: "/", text: "Комплектующие" },
+	{ url: "/", text: "Кухонные мойки" },
+	{ url: "/", text: "Гидромассаж" },
+	{ url: "/", text: "Трубы и фитинги" },
+	{ url: "/", text: "Изделия для инвалидов" },
+	{ url: "/", text: "Инструменты сантехнические" },
+	{ url: "/", text: "Писсуары" },
+	{ url: "/", text: "Фильтры" },
 ];
 
 export const regions = ["Київ", "Харків", "Запоріжжя", "Суми", "Чернігів", "Полтава", "Дніпропетровськ", "Кропівницький", "Херсон", "Миколаїв", "Черкаси", "Одесса", "Вінниця"];
@@ -160,40 +160,41 @@ export const articleText = [
 ]
 
 export const articleList = [
-    [
-        article1, "Актуальные и необычные аксессуары для ванной комнаты", articleText[0].text
-    ],
-    [
-        article2, "Какой температуры должна быть горячая вода?", articleText[1].text
-    ],
-    [
-        article3, "Конденсат на бачке унитаза: причины появления и способы устранения", articleText[2].text
-    ],
-    [
-        article4, "Анаэробный герметик для резьбовых соединений", articleText[3].text
-    ],
-    [
-        article1, "Актуальные и необычные аксессуары для ванной комнаты", articleText[0].text
-    ],
-    [
-        article2, "Какой температуры должна быть горячая вода?", articleText[1].text
-    ],
-    [
-        article3, "Конденсат на бачке унитаза: причины появления и способы устранения", articleText[2].text
-    ],
-    [
-        article4, "Анаэробный герметик для резьбовых соединений", articleText[3].text
-    ],
-    [
-        article3, "Конденсат на бачке унитаза: причины появления и способы устранения", articleText[2].text
-    ],
-    [
-        article4, "Анаэробный герметик для резьбовых соединений", articleText[3].text
-    ],
+	[
+		article1, "Актуальные и необычные аксессуары для ванной комнаты", articleText[0].text
+	],
+	[
+		article2, "Какой температуры должна быть горячая вода?", articleText[1].text
+	],
+	[
+		article3, "Конденсат на бачке унитаза: причины появления и способы устранения", articleText[2].text
+	],
+	[
+		article4, "Анаэробный герметик для резьбовых соединений", articleText[3].text
+	],
+	[
+		article1, "Актуальные и необычные аксессуары для ванной комнаты", articleText[0].text
+	],
+	[
+		article2, "Какой температуры должна быть горячая вода?", articleText[1].text
+	],
+	[
+		article3, "Конденсат на бачке унитаза: причины появления и способы устранения", articleText[2].text
+	],
+	[
+		article4, "Анаэробный герметик для резьбовых соединений", articleText[3].text
+	],
+	[
+		article3, "Конденсат на бачке унитаза: причины появления и способы устранения", articleText[2].text
+	],
+	[
+		article4, "Анаэробный герметик для резьбовых соединений", articleText[3].text
+	],
 ];
 
 export const hitsSlideItems = [
 	{
+		url: '/',
 		tags: ["Хит"],
 		imgSrc: sink,
 		stars: ["full", "full", "full", "full", "half"],
@@ -204,6 +205,7 @@ export const hitsSlideItems = [
 		personalKey: getPersonalKey(),
 	},
 	{
+		url: '/',
 		tags: ["Хит", "Акция"],
 		imgSrc: bathroom,
 		stars: ["full", "full", "full", "full", "half"],
@@ -214,6 +216,7 @@ export const hitsSlideItems = [
 		personalKey: getPersonalKey(),
 	},
 	{
+		url: '/',
 		tags: ["Хит"],
 		imgSrc: shower,
 		stars: ["full", "full", "full", "full", "half"],
@@ -224,6 +227,7 @@ export const hitsSlideItems = [
 		personalKey: getPersonalKey(),
 	},
 	{
+		url: '/',
 		tags: ["Хит"],
 		imgSrc: toilet,
 		stars: ["full", "full", "full", "full", "half"],
@@ -235,6 +239,7 @@ export const hitsSlideItems = [
 		personalKey: getPersonalKey(),
 	},
 	{
+		url: '/',
 		tags: ["Хит"],
 		imgSrc: heatedTowelRail,
 		stars: ["full", "full", "full", "full", "half"],
@@ -246,6 +251,7 @@ export const hitsSlideItems = [
 		personalKey: getPersonalKey(),
 	},
 	{
+		url: '/',
 		tags: ["Хит"],
 		imgSrc: sink,
 		stars: ["full", "full", "full", "full", "half"],
@@ -256,6 +262,7 @@ export const hitsSlideItems = [
 		personalKey: getPersonalKey(),
 	},
 	{
+		url: '/',
 		tags: ["Хит", "Акция"],
 		imgSrc: bathroom,
 		stars: ["full", "full", "full", "full", "half"],
@@ -266,6 +273,7 @@ export const hitsSlideItems = [
 		personalKey: getPersonalKey(),
 	},
 	{
+		url: '/',
 		tags: ["Хит"],
 		imgSrc: shower,
 		stars: ["full", "full", "full", "full", "half"],
@@ -276,6 +284,7 @@ export const hitsSlideItems = [
 		personalKey: getPersonalKey(),
 	},
 	{
+		url: '/',
 		tags: ["Хит"],
 		imgSrc: toilet,
 		stars: ["full", "full", "full", "full", "half"],
@@ -290,6 +299,7 @@ export const hitsSlideItems = [
 
 export const stockSlideItems = [
 	{
+		url: '/',
 		tags: ["Акция"],
 		imgSrc: mixer,
 		stars: ["full", "full", "full", "full", "half"],
@@ -300,6 +310,7 @@ export const stockSlideItems = [
 		personalKey: getPersonalKey(),
 	},
 	{
+		url: '/',
 		tags: ["Акция"],
 		imgSrc: showerCabin,
 		stars: ["full", "full", "full", "full", "half"],
@@ -310,6 +321,7 @@ export const stockSlideItems = [
 		personalKey: getPersonalKey(),
 	},
 	{
+		url: '/',
 		tags: ["Акция"],
 		imgSrc: bathroomAcr,
 		stars: ["full", "full", "full", "full", "half"],
@@ -321,6 +333,7 @@ export const stockSlideItems = [
 		personalKey: getPersonalKey(),
 	},
 	{
+		url: '/',
 		tags: ["Акция"],
 		imgSrc: toilet2,
 		stars: ["full", "full", "full", "full", "half"],
@@ -331,6 +344,7 @@ export const stockSlideItems = [
 		personalKey: getPersonalKey(),
 	},
 	{
+		url: '/',
 		tags: ["Акция"],
 		imgSrc: sink2,
 		stars: ["full", "full", "full", "full", "half"],
@@ -341,6 +355,7 @@ export const stockSlideItems = [
 		personalKey: getPersonalKey(),
 	},
 	{
+		url: '/',
 		tags: ["Акция"],
 		imgSrc: mixer,
 		stars: ["full", "full", "full", "full", "half"],
@@ -351,6 +366,7 @@ export const stockSlideItems = [
 		personalKey: getPersonalKey(),
 	},
 	{
+		url: '/',
 		tags: ["Акция"],
 		imgSrc: showerCabin,
 		stars: ["full", "full", "full", "full", "half"],
@@ -361,6 +377,7 @@ export const stockSlideItems = [
 		personalKey: getPersonalKey(),
 	},
 	{
+		url: '/',
 		tags: ["Акция"],
 		imgSrc: bathroomAcr,
 		stars: ["full", "full", "full", "full", "half"],
@@ -372,6 +389,7 @@ export const stockSlideItems = [
 		personalKey: getPersonalKey(),
 	},
 	{
+		url: '/',
 		tags: ["Акция"],
 		imgSrc: toilet2,
 		stars: ["full", "full", "full", "full", "half"],

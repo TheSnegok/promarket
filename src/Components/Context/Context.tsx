@@ -31,24 +31,13 @@ interface IData {
 	};
 }
 
-export interface ILikesItems {
-	url: string;
-	imgUrl: string;
-	type: string[];
-	stars: string[];
-	review: number;
-	price: number[];
-	description: string;
-	country: string;
-	personalKey: string;
-}
-
 export interface ILikes {
 	count: number;
-	items: ILikesItems[] | [];
+	items: IDataTemplate[] | [];
 }
 
 export interface IDataTemplate {
+	url: string;
 	tags: string[];
 	imgSrc: string;
 	stars: string[];
@@ -85,7 +74,7 @@ export interface IProfile {
 
 export interface IModal {
 	visible: boolean;
-	item: ILikesItems | null;
+	item: IDataTemplate | null;
 }
 
 export interface IAuthData {
@@ -103,14 +92,14 @@ export interface ICallInput {
 
 export interface ISearch {
 	text: string,
-	matchFound: [] | IDataTemplate[]
+	matchFound: [] | IDataTemplate[] | IDataTemplate[];
 }
 
 interface IContext {
 	data: IData;
 	likes: ILikes;
 	basket: ILikes;
-	product: ILikesItems | null;
+	product: IDataTemplate | null;
 	article: IArticle | null;
 	profile: IProfile;
 	setProfile: (c: IProfile) => void;
@@ -124,13 +113,13 @@ interface IContext {
 	region: string;
 	setRegion: (c: string) => void;
 	setModal: (c: IModal) => void;
-	setProduct: (c: ILikesItems) => void;
+	setProduct: (c: IDataTemplate) => void;
 	setArticle: (c: IArticle) => void;
 	setLikes: (c: ILikes) => void;
 	setBasket: (c: ILikes) => void;
 	contextFindItem: (itemName: string, wantedKey: string) => boolean | void,
 	contextRemoveItem: (itemName: string, wantedKey: string) => void,
-	contextPushItem: (itemName: string, content: ILikesItems) => void,
+	contextPushItem: (itemName: string, content: IDataTemplate) => void,
 };
 
 export const Context = createContext<IContext>({
@@ -270,7 +259,7 @@ export const Provider: FC = ({ children }) => {
 
 	const [region, setRegion] = useState<string>('Київ');
 
-	const [product, setProduct] = useState<ILikesItems | null>(null);
+	const [product, setProduct] = useState<IDataTemplate | null>(null);
 
 	const [article, setArticle] = useState<IArticle | null>(null);
 
@@ -306,7 +295,7 @@ export const Provider: FC = ({ children }) => {
 		}
 	};
 
-	const contextPushItem = (itemName: string, content: ILikesItems) => {
+	const contextPushItem = (itemName: string, content: IDataTemplate) => {
 		if (itemName === 'likes') {
 			setLikes({
 				count: likes.count + 1,

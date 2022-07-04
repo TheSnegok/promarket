@@ -17,7 +17,7 @@ export const Preview = ({ indexItem, isBasket }: IPreview) => {
         <div className={s.preview}>
             {indexItem !== undefined && (
                 <div className={s.previewBlock}>
-                    <img src={contextItems[indexItem].imgUrl} className={s.previewImg} alt='preview-like-item' />
+                    <img src={contextItems[indexItem].imgSrc} className={s.previewImg} alt='preview-like-item' />
                     <div className={s.previewWrapper}>
                         <div className={s.previewWrapperStars}>
                             <ItemStars stars={contextItems[indexItem].stars} />

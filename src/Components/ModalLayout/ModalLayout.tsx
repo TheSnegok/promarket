@@ -50,7 +50,7 @@ export const ModalLayout = () => {
 					<div className={s.modalBlock}>
 						<div className={s.modalBlockHeader}>
 							<div className={s.modalBlockHeaderName}>
-								<span>{modal.item?.description}</span>
+								<span>{modal.item.description}</span>
 							</div>
 							<div className={s.modalBlockHeaderClose} onClick={() => setModal({
 								visible: false,
@@ -62,14 +62,14 @@ export const ModalLayout = () => {
 						</div>
 						<div className={s.modalBlockInfo}>
 							<div className={s.modalBlockInfoImage}>
-								<img src={modal.item?.imgUrl} alt="product-preview-ploto" />
+								<img src={modal.item.imgSrc} alt="product-preview-ploto" />
 							</div>
 							<div className={s.modalBlockInfoOptions}>
 								<div className={s.modalBlockInfoOptionsTags}>
-									{modal.item?.type.map(tag => AddsClassForTags(tag))}
+									{modal.item?.tags.map(tag => AddsClassForTags(tag))}
 								</div>
 								<div className={s.modalBlockInfoOptionsPrice}>
-									<PriceDivision price={modal.item.price} />
+									<PriceDivision price={modal.item.price} color />
 								</div>
 								<div className={s.modalBlockInfoOptionsReviews}>
 									<div className={s.modalBlockInfoOptionsReviewsStars}>
@@ -77,7 +77,7 @@ export const ModalLayout = () => {
 									</div>
 									<div className={s.modalBlockInfoOptionsReviewsMessage}>
 										<img src={chat} alt="chat" />
-										<span className={s.messageCount}>{modal.item?.review}</span>
+										<span className={s.messageCount}>{modal.item.reviews}</span>
 									</div>
 								</div>
 								<div className={s.modalBlockInfoOptionsCountry}>
