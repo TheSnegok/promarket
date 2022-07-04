@@ -60,13 +60,13 @@ export interface IDataTemplate {
 }
 
 interface IHits {
-	menu: string[] | null;
-	slideItems: IDataTemplate[] | null;
+	menu: string[];
+	slideItems: IDataTemplate[];
 };
 
 interface IStock {
-	menu: string[] | null;
-	slideItems: IDataTemplate[] | null;
+	menu: string[];
+	slideItems: IDataTemplate[];
 };
 
 export interface IArticle {
@@ -103,7 +103,7 @@ export interface ICallInput {
 
 export interface ISearch {
 	text: string,
-	mathFound: [] | IDataTemplate[]
+	matchFound: [] | IDataTemplate[]
 }
 
 interface IContext {
@@ -136,12 +136,12 @@ interface IContext {
 export const Context = createContext<IContext>({
 	data: {
 		hits: {
-			menu: null,
-			slideItems: null
+			menu: hitsMenu,
+			slideItems: hitsSlideItems,
 		},
 		stock: {
-			menu: null,
-			slideItems: null
+			menu: stockMenu,
+			slideItems: stockSlideItems
 		},
 		articleList,
 		regionsList: regions,
@@ -193,7 +193,7 @@ export const Context = createContext<IContext>({
 	},
 	findInput: {
 		text: '',
-		mathFound: []
+		matchFound: []
 	},
 	setFindInput: () => { },
 	setAuthentication: () => { },
@@ -257,7 +257,7 @@ export const Provider: FC = ({ children }) => {
 
 	const [findInput, setFindInput] = useState<ISearch>({
 		text: '',
-		mathFound: []
+		matchFound: []
 	});
 
 	const [authentication, setAuthentication] = useState<IAuthData>({
