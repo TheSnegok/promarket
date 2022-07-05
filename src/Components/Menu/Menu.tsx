@@ -30,7 +30,7 @@ const Menu: FC = () => {
 			setFindInput({ text: findInput.text, matchFound: hitMatch.concat(stockMatch) });
 		} else {
 			setFindInput({ text: findInput.text, matchFound: [] });
-		}
+		}//eslint-disable-next-line
 	}, [findInput.text]);
 
 	return (
