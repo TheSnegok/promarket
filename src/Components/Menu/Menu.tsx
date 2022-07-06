@@ -139,13 +139,15 @@ const Menu: FC = () => {
 						<img src={loop} alt="search" className={s.loop} />
 					</Link>
 				</div>
-				{findInput.matchFound === [] ? null :
-					(findInput.matchFound.map((find, index) => (
-						<div className={s.menuSearcherMatches} key={index} onClick={() => selectedItem(find)}>
-							{find.description}
-						</div>
-					)))
-				}
+				<div className={s.menuSearcherMatches}>
+					{findInput.matchFound === [] ? null :
+						(findInput.matchFound.map((find, index) => (
+							<div className={s.menuSearcherMatchesItem} key={index} onClick={() => selectedItem(find)}>
+								{find.description}
+							</div>
+						)))
+					}
+				</div>
 			</div>
 			<div className={s.menuActions} >
 				<div className={s.cabinet}>

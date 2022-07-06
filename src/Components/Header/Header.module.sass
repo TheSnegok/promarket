@@ -215,11 +215,11 @@
 				left: 0
 				background-color: var(--blue-third)
 
-@media (max-width: 1600px)
+@media screen and (max-width: 1600px)
 	.header
 		position: relative
 		width: 100%
-		height: 37px
+		height: 25px
 		display: flex
 		align-items: center
 		margin-bottom: 24px
@@ -232,203 +232,203 @@
 			width: 100vw
 			height: 370px
 			background: rgba(225, 238, 251, 1)
-	.headerLogo
-		display: flex
-		align-items: center
-		height: 100%
-		margin-right: 120px
-		z-index: 10
-		a
-			height: 100%
-			width: 100%
-			img
-				height: 100%
-	.headerLocation
-		display: flex
-		position: relative
-		align-items: center
-		justify-content: center
-		height: 100%
-		min-width: 150px
-		margin-right: 100px
-		z-index: 8
-		cursor: default
-		&:hover .regionsList
-			max-height: 1000px
-		.mark
-			margin-top: 4px
-			width: 10px
-			height: 13px
-			margin-right: 8px
-		.regions
-			cursor: default
-			font-family: 'Montserrat'
-			font-style: normal
-			font-weight: 500
-			font-size: 14px
-			line-height: 17px
-			color: var(--blue-third)
-			span
-				position: relative
-				&::after
-					content: ''
-					position: absolute
-					bottom: -2.5px
-					left: 0
-					width: 100%
-					height: 1px
-					background-image: linear-gradient(90deg, var(--blue-third), var(--blue-third) 75%, transparent 75%, transparent 100%)
-					background-size: 5px 1px
-					background-position: -1.5px 0
-			&List
-				position: absolute
-				z-index: 10
-				top: 100%
-				left: calc(0% + 10px)
-				max-height: 0px
-				overflow: hidden
-				transition: max-height .6s ease-in
-				ul
-					border-radius: 3px
-					background-color: var(--yellow)
-				li
-					text-align: center
-					cursor: pointer
-					padding: 5px
-					&:hover
-						background-color: var(--green-blue)
-						color: var(--yellow)
-	.headerPhone
-		display: flex
-		align-items: center
-		min-width: 322px
-		height: 100%
-		margin-right: 132px
-		z-index: 10
-		.number
-			font-family: Montserrat
-			font-style: normal
-			font-weight: 500
-			font-size: 21px
-			line-height: 21px
-			margin-right: 12px
-			a
-				color: black
-		.call
-			position: relative
+		.headerLogo
 			display: flex
 			align-items: center
-			.popup
-				position: relative
-				width: 16px
-				height: 16px
-				border-radius: 50%
-				background-color: var(--yellow)
-				margin-right: 13px
-				transition: 500ms
-				&::after
-					content: ''
-					position: absolute
-					top: 50%
-					left: 50%
-					width: 1px
-					height: 4px
-					transform: translate(-50%, -50%) rotate(-45deg)
-					transform-origin: right bottom
-					background-color: var(--blue-third)
-				&::before
-					content: ''
-					position: absolute
-					top: 50%
-					left: 50%
-					width: 1px
-					height: 4px
-					transform: translate(-50%, -50%) rotate(45deg)
-					transform-origin: left bottom
-					background-color: var(--blue-third)
-			.phoneCall
-				font-family: Montserrat
+			height: 100%
+			margin-right: 50px
+			z-index: 10
+			a
+				height: 100%
+				width: 100%
+				img
+					height: 100%
+		.headerLocation
+			display: flex
+			position: relative
+			align-items: center
+			justify-content: center
+			height: 100%
+			min-width: 150px
+			margin-right: 100px
+			z-index: 8
+			cursor: default
+			&:hover .regionsList
+				max-height: 1000px
+			.mark
+				margin-top: 4px
+				width: 10px
+				height: 13px
+				margin-right: 8px
+			.regions
+				cursor: default
+				font-family: 'Montserrat'
 				font-style: normal
 				font-weight: 500
 				font-size: 14px
 				line-height: 17px
 				color: var(--blue-third)
-				cursor: default
 				span
 					position: relative
 					&::after
 						content: ''
 						position: absolute
-						bottom: -2px
+						bottom: -2.5px
 						left: 0
 						width: 100%
 						height: 1px
 						background-image: linear-gradient(90deg, var(--blue-third), var(--blue-third) 75%, transparent 75%, transparent 100%)
 						background-size: 5px 1px
 						background-position: -1.5px 0
-				&Input
+				&List
 					position: absolute
-					transform: translateY(-10px) scaleY(0) scaleX(0)
-					transform-origin: 50% 0%
-					filter: blur(40px)
-					visibility: hidden
-					transition: all 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)
-					input
-						width: 90%
-						border: none
-						border-radius: 5px
-						margin-bottom: 10px
-						outline: none
-						padding: 3px
-					button
-						width: 90%
-						border: none
-						outline: none
-						font-family: Montserrat
-						font-style: normal
-						font-weight: 500
-						font-size: 14px
-						border-radius: 5px
-						background-color: var(--green-blue)
-						padding: 3px
+					z-index: 10
+					top: 100%
+					left: calc(0% + 10px)
+					max-height: 0px
+					overflow: hidden
+					transition: max-height .6s ease-in
+					ul
+						border-radius: 3px
+						background-color: var(--yellow)
+					li
+						text-align: center
 						cursor: pointer
+						padding: 5px
 						&:hover
-							background-color: var(--gray-blue)
-			&:hover
-				.phoneCallInput
-					visibility: visible
-					transform: translateY(0) scaleY(1) scaleX(1)
-					transform-origin: 50% 50%
-					filter: blur(0)
-					top: 115%
-					left: -25%
-					display: flex
-					flex-direction: column
-					align-items: center
-					background-color: var(--yellow)
-					padding: 10px
-					width: 150%
-					transition: all 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)
+							background-color: var(--green-blue)
+							color: var(--yellow)
+		.headerPhone
+			display: flex
+			align-items: center
+			min-width: 322px
+			height: 100%
+			margin-right: 132px
+			z-index: 10
+			.number
+				font-family: Montserrat
+				font-style: normal
+				font-weight: 500
+				font-size: 21px
+				line-height: 21px
+				margin-right: 12px
+				a
+					color: black
+			.call
+				position: relative
+				display: flex
+				align-items: center
 				.popup
-					transform: rotate(360deg)
-	.headerMenu
-		display: flex
-		justify-content: space-between
-		width: 100%
-		z-index: 10
-		a
-			position: relative
-			color: var(--blue-third)
-			font-family: Montserrat
-			font-style: normal
-			font-weight: 500
-			font-size: 14px
-			line-height: 17px
-			&:hover::after
-				content: ''
-				position: absolute
-				width: 100%
-				height: 1px
-				bottom: -3px
-				left: 0
-				background-color: var(--blue-third)
+					position: relative
+					width: 16px
+					height: 16px
+					border-radius: 50%
+					background-color: var(--yellow)
+					margin-right: 13px
+					transition: 500ms
+					&::after
+						content: ''
+						position: absolute
+						top: 50%
+						left: 50%
+						width: 1px
+						height: 4px
+						transform: translate(-50%, -50%) rotate(-45deg)
+						transform-origin: right bottom
+						background-color: var(--blue-third)
+					&::before
+						content: ''
+						position: absolute
+						top: 50%
+						left: 50%
+						width: 1px
+						height: 4px
+						transform: translate(-50%, -50%) rotate(45deg)
+						transform-origin: left bottom
+						background-color: var(--blue-third)
+				.phoneCall
+					font-family: Montserrat
+					font-style: normal
+					font-weight: 500
+					font-size: 14px
+					line-height: 17px
+					color: var(--blue-third)
+					cursor: default
+					span
+						position: relative
+						&::after
+							content: ''
+							position: absolute
+							bottom: -2px
+							left: 0
+							width: 100%
+							height: 1px
+							background-image: linear-gradient(90deg, var(--blue-third), var(--blue-third) 75%, transparent 75%, transparent 100%)
+							background-size: 5px 1px
+							background-position: -1.5px 0
+					&Input
+						position: absolute
+						transform: translateY(-10px) scaleY(0) scaleX(0)
+						transform-origin: 50% 0%
+						filter: blur(40px)
+						visibility: hidden
+						transition: all 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)
+						input
+							width: 90%
+							border: none
+							border-radius: 5px
+							margin-bottom: 10px
+							outline: none
+							padding: 3px
+						button
+							width: 90%
+							border: none
+							outline: none
+							font-family: Montserrat
+							font-style: normal
+							font-weight: 500
+							font-size: 14px
+							border-radius: 5px
+							background-color: var(--green-blue)
+							padding: 3px
+							cursor: pointer
+							&:hover
+								background-color: var(--gray-blue)
+				&:hover
+					.phoneCallInput
+						visibility: visible
+						transform: translateY(0) scaleY(1) scaleX(1)
+						transform-origin: 50% 50%
+						filter: blur(0)
+						top: 115%
+						left: -25%
+						display: flex
+						flex-direction: column
+						align-items: center
+						background-color: var(--yellow)
+						padding: 10px
+						width: 150%
+						transition: all 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)
+					.popup
+						transform: rotate(360deg)
+		.headerMenu
+			display: flex
+			justify-content: space-between
+			width: 100%
+			z-index: 10
+			a
+				position: relative
+				color: var(--blue-third)
+				font-family: Montserrat
+				font-style: normal
+				font-weight: 500
+				font-size: 14px
+				line-height: 17px
+				&:hover::after
+					content: ''
+					position: absolute
+					width: 100%
+					height: 1px
+					bottom: -3px
+					left: 0
+					background-color: var(--blue-third)
