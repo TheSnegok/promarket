@@ -705,6 +705,8 @@
 				line-height: 20px
 				color: var(--dark-gray)
 				outline: none
+				&:not(:focus) ~ .menuSearcherMatches:not(:active)
+					display: none
 			.icon
 				width: 10%
 				height: 100%
@@ -723,15 +725,16 @@
 						width: 22px
 						height: 23px
 			&Matches
-				background-color: #fff
-				height: 5vh
-				display: flex
-				align-items: center
-				padding-left: 1.5vw
-				font-family: Montseratt
-				cursor: pointer
-				&:hover
-					background-color: #8fb4ff
+				&Item
+					background-color: #fff
+					height: 5vh
+					display: flex
+					align-items: center
+					padding-left: 1.5vw
+					font-family: Montseratt
+					cursor: pointer
+					&:hover
+						background-color: #8fb4ff
 		&Actions
 			width: 20%
 			height: 100%
