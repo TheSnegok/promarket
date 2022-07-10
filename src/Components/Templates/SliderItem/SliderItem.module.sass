@@ -160,3 +160,18 @@
             &:hover
                 color: var(--blue-third)
                 background-color: #fff
+
+@media (hover: none) and (pointer: coarse)
+    .item
+        &Img
+            &Like
+                visibility: visible
+        &Buy
+            .buy
+                &:active
+                    background-color: #2B7BC6
+                    color: white
+            .buyActive
+                &:active
+                    color: var(--blue-third)
+                    background-color: #fff
