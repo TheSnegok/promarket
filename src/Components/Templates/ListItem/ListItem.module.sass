@@ -28,10 +28,6 @@ hr
 	padding: 0 1vw
 	&:first-child
 		margin-top: 0
-	&:hover
-		border: 2px solid white
-		border-radius: 5px
-		background-color: #0084ff
 	&Img
 		@include itemSize(7%, 80%)
 		@include itemLocation()
@@ -76,9 +72,6 @@ hr
 		background-color: #fff
 		transition: background-color .7s
 		cursor: pointer
-		&:hover
-			background-color: #2B7BC6
-			color: white
 	&BuyActive
 		@include itemSize(10%, 50%)
 		@include itemLocation()
@@ -97,9 +90,6 @@ hr
 		color: white
 		transition: background-color .7s
 		cursor: pointer
-		&:hover
-			color: var(--blue-third)
-			background-color: #fff
 	&Remove
 		@include itemSize(3%)
 		@include itemLocation()
@@ -124,11 +114,27 @@ hr
 			transform: rotate(-45deg) translate(-50%, -50%)
 			background-color: rgba(255,255,255, 1)
 			transition: background-color 0.7s
-		&:hover
-			.ItemRemoveTop, .ItemRemoveBottom
-				background-color: rgba(255,60,60, 1)
 
-@media screen and (max-width: 1600px)
+@media (pointer: fine)
+	.item
+		&:hover
+			border: 2px solid white
+			border-radius: 5px
+			background-color: #0084ff
+		&Buy
+			&:hover
+				background-color: #2B7BC6
+				color: white
+		&BuyActive
+			&:hover
+				color: var(--blue-third)
+				background-color: #fff
+		&Remove
+			&:hover
+				.ItemRemoveTop, .ItemRemoveBottom
+					background-color: rgba(255,60,60, 1)
+
+@media (max-width: 1600px)
 	.Item
 		&Buy
 			font-size: 10px

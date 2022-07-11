@@ -136,9 +136,6 @@
             background-color: #fff
             transition: .5s
             cursor: pointer
-            &:hover
-                background-color: #2B7BC6
-                color: white
         .buyActive
             width: 116px
             height: 36px
@@ -157,9 +154,18 @@
             color: white
             transition: .5s
             cursor: pointer
-            &:hover
-                color: var(--blue-third)
-                background-color: #fff
+
+@media (pointer: fine)
+    .item
+        &Buy
+            .buy
+                &:hover
+                    background-color: #2B7BC6
+                    color: white
+            .buyActive
+                &:hover
+                    color: var(--blue-third)
+                    background-color: #fff
 
 @media (hover: none) and (pointer: coarse)
     .item
@@ -172,7 +178,6 @@
                     background-color: #2B7BC6
                     color: white
             .buyActive
-                pointer-events: none
                 &:active
                     color: var(--blue-third)
                     background-color: #fff
