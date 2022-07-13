@@ -36,7 +36,7 @@
         letter-spacing: 0.15em
         color: #FFFFFF
 
-@media screen and (max-width: 1600px)
+@media (max-width: 1600px)
     .banners
         grid-template-columns: 880px 400px
         grid-template-rows: repeat(2, 170px)
@@ -45,6 +45,23 @@
             padding: 52px 0 0 200px
         &Bot
             padding: 51px 0 0 200px
+        .bannerHeader
+            font-size: 20px
+            line-height: 32px
+            margin-bottom: 13px
+        .bannerSubheader
+            font-size: 10px
+            line-height: 22px
+
+@media (max-width: 1350px)
+    .banners
+        grid-template-columns: 723px 300px
+        grid-template-rows: repeat(2, 170px)
+        margin-bottom: 20px
+        &Top
+            padding: 52px 0 0 125px
+        &Bot
+            padding: 51px 0 0 125px
         .bannerHeader
             font-size: 20px
             line-height: 32px

@@ -391,7 +391,7 @@
 				line-height: 15px
 				color: var(--blue-first)
 
-@media screen and (max-width: 1600px)
+@media (max-width: 1600px)
 	.menu
 		height: 55px
 		&Items
@@ -813,6 +813,7 @@
 						left: 0
 						width: 1023px
 						height: 740px
+						overflow: hidden
 						&Sections
 							width: 15%
 							padding-top: 10px
@@ -828,12 +829,8 @@
 									height: 30px
 									margin-right: 10px
 								span
-									font-family: Montserrat
-									font-style: normal
-									font-weight: 600
-									font-size: 12px
-									line-height: 18px
-									color: #000000
+									font-size: 11px
+									line-height: 15px
 								&:nth-child(2)
 									img
 										width: 30px
@@ -862,38 +859,27 @@
 						&Info
 							width: auto
 							height: 100%
-							padding: 16px 0 32px 25px
-							z-index: 10
-							background: #fff
+							padding: 10px 0 25px 15px
 							&Header
-								margin-bottom: 15px
+								margin-bottom: 10px
 								span
-									font-family: 'Montserrat'
-									font-style: normal
-									font-weight: 600
-									font-size: 20px
-									line-height: 26px
-									color: #000000
+									font-size: 18px
+									line-height: 24px
 							.wrapper
 								width: 100%
 								height: 100%
 								display: flex
 								&First
 									height: 100%
-									width: 220px
+									width: 210px
 								.columnWrapper
 									margin-bottom: 15px
 									&:last-child
 										margin-bottom: 0
 									&Header
-										display: block
-										font-family: 'Montserrat'
-										font-style: normal
-										font-weight: 600
 										font-size: 12px
 										line-height: 14px
-										color: #000000
-										margin-bottom: 6px
+										margin-bottom: 5px
 									ul
 										list-style-type: none
 										span
@@ -914,7 +900,7 @@
 												background-color: var(--blue-third)
 								&Second
 									height: 100%
-									width: 190px
+									width: 180px
 									margin-right: 10px
 									li
 										list-style-type: none
@@ -940,9 +926,9 @@
 													left: 0
 													background-color: var(--blue-third)
 								&Third
-									width: 190px
+									width: 170px
 									height: 100%
-									margin-right: 80px
+									margin-right: 30px
 									li
 										list-style-type: none
 										margin-bottom: 20px
@@ -967,8 +953,8 @@
 													left: 0
 													background-color: var(--blue-third)
 								&Banner
-									width: 300px
-									height: 380px
+									width: 200px
+									height: 270px
 									background-color: var(--yellow)
 				&Hover
 					display: none
