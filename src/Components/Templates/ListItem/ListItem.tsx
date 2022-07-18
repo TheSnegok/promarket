@@ -13,7 +13,7 @@ interface IItem {
 
 export const ListItem = ({ content, setIndexItem, index, isBasket }: IItem) => {
 
-	const { contextFindItem, contextPushItem, contextRemoveItem } = useGlobalContext();
+	const { setProduct, contextFindItem, contextPushItem, contextRemoveItem } = useGlobalContext();
 
 	const [liked, setLiked] = useState<boolean>(contextFindItem('likes', content.personalKey) ? false : true);
 	const [basketed, setBasketed] = useState<boolean>(contextFindItem('basket', content.personalKey) ? false : true);
@@ -43,17 +43,21 @@ export const ListItem = ({ content, setIndexItem, index, isBasket }: IItem) => {
 		contextRemoveItem(productItem, content.personalKey);
 	}
 
+	const pushProduct = () => {
+		setProduct(content);
+	}
+
 	return (
 		<>
 			{index !== 0 && <hr />}
 			<li className={s.Item} onMouseOver={() => setIndexItem(index)} onMouseLeave={() => setIndexItem(undefined)}>
 				<div className={s.ItemImg}>
-					<Link to={content.url}>
+					<Link to={"/product"} onClick={pushProduct}>
 						<img src={content.imgSrc} alt={content.description} />
 					</Link>
 				</div>
 				<div className={s.ItemDescription}>
-					<Link to={content.url}>
+					<Link to={"/product"} onClick={pushProduct}>
 						<span>{content.description}</span>
 					</Link>
 				</div>
