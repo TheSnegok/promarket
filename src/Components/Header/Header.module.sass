@@ -197,7 +197,7 @@
 		display: flex
 		justify-content: space-between
 		width: 100%
-		z-index: 10
+		z-index: 5
 		a
 			position: relative
 			color: var(--blue-third)
@@ -269,3 +269,42 @@
 				font-size: 12px
 				line-height: 15px
 		
+@media (max-width: 1050px)
+	.header
+		height: 30px
+		flex-wrap: wrap
+		.headerLogo
+			height: 20px
+			width: 20%
+		.headerLocation
+			width: 30%
+			.regions
+				font-size: 12px
+				line-height: 14px
+				&List
+					top: 120%
+		.headerPhone
+			width: 30%
+			margin-right: 5%
+			.number
+				font-size: 16px
+				line-height: 21px
+				margin-right: 12px
+			.call
+				z-index: 10
+				.popup
+					width: 14px
+					height: 14px
+					margin-right: 10px
+				.phoneCall
+					font-size: 12px
+					line-height: 14px
+				&:hover
+					.phoneCallInput
+						top: 115%
+		.headerMenu
+			width: 100%
+			justify-content: space-around
+			a
+				font-size: 12px
+				line-height: 15px
