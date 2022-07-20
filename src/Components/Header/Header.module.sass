@@ -66,7 +66,8 @@
 				position: absolute
 				z-index: 10
 				top: 100%
-				left: calc(0% + 10px)
+				left: calc(50% + 10px)
+				transform: translateX(-50%)
 				max-height: 0px
 				overflow: hidden
 				transition: max-height .6s ease-in
@@ -268,22 +269,27 @@
 			a
 				font-size: 12px
 				line-height: 15px
-		
+
 @media (max-width: 1050px)
 	.header
-		height: 30px
+		height: 40px
 		flex-wrap: wrap
+		margin-bottom: 30px
 		.headerLogo
 			height: 20px
 			width: 20%
 		.headerLocation
 			width: 30%
 			.regions
-				font-size: 12px
-				line-height: 14px
+				font-size: 14px
+				line-height: 16px
 				&List
-					top: 120%
+					font-size: 14px
+					line-height: 16px
+					top: 80%
 		.headerPhone
+			display: flex
+			justify-content: center
 			width: 30%
 			margin-right: 5%
 			.number
@@ -297,8 +303,8 @@
 					height: 14px
 					margin-right: 10px
 				.phoneCall
-					font-size: 12px
-					line-height: 14px
+					font-size: 14px
+					line-height: 16px
 				&:hover
 					.phoneCallInput
 						top: 115%
@@ -306,5 +312,5 @@
 			width: 100%
 			justify-content: space-around
 			a
-				font-size: 12px
-				line-height: 15px
+				font-size: 14px
+				line-height: 18px
