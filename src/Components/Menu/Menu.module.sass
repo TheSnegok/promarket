@@ -1061,3 +1061,281 @@
 					font-size: 10px
 					line-height: 13px
 					color: var(--blue-first)
+
+@media ( max-width: 1050px )
+	.menu
+		&Items
+			width: 35%
+			.catalog
+				width: 50%
+				.burger
+					margin-left: 5px
+					width: 20px
+					height: 14px
+					margin-right: 7px
+				&Text
+					height: 100%
+					width: 75px
+					&Header
+						height: 32px
+						width: 150px
+						font-size: 12px
+						line-height: 16px
+						letter-spacing: 0.14em
+				&:hover
+					.border
+						height: 3px
+						width: 100%
+					.hover
+						top: 63px
+						left: 0
+						width: 1023px
+						height: 740px
+						overflow: hidden
+						&Sections
+							width: 15%
+							padding-top: 10px
+							.wrapperSections
+								height: 56px
+								padding: 5px 8px
+							.wrapperSectionsActive
+								height: 56px
+								padding: 5px 8px
+							.wrapperSections, .wrapperSectionsActive
+								img
+									width: 30px
+									height: 30px
+									margin-right: 10px
+								span
+									font-size: 11px
+									line-height: 15px
+								&:nth-child(2)
+									img
+										width: 30px
+										height: 33px
+										margin-right: 10px
+								&:nth-child(3)
+									img
+										width: 26px
+										height: 32px
+										margin-right: 12px
+								&:nth-child(4)
+									img
+										width: 26px
+										height: 32px
+										margin-right: 12px
+								&:nth-child(5)
+									img
+										width: 28px
+										height: 32px
+										margin-right: 11px
+								&:nth-child(6)
+									img
+										width: 30px
+										height: 30px
+										margin-right: 10px
+						&Info
+							width: auto
+							height: 100%
+							padding: 10px 0 25px 15px
+							&Header
+								margin-bottom: 10px
+								span
+									font-size: 18px
+									line-height: 24px
+							.wrapper
+								width: 100%
+								height: 100%
+								display: flex
+								&First
+									height: 100%
+									width: 210px
+								.columnWrapper
+									margin-bottom: 15px
+									&:last-child
+										margin-bottom: 0
+									&Header
+										font-size: 12px
+										line-height: 14px
+										margin-bottom: 5px
+									ul
+										list-style-type: none
+										span
+											position: relative
+											font-family: 'Montserrat'
+											font-style: normal
+											font-weight: 500
+											font-size: 12px
+											line-height: 22px
+											color: var(--blue-third)
+											&:hover::after
+												content: ''
+												position: absolute
+												width: 100%
+												height: 1px
+												bottom: -3px
+												left: 0
+												background-color: var(--blue-third)
+								&Second
+									height: 100%
+									width: 180px
+									margin-right: 10px
+									li
+										list-style-type: none
+										margin-bottom: 20px
+										&:last-child
+											margin-bottom: 0
+										a
+											position: relative
+											font-family: 'Montserrat'
+											font-style: normal
+											font-weight: 600
+											font-size: 12px
+											line-height: 18px
+											color: #000000
+											&:hover
+												color: var(--blue-third)
+												&::after
+													content: ''
+													position: absolute
+													width: 100%
+													height: 1px
+													bottom: -3px
+													left: 0
+													background-color: var(--blue-third)
+								&Third
+									width: 170px
+									height: 100%
+									margin-right: 30px
+									li
+										list-style-type: none
+										margin-bottom: 20px
+										&:last-child
+											margin-bottom: 0
+										a
+											position: relative
+											font-family: 'Montserrat'
+											font-style: normal
+											font-weight: 600
+											font-size: 12px
+											line-height: 18px
+											color: #000000
+											&:hover
+												color: var(--blue-third)
+												&::after
+													content: ''
+													position: absolute
+													width: 100%
+													height: 1px
+													bottom: -3px
+													left: 0
+													background-color: var(--blue-third)
+								&Banner
+									width: 200px
+									height: 270px
+									background-color: var(--yellow)
+				&Hover
+					display: none
+				&:hover + .catalogHover
+					display: block
+					position: absolute
+					top: 64px
+					left: -50vw
+					z-index: 9
+					background: rgba(212, 228, 243, 0.7)
+					width: 200vw
+					height: calc(100vh * 100)
+			.stonks
+				display: flex
+				justify-content: center
+				align-items: center
+				background-color: var(--blue-second)
+				height: 100%
+				width: 25%
+				z-index: 5
+				&Text
+					font-size: 10px
+					line-height: 15px
+					letter-spacing: 0.13em
+			.brand
+				width: 25%
+				height: 100%
+				&Text
+					font-size: 10px
+					line-height: 15px
+					letter-spacing: 0.13em
+		&Searcher
+			width: 45%
+			.input
+				width: 100%
+				padding: 20px 80px 20px 24px
+				font-size: 16px
+				line-height: 20px
+			.icon
+				width: 15%
+				height: 100%
+				a
+					width: 100%
+					height: 100%
+					.loop
+						width: 22px
+						height: 23px
+			&Matches
+				&Item
+					background-color: #fff
+					height: 5vh
+					display: flex
+					align-items: center
+					padding-left: 1.5vw
+					font-family: Montseratt
+					cursor: pointer
+					&:hover
+						background-color: #8fb4ff
+		&Actions
+			width: 20%
+			height: 100%
+			background-color: rgba(241, 248, 255, 1)
+			padding: 15px 15px
+			display: flex
+			justify-content: space-between
+			align-items: center
+			z-index: 5
+			.cabinet
+				width: 23px
+				height: 26px
+				&Img
+					height: 90%
+					width: 90%
+			.desired
+				position: relative
+				width: 29px
+				height: 26px
+				&Img
+					height: 90%
+					width: 90%
+			.shopping
+				position: relative
+				width: 32px
+				height: 26px
+				&Img
+					height: 90%
+					width: 90%
+			.desired, .shopping
+				&Alert
+					position: absolute
+					bottom: calc(100% + 5px)
+					left: 50%
+					width: 18px
+					height: 18px
+					border-radius: 50%
+					transform: translateX(-50%)
+					background-color: var(--yellow)
+					display: flex
+					justify-content: center
+					align-items: center
+					font-family: Montserrat
+					font-style: normal
+					font-weight: 600
+					font-size: 10px
+					line-height: 13px
+					color: var(--blue-first)
