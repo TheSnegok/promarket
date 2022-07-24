@@ -16,7 +16,8 @@ const Hits: FC = () => {
             if (data.hits.slideItems.length > 5)
                 switch (option) {
                     case "plus":
-                        if (slide + 4 < data.hits.slideItems.length) {
+                        if ((window.innerWidth < 800 ? slide : window.innerWidth < 1050 ? slide + 1 : window.innerWidth < 1350 ? slide + 2 : window.innerWidth < 1600 ? slide + 3 : slide + 4) < data.hits.slideItems.length) {
+                            console.log(slide, data.hits.slideItems.length);
                             setPosition(position => position - 308);
                             setSlide(slide => slide + 1);
                         }
