@@ -105,7 +105,7 @@
         &:hover
             background-color: rgba(200, 200, 190, 1)
 
-@media screen and (max-width: 1600px)
+@media (max-width: 1600px)
     .article
         &Wrapper
             display: flex
@@ -118,17 +118,20 @@
 
 @media (max-width: 1350px)
     .article
-        width: 100%
         &Wrapper
-            width: 100%
-            display: flex
-            justify-content: center
             &Slider
-                position: relative
-                height: 100%
                 width: 760px
-                overflow: hidden
         .arrowLeft
-            left: 90px
+            left: 100px
         .arrowRight
-            right: 90px
+            right: 100px
+
+@media (max-width: 1350px)
+    .article
+        &Wrapper
+            &Slider
+                width: 760px
+        .arrowLeft
+            left: -10px
+        .arrowRight
+            right: -10px
