@@ -1,7 +1,7 @@
 .brands
     min-height: 514px
     width: 100%
-    margin-top: 1vw
+    padding-top: 1vw
     margin-bottom: 52px
     &Header
         display: inline-block
@@ -25,9 +25,8 @@
             background-color: var(--blue-second)
     &Wrapper
         width: 100%
-        max-height: 436px
         display: grid
-        grid-template-columns: repeat(6, 1fr)
+        grid-template-columns: repeat(3, 1fr)
         gap: 20px
     &Logo
         width: auto
@@ -44,10 +43,6 @@
             &:hover
                 transform: scale(1.1)
 
-@media (max-width: 1600px)
-    .brands
-        min-height: auto
-
 @media (max-width: 1350px)
     .brands
         margin-bottom: 30px
@@ -56,3 +51,10 @@
     .brands
         &Logo
             height: 115px
+
+@media (max-width: 800px)
+    .brands
+        &Header
+            margin-bottom: 32px
+        &Logo
+            height: 80px
