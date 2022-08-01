@@ -46,3 +46,37 @@
 		span
 			position: relative
 			font-size: 3vh
+
+@media ( max-width: 800px )
+	.likes
+		min-height: 730px
+		&Items
+			display: block
+		&List
+			overflow-y: auto
+			height: 60vh
+			width: 100%
+			&::-webkit-scrollbar
+				width: 10px
+			&::-webkit-scrollbar-track
+				width: 10px
+			&::-webkit-scrollbar-thumb
+				width: 8px
+				background-color: rgb(215, 215, 215)
+				border-radius: 5px
+			ul
+				width: 99%
+		&Preview
+			width: 19%
+			min-height: 200px
+			&Null
+				height: 100%
+				width: 100%
+		&Empty
+			height: 60vh
+			display: flex
+			justify-content: center
+			align-items: center
+			span
+				position: relative
+				font-size: 3vh
