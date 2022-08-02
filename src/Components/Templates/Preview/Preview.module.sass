@@ -76,3 +76,50 @@
 				line-height: 24px
 		&Description
 			font-size: 14px
+
+@media (max-width: 800px)
+	.preview
+		height: 120px
+		&Block
+			height: 120px
+			width: 100%
+			flex-direction: column
+			overflow: hidden
+			display: flex
+			flex-wrap: wrap
+			gap: 5px
+			& > *
+				flex: 1 1 35px
+		&Wrapper
+			display: flex
+			flex-direction: row
+			width: 60%
+			height: 30px
+			justify-content: space-around
+			margin-bottom: 0
+			&Stars
+				width: 30%
+			&Country
+				width: 30%
+				text-align: left
+				font-size: 14px
+			&Price
+				width: 50%
+				font-size: 18px
+				line-height: 26px
+			&Stock
+				width: 70%
+				text-align: left
+				font-size: 18px
+				line-height: 24px
+		&Img
+			width: 120px
+			height: 120px
+			img
+				height: 90%
+				width: 90%
+		&Description
+			width: 60%
+			height: 40px
+			margin-bottom: 0
+			overflow: hidden
