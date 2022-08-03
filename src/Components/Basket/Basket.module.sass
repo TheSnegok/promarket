@@ -2,7 +2,7 @@
     position: relative
     padding: 2vh 5vw
     width: 100%
-    min-height: 85vh
+    max-height: 85vh
     background-color: var(--blue-third)
     z-index: 2
     font-family: Montserrat
@@ -15,7 +15,7 @@
     section
         position: relative
         z-index: 2
-        min-height: 60vh
+        max-height: 60vh
         .content
             width: 100%
             display: flex
@@ -105,3 +105,39 @@
             &Stock
                 color: var(--red)
                 text-decoration: line-through
+
+@media ( max-width: 800px )
+    .basket
+        max-height: unset
+        height: 630px
+        &Preview
+            height: 120px
+            width: 100%
+            min-height: unset
+            margin-bottom: 10px
+        section
+            .content
+                flex-direction: column
+                &List
+                    margin-bottom: 10px
+                    &::-webkit-scrollbar
+                        width: 5px
+                    &::-webkit-scrollbar-track
+                        width: 5px
+                    &::-webkit-scrollbar-thumb
+                        width: 8px
+                        background-color: rgb(215, 215, 215)
+                        border-radius: 5px
+        &Total
+            h3
+                font-size: 3.2vw
+            &Price
+                span
+                    font-size: 2.8vw
+                    margin-right: 1vw
+        &Order
+            width: 120px
+            height: 32px
+            font-size: 11px
+            line-height: 12px
+            letter-spacing: 0.11em
