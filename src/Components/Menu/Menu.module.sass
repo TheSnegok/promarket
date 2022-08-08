@@ -1500,3 +1500,32 @@
 				&Alert
 					bottom: 100%
 					left: calc(50% - 2.3px)
+
+@media ( max-width: 520px )
+	.menu
+		min-height: 70px
+		flex-wrap: wrap
+		&Items
+			height: 35px
+			width: 60%
+			order: 2
+		&Searcher
+			height: 35px
+			width: 100%
+			order: 1
+		&Actions
+			height: 35px
+			width: 40%
+			order: 3
+			display: flex
+			justify-content: space-around
+			padding: 0 5px
+			.cabinet
+				width: 16px
+				height: 19px
+			.desired
+				width: 22px
+				height: 19px
+			.shopping
+				width: 25px
+				height: 19px
