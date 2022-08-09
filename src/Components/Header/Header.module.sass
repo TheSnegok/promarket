@@ -35,8 +35,6 @@
 		margin-right: 100px
 		z-index: 8
 		cursor: default
-		&:hover .regionsList
-			max-height: 1000px
 		.mark
 			margin-top: 4px
 			width: 10px
@@ -81,6 +79,25 @@
 					&:hover
 						background-color: var(--green-blue)
 						color: var(--yellow)
+		.regionsListVisible
+				min-height: 1000px
+				position: absolute
+				z-index: 10
+				top: 100%
+				left: calc(50% + 10px)
+				transform: translateX(-50%)
+				overflow: hidden
+				transition: max-height .6s ease-in
+				ul
+					border-radius: 3px
+					background-color: var(--yellow)
+				li
+					text-align: center
+					cursor: pointer
+					padding: 5px
+					&:hover
+						background-color: var(--green-blue)
+						color: var(--yellow)
 	.headerPhone
 		display: flex
 		align-items: center
@@ -108,6 +125,35 @@
 				border-radius: 50%
 				background-color: var(--yellow)
 				margin-right: 13px
+				transition: 500ms
+				&::after
+					content: ''
+					position: absolute
+					top: 50%
+					left: 50%
+					width: 1px
+					height: 4px
+					transform: translate(-50%, -50%) rotate(-45deg)
+					transform-origin: right bottom
+					background-color: var(--blue-third)
+				&::before
+					content: ''
+					position: absolute
+					top: 50%
+					left: 50%
+					width: 1px
+					height: 4px
+					transform: translate(-50%, -50%) rotate(45deg)
+					transform-origin: left bottom
+					background-color: var(--blue-third)
+			.popupDown
+				position: relative
+				width: 16px
+				height: 16px
+				border-radius: 50%
+				background-color: var(--yellow)
+				margin-right: 13px
+				transform: rotate(180deg)
 				transition: 500ms
 				&::after
 					content: ''
@@ -177,9 +223,9 @@
 						cursor: pointer
 						&:hover
 							background-color: var(--gray-blue)
-			&:hover
-				.phoneCallInput
+				.visiblePhoneCallInput
 					visibility: visible
+					position: absolute
 					transform: translateY(0) scaleY(1) scaleX(1)
 					transform-origin: 50% 50%
 					filter: blur(0)
@@ -192,8 +238,27 @@
 					padding: 10px
 					width: 150%
 					transition: all 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)
-				.popup
-					transform: rotate(360deg)
+					input
+						width: 90%
+						border: none
+						border-radius: 5px
+						margin-bottom: 10px
+						outline: none
+						padding: 3px
+					button
+						width: 90%
+						border: none
+						outline: none
+						font-family: Montserrat
+						font-style: normal
+						font-weight: 500
+						font-size: 14px
+						border-radius: 5px
+						background-color: var(--green-blue)
+						padding: 3px
+						cursor: pointer
+						&:hover
+							background-color: var(--gray-blue)
 	.headerMenu
 		display: flex
 		justify-content: space-between
@@ -259,6 +324,10 @@
 					width: 14px
 					height: 14px
 					margin-right: 10px
+				.popupDown
+					width: 14px
+					height: 14px
+					margin-right: 10px
 				.phoneCall
 					font-size: 12px
 					line-height: 14px
@@ -298,10 +367,6 @@
 				margin-right: 12px
 			.call
 				z-index: 10
-				.popup
-					width: 14px
-					height: 14px
-					margin-right: 10px
 				.phoneCall
 					font-size: 14px
 					line-height: 16px
@@ -367,7 +432,7 @@
 				font-size: 14px
 				line-height: 20px
 			.call
-				.popup
+				.popup, .popupDown
 					width: 12px
 					height: 12px
 					margin-right: 8px
@@ -382,9 +447,3 @@
 			a
 				font-size: 12px
 				line-height: 14px
-
-@media (hover: none) and (pointer: coarse)
-	.header
-		.headerLocation
-			&:active .regionsList
-				max-height: 1000px
