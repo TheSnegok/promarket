@@ -131,7 +131,7 @@
 			width: 150px
 			height: 10px
 
-@media ( max-width: 1050px )
+@media ( max-width: 800px )
 	.slider
 		width: 100%
 		height: 240px
@@ -145,3 +145,34 @@
 				&Active
 					width: 10px
 					height: 10px
+
+@media ( max-width: 520px )
+	.slider
+		width: 100%
+		height: 180px
+		&Dots
+			bottom: 15px
+			width: 150px
+			height: 7px
+			.Dot
+				width: 6px
+				height: 6px
+				&Active
+					width: 7px
+					height: 7px
+		.arrowLeft
+			left: 10px
+			height: 22px
+			width: 18px
+			&::before
+				height: 16px
+			&::after
+				height: 16px
+		.arrowRight
+			right: 10px
+			height: 22px
+			width: 18px
+			&::before
+				height: 16px
+			&::after
+				height: 16px
