@@ -184,11 +184,11 @@
             .hitsWrapper
                 width: 924px
             .arrowLeft
-                z-index: 8                    
+                z-index: 8
                 left: 0
             .arrowRight
                 right: 0
-                z-index: 8    
+                z-index: 8
 
 @media (max-width: 1050px)
     .hits
@@ -201,3 +201,24 @@
         &Slider
             .hitsWrapper
                 width: 309px
+
+@media (max-width: 520px)
+    .hits
+        &Header
+            font-size: 16px
+            line-height: 20px
+            margin-bottom: 30px
+            &::after
+                bottom: -3px
+        &Menu
+            column-gap: 5px
+            height: 30px
+            margin-bottom: 15px
+            .tag
+                padding: 0 10x
+                font-size: 12px
+                line-height: 15px
+                &Active
+                    padding: 0 10x
+                    font-size: 12px
+                    line-height: 15px
