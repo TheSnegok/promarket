@@ -41,6 +41,10 @@
             &:hover
                 cursor: pointer
                 opacity: .8
+        a
+            img
+                width: 100%
+                height: 100%
         &Like
             visibility: hidden
             position: absolute
@@ -154,6 +158,65 @@
             color: white
             transition: .5s
             cursor: pointer
+
+@media (max-width: 520px)
+    .item
+        height: auto
+        width: 220px
+        &Img
+            height: 180px
+            a
+                position: absolute
+                top: 0
+                left: 0
+                height: 100%
+                width: 100%
+            &Like
+                width: 16px
+                height: 13px
+                svg
+                    height: 100%
+                    width: 100%
+        &Stars
+            width: 100%
+            height: 14px
+            margin-left: 8px
+            margin-bottom: 10px
+            .starsWrapper
+                column-gap: 2px
+                margin-right: 4px
+            .message
+                img
+                    width: 10px
+                    height: 10px
+                &Count
+                    font-size: 10px
+                    line-height: 12px
+        &Description
+            height: 40px
+            padding: 0 8px
+            font-size: 12px
+            line-height: 18px
+            margin-bottom: 12px
+        &Country
+            padding: 0 8px
+            font-size: 12px
+            line-height: 22px
+            margin-bottom: 10px
+        &Buy
+            padding: 0 8px
+            .buy
+                width: 40%
+                height: 26px
+                font-size: 8px
+                line-height: 14px
+                letter-spacing: 0.15em
+            .buyActive
+                width: 40%
+                height: 26px
+                font-size: 8px
+                line-height: 14px
+                letter-spacing: 0.15em
 
 @media (hover: none) and (pointer: coarse)
     .item
