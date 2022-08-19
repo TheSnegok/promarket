@@ -17,13 +17,13 @@ const Stock: FC = () => {
                 switch (option) {
                     case "plus":
                         if ((window.innerWidth < 800 ? slide : window.innerWidth < 1050 ? slide + 1 : window.innerWidth < 1350 ? slide + 2 : window.innerWidth < 1600 ? slide + 3 : slide + 4) < data.stock.slideItems.length) {
-                            setPosition(position => position - 308);
+                            setPosition(position => window.innerWidth < 520 ? position - 220 : position - 308);
                             setSlide(slide => slide + 1);
                         }
                         break;
                     case "minus":
                         if (slide > 1) {
-                            setPosition(position => position + 308);
+                            setPosition(position => window.innerWidth < 520 ? position + 220 : position + 308);
                             setSlide(slide => slide - 1);
                         }
                         break;
