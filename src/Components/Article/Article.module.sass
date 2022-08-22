@@ -146,3 +146,41 @@
             left: 0px
         .arrowRight
             right: 0px
+
+@media (max-width: 520px)
+    .article
+        margin-bottom: 15px
+        &Header
+            font-size: 16px
+            line-height: 20px
+            margin-bottom: 20px
+            &::after
+                bottom: -3px
+        &Wrapper
+            height: 240px
+            &Slider
+                width: 240px
+        .arrowLeft
+            top: 60%
+            left: 7px
+            height: 40px
+            width: 40px
+            border-radius: 5px
+            &::before
+                width: 12px
+                height: 2px
+            &::after
+                width: 12px
+                height: 2px
+        .arrowRight
+            top: 60%
+            right: 7px
+            height: 40px
+            width: 40px
+            border-radius: 5px
+            &::before
+                width: 12px
+                height: 2px
+            &::after
+                width: 12px
+                height: 2px

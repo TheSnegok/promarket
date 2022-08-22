@@ -40,6 +40,9 @@
             justify-content: center
             align-items: center
             transition: 1s
+            img
+                max-width: 60%
+                max-height: 40%
             &:hover
                 transform: scale(1.1)
 
@@ -58,3 +61,20 @@
             margin-bottom: 32px
         &Logo
             height: 80px
+
+@media (max-width: 800px)
+    .brands
+        min-height: 250px
+        padding: 15px 0
+        margin-bottom: 0
+        &Header
+            font-size: 16px
+            line-height: 20px
+            margin-bottom: 20px
+            &::after
+                bottom: -3px
+        &Wrapper
+            gap: 10px
+        &Logo
+            height: 60px
+            
