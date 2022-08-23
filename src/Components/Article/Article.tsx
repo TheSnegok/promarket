@@ -20,8 +20,8 @@ const Article: FC = () => {
                         ))}
                     </div>
                 </div>
-                <div className={s.arrowRight} onClick={() => (data.articleList.length * -390) + (window.innerWidth < 800 ? 0 : window.innerWidth < 1350 ? 780 : window.innerWidth < 1600 ? 1170 : 1560) === position ? null : setPosition(position => position - 390)}></div>
-                <div className={s.arrowLeft} onClick={() => position === 0 ? null : setPosition(position => position + 390)}></div>
+                <div className={s.arrowRight} onClick={() => ((data.articleList.length - 1) * (window.innerWidth < 520 ? -260 : -390) + (window.innerWidth < 800 ? 0 : window.innerWidth < 1350 ? 780 : window.innerWidth < 1600 ? 1170 : 1560) === position ? null : setPosition(position => window.innerWidth < 520 ? position - 260 : position - 390))}></div>
+                <div className={s.arrowLeft} onClick={() => position === 0 ? null : setPosition(position => window.innerWidth < 520 ? position + 260 : position + 390)}></div>
             </div>
         </section>
     )
