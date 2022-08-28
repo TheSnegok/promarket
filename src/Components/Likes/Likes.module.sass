@@ -59,7 +59,37 @@
 			&::-webkit-scrollbar-track
 				width: 5px
 			&::-webkit-scrollbar-thumb
-				width:8px
+				width: 8px
+		&Preview
+			width: 100%
+			height: 120px
+			min-height: unset
+			&Null
+				height: 100%
+				width: 100%
+		&Empty
+			height: 60vh
+			display: flex
+			justify-content: center
+			align-items: center
+			span
+				position: relative
+				font-size: 3vh
+
+@media ( max-width: 520px )
+	.likes
+		min-height: 580px
+		padding: 0 8px
+		&Items
+			gap: 1%
+		&List
+			margin-bottom: 10px
+			&::-webkit-scrollbar
+				width: 5px
+			&::-webkit-scrollbar-track
+				width: 5px
+			&::-webkit-scrollbar-thumb
+				width: 8px
 		&Preview
 			width: 100%
 			height: 120px

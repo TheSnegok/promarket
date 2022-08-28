@@ -36,6 +36,7 @@ hr
 			height: 90%
 			img
 				height: 100%
+				width: 100%
 	&Description
 		padding-left: 1vh
 		@include itemSize(57%)
@@ -149,29 +150,6 @@ hr
 
 @media (max-width: 1350px)
 	.Item
-		&Description
-			@include spanItem()
-			font-size: 14px
-		&Country
-			@include spanItem()
-			font-size: 14px
-		&Price
-			@include spanItem()
-			font-size: 14px
-		&Buy
-			@include itemSize(10%, 40%)
-			font-size: 10px
-			line-height: 20px
-			letter-spacing: 0.12em
-			color: var(--blue-third)
-		&BuyActive
-			@include itemSize(10%, 40%)
-			font-size: 10px
-			line-height: 20px
-			letter-spacing: 0.1em
-
-@media (max-width: 1350px)
-	.Item
 		margin: .3vh 0
 		&Description
 			@include spanItem()
@@ -217,3 +195,42 @@ hr
 			font-size: 8px
 			line-height: 12px
 			letter-spacing: 0.10em
+
+@media (max-width: 520px)
+	.Item
+		height: 50px
+		padding: 0 2px
+		&Img
+			@include itemSize(15%, 90%)
+			@include itemLocation()
+		&Description
+			@include itemSize(35%, 70%)
+			font-size: 6px
+			line-height: 8px
+			line
+			a
+				max-height: 24px
+				white-space: normal
+		&Country
+			@include itemSize(15%)
+			@include spanItem()
+			font-size: 6px
+		&Price
+			@include itemSize(15%)
+			@include spanItem()
+			font-size: 6px
+		&Buy
+			@include itemSize(20%, 40%)
+			font-size: 5px
+			line-height: 12px
+			letter-spacing: 0.10em
+		&BuyActive
+			@include itemSize(20%, 40%)
+			font-size: 5px
+			line-height: 12px
+			letter-spacing: 0.10em
+		&Remove
+			@include itemSize(5%)
+			@include itemLocation()
+			position: relative
+			margin-left: 2px
