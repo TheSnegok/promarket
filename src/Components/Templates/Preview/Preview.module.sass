@@ -126,3 +126,55 @@
 			height: 40px
 			margin-bottom: 0
 			overflow: hidden
+
+@media (max-width: 520px)
+	.preview
+		height: 90px
+		&Block
+			height: 100%
+			width: 100%
+			gap: 5px
+			& > *
+				flex: 1 1 25px
+		&Wrapper
+			width: calc(65% - 5px)
+			height: 25px
+			justify-content: space-around
+			margin-bottom: 0
+			&Stars
+				width: 45%
+			&Country
+				width: 45%
+				text-align: left
+				font-size: 12px
+				line-height: 25px
+			&Stock
+				width: 70%
+				text-align: left
+				font-size: 18px
+				line-height: 24px
+			&Price
+				text-align: center
+				width: 50%
+				font-size: 12px
+				line-height: 25px
+			&Stock
+				text-align: center
+				width: 50%
+				font-size: 12px
+				line-height: 25px
+		&Price
+			text-align: center
+			width: calc(65% - 5px)
+			font-size: 12px
+			line-height: 25px
+		&Img
+			width: 35%
+			height: 100%
+		&Description
+			width: calc(65% - 5px)
+			height: 25px
+			font-size: 8px
+			line-height: 8px
+			word-break: break-word
+			overflow: hidden
