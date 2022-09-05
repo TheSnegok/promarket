@@ -1,7 +1,6 @@
-import { FC } from "react"
 import s from "./SearchPage.module.sass"
 
-export const SearchPage: FC = () => {
+export const SearchPage = () => {
     return (
         <section className={s.search}>
             <div className={s.searchHeader}>
@@ -40,14 +39,17 @@ export const SearchPage: FC = () => {
                 </div>
             </div>
             <div className={s.searchMatches}>
-                {true ? (
-                    <div className={s.searchMatchesBlock}>
-                        Найдено
-                    </div>
-                )}
-                <div className={s.searchMatchesNone}>
-                    <h2>Ничего не найдено :(</h2>
-                </div>
+                {
+                    true ? (
+                        <div className={s.searchMatchesBlock}>
+                            Найдено
+                        </div>
+                    ) : (
+                        <div className={s.searchMatchesNone}>
+                            <h2>Ничего не найдено :(</h2>
+                        </div>
+                    )
+                }
             </div>
         </section>
     )

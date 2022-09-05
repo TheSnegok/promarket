@@ -140,7 +140,7 @@ const Menu: FC = () => {
 					</Link>
 				</div>
 				<div className={s.menuSearcherMatches}>
-					{findInput.matchFound === [] ? null :
+					{findInput.matchFound &&
 						(findInput.matchFound.map((find, index) => (
 							<div className={s.menuSearcherMatchesItem} key={index} onClick={() => selectedItem(find)}>
 								{find.description}
