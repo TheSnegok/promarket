@@ -6,50 +6,52 @@ export const SearchPage = () => {
             <div className={s.searchHeader}>
                 <h2>Поиск</h2>
             </div>
-            <div className={s.searchOptions}>
-                <div className={s.searchOptionsPrice}>
-                    <h3>Цена</h3>
-                    <div className={s.searchOptionsPriceRange}>
-                        <span>Сортировать по цене:</span>
-                        <input type="range" name="" id="" />
+            <div className={s.searchBlock}>
+                <div className={s.searchBlockOptions}>
+                    <div className={s.searchBlockOptionsPrice}>
+                        <h3>Цена</h3>
+                        <div className={s.searchBlockOptionsPriceRange}>
+                            <span className={s.searchBlockOptionsPriceRangeText}>Сортировать по цене:</span>
+                            <input type="range" name="" id="" className={s.searchBlockOptionsPriceRangeInput} />
+                        </div>
+                        <div className={s.searchBlockOptionsPriceHigh}>
+                            <span className={s.searchBlockOptionsPriceHighText}>От:</span>
+                            <input type="number" name="" id="" className={s.searchBlockOptionsPriceHighInput} />
+                        </div>
+                        <div className={s.searchBlockOptionsPriceLow}>
+                            <span className={s.searchBlockOptionsPriceLowText}>До:</span>
+                            <input type="number" name="" id="" className={s.searchBlockOptionsPriceLowInput} />
+                        </div>
                     </div>
-                    <div className={s.searchOptionsPriceHigh}>
-                        <span className={s.searchOptionsPriceHighText}>От:</span>
-                        <input type="number" name="" id="" className={s.searchOptionsPriceHighInput} />
-                    </div>
-                    <div className={s.searchOptionsPriceLow}>
-                        <span className={s.searchOptionsPriceLowText}>До:</span>
-                        <input type="number" name="" id="" className={s.searchOptionsPriceLowInput} />
+                    <div className={s.searchBlockOptionsYear}>
+                        <h3>Год выпуска:</h3>
+                        <div className={s.searchBlockOptionsYearRange}>
+                            <span className={s.searchBlockOptionsYearRangeText}>Сортировать по году выпуска:</span>
+                            <input className={s.searchBlockOptionsYearRangeInput} type="range" name="" id="" />
+                        </div>
+                        <div className={s.searchBlockOptionsYearHigh}>
+                            <span className={s.searchBlockOptionsYearHighText}>От:</span>
+                            <input type="number" name="" id="" className={s.searchBlockOptionsYearHighInput} />
+                        </div>
+                        <div className={s.searchBlockOptionsYearLow}>
+                            <span className={s.searchBlockOptionsYearLowText}>До:</span>
+                            <input type="number" name="" id="" className={s.searchBlockOptionsYearLowInput} />
+                        </div>
                     </div>
                 </div>
-                <div className={s.searchOptionsYear}>
-                    <h3>Год выпуска:</h3>
-                    <div className={s.searchOptionsYearRange}>
-                        <span className={s.searchOptionsYearRangeText}>Сортировать по году выпуска:</span>
-                        <input className={s.searchOptionsYearRangeInput} type="range" name="" id="" />
-                    </div>
-                    <div className={s.searchOptionsYearHigh}>
-                        <span className={s.searchOptionsYearHighText}>От:</span>
-                        <input type="number" name="" id="" className={s.searchOptionsYearHighInput} />
-                    </div>
-                    <div className={s.searchOptionsYearLow}>
-                        <span className={s.searchOptionsYearLowText}>До:</span>
-                        <input type="number" name="" id="" className={s.searchOptionsYearLowInput} />
-                    </div>
+                <div className={s.searchBlockMatches}>
+                    {
+                        true ? (
+                            <div className={s.searchBlockMatchesBlock}>
+                                Найдено
+                            </div>
+                        ) : (
+                            <div className={s.searchBlockMatchesNone}>
+                                <h2>Ничего не найдено :(</h2>
+                            </div>
+                        )
+                    }
                 </div>
-            </div>
-            <div className={s.searchMatches}>
-                {
-                    true ? (
-                        <div className={s.searchMatchesBlock}>
-                            Найдено
-                        </div>
-                    ) : (
-                        <div className={s.searchMatchesNone}>
-                            <h2>Ничего не найдено :(</h2>
-                        </div>
-                    )
-                }
             </div>
         </section>
     )
