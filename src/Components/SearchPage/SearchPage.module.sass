@@ -1,7 +1,11 @@
 @mixin flexColumn($direction: column, $gap: 15px)
     display: flex
     flex-direction: $direction
-    row-gap: $gap
+    @if $direction == column
+        row-gap: $gap
+    @else 
+        column-gap: $gap
+
 
 .search
     position: relative
@@ -18,27 +22,54 @@
             margin-bottom: 2vh
     &Block
         display: flex
-        width: 20%
         &Options
-            @include flexColumn(column, 15px)
-            h3
+            width: 25%
+            @include flexColumn(column, 20px)
+            &Header
+                font-size: 22px
+                line-height: 28px
+                padding-left: 10px
+                margin-bottom: 10px
+            h4
                 font-size: 18px
-                line-height: 24px
+                line-height: 22px
+                padding-left: 5px
+                margin-bottom: 5px
+                text-align: center
             &Price, &Year
+                @include flexColumn(column, 8px)
                 &Range
-                    @include flexColumn
+                    @include flexColumn(column, 0px)
                     &Text
                         font-size: 14px
                         line-height: 20px
-                    &Input
-                        margin: 20px 0
                 &High
-                    @include flexColumn(Row)
+                    width: 100%
+                    @include flexColumn(row)
+                    justify-content: space-between
                     span
                         font-size: 14px
                         line-height: 20px
+                    input
+                        width: 75%
                 &Low
-                    @include flexColumn(Row)
+                    @include flexColumn(row)
+                    justify-content: space-between
                     span
                         font-size: 14px
                         line-height: 20px
+                    input
+                        width: 75%
+        &Matches
+            width: 75%
+            &Header
+                font-size: 22px
+                line-height: 28px
+                padding-left: 20px
+                margin-bottom: 10px
+            &None
+                width: 100%
+                height: 100%
+                display: flex
+                justify-content: center
+                align-items: center

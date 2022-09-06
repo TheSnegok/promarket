@@ -8,8 +8,9 @@ export const SearchPage = () => {
             </div>
             <div className={s.searchBlock}>
                 <div className={s.searchBlockOptions}>
+                    <h3 className={s.searchBlockOptionsHeader}>Сортировать</h3>
                     <div className={s.searchBlockOptionsPrice}>
-                        <h3>Цена</h3>
+                        <h4>Цена</h4>
                         <div className={s.searchBlockOptionsPriceRange}>
                             <span className={s.searchBlockOptionsPriceRangeText}>Сортировать по цене:</span>
                             <input type="range" name="" id="" className={s.searchBlockOptionsPriceRangeInput} />
@@ -24,7 +25,7 @@ export const SearchPage = () => {
                         </div>
                     </div>
                     <div className={s.searchBlockOptionsYear}>
-                        <h3>Год выпуска:</h3>
+                        <h4>Год выпуска</h4>
                         <div className={s.searchBlockOptionsYearRange}>
                             <span className={s.searchBlockOptionsYearRangeText}>Сортировать по году выпуска:</span>
                             <input className={s.searchBlockOptionsYearRangeInput} type="range" name="" id="" />
@@ -40,14 +41,14 @@ export const SearchPage = () => {
                     </div>
                 </div>
                 <div className={s.searchBlockMatches}>
-                    {
-                        true ? (
-                            <div className={s.searchBlockMatchesBlock}>
+                    {true
+                        ? (
+                            <h3 className={s.searchBlockMatchesHeader}>
                                 Найдено
-                            </div>
+                            </h3>
                         ) : (
                             <div className={s.searchBlockMatchesNone}>
-                                <h2>Ничего не найдено :(</h2>
+                                <h3>Ничего не найдено :(</h3>
                             </div>
                         )
                     }
