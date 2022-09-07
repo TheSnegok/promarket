@@ -135,7 +135,7 @@ const Menu: FC = () => {
 			<div className={s.menuSearcher}>
 				<input type="text" className={s.input} placeholder='Что вы ищете?' value={findInput.text} onChange={(e) => checkMatch(e)} />
 				<div className={s.icon}>
-					<Link to={findInput.text == '' ? '#' : '/search'}>
+					<Link to={findInput.text === '' ? '#' : '/search'}>
 						<img src={loop} alt="search" className={s.loop} />
 					</Link>
 				</div>

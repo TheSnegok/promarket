@@ -1,8 +1,19 @@
+import { FC } from "react";
+import { useNavigate } from "react-router";
+import { IDataTemplate, useGlobalContext } from "../Context/Context"
 import s from "./SearchPage.module.sass"
 
-export const SearchPage = () => {
+export const SearchPage: FC = () => {
 
-    
+    let redirect = useNavigate();
+
+    const { findInput, setProduct, setFindInput } = useGlobalContext();
+
+    const selectedItem = (item: IDataTemplate) => {
+        setProduct(item);
+        setFindInput({ text: '', matchFound: [] })
+        redirect('/product');
+    };
 
     return (
         <section className={s.search}>
@@ -46,9 +57,18 @@ export const SearchPage = () => {
                 <div className={s.searchBlockMatches}>
                     {true
                         ? (
-                            <h3 className={s.searchBlockMatchesHeader}>
-                                Найдено
-                            </h3>
+                            <>
+                                <h3 className={s.searchBlockMatchesHeader}>
+                                    Найдено
+                                </h3>
+                                {findInput.matchFound &&
+                                    (findInput.matchFound.map((find, index) => (
+                                        <div className={s.menuSearcherMatchesItem} key={index} onClick={() => selectedItem(find)}>
+                                            {find.description}
+                                        </div>
+                                    )))
+                                }
+                            </>
                         ) : (
                             <div className={s.searchBlockMatchesNone}>
                                 <h3>Ничего не найдено :(</h3>
