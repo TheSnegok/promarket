@@ -92,7 +92,7 @@ export interface ICallInput {
 
 export interface ISearch {
 	text: string,
-	matchFound: [] | IDataTemplate[] | IDataTemplate[];
+	matchFound: [] | IDataTemplate[];
 }
 
 interface IContext {

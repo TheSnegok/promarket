@@ -1,6 +1,9 @@
 import s from "./SearchPage.module.sass"
 
 export const SearchPage = () => {
+
+    
+
     return (
         <section className={s.search}>
             <div className={s.searchHeader}>
