@@ -61,13 +61,20 @@ export const SearchPage: FC = () => {
                                 <h3 className={s.searchBlockMatchesHeader}>
                                     Найдено
                                 </h3>
-                                {findInput.matchFound &&
-                                    (findInput.matchFound.map((find, index) => (
-                                        <div className={s.menuSearcherMatchesItem} key={index} onClick={() => selectedItem(find)}>
-                                            {find.description}
-                                        </div>
-                                    )))
-                                }
+                                <div className={s.searchBlockMatchesBlock}>
+                                    {findInput.matchFound &&
+                                        (findInput.matchFound.map((find, index) => (
+                                            <div className={s.searchBlockMatchesBlockItem} key={index} onClick={() => selectedItem(find)}>
+                                                <div className={s.searchBlockMatchesBlockItemImg}>
+                                                    <img src={find.imgSrc} alt={find.personalKey} />
+                                                </div>
+                                                <div className={s.searchBlockMatchesBlockItemDescription}>
+                                                    <span>{find.description}</span>
+                                                </div>
+                                            </div>
+                                        )))
+                                    }
+                                </div>
                             </>
                         ) : (
                             <div className={s.searchBlockMatchesNone}>

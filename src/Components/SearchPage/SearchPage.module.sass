@@ -3,9 +3,8 @@
     flex-direction: $direction
     @if $direction == column
         row-gap: $gap
-    @else 
+    @else
         column-gap: $gap
-
 
 .search
     position: relative
@@ -61,7 +60,9 @@
                     input
                         width: 75%
         &Matches
+            position: relative
             width: 75%
+            padding: 15px
             &Header
                 font-size: 22px
                 line-height: 28px
@@ -73,3 +74,29 @@
                 display: flex
                 justify-content: center
                 align-items: center
+            &Block
+                display: flex
+                flex-wrap: wrap
+                gap: 20px
+                width: 100%
+                position: relative
+                &Item
+                    width: 20%
+                    overflow: hidden
+                    height: 200px
+                    word-break: break-word
+                    padding: 10px
+                    position: relative
+                    text-align: center
+                    img
+                        width: 130px
+                        height: 90px
+
+@media ( max-width: 1300px )
+    .search
+        &Block
+            &Matches
+                &Block
+                    gap: 10px
+                    &Item
+                        width: 30%
