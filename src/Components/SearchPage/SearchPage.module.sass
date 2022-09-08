@@ -81,16 +81,26 @@
                 width: 100%
                 position: relative
                 &Item
-                    width: 20%
+                    flex: 1 1 auto
                     overflow: hidden
-                    height: 200px
+                    height: 150px
+                    width: 200px
                     word-break: break-word
-                    padding: 10px
                     position: relative
                     text-align: center
-                    img
-                        width: 130px
-                        height: 90px
+                    transition: .5s
+                    &:hover
+                        overflow: unset
+                        background-color: #ffa3d6
+                    &Img
+                        position: relative
+                        padding: 10px
+                        img
+                            width: 120px
+                            height: 90px
+                    &Description
+                        width: 100%
+                        padding: 10px
 
 @media ( max-width: 1300px )
     .search
