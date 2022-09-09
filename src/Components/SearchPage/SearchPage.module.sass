@@ -21,6 +21,7 @@
             margin-bottom: 2vh
     &Block
         display: flex
+        gap: 5%
         &Options
             width: 25%
             @include flexColumn(column, 20px)
@@ -76,20 +77,20 @@
             &Block
                 display: flex
                 flex-wrap: wrap
-                gap: 20px
+                gap: 5px
                 width: 100%
                 position: relative
                 &Item
-                    flex: 1 1 auto
                     overflow: hidden
                     height: 150px
-                    width: 200px
+                    width: calc(25% - 5px)
                     word-break: break-word
                     position: relative
                     text-align: center
-                    transition: .5s
                     &:hover
                         overflow: unset
+                        background-color: #ffa3d6
+                    &:hover .searchBlockMatchesBlockItemDescription
                         background-color: #ffa3d6
                     &Img
                         position: relative
@@ -98,6 +99,8 @@
                             width: 120px
                             height: 90px
                     &Description
+                        position: relative
+                        z-index: 5
                         width: 100%
                         padding: 10px
 

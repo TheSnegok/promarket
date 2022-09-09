@@ -15,6 +15,8 @@ export const SearchPage: FC = () => {
         redirect('/product');
     };
 
+    console.log('render');
+
     return (
         <section className={s.search}>
             <div className={s.searchHeader}>
