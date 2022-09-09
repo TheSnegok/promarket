@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { IDataTemplate, useGlobalContext } from "../Context/Context"
 import s from "./SearchPage.module.sass"
@@ -9,11 +9,18 @@ export const SearchPage: FC = () => {
 
     const { findInput, setProduct, setFindInput } = useGlobalContext();
 
+    const [matched, setMatched] = useState<IDataTemplate[]>(findInput.matchFound);
+
     const selectedItem = (item: IDataTemplate) => {
         setProduct(item);
         setFindInput({ text: '', matchFound: [] })
         redirect('/product');
     };
+
+    useEffect(() => {
+        setMatched(findInput.matchFound);
+    }, [findInput.matchFound])
+    
 
     console.log('render');
 
@@ -64,8 +71,8 @@ export const SearchPage: FC = () => {
                                     Найдено
                                 </h3>
                                 <div className={s.searchBlockMatchesBlock}>
-                                    {findInput.matchFound &&
-                                        (findInput.matchFound.map((find, index) => (
+                                    {matched &&
+                                        (matched.map((find, index) => (
                                             <div className={s.searchBlockMatchesBlockItem} key={index} onClick={() => selectedItem(find)}>
                                                 <div className={s.searchBlockMatchesBlockItemImg}>
                                                     <img src={find.imgSrc} alt={find.personalKey} />
