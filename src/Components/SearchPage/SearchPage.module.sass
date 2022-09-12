@@ -38,28 +38,6 @@
                 text-align: center
             &Price, &Year
                 @include flexColumn(column, 8px)
-                &Range
-                    @include flexColumn(column, 0px)
-                    &Text
-                        font-size: 14px
-                        line-height: 20px
-                &High
-                    width: 100%
-                    @include flexColumn(row)
-                    justify-content: space-between
-                    span
-                        font-size: 14px
-                        line-height: 20px
-                    input
-                        width: 75%
-                &Low
-                    @include flexColumn(row)
-                    justify-content: space-between
-                    span
-                        font-size: 14px
-                        line-height: 20px
-                    input
-                        width: 75%
         &Matches
             position: relative
             width: 75%

@@ -1,0 +1,71 @@
+.rangeBlock
+    display: flex
+    flex-direction: column
+    &Text
+        text-align: center
+        font-size: 14px
+        line-height: 20px
+    &Input
+        position: relative
+        height: 24px
+        width: 80%
+        padding: 15px 0
+        input[type=range]
+            -webkit-appearance: none
+            appearance: none
+            height: 2px
+            width: 100%
+            position: absolute
+            left: 10%
+            background-color: #C6C6C6
+            pointer-events: none
+            &::-webkit-slider-thumb
+                -webkit-appearance: none
+                pointer-events: all
+                width: 12px
+                height: 12px
+                background-color: #fff
+                border-radius: 50%
+                box-shadow: 0 0 0 1px #C6C6C6
+                cursor: pointer
+                &:hover
+                    background-color: #969696
+            &::-webkit-slider-runnable-track
+                z-index: 1
+    &Numbers
+        display: flex
+        justify-content: space-between
+        &High
+            width: 40%
+            display: flex
+            flex-direction: column
+            row-gap: 3px
+            text-align: center
+            span
+                font-size: 14px
+                line-height: 18px
+            input
+                width: 100%
+                text-align: center
+                padding: 2px 0 2px 3px
+                outline: none
+                border-radius: 3px
+                border: none
+                font-size: 14px
+        &Low
+            width: 40%
+            display: flex
+            flex-direction: column
+            row-gap: 3px
+            text-align: center
+            span
+                font-size: 14px
+                line-height: 18px
+            input
+                width: 100%
+                text-align: center
+                padding: 2px 0 2px 3px
+                outline: none
+                border-radius: 3px
+                border: none
+                font-size: 14px

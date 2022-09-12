@@ -1,6 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { IDataTemplate, useGlobalContext } from "../Context/Context"
+import { RangeDoubleSlider } from "./RangeDoubleSlider/RangeDoubleSlider";
 import s from "./SearchPage.module.sass"
 
 export const SearchPage: FC = () => {
@@ -20,7 +21,7 @@ export const SearchPage: FC = () => {
     useEffect(() => {
         setMatched(findInput.matchFound);
     }, [findInput.matchFound])
-    
+
 
     console.log('render');
 
@@ -34,18 +35,7 @@ export const SearchPage: FC = () => {
                     <h3 className={s.searchBlockOptionsHeader}>Сортировать</h3>
                     <div className={s.searchBlockOptionsPrice}>
                         <h4>Цена</h4>
-                        <div className={s.searchBlockOptionsPriceRange}>
-                            <span className={s.searchBlockOptionsPriceRangeText}>Сортировать по цене:</span>
-                            <input type="range" name="" id="" className={s.searchBlockOptionsPriceRangeInput} />
-                        </div>
-                        <div className={s.searchBlockOptionsPriceHigh}>
-                            <span className={s.searchBlockOptionsPriceHighText}>От:</span>
-                            <input type="number" name="" id="" className={s.searchBlockOptionsPriceHighInput} />
-                        </div>
-                        <div className={s.searchBlockOptionsPriceLow}>
-                            <span className={s.searchBlockOptionsPriceLowText}>До:</span>
-                            <input type="number" name="" id="" className={s.searchBlockOptionsPriceLowInput} />
-                        </div>
+                        <RangeDoubleSlider header='Сортировать по цене:' />
                     </div>
                     <div className={s.searchBlockOptionsYear}>
                         <h4>Год выпуска</h4>
