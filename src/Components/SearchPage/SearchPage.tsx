@@ -15,8 +15,8 @@ export const SearchPage: FC = () => {
     const selectedItem = (item: IDataTemplate) => {
         setProduct(item);
         setFindInput({
-            text: '', 
-            matchFound: [], 
+            text: '',
+            matchFound: [],
             minValue: findInput.minValue,
             maxValue: findInput.maxValue
         })
@@ -68,14 +68,15 @@ export const SearchPage: FC = () => {
                                 <div className={s.searchBlockMatchesBlock}>
                                     {matched &&
                                         (matched.map((find, index) => (
-                                            <div className={s.searchBlockMatchesBlockItem} key={index} onClick={() => selectedItem(find)}>
+                                            (find.price[0] < findInput.minValue && find.price[0] > findInput.maxValue) &&
+                                            (<div className={s.searchBlockMatchesBlockItem} key={index} onClick={() => selectedItem(find)}>
                                                 <div className={s.searchBlockMatchesBlockItemImg}>
                                                     <img src={find.imgSrc} alt={find.personalKey} />
                                                 </div>
                                                 <div className={s.searchBlockMatchesBlockItemDescription}>
                                                     <span>{find.description}</span>
                                                 </div>
-                                            </div>
+                                            </div>)
                                         )))
                                     }
                                 </div>
