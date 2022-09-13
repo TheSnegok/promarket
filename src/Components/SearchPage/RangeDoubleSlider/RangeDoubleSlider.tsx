@@ -1,4 +1,5 @@
-import { FC, FormEvent, MutableRefObject, useRef, useState } from "react";
+import { FC, FormEvent, useRef, useState } from "react";
+import { useGlobalContext } from "../../Context/Context";
 import s from "./RangeDoubleSlider.module.sass";
 
 interface RangeDoubleSliderProps {
@@ -6,6 +7,8 @@ interface RangeDoubleSliderProps {
 }
 
 export const RangeDoubleSlider: FC<RangeDoubleSliderProps> = ({ header }) => {
+
+    const { findInput, setFindInput } = useGlobalContext();
 
     const [leftSlider, setLeftSlider] = useState<number>(0);
     const [rightSlider, setRightSlider] = useState<number>(50000);
@@ -17,10 +20,22 @@ export const RangeDoubleSlider: FC<RangeDoubleSliderProps> = ({ header }) => {
     const changeValue = (e: FormEvent, side: string) => {
         e.preventDefault();
         if (rightDot.current !== null && leftDot.current !== null) {
-            if (side === 'right' && +rightDot.current.value > leftSlider+1000 ) {
+            if (side === 'right' && +rightDot.current.value > leftSlider + 1000) {
                 setRightSlider(+rightDot.current.value);
-            } else if (side === 'left' && +leftDot.current.value < rightSlider-1000) {
+                setFindInput({
+                    text: findInput.text,
+                    matchFound: findInput.matchFound,
+                    minValue: +rightDot.current.value,
+                    maxValue: findInput.maxValue
+                });
+            } else if (side === 'left' && +leftDot.current.value < rightSlider - 1000) {
                 setLeftSlider(+leftDot.current.value);
+                setFindInput({
+                    text: findInput.text,
+                    matchFound: findInput.matchFound,
+                    minValue: findInput.minValue,
+                    maxValue: +leftDot.current.value
+                });
             }
         }
     }

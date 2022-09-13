@@ -14,7 +14,12 @@ export const SearchPage: FC = () => {
 
     const selectedItem = (item: IDataTemplate) => {
         setProduct(item);
-        setFindInput({ text: '', matchFound: [] })
+        setFindInput({
+            text: '', 
+            matchFound: [], 
+            minValue: findInput.minValue,
+            maxValue: findInput.maxValue
+        })
         redirect('/product');
     };
 

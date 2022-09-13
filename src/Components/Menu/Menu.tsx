@@ -14,12 +14,22 @@ const Menu: FC = () => {
 	let redirect = useNavigate();
 
 	const checkMatch = (e: FormEvent<HTMLInputElement>) => {
-		setFindInput({ text: e.currentTarget.value, matchFound: findInput.matchFound });
+		setFindInput({
+			text: e.currentTarget.value,
+			matchFound: findInput.matchFound,
+			minValue: findInput.minValue,
+			maxValue: findInput.maxValue
+		});
 	}
 
 	const selectedItem = (item: IDataTemplate) => {
 		setProduct(item);
-		setFindInput({ text: '', matchFound: [] })
+		setFindInput({
+			text: '',
+			matchFound: [],
+			minValue: findInput.minValue,
+			maxValue: findInput.maxValue
+		})
 		redirect('/product');
 	};
 
@@ -27,9 +37,19 @@ const Menu: FC = () => {
 		if (findInput.text !== '') {
 			const hitMatch = data.hits.slideItems.filter(item => item.description.includes(findInput.text) === true);
 			const stockMatch = data.stock.slideItems.filter(item => item.description.includes(findInput.text) === true);
-			setFindInput({ text: findInput.text, matchFound: hitMatch.concat(stockMatch) });
+			setFindInput({
+				text: findInput.text,
+				matchFound: hitMatch.concat(stockMatch),
+				minValue: findInput.minValue,
+				maxValue: findInput.maxValue
+			});
 		} else {
-			setFindInput({ text: findInput.text, matchFound: [] });
+			setFindInput({
+				text: findInput.text,
+				matchFound: [],
+				minValue: findInput.minValue,
+				maxValue: findInput.maxValue
+			});
 		}//eslint-disable-next-line
 	}, [findInput.text]);
 

@@ -92,7 +92,9 @@ export interface ICallInput {
 
 export interface ISearch {
 	text: string,
-	matchFound: [] | IDataTemplate[];
+	matchFound: [] | IDataTemplate[],
+	minValue: number,
+	maxValue: number
 }
 
 interface IContext {
@@ -182,7 +184,9 @@ export const Context = createContext<IContext>({
 	},
 	findInput: {
 		text: '',
-		matchFound: []
+		matchFound: [],
+		minValue: 0,
+		maxValue: 50000
 	},
 	setFindInput: () => { },
 	setAuthentication: () => { },
@@ -198,9 +202,6 @@ export const Context = createContext<IContext>({
 	contextPushItem: () => { }
 });
 
-/* 
-Plans for tomorrow: search page, responsible design,
-*/
 export const useGlobalContext = () => useContext(Context);
 
 export const Provider: FC = ({ children }) => {
@@ -246,7 +247,9 @@ export const Provider: FC = ({ children }) => {
 
 	const [findInput, setFindInput] = useState<ISearch>({
 		text: '',
-		matchFound: []
+		matchFound: [],
+		minValue: 0,
+		maxValue: 50000
 	});
 
 	const [authentication, setAuthentication] = useState<IAuthData>({
