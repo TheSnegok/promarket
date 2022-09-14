@@ -1,4 +1,4 @@
-import { FC, FormEvent, useRef, useState } from "react";
+import { FC, useRef, useState, RefObject } from "react";
 import { useGlobalContext } from "../../Context/Context";
 import s from "./RangeDoubleSlider.module.sass";
 
@@ -21,18 +21,17 @@ export const RangeDoubleSlider: FC<RangeDoubleSliderProps> = ({ header, max, min
     const maxValue = useRef<HTMLInputElement>(null);
     const minValue = useRef<HTMLInputElement>(null);
 
-    const changeValue = (e: FormEvent, side: string) => {
-        e.preventDefault();
-        if (rightRange.current !== null && leftRange.current !== null) {
-            if (side === 'right' && +rightRange.current.value > leftDot) {
-                setRightSlider(+rightRange.current.value);
+    const changeValue = (side: string, element: RefObject<HTMLInputElement>, sideElement: RefObject<HTMLInputElement>) => {
+        if (rightRange.current !== null && leftRange.current !== null && element.current !== null && sideElement.current !== null) {
+            if (side === 'right' && +element.current.value > +sideElement.current?.value) {
+                setRightSlider(+element.current.value);
                 switch (type) {
                     case 'price':
                         setFindInput({
                             text: findInput.text,
                             matchFound: findInput.matchFound,
                             minPrice: findInput.minPrice,
-                            maxPrice: +rightRange.current.value,
+                            maxPrice: +element.current.value,
                             maxYear: findInput.maxYear,
                             minYear: findInput.minYear
                         });
@@ -43,20 +42,20 @@ export const RangeDoubleSlider: FC<RangeDoubleSliderProps> = ({ header, max, min
                             matchFound: findInput.matchFound,
                             minPrice: findInput.minPrice,
                             maxPrice: findInput.maxPrice,
-                            maxYear: +rightRange.current.value,
+                            maxYear: +element.current.value,
                             minYear: findInput.minYear
                         });
                         break;
                     default:
                 }
-            } else if (side === 'left' && +leftRange.current.value < rightDot) {
-                setLeftSlider(+leftRange.current.value);
+            } else if (side === 'left' && +element.current.value < +sideElement.current?.value) {
+                setLeftSlider(+element.current.value);
                 switch (type) {
                     case 'price':
                         setFindInput({
                             text: findInput.text,
                             matchFound: findInput.matchFound,
-                            minPrice: +leftRange.current.value,
+                            minPrice: +element.current.value,
                             maxPrice: findInput.maxPrice,
                             maxYear: findInput.maxYear,
                             minYear: findInput.minYear
@@ -69,7 +68,7 @@ export const RangeDoubleSlider: FC<RangeDoubleSliderProps> = ({ header, max, min
                             minPrice: findInput.minPrice,
                             maxPrice: findInput.maxPrice,
                             maxYear: findInput.maxYear,
-                            minYear: +leftRange.current.value
+                            minYear: +element.current.value
                         });
                         break;
                     default:
@@ -82,17 +81,17 @@ export const RangeDoubleSlider: FC<RangeDoubleSliderProps> = ({ header, max, min
         <div className={s.rangeBlock}>
             <span className={s.rangeBlockText}>{header}</span>
             <div className={s.rangeBlockInput}>
-                <input min={min} max={max} step={step} value={leftDot} ref={leftRange} type="range" onChange={(e) => changeValue(e, 'left')} className={s.rangeBlockInputLeft} />
-                <input min={min} max={max} step={step} value={rightDot} ref={rightRange} type="range" onChange={(e) => changeValue(e, 'right')} className={s.rangeBlockInputRight} />
+                <input min={min} max={max} step={step} value={leftDot} ref={leftRange} type="range" onChange={() => changeValue('left', leftRange, rightRange)} className={s.rangeBlockInputLeft} />
+                <input min={min} max={max} step={step} value={rightDot} ref={rightRange} type="range" onChange={() => changeValue('right', rightRange, leftRange)} className={s.rangeBlockInputRight} />
             </div>
             <div className={s.rangeBlockNumbers}>
                 <div className={s.rangeBlockNumbersHigh}>
                     <span className={s.rangeBlockNumbersLowText}>От:</span>
-                    <input type="number" ref={maxValue} value={leftDot} className={s.rangeBlockNumbersHighInput} />
+                    <input type="number" onChange={() => changeValue('left', maxValue, minValue)} ref={maxValue} value={leftDot} className={s.rangeBlockNumbersHighInput} />
                 </div>
                 <div className={s.rangeBlockNumbersLow}>
                     <span className={s.rangeBlockNumbersHighText}>До:</span>
-                    <input type="number" ref={minValue} value={rightDot} className={s.rangeBlockNumbersLowInput} />
+                    <input type="number" onChange={() => changeValue('right', minValue, maxValue)} ref={minValue} value={rightDot} className={s.rangeBlockNumbersLowInput} />
                 </div>
             </div>
         </div>
