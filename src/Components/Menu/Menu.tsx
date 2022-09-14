@@ -17,8 +17,10 @@ const Menu: FC = () => {
 		setFindInput({
 			text: e.currentTarget.value,
 			matchFound: findInput.matchFound,
-			minValue: findInput.minValue,
-			maxValue: findInput.maxValue
+			minPrice: findInput.minPrice,
+			maxPrice: findInput.maxPrice,
+			maxYear: findInput.maxYear,
+			minYear: findInput.minYear
 		});
 	}
 
@@ -27,8 +29,10 @@ const Menu: FC = () => {
 		setFindInput({
 			text: '',
 			matchFound: [],
-			minValue: findInput.minValue,
-			maxValue: findInput.maxValue
+			minPrice: findInput.minPrice,
+			maxPrice: findInput.maxPrice,
+			maxYear: findInput.maxYear,
+			minYear: findInput.minYear
 		})
 		redirect('/product');
 	};
@@ -40,15 +44,19 @@ const Menu: FC = () => {
 			setFindInput({
 				text: findInput.text,
 				matchFound: hitMatch.concat(stockMatch),
-				minValue: findInput.minValue,
-				maxValue: findInput.maxValue
+				minPrice: findInput.minPrice,
+				maxPrice: findInput.maxPrice,
+				maxYear: findInput.maxYear,
+				minYear: findInput.minYear
 			});
 		} else {
 			setFindInput({
-				text: findInput.text,
+				text: '',
 				matchFound: [],
-				minValue: findInput.minValue,
-				maxValue: findInput.maxValue
+				minPrice: findInput.minPrice,
+				maxPrice: findInput.maxPrice,
+				maxYear: findInput.maxYear,
+				minYear: findInput.minYear
 			});
 		}//eslint-disable-next-line
 	}, [findInput.text]);

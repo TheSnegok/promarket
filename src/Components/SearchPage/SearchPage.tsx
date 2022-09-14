@@ -9,6 +9,7 @@ export const SearchPage: FC = () => {
     let redirect = useNavigate();
 
     const { findInput, setProduct, setFindInput } = useGlobalContext();
+    const thisYear = new Date().getFullYear();
 
     const [matched, setMatched] = useState<IDataTemplate[]>(findInput.matchFound);
 
@@ -17,8 +18,10 @@ export const SearchPage: FC = () => {
         setFindInput({
             text: '',
             matchFound: [],
-            minValue: findInput.minValue,
-            maxValue: findInput.maxValue
+            minPrice: findInput.minPrice,
+            maxPrice: findInput.maxPrice,
+            minYear: findInput.minYear,
+            maxYear: findInput.maxYear
         })
         redirect('/product');
     };
@@ -26,9 +29,6 @@ export const SearchPage: FC = () => {
     useEffect(() => {
         setMatched(findInput.matchFound);
     }, [findInput.matchFound])
-
-
-    console.log('render');
 
     return (
         <section className={s.search}>
@@ -40,22 +40,11 @@ export const SearchPage: FC = () => {
                     <h3 className={s.searchBlockOptionsHeader}>Сортировать</h3>
                     <div className={s.searchBlockOptionsPrice}>
                         <h4>Цена</h4>
-                        <RangeDoubleSlider header='Сортировать по цене:' />
+                        <RangeDoubleSlider header='Сортировка по цене:' min={0} max={50000} step={10} type='price' />
                     </div>
                     <div className={s.searchBlockOptionsYear}>
                         <h4>Год выпуска</h4>
-                        <div className={s.searchBlockOptionsYearRange}>
-                            <span className={s.searchBlockOptionsYearRangeText}>Сортировать по году выпуска:</span>
-                            <input className={s.searchBlockOptionsYearRangeInput} type="range" name="" id="" />
-                        </div>
-                        <div className={s.searchBlockOptionsYearHigh}>
-                            <span className={s.searchBlockOptionsYearHighText}>От:</span>
-                            <input type="number" name="" id="" className={s.searchBlockOptionsYearHighInput} />
-                        </div>
-                        <div className={s.searchBlockOptionsYearLow}>
-                            <span className={s.searchBlockOptionsYearLowText}>До:</span>
-                            <input type="number" name="" id="" className={s.searchBlockOptionsYearLowInput} />
-                        </div>
+                        <RangeDoubleSlider header='Сортировка по году выпуска:' min={thisYear - 30} max={thisYear} step={1} type='date' /> 
                     </div>
                 </div>
                 <div className={s.searchBlockMatches}>
@@ -68,7 +57,7 @@ export const SearchPage: FC = () => {
                                 <div className={s.searchBlockMatchesBlock}>
                                     {matched &&
                                         (matched.map((find, index) => (
-                                            (find.price[0] < findInput.minValue && find.price[0] > findInput.maxValue) &&
+                                            (find.price[0] < findInput.maxPrice && find.price[0] > findInput.minPrice) &&
                                             (<div className={s.searchBlockMatchesBlockItem} key={index} onClick={() => selectedItem(find)}>
                                                 <div className={s.searchBlockMatchesBlockItemImg}>
                                                     <img src={find.imgSrc} alt={find.personalKey} />

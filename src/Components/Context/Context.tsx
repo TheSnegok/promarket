@@ -93,8 +93,10 @@ export interface ICallInput {
 export interface ISearch {
 	text: string,
 	matchFound: [] | IDataTemplate[],
-	minValue: number,
-	maxValue: number
+	minPrice: number,
+	maxPrice: number,
+	minYear: number,
+	maxYear: number
 }
 
 interface IContext {
@@ -185,8 +187,10 @@ export const Context = createContext<IContext>({
 	findInput: {
 		text: '',
 		matchFound: [],
-		minValue: 0,
-		maxValue: 50000
+		minPrice: 0,
+		maxPrice: 0,
+		minYear: 0,
+		maxYear: 0
 	},
 	setFindInput: () => { },
 	setAuthentication: () => { },
@@ -248,8 +252,10 @@ export const Provider: FC = ({ children }) => {
 	const [findInput, setFindInput] = useState<ISearch>({
 		text: '',
 		matchFound: [],
-		minValue: 0,
-		maxValue: 50000
+		minPrice: 0,
+		maxPrice: 50000,
+		minYear: new Date().getFullYear() - 30,
+		maxYear: new Date().getFullYear()
 	});
 
 	const [authentication, setAuthentication] = useState<IAuthData>({
