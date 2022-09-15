@@ -3,7 +3,6 @@
     width: 100%
     display: flex
     position: relative
-    z-index: 5
     padding-top: 36px
     margin-bottom: 41px
     &::after
@@ -14,8 +13,9 @@
         top: 0
         left: -50vw
         background-color: #fff
-        z-index: -1
+        z-index: 1
     &Section
+        z-index: 3
         max-width: 240px
         margin-right: 157px
         &List
@@ -67,6 +67,7 @@
                     line-height: 20px
                     color: var(--gray-blue-second)
     &Menu
+        z-index: 3
         max-width: 105px
         max-height: 200px
         margin-right: 256px
@@ -93,6 +94,7 @@
                         width: 100%
                         background-color: var(--blue-third)
     &Contacts
+        z-index: 3
         max-width: 178px
         margin-right: 210px
         &Phone
@@ -148,6 +150,7 @@
                 width: 30px
                 height: 30px
     &Location
+        z-index: 3
         max-width: 250px
         &Street
             display: flex

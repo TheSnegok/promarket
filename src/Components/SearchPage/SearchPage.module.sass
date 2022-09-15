@@ -56,32 +56,45 @@
             &Block
                 display: flex
                 flex-wrap: wrap
-                gap: 5px
+                gap: 10px
                 width: 100%
                 position: relative
                 &Item
                     overflow: hidden
-                    height: 150px
-                    width: calc(25% - 5px)
+                    height: 179px
+                    width: calc(20% - 10px)
                     word-break: break-word
                     position: relative
                     text-align: center
+                    cursor: pointer
                     &:hover
                         overflow: unset
-                        background-color: #7c7c7c
+                        background-color: #0052ce
+                        border-radius: 4px 4px 0 0
                     &:hover .searchBlockMatchesBlockItemDescription
-                        background-color: #7c7c7c
+                        background-color: #0052ce
+                    &:hover .searchBlockMatchesBlockItemPrice
+                        background-color: #0052ce
                     &Img
                         position: relative
                         padding: 10px
                         img
-                            width: 120px
+                            width: 90%
                             height: 90px
                     &Description
                         position: relative
                         z-index: 5
                         width: 100%
-                        padding: 10px
+                        padding: 5px 5px 0 5px
+                    &Price
+                        position: relative
+                        z-index: 6
+                        width: 100%
+                        height: 70px
+                        padding: 5px 0 0 10px
+                        display: flex
+                        justify-content: left
+                        align-items: flex-start
 
 @media ( max-width: 1300px )
     .search

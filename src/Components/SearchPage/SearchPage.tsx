@@ -1,6 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { IDataTemplate, useGlobalContext } from "../Context/Context"
+import { PriceDivision } from "../Templates/PriceDivision/PriceDivision";
 import { RangeDoubleSlider } from "./RangeDoubleSlider/RangeDoubleSlider";
 import s from "./SearchPage.module.sass"
 
@@ -44,7 +45,7 @@ export const SearchPage: FC = () => {
                     </div>
                     <div className={s.searchBlockOptionsYear}>
                         <h4>Год выпуска</h4>
-                        <RangeDoubleSlider header='Сортировка по году выпуска:' min={thisYear - 30} max={thisYear} step={1} type='date' /> 
+                        <RangeDoubleSlider header='Сортировка по году выпуска:' min={thisYear - 30} max={thisYear} step={1} type='date' />
                     </div>
                 </div>
                 <div className={s.searchBlockMatches}>
@@ -64,6 +65,9 @@ export const SearchPage: FC = () => {
                                                 </div>
                                                 <div className={s.searchBlockMatchesBlockItemDescription}>
                                                     <span>{find.description}</span>
+                                                </div>
+                                                <div className={s.searchBlockMatchesBlockItemPrice}>
+                                                    <PriceDivision price={find.price} />
                                                 </div>
                                             </div>)
                                         )))
