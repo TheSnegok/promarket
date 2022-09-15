@@ -47,6 +47,14 @@ export const SearchPage: FC = () => {
                         <h4>Год выпуска</h4>
                         <RangeDoubleSlider header='Сортировка по году выпуска:' min={thisYear - 30} max={thisYear} step={1} type='date' />
                     </div>
+                    <div className={s.searchBlockOptionsList}>
+                        <select name="" id="">
+                            <option value="">От дешёвых до дорогих</option>
+                            <option value="">От дорогих до дешёвых</option>
+                            <option value="">Популярные</option>
+                            <option value="">По рейтингу</option>
+                        </select>
+                    </div>
                 </div>
                 <div className={s.searchBlockMatches}>
                     {true
