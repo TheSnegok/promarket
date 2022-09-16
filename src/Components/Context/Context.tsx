@@ -96,7 +96,8 @@ export interface ISearch {
 	minPrice: number,
 	maxPrice: number,
 	minYear: number,
-	maxYear: number
+	maxYear: number,
+	sort: 1,
 }
 
 interface IContext {
@@ -190,7 +191,8 @@ export const Context = createContext<IContext>({
 		minPrice: 0,
 		maxPrice: 0,
 		minYear: 0,
-		maxYear: 0
+		maxYear: 0,
+		sort: 1
 	},
 	setFindInput: () => { },
 	setAuthentication: () => { },
@@ -255,7 +257,8 @@ export const Provider: FC = ({ children }) => {
 		minPrice: 0,
 		maxPrice: 50000,
 		minYear: new Date().getFullYear() - 30,
-		maxYear: new Date().getFullYear()
+		maxYear: new Date().getFullYear(),
+		sort: 1
 	});
 
 	const [authentication, setAuthentication] = useState<IAuthData>({

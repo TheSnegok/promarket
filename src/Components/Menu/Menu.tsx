@@ -20,7 +20,8 @@ const Menu: FC = () => {
 			minPrice: findInput.minPrice,
 			maxPrice: findInput.maxPrice,
 			maxYear: findInput.maxYear,
-			minYear: findInput.minYear
+			minYear: findInput.minYear,
+			sort: findInput.sort
 		});
 	}
 
@@ -32,7 +33,8 @@ const Menu: FC = () => {
 			minPrice: findInput.minPrice,
 			maxPrice: findInput.maxPrice,
 			maxYear: findInput.maxYear,
-			minYear: findInput.minYear
+			minYear: findInput.minYear,
+			sort: findInput.sort
 		})
 		redirect('/product');
 	};
@@ -47,7 +49,8 @@ const Menu: FC = () => {
 				minPrice: findInput.minPrice,
 				maxPrice: findInput.maxPrice,
 				maxYear: findInput.maxYear,
-				minYear: findInput.minYear
+				minYear: findInput.minYear,
+				sort: findInput.sort
 			});
 		} else {
 			setFindInput({
@@ -56,7 +59,8 @@ const Menu: FC = () => {
 				minPrice: findInput.minPrice,
 				maxPrice: findInput.maxPrice,
 				maxYear: findInput.maxYear,
-				minYear: findInput.minYear
+				minYear: findInput.minYear,
+				sort: findInput.sort
 			});
 		}//eslint-disable-next-line
 	}, [findInput.text]);

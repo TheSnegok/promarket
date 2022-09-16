@@ -33,7 +33,8 @@ export const RangeDoubleSlider: FC<RangeDoubleSliderProps> = ({ header, max, min
                             minPrice: findInput.minPrice,
                             maxPrice: +element.current.value,
                             maxYear: findInput.maxYear,
-                            minYear: findInput.minYear
+                            minYear: findInput.minYear,
+                            sort: findInput.sort
                         });
                         break;
                     case 'date':
@@ -43,7 +44,8 @@ export const RangeDoubleSlider: FC<RangeDoubleSliderProps> = ({ header, max, min
                             minPrice: findInput.minPrice,
                             maxPrice: findInput.maxPrice,
                             maxYear: +element.current.value,
-                            minYear: findInput.minYear
+                            minYear: findInput.minYear,
+                            sort: findInput.sort
                         });
                         break;
                     default:
@@ -58,7 +60,8 @@ export const RangeDoubleSlider: FC<RangeDoubleSliderProps> = ({ header, max, min
                             minPrice: +element.current.value,
                             maxPrice: findInput.maxPrice,
                             maxYear: findInput.maxYear,
-                            minYear: findInput.minYear
+                            minYear: findInput.minYear,
+                            sort: findInput.sort
                         });
                         break;
                     case 'date':
@@ -68,7 +71,8 @@ export const RangeDoubleSlider: FC<RangeDoubleSliderProps> = ({ header, max, min
                             minPrice: findInput.minPrice,
                             maxPrice: findInput.maxPrice,
                             maxYear: findInput.maxYear,
-                            minYear: +element.current.value
+                            minYear: +element.current.value,
+                            sort: findInput.sort
                         });
                         break;
                     default:

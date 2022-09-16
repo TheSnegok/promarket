@@ -13,6 +13,7 @@ export const SearchPage: FC = () => {
     const thisYear = new Date().getFullYear();
 
     const [matched, setMatched] = useState<IDataTemplate[]>(findInput.matchFound);
+    const [selectValue, setSelectValue] = useState<number>(1);
 
     const selectedItem = (item: IDataTemplate) => {
         setProduct(item);
@@ -22,14 +23,21 @@ export const SearchPage: FC = () => {
             minPrice: findInput.minPrice,
             maxPrice: findInput.maxPrice,
             minYear: findInput.minYear,
-            maxYear: findInput.maxYear
+            maxYear: findInput.maxYear,
+            sort: findInput.sort
         })
         redirect('/product');
     };
 
     useEffect(() => {
-        setMatched(findInput.matchFound);
-    }, [findInput.matchFound])
+        if (selectValue === 1) {
+            console.log('first');
+            setMatched([...findInput.matchFound.sort((first, second) => first.price[0] - second.price[0])]);
+        } else if (selectValue === 2) {
+            console.log('second');
+            setMatched([...findInput.matchFound.sort((first, second) => second.price[0] - first.price[0])]);
+        }
+    }, [findInput.matchFound, selectValue])
 
     return (
         <section className={s.search}>
@@ -48,11 +56,11 @@ export const SearchPage: FC = () => {
                         <RangeDoubleSlider header='Сортировка по году выпуска:' min={thisYear - 30} max={thisYear} step={1} type='date' />
                     </div>
                     <div className={s.searchBlockOptionsList}>
-                        <select name="" id="">
-                            <option value="">От дешёвых до дорогих</option>
-                            <option value="">От дорогих до дешёвых</option>
-                            <option value="">Популярные</option>
-                            <option value="">По рейтингу</option>
+                        <select onChange={(e) => setSelectValue(+e.target.value)} value={selectValue}>
+                            <option value="1">От дешёвых к дорогим</option>
+                            <option value="2">От дорогих к дешёвых</option>
+                            <option value="3">Популярные</option>
+                            <option value="4">По рейтингу</option>
                         </select>
                     </div>
                 </div>
