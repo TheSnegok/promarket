@@ -13,7 +13,7 @@ export const SearchPage: FC = () => {
     const thisYear = new Date().getFullYear();
 
     const [matched, setMatched] = useState<IDataTemplate[]>(findInput.matchFound);
-    const [selectValue, setSelectValue] = useState<number>(1);
+    const [selectValue, setSelectValue] = useState<number>(findInput.sort);
 
     const selectedItem = (item: IDataTemplate) => {
         setProduct(item);
@@ -31,10 +31,26 @@ export const SearchPage: FC = () => {
 
     useEffect(() => {
         if (selectValue === 1) {
-            console.log('first');
+            setFindInput({
+                text: findInput.text,
+                matchFound: findInput.matchFound,
+                minPrice: findInput.minPrice,
+                maxPrice: findInput.maxPrice,
+                minYear: findInput.minYear,
+                maxYear: findInput.maxYear,
+                sort: 1
+            });
             setMatched([...findInput.matchFound.sort((first, second) => first.price[0] - second.price[0])]);
         } else if (selectValue === 2) {
-            console.log('second');
+            setFindInput({
+                text: findInput.text,
+                matchFound: findInput.matchFound,
+                minPrice: findInput.minPrice,
+                maxPrice: findInput.maxPrice,
+                minYear: findInput.minYear,
+                maxYear: findInput.maxYear,
+                sort: 2
+            });
             setMatched([...findInput.matchFound.sort((first, second) => second.price[0] - first.price[0])]);
         }
     }, [findInput.matchFound, selectValue])

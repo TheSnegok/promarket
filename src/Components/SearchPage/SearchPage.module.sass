@@ -57,6 +57,7 @@
                     outline: none
                     border: none
                     width: 100%
+                    border-radius: 4px
                     padding: 2px 25px 2px 4px
                     font-size: 14px
                     font-family: Montseratte
@@ -83,7 +84,7 @@
                 position: relative
                 &Item
                     overflow: hidden
-                    height: 189px
+                    height: 169px
                     width: calc(20% - 10px)
                     word-break: break-word
                     position: relative
@@ -106,6 +107,7 @@
                     &Description
                         position: relative
                         z-index: 5
+                        min-height: 43px
                         width: 100%
                         padding: 5px 5px 0 5px
                     &Price
@@ -118,11 +120,109 @@
                         justify-content: left
                         align-items: flex-start
 
-@media ( max-width: 1300px )
+@media ( max-width: 1350px )
     .search
         &Block
+            &Options
+                &List
+                    width: 75%
             &Matches
                 &Block
                     gap: 10px
                     &Item
-                        width: 30%
+                        width: calc(33% - 10px)
+                        &Img
+                            position: relative
+                            padding: 10px
+                            img
+                                width: 75%
+                                height: 100px
+
+@media ( max-width: 1050px)
+    .search
+        &Block
+            &Options
+                &List
+                    width: 100%
+            &Matches
+                &Block
+                    gap: 10px
+                    &Item
+                        width: calc(33% - 10px)
+                        &Img
+                            padding: 5px 5px 2px 5px
+                        &Description
+                            padding: 2px 5px 5px 5px
+                            min-height: 48px
+                            span
+                                font-size: 12px
+
+@media ( max-width: 800px )
+    .search
+        &Block
+            &Options
+                &Header
+                    font-size: 16px
+                    line-height: 20px
+                    padding-left: 5px
+                    margin-bottom: 5px
+                &List
+                    width: 100%
+                    &::after
+                        font-size: 10px
+                    select
+                        padding: 2px 18px 2px 4px
+                        font-size: 10px
+            &Matches
+                &Header
+                    font-size: 16px
+                    line-height: 20px
+                    padding-left: 20px
+                    margin-bottom: 5px
+                &Block
+                    gap: 8px
+                    &Item
+                        width: calc(50% - 4px)
+                        &Img
+                            padding: 5px 5px 2px 5px
+                        &Description
+                            padding: 2px 5px 5px 5px
+                            min-height: 48px
+                            span
+                                font-size: 12px
+
+@media ( max-width: 520px )
+    .search
+        &Block
+            &Options
+                width: 40%
+                &Header
+                    font-size: 12px
+                    line-height: 16px
+                    padding-left: 5px
+                    margin-bottom: 5px
+                &List
+                    width: 100%
+                    &::after
+                        font-size: 10px
+                    select
+                        padding: 2px 18px 2px 4px
+                        font-size: 10px
+            &Matches
+                width: 60%
+                &Header
+                    font-size: 12px
+                    line-height: 16px
+                    padding-left: 20px
+                    margin-bottom: 5px
+                &Block
+                    gap: 8px
+                    &Item
+                        width: 100%
+                        &Img
+                            padding: 5px 5px 2px 5px
+                        &Description
+                            padding: 2px 5px 5px 5px
+                            min-height: 48px
+                            span
+                                font-size: 12px

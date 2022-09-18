@@ -97,7 +97,7 @@ export interface ISearch {
 	maxPrice: number,
 	minYear: number,
 	maxYear: number,
-	sort: 1,
+	sort: number,
 }
 
 interface IContext {
