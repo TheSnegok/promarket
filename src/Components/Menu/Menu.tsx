@@ -5,13 +5,15 @@ import cabinet from '../../Image/Group.svg';
 import desire from '../../Image/heart.svg';
 import shoppingCart from '../../Image/Cart.svg';
 import { IDataTemplate, useGlobalContext } from "../Context/Context";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Menu: FC = () => {
 
 	const { data, setProduct, likes, basket, findInput, setFindInput } = useGlobalContext();
 	const [info, setInfo] = useState<number>(0);
+
 	let redirect = useNavigate();
+	let location = useLocation();
 
 	const checkMatch = (e: FormEvent<HTMLInputElement>) => {
 		setFindInput({
@@ -64,6 +66,15 @@ const Menu: FC = () => {
 			});
 		}//eslint-disable-next-line
 	}, [findInput.text]);
+
+	useEffect(() => {
+		window.addEventListener('keydown', (e) => {
+			if (e.key === 'Enter' && findInput.text !== '' && location.pathname !== "/search") {
+				console.log('worked!', location.pathname);
+				redirect('/search');
+			}
+		})
+	}, [findInput.text, location, redirect])
 
 	return (
 		<menu className={s.menu}>
