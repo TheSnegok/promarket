@@ -109,39 +109,40 @@
                     margin-bottom: 2vw
                 &Buttons
                     display: flex
-                    column-gap: 2vw
+                    flex-direction: column
+                    row-gap: 10px
                     &Basket
-                        width: 8vw
-                        height: 2vw
+                        width: 90px
+                        height: 18px
                         background-color: var(--blue-third)
-                        border-radius: 8px
+                        border-radius: 4px
                         outline: none
                         color: white
                         font-family: "Montserrat"
                         border: none
                         &Active
-                            width: 8vw
-                            height: 2vw
+                            width: 90px
+                            height: 18px
                             background-color: rgba(99, 202, 174, 0.5)
-                            border-radius: 8px
+                            border-radius: 4px
                             outline: none
                             color: white
                             font-family: "Montserrat"
                             border: none
                     &Likes
-                        width: 8vw
-                        height: 2vw
+                        width: 90px
+                        height: 18px
                         background-color: var(--blue-third)
-                        border-radius: 8px
+                        border-radius: 4px
                         outline: none
                         color: white
                         font-family: "Montserrat"
                         border: none
                         &Active
-                            width: 8vw
-                            height: 2vw
+                            width: 90px
+                            height: 18px
                             background-color: rgba(74, 156, 119, 0.5)
-                            border-radius: 8px
+                            border-radius: 4px
                             outline: none
                             color: white
                             font-family: "Montserrat"
@@ -156,6 +157,36 @@
         -webkit-transform: translateZ(0)
         transform: translateZ(0)
         opacity: 1
+
+@media ( max-width: 800px)
+    .modal
+        &Block
+            width: 60vw
+            &Info
+                &Options
+                    &Buttons
+                        flex-direction: column
+                        row-gap: 10px
+                        &Basket
+                            width: 90px
+                            height: 18px
+                            border-radius: 4px
+                            font-size: 12px
+                            &Active
+                                width: 90px
+                                height: 18px
+                                border-radius: 4px
+                                font-size: 12px
+                        &Likes
+                            width: 90px
+                            height: 18px
+                            border-radius: 4px
+                            font-size: 12px
+                            &Active
+                                width: 90px
+                                height: 18px
+                                border-radius: 4px
+                                font-size: 12px
 
 @media ( max-width: 520px )
     .modal
@@ -207,9 +238,10 @@
                     &Buttons
                         justify-content: center
                         align-items: center
-                        flex-direction: column
+                        flex-direction: row
                         width: 100%
-                        row-gap: 10px
+                        row-gap: 15px
+                        margin-bottom: 10px
                         &Basket
                             width: 80px
                             height: 18px

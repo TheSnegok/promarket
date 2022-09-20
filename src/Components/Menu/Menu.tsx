@@ -67,15 +67,6 @@ const Menu: FC = () => {
 		}//eslint-disable-next-line
 	}, [findInput.text]);
 
-	useEffect(() => {
-		window.addEventListener('keydown', (e) => {
-			if (e.key === 'Enter' && findInput.text !== '' && location.pathname !== "/search") {
-				console.log('worked!', location.pathname);
-				redirect('/search');
-			}
-		})
-	}, [findInput.text, location, redirect])
-
 	return (
 		<menu className={s.menu}>
 			<div className={s.menuItems}>
@@ -176,7 +167,7 @@ const Menu: FC = () => {
 				</Link>
 			</div>
 			<div className={s.menuSearcher}>
-				<input type="text" className={s.input} placeholder='Что вы ищете?' value={findInput.text} onChange={(e) => checkMatch(e)} />
+				<input type="text" className={s.input} placeholder='Что вы ищете?' value={findInput.text} onChange={(e) => checkMatch(e)} onKeyDown={(e) => (e.key === 'Enter' && findInput.text !== '' && location.pathname !== "/search") && redirect('/search')} />
 				<div className={s.icon}>
 					<Link to={findInput.text === '' ? '#' : '/search'}>
 						<img src={loop} alt="search" className={s.loop} />
