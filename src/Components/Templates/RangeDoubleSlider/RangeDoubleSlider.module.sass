@@ -69,3 +69,31 @@
                 border-radius: 3px
                 border: none
                 font-size: 14px
+
+@media ( max-width: 800px )
+    .rangeBlock
+        &Text
+            font-size: 12px
+            line-height: 16px
+        &Input
+            input[type=range]
+                &::-webkit-slider-thumb
+                    width: 10px
+                    height: 10px
+        &Numbers
+            &High
+                width: 35%
+                span
+                    font-size: 12px
+                    line-height: 16px
+                input
+                    padding: 1px 0 1px 2px
+                    font-size: 12px
+            &Low
+                width: 35%
+                span
+                    font-size: 12px
+                    line-height: 16px
+                input
+                    padding: 1px 0 1px 2px
+                    font-size: 12px

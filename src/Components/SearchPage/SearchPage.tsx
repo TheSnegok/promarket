@@ -81,8 +81,7 @@ export const SearchPage: FC = () => {
                     </div>
                 </div>
                 <div className={s.searchBlockMatches}>
-                    {true
-                        ? (
+                    {findInput.matchFound.length !== 0 ? (
                             <>
                                 <h3 className={s.searchBlockMatchesHeader}>
                                     Найдено
