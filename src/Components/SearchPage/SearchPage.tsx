@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { IDataTemplate, useGlobalContext } from "../Context/Context"
 import { PriceDivision } from "../Templates/PriceDivision/PriceDivision";
-import { RangeDoubleSlider } from "./RangeDoubleSlider/RangeDoubleSlider";
+import { RangeDoubleSlider } from "../Templates/RangeDoubleSlider/RangeDoubleSlider";
 import s from "./SearchPage.module.sass"
 
 export const SearchPage: FC = () => {
@@ -52,7 +52,7 @@ export const SearchPage: FC = () => {
                 sort: 2
             });
             setMatched([...findInput.matchFound.sort((first, second) => second.price[0] - first.price[0])]);
-        }
+        }// eslint-disable-next-line
     }, [findInput.matchFound, selectValue])
 
     return (
