@@ -7,6 +7,8 @@ import { useGlobalContext } from '../Context/Context';
 
 const Header: FC = () => {
 
+	const regionRef = useRef<HTMLDivElement | null>(null);
+
 	const { data, callInput, setCallInput, region, setRegion } = useGlobalContext();
 
 	const [call, setCall] = useState<boolean>(false);
@@ -19,10 +21,10 @@ const Header: FC = () => {
 					<img src={logo} alt="logo" className={s.logo} />
 				</Link>
 			</div>
-			<div className={s.headerLocation}>
+			<div className={s.headerLocation} onClick={() => setRegList(regList => !regList)} ref={regionRef}>
 				<img src={mark} alt="mark" className={s.mark} />
 				<div className={s.regions}>
-					<span onClick={() => setRegList(regList => !regList)}>{region}</span>
+					<span>{region}</span>
 					<div className={regList ? s.regionsListVisible : s.regionsList}>
 						<ul>
 							{data.regionsList.map((item, index) => {
