@@ -52,7 +52,18 @@ export const SearchPage: FC = () => {
                 sort: 2
             });
             setMatched([...findInput.matchFound.sort((first, second) => second.price[0] - first.price[0])]);
-        }// eslint-disable-next-line
+        } else if (selectValue === 3) {
+            setFindInput({
+                text: findInput.text,
+                matchFound: findInput.matchFound,
+                minPrice: findInput.minPrice,
+                maxPrice: findInput.maxPrice,
+                minYear: findInput.minYear,
+                maxYear: findInput.maxYear,
+                sort: 3
+            });
+            setMatched([...findInput.matchFound.sort((first, second) => second.reviews - first.reviews)]);
+        };// eslint-disable-next-line
     }, [findInput.matchFound, selectValue])
 
     return (
@@ -82,34 +93,34 @@ export const SearchPage: FC = () => {
                 </div>
                 <div className={s.searchBlockMatches}>
                     {findInput.matchFound.length !== 0 ? (
-                            <>
-                                <h3 className={s.searchBlockMatchesHeader}>
-                                    Найдено
-                                </h3>
-                                <div className={s.searchBlockMatchesBlock}>
-                                    {matched &&
-                                        (matched.map((find, index) => (
-                                            (find.price[0] < findInput.maxPrice && find.price[0] > findInput.minPrice) &&
-                                            (<div className={s.searchBlockMatchesBlockItem} key={index} onClick={() => selectedItem(find)}>
-                                                <div className={s.searchBlockMatchesBlockItemImg}>
-                                                    <img src={find.imgSrc} alt={find.personalKey} />
-                                                </div>
-                                                <div className={s.searchBlockMatchesBlockItemDescription}>
-                                                    <span>{find.description}</span>
-                                                </div>
-                                                <div className={s.searchBlockMatchesBlockItemPrice}>
-                                                    <PriceDivision price={find.price} />
-                                                </div>
-                                            </div>)
-                                        )))
-                                    }
-                                </div>
-                            </>
-                        ) : (
-                            <div className={s.searchBlockMatchesNone}>
-                                <h3>Ничего не найдено :(</h3>
+                        <>
+                            <h3 className={s.searchBlockMatchesHeader}>
+                                Найдено
+                            </h3>
+                            <div className={s.searchBlockMatchesBlock}>
+                                {matched &&
+                                    (matched.map((find, index) => (
+                                        (find.price[0] < findInput.maxPrice && find.price[0] > findInput.minPrice) &&
+                                        (<div className={s.searchBlockMatchesBlockItem} key={index} onClick={() => selectedItem(find)}>
+                                            <div className={s.searchBlockMatchesBlockItemImg}>
+                                                <img src={find.imgSrc} alt={find.personalKey} />
+                                            </div>
+                                            <div className={s.searchBlockMatchesBlockItemDescription}>
+                                                <span>{find.description}</span>
+                                            </div>
+                                            <div className={s.searchBlockMatchesBlockItemPrice}>
+                                                <PriceDivision price={find.price} />
+                                            </div>
+                                        </div>)
+                                    )))
+                                }
                             </div>
-                        )
+                        </>
+                    ) : (
+                        <div className={s.searchBlockMatchesNone}>
+                            <h3>Ничего не найдено :(</h3>
+                        </div>
+                    )
                     }
                 </div>
             </div>
