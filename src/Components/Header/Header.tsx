@@ -1,4 +1,4 @@
-import { useRef, FC, useEffect, useState } from 'react'
+import { useRef, FC, useState } from 'react'
 import s from "./Header.module.sass"
 import logo from '../../Image/logo.svg';
 import mark from '../../Image/Subtract.svg';

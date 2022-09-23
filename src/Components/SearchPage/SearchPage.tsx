@@ -63,6 +63,17 @@ export const SearchPage: FC = () => {
                 sort: 3
             });
             setMatched([...findInput.matchFound.sort((first, second) => second.reviews - first.reviews)]);
+        } else if(selectValue === 4) {
+            setFindInput({
+                text: findInput.text,
+                matchFound: findInput.matchFound,
+                minPrice: findInput.minPrice,
+                maxPrice: findInput.maxPrice,
+                minYear: findInput.minYear,
+                maxYear: findInput.maxYear,
+                sort: 4
+            });
+            setMatched([...findInput.matchFound.sort((first, second) => second.stars.reduce((first, second) => first + second) - first.stars.reduce((first, second) => first + second))]);
         };// eslint-disable-next-line
     }, [findInput.matchFound, selectValue])
 

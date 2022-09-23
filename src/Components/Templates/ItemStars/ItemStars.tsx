@@ -1,17 +1,17 @@
 import s from './ItemStars.module.sass';
 
 interface IItemStars {
-    stars: string[];
+    stars: number[];
 }
 
 export const ItemStars = ({ stars }: IItemStars) => {
     return (
         <>
-            {stars.map((item, index) => item === "full" ? (
+            {stars.map((item, index) => item === 2 ? (
                 <div className={s.stars} key={index}>
                     <div className={s.starsFull}></div>
                 </div>
-            ) : (item === "half" ? (
+            ) : (item === 1 ? (
                 <div className={s.stars} key={index}>
                     <div className={s.starsHalf}></div>
                 </div>

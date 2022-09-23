@@ -40,7 +40,7 @@ export interface IDataTemplate {
 	url: string;
 	tags: string[];
 	imgSrc: string;
-	stars: string[];
+	stars: number[];
 	reviews: number;
 	description: string;
 	country: string;
