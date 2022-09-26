@@ -11,19 +11,40 @@
 		display: flex
 		flex-direction: column
 		justify-content: center
-		min-width: 15vw
-		padding: 2vh 2vw
+		width: 260px
+		padding: 20px 15px
 		background-color: #fff
 		border-radius: 10px
 		&Inputs
+			position: relative
 			display: flex
 			flex-direction: column
-			gap: 1vw
-			align-items: flex-start
-			margin-bottom: 1vw
+			align-items: center
+			margin-bottom: 35px
 			outline: none
+			padding: 0 15px
+			&Error
+				opacity: 1
+				position: absolute
+				bottom: -20px
+				left: 20px
+				color: red
+				font-family: 'Montserrat'
+				font-size: 12px
+				transition: 1s
+			&Hiden
+				opacity: 0
+				position: absolute
+				bottom: -20px
+				left: 20px
+				color: red
+				font-family: 'Montserrat'
+				font-size: 12px
+				transition: 1s
 			&Email
+				width: 100%
 				position: relative
+				margin-bottom: 10px
 				input
 					padding: 8px 8px
 					width: 100%
@@ -41,7 +62,9 @@
 					font-family: 'Montserrat'
 					font-size: 11px
 			&Password
+				width: 100%
 				position: relative
+				margin-bottom: 5px
 				&:before
 					content: 'Password'
 					display: block
@@ -59,8 +82,12 @@
 					width: 100%
 					outline: none
 			&Remember
+				width: 100%
 				display: flex
-				gap: 15px
+				justify-content: flex-start
+				gap: 10px
+				font-family: 'Montserrat'
+				font-size: 14px
 		&Btn
 			display: flex
 			justify-content: space-between
@@ -81,3 +108,21 @@
 				color: white
 				font-family: 'Montserrat'
 				font-size: 14px
+
+@media ( max-width: 1050px )
+	.autentication
+		&Form
+			&Inputs
+				&Email
+					margin-bottom: 10px
+				&Password
+					margin-bottom: 5px
+
+@media ( max-width: 520px )
+	.autentication
+		&Form
+			&Inputs
+				&Email
+					margin-bottom: 10px
+				&Password
+					margin-bottom: 5px

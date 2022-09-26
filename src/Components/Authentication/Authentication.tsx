@@ -1,4 +1,4 @@
-import { FormEvent, useRef } from 'react';
+import { FormEvent, useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { useGlobalContext } from '../Context/Context';
 import s from './Authentication.module.sass';
@@ -6,6 +6,8 @@ import s from './Authentication.module.sass';
 export const Authentication = () => {
 
 	const { authentication, setAuthentication } = useGlobalContext();
+
+	const [invalid, setInvalid] = useState<boolean>(false);
 
 	let redirect = useNavigate();
 	const rememberMe = useRef(null);
@@ -20,12 +22,14 @@ export const Authentication = () => {
 				email: authentication.email,
 				rememberMe: false
 			})
+			setInvalid(false);
 			if(authentication.rememberMe) {
 				localStorage.setItem('rememberMe', 'true')
 			}
 			redirect('/');
 		} else {
 			console.error('Invalid email or password!');
+			setInvalid(true);
 		}
 	}
 
@@ -60,7 +64,7 @@ export const Authentication = () => {
 							)} required />
 					</div>
 					<div className={s.autenticationFormInputsPassword}>
-						<input type="pass" name="password" placeholder="admin" value={authentication.password} onChange={(e) => setAuthentication(
+						<input type="password" name="password" placeholder="admin" value={authentication.password} onChange={(e) => setAuthentication(
 							{
 								authorization: authentication.authorization,
 								key: authentication.key,
@@ -74,11 +78,13 @@ export const Authentication = () => {
 						<input type="checkbox" name='rememberMe' checked={authentication.rememberMe} ref={rememberMe} onChange={() => toogleCheck()} />
 						<label htmlFor="rememberMe">Remember me?</label>
 					</div>
+					<div className={invalid ? s.autenticationFormInputsError : s.autenticationFormInputsHiden }>Invalid email or password(</div>
 				</div>
 				<div className={s.autenticationFormBtn}>
 					<button type="submit" className={s.autenticationFormBtnLogin} onClick={(e) => checkDate(e)} >Войти</button>
 					<button type="submit" className={s.autenticationFormBtnRegistration}>Зарегестрироватся</button>
 				</div>
+				
 			</form>
 		</section>
 	)
