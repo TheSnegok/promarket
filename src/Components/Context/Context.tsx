@@ -1,10 +1,15 @@
 import { createContext, FC, useContext, useState } from "react";
-import { articleList, hitsMenu, hitsSlideItems, stockMenu, stockSlideItems, regions, MenuListItems, MenuInfoItems, MenuInfoItemsSecond, MenuInfoItemsThird, footerSectionList, footerMenu } from '../../api/api';
+import { articleList, hitsMenu, hitsSlideItems, stockMenu, stockSlideItems, regions, MenuListItems, footerSectionList, footerMenu } from '../../api/api';
 
 interface IMenuListItems {
 	src: string;
 	description: string;
 	text: string;
+	list?: {
+		first: IMenuInfoItems[][],
+		second: IMenuInfoItems[],
+		third: IMenuInfoItems[]
+	}
 };
 
 interface IMenuInfoItems {
@@ -14,9 +19,6 @@ interface IMenuInfoItems {
 
 interface IMenu {
 	MenuListItems: IMenuListItems[];
-	MenuInfoItems: IMenuInfoItems[][];
-	MenuInfoItemsSecond: IMenuInfoItems[];
-	MenuInfoItemsThird: IMenuInfoItems[];
 }
 
 interface IData {
@@ -140,10 +142,7 @@ export const Context = createContext<IContext>({
 		articleList,
 		regionsList: regions,
 		menu: {
-			MenuListItems,
-			MenuInfoItems,
-			MenuInfoItemsSecond,
-			MenuInfoItemsThird
+			MenuListItems
 		},
 		footer: {
 			footerSectionList,
@@ -224,10 +223,7 @@ export const Provider: FC = ({ children }) => {
 		articleList,
 		regionsList: regions,
 		menu: {
-			MenuListItems,
-			MenuInfoItems,
-			MenuInfoItemsSecond,
-			MenuInfoItemsThird
+			MenuListItems
 		},
 		footer: {
 			footerSectionList,

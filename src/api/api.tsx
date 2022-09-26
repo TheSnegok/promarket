@@ -26,116 +26,144 @@ export const footerSectionList = [['/', 'Плитка'], ['/', 'Сантехни
 export const footerMenu = [['/', 'Оплата'], ['/', 'Доставка'], ['/', 'Поставщикам'], ['/', 'Статьи'], ['/', 'Контакты']];
 
 export const MenuListItems = [
-	{ src: tile, description: "Tile", text: "Плитка" },
-	{ src: plumbing, description: "Plumbing", text: "Сантехника" },
-	{ src: bathroomFurniture, description: "Bathroom Furniture", text: "Мебель для ванной" },
-	{ src: Electronics, description: "Electronics", text: "Электроника и бытовая техника" },
-	{ src: heating, description: "Heating", text: "Отопление" },
-	{ src: flooring, description: "Flooring", text: "Напольное покрытие" }
-];
-
-export const MenuInfoItems = [
-	[
-		{
-			text: "Ванны",
-			url: "/"
-		}, {
-			text: "Ванны 150 см",
-			url: "/"
-		}, {
-			text: "Ванны 160 см",
-			url: "/"
-		}, {
-			text: "Ванны 170 см",
-			url: "/"
-		}, {
-			text: "Еще",
-			url: "/"
+	{
+		src: tile,
+		description: "Tile",
+		text: "Плитка",
+		list: undefined
+	},
+	{
+		src: plumbing,
+		description: "Plumbing",
+		text: "Сантехника",
+		list: {
+			first: [
+				[
+					{
+						text: "Ванны",
+						url: "/"
+					}, {
+						text: "Ванны 150 см",
+						url: "/"
+					}, {
+						text: "Ванны 160 см",
+						url: "/"
+					}, {
+						text: "Ванны 170 см",
+						url: "/"
+					}, {
+						text: "Еще",
+						url: "/"
+					}
+				],
+				[
+					{
+						text: "Унитазы",
+						url: "/"
+					}, {
+						text: "2 режима смыва",
+						url: "/"
+					}, {
+						text: "Без ободка",
+						url: "/"
+					}, {
+						text: "Подвесные",
+						url: "/"
+					}, {
+						text: "Еще",
+						url: "/"
+					}
+				],
+				[
+					{
+						text: "Раковины",
+						url: "/"
+					}, {
+						text: "Шириной 40 см",
+						url: "/"
+					}, {
+						text: "Шириной 50 см",
+						url: "/"
+					}, {
+						text: "Шириной 60 см",
+						url: "/"
+					}, {
+						text: "Еще",
+						url: "/"
+					}
+				],
+				[
+					{
+						text: "Смесители",
+						url: "/"
+					}, {
+						text: "Кухонные мойки Ulgran",
+						url: "/"
+					}, {
+						text: "Однорычажные для кухни",
+						url: "/"
+					}, {
+						text: "Премиальные бренда Webert",
+						url: "/"
+					}, {
+						text: "Еще",
+						url: "/"
+					}
+				],
+			],
+			second: [
+				{ url: "/", text: 'Душевые кабины, уголки' },
+				{ url: "/", text: 'Биде' },
+				{ url: "/", text: 'Душевые боксы' },
+				{ url: "/", text: 'Душевые ограждения' },
+				{ url: "/", text: 'Душевые поддоны' },
+				{ url: "/", text: 'Душевые трапы и лотки' },
+				{ url: "/", text: 'Инсталляции' },
+				{ url: "/", text: 'Сливные трапы, желоба' },
+				{ url: "/", text: 'Душевые гарнитуры' },
+				{ url: "/", text: 'Душевые системы' },
+				{ url: "/", text: 'Душевые панели' },
+				{ url: "/", text: 'Верхние души' },
+				{ url: "/", text: 'Гигиенические души' },
+				{ url: "/", text: 'Аксессуары для ванной' }
+			],
+			third: [
+				{ url: "/", text: "Аксессуары для общественных санузлов" },
+				{ url: "/", text: "Комплектующие" },
+				{ url: "/", text: "Кухонные мойки" },
+				{ url: "/", text: "Гидромассаж" },
+				{ url: "/", text: "Трубы и фитинги" },
+				{ url: "/", text: "Изделия для инвалидов" },
+				{ url: "/", text: "Инструменты сантехнические" },
+				{ url: "/", text: "Писсуары" },
+				{ url: "/", text: "Фильтры" },
+			]
 		}
-	],
-	[
-		{
-			text: "Унитазы",
-			url: "/"
-		}, {
-			text: "2 режима смыва",
-			url: "/"
-		}, {
-			text: "Без ободка",
-			url: "/"
-		}, {
-			text: "Подвесные",
-			url: "/"
-		}, {
-			text: "Еще",
-			url: "/"
-		}
-	],
-	[
-		{
-			text: "Раковины",
-			url: "/"
-		}, {
-			text: "Шириной 40 см",
-			url: "/"
-		}, {
-			text: "Шириной 50 см",
-			url: "/"
-		}, {
-			text: "Шириной 60 см",
-			url: "/"
-		}, {
-			text: "Еще",
-			url: "/"
-		}
-	],
-	[
-		{
-			text: "Смесители",
-			url: "/"
-		}, {
-			text: "Кухонные мойки Ulgran",
-			url: "/"
-		}, {
-			text: "Однорычажные для кухни",
-			url: "/"
-		}, {
-			text: "Премиальные бренда Webert",
-			url: "/"
-		}, {
-			text: "Еще",
-			url: "/"
-		}
-	],
-];
-
-export const MenuInfoItemsSecond = [
-	{ url: "/", text: 'Душевые кабины, уголки' },
-	{ url: "/", text: 'Биде' },
-	{ url: "/", text: 'Душевые боксы' },
-	{ url: "/", text: 'Душевые ограждения' },
-	{ url: "/", text: 'Душевые поддоны' },
-	{ url: "/", text: 'Душевые трапы и лотки' },
-	{ url: "/", text: 'Инсталляции' },
-	{ url: "/", text: 'Сливные трапы, желоба' },
-	{ url: "/", text: 'Душевые гарнитуры' },
-	{ url: "/", text: 'Душевые системы' },
-	{ url: "/", text: 'Душевые панели' },
-	{ url: "/", text: 'Верхние души' },
-	{ url: "/", text: 'Гигиенические души' },
-	{ url: "/", text: 'Аксессуары для ванной' }
-];
-
-export const MenuInfoItemsThird = [
-	{ url: "/", text: "Аксессуары для общественных санузлов" },
-	{ url: "/", text: "Комплектующие" },
-	{ url: "/", text: "Кухонные мойки" },
-	{ url: "/", text: "Гидромассаж" },
-	{ url: "/", text: "Трубы и фитинги" },
-	{ url: "/", text: "Изделия для инвалидов" },
-	{ url: "/", text: "Инструменты сантехнические" },
-	{ url: "/", text: "Писсуары" },
-	{ url: "/", text: "Фильтры" },
+	},
+	{
+		src: bathroomFurniture,
+		description: "Bathroom Furniture",
+		text: "Мебель для ванной",
+		list: undefined
+	},
+	{
+		src: Electronics,
+		description: "Electronics",
+		text: "Электроника и бытовая техника",
+		list: undefined
+	},
+	{
+		src: heating,
+		description: "Heating",
+		text: "Отопление",
+		list: undefined
+	},
+	{
+		src: flooring,
+		description: "Flooring",
+		text: "Напольное покрытие",
+		list: undefined
+	}
 ];
 
 export const regions = ["Київ", "Харків", "Запоріжжя", "Суми", "Чернігів", "Полтава", "Дніпропетровськ", "Кропівницький", "Херсон", "Миколаїв", "Черкаси", "Одесса", "Вінниця"];

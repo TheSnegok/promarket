@@ -97,7 +97,7 @@ const Menu: FC = () => {
 										(
 											<>
 												<div className={s.wrapperFirst}>
-													{data.menu.MenuInfoItems.map(mas => (
+													{data.menu.MenuListItems[1].list?.first.map(mas => (
 														<div className={s.columnWrapper} key={mas[0].text}>
 															<span className={s.columnWrapperHeader}>{mas[0].text}</span>
 															<ul>
@@ -127,7 +127,7 @@ const Menu: FC = () => {
 												</div>
 												<div className={s.wrapperSecond}>
 													<ul>
-														{data.menu.MenuInfoItemsSecond.map((item, index) => (
+														{data.menu.MenuListItems[1].list?.second.map((item, index) => (
 															<li key={index} >
 																<Link to={item.url}>{item.text}</Link>
 															</li>
@@ -136,7 +136,7 @@ const Menu: FC = () => {
 												</div>
 												<div className={s.wrapperThird}>
 													<ul>
-														{data.menu.MenuInfoItemsThird.map((item, index) => (
+														{data.menu.MenuListItems[1].list?.third.map((item, index) => (
 															<li key={index}>
 																<Link to={item.url}>{item.text}</Link>
 															</li>
