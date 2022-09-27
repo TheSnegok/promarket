@@ -99,7 +99,7 @@ const Menu: FC = () => {
 												<div className={s.columnWrapper} key={mas[0].text}>
 													<span className={s.columnWrapperHeader}>{mas[0].text}</span>
 													{mas.map((item, index) => index > 0 && (
-														<ul>
+														<ul key={item.text}>
 															<li>
 																<Link to={item.url}>
 																	<span>{item.text}</span>
