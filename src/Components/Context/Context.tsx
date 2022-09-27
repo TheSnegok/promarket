@@ -17,16 +17,12 @@ interface IMenuInfoItems {
 	url: string;
 };
 
-interface IMenu {
-	MenuListItems: IMenuListItems[];
-}
-
 interface IData {
 	hits: IHits;
 	stock: IStock;
 	articleList: string[][];
 	regionsList: string[];
-	menu: IMenu;
+	menu: IMenuListItems[];
 	footer: {
 		footerSectionList: string[][];
 		footerMenu: string[][];
@@ -141,9 +137,7 @@ export const Context = createContext<IContext>({
 		},
 		articleList,
 		regionsList: regions,
-		menu: {
-			MenuListItems
-		},
+		menu: MenuListItems,
 		footer: {
 			footerSectionList,
 			footerMenu
@@ -222,9 +216,7 @@ export const Provider: FC = ({ children }) => {
 		},
 		articleList,
 		regionsList: regions,
-		menu: {
-			MenuListItems
-		},
+		menu: MenuListItems,
 		footer: {
 			footerSectionList,
 			footerMenu

@@ -81,7 +81,7 @@ const Menu: FC = () => {
 						<div className={s.border}></div>
 						<div className={s.hover}>
 							<div className={s.hoverSections}>
-								{data.menu.MenuListItems.map((item, index) => (
+								{data.menu.map((item, index) => (
 									<div key={item.description} className={info === index ? s.wrapperSectionsActive : s.wrapperSections} onMouseEnter={() => setInfo(index)}>
 										<img src={item.src} alt={item.description} />
 										<span>{item.text}</span>
@@ -90,67 +90,45 @@ const Menu: FC = () => {
 							</div>
 							<div className={s.hoverInfo}>
 								<div className={s.hoverInfoHeader}>
-									<span>{data.menu.MenuListItems[info].text}</span>
+									<span>{data.menu[info].text}</span>
 								</div>
 								<div className={s.wrapper}>
-									{info === 1 ?
-										(
-											<>
-												<div className={s.wrapperFirst}>
-													{data.menu.MenuListItems[1].list?.first.map(mas => (
-														<div className={s.columnWrapper} key={mas[0].text}>
-															<span className={s.columnWrapperHeader}>{mas[0].text}</span>
-															<ul>
-																<li>
-																	<Link to={mas[1].url}>
-																		<span>{mas[1].text}</span>
-																	</Link>
-																</li>
-																<li>
-																	<Link to={mas[2].url}>
-																		<span>{mas[2].text}</span>
-																	</Link>
-																</li>
-																<li>
-																	<Link to={mas[2].url}>
-																		<span>{mas[3].text}</span>
-																	</Link>
-																</li>
-																<li>
-																	<Link to={mas[2].url}>
-																		<span>{mas[4].text}</span>
-																	</Link>
-																</li>
-															</ul>
-														</div>
+									<>
+										<div className={s.wrapperFirst}>
+											{data.menu[info].list?.first.map(mas => (
+												<div className={s.columnWrapper} key={mas[0].text}>
+													<span className={s.columnWrapperHeader}>{mas[0].text}</span>
+													{mas.map((item, index) => index > 0 && (
+														<ul>
+															<li>
+																<Link to={item.url}>
+																	<span>{item.text}</span>
+																</Link>
+															</li>
+														</ul>
 													))}
 												</div>
-												<div className={s.wrapperSecond}>
-													<ul>
-														{data.menu.MenuListItems[1].list?.second.map((item, index) => (
-															<li key={index} >
-																<Link to={item.url}>{item.text}</Link>
-															</li>
-														))}
-													</ul>
-												</div>
-												<div className={s.wrapperThird}>
-													<ul>
-														{data.menu.MenuListItems[1].list?.third.map((item, index) => (
-															<li key={index}>
-																<Link to={item.url}>{item.text}</Link>
-															</li>
-														))}
-													</ul>
-												</div>
-
-											</>
-										) : (
-											<div className={s.wrapperFirst}>
-												Comming soon...
-											</div>
-										)
-									}
+											))}
+										</div>
+										<div className={s.wrapperSecond}>
+											<ul>
+												{data.menu[info].list?.second.map((item, index) => (
+													<li key={index} >
+														<Link to={item.url}>{item.text}</Link>
+													</li>
+												))}
+											</ul>
+										</div>
+										<div className={s.wrapperThird}>
+											<ul>
+												{data.menu[info].list?.third.map((item, index) => (
+													<li key={index}>
+														<Link to={item.url}>{item.text}</Link>
+													</li>
+												))}
+											</ul>
+										</div>
+									</>
 									<div className={s.wrapperBanner}>
 									</div>
 								</div>
