@@ -25,6 +25,7 @@ export const footerSectionList = [['/', 'Плитка'], ['/', 'Сантехни
 
 export const footerMenu = [['/', 'Оплата'], ['/', 'Доставка'], ['/', 'Поставщикам'], ['/', 'Статьи'], ['/', 'Контакты']];
 
+// in MenuListItems.list.first, first object in massive is subheader
 export const MenuListItems = [
 	{
 		src: tile,
@@ -603,7 +604,81 @@ export const MenuListItems = [
 		src: flooring,
 		description: "Flooring",
 		text: "Напольное покрытие",
-		list: undefined
+		list: {
+			first: [
+				[
+					{
+						text: "Тип",
+						url: "/"
+					}, {
+						text: "Модульные напольные покрытия",
+						url: "/"
+					}, {
+						text: "Рулонные напольные покрытия",
+						url: "/"
+					}, {
+						text: "Подкладка",
+						url: "/"
+					}, {
+						text: "Паркет и террасные доски",
+						url: "/"
+					}, {
+						text: "Еще",
+						url: "/"
+					}
+				],
+				[
+					{
+						text: "Производитель",
+						url: "/"
+					}, {
+						text: "Amorim",
+						url: "/"
+					}, {
+						text: "Betap",
+						url: "/"
+					}, {
+						text: "Flooring",
+						url: "/"
+					}, {
+						text: "Juteks",
+						url: "/"
+					}, {
+						text: "Krono Original",
+						url: "/"
+					}, {
+						text: "Sticker Wall",
+						url: "/"
+					}, {
+						text: "Еще",
+						url: "/"
+					}
+				]
+			],
+			second: [
+				{ url: "/", text: 'Испания' },
+				{ url: "/", text: 'Италия' },
+				{ url: "/", text: 'Австралия' },
+				{ url: "/", text: 'Австрия' },
+				{ url: "/", text: 'Бельгия' },
+				{ url: "/", text: 'Китай' },
+				{ url: "/", text: 'Нидерланды' },
+				{ url: "/", text: 'Германия' },
+				{ url: "/", text: 'Польша' },
+				{ url: "/", text: 'Португалия' },
+				{ url: "/", text: 'Сербия' }
+			],
+			third: [
+				{ url: "/", text: "Модульное покрытие" },
+				{ url: "/", text: "Ламинатное покрытие" },
+				{ url: "/", text: "Садовая дорожка" },
+				{ url: "/", text: "Самоклеевое покрытие" },
+				{ url: "/", text: "Линолеум" },
+				{ url: "/", text: "Ковровое покрытие" },
+				{ url: "/", text: "Утеплительное покрытие" },
+				{ url: "/", text: "Ковролин" }
+			]
+		}
 	}
 ];
 
