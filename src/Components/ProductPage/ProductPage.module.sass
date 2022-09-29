@@ -190,7 +190,6 @@
             height: 100%
             display: flex
             flex-direction: column
-            overflow: hidden
             &Header
                 font-family: Montserrat
                 font-size: 2w
@@ -201,6 +200,7 @@
                 display: flex
                 flex-direction: column
                 gap: 1vw
+                overflow-y: auto
                 &Item
                     font-family: Montserrat
                     display: flex
@@ -248,7 +248,7 @@
                         width: 130px
                         height: 30px
                         padding: 0 30px 0 0
-                        font-size: 14px
+                        font-size: 13px
                         line-height: 30px
                         border-radius: .4vw
                         &::after
@@ -259,7 +259,7 @@
                         width: 130px
                         height: 30px
                         padding: 0 30px 0 0
-                        font-size: 14px
+                        font-size: 13px
                         line-height: 30px
                         box-shadow: 0px 0px 3px 3px rgba(242, 255, 54, 0.5) inset
                         &::after
@@ -270,7 +270,7 @@
                         width: 130px
                         height: 30px
                         padding: 0 30px 0 0
-                        font-size: 14px
+                        font-size: 13px
                         line-height: 30px
                         border-radius: .4vw
                         &::after
@@ -281,7 +281,7 @@
                         width: 130px
                         height: 30px
                         padding: 0 30px 0 0
-                        font-size: 14px
+                        font-size: 13px
                         line-height: 30px
                         border-radius: .4vw
                         box-shadow: 0px 0px 3px 3px rgba(255, 64, 54, 0.5) inset
@@ -319,7 +319,7 @@
                         background-color: rgba(86, 0, 147, .8)
                         border-radius: 5px
 
-@media ( min-width: 800px )
+@media ( max-width: 800px )
     .product
         &Info
             &Main
@@ -327,7 +327,7 @@
                     &Buy
                         width: 15vw
                         height: 4vw
-                        padding: 0 30px 0 0
+                        padding: 0 25px 0 0
                         font-size: 1.5vw
                         line-height: 4vw
                         &::after
@@ -337,7 +337,7 @@
                     &BuyActive
                         width: 15vw
                         height: 4vw
-                        padding: 0 30px 0 0
+                        padding: 0 25px 0 0
                         font-size: 1.5vw
                         line-height: 4vw
                         &::after
@@ -347,8 +347,8 @@
                     &Like
                         width: 15vw
                         height: 4vw
-                        padding: 0 30px 0 0
-                        font-size: 1.5vw
+                        padding: 0 25px 0 0
+                        font-size: 1.3vw
                         line-height: 4vw
                         &::after
                             right: 1.5vw
@@ -357,10 +357,43 @@
                     &LikeActive
                         width: 15vw
                         height: 4vw
-                        padding: 0 30px 0 0
-                        font-size: 1.5vw
+                        padding: 0 25px 0 0
+                        font-size: 1.3vw
                         line-height: 4vw
                         &::after
                             right: 1.5vw
                             height: 2vw
                             width: 2vw
+    
+@media ( max-width: 520px )
+    .product
+        padding: 3vh 20px 3vh 20px
+        &Similars
+            height: 375px
+        &Info
+            &Main
+                &Add
+                    &Buy
+                        width: 15vw
+                        height: 4vw
+                        padding: 0 20px 0 0
+                        font-size: 1.5vw
+                        line-height: 4vw
+                    &BuyActive
+                        width: 15vw
+                        height: 4vw
+                        padding: 0 20px 0 0
+                        font-size: 1.5vw
+                        line-height: 4vw
+                    &Like
+                        width: 15vw
+                        height: 4vw
+                        padding: 0 20px 0 0
+                        font-size: 1.3vw
+                        line-height: 4vw
+                    &LikeActive
+                        width: 15vw
+                        height: 4vw
+                        padding: 0 20px 0 0
+                        font-size: 1.3vw
+                        line-height: 4vw
