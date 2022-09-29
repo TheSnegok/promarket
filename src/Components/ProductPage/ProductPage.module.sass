@@ -211,9 +211,8 @@
                     border-radius: 5px
     &Similars
         height: 550px
-        display: grid
-        grid-auto-columns: 1fr
-        grid-auto-flow: column
+        display: flex
+        justify-content: flex-start
         overflow-x: auto
         overflow-y: hidden
         &::-webkit-scrollbar
@@ -364,12 +363,12 @@
                             right: 1.5vw
                             height: 2vw
                             width: 2vw
-    
+
 @media ( max-width: 520px )
     .product
         padding: 3vh 20px 3vh 20px
         &Similars
-            height: 375px
+            height: 535px
         &Info
             &Main
                 &Add

@@ -136,9 +136,15 @@ export const ProductPage = () => {
 							</div>
 						</div>
 					</div>
-					<div className={s.productSimilars}>
-						{data.hits.slideItems!.filter(item => item.price[0] < product!.price[0] + 5000 && item.price[0] > product!.price[0] - 1000 && item.personalKey !== product!.personalKey).map((item, index) => <SliderItem key={index} item={item}/>)}
-					</div>
+					{
+						data.hits.slideItems!.filter(item => item.price[0] < product!.price[0] + 5000 && item.price[0] > product!.price[0] - 1000 && item.personalKey !== product!.personalKey).length !== 0 && (
+							<div className={s.productSimilars}>
+								{
+									data.hits.slideItems!.filter(item => item.price[0] < product!.price[0] + 5000 && item.price[0] > product!.price[0] - 1000 && item.personalKey !== product!.personalKey).map((item, index) => <SliderItem key={index} item={item} />)
+								}
+							</div>
+						)
+					}
 				</section>
 			)}
 		</>
