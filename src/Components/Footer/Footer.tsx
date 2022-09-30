@@ -1,10 +1,9 @@
 import { FC } from "react";
 import s from './Footer.module.sass';
 import logo from '../../Image/logo.svg';
-import telegram from '../../Image/logo/telegram 1.svg'
-import instagram from '../../Image/logo/instagram 2.svg'
-import whatsApp from '../../Image/logo/whatsApp.svg'
-import yandex from '../../Image/yandex.png'
+import telegram from '../../Image/logo/telegram 1.svg';
+import instagram from '../../Image/logo/instagram 2.svg';
+import whatsApp from '../../Image/logo/whatsApp.svg';
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../Context/Context";
 
@@ -56,9 +55,6 @@ const Footer: FC = () => {
                         <span>
                             <Link to="mail:zakaz@ggpromarket.surge.sh">zakaz@ggpromarket.surge.sh</Link>
                         </span>
-                    </div>
-                    <div className={s.footerLocationYandex}>
-                        <a href="/"><img src={yandex} alt="yandex" /></a>
                     </div>
                 </div>
             </footer>

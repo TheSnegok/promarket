@@ -47,7 +47,7 @@
             input
                 width: 100%
                 text-align: center
-                padding: 2px 0 2px 3px
+                padding: 2px 0 2px 1px
                 outline: none
                 border-radius: 3px
                 border: none
@@ -64,7 +64,7 @@
             input
                 width: 100%
                 text-align: center
-                padding: 2px 0 2px 3px
+                padding: 2px 0 2px 1px
                 outline: none
                 border-radius: 3px
                 border: none
@@ -87,7 +87,7 @@
                     font-size: 12px
                     line-height: 16px
                 input
-                    padding: 1px 0 1px 2px
+                    padding: 1px 0 1px 1px
                     font-size: 12px
             &Low
                 width: 35%
@@ -95,5 +95,33 @@
                     font-size: 12px
                     line-height: 16px
                 input
-                    padding: 1px 0 1px 2px
+                    padding: 1px 0 1px 1px
                     font-size: 12px
+
+@media ( max-width: 520px )
+    .rangeBlock
+        &Text
+            font-size: 10px
+            line-height: 12px
+        &Input
+            input[type=range]
+                &::-webkit-slider-thumb
+                    width: 8px
+                    height: 8px
+        &Numbers
+            &High
+                width: 40%
+                span
+                    font-size: 10px
+                    line-height: 14px
+                input
+                    padding: 1px 0 1px 1px
+                    font-size: 10px
+            &Low
+                width: 40%
+                span
+                    font-size: 10px
+                    line-height: 14px
+                input
+                    padding: 1px 0 1px 1px
+                    font-size: 10px
