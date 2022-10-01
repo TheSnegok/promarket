@@ -1,0 +1,62 @@
+*
+	box-sizing: border-box
+	padding: 0
+	margin: 0
+
+a
+	text-decoration: none
+	color: inherit
+
+li
+	list-style-type: none
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap')
+
+#__next
+	position: relative
+	background: rgba(243, 249, 255, 1)
+	display: flex
+	justify-content: center
+	width: 100%
+	padding: 45px 0 49px 0
+	overflow: hidden
+
+*
+	&::-webkit-scrollbar
+		width: 10px
+		height: 7px
+	&::-webkit-scrollbar-track
+		width: 10px
+	&::-webkit-scrollbar-thumb
+		width: 5px
+		background-color: rgb(215, 215, 215)
+		border-radius: 5px
+
+.container
+	width: 1540px
+
+@media (max-width: 1600px)
+	.container
+		width: 1280px
+
+@media ( max-width: 1350px)
+	.container
+		width: 1023px
+
+@media (max-width: 1050px)
+	#root
+		padding: 20px 0 29px 0
+	.container
+		width: 768px
+
+@media (max-width: 800px)
+	#root
+		padding: 20px 0 29px 0
+	.container
+		width: 500px
+
+@media (max-width: 520px)
+	#root
+		padding: 15px 0 15px 0
+	.container
+		width: 280px

@@ -1,0 +1,494 @@
+.collections
+    width: 100%
+    margin-bottom: 52px
+    &Header
+        display: inline-block
+        text-align: left
+        position: relative
+        font-family: Montserrat
+        font-style: normal
+        font-weight: bold
+        font-size: 30px
+        line-height: 36px
+        color: #000000
+        margin-bottom: 42px
+        &::after
+            content: ''
+            position: absolute
+            width: 100%
+            height: 1px
+            bottom: -5px
+            left: 50%
+            transform: translateX(-50%)
+            background-color: var(--blue-second)
+    &Wrapper
+        display: flex
+        column-gap: 18px
+        height: 500px
+        .WrapperLeft
+            position: relative
+            height: 100%
+            width: 50%
+            overflow: hidden
+            .left
+                width: 100%
+                height: 100%
+                background-image: url('../../public/collection/bigImg.png')
+                background-size: cover
+                transform: scale(1.1, 1.1)
+                transition: 3s
+                &:hover
+                    transform: scale(1, 1)
+                &Header
+                    position: absolute
+                    top: 401px
+                    left: 0
+                    width: 139px
+                    height: 58px
+                    background-color: rgba(59, 185, 184, 0.8)
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    h2
+                        font-family: Montserrat
+                        font-style: normal
+                        font-weight: bold
+                        font-size: 24px
+                        line-height: 30px
+                        color: #FFFFFF
+                &Desckription
+                    position: absolute
+                    left: 21px
+                    bottom: 11px
+                    font-family: Montserrat
+                    font-style: normal
+                    font-weight: 500
+                    font-size: 14px
+                    line-height: 24px
+                    color: #FFFFFF
+        .right
+            width: 50%
+            display: flex
+            flex-direction: column
+            row-gap: 20px
+            &Up
+                height: 240px
+                width: 100%
+                display: flex
+                column-gap: 20px
+                .WrapperUpLeft
+                    position: relative
+                    width: 500px
+                    height: 100%
+                    overflow: hidden
+                &Left
+                    width: 100%
+                    height: 100%
+                    background-image: url('../../public/collection/image 36.png')
+                    background-size: cover
+                    transform: scale(1.1, 1.1)
+                    transition: 3s
+                    &:hover
+                        transform: scale(1,1)
+                .leftHeader
+                    position: absolute
+                    top: 152px
+                    left: 0
+                    width: 158px
+                    height: 48px
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    font-family: Montserrat
+                    font-style: normal
+                    font-weight: bold
+                    font-size: 18px
+                    line-height: 24px
+                    color: #FFFFFF
+                    background-color: rgba(59, 185, 184, 0.8)
+                .leftDesckription
+                    position: absolute
+                    bottom: 10px
+                    left: 20px
+                    font-family: Montserrat
+                    font-style: normal
+                    font-weight: 500
+                    font-size: 14px
+                    line-height: 24px
+                    color: #FFFFFF
+                .WrapperUpRight
+                    position: relative
+                    height: 100%
+                    width: 240px
+                    overflow: hidden
+                &Right
+                    height: 100%
+                    width: 100%
+                    background-image: url('../../public/collection/image 37.png')
+                    background-size: cover
+                    transform: scale(1.1, 1.1)
+                    transition: 3s
+                    &:hover
+                        transform: scale(1, 1)
+                .rightHeader
+                    position: absolute
+                    left: 0
+                    top: 152px
+                    width: 142px
+                    height: 48px
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    font-family: Montserrat
+                    font-style: normal
+                    font-weight: bold
+                    font-size: 18px
+                    line-height: 24px
+                    color: #FFFFFF
+                    background-color: rgba(59, 185, 184, 0.8)
+                .rightDesckription
+                    position: absolute
+                    bottom: 10px
+                    left: 22px
+                    font-family: Montserrat
+                    font-style: normal
+                    font-weight: 500
+                    font-size: 14px
+                    line-height: 24px
+                    color: #FFFFFF
+            &Bot
+                height: 240px
+                width: 100%
+                display: flex
+                column-gap: 20px
+                .WrapperBotLeft
+                    position: relative
+                    height: 100%
+                    width: 240px
+                    overflow: hidden
+                &Left
+                    height: 100%
+                    width: 100%
+                    background-image: url('../../public/collection/image 39.png')
+                    background-size: cover
+                    transform: scale(1.1, 1.1)
+                    transition: 3s
+                    &:hover
+                        transform: scale(1, 1)
+                .leftHeader
+                    position: absolute
+                    left: 0
+                    top: 152px
+                    width: 89px
+                    height: 48px
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    font-family: Montserrat
+                    font-style: normal
+                    font-weight: bold
+                    font-size: 18px
+                    line-height: 24px
+                    color: #FFFFFF
+                    background-color: rgba(59, 185, 184, 0.8)
+                .leftDesckription
+                    position: absolute
+                    left: 20px
+                    bottom: 11px
+                    font-family: Montserrat
+                    font-style: normal
+                    font-weight: 500
+                    font-size: 14px
+                    line-height: 24px
+                    color: #FFFFFF
+                .WrapperBotRight
+                    position: relative
+                    height: 100%
+                    width: 500px
+                    overflow: hidden
+                &Right
+                    width: 100%
+                    height: 100%
+                    background-image: url('../../public/collection/image 38.png')
+                    background-size: cover
+                    transform: scale(1.1, 1.1)
+                    transition: 3s
+                    &:hover
+                        transform: scale(1, 1)
+                .rightHeader
+                    position: absolute
+                    left: 0
+                    top: 152px
+                    width: 123px
+                    height: 48px
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    font-family: Montserrat
+                    font-style: normal
+                    font-weight: bold
+                    font-size: 18px
+                    line-height: 24px
+                    color: #FFFFFF
+                    background-color: rgba(59, 185, 184, 0.8)
+                .rightDesckription
+                    position: absolute
+                    left: 20px
+                    bottom: 11px
+                    padding-left: 20px
+                    font-family: Montserrat
+                    font-style: normal
+                    font-weight: 500
+                    font-size: 14px
+                    line-height: 24px
+                    color: #FFFFFF
+
+@media ( max-width: 1350px )
+    .collections
+        margin-bottom: 30px
+        &Header
+            font-size: 30px
+            line-height: 36px
+            margin-bottom: 30px
+            &::after
+                height: 1px
+                bottom: -5px
+                left: 50%
+        &Wrapper
+            height: 400px
+            .right
+                &Up
+                    .rightHeader
+                        left: 0
+                        top: 100px
+                        width: 158px
+                        height: 48px
+                        font-size: 18px
+                        line-height: 24px
+                    .rightDesckription
+                        left: 10px
+                        bottom: 11px
+                        font-size: 14px
+                        line-height: 24px
+                    .leftHeader
+                        top: 100px
+                        left: 0
+                        width: 158px
+                        height: 48px
+                        font-size: 18px
+                        line-height: 24px
+                    .leftDesckription
+                        bottom: 10px
+                        left: 10px
+                        font-weight: 500
+                        font-size: 14px
+                        line-height: 24px
+                &Bot
+                    .rightHeader
+                        left: 0
+                        top: 100px
+                        width: 123px
+                        height: 48px
+                        font-size: 18px
+                        line-height: 24px
+                    .rightDesckription
+                        left: 0px
+                        bottom: 11px
+                        font-size: 14px
+                        line-height: 24px
+                    .leftHeader
+                        top: 100px
+                        left: 0
+                        width: 89px
+                        height: 48px
+                        font-size: 18px
+                        line-height: 24px
+                    .leftDesckription
+                        bottom: 10px
+                        left: 10px
+                        font-weight: 500
+                        font-size: 14px
+                        line-height: 24px
+
+@media ( max-width: 1050px )
+    .collections
+        height: 910px
+        margin-bottom: 30px
+        &Header
+            font-size: 30px
+            line-height: 36px
+            margin-bottom: 30px
+            &::after
+                height: 1px
+                bottom: -5px
+                left: 50%
+        &Wrapper
+            height: 600px
+            flex-wrap: wrap
+            gap: 15px
+            .WrapperLeft
+                height: 70%
+                width: 100%
+                .left
+                    &Header
+                        top: 320px
+            .right
+                width: 100%
+                &Up
+                    height: 200px
+                    .WrapperUpLeft
+                        width: 65%
+                    .WrapperUpRight
+                        width: 35%
+                    .rightHeader
+                        left: 0
+                        top: 110px
+                        width: 158px
+                        height: 48px
+                        font-size: 18px
+                        line-height: 24px
+                    .rightDesckription
+                        left: 10px
+                        bottom: 11px
+                        font-size: 14px
+                        line-height: 24px
+                    .leftHeader
+                        top: 110px
+                        left: 0
+                        width: 158px
+                        height: 48px
+                        font-size: 18px
+                        line-height: 24px
+                    .leftDesckription
+                        bottom: 10px
+                        left: 10px
+                        font-weight: 500
+                        font-size: 14px
+                        line-height: 24px
+                &Bot
+                    height: 200px
+                    .WrapperBotLeft
+                        width: 35%
+                    .WrapperBotRight
+                        width: 65%
+                    .rightHeader
+                        left: 0
+                        top: 110px
+                        width: 123px
+                        height: 48px
+                        font-size: 18px
+                        line-height: 24px
+                    .rightDesckription
+                        left: 0px
+                        bottom: 11px
+                        font-size: 14px
+                        line-height: 24px
+                    .leftHeader
+                        top: 110px
+                        left: 0
+                        width: 89px
+                        height: 48px
+                        font-size: 18px
+                        line-height: 24px
+                    .leftDesckription
+                        bottom: 10px
+                        left: 10px
+                        font-weight: 500
+                        font-size: 14px
+                        line-height: 24px
+
+@media ( max-width: 520px )
+    .collections
+        height: 505px
+        margin-bottom: 30px
+        &Header
+            font-size: 16px
+            line-height: 20px
+            margin-bottom: 20px
+            &::after
+                bottom: -3px
+        &Wrapper
+            height: 300px
+            gap: 5px
+            .WrapperLeft
+                height: 70%
+                width: 100%
+                .left
+                    &Header
+                        top: 140px
+                        width: 35%
+                        height: 15%
+                        letter-spacing: 0.06em
+                        h2
+                            font-size: 12px
+                    &Desckription
+                        font-size: 10px
+                        left: 10px
+            .right
+                gap: 5px
+                width: 100%
+                &Up
+                    height: 120px
+                    gap: 5px
+                    .WrapperUpLeft
+                        width: 55%
+                    .WrapperUpRight
+                        width: 45%
+                    .rightHeader
+                        left: 0
+                        top: 60px
+                        width: 90px
+                        height: 30px
+                        font-size: 12px
+                        line-height: 24px
+                    .rightDesckription
+                        left: 10px
+                        bottom: 11px
+                        font-size: 10px
+                        line-height: 24px
+                    .leftHeader
+                        top: 60px
+                        left: 0
+                        width: 90px
+                        height: 30px
+                        font-size: 12px
+                        line-height: 24px
+                    .leftDesckription
+                        bottom: 10px
+                        left: 10px
+                        font-weight: 500
+                        font-size: 10px
+                        line-height: 24px
+                &Bot
+                    height: 120px
+                    gap: 5px
+                    .WrapperBotLeft
+                        width: 45%
+                    .WrapperBotRight
+                        width: 55%
+                    .rightHeader
+                        top: 60px
+                        left: 0
+                        width: 90px
+                        height: 30px
+                        font-size: 12px
+                        line-height: 24px
+                    .rightDesckription
+                        bottom: 10px
+                        left: 10px
+                        font-size: 10px
+                        line-height: 24px
+                        padding-left: 0
+                    .leftHeader
+                        top: 60px
+                        left: 0
+                        width: 90px
+                        height: 30px
+                        font-size: 12px
+                        line-height: 24px
+                    .leftDesckription
+                        bottom: 10px
+                        left: 10px
+                        font-weight: 500
+                        font-size: 10px
+                        line-height: 24px
