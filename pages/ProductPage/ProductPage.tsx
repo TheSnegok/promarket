@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
-import { Navigate } from "react-router";
-import { useGlobalContext } from "../Context/Context"
-import { ItemStars } from "../Templates/ItemStars/ItemStars";
+import { useGlobalContext } from "../../Components/Context/Context"
+import { ItemStars } from "../../Components/Templates/ItemStars/ItemStars";
 import s from "./ProductPage.module.sass"
 import chat from "../../Image/hits/messageLogo.svg"
-import { AddsClassForTags } from "../Templates/AddedClassForTag/AddsClassForTags";
-import SliderItem from "../Templates/SliderItem/SliderItem";
-import { PriceDivision } from "../Templates/PriceDivision/PriceDivision";
+import { AddsClassForTags } from "../../Components/Templates/AddedClassForTag/AddsClassForTags";
+import SliderItem from "../../Components/Templates/SliderItem/SliderItem";
+import { PriceDivision } from "../../Components/Templates/PriceDivision/PriceDivision";
+import { useRouter } from "next/router";
+import Image from "next/image";
 
 export const ProductPage = () => {
+
+	const router = useRouter();
 
 	const { product, contextFindItem, contextRemoveItem, contextPushItem, data } = useGlobalContext();
 
@@ -44,7 +47,7 @@ export const ProductPage = () => {
 
 	return (
 		<>
-			{product === null ? <Navigate to="/" /> : (
+			{product === null ? router.push("/") : (
 				<section className={s.product}>
 					<div className={s.productHeader}>
 						<div className={s.productHeaderText}>
@@ -56,13 +59,13 @@ export const ProductPage = () => {
 					</div>
 					<div className={s.productInfo}>
 						<div className={s.productInfoImg}>
-							<img src={product.imgSrc} alt={product.description} />
+							<Image src={product.imgSrc} alt={product.description} />
 							<div className={s.productInfoImgOther}>
-								<img src={product.imgSrc} alt={product!.description} />
-								<img src={product.imgSrc} alt={product!.description} />
-								<img src={product.imgSrc} alt={product!.description} />
-								<img src={product.imgSrc} alt={product!.description} />
-								<img src={product.imgSrc} alt={product!.description} />
+								<Image src={product.imgSrc} alt={product!.description} />
+								<Image src={product.imgSrc} alt={product!.description} />
+								<Image src={product.imgSrc} alt={product!.description} />
+								<Image src={product.imgSrc} alt={product!.description} />
+								<Image src={product.imgSrc} alt={product!.description} />
 							</div>
 						</div>
 						<div className={s.productInfoMain}>

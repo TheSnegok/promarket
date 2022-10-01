@@ -1,8 +1,8 @@
 import { FC, useState } from "react";
 import s from './Likes.module.sass';
-import { useGlobalContext } from "../Context/Context";
-import { ListItem } from "../Templates/ListItem/ListItem";
-import { Preview } from "../Templates/Preview/Preview";
+import { useGlobalContext } from "../../Components/Context/Context";
+import { ListItem } from "../../Components/Templates/ListItem/ListItem";
+import { Preview } from "../../Components/Templates/Preview/Preview";
 
 const Likes: FC = () => {
 

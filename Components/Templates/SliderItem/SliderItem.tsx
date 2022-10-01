@@ -47,13 +47,13 @@ const SliderItem = ({ item }: { item: IDataTemplate }) => {
 	return (
 		<div className={s.item}>
 			<div className={s.itemImg}>
-				<Link href="/product" onClick={pushProduct}>
-					<>
+				<Link href="/product">
+					<a onClick={pushProduct}>
 						<div className={s.itemImgTags}>
 							{item.tags.map(tag => AddsClassForTags(tag))}
 						</div>
 						<Image src={item.imgSrc} alt={item.imgSrc.toString()} className={s.itemImgMain} />
-					</>
+					</a>
 				</Link>
 				<button className={s.itemImgFastLook} onClick={() => setModal({
 					visible: true,

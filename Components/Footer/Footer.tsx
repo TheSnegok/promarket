@@ -22,7 +22,11 @@ const Footer: FC = () => {
                         </ul>
                     </div>
                     <div className={s.footerSectionLogo}>
-                        <Link href="/"><Image src={Logo} alt="logo" /></Link>
+                        <Link href="/">
+                            <a>
+                                <Image src={Logo} alt="logo" />
+                            </a>
+                        </Link>
                         <span>© 2022 <Link href="/">ggpromarket.surge.sh</Link></span>
                     </div>
                 </div>
@@ -42,16 +46,28 @@ const Footer: FC = () => {
                         <span>Вс: выходной</span>
                     </div>
                     <div className={s.footerContactsSocial}>
-                        <a href="/"><Image src={WhatsApp} alt="whatsApp" /></a>
-                        <a href="/"><Image src={Instagram} alt="instagram" /></a>
-                        <a href="/"><Image src={Telegram} alt="telegram" /></a>
+                        <Link href="/">
+                            <a href="">
+                                <Image src={WhatsApp} alt="whatsApp" />
+                            </a>
+                        </Link>
+                        <Link href="/">
+                            <a>
+                                <Image src={Instagram} alt="instagram" />
+                            </a>
+                        </Link>
+                        <Link href="/">
+                            <a>
+                                <Image src={Telegram} alt="telegram" />
+                            </a>
+                        </Link>
                     </div>
                 </div>
                 <div className={s.footerLocation}>
                     <div className={s.footerLocationStreet}>
                         <span>Склад:</span>
                         <span>
-                            <a href="https://goo.gl/maps/je6Thfut32U1v1zk8">Київ, ул. Радосинська, 6 стр 11</a>
+                            <Link href="https://goo.gl/maps/je6Thfut32U1v1zk8">Київ, ул. Радосинська, 6 стр 11</Link>
                         </span>
                         <span>
                             <Link href="mail:zakaz@ggpromarket.surge.sh">zakaz@ggpromarket.surge.sh</Link>

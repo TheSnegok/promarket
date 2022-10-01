@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { forwardRef } from "react";
 import s from './Brands.module.sass';
 import hansgrohe from '../../public/brands/image 17.png';
 import grohe from '../../public/brands/image 16.png';
@@ -42,21 +42,25 @@ const listLogoBrands: (StaticImageData | string)[][] = [
     [lvi, "/"],
 ];
 
-const Brands: FC = () => {
-    return (
-        <section className={s.brands}>
-            <h1 className={s.brandsHeader}>Популярные бренды</h1>
-            <div className={s.brandsWrapper}>
-                {listLogoBrands.map((item, index) => (
-                    <div className={s.brandsLogo} key={index}>
-                        <Link href={item[1]}>
-                            <Image src={item[0]} alt={`${index}`} />
-                        </Link>
-                    </div>
-                ))}
-            </div>
-        </section>
-    )
+const Brands = () => {
+    {
+        return (
+            <section className={s.brands}>
+                <h1 className={s.brandsHeader}>Популярные бренды</h1>
+                <div className={s.brandsWrapper}>
+                    {listLogoBrands.map((item, index) => (
+                        <div className={s.brandsLogo} key={index}>
+                            <Link href={item[1].toString()}>
+                                <a>
+                                    <Image src={item[0]} alt={`${index}`} />
+                                </a>
+                            </Link>
+                        </div>
+                    ))}
+                </div>
+            </section>
+        )
+    }
 }
 
 export default Brands;
