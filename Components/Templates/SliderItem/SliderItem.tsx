@@ -75,7 +75,7 @@ const SliderItem = ({ item }: { item: IDataTemplate }) => {
 				<div className={s.message}>
 					<Link href="/">
 						<a>
-							<img src={chat} alt="chat" />
+							<Image src={chat} alt="chat" />
 							<span className={s.messageCount}>{item.reviews}</span>
 						</a>
 					</Link>

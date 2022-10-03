@@ -154,18 +154,24 @@ const Menu: FC = () => {
 					</div>
 				</div>
 				<div className={s.catalogHover}></div>
-				<Link href={"/"} className={s.stonks}>
-					<div className={s.stonksText}>АКЦИИ</div>
+				<Link href={"/"}>
+					<a className={s.stonks}>
+						<div className={s.stonksText}>АКЦИИ</div>
+					</a>
 				</Link>
-				<Link href={"/"} className={s.brand}>
-					<div className={s.brandText}>БРЕНДЫ</div>
+				<Link href={"/"}>
+					<a className={s.brand}>
+						<div className={s.brandText}>БРЕНДЫ</div>
+					</a>
 				</Link>
 			</div>
 			<div className={s.menuSearcher}>
 				<input type="text" className={s.input} placeholder='Что вы ищете?' value={findInput.text} onChange={(e) => checkMatch(e)} onKeyDown={(e) => (e.key === 'Enter' && findInput.text !== '' && location.pathname !== "/search") && router.push('/search')} />
 				<div className={s.icon}>
 					<Link href={findInput.text === '' ? '#' : '/search'}>
-						<img src={loop} alt="search" className={s.loop} />
+						<a>
+							<Image src={loop} alt="search" className={s.loop} />
+						</a>
 					</Link>
 				</div>
 				<div className={s.menuSearcherMatches}>
@@ -181,23 +187,25 @@ const Menu: FC = () => {
 			<div className={s.menuActions} >
 				<div className={s.cabinet}>
 					<Link href={"/profile"} >
-						<img src={cabinet} alt="cabinet" className={s.cabinetImg} />
+						<a href="">
+							<Image src={cabinet} alt="cabinet" className={s.cabinetImg} />
+						</a>
 					</Link>
 				</div>
 				<div className={s.desired}>
 					<Link href={"/likes"} >
-						<>
-							<img src={desire} alt="desired" className={s.desiredImg} />
+						<a>
+							<Image src={desire} alt="desired" className={s.desiredImg} />
 							{likes.count === 0 ? null : <div className={s.desiredAlert}>{likes.count}</div>}
-						</>
+						</a>
 					</Link>
 				</div>
 				<div className={s.shopping}>
 					<Link href={"/basket"} >
-						<>
-							<img src={shoppingCart} alt="shoppingCart" className={s.shoppingImg} />
+						<a>
+							<Image src={shoppingCart} alt="shoppingCart" className={s.shoppingImg} />
 							{basket.count === 0 ? null : <div className={s.shoppingAlert}>{basket.count}</div>}
-						</>
+						</a>
 					</Link>
 				</div>
 			</div >

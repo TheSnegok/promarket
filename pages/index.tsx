@@ -1,4 +1,3 @@
-import { useGlobalContext } from "../Components/Context/Context";
 import Banners from "../Components/Banners/Banners";
 import Icons from "../Components/Icons/Icons";
 import Collections from "../Components/Collections/Collections";
@@ -9,19 +8,16 @@ import Article from "../Components/Article/Article";
 import Seo from "../Components/Seo/Seo";
 
 const App = () => {
-
-    const { authentication } = useGlobalContext();
-
     return (
         <>
-            <Banners/>
-            <Icons/>
-            <Collections/>
-            <Hits/>
-            <Stock/>
-            <Brands/>
-            <Article/>
-            <Seo/>
+            <Banners />
+            <Icons />
+            <Collections />
+            <Hits />
+            <Stock />
+            <Brands />
+            <Article />
+            <Seo />
         </>
     )
 }

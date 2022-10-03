@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { articleText } from "../../../pages/api/api";
 import { IArticle } from "../../Context/Context";
 import s from "./ArticleSlide.module.sass";
@@ -16,7 +17,7 @@ const ArticleSlide = ({ image, articleHeader, setArticle }: IArticleSlideProps) 
 
     return (
         <article className={s.itemArticle} >
-            <img src={image} alt={articleHeader} />
+            <Image src={image} alt={articleHeader} />
             <a href="/article" onClick={pushArticle}>
                 <div className={s.itemArticleHeader}>
                     <span>{articleHeader}</span>

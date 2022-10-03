@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useGlobalContext } from "../../Components/Context/Context"
 import { ItemStars } from "../../Components/Templates/ItemStars/ItemStars";
-import s from "./ProductPage.module.sass"
+import s from "../../Styles/components/Product.module.sass"
 import chat from "../../Image/hits/messageLogo.svg"
 import { AddsClassForTags } from "../../Components/Templates/AddedClassForTag/AddsClassForTags";
 import SliderItem from "../../Components/Templates/SliderItem/SliderItem";
@@ -9,7 +9,7 @@ import { PriceDivision } from "../../Components/Templates/PriceDivision/PriceDiv
 import { useRouter } from "next/router";
 import Image from "next/image";
 
-export const ProductPage = () => {
+export const Product = () => {
 
 	const router = useRouter();
 

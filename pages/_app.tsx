@@ -1,13 +1,11 @@
-import { Provider } from "../Components/Context/Context";
 import { Wrapper } from "../Components/Wrapper/Wrapper";
 import '../Styles/main.sass';
+import React from 'react'
 
 const Promarket = ({ Component, pageProps }) => (
-	<Provider>
-		<Wrapper>
-			<Component {...pageProps} />
-		</Wrapper>
-	</Provider>
+	<Wrapper>
+		<Component {...pageProps} />
+	</Wrapper>
 );
 
 export default Promarket;
