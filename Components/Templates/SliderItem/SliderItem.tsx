@@ -74,17 +74,19 @@ const SliderItem = ({ item }: { item: IDataTemplate }) => {
 				</div>
 				<div className={s.message}>
 					<Link href="/">
-						<>
+						<a>
 							<img src={chat} alt="chat" />
 							<span className={s.messageCount}>{item.reviews}</span>
-						</>
+						</a>
 					</Link>
 				</div>
 			</div>
-			<Link href="/product" onClick={pushProduct}>
-				<div className={s.itemDescription}>
-					{item.description}
-				</div>
+			<Link href="/product">
+				<a onClick={pushProduct}>
+					<div className={s.itemDescription}>
+						{item.description}
+					</div>
+				</a>
 			</Link>
 			<div className={s.itemCountry}>
 				<span>{item.country}</span>

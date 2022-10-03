@@ -8,7 +8,6 @@ import { IDataTemplate, useGlobalContext } from "../Context/Context";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
-import Likes from "~/../pages/LikesPage/Likes";
 
 const Menu: FC = () => {
 
@@ -85,8 +84,14 @@ const Menu: FC = () => {
 							<div className={s.hoverSections}>
 								{data.menu.map((item, index) => (
 									<div key={item.description} className={info === index ? s.wrapperSectionsActive : s.wrapperSections} onMouseEnter={() => setInfo(index)}>
-										<Image src={item.src} alt={item.description} />
-										<span>{item.text}</span>
+										<div className={s.iconWrapper}>
+											<Image src={item.src} alt={item.description} className={s.iconWrapperImage} />
+										</div>
+										<div className={s.headerWrapper}>
+											<span>
+												{item.text}
+											</span>
+										</div>
 									</div>
 								))}
 							</div>
@@ -104,7 +109,9 @@ const Menu: FC = () => {
 														<ul key={item.text}>
 															<li>
 																<Link href={item.url}>
-																	<span>{item.text}</span>
+																	<a>
+																		<span>{item.text}</span>
+																	</a>
 																</Link>
 															</li>
 														</ul>
@@ -116,7 +123,11 @@ const Menu: FC = () => {
 											<ul>
 												{data.menu[info].list?.second.map((item, index) => (
 													<li key={index} >
-														<Link href={item.url}>{item.text}</Link>
+														<Link href={item.url}>
+															<a href="">
+																{item.text}
+															</a>
+														</Link>
 													</li>
 												))}
 											</ul>
@@ -125,7 +136,11 @@ const Menu: FC = () => {
 											<ul>
 												{data.menu[info].list?.third.map((item, index) => (
 													<li key={index}>
-														<Link href={item.url}>{item.text}</Link>
+														<Link href={item.url}>
+															<a>
+																{item.text}
+															</a>
+														</Link>
 													</li>
 												))}
 											</ul>

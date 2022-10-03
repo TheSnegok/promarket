@@ -27,12 +27,16 @@ const Footer: FC = () => {
                                 <Image src={Logo} alt="logo" />
                             </a>
                         </Link>
-                        <span>© 2022 <Link href="/">ggpromarket.surge.sh</Link></span>
+                        <span>© 2022 <Link href="/">
+                            <a>
+                                ggpromarket.surge.sh
+                            </a>
+                        </Link></span>
                     </div>
                 </div>
                 <div className={s.footerMenu}>
                     <ul>
-                        {data.footer.footerMenu.map((item, index) => <li key={index}><Link href={item[0]}>{item[1]}</Link></li>)}
+                        {data.footer.footerMenu.map((item, index) => <li key={index}><Link href={item[0]}><a>{item[1]}</a></Link></li>)}
                     </ul>
                 </div>
                 <div className={s.footerContacts}>
@@ -67,10 +71,10 @@ const Footer: FC = () => {
                     <div className={s.footerLocationStreet}>
                         <span>Склад:</span>
                         <span>
-                            <Link href="https://goo.gl/maps/je6Thfut32U1v1zk8">Київ, ул. Радосинська, 6 стр 11</Link>
+                            <Link href="https://goo.gl/maps/je6Thfut32U1v1zk8"><a>Київ, ул. Радосинська, 6 стр 11</a></Link>
                         </span>
                         <span>
-                            <Link href="mail:zakaz@ggpromarket.surge.sh">zakaz@ggpromarket.surge.sh</Link>
+                            <Link href="mail:zakaz@ggpromarket.surge.sh"><a>zakaz@ggpromarket.surge.sh</a></Link>
                         </span>
                     </div>
                 </div>
