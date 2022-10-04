@@ -51,7 +51,7 @@ const Brands = () => {
                         <div className={s.brandsLogo} key={index}>
                             <Link href={item[1].toString()}>
                                 <a>
-                                    <Image src={item[0]} alt={`${index}`}  />
+                                    <Image src={item[0]} alt={`${index}`} />
                                 </a>
                             </Link>
                         </div>
