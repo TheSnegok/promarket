@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
 import { FormEvent, useRef, useState } from 'react';
 import { useGlobalContext } from '../../Components/Context/Context';
-import s from './Authentication.module.sass';
+import s from '../../Styles/pages/Authentication.module.sass';
 
-export const Authentication = () => {
+const Authentication = () => {
 
 	const { authentication, setAuthentication } = useGlobalContext();
 
@@ -89,3 +89,5 @@ export const Authentication = () => {
 		</section>
 	)
 }
+
+export default Authentication;

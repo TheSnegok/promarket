@@ -1,4 +1,4 @@
-import s from './AddsClassForTags.module.sass';
+import s from '../../../Styles/components/AddsClassForTags.module.sass';
 
 export const AddsClassForTags = (tag: string) => {
     switch (tag.toLowerCase()) {

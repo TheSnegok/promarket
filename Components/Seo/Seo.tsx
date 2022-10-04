@@ -1,5 +1,5 @@
 import { FC } from "react";
-import s from './Seo.module.sass';
+import s from '../../Styles/components/Seo.module.sass';
 import seoImg from '../../public/seoBlock.png';
 import Image from "next/image";
 
@@ -21,7 +21,7 @@ const Seo: FC = () => {
                     нашего контакт-центра. С нами вы полюбите выбирать!</span>
             </div>
             <div className={s.seoImage}>
-                <Image src={seoImg} alt="seo img" />
+                <Image src={seoImg} alt="seo img"  />
             </div>
         </section>
     )

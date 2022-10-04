@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import s from './Hits.module.sass';
+import s from '../../Styles/components/Hits.module.sass';
 import SliderItem from "../Templates/SliderItem/SliderItem";
 import { useGlobalContext } from "../Context/Context";
 

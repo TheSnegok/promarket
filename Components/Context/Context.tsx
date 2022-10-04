@@ -21,7 +21,7 @@ interface IMenuInfoItems {
 interface IData {
 	hits: IHits;
 	stock: IStock;
-	articleList: (string | StaticImageData)[][];
+	articleList: (StaticImageData | string)[][];
 	regionsList: string[];
 	menu: IMenuListItems[];
 	footer: {

@@ -1,6 +1,6 @@
 import { FC, useRef, useState, RefObject } from "react";
 import { useGlobalContext } from "../../Context/Context";
-import s from "./RangeDoubleSlider.module.sass";
+import s from "../../../Styles/components/RangeDoubleSlider.module.sass";
 
 interface RangeDoubleSliderProps {
     header: string;

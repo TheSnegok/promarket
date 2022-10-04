@@ -1,5 +1,5 @@
 import { FC } from "react";
-import s from './Footer.module.sass';
+import s from '../../Styles/components/Footer.module.sass';
 import Logo from '../../public/logo.svg';
 import Telegram from '../../public/logo/telegram 1.svg';
 import Instagram from '../../public/logo/instagram 2.svg';
@@ -24,7 +24,7 @@ const Footer: FC = () => {
                     <div className={s.footerSectionLogo}>
                         <Link href="/">
                             <a>
-                                <Image src={Logo} alt="logo" />
+                                <Image src={Logo} alt="logo"  />
                             </a>
                         </Link>
                         <span>© 2022 <Link href="/">
@@ -40,7 +40,7 @@ const Footer: FC = () => {
                     </ul>
                 </div>
                 <div className={s.footerContacts}>
-                    <a href="tel:+84950183210" className={s.footerContactsPhone}>8 495 018-32-10</a>
+                    <Link href="tel:+84950183210" className={s.footerContactsPhone}>8 495 018-32-10</Link>
                     <div className={s.footerContactsButton}>
                         <button>ЗАКАЗАТЬ ЗВОНОК</button>
                     </div>
@@ -51,18 +51,18 @@ const Footer: FC = () => {
                     </div>
                     <div className={s.footerContactsSocial}>
                         <Link href="/">
-                            <a href="">
-                                <Image src={WhatsApp} alt="whatsApp" />
+                            <a>
+                                <Image src={WhatsApp} alt="whatsApp"  />
                             </a>
                         </Link>
                         <Link href="/">
                             <a>
-                                <Image src={Instagram} alt="instagram" />
+                                <Image src={Instagram} alt="instagram"  />
                             </a>
                         </Link>
                         <Link href="/">
                             <a>
-                                <Image src={Telegram} alt="telegram" />
+                                <Image src={Telegram} alt="telegram"  />
                             </a>
                         </Link>
                     </div>

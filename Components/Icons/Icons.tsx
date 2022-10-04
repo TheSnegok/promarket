@@ -1,4 +1,4 @@
-import s from "./Icons.module.sass";
+import s from "../../Styles/components/Icons.module.sass";
 import car from '../../public/Car.svg';
 import Shield from '../../public/Shield.svg';
 import loader from '../../public/loader.svg';
@@ -11,7 +11,7 @@ const Icons = () => {
         <section className={s.icons}>
             <div className={s.iconsWrapper}>
                 <div className={s.car}>
-                    <Image src={car} alt="car" />
+                    <Image src={car} alt="car"  />
                 </div>
                 <div className={s.deskription}>
                     Быстрая доставка<br />
@@ -21,7 +21,7 @@ const Icons = () => {
             </div>
             <div className={s.iconsWrapper}>
                 <div className={s.Shield}>
-                    <Image src={Shield} alt="shield" />
+                    <Image src={Shield} alt="shield"  />
                 </div>
                 <div className={s.deskription}>
                     Все товары имеют<br />
@@ -31,7 +31,7 @@ const Icons = () => {
             </div>
             <div className={s.iconsWrapper}>
                 <div className={s.loader}>
-                    <Image src={loader} alt="loader" />
+                    <Image src={loader} alt="loader"  />
                 </div>
                 <div className={s.deskription}>
                     Более 100 000 товаров
@@ -39,7 +39,7 @@ const Icons = () => {
             </div>
             <div className={s.iconsWrapper}>
                 <div className={s.currency}>
-                    <Image src={currency} alt="currency" />
+                    <Image src={currency} alt="currency"  />
                 </div>
                 <div className={s.deskription}>
                     Любой способ оплаты
@@ -47,7 +47,7 @@ const Icons = () => {
             </div>
             <div className={s.iconsWrapper}>
                 <div className={s.like}>
-                    <Image src={like} alt="like" />
+                    <Image src={like} alt="like"  />
                 </div>
                 <div className={s.deskription}>
                     Высокие оценки клиентов

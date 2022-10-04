@@ -1,4 +1,4 @@
-import s from './Slide.module.sass';
+import s from '../../../../Styles/components/Slide.module.sass';
 
 interface IProps {
     headerText: string;

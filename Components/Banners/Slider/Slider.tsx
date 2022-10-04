@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import Slide from "./Slide/Slide";
-import s from "./Slider.module.sass";
+import s from "../../../Styles/components/Slider.module.sass";
 
 const Slider: FC = () => {
 

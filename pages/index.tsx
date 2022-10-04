@@ -6,6 +6,7 @@ import Stock from "../Components/Stock/Stock";
 import Brands from "../Components/Brands/Brands";
 import Article from "../Components/Article/Article";
 import Seo from "../Components/Seo/Seo";
+import { ModalLayout } from "../Components/ModalLayout/ModalLayout";
 
 const App = () => {
     return (
@@ -18,6 +19,7 @@ const App = () => {
             <Brands />
             <Article />
             <Seo />
+            <ModalLayout />
         </>
     )
 }

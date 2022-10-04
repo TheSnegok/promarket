@@ -1,4 +1,4 @@
-import s from './ItemStars.module.sass';
+import s from '../../../Styles/components/ItemStars.module.sass';
 
 interface IItemStars {
     stars: number[];

@@ -1,5 +1,5 @@
 import { useRef, FC, useState } from 'react'
-import s from "./Header.module.sass"
+import s from "../../Styles/components/Header.module.sass"
 import Logo from '../../public/logo.svg';
 import Mark from '../../public/Subtract.svg';
 import { useGlobalContext } from '../Context/Context';
@@ -20,12 +20,12 @@ const Header: FC = () => {
 			<div className={s.headerLogo}>
 				<Link href='/' >
 					<a className={s.headerLogoLink}>
-						<Image src={Logo} alt="logo" className={s.headerLogoLinkImg} />
+						<Image src={Logo} alt="logo" className={s.headerLogoLinkImg}  />
 					</a>
 				</Link>
 			</div>
 			<div className={s.headerLocation} onClick={() => setRegList(regList => !regList)} ref={regionRef}>
-				<Image src={Mark} alt="mark" className={s.mark} />
+				<Image src={Mark} alt="mark" className={s.mark}  />
 				<div className={s.regions}>
 					<span>{region}</span>
 					<div className={regList ? s.regionsListVisible : s.regionsList}>

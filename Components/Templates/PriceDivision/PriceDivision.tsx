@@ -1,5 +1,5 @@
 import { numberWithSpaces } from "../NumberWithSpaces/NumberWithSpaces";
-import s from "./PriceDivision.module.sass";
+import s from "../../../Styles/components/PriceDivision.module.sass";
 
 export const PriceDivision = ({ price, color }: { price: number[], color?: boolean }) => {
     return (

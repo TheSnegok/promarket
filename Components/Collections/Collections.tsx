@@ -1,7 +1,6 @@
-import { FC } from "react"
-import s from './Collections.module.sass';
+import s from '../../Styles/components/Collections.module.sass';
 
-const Collections: FC = () => {
+const Collections = () => {
     return (
         <section className={s.collections}>
             <h1 className={s.collectionsHeader}>

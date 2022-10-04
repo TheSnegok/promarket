@@ -1,16 +1,16 @@
+import { useRouter } from "next/router";
 import { useState } from "react";
-import { useNavigate } from "react-router";
-import { useGlobalContext } from "../Context/Context";
-import { ListItem } from "../Templates/ListItem/ListItem";
-import { numberWithSpaces } from "../Templates/NumberWithSpaces/NumberWithSpaces";
-import { Preview } from "../Templates/Preview/Preview";
-import s from "./Basket.module.sass";
+import { useGlobalContext } from "../../Components/Context/Context";
+import { ListItem } from "../../Components/Templates/ListItem/ListItem";
+import { numberWithSpaces } from "../../Components/Templates/NumberWithSpaces/NumberWithSpaces";
+import { Preview } from "../../Components/Templates/Preview/Preview";
+import s from "../../Styles/pages/Basket.module.sass";
 
-export const Basket = () => {
+const Basket = () => {
 
     const { basket, authentication } = useGlobalContext();
     const [indexItem, setIndexItem] = useState<undefined | number>(undefined);
-    let redirect = useNavigate();
+    let router = useRouter();
 
     const totalPrice = (): number => {
         let totalPrice = 0;
@@ -64,7 +64,7 @@ export const Basket = () => {
                                     )}
                                 </div>
                             </div>
-                            <button className={s.basketOrder} onClick={() => !authentication?.authorization ? redirect('/login') : null} >Сделать заказ</button>
+                            <button className={s.basketOrder} onClick={() => !authentication?.authorization ? router.push('/login') : null} >Сделать заказ</button>
                         </>
                     )
                 }
@@ -72,3 +72,5 @@ export const Basket = () => {
         </div>
     )
 }
+
+export default Basket;

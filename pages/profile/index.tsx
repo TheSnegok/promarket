@@ -1,10 +1,11 @@
-import s from "./ProfilePage.module.sass";
-import cabinet from '../../Image/Group.svg';
-import camera from '../../Image/CameraPhoto.svg';
+import s from "../../Styles/pages/ProfilePage.module.sass";
+import cabinet from '../../public/Group.svg';
+import camera from '../../public/CameraPhoto.svg';
 import { useGlobalContext } from "../../Components/Context/Context";
 import { FormEvent, useRef } from "react";
+import Image from "next/image";
 
-export const ProfilePage = () => {
+const ProfilePage = () => {
 
 	const { profile, setProfile, setAuthentication } = useGlobalContext();
 	const input = useRef<any>(null);
@@ -37,9 +38,9 @@ export const ProfilePage = () => {
 				<div className={s.profilePageMain}>
 					<div className={s.profilePageMainBlock}>
 						<div className={s.profilePageMainBlockAva}>
-							<img src={profile.avatar === null ? cabinet : profile.avatar} alt="ava" className={s.profilePageMainBlockAvaImg} />
+							<Image src={profile.avatar === null ? cabinet : profile.avatar} alt="ava" className={s.profilePageMainBlockAvaImg}   />
 							<label htmlFor="ava">
-								<img src={camera} alt="camera" />
+								<Image src={camera} alt="camera"   />
 								<span>Добавить фото</span>
 							</label>
 							<input type="file" id="ava" accept=".png, .jpg, .jpeg, .gif" ref={input} onChange={(e) => save(e)} />
@@ -109,3 +110,5 @@ export const ProfilePage = () => {
 		</section>
 	)
 }
+
+export default ProfilePage;

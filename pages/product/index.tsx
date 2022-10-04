@@ -1,19 +1,26 @@
 import { useEffect, useState } from "react";
 import { useGlobalContext } from "../../Components/Context/Context"
 import { ItemStars } from "../../Components/Templates/ItemStars/ItemStars";
-import s from "../../Styles/components/Product.module.sass"
-import chat from "../../Image/hits/messageLogo.svg"
+import s from "../../Styles/pages/Product.module.sass"
+import chat from "../../public/hits/messageLogo.svg"
 import { AddsClassForTags } from "../../Components/Templates/AddedClassForTag/AddsClassForTags";
 import SliderItem from "../../Components/Templates/SliderItem/SliderItem";
 import { PriceDivision } from "../../Components/Templates/PriceDivision/PriceDivision";
 import { useRouter } from "next/router";
 import Image from "next/image";
 
-export const Product = () => {
+const Product = () => {
 
 	const router = useRouter();
 
 	const { product, contextFindItem, contextRemoveItem, contextPushItem, data } = useGlobalContext();
+
+	useEffect(() => {
+		if(product === null) {
+			router.push("/");
+		}
+	}, [product])
+	
 
 	const [like, setLike] = useState<boolean | null>(null);
 	const [buy, setBuy] = useState<boolean | null>(null);
@@ -47,7 +54,7 @@ export const Product = () => {
 
 	return (
 		<>
-			{product === null ? router.push("/") : (
+			{product !== null && (
 				<section className={s.product}>
 					<div className={s.productHeader}>
 						<div className={s.productHeaderText}>
@@ -59,13 +66,13 @@ export const Product = () => {
 					</div>
 					<div className={s.productInfo}>
 						<div className={s.productInfoImg}>
-							<Image src={product.imgSrc} alt={product.description} />
+							<Image src={product.imgSrc} alt={product.description}  />
 							<div className={s.productInfoImgOther}>
-								<Image src={product.imgSrc} alt={product!.description} />
-								<Image src={product.imgSrc} alt={product!.description} />
-								<Image src={product.imgSrc} alt={product!.description} />
-								<Image src={product.imgSrc} alt={product!.description} />
-								<Image src={product.imgSrc} alt={product!.description} />
+								<Image src={product.imgSrc} alt={product!.description}  />
+								<Image src={product.imgSrc} alt={product!.description}  />
+								<Image src={product.imgSrc} alt={product!.description}  />
+								<Image src={product.imgSrc} alt={product!.description}  />
+								<Image src={product.imgSrc} alt={product!.description}  />
 							</div>
 						</div>
 						<div className={s.productInfoMain}>
@@ -77,7 +84,7 @@ export const Product = () => {
 									<ItemStars stars={product!.stars} />
 								</div>
 								<div className={s.productInfoMainReviewsCount}>
-									<img src={chat} alt="chat" />
+									<Image src={chat} alt="chat"  />
 								</div>
 							</div>
 							<div className={s.productInfoMainCountry}>
@@ -153,3 +160,5 @@ export const Product = () => {
 		</>
 	)
 }
+
+export default Product;

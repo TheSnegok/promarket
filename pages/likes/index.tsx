@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import s from './Likes.module.sass';
+import s from '../../Styles/pages/Likes.module.sass';
 import { useGlobalContext } from "../../Components/Context/Context";
 import { ListItem } from "../../Components/Templates/ListItem/ListItem";
 import { Preview } from "../../Components/Templates/Preview/Preview";

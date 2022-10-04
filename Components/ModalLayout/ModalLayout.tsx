@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useGlobalContext } from "../Context/Context";
 import { ItemStars } from "../Templates/ItemStars/ItemStars";
-import s from "./ModalLayout.module.sass";
-import chat from "../../Image/hits/messageLogo.svg";
+import s from "../../Styles/components/ModalLayout.module.sass";
+import chat from "../../public/hits/messageLogo.svg";
 import { AddsClassForTags } from "../Templates/AddedClassForTag/AddsClassForTags";
 import { PriceDivision } from "../Templates/PriceDivision/PriceDivision";
+import Image from "next/image";
 
 export const ModalLayout = () => {
 
@@ -62,7 +63,7 @@ export const ModalLayout = () => {
 						</div>
 						<div className={s.modalBlockInfo}>
 							<div className={s.modalBlockInfoImage}>
-								<img src={modal.item.imgSrc} alt="product-preview-ploto" />
+								<Image src={modal.item.imgSrc} alt="product-preview-ploto"  />
 							</div>
 							<div className={s.modalBlockInfoOptions}>
 								<div className={s.modalBlockInfoOptionsTags}>
@@ -76,7 +77,7 @@ export const ModalLayout = () => {
 										{modal.item && <ItemStars stars={modal.item.stars} />}
 									</div>
 									<div className={s.modalBlockInfoOptionsReviewsMessage}>
-										<img src={chat} alt="chat" />
+										<Image src={chat} alt="chat"  />
 										<span className={s.messageCount}>{modal.item.reviews}</span>
 									</div>
 								</div>

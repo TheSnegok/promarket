@@ -1,5 +1,4 @@
-import { forwardRef } from "react";
-import s from './Brands.module.sass';
+import s from '../../Styles/components/Brands.module.sass';
 import hansgrohe from '../../public/brands/image 17.png';
 import grohe from '../../public/brands/image 16.png';
 import stworki from '../../public/brands/image 18.png';
@@ -52,7 +51,7 @@ const Brands = () => {
                         <div className={s.brandsLogo} key={index}>
                             <Link href={item[1].toString()}>
                                 <a>
-                                    <Image src={item[0]} alt={`${index}`} />
+                                    <Image src={item[0]} alt={`${index}`}  />
                                 </a>
                             </Link>
                         </div>

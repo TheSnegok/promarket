@@ -1,4 +1,4 @@
-import s from "./Preview.module.sass";
+import s from "../../../Styles/components/Preview.module.sass";
 import { ItemStars } from "../ItemStars/ItemStars";
 import { numberWithSpaces } from "../NumberWithSpaces/NumberWithSpaces";
 import { useGlobalContext } from "../../Context/Context";
@@ -18,7 +18,7 @@ export const Preview = ({ indexItem, isBasket }: IPreview) => {
         <div className={s.preview}>
             {indexItem !== undefined && (
                 <div className={s.previewBlock}>
-                    <Image src={contextItems[indexItem].imgSrc} className={s.previewImg} alt='preview-like-item' />
+                    <Image src={contextItems[indexItem].imgSrc} className={s.previewImg} alt='preview-like-item'  />
                     <div className={s.previewWrapper}>
                         <div className={s.previewWrapperStars}>
                             <ItemStars stars={contextItems[indexItem].stars} />

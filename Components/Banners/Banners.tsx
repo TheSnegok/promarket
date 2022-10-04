@@ -1,5 +1,5 @@
 import { FC } from "react";
-import s from "./Banners.module.sass";
+import s from "../../Styles/components/Banners.module.sass";
 import Slider from "./Slider/Slider";
 
 const Banners: FC = () => {

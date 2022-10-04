@@ -1,13 +1,14 @@
+import Image from "next/image";
+import { useRouter } from "next/router";
 import { FC, useEffect, useState } from "react";
-import { useNavigate } from "react-router";
-import { IDataTemplate, useGlobalContext } from "../Context/Context"
-import { PriceDivision } from "../Templates/PriceDivision/PriceDivision";
-import { RangeDoubleSlider } from "../Templates/RangeDoubleSlider/RangeDoubleSlider";
-import s from "./SearchPage.module.sass"
+import { IDataTemplate, useGlobalContext } from "../../Components/Context/Context"
+import { PriceDivision } from "../../Components/Templates/PriceDivision/PriceDivision";
+import { RangeDoubleSlider } from "../../Components/Templates/RangeDoubleSlider/RangeDoubleSlider";
+import s from "../../Styles/pages/SearchPage.module.sass"
 
-export const SearchPage: FC = () => {
+const SearchPage: FC = () => {
 
-    let redirect = useNavigate();
+    let router = useRouter();
 
     const { findInput, setProduct, setFindInput } = useGlobalContext();
     const thisYear = new Date().getFullYear();
@@ -26,7 +27,7 @@ export const SearchPage: FC = () => {
             maxYear: findInput.maxYear,
             sort: findInput.sort
         })
-        redirect('/product');
+        router.push('/product');
     };
 
     useEffect(() => {
@@ -114,7 +115,7 @@ export const SearchPage: FC = () => {
                                         (find.price[0] < findInput.maxPrice && find.price[0] > findInput.minPrice) &&
                                         (<div className={s.searchBlockMatchesBlockItem} key={index} onClick={() => selectedItem(find)}>
                                             <div className={s.searchBlockMatchesBlockItemImg}>
-                                                <img src={find.imgSrc} alt={find.personalKey} />
+                                                <Image src={find.imgSrc} alt={find.personalKey}  />
                                             </div>
                                             <div className={s.searchBlockMatchesBlockItemDescription}>
                                                 <span>{find.description}</span>
@@ -138,3 +139,5 @@ export const SearchPage: FC = () => {
         </section>
     )
 }
+
+export default SearchPage;

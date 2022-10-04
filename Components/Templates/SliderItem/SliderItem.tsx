@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import s from './SliderItem.module.sass';
+import s from '../../../Styles/components/SliderItem.module.sass';
 import chat from '../../../public/hits/messageLogo.svg';
 import { ItemStars } from '../ItemStars/ItemStars';
 import { IDataTemplate, useGlobalContext } from '../../Context/Context';
@@ -52,7 +52,7 @@ const SliderItem = ({ item }: { item: IDataTemplate }) => {
 						<div className={s.itemImgTags}>
 							{item.tags.map(tag => AddsClassForTags(tag))}
 						</div>
-						<Image src={item.imgSrc} alt={item.imgSrc.toString()} className={s.itemImgMain} />
+						<Image src={item.imgSrc} alt={item.imgSrc.toString()} className={s.itemImgMain}  />
 					</a>
 				</Link>
 				<button className={s.itemImgFastLook} onClick={() => setModal({
@@ -75,7 +75,7 @@ const SliderItem = ({ item }: { item: IDataTemplate }) => {
 				<div className={s.message}>
 					<Link href="/">
 						<a>
-							<Image src={chat} alt="chat" />
+							<Image src={chat} alt="chat"  />
 							<span className={s.messageCount}>{item.reviews}</span>
 						</a>
 					</Link>

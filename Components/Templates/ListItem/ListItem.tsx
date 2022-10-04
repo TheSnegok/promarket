@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { IDataTemplate, useGlobalContext } from "../../Context/Context";
 import { numberWithSpaces } from "../NumberWithSpaces/NumberWithSpaces";
-import s from './ListItem.module.sass';
+import s from '../../../Styles/components/ListItem.module.sass';
+import Image from "next/image";
 
 interface IItem {
 	content: IDataTemplate,
@@ -49,15 +50,17 @@ export const ListItem = ({ content, setIndexItem, index, isBasket }: IItem) => {
 
 	return (
 		<>
-			{index !== 0 && <hr />}
+			{index !== 0 && <hr className={s.line} />}
 			<li className={s.Item} onMouseOver={() => setIndexItem(index)} onMouseLeave={() => setIndexItem(undefined)}>
 				<div className={s.ItemImg}>
-					<Link to={"/product"} onClick={pushProduct}>
-						<img src={content.imgSrc} alt={content.description} />
+					<Link href={"/product"}>
+						<a onClick={pushProduct}>
+							<Image src={content.imgSrc} alt={content.description}  />
+						</a>
 					</Link>
 				</div>
 				<div className={s.ItemDescription}>
-					<Link to={"/product"} onClick={pushProduct}>
+					<Link href={"/product"} onClick={pushProduct}>
 						<span>{content.description}</span>
 					</Link>
 				</div>

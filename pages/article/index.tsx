@@ -1,14 +1,15 @@
-import { Navigate } from "react-router";
-import { useGlobalContext } from "../Context/Context";
-import s from "./ArcticleItem.module.sass";
+import { useRouter } from "next/router";
+import { useGlobalContext } from "../../Components/Context/Context";
+import s from "../../Styles/pages/ArcticlePage.module.sass";
 
-export const ArcticlePage = () => {
+const ArcticlePage = () => {
 
     const { article } = useGlobalContext();
+    const router = useRouter();
 
     return (
         <>
-            {article === null ? <Navigate to="/" replace={true} /> : (
+            {article === null ? router.push("/") : (
                 <section className={s.article}>
                     <h1 className={s.articleHeader}>{article?.articleHeader}</h1>
                     <span>{article?.articleText}</span>
@@ -17,3 +18,5 @@ export const ArcticlePage = () => {
         </>
     )
 }
+
+export default ArcticlePage;
