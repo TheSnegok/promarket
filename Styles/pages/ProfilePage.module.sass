@@ -79,7 +79,8 @@
                     background-color: rgba(169, 169, 169, .7)
                     transition: height .3s
                     cursor: pointer
-                    img
+                    .camera
+                        position: relative
                         width: 1.5vw
                         height: 1.5vw
                         margin-right: 1vw
@@ -137,7 +138,7 @@
                         height: 3vw
                         width: 100%
                         border-radius: 1vw 1vw 0 0
-                        img
+                        .camera
                             width: 2vw
                             height: 2vw
                             margin-right: 1vw
@@ -179,19 +180,19 @@
                     height: 50%
                     label
                         height: 4vw
-                        img
+                        .camera
                             width: 2.3vw
                             height: 2.3vw
                         span
-                            font-size: 2.3vw
+                            font-size: 1.8vw
                     &:hover
                         label
                             height: 6vw
-                            img
+                            .camera
                                 width: 2.8vw
                                 height: 2.8vw
                             span
-                                font-size: 2.5vw
+                                font-size: 1.8vw
             &Info
                 font-size: 2.3vw
                 letter-spacing: .13em
@@ -206,7 +207,7 @@
                     width: 100%
                     border-radius: 3px
 
-@media ( max-width: 800px )
+@media ( max-width: 520px )
     .profilePage
         padding: 15px 15px
         min-height: unset
@@ -238,7 +239,7 @@
                     height:80px
                     label
                         height: 18px
-                        img
+                        .camera
                             width: 8px
                             height: 8px
                             transition: 1s
@@ -248,7 +249,7 @@
                     &:hover
                         label
                             height: 25px
-                            img
+                            .camera
                                 width: 9px
                                 height: 9px
                                 transition: 1s

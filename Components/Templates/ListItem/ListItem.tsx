@@ -55,14 +55,17 @@ export const ListItem = ({ content, setIndexItem, index, isBasket }: IItem) => {
 				<div className={s.ItemImg}>
 					<Link href={"/product"}>
 						<a onClick={pushProduct}>
-							<Image src={content.imgSrc} alt={content.description}  />
+							<div className={s.ItemImgWrapper}>
+								<Image src={content.imgSrc} alt={content.description} layout='fill' />
+							</div>
 						</a>
 					</Link>
 				</div>
 				<div className={s.ItemDescription}>
-					<Link href={"/product"} onClick={pushProduct}>
-						<span>{content.description}</span>
+					<Link href={"/product"}>
+						<a onClick={pushProduct}></a>
 					</Link>
+					<span>{content.description}</span>
 				</div>
 				<div className={s.ItemCountry}>
 					<span>{content.country}</span>

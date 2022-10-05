@@ -11,7 +11,7 @@ import Link from "next/link";
 
 const Menu: FC = () => {
 
-	const { data, setProduct, likes, basket, findInput, setFindInput } = useGlobalContext();
+	const { data, setProduct, likes, basket, findInput, setFindInput, authentication } = useGlobalContext();
 	const [info, setInfo] = useState<number>(0);
 
 	let router = useRouter();
@@ -85,7 +85,7 @@ const Menu: FC = () => {
 								{data.menu.map((item, index) => (
 									<div key={item.description} className={info === index ? s.wrapperSectionsActive : s.wrapperSections} onMouseEnter={() => setInfo(index)}>
 										<div className={s.iconWrapper}>
-											<Image src={item.src} alt={item.description} className={s.iconWrapperImage}  />
+											<Image src={item.src} alt={item.description} className={s.iconWrapperImage} />
 										</div>
 										<div className={s.headerWrapper}>
 											<span>
@@ -170,7 +170,7 @@ const Menu: FC = () => {
 				<div className={s.icon}>
 					<Link href={findInput.text === '' ? '/' : '/search'}>
 						<a>
-							<Image src={loop} alt="search" className={s.loop}  />
+							<Image src={loop} alt="search" className={s.loop} />
 						</a>
 					</Link>
 				</div>
@@ -186,16 +186,16 @@ const Menu: FC = () => {
 			</div>
 			<div className={s.menuActions} >
 				<div className={s.cabinet}>
-					<Link href="/profile" >
-						<a>
-							<Image src={cabinet} alt="cabinet" className={s.cabinetImg}  />
+					<Link href={authentication.authorization ? '/profile' : '/authorization'} >
+						<a href="#">
+							<Image src={cabinet} alt="cabinet" className={s.cabinetImg} />
 						</a>
 					</Link>
 				</div>
 				<div className={s.desired}>
 					<Link href="/likes" >
 						<a>
-							<Image src={desire} alt="desired" className={s.desiredImg}  />
+							<Image src={desire} alt="desired" className={s.desiredImg} />
 							{likes.count === 0 ? null : <div className={s.desiredAlert}>{likes.count}</div>}
 						</a>
 					</Link>
@@ -203,7 +203,7 @@ const Menu: FC = () => {
 				<div className={s.shopping}>
 					<Link href="/basket" >
 						<a>
-							<Image src={shoppingCart} alt="shoppingCart" className={s.shoppingImg}  />
+							<Image src={shoppingCart} alt="shoppingCart" className={s.shoppingImg} />
 							{basket.count === 0 ? null : <div className={s.shoppingAlert}>{basket.count}</div>}
 						</a>
 					</Link>

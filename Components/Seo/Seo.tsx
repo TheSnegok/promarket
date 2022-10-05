@@ -21,7 +21,7 @@ const Seo: FC = () => {
                     нашего контакт-центра. С нами вы полюбите выбирать!</span>
             </div>
             <div className={s.seoImage}>
-                <Image src={seoImg} alt="seo img"  />
+                <Image src={seoImg} alt="seo img" layout="fill" />
             </div>
         </section>
     )

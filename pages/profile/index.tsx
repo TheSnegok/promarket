@@ -4,6 +4,7 @@ import camera from '../../public/CameraPhoto.svg';
 import { useGlobalContext } from "../../Components/Context/Context";
 import { FormEvent, useRef } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const ProfilePage = () => {
 
@@ -38,9 +39,13 @@ const ProfilePage = () => {
 				<div className={s.profilePageMain}>
 					<div className={s.profilePageMainBlock}>
 						<div className={s.profilePageMainBlockAva}>
-							<Image src={profile.avatar === null ? cabinet : profile.avatar} alt="ava" className={s.profilePageMainBlockAvaImg}   />
+							<div className={s.profilePageMainBlockAvaImg}>
+								<Image src={profile.avatar === null ? cabinet : profile.avatar} alt="ava" layout="fill" />
+							</div>
 							<label htmlFor="ava">
-								<Image src={camera} alt="camera"   />
+								<div className={s.camera}>
+									<Image src={camera} alt="camera" layout="fill" />
+								</div>
 								<span>Добавить фото</span>
 							</label>
 							<input type="file" id="ava" accept=".png, .jpg, .jpeg, .gif" ref={input} onChange={(e) => save(e)} />

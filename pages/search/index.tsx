@@ -115,7 +115,7 @@ const SearchPage: FC = () => {
                                         (find.price[0] < findInput.maxPrice && find.price[0] > findInput.minPrice) &&
                                         (<div className={s.searchBlockMatchesBlockItem} key={index} onClick={() => selectedItem(find)}>
                                             <div className={s.searchBlockMatchesBlockItemImg}>
-                                                <Image src={find.imgSrc} alt={find.personalKey}  />
+                                                <Image src={find.imgSrc} alt={find.personalKey} width='80%' height='100px' />
                                             </div>
                                             <div className={s.searchBlockMatchesBlockItemDescription}>
                                                 <span>{find.description}</span>
