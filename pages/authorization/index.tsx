@@ -26,7 +26,7 @@ const Authentication = () => {
 			if(authentication.rememberMe  && typeof window !== 'undefined') {
 				localStorage.setItem('rememberMe', 'true')
 			}
-			router.push('/');
+			router.push('/profile');
 		} else {
 			console.error('Invalid email or password!');
 			setInvalid(true);
