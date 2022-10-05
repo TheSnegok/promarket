@@ -21,12 +21,12 @@
 	display: flex
 	align-items: center
 	width: 100%
-	height: 10vh
+	height: 80px
 	margin: 1vh 0
 	z-index: 5
 	overflow: hidden
 	transition: all 0.7s ease-out
-	padding: 0 1vw
+	padding: 0 5px
 	&:first-child
 		margin-top: 0
 	&Img
@@ -34,9 +34,14 @@
 		@include itemLocation()
 		a
 			height: 90%
-			img
-				height: 100%
-				width: 100%
+			width: 100%
+			display: flex
+			justify-content: center
+			align-items: center
+			.ItemImgWrapper
+				position: relative
+				height: auto
+				width: 70%
 	&Description
 		padding-left: 1vh
 		@include itemSize(57%)
@@ -150,7 +155,7 @@
 
 @media (max-width: 1350px)
 	.Item
-		margin: .3vh 0
+		margin: 0
 		&Description
 			@include spanItem()
 			font-size: 14px
@@ -161,19 +166,30 @@
 			@include spanItem()
 			font-size: 14px
 		&Buy
-			@include itemSize(10%, 40%)
-			font-size: 10px
+			@include itemSize(10%, 30%)
+			font-size: 8px
 			line-height: 20px
-			letter-spacing: 0.12em
+			letter-spacing: unset
 			color: var(--blue-third)
 		&BuyActive
-			@include itemSize(10%, 40%)
-			font-size: 10px
+			@include itemSize(10%, 30%)
+			font-size: 8px
 			line-height: 20px
-			letter-spacing: 0.1em
+			letter-spacing: unset
+		&Img
+			a
+				.ItemImgWrapper
+					height: 90%
+					width: 90%
 
 @media (max-width: 800px)
 	.Item
+		height: 60px
+		&Img
+			a
+				.ItemImgWrapper
+					height: 60%
+					width: 90%
 		&Description
 			@include itemSize(50%)
 			@include spanItem()
@@ -198,11 +214,15 @@
 
 @media (max-width: 520px)
 	.Item
-		height: 50px
+		height: 30px
 		padding: 0 2px
 		&Img
 			@include itemSize(15%, 90%)
 			@include itemLocation()
+			a
+				.ItemImgWrapper
+					height: 90%
+					width: 70%
 		&Description
 			@include itemSize(35%, 70%)
 			font-size: 6px
@@ -222,13 +242,13 @@
 		&Buy
 			@include itemSize(20%, 40%)
 			font-size: 5px
-			line-height: 12px
-			letter-spacing: 0.10em
+			line-height: unset
+			letter-spacing: unset
 		&BuyActive
 			@include itemSize(20%, 40%)
 			font-size: 5px
-			line-height: 12px
-			letter-spacing: 0.10em
+			line-height: unset
+			letter-spacing: unset
 		&Remove
 			@include itemSize(5%)
 			@include itemLocation()

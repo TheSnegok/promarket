@@ -13,6 +13,7 @@ export const Wrapper = ({ children }) => {
                     <title>Promarket</title>
                     <meta name="description" content="Promarket - internet-shop" />
                     <link rel="icon" href="/favicon.ico" />
+                    <link rel="apple-touch-icon" href="/logo192.png"/>
                 </Head>
                 <main className="container">
                     <Header />
