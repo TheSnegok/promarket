@@ -38,6 +38,7 @@ export interface ILikes {
 export interface IDataTemplate {
 	url: string;
 	tags: string[];
+	type: string;
 	imgSrc: StaticImageData;
 	stars: number[];
 	reviews: number;

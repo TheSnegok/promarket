@@ -20,6 +20,20 @@ import Electronics from '../../public/hoverMenu/icon4.svg';
 import heating from '../../public/hoverMenu/icon5.svg';
 import flooring from '../../public/hoverMenu/icon6.svg';
 
+export const TYPES = {
+	sink: 'sink',
+	baths: 'baths',
+	toilets: 'toilets',
+	showerSystems: 'showerSystems',
+	mixers: 'mixers',
+	mirrors: 'mirrors',
+	showerCabins: 'showerCabins',
+	washingMachines: 'washingMachines',
+	towelDryers: 'towelDryers',
+	bidet: 'bidet',
+	heaters: 'heaters',
+	dishwashers: 'dishwashers',
+} 
 
 export const footerSectionList = [['/', 'Плитка'], ['/', 'Сантехника'], ['/', 'Мебель для ванной'], ['/', 'Электроника и бытовая техника'], ['/', 'Отопление'], ['/', 'Напольное покрытие']];
 
@@ -740,6 +754,7 @@ export const hitsSlideItems = [
 	{
 		url: '/',
 		tags: ["Хит"],
+		type: TYPES.sink,
 		imgSrc: sink,
 		stars: [2, 2, 2, 2, 1],
 		reviews: 12,
@@ -751,6 +766,7 @@ export const hitsSlideItems = [
 	{
 		url: '/',
 		tags: ["Хит", "Акция"],
+		type: TYPES.baths,
 		imgSrc: bathroom,
 		stars: [2, 2, 2, 1, 0],
 		reviews: 2,
@@ -762,6 +778,7 @@ export const hitsSlideItems = [
 	{
 		url: '/',
 		tags: ["Хит"],
+		type: TYPES.showerSystems,
 		imgSrc: shower,
 		stars: [2, 2, 1, 0, 0],
 		reviews: 24,
@@ -773,6 +790,7 @@ export const hitsSlideItems = [
 	{
 		url: '/',
 		tags: ["Хит"],
+		type: TYPES.toilets,
 		imgSrc: toilet,
 		stars: [2, 2, 1, 0, 0],
 		reviews: 4,
@@ -785,6 +803,7 @@ export const hitsSlideItems = [
 	{
 		url: '/',
 		tags: ["Хит"],
+		type: TYPES.towelDryers,
 		imgSrc: heatedTowelRail,
 		stars: [2, 2, 2, 1, 0],
 		reviews: 10,
@@ -797,6 +816,7 @@ export const hitsSlideItems = [
 	{
 		url: '/',
 		tags: ["Хит"],
+		type: TYPES.sink,
 		imgSrc: sink,
 		stars: [2, 2, 1, 0, 0],
 		reviews: 12,
@@ -808,6 +828,7 @@ export const hitsSlideItems = [
 	{
 		url: '/',
 		tags: ["Хит", "Акция"],
+		type: TYPES.baths,
 		imgSrc: bathroom,
 		stars: [2, 2, 2, 1, 0],
 		reviews: 2,
@@ -819,6 +840,7 @@ export const hitsSlideItems = [
 	{
 		url: '/',
 		tags: ["Хит"],
+		type: TYPES.showerSystems,
 		imgSrc: shower,
 		stars: [2, 2, 1, 0, 0],
 		reviews: 24,
@@ -830,6 +852,7 @@ export const hitsSlideItems = [
 	{
 		url: '/',
 		tags: ["Хит"],
+		type: TYPES.toilets,
 		imgSrc: toilet,
 		stars: [2, 2, 2, 1, 0],
 		reviews: 4,
@@ -845,6 +868,7 @@ export const stockSlideItems = [
 	{
 		url: '/',
 		tags: ["Акция"],
+		type: TYPES.mixers,
 		imgSrc: mixer,
 		stars: [2, 2, 1, 0, 0],
 		reviews: 12,
@@ -856,6 +880,7 @@ export const stockSlideItems = [
 	{
 		url: '/',
 		tags: ["Акция"],
+		type: TYPES.showerCabins,
 		imgSrc: showerCabin,
 		stars: [2, 2, 2, 2, 1],
 		reviews: 12,
@@ -867,6 +892,7 @@ export const stockSlideItems = [
 	{
 		url: '/',
 		tags: ["Акция"],
+		type: TYPES.baths,
 		imgSrc: bathroomAcr,
 		stars: [2, 2, 1, 0, 0],
 		reviews: 12,
@@ -879,6 +905,7 @@ export const stockSlideItems = [
 	{
 		url: '/',
 		tags: ["Акция"],
+		type: TYPES.toilets,
 		imgSrc: toilet2,
 		stars: [2, 2, 2, 1, 0],
 		reviews: 12,
@@ -890,6 +917,7 @@ export const stockSlideItems = [
 	{
 		url: '/',
 		tags: ["Акция"],
+		type: TYPES.sink,
 		imgSrc: sink2,
 		stars: [2, 2, 2, 1, 0],
 		reviews: 10,
@@ -901,6 +929,7 @@ export const stockSlideItems = [
 	{
 		url: '/',
 		tags: ["Акция"],
+		type: TYPES.mixers,
 		imgSrc: mixer,
 		stars: [2, 2, 2, 1, 0],
 		reviews: 12,
@@ -912,6 +941,7 @@ export const stockSlideItems = [
 	{
 		url: '/',
 		tags: ["Акция"],
+		type: TYPES.showerCabins,
 		imgSrc: showerCabin,
 		stars: [2, 2, 2, 1, 0],
 		reviews: 12,
@@ -923,6 +953,7 @@ export const stockSlideItems = [
 	{
 		url: '/',
 		tags: ["Акция"],
+		type: TYPES.baths,
 		imgSrc: bathroomAcr,
 		stars: [2, 2, 1, 0, 0],
 		reviews: 12,
@@ -935,6 +966,7 @@ export const stockSlideItems = [
 	{
 		url: '/',
 		tags: ["Акция"],
+		type: TYPES.toilets,
 		imgSrc: toilet2,
 		stars: [2, 2, 1, 0, 0],
 		reviews: 12,
