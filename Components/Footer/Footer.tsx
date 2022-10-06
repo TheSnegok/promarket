@@ -18,13 +18,17 @@ const Footer: FC = () => {
                 <div className={s.footerSection}>
                     <div className={s.footerSectionList}>
                         <ul>
-                            {data.footer.footerSectionList.map((item, index) => <li key={index}><Link href={item[0]}>{item[1]}</Link></li>)}
+                            {data.footer.footerSectionList.map((item, index) => (
+                                <li key={index}>
+                                    <Link href={item[0]}>{item[1]}</Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                     <div className={s.footerSectionLogo}>
                         <Link href="/">
                             <a>
-                                <Image src={Logo} alt="logo"  />
+                                <Image src={Logo} alt="logo" />
                             </a>
                         </Link>
                         <span>© 2022 <Link href="/">
@@ -52,17 +56,17 @@ const Footer: FC = () => {
                     <div className={s.footerContactsSocial}>
                         <Link href="/">
                             <a>
-                                <Image src={WhatsApp} alt="whatsApp"  />
+                                <Image src={WhatsApp} alt="whatsApp" />
                             </a>
                         </Link>
                         <Link href="/">
                             <a>
-                                <Image src={Instagram} alt="instagram"  />
+                                <Image src={Instagram} alt="instagram" />
                             </a>
                         </Link>
                         <Link href="/">
                             <a>
-                                <Image src={Telegram} alt="telegram"  />
+                                <Image src={Telegram} alt="telegram" />
                             </a>
                         </Link>
                     </div>
