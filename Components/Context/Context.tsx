@@ -273,7 +273,7 @@ export const Provider: FC = ({ children }) => {
 		items: []
 	});
 
-	const contextFindItem = (itemName: string, wantedKey: string) => {
+	const contextFindItem = (itemName: string, wantedKey: string): boolean => {
 		if (itemName === 'likes') {
 			return likes.items.find(item => item.personalKey === wantedKey) === undefined;
 		} else if (itemName === 'basket') {
@@ -281,7 +281,7 @@ export const Provider: FC = ({ children }) => {
 		}
 	}
 
-	const contextRemoveItem = (itemName: string, wantedKey: string) => {
+	const contextRemoveItem = (itemName: string, wantedKey: string): void => {
 		if (itemName === 'likes') {
 			setLikes({
 				count: likes.count === 0 ? 0 : likes.count - 1,

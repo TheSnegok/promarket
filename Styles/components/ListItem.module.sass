@@ -40,7 +40,7 @@
 			align-items: center
 			.ItemImgWrapper
 				position: relative
-				height: auto
+				height: 100%
 				width: 70%
 	&Description
 		padding-left: 1vh
@@ -143,6 +143,10 @@
 
 @media (max-width: 1600px)
 	.Item
+		&Img
+			a
+				.ItemImgWrapper
+					width: 80%
 		&Buy
 			font-size: 10px
 			line-height: 24px
@@ -161,10 +165,10 @@
 			font-size: 14px
 		&Country
 			@include spanItem()
-			font-size: 14px
+			font-size: 12px
 		&Price
 			@include spanItem()
-			font-size: 14px
+			font-size: 12px
 		&Buy
 			@include itemSize(10%, 30%)
 			font-size: 8px
@@ -180,6 +184,14 @@
 			a
 				.ItemImgWrapper
 					height: 90%
+					width: 90%
+
+@media (max-width: 1050px)
+	.Item
+		&Img
+			a
+				.ItemImgWrapper
+					height: 70%
 					width: 90%
 
 @media (max-width: 800px)

@@ -1,4 +1,4 @@
-const getPersonalKey = () => {
+const getPersonalKey = (): string => {
     const getLetter = () => {
         const letter = Math.floor(Math.random() * (4 - 1) + 1);
         if(letter === 1) {
@@ -9,7 +9,7 @@ const getPersonalKey = () => {
             return Math.random() ? 'C' : 'C';
         }
     }    
-    return `${Math.floor(Math.random() * 1000)}` + getLetter()
+    return `${Math.floor(Math.random() * 1000)}` + getLetter();
 }
 
 export default getPersonalKey;
