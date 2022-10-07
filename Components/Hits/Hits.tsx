@@ -14,34 +14,35 @@ const Hits: FC = () => {
     const [slidesArray, setSlideArray] = useState(data.hits.slideItems);
 
     const changeSlide = (option: string) => {
-        if (data.hits.slideItems !== null) {
-            if (data.hits.slideItems.length > 5)
-                switch (option) {
-                    case "plus":
-                        if ((window.innerWidth < 800 ? slide : window.innerWidth < 1050 ? slide + 1 : window.innerWidth < 1350 ? slide + 2 : window.innerWidth < 1600 ? slide + 3 : slide + 4) < data.hits.slideItems.length) {
-                            setPosition(position => window.innerWidth < 520 ? position - 220 : position - 308);
-                            setSlide(slide => slide + 1);
-                        }
-                        break;
-                    case "minus":
-                        if (slide > 1) {
-                            setPosition(position => window.innerWidth < 520 ? position + 220 : position + 308);
-                            setSlide(slide => slide - 1);
-                        }
-                        break;
-                    default:
-                        break;
-                }
+        if (slidesArray.length > 5) {
+            switch (option) {
+                case "plus":
+                    if ((window.innerWidth < 800 ? slide : window.innerWidth < 1050 ? slide + 1 : window.innerWidth < 1350 ? slide + 2 : window.innerWidth < 1600 ? slide + 3 : slide + 4) < slidesArray.length) {
+                        setPosition(position => window.innerWidth < 520 ? position - 220 : position - 308);
+                        setSlide(slide => slide + 1);
+                    }
+                    break;
+                case "minus":
+                    if (slide > 1) {
+                        setPosition(position => window.innerWidth < 520 ? position + 220 : position + 308);
+                        setSlide(slide => slide - 1);
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
     const onChangeMenu = (menuName, menuType) => {
         setType(menuType);
+        setPosition(0);
+        setSlide(1);
         setMenuName(menuName);
     }
 
     useEffect(() => {
-        setSlideArray(data.hits.slideItems.filter((item => type === 'all' ? item : type === item.type)))
+        setSlideArray(data.hits.slideItems.filter((item => type === 'all' ? item : type === item.type)));
     }, [type]);
 
     return (
