@@ -21,6 +21,7 @@ import heating from '../../public/hoverMenu/icon5.svg';
 import flooring from '../../public/hoverMenu/icon6.svg';
 
 export const TYPES = {
+	all: 'all',
 	sink: 'sink',
 	baths: 'baths',
 	toilets: 'toilets',
@@ -978,25 +979,25 @@ export const stockSlideItems = [
 ];
 
 export const hitsMenu = [
-	"Любые товары",
-	"Раковины",
-	"Ванны",
-	"Унитазы",
-	"Душевые системы",
-	"Смесители",
-	"Зеркала",
-	"Душевые кабины",
-	"Стиральные машины",
+	["Любые товары", TYPES.all],
+	["Раковины", TYPES.sink],
+	["Ванны", TYPES.baths],
+	["Унитазы", TYPES.toilets],
+	["Душевые системы", TYPES.showerSystems],
+	["Смесители", TYPES.mixers],
+	["Зеркала", TYPES.mirrors],
+	["Душевые кабины", TYPES.showerCabins],
+	["Стиральные машины", TYPES.washingMachines],
 ];
 
 export const stockMenu = [
-	"Любые товары",
-	"Смесители",
-	"Полотенцесушители",
-	"Биде",
-	"Душевые системы",
-	"Ванны",
-	"Унитазы",
-	"Отопители",
-	"Посудомоечные машины",
+	["Любые товары", TYPES.all],
+	["Смесители", TYPES.mixers],
+	["Полотенцесушители", TYPES.towelDryers],
+	["Биде", TYPES.bidet],
+	["Душевые системы", TYPES.showerSystems],
+	["Ванны", TYPES.baths],
+	["Унитазы", TYPES.toilets],
+	["Отопители", TYPES.heaters],
+	["Посудомоечные машины", TYPES.dishwashers],
 ];

@@ -49,12 +49,12 @@ export interface IDataTemplate {
 }
 
 interface IHits {
-	menu: string[];
+	menu: string[][];
 	slideItems: IDataTemplate[];
 };
 
 interface IStock {
-	menu: string[];
+	menu: string[][];
 	slideItems: IDataTemplate[];
 };
 
@@ -286,12 +286,12 @@ export const Provider: FC = ({ children }) => {
 		if (itemName === 'likes') {
 			setLikes({
 				count: likes.count === 0 ? 0 : likes.count - 1,
-				items: likes.count === 0 ? [] : likes.items.filter(item => item.personalKey !== wantedKey)
+				items: likes.count === 0 ? [] : likes.items.filter(item => item['personalKey'] !== wantedKey)
 			});
 		} else if (itemName === 'basket') {
 			setBasket({
 				count: basket.count === 0 ? 0 : basket.count - 1,
-				items: basket.count === 0 ? [] : basket.items.filter(item => item.personalKey !== wantedKey)
+				items: basket.count === 0 ? [] : basket.items.filter(item => item['personalKey'] !== wantedKey)
 			});
 		}
 	};
