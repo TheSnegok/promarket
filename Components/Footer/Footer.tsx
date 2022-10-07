@@ -44,7 +44,9 @@ const Footer: FC = () => {
                     </ul>
                 </div>
                 <div className={s.footerContacts}>
-                    <Link href="tel:+84950183210" className={s.footerContactsPhone}>8 495 018-32-10</Link>
+                    <Link href="tel:+84950183210">
+                        <a className={s.footerContactsPhone}>8 495 018-32-10</a>
+                    </Link>
                     <div className={s.footerContactsButton}>
                         <button>ЗАКАЗАТЬ ЗВОНОК</button>
                     </div>
