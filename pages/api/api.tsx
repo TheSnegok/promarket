@@ -45,13 +45,34 @@ export const TYPES = {
 		name: 'mixers',
 		text: "Смесители"
 	},
-	mirrors: 'mirrors',
-	showerCabins: 'showerCabins',
-	washingMachines: 'washingMachines',
-	towelDryers: 'towelDryers',
-	bidet: 'bidet',
-	heaters: 'heaters',
-	dishwashers: 'dishwashers',
+	mirrors: {
+		name: 'mirrors',
+		text: "Зеркало"
+	},
+	showerCabins: {
+		name: 'showerCabins',
+		text: "Душевая кабина"
+	},
+	washingMachines: {
+		name: 'washingMachines',
+		text: "Стиральная машина"
+	},
+	towelDryers: {
+		name: 'towelDryers',
+		text: "Полотенцесушитель"
+	},
+	bidet: {
+		name: 'bidet',
+		text: "Биде"
+	},
+	heaters: {
+		name: 'heaters',
+		text: "Обогреватель"
+	},
+	dishwashers: {
+		name: 'dishwashers',
+		text: "Посудомойка"
+	},
 }
 
 export const footerSectionList = [['/', 'Плитка'], ['/', 'Сантехника'], ['/', 'Мебель для ванной'], ['/', 'Электроника и бытовая техника'], ['/', 'Отопление'], ['/', 'Напольное покрытие']];
