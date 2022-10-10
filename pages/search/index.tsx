@@ -64,7 +64,7 @@ const SearchPage: FC = () => {
                 sort: 3
             });
             setMatched([...findInput.matchFound.sort((first, second) => second.reviews - first.reviews)]);
-        } else if(selectValue === 4) {
+        } else if (selectValue === 4) {
             setFindInput({
                 text: findInput.text,
                 matchFound: findInput.matchFound,
@@ -93,6 +93,13 @@ const SearchPage: FC = () => {
                     <div className={s.searchBlockOptionsYear}>
                         <h4>Год выпуска</h4>
                         <RangeDoubleSlider header='Сортировка по году выпуска:' min={thisYear - 30} max={thisYear} step={1} type='date' />
+                    </div>
+                    <div className={s.searchBlockOptionsTypes}>
+                        <h4>Тип</h4>
+                        <div className={s.searchBlockOptionsTypesInput}>
+                            <label>Ванна</label>
+                            <input type="checkbox" />
+                        </div>
                     </div>
                     <div className={s.searchBlockOptionsList}>
                         <select onChange={(e) => setSelectValue(+e.target.value)} value={selectValue}>

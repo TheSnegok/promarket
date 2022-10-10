@@ -21,12 +21,30 @@ import heating from '../../public/hoverMenu/icon5.svg';
 import flooring from '../../public/hoverMenu/icon6.svg';
 
 export const TYPES = {
-	all: 'all',
-	sink: 'sink',
-	baths: 'baths',
-	toilets: 'toilets',
-	showerSystems: 'showerSystems',
-	mixers: 'mixers',
+	all: {
+		name: 'all',
+		text: "Все"
+	},
+	sink: {
+		name: 'sink',
+		text: "Раковина"
+	},
+	baths: {
+		name: 'baths',
+		text: "Ванна"
+	},
+	toilets: {
+		name: 'toilets',
+		text: "Туалет"
+	},
+	showerSystems: {
+		name: 'showerSystems',
+		text: "Душевая система"
+	},
+	mixers: {
+		name: 'mixers',
+		text: "Смесители"
+	},
 	mirrors: 'mirrors',
 	showerCabins: 'showerCabins',
 	washingMachines: 'washingMachines',
@@ -34,7 +52,7 @@ export const TYPES = {
 	bidet: 'bidet',
 	heaters: 'heaters',
 	dishwashers: 'dishwashers',
-} 
+}
 
 export const footerSectionList = [['/', 'Плитка'], ['/', 'Сантехника'], ['/', 'Мебель для ванной'], ['/', 'Электроника и бытовая техника'], ['/', 'Отопление'], ['/', 'Напольное покрытие']];
 
