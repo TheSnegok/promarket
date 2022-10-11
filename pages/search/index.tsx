@@ -5,6 +5,7 @@ import { IDataTemplate, useGlobalContext } from "../../Components/Context/Contex
 import { PriceDivision } from "../../Components/Templates/PriceDivision/PriceDivision";
 import { RangeDoubleSlider } from "../../Components/Templates/RangeDoubleSlider/RangeDoubleSlider";
 import s from "../../Styles/pages/SearchPage.module.sass"
+import { TYPES } from "../api/api";
 
 const SearchPage: FC = () => {
 
@@ -29,6 +30,13 @@ const SearchPage: FC = () => {
         })
         router.push('/product');
     };
+
+    const typesOptions = Object.keys(TYPES).map((item, index) => (
+        <div className={s.searchBlockOptionsTypesInput} key={index}>
+            <input type="checkbox" />
+            <label>{TYPES[item].text}</label>
+        </div>
+    ));
 
     useEffect(() => {
         if (selectValue === 1) {
@@ -96,10 +104,7 @@ const SearchPage: FC = () => {
                     </div>
                     <div className={s.searchBlockOptionsTypes}>
                         <h4>Тип</h4>
-                        <div className={s.searchBlockOptionsTypesInput}>
-                            <label>Ванна</label>
-                            <input type="checkbox" />
-                        </div>
+                        {typesOptions}
                     </div>
                     <div className={s.searchBlockOptionsList}>
                         <select onChange={(e) => setSelectValue(+e.target.value)} value={selectValue}>

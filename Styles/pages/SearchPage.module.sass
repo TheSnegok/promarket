@@ -1,228 +1,237 @@
 @mixin flexColumn($direction: column, $gap: 15px)
-    display: flex
-    flex-direction: $direction
-    @if $direction == column
-        row-gap: $gap
-    @else
-        column-gap: $gap
+	display: flex
+	flex-direction: $direction
+	@if $direction == column
+		row-gap: $gap
+	@else
+		column-gap: $gap
 
 .search
-    position: relative
-    height: auto
-    z-index: 4
-    background-color: var(--blue-third)
-    padding: 15px 25px 45px
-    margin-bottom: 15px
-    font-family: Montserrat
-    color: white
-    &Header
-        h2
-            font-size: 4vh
-            margin-bottom: 2vh
-    &Block
-        display: flex
-        gap: 5%
-        &Options
-            width: 25%
-            @include flexColumn(column, 20px)
-            &Header
-                font-size: 22px
-                line-height: 28px
-                padding-left: 10px
-                margin-bottom: 10px
-            h4
-                font-size: 18px
-                line-height: 22px
-                padding-left: 5px
-                margin-bottom: 5px
-                text-align: center
-            &Price, &Year
-                @include flexColumn(column, 8px)
-            &List
-                position: relative
-                display: flex
-                justify-content: center
-                width: 50%
-                &::after
-                    content: '▲'
-                    position: absolute
-                    top: 50%
-                    right: 0
-                    translate: -50% -50%
-                    color: black
-                    rotate: 180deg
-                    font-size: 14px
-                select
-                    appearance: none
-                    outline: none
-                    border: none
-                    width: 100%
-                    border-radius: 4px
-                    padding: 2px 25px 2px 4px
-                    font-size: 14px
-                    font-family: Montseratte
-        &Matches
-            position: relative
-            width: 75%
-            padding-bottom: 50px
-            &Header
-                font-size: 22px
-                line-height: 28px
-                padding-left: 20px
-                margin-bottom: 10px
-            &None
-                width: 100%
-                height: 100%
-                display: flex
-                justify-content: center
-                align-items: center
-            &Block
-                display: flex
-                flex-wrap: wrap
-                gap: 10px
-                width: 100%
-                position: relative
-                &Item
-                    overflow: hidden
-                    height: 169px
-                    width: calc(20% - 10px)
-                    word-break: break-word
-                    position: relative
-                    text-align: center
-                    cursor: pointer
-                    &:hover
-                        overflow: unset
-                        background-color: #0052ce
-                        border-radius: 4px 4px 0 0
-                    &:hover .searchBlockMatchesBlockItemDescription
-                        background-color: #0052ce
-                    &:hover .searchBlockMatchesBlockItemPrice
-                        background-color: #0052ce
-                    &Img
-                        position: relative
-                        padding: 10px
-                    &Description
-                        position: relative
-                        z-index: 5
-                        min-height: 43px
-                        width: 100%
-                        padding: 5px 5px 0 5px
-                    &Price
-                        position: relative
-                        z-index: 6
-                        width: 100%
-                        height: 70px
-                        padding: 5px 0 0 10px
-                        display: flex
-                        justify-content: left
-                        align-items: flex-start
+	position: relative
+	height: auto
+	z-index: 4
+	background-color: var(--blue-third)
+	padding: 15px 25px 45px
+	margin-bottom: 15px
+	font-family: Montserrat
+	color: white
+	&Header
+		h2
+			font-size: 4vh
+			margin-bottom: 2vh
+	&Block
+		display: flex
+		gap: 5%
+		&Options
+			width: 25%
+			@include flexColumn(column, 20px)
+			&Header
+				font-size: 22px
+				line-height: 28px
+				padding-left: 10px
+				margin-bottom: 10px
+			h4
+				font-size: 18px
+				line-height: 22px
+				padding-left: 5px
+				margin-bottom: 5px
+				text-align: center
+			&Price, &Year
+				@include flexColumn(column, 8px)
+			&List
+				position: relative
+				display: flex
+				justify-content: center
+				width: 50%
+				&::after
+					content: '▲'
+					position: absolute
+					top: 50%
+					right: 0
+					translate: -50% -50%
+					color: black
+					rotate: 180deg
+					font-size: 14px
+				select
+					appearance: none
+					outline: none
+					border: none
+					width: 100%
+					border-radius: 4px
+					padding: 2px 25px 2px 4px
+					font-size: 14px
+					font-family: Montseratte
+			&Types
+				width: 100%
+				padding: 5% 10%
+				background-color: rgb(110, 110, 110)
+				border-radius: 8px
+				&Input
+					width: 100%
+					input
+						margin-right: 3%
+		&Matches
+			position: relative
+			width: 75%
+			padding-bottom: 50px
+			&Header
+				font-size: 22px
+				line-height: 28px
+				padding-left: 20px
+				margin-bottom: 10px
+			&None
+				width: 100%
+				height: 100%
+				display: flex
+				justify-content: center
+				align-items: center
+			&Block
+				display: flex
+				flex-wrap: wrap
+				gap: 10px
+				width: 100%
+				position: relative
+				&Item
+					overflow: hidden
+					height: 169px
+					width: calc(20% - 10px)
+					word-break: break-word
+					position: relative
+					text-align: center
+					cursor: pointer
+					&:hover
+						overflow: unset
+						background-color: #0052ce
+						border-radius: 4px 4px 0 0
+					&:hover .searchBlockMatchesBlockItemDescription
+						background-color: #0052ce
+					&:hover .searchBlockMatchesBlockItemPrice
+						background-color: #0052ce
+					&Img
+						position: relative
+						padding: 10px
+					&Description
+						position: relative
+						z-index: 5
+						min-height: 43px
+						width: 100%
+						padding: 5px 5px 0 5px
+					&Price
+						position: relative
+						z-index: 6
+						width: 100%
+						height: 70px
+						padding: 5px 0 0 10px
+						display: flex
+						justify-content: left
+						align-items: flex-start
 
 @media ( max-width: 1350px )
-    .search
-        &Block
-            &Options
-                &List
-                    width: 75%
-            &Matches
-                &Block
-                    gap: 10px
-                    &Item
-                        width: calc(33% - 10px)
-                        &Img
-                            position: relative
-                            padding: 10px
-                            img
-                                width: 75%
-                                height: 100px
+	.search
+		&Block
+			&Options
+				&List
+					width: 75%
+			&Matches
+				&Block
+					gap: 10px
+					&Item
+						width: calc(33% - 10px)
+						&Img
+							position: relative
+							padding: 10px
+							img
+								width: 75%
+								height: 100px
 
 @media ( max-width: 1050px)
-    .search
-        &Block
-            &Options
-                &List
-                    width: 100%
-            &Matches
-                &Block
-                    gap: 10px
-                    &Item
-                        width: calc(33% - 10px)
-                        &Img
-                            padding: 5px 5px 2px 5px
-                        &Description
-                            padding: 2px 5px 5px 5px
-                            min-height: 48px
-                            span
-                                font-size: 12px
+	.search
+		&Block
+			&Options
+				&List
+					width: 100%
+			&Matches
+				&Block
+					gap: 10px
+					&Item
+						width: calc(33% - 10px)
+						&Img
+							padding: 5px 5px 2px 5px
+						&Description
+							padding: 2px 5px 5px 5px
+							min-height: 48px
+							span
+								font-size: 12px
 
 @media ( max-width: 800px )
-    .search
-        &Block
-            &Options
-                &Header
-                    font-size: 16px
-                    line-height: 20px
-                    padding-left: 5px
-                    margin-bottom: 5px
-                &List
-                    width: 100%
-                    &::after
-                        font-size: 10px
-                    select
-                        padding: 2px 18px 2px 4px
-                        font-size: 10px
-                h4
-                    font-size: 16px
-                    line-height: 20px
-            &Matches
-                &Header
-                    font-size: 16px
-                    line-height: 20px
-                    padding-left: 20px
-                    margin-bottom: 5px
-                &Block
-                    gap: 8px
-                    &Item
-                        width: calc(50% - 4px)
-                        &Img
-                            padding: 5px 5px 2px 5px
-                        &Description
-                            padding: 2px 5px 5px 5px
-                            min-height: 48px
-                            span
-                                font-size: 12px
+	.search
+		&Block
+			&Options
+				&Header
+					font-size: 16px
+					line-height: 20px
+					padding-left: 5px
+					margin-bottom: 5px
+				&List
+					width: 100%
+					&::after
+						font-size: 10px
+					select
+						padding: 2px 18px 2px 4px
+						font-size: 10px
+				h4
+					font-size: 16px
+					line-height: 20px
+			&Matches
+				&Header
+					font-size: 16px
+					line-height: 20px
+					padding-left: 20px
+					margin-bottom: 5px
+				&Block
+					gap: 8px
+					&Item
+						width: calc(50% - 4px)
+						&Img
+							padding: 5px 5px 2px 5px
+						&Description
+							padding: 2px 5px 5px 5px
+							min-height: 48px
+							span
+								font-size: 12px
 
 @media ( max-width: 520px )
-    .search
-        &Block
-            &Options
-                width: 40%
-                &Header
-                    font-size: 12px
-                    line-height: 16px
-                    padding-left: 5px
-                    margin-bottom: 5px
-                &List
-                    width: 100%
-                    &::after
-                        font-size: 10px
-                    select
-                        padding: 2px 18px 2px 4px
-                        font-size: 10px
-            &Matches
-                width: 60%
-                &Header
-                    font-size: 12px
-                    line-height: 16px
-                    padding-left: 20px
-                    margin-bottom: 5px
-                &Block
-                    gap: 8px
-                    &Item
-                        width: 100%
-                        &Img
-                            padding: 5px 5px 2px 5px
-                        &Description
-                            padding: 2px 5px 5px 5px
-                            min-height: 48px
-                            span
-                                font-size: 12px
+	.search
+		&Block
+			&Options
+				width: 40%
+				&Header
+					font-size: 12px
+					line-height: 16px
+					padding-left: 5px
+					margin-bottom: 5px
+				&List
+					width: 100%
+					&::after
+						font-size: 10px
+					select
+						padding: 2px 18px 2px 4px
+						font-size: 10px
+			&Matches
+				width: 60%
+				&Header
+					font-size: 12px
+					line-height: 16px
+					padding-left: 20px
+					margin-bottom: 5px
+				&Block
+					gap: 8px
+					&Item
+						width: 100%
+						&Img
+							padding: 5px 5px 2px 5px
+						&Description
+							padding: 2px 5px 5px 5px
+							min-height: 48px
+							span
+								font-size: 12px
