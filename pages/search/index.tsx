@@ -16,6 +16,7 @@ const SearchPage: FC = () => {
 
     const [matched, setMatched] = useState<IDataTemplate[]>(findInput.matchFound);
     const [selectValue, setSelectValue] = useState<number>(findInput.sort);
+    const [types, setTypes] = useState<string[]>([]);
 
     const selectedItem = (item: IDataTemplate) => {
         setProduct(item);
@@ -31,9 +32,18 @@ const SearchPage: FC = () => {
         router.push('/product');
     };
 
-    const typesOptions = Object.keys(TYPES).map((item, index) => (
+    const addType = (type: string) => {
+        if(types.includes(type)) {
+            setTypes(types => types.filter(item => type !== item));
+            setMatched(findInput.matchFound)
+        } else {
+            setTypes(types => [...types, type]);
+        }
+    }
+
+    const typesOptions = Object.keys(TYPES).map((item, index) => index !== 0 && (
         <div className={s.searchBlockOptionsTypesInput} key={index}>
-            <input type="checkbox" />
+            <input type="checkbox" onChange={() => addType(TYPES[item].name)} />
             <label>{TYPES[item].text}</label>
         </div>
     ));
@@ -84,7 +94,11 @@ const SearchPage: FC = () => {
             });
             setMatched([...findInput.matchFound.sort((first, second) => second.stars.reduce((first, second) => first + second) - first.stars.reduce((first, second) => first + second))]);
         };// eslint-disable-next-line
-    }, [findInput.matchFound, selectValue])
+    }, [findInput.matchFound, selectValue]);
+
+    useEffect(() => {
+        types.length !== 0 && setMatched(findInput.matchFound.filter(item => types.includes(item.type) && item ));
+    }, [types, findInput.matchFound])
 
     return (
         <section className={s.search}>
@@ -94,6 +108,14 @@ const SearchPage: FC = () => {
             <div className={s.searchBlock}>
                 <div className={s.searchBlockOptions}>
                     <h3 className={s.searchBlockOptionsHeader}>Сортировать</h3>
+                    <div className={s.searchBlockOptionsList}>
+                        <select onChange={(e) => setSelectValue(+e.target.value)} value={selectValue}>
+                            <option value="1">От дешёвых к дорогим</option>
+                            <option value="2">От дорогих к дешёвых</option>
+                            <option value="3">Популярные</option>
+                            <option value="4">По рейтингу</option>
+                        </select>
+                    </div>
                     <div className={s.searchBlockOptionsPrice}>
                         <h4>Цена</h4>
                         <RangeDoubleSlider header='Сортировка по цене:' min={0} max={50000} step={10} type='price' />
@@ -105,14 +127,6 @@ const SearchPage: FC = () => {
                     <div className={s.searchBlockOptionsTypes}>
                         <h4>Тип</h4>
                         {typesOptions}
-                    </div>
-                    <div className={s.searchBlockOptionsList}>
-                        <select onChange={(e) => setSelectValue(+e.target.value)} value={selectValue}>
-                            <option value="1">От дешёвых к дорогим</option>
-                            <option value="2">От дорогих к дешёвых</option>
-                            <option value="3">Популярные</option>
-                            <option value="4">По рейтингу</option>
-                        </select>
                     </div>
                 </div>
                 <div className={s.searchBlockMatches}>
