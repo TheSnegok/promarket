@@ -23,13 +23,18 @@
 		display: flex
 		gap: 5%
 		&Options
+			position: relative
 			width: 25%
 			@include flexColumn(column, 20px)
+			align-items: center
 			&Header
+				width: 100%
 				font-size: 22px
 				line-height: 28px
 				padding-left: 10px
 				margin-bottom: 10px
+				overflow: hidden
+				width: 100%
 			h4
 				font-size: 18px
 				line-height: 22px
@@ -40,14 +45,13 @@
 				@include flexColumn(column, 8px)
 			&List
 				position: relative
-				display: flex
-				justify-content: center
-				width: 50%
+				width: 100%
+				overflow: hidden
 				&::after
 					content: '▲'
 					position: absolute
 					top: 50%
-					right: 0
+					left: 165px
 					translate: -50% -50%
 					color: black
 					rotate: 180deg
@@ -56,20 +60,23 @@
 					appearance: none
 					outline: none
 					border: none
-					width: 100%
+					width: 180px
 					border-radius: 4px
 					padding: 2px 25px 2px 4px
 					font-size: 14px
 					font-family: Montseratte
 			&Types
-				width: 100%
-				padding: 5% 10%
+				width: 90%
+				padding: 5% 8%
 				background-color: rgb(110, 110, 110)
 				border-radius: 8px
 				&Input
 					width: 100%
 					input
 						margin-right: 3%
+					label
+						font-size: 14px
+						word-break: break-all
 		&Matches
 			position: relative
 			width: 75%
@@ -130,8 +137,8 @@
 	.search
 		&Block
 			&Options
-				&List
-					width: 75%
+				&Types
+					width: 100%
 			&Matches
 				&Block
 					gap: 10px
@@ -148,8 +155,20 @@
 	.search
 		&Block
 			&Options
+				&Header
+					font-size: 20px
+					line-height: 24px
 				&List
 					width: 100%
+					&::after
+						right: 5px
+				&Types
+					&Input
+						input
+							width: 10px
+							height: 10px
+						label
+							font-size: 12px
 			&Matches
 				&Block
 					gap: 10px
@@ -167,22 +186,40 @@
 	.search
 		&Block
 			&Options
+				width: 30%
 				&Header
-					font-size: 16px
-					line-height: 20px
+					font-size: 12px
+					line-height: 16px
 					padding-left: 5px
 					margin-bottom: 5px
 				&List
+					position: relative
 					width: 100%
 					&::after
 						font-size: 10px
+						right: unset
+						left: 92%
+						top: 60%
 					select
-						padding: 2px 18px 2px 4px
+						position: relative
+						padding: 2px 2px
 						font-size: 10px
+						width: 100%
+				&Types
+					padding: 5% 4px
+					&Input
+						height: auto
+						input
+							width: 8px
+							height: 8px
+							margin-right: 2px
+						label
+							font-size: 10px
 				h4
 					font-size: 16px
 					line-height: 20px
 			&Matches
+				width: 65%
 				&Header
 					font-size: 16px
 					line-height: 20px
@@ -202,21 +239,35 @@
 
 @media ( max-width: 520px )
 	.search
+		padding: 10px 15px 35px
 		&Block
 			&Options
 				width: 40%
-				&Header
+				row-gap: 15px
+				h4
+					margin-bottom: 2px
 					font-size: 12px
-					line-height: 16px
-					padding-left: 5px
-					margin-bottom: 5px
+				&Header
+					font-size: 10px
+					line-height: 14px
+					padding-left: 2px
+					margin-bottom: 0px
 				&List
 					width: 100%
 					&::after
 						font-size: 10px
 					select
 						padding: 2px 18px 2px 4px
-						font-size: 10px
+						font-size: 7px
+				&Types
+					&Input
+						label
+							font-size: 7px
+						input
+							width: 7px
+							height: 7px
+							border-radius: 0
+							outline: none
 			&Matches
 				width: 60%
 				&Header

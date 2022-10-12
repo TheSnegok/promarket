@@ -33,7 +33,7 @@ const SearchPage: FC = () => {
     };
 
     const addType = (type: string) => {
-        if(types.includes(type)) {
+        if (types.includes(type)) {
             setTypes(types => types.filter(item => type !== item));
             setMatched(findInput.matchFound)
         } else {
@@ -41,64 +41,45 @@ const SearchPage: FC = () => {
         }
     }
 
-    const typesOptions = Object.keys(TYPES).map((item, index) => index !== 0 && (
+    const printTypes = Object.keys(TYPES).map((item, index) => index !== 0 && (
         <div className={s.searchBlockOptionsTypesInput} key={index}>
             <input type="checkbox" onChange={() => addType(TYPES[item].name)} />
             <label>{TYPES[item].text}</label>
         </div>
     ));
 
-    useEffect(() => {
-        if (selectValue === 1) {
-            setFindInput({
-                text: findInput.text,
-                matchFound: findInput.matchFound,
-                minPrice: findInput.minPrice,
-                maxPrice: findInput.maxPrice,
-                minYear: findInput.minYear,
-                maxYear: findInput.maxYear,
-                sort: 1
-            });
-            setMatched([...findInput.matchFound.sort((first, second) => first.price[0] - second.price[0])]);
-        } else if (selectValue === 2) {
-            setFindInput({
-                text: findInput.text,
-                matchFound: findInput.matchFound,
-                minPrice: findInput.minPrice,
-                maxPrice: findInput.maxPrice,
-                minYear: findInput.minYear,
-                maxYear: findInput.maxYear,
-                sort: 2
-            });
-            setMatched([...findInput.matchFound.sort((first, second) => second.price[0] - first.price[0])]);
-        } else if (selectValue === 3) {
-            setFindInput({
-                text: findInput.text,
-                matchFound: findInput.matchFound,
-                minPrice: findInput.minPrice,
-                maxPrice: findInput.maxPrice,
-                minYear: findInput.minYear,
-                maxYear: findInput.maxYear,
-                sort: 3
-            });
-            setMatched([...findInput.matchFound.sort((first, second) => second.reviews - first.reviews)]);
-        } else if (selectValue === 4) {
-            setFindInput({
-                text: findInput.text,
-                matchFound: findInput.matchFound,
-                minPrice: findInput.minPrice,
-                maxPrice: findInput.maxPrice,
-                minYear: findInput.minYear,
-                maxYear: findInput.maxYear,
-                sort: 4
-            });
-            setMatched([...findInput.matchFound.sort((first, second) => second.stars.reduce((first, second) => first + second) - first.stars.reduce((first, second) => first + second))]);
-        };// eslint-disable-next-line
-    }, [findInput.matchFound, selectValue]);
+    const checkMatchedOnType = () => {
+        types.length !== 0 && setMatched(findInput.matchFound.filter(item => types.includes(item.type) && item));
+    };
 
     useEffect(() => {
-        types.length !== 0 && setMatched(findInput.matchFound.filter(item => types.includes(item.type) && item ));
+        checkMatchedOnType();
     }, [types, findInput.matchFound])
+
+    useEffect(() => {
+        setFindInput({
+            text: findInput.text,
+            matchFound: findInput.matchFound,
+            minPrice: findInput.minPrice,
+            maxPrice: findInput.maxPrice,
+            minYear: findInput.minYear,
+            maxYear: findInput.maxYear,
+            sort: selectValue
+        });
+        if (selectValue === 1) {
+            setMatched([...findInput.matchFound.sort((first, second) => first.price[0] - second.price[0])]);
+            checkMatchedOnType();
+        } else if (selectValue === 2) {
+            setMatched([...findInput.matchFound.sort((first, second) => second.price[0] - first.price[0])]);
+            checkMatchedOnType();
+        } else if (selectValue === 3) {
+            setMatched([...findInput.matchFound.sort((first, second) => second.reviews - first.reviews)]);
+            checkMatchedOnType();
+        } else if (selectValue === 4) {
+            setMatched([...findInput.matchFound.sort((first, second) => second.stars.reduce((first, second) => first + second) - first.stars.reduce((first, second) => first + second))]);
+            checkMatchedOnType();
+        };// eslint-disable-next-line
+    }, [findInput.matchFound, selectValue]);
 
     return (
         <section className={s.search}>
@@ -107,7 +88,9 @@ const SearchPage: FC = () => {
             </div>
             <div className={s.searchBlock}>
                 <div className={s.searchBlockOptions}>
-                    <h3 className={s.searchBlockOptionsHeader}>Сортировать</h3>
+                    <div className={s.searchBlockOptionsHeader}>
+                        <h3>Сортировать</h3>
+                    </div>
                     <div className={s.searchBlockOptionsList}>
                         <select onChange={(e) => setSelectValue(+e.target.value)} value={selectValue}>
                             <option value="1">От дешёвых к дорогим</option>
@@ -126,32 +109,30 @@ const SearchPage: FC = () => {
                     </div>
                     <div className={s.searchBlockOptionsTypes}>
                         <h4>Тип</h4>
-                        {typesOptions}
+                        {printTypes}
                     </div>
                 </div>
                 <div className={s.searchBlockMatches}>
-                    {findInput.matchFound.length !== 0 ? (
+                    {matched.length !== 0 ? (
                         <>
                             <h3 className={s.searchBlockMatchesHeader}>
                                 Найдено
                             </h3>
                             <div className={s.searchBlockMatchesBlock}>
-                                {matched &&
-                                    (matched.map((find, index) => (
-                                        (find.price[0] < findInput.maxPrice && find.price[0] > findInput.minPrice) &&
-                                        (<div className={s.searchBlockMatchesBlockItem} key={index} onClick={() => selectedItem(find)}>
-                                            <div className={s.searchBlockMatchesBlockItemImg}>
-                                                <Image src={find.imgSrc} alt={find.personalKey} width='90%' height='100px' />
-                                            </div>
-                                            <div className={s.searchBlockMatchesBlockItemDescription}>
-                                                <span>{find.description}</span>
-                                            </div>
-                                            <div className={s.searchBlockMatchesBlockItemPrice}>
-                                                <PriceDivision price={find.price} />
-                                            </div>
-                                        </div>)
-                                    )))
-                                }
+                                {(matched.map((find, index) => (
+                                    (find.price[0] < findInput.maxPrice && find.price[0] > findInput.minPrice) &&
+                                    (<div className={s.searchBlockMatchesBlockItem} key={index} onClick={() => selectedItem(find)}>
+                                        <div className={s.searchBlockMatchesBlockItemImg}>
+                                            <Image src={find.imgSrc} alt={find.personalKey} width='90%' height='100px' />
+                                        </div>
+                                        <div className={s.searchBlockMatchesBlockItemDescription}>
+                                            <span>{find.description}</span>
+                                        </div>
+                                        <div className={s.searchBlockMatchesBlockItemPrice}>
+                                            <PriceDivision price={find.price} />
+                                        </div>
+                                    </div>)
+                                )))}
                             </div>
                         </>
                     ) : (
