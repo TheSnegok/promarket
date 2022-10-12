@@ -80,7 +80,7 @@ const Header: FC = () => {
 					</Link>
 				</div>
 				<div className={s.menuitem}>
-					<Link href={"/"}>
+					<Link href={"/contacts"}>
 						Контакты
 					</Link>
 				</div>
