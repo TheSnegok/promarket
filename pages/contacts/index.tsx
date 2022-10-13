@@ -1,11 +1,32 @@
+import { useState } from "react";
+import { useGlobalContext } from "~/../Components/Context/Context";
 import s from "../../Styles/pages/ContactsPage.module.sass";
 
 const ContactsPage = () => {
+
+    const { data } = useGlobalContext();
+
+    const [coord, setCoord] = useState<String>('50.512781249939906, 30.58245169841876')
+
     return (
         <section className={s.contacts}>
-            <h3>Контакты</h3>
+            <h3 className={s.contactsHeader}>Контакты</h3>
+            <p>Зв'язатися за нами можливо за допомогою телефона:</p>
+            <div className={s.contactsNumber}>
+                <a href="tel:+380950183210">+38 095 018-32-10</a>
+            </div>
+            <p>Або в нашому центрі, виберіть найближче місце до вас:</p>
             <div className={s.contactsWrapper}>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3297237.6974906567!2d31.789171731576715!3d48.751907423508264!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1665599333811!5m2!1sru!2sua" width="600" height="450" style={{border:0}} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+                <div className={s.contactsWrapperMenu}>
+                    {data.regionsList.map(region => (
+                        <div className={s.contactsWrapperMenuRegion}>
+                            <span>{region}</span>
+                        </div>
+                    ))}
+                </div>
+                <div className={s.contactsWrapperMap}>
+                    <iframe src={`https://maps.google.com/maps?q=${coord}&z=15&output=embed`} width="600" height="450" style={{ border: 0 }} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+                </div>
             </div>
         </section>
     )
