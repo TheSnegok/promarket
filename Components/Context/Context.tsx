@@ -276,9 +276,9 @@ export const Provider: FC = ({ children }) => {
 
 	const contextFindItem = (itemName: string, wantedKey: string): boolean => {
 		if (itemName === 'likes') {
-			return likes.items.find(item => item.personalKey === wantedKey) === undefined;
+			return likes.items.find(item => item['personalKey'] === wantedKey) === undefined;
 		} else if (itemName === 'basket') {
-			return basket.items.find(item => item.personalKey === wantedKey) === undefined;
+			return basket.items.find(item => item['personalKey'] === wantedKey) === undefined;
 		}
 	}
 

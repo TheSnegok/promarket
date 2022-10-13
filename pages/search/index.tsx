@@ -49,7 +49,7 @@ const SearchPage: FC = () => {
     ));
 
     const checkMatchedOnType = () => {
-        types.length !== 0 && setMatched(findInput.matchFound.filter(item => types.includes(item.type) && item));
+        types.length !== 0 && setMatched(findInput.matchFound.filter(item => types.includes(item['type']) && item));
     };
 
     useEffect(() => {

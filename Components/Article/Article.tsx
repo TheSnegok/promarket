@@ -16,7 +16,7 @@ const Article: FC = () => {
                 <div className={s.articleWrapperSlider}>
                     <div className={s.articleWrapperSliderItem} style={{ left: position + "px" }}>
                         {data.articleList && data.articleList.map((item, index) => (
-                            <ArticleSlide key={index} image={item[0]} articleHeader={item[1].toString()} setArticle={setArticle} />
+                            <ArticleSlide key={index} image={item[0].toString()} articleHeader={item[1].toString()} setArticle={setArticle} />
                         ))}
                     </div>
                 </div>
