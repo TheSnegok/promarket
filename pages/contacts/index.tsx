@@ -6,7 +6,11 @@ const ContactsPage = () => {
 
     const { data } = useGlobalContext();
 
-    const [coord, setCoord] = useState<String>('50.512781249939906, 30.58245169841876')
+    const [coord, setCoord] = useState<string>('50.512781249939906, 30.58245169841876');
+
+    const changeRegion = (coords: string) => {
+        setCoord(coords);
+    }
 
     return (
         <section className={s.contacts}>
@@ -24,9 +28,9 @@ const ContactsPage = () => {
                 <p>Або в нашому центрі, виберіть найближче місце до вас:</p>
                 <div className={s.contactsLocationMenu}>
                     <div className={s.contactsLocationMenuList}>
-                        {data.regionsList.map(region => (
-                            <div className={s.contactsLocationMenuListRegion}>
-                                <span>{region}</span>
+                        {data.regionsList.map((region, index) => (
+                            <div className={s.contactsLocationMenuListRegion} onClick={() => changeRegion(region.locationCoords)} key={index}>
+                                <span>{region.name}</span>
                             </div>
                         ))}
                     </div>

@@ -32,8 +32,8 @@ const Header: FC = () => {
 						<ul>
 							{data.regionsList.map((item, index) => {
 								return (
-									<li key={index} onClick={() => setRegion(item)}>
-										{item}
+									<li key={index} onClick={() => setRegion(item.name)}>
+										{item.name}
 									</li>
 								)
 							})}

@@ -22,7 +22,7 @@ interface IData {
 	hits: IHits;
 	stock: IStock;
 	articleList: (string | StaticImageData)[][];
-	regionsList: string[];
+	regionsList: IRegionsList[];
 	menu: IMenuListItems[];
 	footer: {
 		footerSectionList: string[][];
@@ -98,6 +98,11 @@ export interface ISearch {
 	minYear: number,
 	maxYear: number,
 	sort: number,
+}
+
+export interface IRegionsList {
+	name: string;
+	locationCoords: string;
 }
 
 interface IContext {
