@@ -18,7 +18,7 @@ const ContactsPage = () => {
                 </div>
             </div>
             <div className={s.contactsOr}>
-                <span>або</span>
+                <span>или</span>
             </div>
             <div className={s.contactsLocation}>
                 <p>Або в нашому центрі, виберіть найближче місце до вас:</p>

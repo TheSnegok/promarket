@@ -2,6 +2,7 @@ import { FC, useState } from "react";
 import { useGlobalContext } from "../Context/Context";
 import s from '../../Styles/components/Article.module.sass';
 import ArticleSlide from "./ArticleSlide/ArticleSlide";
+import { StaticImageData } from "next/image";
 
 const Article: FC = () => {
 
@@ -16,7 +17,7 @@ const Article: FC = () => {
                 <div className={s.articleWrapperSlider}>
                     <div className={s.articleWrapperSliderItem} style={{ left: position + "px" }}>
                         {data.articleList && data.articleList.map((item, index) => (
-                            <ArticleSlide key={index} image={item[0].toString()} articleHeader={item[1].toString()} setArticle={setArticle} />
+                            <ArticleSlide key={index} image={item[0] as StaticImageData} articleHeader={item[1] as string} setArticle={setArticle} />
                         ))}
                     </div>
                 </div>

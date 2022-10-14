@@ -1,11 +1,11 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { articleText } from "../../../pages/api/api";
 import { IArticle } from "../../Context/Context";
 import s from "../../../Styles/components/ArticleSlide.module.sass";
 import Link from "next/link";
 
 interface IArticleSlideProps {
-    image: string;
+    image: StaticImageData;
     articleHeader: string;
     setArticle: (c: IArticle) => void;
 }

@@ -22,11 +22,6 @@
     "build": "next build",
     "dev": "next dev"
   },
-  "git": {
-    "scripts": {
-      "pre-push": "surge --project ./.next --domain promarket.surge.sh"
-    }
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -41,8 +36,6 @@
   },
   "devDependencies": {
     "eslint": "^8.25.0",
-    "git-scripts": "^0.6.4",
-    "surge": "^0.23.1",
     "typescript": "4.8.4"
   }
 }
