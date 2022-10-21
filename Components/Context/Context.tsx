@@ -136,7 +136,7 @@ export const Context = createContext<IContext>({
 	data: {
 		hits: {
 			menu: hitsMenu,
-			slideItems: hitsSlideItems,
+			slideItems: hitsSlideItems
 		},
 		stock: {
 			menu: stockMenu,

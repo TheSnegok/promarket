@@ -49,18 +49,24 @@ const Hits: FC = () => {
         <section className={s.hits}>
             <h1 className={s.hitsHeader}>Хиты продаж</h1>
             <div className={s.hitsMenu}>
-                {data.hits.menu !== null ? data.hits.menu.map((item, index) => (
+                {data.hits.menu !== null && data.hits.menu.map((item, index) => (
                     <div key={index} className={menuName === index ? s.tagActive : s.tag} onClick={() => onChangeMenu(index, item[1])}>{item[0]}</div>
-                )) : null}
+                ))}
             </div>
             <div className={s.hitsSlider}>
-                <div className={s.hitsWrapper}>
-                    <div className={s.hitsWrapperSlider} style={{ left: position + 'px' }}>
-                        {slidesArray.map((slide, index) => <SliderItem key={index} item={slide} />)}
+                {slidesArray.length !== 0 ? (
+                    <div className={s.hitsWrapper}>
+                        <div className={s.hitsWrapperSlider} style={{ left: position + 'px' }}>
+                            {slidesArray.map((slide, index) => <SliderItem key={index} item={slide} />)}
+                        </div>
                     </div>
-                </div>
-                <div className={s.arrowRight} onClick={() => changeSlide("plus")}></div>
-                <div className={s.arrowLeft} onClick={() => changeSlide("minus")}></div>
+                ) : (
+                    <div className={s.hitsWrapperEmpty}>
+                        <span>Ничего не найдено :(</span>
+                    </div>
+                )}
+                <div className={slidesArray.length !== 0 ? s.arrowRight : s.arrowRightHidden} onClick={() => changeSlide("plus")}></div>
+                <div className={slidesArray.length !== 0 ? s.arrowLeft : s.arrowLeftHidden} onClick={() => changeSlide("minus")}></div>
             </div>
         </section>
     )

@@ -29,7 +29,7 @@ const ContactsPage = () => {
                 <div className={s.contactsLocationMenu}>
                     <div className={s.contactsLocationMenuList}>
                         {data.regionsList.map((region, index) => (
-                            <div className={s.contactsLocationMenuListRegion} onClick={() => changeRegion(region.locationCoords)} key={index}>
+                            <div className={region.locationCoords === coord ? s.contactsLocationMenuListRegionActive : s.contactsLocationMenuListRegion} onClick={() => changeRegion(region.locationCoords)} key={index}>
                                 <span>{region.name}</span>
                             </div>
                         ))}
