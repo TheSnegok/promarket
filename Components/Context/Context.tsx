@@ -211,6 +211,7 @@ export const Context = createContext<IContext>({
 export const useGlobalContext = () => useContext(Context);
 
 export const Provider: FC = ({ children }) => {
+	
 	const data = {
 		hits: {
 			menu: hitsMenu,

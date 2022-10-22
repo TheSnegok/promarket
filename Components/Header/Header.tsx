@@ -75,7 +75,7 @@ const Header: FC = () => {
 					</Link>
 				</div>
 				<div className={s.menuitem}>
-					<Link href={"/"}>
+					<Link href={"/articles"}>
 						Статьи
 					</Link>
 				</div>

@@ -53,15 +53,21 @@ const Stock: FC = () => {
                 )) : null}
             </div>
             <div className={s.stockSlider}>
-                <div className={s.stockWrapper}>
-                    <div className={s.stockWrapperSlider} style={{ left: position + 'px' }}>
-                        {slidesArray.map((item, index) => <SliderItem key={index} item={item} />)}
+                {slidesArray.length !== 0 ? (
+                    <div className={s.stockWrapper}>
+                        <div className={s.stockWrapperSlider} style={{ left: position + 'px' }}>
+                            {slidesArray.map((item, index) => <SliderItem key={index} item={item} />)}
+                        </div>
                     </div>
-                </div>
-                <div className={s.arrowRight} onClick={() => changeSlide("plus")}></div>
-                <div className={s.arrowLeft} onClick={() => changeSlide("minus")}></div>
+                ) : (
+                    <div className={s.stockWrapperEmpty}>
+                        <span>Ничего не найдено :(</span>
+                    </div>
+                )}
+                <div className={slidesArray.length !== 0 ? s.arrowRight : s.arrowRightHidden} onClick={() => changeSlide("plus")}></div>
+                <div className={slidesArray.length !== 0 ? s.arrowLeft : s.arrowLeftHidden} onClick={() => changeSlide("minus")}></div>
             </div>
-        </section>
+        </section >
     )
 }
 
