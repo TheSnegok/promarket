@@ -20,19 +20,44 @@
 			display: flex
 			justify-content: flex-end
 			margin-bottom: 30px
-			&Sort
-				width: 15%
-				height: 100%
-				background-color: #fff
-				border-radius: 8px
-				margin-right: 3%
-				padding: 2px
 			&Template
-				width: 60px
+				display: flex
+				align-items: center
+				width: 80px
 				height: 100%
-				background-color: #fff
+				background-color: #afafaf
 				border-radius: 8px
-				padding: 2px
+				padding: 1px
+				&Row
+					display: flex
+					flex-direction: column
+					justify-content: space-around
+					align-items: center
+					width: 50%
+					height: 100%
+					background-color: #B0074D
+					border-radius: 8px 0 0 8px
+					padding: 10% 
+					&Line
+						width: 80%
+						height: 15%
+						border-radius: 4px
+						background-color: #ffffff
+				&Box
+					display: flex
+					justify-content: space-around
+					align-items: center
+					flex-wrap: wrap
+					width: 50%
+					height: 100%
+					border-radius: 0 8px 8px 0
+					gap: 12.5%
+					background-color: #07b00f
+					padding: 10% 
+					&Item
+						width: 25%
+						height: 20%
+						background-color: #fff
 		&Items
 			width: 100%
 			height: auto
