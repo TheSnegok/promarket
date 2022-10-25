@@ -8,9 +8,10 @@ interface IArticleList {
     image: StaticImageData;
     header: string;
     setArticle: (c: IArticle) => void;
+    row: boolean;
 }
 
-const ArticleList = ({ image, header, setArticle }: IArticleList) => {
+const ArticleList = ({ image, header, setArticle, row }: IArticleList) => {
 
     const pushArticle = () => {
         setArticle({ articleHeader: header, articleText: articleText[articleText.findIndex(element => element.header === header)].text });
@@ -18,14 +19,27 @@ const ArticleList = ({ image, header, setArticle }: IArticleList) => {
 
     return (
         <Link href="/article">
-            <a onClick={pushArticle} className={s.item}>
-                <div className={s.itemImg}>
-                    <Image src={image} alt={header} layout="fill" />
-                </div>
-                <h4 className={s.itemHeader}>
-                    {header}
-                </h4>
-            </a>
+            {row ?
+                (
+                    <a onClick={pushArticle} className={s.itemRow}>
+                        <div className={s.itemImgRow}>
+                            <Image src={image} alt={header} layout="fill" />
+                        </div>
+                        <h4 className={s.itemHeaderRow}>
+                            {header}
+                        </h4>
+                    </a>
+
+                ) : (
+                    <a onClick={pushArticle} className={s.item}>
+                        <div className={s.itemImg}>
+                            <Image src={image} alt={header} layout="fill" />
+                        </div>
+                        <h4 className={s.itemHeader}>
+                            {header}
+                        </h4>
+                    </a>
+                )}
         </Link>
     )
 }

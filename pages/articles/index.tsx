@@ -44,7 +44,7 @@ const Articles = () => {
 					</div>
 				</div>
 				<div className={template !== 'hide' ? (template === 'line' ? s.articlesWrapperItemsLine : s.articlesWrapperItemsBox) : s.articlesWrapperItemsHide}>
-					{data.articleList.map((item, index) => <ArticleList key={index} image={item[0] as StaticImageData} header={item[1] as string} setArticle={setArticle} />)}
+					{data.articleList.map((item, index) => <ArticleList key={index} image={item[0] as StaticImageData} header={item[1] as string} setArticle={setArticle} row={template === "line"} />)}
 				</div>
 			</div>
 		</section >
