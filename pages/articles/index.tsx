@@ -15,7 +15,7 @@ const Articles = () => {
 		if (template !== type) {
 			setActive(type);
 			setTemplate('hide');
-			setTimeout(() => setTemplate(type), 1200);
+			setTimeout(() => setTemplate(type), 400);
 		}
 	}
 
