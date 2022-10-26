@@ -70,7 +70,7 @@ const Header: FC = () => {
 					</Link>
 				</div>
 				<div className={s.menuitem}>
-					<Link href={"/"}>
+					<Link href={"/providers"}>
 						Поставщикам
 					</Link>
 				</div>
