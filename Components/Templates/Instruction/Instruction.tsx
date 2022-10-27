@@ -12,18 +12,18 @@ interface IInstructions {
 const Instructions = ({number, header, text, linkText, linkHref}: IInstructions) => {
     return (
         <div className={s.instructions}>
-            <h2>
+            <h2 className={s.instructionsNumber}>
                 {number}
             </h2>
             <h4 className={s.instructionsHeader}>
                 {header}
             </h4>
-            <p>
+            <p className={s.instructionsText}>
                 {text}
             </p>
             <Link href={linkHref}>
-                <a>
-                    <span>
+                <a className={s.instructionsLink}>
+                    <span className={s.instructionsLinkText}>
                         {linkText}
                     </span>
                 </a>

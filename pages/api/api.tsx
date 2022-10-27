@@ -1096,10 +1096,10 @@ export const stockMenu = [
 export const providers = [
 	{
 		header: 'Заполните заявку',
-		text: '',
+		text: 'Нужно заполнить анкету с правилами',
 		link: {
-			href: '',
-			text: ''
+			href: '/',
+			text: 'Анкета для заполнения'
 		}
 	},
 	{
