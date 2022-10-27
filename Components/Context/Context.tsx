@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
 import { createContext, FC, useContext, useState } from "react";
-import { articleList, hitsMenu, hitsSlideItems, stockMenu, stockSlideItems, regions, MenuListItems, footerSectionList, footerMenu } from '../../pages/api/api';
+import { articleList, hitsMenu, hitsSlideItems, stockMenu, stockSlideItems, regions, MenuListItems, footerSectionList, footerMenu, providers } from '../../pages/api/api';
 
 interface IMenuListItems {
 	src: StaticImageData;
@@ -28,6 +28,7 @@ interface IData {
 		footerSectionList: string[][];
 		footerMenu: string[][];
 	};
+	providers: IProviders[]
 }
 
 export interface ILikes {
@@ -62,6 +63,15 @@ export interface IArticle {
 	articleHeader: string;
 	articleText: string;
 };
+
+export interface IProviders {
+	header: string;
+	text: string;
+	link: {
+		href: string;
+		text: string;
+	}
+}
 
 export interface IProfile {
 	avatar: string | null;
@@ -148,7 +158,8 @@ export const Context = createContext<IContext>({
 		footer: {
 			footerSectionList,
 			footerMenu
-		}
+		},
+		providers
 	},
 	likes: {
 		count: 0,
@@ -211,7 +222,7 @@ export const Context = createContext<IContext>({
 export const useGlobalContext = () => useContext(Context);
 
 export const Provider: FC = ({ children }) => {
-	
+
 	const data = {
 		hits: {
 			menu: hitsMenu,
@@ -227,7 +238,8 @@ export const Provider: FC = ({ children }) => {
 		footer: {
 			footerSectionList,
 			footerMenu
-		}
+		},
+		providers
 	}
 
 	const [profile, setProfile] = useState<IProfile>({

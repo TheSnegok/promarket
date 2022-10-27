@@ -1092,3 +1092,38 @@ export const stockMenu = [
 	["Отопители", TYPES.heaters.name],
 	["Посудомоечные машины", TYPES.dishwashers.name],
 ];
+
+export const providers = [
+	{
+		header: 'Заполните заявку',
+		text: '',
+		link: {
+			href: '',
+			text: ''
+		}
+	},
+	{
+		header: 'Подготовьте список товаров',
+		text: '',
+		link: {
+			href: '',
+			text: ''
+		}
+	},
+	{
+		header: 'Подпишите договор',
+		text: '',
+		link: {
+			href: '',
+			text: ''
+		}
+	},
+	{
+		header: 'Начните продавать',
+		text: '',
+		link: {
+			href: '',
+			text: ''
+		}
+	},
+]
