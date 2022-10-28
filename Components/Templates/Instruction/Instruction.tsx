@@ -23,9 +23,9 @@ const Instructions = ({number, header, text, linkText, linkHref}: IInstructions)
             </p>
             <Link href={linkHref}>
                 <a className={s.instructionsLink}>
-                    <span className={s.instructionsLinkText}>
-                        {linkText}
-                    </span>
+                    <div className={s.instructionsLinkText}>
+                        <span>{linkText}</span>
+                    </div>
                 </a>
             </Link>
         </div>

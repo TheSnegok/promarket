@@ -1,6 +1,11 @@
 .instructions
+    position: relative
     font-family: 'Montserrat'
     color: #fff
+    padding: 40px 30px 110px 30px
+    border-radius: 8px
+    background-color: rgb(100, 100, 100)
+    width: 280px
     &Number
         font-size: 10vh
         line-height: 11vh
@@ -14,7 +19,26 @@
         line-height: 20px
         margin-bottom: 10px
     &Link
-        font-size: 16px
-        line-height: 20px
+        position: absolute
+        bottom: 20px
+        text-align: center
+        background-color: #ffffff
         margin-bottom: 10px
-        color: #fcb0ff
+        color: #030303
+        width: 80%
+        height: 70px
+        border-radius: 4px
+        &:hover .instructionsLinkText
+            transform: translate(-3px, -5px)
+        &Text
+            display: flex
+            justify-content: center
+            align-items: center
+            background-color: #ffd000
+            width: 100%
+            height: 100%
+            border-radius: 4px
+            font-size: 16px
+            line-height: 20px
+            font-weight: 700
+            padding: 0 10px
