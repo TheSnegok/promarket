@@ -60,7 +60,7 @@ const Header: FC = () => {
 			</div>
 			<div className={s.headerMenu}>
 				<div className={s.menuitem}>
-					<Link href={"/"}>
+					<Link href={"/payment"}>
 						Оплата
 					</Link>
 				</div>
