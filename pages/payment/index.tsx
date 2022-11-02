@@ -1,5 +1,10 @@
 import Image from "next/image";
 import s from "../../Styles/pages/Payment.module.sass"
+import visa from "../../public/Payment/visa.svg";
+import paypal from "../../public/Payment/paypal.svg";
+import cash from "../../public/Payment/cash.svg";
+import mastercard from "../../public/Payment/mastercard.svg";
+import Link from "next/link";
 
 const Payment = () => {
     return (
@@ -10,7 +15,7 @@ const Payment = () => {
                 <div className={s.paymentWrapperCash}>
                     <span>Вы можете заплатить наличными или по карте при доставке.</span>
                     <div className={s.paymentWrapperCashImg}>
-                        <Image src="" alt="cash" />
+                        <Image src={cash} alt="cash" />
                     </div>
                 </div>
                 <div className={s.paymentWrapperAnd}>Или</div>
@@ -25,13 +30,25 @@ const Payment = () => {
                 <h5 className={s.paymentBanks}>Мы поддерживаем такие банковские системы как:</h5>
                 <div className={s.paymentBanksWrapper}>
                     <div className={s.paymentBanksWrapperImg}>
-                        <Image src="" alt="Visa" />
+                        <Link href="/">
+                            <a>
+                                <Image src={visa} alt="Visa" />
+                            </a>
+                        </Link>
                     </div>
                     <div className={s.paymentrBanksWrapperImg}>
-                        <Image src="" alt="Paypal" />
+                        <Link href="/">
+                            <a>
+                                <Image src={paypal} alt="Paypal" />
+                            </a>
+                        </Link>
                     </div>
                     <div className={s.paymentBanksWrapperImg}>
-                        <Image src="" alt="Mastercard" />
+                        <Link href="/">
+                            <a>
+                                <Image src={mastercard} alt="Mastercard" />
+                            </a>
+                        </Link>
                     </div>
                 </div>
             </div>
