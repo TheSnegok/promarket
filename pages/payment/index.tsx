@@ -4,6 +4,7 @@ import visa from "../../public/Payment/visa.svg";
 import paypal from "../../public/Payment/paypal.svg";
 import cash from "../../public/Payment/cash.svg";
 import mastercard from "../../public/Payment/mastercard.svg";
+import delivery from "../../public/Payment/delivery.svg";
 import Link from "next/link";
 
 const Payment = () => {
