@@ -14,25 +14,44 @@
     &Wrapper
         display: flex
         flex-direction: column
+        align-items: center
         &Header
             font-size: 25px
             margin-bottom: 15px
         &Cash
-            background-color: #78965c
-            border-radius: 8px
-            width: 100%
+            display: flex
+            flex-direction: column
+            align-items: center
+            gap: 10px
+            max-width: 100%
+            background-color: #58aa0b
+            border-radius: 12px
             padding: 10px 20px
             margin-bottom: 10px
+            overflow: hidden
+            &Img
+                position: relative
+                width: 400px
+                height: 200px
         &And
             text-transform: uppercase
             font-size: 23px
             margin-bottom: 10px
         &Card
-            background-color: #78965c
-            border-radius: 8px
-            width: 100%
+            display: flex
+            flex-direction: column
+            align-items: center
+            gap: 20px
+            background-color: #58aa0b
+            border-radius: 12px
+            max-width: 100%
             padding: 10px 20px
             margin-bottom: 15px
+            overflow: hidden
+            &Img
+                position: relative
+                width: 250px
+                height: 300px
     &Banks
         display: flex
         flex-direction: column
@@ -43,3 +62,10 @@
         &Wrapper
             display: flex
             gap: 20px
+            flex-wrap: wrap
+            &Img
+                a
+                    position: relative
+                    display: block
+                    width: 200px
+                    height: 160px

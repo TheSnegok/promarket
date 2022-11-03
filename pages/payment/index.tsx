@@ -16,38 +16,38 @@ const Payment = () => {
                 <div className={s.paymentWrapperCash}>
                     <span>Вы можете заплатить наличными или по карте при доставке.</span>
                     <div className={s.paymentWrapperCashImg}>
-                        <Image src={cash} alt="cash" />
+                        <Image src={delivery} alt="cash" layout="fill" />
                     </div>
                 </div>
                 <div className={s.paymentWrapperAnd}>Или</div>
                 <div className={s.paymentWrapperCard}>
                     <span>Вы можете заплатить при оформлении заказа любыми картами из ниже перечисленных.</span>
                     <div className={s.paymentWrapperCardImg}>
-                        <Image src="" alt="card" />
+                        <Image src={cash} alt="card" layout="fill" />
                     </div>
                 </div>
             </div>
             <div className={s.paymentBanks}>
-                <h5 className={s.paymentBanks}>Мы поддерживаем такие банковские системы как:</h5>
+                <h5 className={s.paymentBanksHeader}>Мы поддерживаем такие банковские системы как:</h5>
                 <div className={s.paymentBanksWrapper}>
                     <div className={s.paymentBanksWrapperImg}>
                         <Link href="/">
                             <a>
-                                <Image src={visa} alt="Visa" />
-                            </a>
-                        </Link>
-                    </div>
-                    <div className={s.paymentrBanksWrapperImg}>
-                        <Link href="/">
-                            <a>
-                                <Image src={paypal} alt="Paypal" />
+                                <Image src={visa} alt="Visa" layout="fill" />
                             </a>
                         </Link>
                     </div>
                     <div className={s.paymentBanksWrapperImg}>
                         <Link href="/">
                             <a>
-                                <Image src={mastercard} alt="Mastercard" />
+                                <Image src={paypal} alt="Paypal" layout="fill" />
+                            </a>
+                        </Link>
+                    </div>
+                    <div className={s.paymentBanksWrapperImg}>
+                        <Link href="/">
+                            <a>
+                                <Image src={mastercard} alt="Mastercard" layout="fill" />
                             </a>
                         </Link>
                     </div>
