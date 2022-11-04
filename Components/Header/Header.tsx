@@ -15,6 +15,10 @@ const Header: FC = () => {
 	const [call, setCall] = useState<boolean>(false);
 	const [regList, setRegList] = useState<boolean>(false);
 
+	const toggleList = (set: string) => {
+		set === 'reg' ? setRegList(regList => !regList) : setCall(call => !call);
+	}
+
 	return (
 		<header className={s.header}>
 			<div className={s.headerLogo}>
@@ -24,7 +28,7 @@ const Header: FC = () => {
 					</a>
 				</Link>
 			</div>
-			<div className={s.headerLocation} onClick={() => setRegList(regList => !regList)} ref={regionRef}>
+			<div className={s.headerLocation} onClick={() => toggleList('reg')} ref={regionRef}>
 				<Image src={Mark} alt="mark" className={s.mark}  />
 				<div className={s.regions}>
 					<span>{region}</span>
@@ -46,10 +50,10 @@ const Header: FC = () => {
 					<a href="tel:+84950183210">8 495 018-32-10</a>
 				</div>
 				<div className={s.call}>
-					<div className={call ? s.popupDown : s.popup}>
+					<div className={call ? s.popupDown : s.popup} onClick={() => toggleList('call')}>
 					</div>
 					<div className={s.phoneCall}>
-						<span onClick={() => setCall(call => !call)}>Заказать звонок</span>
+						<span className={s.phoneCallText} onClick={() => toggleList('call')}>Заказать звонок</span>
 						<form action='/' className={call ? s.visiblePhoneCallInput : s.phoneCallInput}>
 							<input type="text" pattern={'^([\u0401\u0451\u0410-\u044f]{1,20})'} title={'Ваше имя должно содержать от 2 букв до 24 букв!'} placeholder={'Введите ваше имя...'} value={callInput.name} onChange={e => setCallInput({ name: e.target.value, phone: callInput.phone })} />
 							<input type="tel" pattern={'^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$'} title={`Введите настоящий номер телефона содержащий 10 цифр!`} placeholder={'Введите номер телофона...'} value={callInput.phone} onChange={e => setCallInput({ name: callInput.name, phone: e.target.value })} />
