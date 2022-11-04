@@ -154,12 +154,12 @@ const Menu: FC = () => {
 					</div>
 				</div>
 				<div className={s.catalogHover}></div>
-				<Link href={"/"}>
+				<Link href={"/stonks"}>
 					<a className={s.stonks}>
 						<div className={s.stonksText}>АКЦИИ</div>
 					</a>
 				</Link>
-				<Link href={"/"}>
+				<Link href={"/brands"}>
 					<a className={s.brand}>
 						<div className={s.brandText}>БРЕНДЫ</div>
 					</a>
