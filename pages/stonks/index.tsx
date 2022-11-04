@@ -1,8 +1,8 @@
-import s from "../../Styles/pages/hits.module.sass";
+import s from "../../Styles/pages/Stonks.module.sass";
 
 const Stonks = () => {
     return (
-        <section className={s.hits}>
+        <section className={s.stonks}>
             <h2>Хиты</h2>
         </section>
     )

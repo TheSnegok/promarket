@@ -1,4 +1,4 @@
-import s from "../../Styles/pages/brands.module.sass";
+import s from "../../Styles/pages/Brands.module.sass";
 
 const Brands = () => {
     return (
