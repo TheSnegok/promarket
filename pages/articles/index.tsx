@@ -2,6 +2,7 @@ import { StaticImageData } from "next/image";
 import { useState } from "react";
 import ArticleList from "~/../Components/ArticleList/ArticleList";
 import { useGlobalContext } from "~/../Components/Context/Context";
+import TypicalPage from "~/../Components/Templates/TypicalPage/TypicalPage";
 import s from "../../Styles/pages/Articles.module.sass";
 
 const Articles = () => {
@@ -20,8 +21,7 @@ const Articles = () => {
 	}
 
 	return (
-		<section className={s.articles}>
-			<h1 className={s.articlesHeader}>Статьи</h1>
+		<TypicalPage header="Статьи">
 			<div className={s.articlesWrapper}>
 				<div className={s.articlesWrapperOptions}>
 					<div className={s.articlesWrapperOptionsTemplate}>
@@ -47,7 +47,7 @@ const Articles = () => {
 					{data.articleList.map((item, index) => <ArticleList key={index} image={item[0] as StaticImageData} header={item[1] as string} setArticle={setArticle} row={template === "line"} />)}
 				</div>
 			</div>
-		</section >
+		</TypicalPage>
 	)
 }
 

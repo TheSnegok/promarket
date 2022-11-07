@@ -168,7 +168,7 @@ const Menu: FC = () => {
 			<div className={s.menuSearcher}>
 				<input type="text" className={s.input} placeholder='Что вы ищете?' value={findInput.text} onChange={(e) => checkMatch(e)} onKeyDown={(e) => (e.key === 'Enter' && findInput.text !== '' && location.pathname !== "/search") && router.push('/search')} />
 				<div className={s.icon}>
-					<Link href={findInput.text === '' ? '/' : '/search'}>
+					<Link href='/search'>
 						<a>
 							<Image src={loop} alt="search" className={s.loop} />
 						</a>

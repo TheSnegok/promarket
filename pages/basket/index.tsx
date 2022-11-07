@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
+import TypicalPage from "~/../Components/Templates/TypicalPage/TypicalPage";
 import { useGlobalContext } from "../../Components/Context/Context";
 import { ListItem } from "../../Components/Templates/ListItem/ListItem";
 import { numberWithSpaces } from "../../Components/Templates/NumberWithSpaces/NumberWithSpaces";
@@ -25,11 +26,8 @@ const Basket = () => {
     }
 
     return (
-        <div className={s.basket}>
-            <h1 className={s.basketHeader}>
-                Корзина
-            </h1>
-            <section>
+        <TypicalPage header="Корзина">
+            <div className={s.basket}>
                 {
                     basket.items.length === 0 ? (
                         <div className={s.basketEmpty}>
@@ -68,8 +66,8 @@ const Basket = () => {
                         </>
                     )
                 }
-            </section>
-        </div>
+            </div>
+        </TypicalPage>
     )
 }
 

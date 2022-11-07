@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { FC, useEffect, useState } from "react";
+import TypicalPage from "~/../Components/Templates/TypicalPage/TypicalPage";
 import { IDataTemplate, useGlobalContext } from "../../Components/Context/Context"
 import { PriceDivision } from "../../Components/Templates/PriceDivision/PriceDivision";
 import { RangeDoubleSlider } from "../../Components/Templates/RangeDoubleSlider/RangeDoubleSlider";
@@ -42,7 +43,7 @@ const SearchPage: FC = () => {
     }
 
     const printTypes = Object.keys(TYPES).map((item, index) => index !== 0 && (
-        <div className={s.searchBlockOptionsTypesInput} key={index}>
+        <div className={s.searchOptionsTypesInput} key={index}>
             <input type="checkbox" onChange={() => addType(TYPES[item].name)} />
             <label>{TYPES[item].text}</label>
         </div>
@@ -82,16 +83,13 @@ const SearchPage: FC = () => {
     }, [findInput.matchFound, selectValue]);
 
     return (
-        <section className={s.search}>
-            <div className={s.searchHeader}>
-                <h2>Поиск</h2>
-            </div>
-            <div className={s.searchBlock}>
-                <div className={s.searchBlockOptions}>
-                    <div className={s.searchBlockOptionsHeader}>
+        <TypicalPage header="Поиск">
+            <div className={s.search}>
+                <div className={s.searchOptions}>
+                    <div className={s.searchOptionsHeader}>
                         <h3>Сортировать</h3>
                     </div>
-                    <div className={s.searchBlockOptionsList}>
+                    <div className={s.searchOptionsList}>
                         <select onChange={(e) => setSelectValue(+e.target.value)} value={selectValue}>
                             <option value="1">От дешёвых к дорогим</option>
                             <option value="2">От дорогих к дешёвых</option>
@@ -99,36 +97,36 @@ const SearchPage: FC = () => {
                             <option value="4">По рейтингу</option>
                         </select>
                     </div>
-                    <div className={s.searchBlockOptionsPrice}>
+                    <div className={s.searchOptionsPrice}>
                         <h4>Цена</h4>
                         <RangeDoubleSlider header='Сортировка по цене:' min={0} max={50000} step={10} type='price' />
                     </div>
-                    <div className={s.searchBlockOptionsYear}>
+                    <div className={s.searchOptionsYear}>
                         <h4>Год выпуска</h4>
                         <RangeDoubleSlider header='Сортировка по году выпуска:' min={thisYear - 30} max={thisYear} step={1} type='date' />
                     </div>
-                    <div className={s.searchBlockOptionsTypes}>
+                    <div className={s.searchOptionsTypes}>
                         <h4>Тип</h4>
                         {printTypes}
                     </div>
                 </div>
-                <div className={s.searchBlockMatches}>
+                <div className={s.searchMatches}>
                     {matched.length !== 0 ? (
                         <>
-                            <h3 className={s.searchBlockMatchesHeader}>
+                            <h3 className={s.searchMatchesHeader}>
                                 Найдено
                             </h3>
-                            <div className={s.searchBlockMatchesBlock}>
+                            <div className={s.searchMatchesBlock}>
                                 {(matched.map((find, index) => (
                                     (find.price[0] < findInput.maxPrice && find.price[0] > findInput.minPrice) &&
-                                    (<div className={s.searchBlockMatchesBlockItem} key={index} onClick={() => selectedItem(find)}>
-                                        <div className={s.searchBlockMatchesBlockItemImg}>
+                                    (<div className={s.searchMatchesBlockItem} key={index} onClick={() => selectedItem(find)}>
+                                        <div className={s.searchMatchesBlockItemImg}>
                                             <Image src={find.imgSrc} alt={find.personalKey} width='90%' height='100px' />
                                         </div>
-                                        <div className={s.searchBlockMatchesBlockItemDescription}>
+                                        <div className={s.searchMatchesBlockItemDescription}>
                                             <span>{find.description}</span>
                                         </div>
-                                        <div className={s.searchBlockMatchesBlockItemPrice}>
+                                        <div className={s.searchMatchesBlockItemPrice}>
                                             <PriceDivision price={find.price} />
                                         </div>
                                     </div>)
@@ -136,14 +134,14 @@ const SearchPage: FC = () => {
                             </div>
                         </>
                     ) : (
-                        <div className={s.searchBlockMatchesNone}>
+                        <div className={s.searchMatchesNone}>
                             <h3>Ничего не найдено :(</h3>
                         </div>
                     )
                     }
                 </div>
             </div>
-        </section>
+        </TypicalPage>
     )
 }
 

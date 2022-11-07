@@ -1,10 +1,11 @@
+import TypicalPage from "~/../Components/Templates/TypicalPage/TypicalPage";
 import s from "../../Styles/pages/Brands.module.sass";
 
 const Brands = () => {
     return (
-        <section className={s.brands}>
-            <h2>Бренды</h2>
-        </section>
+        <TypicalPage header="Бренды">
+            
+        </TypicalPage>
     )
 }
 

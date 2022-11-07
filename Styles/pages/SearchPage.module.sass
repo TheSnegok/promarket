@@ -7,66 +7,52 @@
 		column-gap: $gap
 
 .search
-	position: relative
-	height: auto
-	z-index: 4
-	min-height: 100vh
-	background-color: var(--blue-third)
-	padding: 15px 25px 45px
-	margin-bottom: 15px
-	font-family: Montserrat
-	color: white
-	&Header
-		h2
-			font-size: 4vh
-			margin-bottom: 2vh
-	&Block
-		display: flex
-		gap: 5%
-		&Options
+	display: flex
+	gap: 5%
+	&Options
+		position: relative
+		width: 25%
+		@include flexColumn(column, 20px)
+		align-items: center
+		&Header
+			width: 100%
+			font-size: 22px
+			line-height: 28px
+			padding-left: 10px
+			margin-bottom: 10px
+			overflow: hidden
+			width: 100%
+		h4
+			font-size: 18px
+			line-height: 22px
+			padding-left: 5px
+			margin-bottom: 5px
+			text-align: center
+		&Price, &Year
+			@include flexColumn(column, 8px)
+		&List
 			position: relative
-			width: 25%
-			@include flexColumn(column, 20px)
-			align-items: center
-			&Header
-				width: 100%
-				font-size: 22px
-				line-height: 28px
-				padding-left: 10px
-				margin-bottom: 10px
-				overflow: hidden
-				width: 100%
-			h4
-				font-size: 18px
-				line-height: 22px
-				padding-left: 5px
-				margin-bottom: 5px
-				text-align: center
-			&Price, &Year
-				@include flexColumn(column, 8px)
-			&List
-				position: relative
-				width: 100%
-				overflow: hidden
-				&::after
-					content: '▲'
-					position: absolute
-					top: 50%
-					left: 165px
-					translate: -50% -50%
-					color: black
-					rotate: 180deg
-					font-size: 14px
-				select
-					appearance: none
-					outline: none
-					border: none
-					width: 180px
-					border-radius: 4px
-					padding: 2px 25px 2px 4px
-					font-size: 14px
-					font-family: Montseratte
-			&Types
+			width: 100%
+			overflow: hidden
+			&::after
+				content: '▲'
+				position: absolute
+				top: 50%
+				left: 165px
+				translate: -50% -50%
+				color: black
+				rotate: 180deg
+				font-size: 14px
+			select
+				appearance: none
+				outline: none
+				border: none
+				width: 180px
+				border-radius: 4px
+				padding: 2px 25px 2px 4px
+				font-size: 14px
+				font-family: Montseratte
+		&Types
 				width: 90%
 				padding: 5% 8%
 				background-color: rgb(110, 110, 110)
@@ -78,212 +64,208 @@
 					label
 						font-size: 14px
 						word-break: break-all
-		&Matches
+	&Matches
+		position: relative
+		width: 75%
+		padding-bottom: 50px
+		&Header
+			font-size: 22px
+			line-height: 28px
+			padding-left: 20px
+			margin-bottom: 10px
+		&None
+			width: 100%
+			height: 100%
+			display: flex
+			justify-content: center
+			align-items: center
+		&Block
+			display: flex
+			flex-wrap: wrap
+			gap: 10px
+			width: 100%
 			position: relative
-			width: 75%
-			padding-bottom: 50px
-			&Header
-				font-size: 22px
-				line-height: 28px
-				padding-left: 20px
-				margin-bottom: 10px
-			&None
-				width: 100%
-				height: 100%
-				display: flex
-				justify-content: center
-				align-items: center
-			&Block
-				display: flex
-				flex-wrap: wrap
-				gap: 10px
-				width: 100%
+			&Item
+				overflow: hidden
+				height: 169px
+				width: calc(20% - 10px)
+				word-break: break-word
 				position: relative
-				&Item
-					overflow: hidden
-					height: 169px
-					width: calc(20% - 10px)
-					word-break: break-word
+				text-align: center
+				cursor: pointer
+				&:hover
+					overflow: unset
+					background-color: #0052ce
+					border-radius: 4px 4px 0 0
+				&:hover .searchMatchesBlockItemDescription
+					background-color: #0052ce
+				&:hover .searchMatchesBlockItemPrice
+					background-color: #0052ce
+				&Img
 					position: relative
-					text-align: center
-					cursor: pointer
-					&:hover
-						overflow: unset
-						background-color: #0052ce
-						border-radius: 4px 4px 0 0
-					&:hover .searchBlockMatchesBlockItemDescription
-						background-color: #0052ce
-					&:hover .searchBlockMatchesBlockItemPrice
-						background-color: #0052ce
-					&Img
-						position: relative
-						padding: 10px
-					&Description
-						position: relative
-						z-index: 5
-						min-height: 43px
-						width: 100%
-						padding: 5px 5px 0 5px
-					&Price
-						position: relative
-						z-index: 6
-						width: 100%
-						height: 70px
-						padding: 5px 0 0 10px
-						display: flex
-						justify-content: left
-						align-items: flex-start
+					padding: 10px
+				&Description
+					position: relative
+					z-index: 5
+					min-height: 43px
+					width: 100%
+					padding: 5px 5px 0 5px
+				&Price
+					position: relative
+					z-index: 6
+					width: 100%
+					height: 70px
+					padding: 5px 0 0 10px
+					display: flex
+					justify-content: left
+					align-items: flex-start
 
 @media ( max-width: 1350px )
 	.search
-		&Block
-			&Options
-				&Types
-					width: 100%
-			&Matches
-				&Block
-					gap: 10px
-					&Item
-						width: calc(33% - 10px)
-						&Img
-							position: relative
-							padding: 10px
-							img
-								width: 75%
-								height: 100px
+		&Options
+			&Types
+				width: 100%
+		&Matches
+			&Block
+				gap: 10px
+				&Item
+					width: calc(33% - 10px)
+					&Img
+						position: relative
+						padding: 10px
+						img
+							width: 75%
+							height: 100px
 
-@media ( max-width: 1050px)
+@media ( max-width: 1050px )
 	.search
-		&Block
-			&Options
-				&Header
-					font-size: 20px
-					line-height: 24px
-				&List
-					width: 100%
-					&::after
-						right: 5px
-				&Types
-					&Input
-						input
-							width: 10px
-							height: 10px
-						label
+		&Options
+			&Header
+				font-size: 20px
+				line-height: 24px
+			&List
+				width: 100%
+				&::after
+					right: 5px
+			&Types
+				&Input
+					input
+						width: 10px
+						height: 10px
+					label
+						font-size: 12px
+		&Matches
+			&Block
+				gap: 10px
+				&Item
+					width: calc(33% - 10px)
+					&Img
+						padding: 5px 5px 2px 5px
+					&Description
+						padding: 2px 5px 5px 5px
+						min-height: 48px
+						span
 							font-size: 12px
-			&Matches
-				&Block
-					gap: 10px
-					&Item
-						width: calc(33% - 10px)
-						&Img
-							padding: 5px 5px 2px 5px
-						&Description
-							padding: 2px 5px 5px 5px
-							min-height: 48px
-							span
-								font-size: 12px
 
 @media ( max-width: 800px )
 	.search
-		&Block
-			&Options
-				width: 30%
-				&Header
-					font-size: 12px
-					line-height: 16px
-					padding-left: 5px
-					margin-bottom: 5px
-				&List
+		&Options
+			width: 30%
+			&Header
+				font-size: 12px
+				line-height: 16px
+				padding-left: 5px
+				margin-bottom: 5px
+			&List
+				position: relative
+				width: 100%
+				&::after
+					font-size: 10px
+					right: unset
+					left: 92%
+					top: 60%
+				select
 					position: relative
+					padding: 2px 2px
+					font-size: 10px
 					width: 100%
-					&::after
+			&Types
+				padding: 5% 4px
+				&Input
+					height: auto
+					input
+						width: 8px
+						height: 8px
+						margin-right: 2px
+					label
 						font-size: 10px
-						right: unset
-						left: 92%
-						top: 60%
-					select
-						position: relative
-						padding: 2px 2px
-						font-size: 10px
-						width: 100%
-				&Types
-					padding: 5% 4px
-					&Input
-						height: auto
-						input
-							width: 8px
-							height: 8px
-							margin-right: 2px
-						label
-							font-size: 10px
-				h4
-					font-size: 16px
-					line-height: 20px
-			&Matches
-				width: 65%
-				&Header
-					font-size: 16px
-					line-height: 20px
-					padding-left: 20px
-					margin-bottom: 5px
-				&Block
-					gap: 8px
-					&Item
-						width: calc(50% - 4px)
-						&Img
-							padding: 5px 5px 2px 5px
-						&Description
-							padding: 2px 5px 5px 5px
-							min-height: 48px
-							span
-								font-size: 12px
+			h4
+				font-size: 16px
+				line-height: 20px
+		&Matches
+			width: 65%
+			&Header
+				font-size: 16px
+				line-height: 20px
+				padding-left: 20px
+				margin-bottom: 5px
+			&Block
+				gap: 8px
+				&Item
+					width: calc(50% - 4px)
+					&Img
+						padding: 5px 5px 2px 5px
+					&Description
+						padding: 2px 5px 5px 5px
+						min-height: 48px
+						span
+							font-size: 12px
 
 @media ( max-width: 520px )
 	.search
 		padding: 10px 15px 35px
-		&Block
-			&Options
-				width: 40%
-				row-gap: 15px
-				h4
-					margin-bottom: 2px
-					font-size: 12px
-				&Header
+		&Options
+			width: 40%
+			row-gap: 15px
+			h4
+				margin-bottom: 2px
+				font-size: 12px
+			&Header
+				font-size: 10px
+				line-height: 14px
+				padding-left: 2px
+				margin-bottom: 0px
+			&List
+				width: 100%
+				&::after
 					font-size: 10px
-					line-height: 14px
-					padding-left: 2px
-					margin-bottom: 0px
-				&List
-					width: 100%
-					&::after
-						font-size: 10px
-					select
-						padding: 2px 18px 2px 4px
+				select
+					padding: 2px 18px 2px 4px
+					font-size: 7px
+			&Types
+				&Input
+					label
 						font-size: 7px
-				&Types
-					&Input
-						label
-							font-size: 7px
-						input
-							width: 7px
-							height: 7px
-							border-radius: 0
-							outline: none
-			&Matches
-				width: 60%
-				&Header
-					font-size: 12px
-					line-height: 16px
-					padding-left: 20px
-					margin-bottom: 5px
-				&Block
-					gap: 8px
-					&Item
-						width: 100%
-						&Img
-							padding: 5px 5px 2px 5px
-						&Description
-							padding: 2px 5px 5px 5px
-							min-height: 48px
-							span
-								font-size: 12px
+					input
+						width: 7px
+						height: 7px
+						border-radius: 0
+						outline: none
+		&Matches
+			width: 60%
+			&Header
+				font-size: 12px
+				line-height: 16px
+				padding-left: 20px
+				margin-bottom: 5px
+			&Block
+				gap: 8px
+				&Item
+					width: 100%
+					&Img
+						padding: 5px 5px 2px 5px
+					&Description
+						padding: 2px 5px 5px 5px
+						min-height: 48px
+						span
+							font-size: 12px
