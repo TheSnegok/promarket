@@ -8,9 +8,9 @@ interface ITypicalPage {
 const TypicalPage: FC<ITypicalPage> = ({ header, children }) => {
     return (
         <section className={s.page}>
-            <h2 className={s.pageHeader}>
+            {header && <h2 className={s.pageHeader}>
                 {header}
-            </h2>
+            </h2>}
             {children}
         </section>
     )

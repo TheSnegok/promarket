@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useGlobalContext } from "~/../Components/Context/Context";
+import TypicalPage from "~/../Components/Templates/TypicalPage/TypicalPage";
 import s from "../../Styles/pages/ContactsPage.module.sass";
 
 const ContactsPage = () => {
@@ -13,8 +14,7 @@ const ContactsPage = () => {
     }
 
     return (
-        <section className={s.contacts}>
-            <h3 className={s.contactsHeader}>Контакты</h3>
+        <TypicalPage header="Контакты">
             <div className={s.contactsPhone}>
                 <p>Зв'язатися за нами можливо за допомогою телефона:</p>
                 <div className={s.contactsPhoneNumber}>
@@ -39,7 +39,7 @@ const ContactsPage = () => {
                     <iframe src={`https://maps.google.com/maps?q=${coord}&z=15&output=embed`} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
                 </div>
             </div>
-        </section>
+        </TypicalPage>
     )
 }
 

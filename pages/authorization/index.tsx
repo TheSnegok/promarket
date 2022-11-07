@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import { FormEvent, useRef, useState } from 'react';
+import TypicalPage from '~/../Components/Templates/TypicalPage/TypicalPage';
 import { useGlobalContext } from '../../Components/Context/Context';
 import s from '../../Styles/pages/Authentication.module.sass';
 
@@ -23,7 +24,7 @@ const Authentication = () => {
 				rememberMe: false
 			})
 			setInvalid(false);
-			if(authentication.rememberMe  && typeof window !== 'undefined') {
+			if (authentication.rememberMe && typeof window !== 'undefined') {
 				localStorage.setItem('rememberMe', 'true')
 			}
 			router.push('/profile');
@@ -44,49 +45,50 @@ const Authentication = () => {
 	}
 
 	return (
-		<section className={s.autentication}>
-			<form className={s.autenticationForm}>
-				<div className={s.autenticationFormInputs}>
-					<div className={s.autenticationFormInputsEmail}>
-						<input
-							type="email"
-							name="email"
-							placeholder="admin@surge.sh"
-							value={authentication.email}
-							onChange={(e) => setAuthentication(
+		<TypicalPage>
+			<div className={s.autentication}>
+				<form className={s.autenticationForm}>
+					<div className={s.autenticationFormInputs}>
+						<div className={s.autenticationFormInputsEmail}>
+							<input
+								type="email"
+								name="email"
+								placeholder="admin@surge.sh"
+								value={authentication.email}
+								onChange={(e) => setAuthentication(
+									{
+										authorization: authentication.authorization,
+										key: authentication.key,
+										password: authentication.password,
+										email: e.target.value,
+										rememberMe: false
+									}
+								)} required />
+						</div>
+						<div className={s.autenticationFormInputsPassword}>
+							<input type="password" name="password" placeholder="admin" value={authentication.password} onChange={(e) => setAuthentication(
 								{
 									authorization: authentication.authorization,
 									key: authentication.key,
-									password: authentication.password,
-									email: e.target.value,
+									password: e.target.value,
+									email: authentication.email,
 									rememberMe: false
 								}
 							)} required />
+						</div>
+						<div className={s.autenticationFormInputsRemember}>
+							<input type="checkbox" name='rememberMe' checked={authentication.rememberMe} ref={rememberMe} onChange={() => toogleCheck()} />
+							<label htmlFor="rememberMe">Remember me?</label>
+						</div>
+						<div className={invalid ? s.autenticationFormInputsError : s.autenticationFormInputsHiden}>Invalid email or password(</div>
 					</div>
-					<div className={s.autenticationFormInputsPassword}>
-						<input type="password" name="password" placeholder="admin" value={authentication.password} onChange={(e) => setAuthentication(
-							{
-								authorization: authentication.authorization,
-								key: authentication.key,
-								password: e.target.value,
-								email: authentication.email,
-								rememberMe: false
-							}
-						)} required />
+					<div className={s.autenticationFormBtn}>
+						<button type="submit" className={s.autenticationFormBtnLogin} onClick={(e) => checkDate(e)} >Войти</button>
+						<button type="submit" className={s.autenticationFormBtnRegistration}>Зарегестрироватся</button>
 					</div>
-					<div className={s.autenticationFormInputsRemember}>
-						<input type="checkbox" name='rememberMe' checked={authentication.rememberMe} ref={rememberMe} onChange={() => toogleCheck()} />
-						<label htmlFor="rememberMe">Remember me?</label>
-					</div>
-					<div className={invalid ? s.autenticationFormInputsError : s.autenticationFormInputsHiden }>Invalid email or password(</div>
-				</div>
-				<div className={s.autenticationFormBtn}>
-					<button type="submit" className={s.autenticationFormBtnLogin} onClick={(e) => checkDate(e)} >Войти</button>
-					<button type="submit" className={s.autenticationFormBtnRegistration}>Зарегестрироватся</button>
-				</div>
-				
-			</form>
-		</section>
+				</form>
+			</div>
+		</TypicalPage>
 	)
 }
 

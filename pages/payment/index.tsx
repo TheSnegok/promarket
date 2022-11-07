@@ -6,11 +6,11 @@ import cash from "../../public/Payment/cash.svg";
 import mastercard from "../../public/Payment/mastercard.svg";
 import delivery from "../../public/Payment/delivery.svg";
 import Link from "next/link";
+import TypicalPage from "~/../Components/Templates/TypicalPage/TypicalPage";
 
 const Payment = () => {
     return (
-        <section className={s.payment}>
-            <h2 className={s.paymentHeader}>Оплата</h2>
+        <TypicalPage>
             <div className={s.paymentWrapper}>
                 <h4 className={s.paymentWrapperHeader}>Как я могу росплатится?</h4>
                 <div className={s.paymentWrapperCash}>
@@ -53,7 +53,7 @@ const Payment = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </TypicalPage>
     )
 }
 

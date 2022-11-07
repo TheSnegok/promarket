@@ -8,6 +8,7 @@ import SliderItem from "../../Components/Templates/SliderItem/SliderItem";
 import { PriceDivision } from "../../Components/Templates/PriceDivision/PriceDivision";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import TypicalPage from "~/../Components/Templates/TypicalPage/TypicalPage";
 
 const Product = () => {
 
@@ -16,11 +17,11 @@ const Product = () => {
 	const { product, contextFindItem, contextRemoveItem, contextPushItem, data } = useGlobalContext();
 
 	useEffect(() => {
-		if(product === null) {
+		if (product === null) {
 			router.push("/");
 		}
 	}, [product])
-	
+
 
 	const [like, setLike] = useState<boolean | null>(null);
 	const [buy, setBuy] = useState<boolean | null>(null);
@@ -55,36 +56,31 @@ const Product = () => {
 	return (
 		<>
 			{product !== null && (
-				<section className={s.product}>
-					<div className={s.productHeader}>
-						<div className={s.productHeaderText}>
-							<h1>{product!.description}</h1>
-						</div>
-						<div className={s.productHeaderTypes}>
-							{product!.tags.map(element => AddsClassForTags(element))}
-						</div>
-					</div>
+				<TypicalPage header={product.description}>
 					<div className={s.productInfo}>
 						<div className={s.productInfoImg}>
-							<Image src={product.imgSrc} alt={product.description}  />
+							<Image src={product.imgSrc} alt={product.description} />
 							<div className={s.productInfoImgOther}>
-								<Image src={product.imgSrc} alt={product!.description}  />
-								<Image src={product.imgSrc} alt={product!.description}  />
-								<Image src={product.imgSrc} alt={product!.description}  />
-								<Image src={product.imgSrc} alt={product!.description}  />
-								<Image src={product.imgSrc} alt={product!.description}  />
+								<Image src={product.imgSrc} alt={product!.description} />
+								<Image src={product.imgSrc} alt={product!.description} />
+								<Image src={product.imgSrc} alt={product!.description} />
+								<Image src={product.imgSrc} alt={product!.description} />
+								<Image src={product.imgSrc} alt={product!.description} />
 							</div>
 						</div>
 						<div className={s.productInfoMain}>
 							<div className={s.productInfoMainFullname}>
 								<h3>{product!.description}</h3>
+								<div className={s.productInfoMainFullnameTypes}>
+									{product!.tags.map(element => AddsClassForTags(element))}
+								</div>
 							</div>
 							<div className={s.productInfoMainReviews}>
 								<div className={s.productInfoMainReviewsStars}>
 									<ItemStars stars={product!.stars} />
 								</div>
 								<div className={s.productInfoMainReviewsCount}>
-									<Image src={chat} alt="chat"  />
+									<Image src={chat} alt="chat" />
 								</div>
 							</div>
 							<div className={s.productInfoMainCountry}>
@@ -155,7 +151,7 @@ const Product = () => {
 							</div>
 						)
 					}
-				</section>
+				</TypicalPage>
 			)}
 		</>
 	)

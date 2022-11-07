@@ -1,29 +1,4 @@
 .product
-    position: relative
-    width: 100%
-    min-height: 100vh
-    background-color: var(--blue-third)
-    padding: 3vh 2vw
-    z-index: 2
-    color: white
-    margin-bottom: 1vw
-    font-family: Montserrat
-    &Header
-        width: 100%
-        margin-bottom: 2vw
-        display: flex
-        gap: 2vw
-        justify-content: space-between
-        &Text
-            width: 60vw
-            overflow: hidden
-            white-space: nowrap
-            text-overflow: ellipsis
-            h1
-                display: inline
-                font-size: 2vw
-        &Types
-            display: flex
     &Info
         display: flex
         gap: 5%
@@ -50,11 +25,17 @@
             align-items: flex-end
             width: 59%
             &Fullname
-                padding-left: 5vw
-                font-size: 1.3vw
-                line-height: 2vw
+                display: flex
+                align-items: center
                 margin-bottom: 1vw
-                text-align: right
+                h3
+                    padding-left: 5vw
+                    font-size: 1.3vw
+                    line-height: 2vw
+                    text-align: right
+                    margin-right: 10px
+                &Types
+                    display: flex
             &Reviews
                 width: 200px
                 display: flex
@@ -226,11 +207,6 @@
 
 @media ( max-width: 1050px )
     .product
-        &Header
-            &Text
-                h1
-                    display: inline
-                    font-size: 16px
         &Info
             margin-bottom: 10px
             &Main
@@ -366,7 +342,6 @@
 
 @media ( max-width: 520px )
     .product
-        padding: 3vh 20px 3vh 20px
         &Similars
             height: 535px
         &Info

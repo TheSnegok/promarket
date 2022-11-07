@@ -1,10 +1,14 @@
+import Image from 'next/image';
+import TypicalPage from '~/../Components/Templates/TypicalPage/TypicalPage';
 import s from '../../Styles/pages/Delivery.module.sass';
 
 const Delivery = () => {
     return (
-        <section className={s.delivery}>
-            <h2 className={s.deliveryHeader}>Доставка</h2>
-            <span>
+        <TypicalPage header='Доставка'>
+            <div className={s.deliveryImg}>
+                <Image src='' alt="" />
+            </div>
+            <span className={s.delivery}>
                 <h4>Какие условия доставки курьером Promarket?</h4>
                 <span>Вы можете заказать доставку курьером в Promarket. Услуга доступна только в некоторых городах и областях. Информация о возможности доставки курьером Promarket указана на странице товара (не забудьте указать населенный пункт) или в блоке доставки при подтверждении заказа на сайте.</span>
                 <span>* Убедитесь, что в указанное время получатель заказа сможет ответить на звонок курьера. В случае отсутствия связи заказ будет возвращен на склад. </span>
@@ -25,7 +29,7 @@ const Delivery = () => {
                 <span>Подъем габаритных грузов оплачивается отдельно.</span>
                 <span>Необходимость предоставления услуги и ее расчетная стоимость указывает магазин при оформлении заказа.</span>
             </span>
-        </section>
+        </TypicalPage>
     )
 }
 

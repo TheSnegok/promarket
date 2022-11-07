@@ -4,7 +4,8 @@ import camera from '../../public/CameraPhoto.svg';
 import { useGlobalContext } from "../../Components/Context/Context";
 import { FormEvent, useRef } from "react";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import TypicalPage from "~/../Components/Templates/TypicalPage/TypicalPage";
+import Router from "next/router";
 
 const ProfilePage = () => {
 
@@ -28,13 +29,11 @@ const ProfilePage = () => {
 	const logout = () => {
 		setAuthentication({ authorization: false, email: '', password: '', key: '', rememberMe: false });
 		localStorage.removeItem('rememberMe');
+		Router.push("/authorization");
 	}
 
 	return (
-		<section className={s.profilePage}>
-			<div className={s.profilePageHeader}>
-				<h1>Профиль</h1>
-			</div>
+		<TypicalPage header="Профиль">
 			<form className={s.profilePageForm}>
 				<div className={s.profilePageMain}>
 					<div className={s.profilePageMainBlock}>
@@ -112,7 +111,7 @@ const ProfilePage = () => {
 				<button className={s.profilePageSave} onClick={(e) => save(e)}>Сохранить</button>
 				<button className={s.profilePageExit} onClick={logout}>Выйти</button>
 			</form>
-		</section>
+		</TypicalPage>
 	)
 }
 

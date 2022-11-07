@@ -3,6 +3,7 @@ import s from '../../Styles/pages/Likes.module.sass';
 import { useGlobalContext } from "../../Components/Context/Context";
 import { ListItem } from "../../Components/Templates/ListItem/ListItem";
 import { Preview } from "../../Components/Templates/Preview/Preview";
+import TypicalPage from "~/../Components/Templates/TypicalPage/TypicalPage";
 
 const Likes: FC = () => {
 
@@ -10,10 +11,7 @@ const Likes: FC = () => {
 	const [indexItem, setIndexItem] = useState<undefined | number>(undefined);
 
 	return (
-		<div className={s.likes}>
-			<div className={s.likesHeader}>
-				<h1>Понравившиеся</h1>
-			</div>
+		<TypicalPage header="Понравившиеся">
 			{likes.items.length === 0
 				? (
 					<div className={s.likesEmpty}>
@@ -36,8 +34,9 @@ const Likes: FC = () => {
 								)}
 						</div>
 					</div>
-				)}
-		</div>
+				)
+			}
+		</TypicalPage>
 	)
 }
 
