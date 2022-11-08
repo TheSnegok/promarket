@@ -21,7 +21,7 @@ const Slider = ({ slidesInfo }: { slidesInfo: string[][] }) => {
                 }
                 break;
             case "plus":
-                if (slide === 4) {
+                if (slide === slidesInfo.length - 1) {
                     setSlide(0);
                 } else {
                     setSlide(slide => slide + 1);
@@ -34,7 +34,7 @@ const Slider = ({ slidesInfo }: { slidesInfo: string[][] }) => {
 
     return (
         <div className={s.slider}>
-            <div className={slide === 0 ? s.first : slide === 1 ? s.second : slide === 2 ? s.third : slide === 3 ? s.fourth : slide === 4 ? s.fiveth : s.first} style={{}} >
+            <div className={s.sliderShow} style={{ left: slide * -100 + "%"}} >
                 {slidesInfo.map((item: string[], index: number) => <Slide key={index} headerText={item[0]} subHeaderText={item[1]} buttonText={item[2]} />)}
             </div>
             <div className={s.sliderDots}>
