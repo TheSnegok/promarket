@@ -1,11 +1,14 @@
-import { FC } from "react";
 import s from "../../Styles/components/Banners.module.sass";
-import Slider from "./Slider/Slider";
+import { useGlobalContext } from "../Context/Context";
+import Slider from "../Templates/Slider/Slider";
 
-const Banners: FC = () => {
+const Banners = () => {
+
+	const { data } = useGlobalContext();
+
 	return (
 		<section className={s.banners}>
-			<Slider />
+			<Slider slidesInfo={data.slidesBanner} />
 			<div className={s.bannersTop}>
 				<div className={s.bannerHeader}>
 					УНИТАЗЫ<br />

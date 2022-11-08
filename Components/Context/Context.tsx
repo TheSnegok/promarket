@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
 import { createContext, FC, useContext, useState } from "react";
-import { articleList, hitsMenu, hitsSlideItems, stockMenu, stockSlideItems, regions, MenuListItems, footerSectionList, footerMenu, providers } from '../../pages/api/api';
+import { articleList, hitsMenu, hitsSlideItems, stockMenu, stockSlideItems, regions, MenuListItems, footerSectionList, footerMenu, providers, slidesBanner } from '../../pages/api/api';
 
 interface IMenuListItems {
 	src: StaticImageData;
@@ -22,6 +22,7 @@ interface IData {
 	hits: IHits;
 	stock: IStock;
 	articleList: (string | StaticImageData)[][];
+	slidesBanner: string[][];
 	regionsList: IRegionsList[];
 	menu: IMenuListItems[];
 	footer: {
@@ -153,6 +154,7 @@ export const Context = createContext<IContext>({
 			slideItems: stockSlideItems
 		},
 		articleList,
+		slidesBanner,
 		regionsList: regions,
 		menu: MenuListItems,
 		footer: {
@@ -233,6 +235,7 @@ export const Provider: FC = ({ children }) => {
 			slideItems: stockSlideItems
 		},
 		articleList,
+		slidesBanner,
 		regionsList: regions,
 		menu: MenuListItems,
 		footer: {
