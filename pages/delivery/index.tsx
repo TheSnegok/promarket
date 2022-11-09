@@ -1,12 +1,15 @@
 import Image from 'next/image';
 import TypicalPage from '~/../Components/Templates/TypicalPage/TypicalPage';
 import s from '../../Styles/pages/Delivery.module.sass';
+import delivery from "../../public/sharing.svg";
 
 const Delivery = () => {
     return (
         <TypicalPage header='Доставка'>
-            <div className={s.deliveryImg}>
-                <Image src='' alt="" />
+            <div className={s.deliveryBox}>
+                <div className={s.deliveryBoxImg}>
+                    <Image src={delivery} alt="delivery" layout='fill' />
+                </div>
             </div>
             <span className={s.delivery}>
                 <h4>Какие условия доставки курьером Promarket?</h4>

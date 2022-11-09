@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useGlobalContext } from "~/../Components/Context/Context";
 import TypicalPage from "~/../Components/Templates/TypicalPage/TypicalPage";
 import s from "../../Styles/pages/ContactsPage.module.sass";
+import contact from "../../public/contact.svg";
+import Image from "next/image";
 
 const ContactsPage = () => {
 
@@ -15,6 +17,11 @@ const ContactsPage = () => {
 
     return (
         <TypicalPage header="Контакты">
+            <div className={s.contactsBox}>
+                <div className={s.contactsBoxImg}>
+                    <Image src={contact} alt="contacts" layout="fill" />
+                </div>
+            </div>
             <div className={s.contactsPhone}>
                 <p>Зв'язатися за нами можливо за допомогою телефона:</p>
                 <div className={s.contactsPhoneNumber}>
