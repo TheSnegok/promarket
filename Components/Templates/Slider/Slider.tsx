@@ -2,7 +2,7 @@ import { FC, useState } from "react";
 import Slide from "./Slide/Slide";
 import s from "../../../Styles/components/Slider.module.sass";
 
-const Slider = ({ slidesInfo }: { slidesInfo: string[][] }) => {
+const Slider = ({ slidesInfo, slideWidth }: { slidesInfo: string[][], slideWidth: number }) => {
 
     const [slide, setSlide] = useState<number>(0);
 
