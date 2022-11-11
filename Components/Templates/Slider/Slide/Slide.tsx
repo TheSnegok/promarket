@@ -4,11 +4,12 @@ interface IProps {
     headerText: string;
     subHeaderText: string;
     buttonText: string;
+    slideWidth: number;
 }
 
-const Slide = ({ headerText, subHeaderText, buttonText }: IProps) => {
+const Slide = ({ headerText, subHeaderText, buttonText, slideWidth }: IProps) => {
     return (
-        <div className={s.slidesItem}>
+        <div className={s.slidesItem} style={{ width: slideWidth }}>
             <div className={s.slidesHeader}>
                 {headerText}
             </div>

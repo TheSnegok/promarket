@@ -34,8 +34,8 @@ const Slider = ({ slidesInfo, slideWidth }: { slidesInfo: string[][], slideWidth
 
     return (
         <div className={s.slider}>
-            <div className={s.sliderShow} style={{ left: slide * -100 + "%"}} >
-                {slidesInfo.map((item: string[], index: number) => <Slide key={index} headerText={item[0]} subHeaderText={item[1]} buttonText={item[2]} />)}
+            <div className={s.sliderShow} style={{ left: slide * -slideWidth + "px"}} >
+                {slidesInfo.map((item: string[], index: number) => <Slide key={index} headerText={item[0]} subHeaderText={item[1]} buttonText={item[2]} slideWidth={slideWidth} />)}
             </div>
             <div className={s.sliderDots}>
                 {slidesInfo.map((item, index: number) => <div key={index} className={slide === index ? s.DotActive : s.Dot} onClick={() => changeSlide("dot", index)} />)}
