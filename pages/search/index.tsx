@@ -1,37 +1,21 @@
-import Image from "next/image";
-import { useRouter } from "next/router";
 import { FC, useEffect, useState } from "react";
 import TypicalPage from "~/../Components/Templates/TypicalPage/TypicalPage";
 import { IDataTemplate, useGlobalContext } from "../../Components/Context/Context"
-import { PriceDivision } from "../../Components/Templates/PriceDivision/PriceDivision";
+import { GoodsTile } from "../../Components/Templates/GoodsTile/GoodsTile"
 import { RangeDoubleSlider } from "../../Components/Templates/RangeDoubleSlider/RangeDoubleSlider";
 import s from "../../Styles/pages/SearchPage.module.sass"
 import { TYPES } from "../api/api";
 
 const SearchPage: FC = () => {
 
-    let router = useRouter();
-
-    const { findInput, setProduct, setFindInput } = useGlobalContext();
+    const { findInput, setFindInput } = useGlobalContext();
     const thisYear = new Date().getFullYear();
 
     const [matched, setMatched] = useState<IDataTemplate[]>(findInput.matchFound);
     const [selectValue, setSelectValue] = useState<number>(findInput.sort);
     const [types, setTypes] = useState<string[]>([]);
 
-    const selectedItem = (item: IDataTemplate) => {
-        setProduct(item);
-        setFindInput({
-            text: '',
-            matchFound: [],
-            minPrice: findInput.minPrice,
-            maxPrice: findInput.maxPrice,
-            minYear: findInput.minYear,
-            maxYear: findInput.maxYear,
-            sort: findInput.sort
-        })
-        router.push('/product');
-    };
+    
 
     const addType = (type: string) => {
         if (types.includes(type)) {
@@ -118,18 +102,7 @@ const SearchPage: FC = () => {
                             </h3>
                             <div className={s.searchMatchesBlock}>
                                 {(matched.map((find, index) => (
-                                    (find.price[0] < findInput.maxPrice && find.price[0] > findInput.minPrice) &&
-                                    (<div className={s.searchMatchesBlockItem} key={index} onClick={() => selectedItem(find)}>
-                                        <div className={s.searchMatchesBlockItemImg}>
-                                            <Image src={find.imgSrc} alt={find.personalKey} width='90%' height='100px' />
-                                        </div>
-                                        <div className={s.searchMatchesBlockItemDescription}>
-                                            <span>{find.description}</span>
-                                        </div>
-                                        <div className={s.searchMatchesBlockItemPrice}>
-                                            <PriceDivision price={find.price} />
-                                        </div>
-                                    </div>)
+                                    (find.price[0] < findInput.maxPrice && find.price[0] > findInput.minPrice) && <GoodsTile index find />
                                 )))}
                             </div>
                         </>

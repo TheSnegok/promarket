@@ -9,8 +9,10 @@ const Stonks = () => {
 
     return (
         <TypicalPage header="Акции">
-            <div className={s.stonksSlider}>
-                <Slider slidesInfo={data.slidesBanner} slideWidth={1000} />
+            <div className={s.stonksWrapper}>
+                <div className={s.stonksWrapperSlider}>
+                    <Slider slidesInfo={data.slidesBanner} slideWidth={1300} />
+                </div>
             </div>
         </TypicalPage>
     )

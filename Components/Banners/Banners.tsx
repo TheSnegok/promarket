@@ -8,7 +8,7 @@ const Banners = () => {
 
 	return (
 		<section className={s.banners}>
-			<Slider slidesInfo={data.slidesBanner} />
+			<Slider slidesInfo={data.slidesBanner} slideWidth={1040} />
 			<div className={s.bannersTop}>
 				<div className={s.bannerHeader}>
 					УНИТАЗЫ<br />
