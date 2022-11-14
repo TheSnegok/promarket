@@ -2,34 +2,35 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useGlobalContext, IDataTemplate } from "../../Context/Context";
 import { PriceDivision } from "../PriceDivision/PriceDivision";
+import s from "../../../Styles/components/GoodsTile.module.sass";
 
-export const GoodsTile = ({ index, find}) => {
+export const GoodsTile = ({ index, find }: { index: number, find: IDataTemplate }) => {
 
 	const { findInput, setProduct, setFindInput } = useGlobalContext();
 
 	let router = useRouter();
 
 	const selectedItem = (item: IDataTemplate) => {
-        setProduct(item);
-        setFindInput({
-            text: '',
-            matchFound: [],
-            minPrice: findInput.minPrice,
-            maxPrice: findInput.maxPrice,
-            minYear: findInput.minYear,
-            maxYear: findInput.maxYear,
-            sort: findInput.sort
-        })
-        router.push('/product');
-    };
+		setProduct(item);
+		setFindInput({
+			text: '',
+			matchFound: [],
+			minPrice: findInput.minPrice,
+			maxPrice: findInput.maxPrice,
+			minYear: findInput.minYear,
+			maxYear: findInput.maxYear,
+			sort: findInput.sort
+		})
+		router.push('/product');
+	};
 
 	return (
 		<div
-			className={s.searchMatchesBlockItem}
+			className={s.Item}
 			key={index}
 			onClick={() => selectedItem(find)}
 		>
-			<div className={s.searchMatchesBlockItemImg}>
+			<div className={s.ItemImg}>
 				<Image
 					src={find.imgSrc}
 					alt={find.personalKey}
@@ -37,10 +38,10 @@ export const GoodsTile = ({ index, find}) => {
 					height="100px"
 				/>
 			</div>
-			<div className={s.searchMatchesBlockItemDescription}>
+			<div className={s.ItemDescription}>
 				<span>{find.description}</span>
 			</div>
-			<div className={s.searchMatchesBlockItemPrice}>
+			<div className={s.ItemPrice}>
 				<PriceDivision price={find.price} />
 			</div>
 		</div>

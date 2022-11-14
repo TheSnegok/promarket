@@ -15,8 +15,6 @@ const SearchPage: FC = () => {
     const [selectValue, setSelectValue] = useState<number>(findInput.sort);
     const [types, setTypes] = useState<string[]>([]);
 
-    
-
     const addType = (type: string) => {
         if (types.includes(type)) {
             setTypes(types => types.filter(item => type !== item));
@@ -102,7 +100,7 @@ const SearchPage: FC = () => {
                             </h3>
                             <div className={s.searchMatchesBlock}>
                                 {(matched.map((find, index) => (
-                                    (find.price[0] < findInput.maxPrice && find.price[0] > findInput.minPrice) && <GoodsTile index find />
+                                    (find.price[0] < findInput.maxPrice && find.price[0] > findInput.minPrice) && <GoodsTile index={index} find={find} />
                                 )))}
                             </div>
                         </>
