@@ -36,6 +36,7 @@ export const GoodsTile = ({ index, find }: { index: number, find: IDataTemplate 
 					alt={find.personalKey}
 					width="90%"
 					height="100px"
+					layout="fill"
 				/>
 			</div>
 			<div className={s.ItemDescription}>
