@@ -17,7 +17,7 @@ const Stonks = () => {
 			</div>
 			<div className={s.stonksList}>
 				<div className={s.stonksListHeader}>
-					<h3></h3>
+					<h3>Товары по акции</h3>
 				</div>
 				<div className={s.stonksListWrapper}>
 					{data.stock.slideItems.map((item, index) => <GoodsTile index={index} find={item} />)}
