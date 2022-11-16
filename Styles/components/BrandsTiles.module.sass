@@ -1,0 +1,47 @@
+.brands
+    &Wrapper
+        width: 100%
+        display: grid
+        grid-template-columns: repeat(6, 1fr)
+        gap: 20px
+    &Logo
+        width: auto
+        height: 132px
+        background-color: #fff
+        overflow: hidden
+        display: flex
+        justify-content: center
+        align-items: center
+        a
+            width: 80%
+            height: 80%
+            display: flex
+            justify-content: center
+            align-items: center
+            .brandsLogoImg
+                position: relative
+                width: 50%
+                height: auto
+                transition: 1s
+        &:hover .brandsLogoImg
+            scale: 1.1
+
+@media (max-width: 1050px)
+    .brands
+        &Logo
+            height: 115px
+        &Wrapper
+            gap: 20px
+
+@media (max-width: 800px)
+    .brands
+        &Wrapper
+            grid-template-columns: repeat(3, 1fr)
+            gap: 10px
+        &Logo
+            height: 100px
+
+@media (max-width: 520px)
+    .brands
+        &Logo
+            height: 80px

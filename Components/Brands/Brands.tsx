@@ -17,10 +17,10 @@ import dyson from '../../public/brands/image 30.png';
 import goronje from '../../public/brands/image 31.png';
 import jado from '../../public/brands/image 32.png';
 import lvi from '../../public/brands/image 33.png';
-import Link from "next/link";
-import Image, { StaticImageData } from "next/image";
+import { StaticImageData } from "next/image";
+import { BrandsTiles } from '../Templates/BrandsTiles/BrandsTiles';
 
-const listLogoBrands: (StaticImageData | string)[][] = [
+export const listLogoBrands: (StaticImageData | string)[][] = [
 	[hansgrohe, "/"],
 	[grohe, "/"],
 	[stworki, "/"],
@@ -41,11 +41,11 @@ const listLogoBrands: (StaticImageData | string)[][] = [
 	[lvi, "/"],
 ];
 
-const Brands = ({ header }: { header?: boolean }) => {
+const Brands = () => {
 	return (
 		<section className={s.brands}>
 			<h1 className={s.brandsHeader}>Популярные бренды</h1>
-			
+			<BrandsTiles brands={listLogoBrands} />
 		</section>
 	)
 }
