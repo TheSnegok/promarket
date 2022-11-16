@@ -1,12 +1,16 @@
+import Brands from "~/../Components/Brands/Brands";
 import TypicalPage from "~/../Components/Templates/TypicalPage/TypicalPage";
-import s from "../../Styles/pages/Brands.module.sass";
+import s from "../../Styles/pages/BrandsPage.module.sass";
 
-const Brands = () => {
+const BrandsPage = () => {
     return (
         <TypicalPage header="Бренды">
-            
+            <div>
+                
+            </div>
+            <Brands />
         </TypicalPage>
     )
 }
 
-export default Brands;
+export default BrandsPage;

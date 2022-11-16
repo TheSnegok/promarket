@@ -41,27 +41,13 @@ const listLogoBrands: (StaticImageData | string)[][] = [
 	[lvi, "/"],
 ];
 
-const Brands = () => {
-	{
-		return (
-			<section className={s.brands}>
-				<h1 className={s.brandsHeader}>Популярные бренды</h1>
-				<div className={s.brandsWrapper}>
-					{listLogoBrands.map((item, index) => (
-						<div className={s.brandsLogo} key={index}>
-							<Link href={item[1].toString()}>
-								<a>
-									<div className={s.brandsLogoImg}>
-										<Image src={item[0]} alt={`${index}`} layout='responsive' />
-									</div>
-								</a>
-							</Link>
-						</div>
-					))}
-				</div>
-			</section>
-		)
-	}
+const Brands = ({ header }: { header?: boolean }) => {
+	return (
+		<section className={s.brands}>
+			<h1 className={s.brandsHeader}>Популярные бренды</h1>
+			
+		</section>
+	)
 }
 
 export default Brands;
