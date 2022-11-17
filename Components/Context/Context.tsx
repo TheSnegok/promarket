@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
 import { createContext, FC, useContext, useState } from "react";
-import { articleList, hitsMenu, hitsSlideItems, stockMenu, stockSlideItems, regions, MenuListItems, footerSectionList, footerMenu, providers, slidesBanner } from '../../pages/api/api';
+import { articleList, hitsMenu, hitsSlideItems, stockMenu, stockSlideItems, regions, MenuListItems, footerSectionList, footerMenu, providers, slidesBanner, listLogoBrands } from '../../pages/api/api';
 
 interface IMenuListItems {
 	src: StaticImageData;
@@ -29,7 +29,8 @@ interface IData {
 		footerSectionList: string[][];
 		footerMenu: string[][];
 	};
-	providers: IProviders[]
+	providers: IProviders[];
+	brands: (StaticImageData | string)[][];
 }
 
 export interface ILikes {
@@ -161,7 +162,8 @@ export const Context = createContext<IContext>({
 			footerSectionList,
 			footerMenu
 		},
-		providers
+		providers,
+		brands: listLogoBrands
 	},
 	likes: {
 		count: 0,
@@ -242,7 +244,8 @@ export const Provider: FC = ({ children }) => {
 			footerSectionList,
 			footerMenu
 		},
-		providers
+		providers,
+		brands: listLogoBrands,
 	}
 
 	const [profile, setProfile] = useState<IProfile>({
