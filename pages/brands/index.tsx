@@ -1,5 +1,5 @@
 import { useGlobalContext } from "~/../Components/Context/Context";
-import { BrandsTiles } from "~/../Components/Templates/BrandsTiles/BrandsTiles";
+import { Convert } from "~/../Components/Templates/Convert/Convert";
 import TypicalPage from "~/../Components/Templates/TypicalPage/TypicalPage";
 import s from "../../Styles/pages/BrandsPage.module.sass";
 
@@ -10,7 +10,9 @@ const BrandsPage = () => {
     return (
         <TypicalPage header="Бренды">
             <div className={s.popular}>
-                <BrandsTiles brands={data.brands} />
+                {data.brands.map(() => {
+                    <Convert />
+                })}
             </div>
         </TypicalPage>
     )
