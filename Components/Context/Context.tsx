@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
 import { createContext, FC, useContext, useState } from "react";
-import { articleList, hitsMenu, hitsSlideItems, stockMenu, stockSlideItems, regions, MenuListItems, footerSectionList, footerMenu, providers, slidesBanner, listLogoBrands } from '../../pages/api/api';
+import { articleList, hitsMenu, hitsSlideItems, stockMenu, stockSlideItems, regions, MenuListItems, footerSectionList, footerMenu, providers, slidesBanner, listLogoBrands, IBrand } from '../../pages/api/api';
 
 interface IMenuListItems {
 	src: StaticImageData;
@@ -30,7 +30,7 @@ interface IData {
 		footerMenu: string[][];
 	};
 	providers: IProviders[];
-	brands: (StaticImageData | string)[][];
+	brands: IBrand[];
 }
 
 export interface ILikes {

@@ -10,8 +10,8 @@ const BrandsPage = () => {
     return (
         <TypicalPage header="Бренды">
             <div className={s.popular}>
-                {data.brands.map(() => {
-                    <Convert />
+                {data.brands.map((brand, index) => {
+                    <Convert brand={brand} key={index} />
                 })}
             </div>
         </TypicalPage>
