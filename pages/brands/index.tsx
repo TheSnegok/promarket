@@ -5,14 +5,12 @@ import s from "../../Styles/pages/BrandsPage.module.sass";
 
 const BrandsPage = () => {
 
-    const { data } = useGlobalContext(); 
+    const { data } = useGlobalContext();
 
     return (
         <TypicalPage header="Бренды">
             <div className={s.popular}>
-                {data.brands.map((brand, index) => {
-                    <Convert brand={brand} key={index} />
-                })}
+                {data.brands.map((brand, index) => <Convert brand={brand} key={index} />)}
             </div>
         </TypicalPage>
     )
