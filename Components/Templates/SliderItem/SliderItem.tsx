@@ -7,6 +7,8 @@ import { AddsClassForTags } from '../AddedClassForTag/AddsClassForTags';
 import { PriceDivision } from '../PriceDivision/PriceDivision';
 import Link from 'next/link';
 import Image from 'next/image';
+import { ModalLayout } from '../../ModalLayout/ModalLayout';
+import { GoodCard } from '../GoodCard/GoodCard';
 
 const SliderItem = ({ item }: { item: IDataTemplate }) => {
 
@@ -35,6 +37,18 @@ const SliderItem = ({ item }: { item: IDataTemplate }) => {
 		}
 	};
 
+	const ShowModal = () => {
+		setModal({
+			visible: true
+		});
+
+		return (
+			<ModalLayout name={item.description}>
+				<GoodCard item={item} />
+			</ModalLayout>
+		)
+	}
+
 	const pushProduct = () => {
 		setProduct(item);
 	}
@@ -52,13 +66,10 @@ const SliderItem = ({ item }: { item: IDataTemplate }) => {
 						<div className={s.itemImgTags}>
 							{item.tags.map(tag => AddsClassForTags(tag))}
 						</div>
-						<Image src={item.imgSrc} alt={item.imgSrc.toString()} className={s.itemImgMain}  />
+						<Image src={item.imgSrc} alt={item.imgSrc.toString()} className={s.itemImgMain} />
 					</a>
 				</Link>
-				<button className={s.itemImgFastLook} onClick={() => setModal({
-					visible: true,
-					item: item
-				})}>Быстрый просмотр</button>
+				<button className={s.itemImgFastLook} onClick={() => ShowModal()}>Быстрый просмотр</button>
 				<div className={s.itemImgLike}>
 					<svg
 						width="32" height="29" viewBox="0 0 32 29"
@@ -75,7 +86,7 @@ const SliderItem = ({ item }: { item: IDataTemplate }) => {
 				<div className={s.message}>
 					<Link href="/">
 						<a>
-							<Image src={chat} alt="chat"  />
+							<Image src={chat} alt="chat" />
 							<span className={s.messageCount}>{item.reviews}</span>
 						</a>
 					</Link>

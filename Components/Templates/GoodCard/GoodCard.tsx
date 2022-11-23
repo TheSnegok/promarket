@@ -19,68 +19,53 @@ export const GoodCard = ({ item }) => {
         if (itemName === 'likes') {
             if (like) {
                 setLike(false);
-                contextRemoveItem('likes', modal.item!.personalKey);
+                contextRemoveItem('likes', item.personalKey);
             } else {
                 setLike(true);
-                contextPushItem('likes', modal.item!);
+                contextPushItem('likes', item);
             }
         } else if (itemName === 'basket') {
             if (buy) {
                 setBuy(false);
-                contextRemoveItem('basket', modal.item!.personalKey);
+                contextRemoveItem('basket', item.personalKey);
             } else {
                 setBuy(true);
-                contextPushItem('basket', modal.item!);
+                contextPushItem('basket', item);
             }
         }
     };
 
 	useEffect(() => {
 		if (modal.visible) {
-			document.body.style.overflow = "hidden";
-			setLike(contextFindItem("likes", modal.item!.personalKey) ? false : true);
-			setBuy(contextFindItem("basket", modal.item!.personalKey) ? false : true);
-		} else {
-			document.body.style.overflow = "unset";
+			setLike(contextFindItem("likes", item.personalKey) ? false : true);
+			setBuy(contextFindItem("basket", item.personalKey) ? false : true);
 		}
 	}, [modal]);//eslint-disable-line
 
     return (
         <>
-            <div className={s.modalBlockHeader}>
-                <div className={s.modalBlockHeaderName}>
-                    <span>{modal.item.description}</span>
-                </div>
-                <div className={s.modalBlockHeaderClose} onClick={() => setModal({
-                    visible: false,
-                    item: null
-                })}>
-                    <div className={s.modalBlockHeaderCloseTop}></div>
-                    <div className={s.modalBlockHeaderCloseBottom}></div>
-                </div>
-            </div>
             <div className={s.modalBlockInfo}>
                 <div className={s.modalBlockInfoImage}>
-                    <Image src={modal.item.imgSrc} alt="product-preview-ploto" />
+                    <Image src={item.imgSrc} alt="product-preview-ploto" />
                 </div>
                 <div className={s.modalBlockInfoOptions}>
                     <div className={s.modalBlockInfoOptionsTags}>
-                        {modal.item?.tags.map(tag => AddsClassForTags(tag))}
+                        {item.tags.map(tag => AddsClassForTags(tag))}
                     </div>
                     <div className={s.modalBlockInfoOptionsPrice}>
-                        <PriceDivision price={modal.item.price} color />
+                        <PriceDivision price={item.price} color />
                     </div>
                     <div className={s.modalBlockInfoOptionsReviews}>
                         <div className={s.modalBlockInfoOptionsReviewsStars}>
-                            {modal.item && <ItemStars stars={modal.item.stars} />}
+                            <ItemStars stars={item.stars} />
                         </div>
                         <div className={s.modalBlockInfoOptionsReviewsMessage}>
                             <Image src={chat} alt="chat" />
-                            <span className={s.messageCount}>{modal.item.reviews}</span>
+                            <span className={s.messageCount}>{item.reviews}</span>
                         </div>
                     </div>
                     <div className={s.modalBlockInfoOptionsCountry}>
-                        <span>{modal.item.country}</span>
+                        <span>{item.country}</span>
                     </div>
                     <div className={s.modalBlockInfoOptionsButtons}>
                         <button className={buy ? s.modalBlockInfoOptionsButtonsBasketActive : s.modalBlockInfoOptionsButtonsBasket} onClick={() => clickSetIn('basket')}>{buy ? 'В корзине' : 'В корзину'}</button>

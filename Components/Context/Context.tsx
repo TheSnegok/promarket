@@ -86,7 +86,6 @@ export interface IProfile {
 
 export interface IModal {
 	visible: boolean;
-	item: IDataTemplate | null;
 }
 
 export interface IAuthData {
@@ -185,8 +184,7 @@ export const Context = createContext<IContext>({
 	},
 	setProfile: () => { },
 	modal: {
-		visible: false,
-		item: null
+		visible: false
 	},
 	callInput: {
 		phone: '',
@@ -258,8 +256,7 @@ export const Provider: FC = ({ children }) => {
 	});
 
 	const [modal, setModal] = useState<IModal>({
-		visible: false,
-		item: null
+		visible: false
 	});
 
 	const [callInput, setCallInput] = useState<ICallInput>({ name: '', phone: '' });
