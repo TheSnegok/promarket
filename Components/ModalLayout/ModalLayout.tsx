@@ -2,11 +2,9 @@ import { useEffect } from "react";
 import { useGlobalContext } from "../Context/Context";
 import s from "../../Styles/components/ModalLayout.module.sass";
 
-export const ModalLayout = ({ children, name }) => {
+export const ModalLayout = ({ header, children }) => {
 
 	const { modal, setModal } = useGlobalContext();
-
-	console.log(name);
 
 	useEffect(() => {
 		if (modal.visible) {
@@ -14,15 +12,12 @@ export const ModalLayout = ({ children, name }) => {
 		} else {
 			document.body.style.overflow = "unset";
 		}
-	}, [modal]);//eslint-disable-line
+	}, [modal.visible]);
 
 	return (
 		<section className={modal.visible ? s.modal : s.modalHidden}>
 			<div className={s.modalBlock}>
 				<div className={s.modalBlockHeader}>
-					<div className={s.modalBlockHeaderName}>
-						<span>{name}</span>
-					</div>
 					<div className={s.modalBlockHeaderClose} onClick={() => setModal({
 						visible: false
 					})}>

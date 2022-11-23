@@ -37,16 +37,10 @@ const SliderItem = ({ item }: { item: IDataTemplate }) => {
 		}
 	};
 
-	const ShowModal = () => {
+	const showModal = () => {
 		setModal({
 			visible: true
 		});
-
-		return (
-			<ModalLayout name={item.description}>
-				<GoodCard item={item} />
-			</ModalLayout>
-		)
 	}
 
 	const pushProduct = () => {
@@ -69,7 +63,7 @@ const SliderItem = ({ item }: { item: IDataTemplate }) => {
 						<Image src={item.imgSrc} alt={item.imgSrc.toString()} className={s.itemImgMain} />
 					</a>
 				</Link>
-				<button className={s.itemImgFastLook} onClick={() => ShowModal()}>Быстрый просмотр</button>
+				<button className={s.itemImgFastLook} onClick={showModal}>Быстрый просмотр</button>
 				<div className={s.itemImgLike}>
 					<svg
 						width="32" height="29" viewBox="0 0 32 29"

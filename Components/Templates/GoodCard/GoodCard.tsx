@@ -9,13 +9,12 @@ import { useGlobalContext } from "../../Context/Context";
 
 export const GoodCard = ({ item }) => {
 
-    const { modal, setModal, contextRemoveItem, contextPushItem, contextFindItem } = useGlobalContext();
+    const { modal, contextRemoveItem, contextPushItem, contextFindItem } = useGlobalContext();
 
     const [like, setLike] = useState<boolean>(false);
 	const [buy, setBuy] = useState<boolean>(false);
 
-    const clickSetIn = (itemName: string) => {
-        
+    const clickSetIn = (itemName: string) => {    
         if (itemName === 'likes') {
             if (like) {
                 setLike(false);
@@ -40,36 +39,41 @@ export const GoodCard = ({ item }) => {
 			setLike(contextFindItem("likes", item.personalKey) ? false : true);
 			setBuy(contextFindItem("basket", item.personalKey) ? false : true);
 		}
-	}, [modal]);//eslint-disable-line
+	}, [modal.visible]);
 
     return (
         <>
-            <div className={s.modalBlockInfo}>
-                <div className={s.modalBlockInfoImage}>
-                    <Image src={item.imgSrc} alt="product-preview-ploto" />
-                </div>
-                <div className={s.modalBlockInfoOptions}>
-                    <div className={s.modalBlockInfoOptionsTags}>
+            <div className={s.Info}>
+                <div className={s.InfoHeader}>
+                    <div className={s.InfoHeaderName}>
+						<span>{item.description}</span>
+                    </div>
+                    <div className={s.InfoHeaderTags}>
                         {item.tags.map(tag => AddsClassForTags(tag))}
                     </div>
-                    <div className={s.modalBlockInfoOptionsPrice}>
+                </div>
+                <div className={s.InfoImage}>
+                    <Image src={item.imgSrc} alt="product-preview-ploto" />
+                </div>
+                <div className={s.InfoOptions}>
+                    <div className={s.InfoOptionsPrice}>
                         <PriceDivision price={item.price} color />
                     </div>
-                    <div className={s.modalBlockInfoOptionsReviews}>
-                        <div className={s.modalBlockInfoOptionsReviewsStars}>
+                    <div className={s.InfoOptionsReviews}>
+                        <div className={s.InfoOptionsReviewsStars}>
                             <ItemStars stars={item.stars} />
                         </div>
-                        <div className={s.modalBlockInfoOptionsReviewsMessage}>
+                        <div className={s.InfoOptionsReviewsMessage}>
                             <Image src={chat} alt="chat" />
                             <span className={s.messageCount}>{item.reviews}</span>
                         </div>
                     </div>
-                    <div className={s.modalBlockInfoOptionsCountry}>
+                    <div className={s.InfoOptionsCountry}>
                         <span>{item.country}</span>
                     </div>
-                    <div className={s.modalBlockInfoOptionsButtons}>
-                        <button className={buy ? s.modalBlockInfoOptionsButtonsBasketActive : s.modalBlockInfoOptionsButtonsBasket} onClick={() => clickSetIn('basket')}>{buy ? 'В корзине' : 'В корзину'}</button>
-                        <button className={like ? s.modalBlockInfoOptionsButtonsLikesActive : s.modalBlockInfoOptionsButtonsLikes} onClick={() => clickSetIn('likes')}>{like ? 'Не нравится' : 'Нравится'}</button>
+                    <div className={s.InfoOptionsButtons}>
+                        <button className={buy ? s.InfoOptionsButtonsBasketActive : s.InfoOptionsButtonsBasket} onClick={() => clickSetIn('basket')}>{buy ? 'В корзине' : 'В корзину'}</button>
+                        <button className={like ? s.InfoOptionsButtonsLikesActive : s.InfoOptionsButtonsLikes} onClick={() => clickSetIn('likes')}>{like ? 'Не нравится' : 'Нравится'}</button>
                     </div>
                 </div>
             </div>
