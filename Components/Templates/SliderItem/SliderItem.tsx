@@ -12,10 +12,11 @@ import { GoodCard } from '../GoodCard/GoodCard';
 
 const SliderItem = ({ item }: { item: IDataTemplate }) => {
 
-	const { setProduct, setModal, modal, basket, likes, contextFindItem, contextPushItem, contextRemoveItem } = useGlobalContext();
+	const { setProduct, basket, likes, contextFindItem, contextPushItem, contextRemoveItem } = useGlobalContext();
 
 	const [fill, setFill] = useState<boolean>(contextFindItem('likes', item.personalKey) ? false : true);
 	const [itemBuy, setItemBuy] = useState<boolean>(contextFindItem('basket', item.personalKey) ? false : true);
+	const [showModal, setShowModal] = useState<boolean>();
 
 	const clickSetIn = (itemName: string) => {
 		if (itemName === 'likes') {
@@ -37,12 +38,6 @@ const SliderItem = ({ item }: { item: IDataTemplate }) => {
 		}
 	};
 
-	const showModal = () => {
-		setModal({
-			visible: true
-		});
-	}
-
 	const pushProduct = () => {
 		setProduct(item);
 	}
@@ -61,15 +56,9 @@ const SliderItem = ({ item }: { item: IDataTemplate }) => {
 							{item.tags.map(tag => AddsClassForTags(tag))}
 						</div>
 						<Image src={item.imgSrc} alt={item.imgSrc.toString()} className={s.itemImgMain} />
-						{modal.visible && (
-							<ModalLayout>
-								<GoodCard item={item} />
-							</ModalLayout>
-						)
-						}
 					</a>
 				</Link>
-				<button className={s.itemImgFastLook} onClick={showModal}>Быстрый просмотр</button>
+				<button className={s.itemImgFastLook} onClick={() => setShowModal(true)}>Быстрый просмотр</button>
 				<div className={s.itemImgLike}>
 					<svg
 						width="32" height="29" viewBox="0 0 32 29"
@@ -108,6 +97,11 @@ const SliderItem = ({ item }: { item: IDataTemplate }) => {
 					В КОРЗИНУ
 				</button>
 			</div>
+			{showModal && (
+				<ModalLayout hideModal={setShowModal}>
+					<GoodCard item={item} />
+				</ModalLayout>
+			)}
 		</div>
 	)
 }
