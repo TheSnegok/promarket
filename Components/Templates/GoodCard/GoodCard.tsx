@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"; 
+import { useState, useEffect } from "react";
 import chat from "../../../public/hits/messageLogo.svg";
 import { AddsClassForTags } from "../AddedClassForTag/AddsClassForTags";
 import { PriceDivision } from "../PriceDivision/PriceDivision";
@@ -9,12 +9,12 @@ import { useGlobalContext } from "../../Context/Context";
 
 export const GoodCard = ({ item }) => {
 
-    const { modal, contextRemoveItem, contextPushItem, contextFindItem } = useGlobalContext();
+    const { contextRemoveItem, contextPushItem, contextFindItem } = useGlobalContext();
 
     const [like, setLike] = useState<boolean>(false);
-	const [buy, setBuy] = useState<boolean>(false);
+    const [buy, setBuy] = useState<boolean>(false);
 
-    const clickSetIn = (itemName: string) => {    
+    const clickSetIn = (itemName: string) => {
         if (itemName === 'likes') {
             if (like) {
                 setLike(false);
@@ -34,46 +34,46 @@ export const GoodCard = ({ item }) => {
         }
     };
 
-	useEffect(() => {
-		if (modal.visible) {
-			setLike(contextFindItem("likes", item.personalKey) ? false : true);
-			setBuy(contextFindItem("basket", item.personalKey) ? false : true);
-		}
-	}, [modal.visible]);
+    useEffect(() => {
+        setLike(contextFindItem("likes", item.personalKey) ? false : true);
+        setBuy(contextFindItem("basket", item.personalKey) ? false : true);
+    }, []);
 
     return (
         <>
             <div className={s.Info}>
                 <div className={s.InfoHeader}>
                     <div className={s.InfoHeaderName}>
-						<span>{item.description}</span>
+                        <span>{item.description}</span>
                     </div>
                     <div className={s.InfoHeaderTags}>
                         {item.tags.map(tag => AddsClassForTags(tag))}
                     </div>
                 </div>
-                <div className={s.InfoImage}>
-                    <Image src={item.imgSrc} alt="product-preview-ploto" />
-                </div>
-                <div className={s.InfoOptions}>
-                    <div className={s.InfoOptionsPrice}>
-                        <PriceDivision price={item.price} color />
+                <div className={s.InfoWrapper}>
+                    <div className={s.InfoWrapperImage}>
+                        <Image src={item.imgSrc} alt="product-preview-ploto" />
                     </div>
-                    <div className={s.InfoOptionsReviews}>
-                        <div className={s.InfoOptionsReviewsStars}>
-                            <ItemStars stars={item.stars} />
+                    <div className={s.InfoWrapperOptions}>
+                        <div className={s.InfoWrapperOptionsReviews}>
+                            <div className={s.InfoWrapperOptionsReviewsStars}>
+                                <ItemStars stars={item.stars} />
+                            </div>
+                            <div className={s.InfoWrapperOptionsReviewsMessage}>
+                                <Image src={chat} alt="chat" />
+                                <span className={s.messageCount}>{item.reviews}</span>
+                            </div>
                         </div>
-                        <div className={s.InfoOptionsReviewsMessage}>
-                            <Image src={chat} alt="chat" />
-                            <span className={s.messageCount}>{item.reviews}</span>
+                        <div className={s.InfoWrapperOptionsPrice}>
+                            <PriceDivision price={item.price} color />
                         </div>
-                    </div>
-                    <div className={s.InfoOptionsCountry}>
-                        <span>{item.country}</span>
-                    </div>
-                    <div className={s.InfoOptionsButtons}>
-                        <button className={buy ? s.InfoOptionsButtonsBasketActive : s.InfoOptionsButtonsBasket} onClick={() => clickSetIn('basket')}>{buy ? 'В корзине' : 'В корзину'}</button>
-                        <button className={like ? s.InfoOptionsButtonsLikesActive : s.InfoOptionsButtonsLikes} onClick={() => clickSetIn('likes')}>{like ? 'Не нравится' : 'Нравится'}</button>
+                        <div className={s.InfoWrapperOptionsCountry}>
+                            <span>{item.country}</span>
+                        </div>
+                        <div className={s.InfoWrapperOptionsButtons}>
+                            <button className={buy ? s.InfoWrapperOptionsButtonsBasketActive : s.InfoWrapperOptionsButtonsBasket} onClick={() => clickSetIn('basket')}>{buy ? 'В корзине' : 'В корзину'}</button>
+                            <button className={like ? s.InfoWrapperOptionsButtonsLikesActive : s.InfoWrapperOptionsButtonsLikes} onClick={() => clickSetIn('likes')}>{like ? 'Не нравится' : 'Нравится'}</button>
+                        </div>
                     </div>
                 </div>
             </div>

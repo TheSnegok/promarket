@@ -2,13 +2,13 @@
     height: auto
     display: flex
     flex-direction: column
-    align-items: center
     font-family: 'Montserrat'
     margin-bottom: 2vh
+    overflow: hidden
     &Header
         display: flex
         justify-content: space-between
-        height: 5vh
+        height: 4vh
         margin-bottom: 1vh
         &Name
             height: 100%
@@ -16,78 +16,82 @@
             align-items: center
             gap: 1vw
             width: 80%
+            padding-left: 10px
             span
                 font-family: 'Montserrat'
-                font-size: 2.5vh
+                font-size: 24px
                 overflow: hidden
                 white-space: nowrap
                 text-overflow: ellipsis
-    &Image
-        position: relative
-        width: 50%
-        img
-            width: 100%
-    &Options
-        width: 50%
-        display: flex
-        flex-direction: column
-        align-items: flex-end
         &Tags
             display: flex
-            margin-bottom: 1vw
-        &Reviews
-            display: flex
-            gap: 5px
-            margin-bottom: 1vw
-            &Stars
-                display: flex
-                gap: 4px
-                margin-right: 1vw
-            &Message
-                font-size: .9em
-                display: flex
-                align-items: center
-                img
-                    margin-right: .3vw
-        &Country
-            margin-bottom: 2vw
-        &Buttons
+            gap: 10px
+            align-items: center
+    &Wrapper
+        display: flex
+        &Image
+            position: relative
+            width: 50%
+            img
+                width: 100%
+        &Options
+            width: 50%
             display: flex
             flex-direction: column
-            row-gap: 10px
-            &Basket
-                width: 90px
-                height: 18px
-                background-color: var(--blue-third)
-                border-radius: 4px
-                outline: none
-                color: white
-                font-family: "Montserrat"
-                border: none
-                &Active
+            align-items: flex-end
+            &Reviews
+                display: flex
+                gap: 5px
+                margin-bottom: 1vw
+                &Stars
+                    display: flex
+                    gap: 4px
+                    margin-right: 1vw
+                &Message
+                    font-size: .9em
+                    display: flex
+                    align-items: center
+                    img
+                        margin-right: .3vw
+            &Country
+                margin-bottom: 2vw
+            &Buttons
+                display: flex
+                flex-direction: column
+                row-gap: 10px
+                &Basket
                     width: 90px
                     height: 18px
-                    background-color: rgba(99, 202, 174, 0.5)
+                    background-color: var(--blue-third)
                     border-radius: 4px
                     outline: none
                     color: white
                     font-family: "Montserrat"
                     border: none
-            &Likes
-                width: 90px
-                height: 18px
-                background-color: var(--blue-third)
-                border-radius: 4px
-                outline: none
-                color: white
-                font-family: "Montserrat"
-                border: none
-                &Active
+                    &Active
+                        width: 90px
+                        height: 18px
+                        background-color: rgba(99, 202, 174, 0.5)
+                        border-radius: 4px
+                        outline: none
+                        color: white
+                        font-family: "Montserrat"
+                        border: none
+                &Likes
                     width: 90px
                     height: 18px
-                    background-color: rgba(74, 156, 119, 0.5)
+                    background-color: var(--blue-third)
                     border-radius: 4px
                     outline: none
                     color: white
                     font-family: "Montserrat"
                     border: none
+                    &Active
+                        width: 90px
+                        height: 18px
+                        background-color: rgba(74, 156, 119, 0.5)
+                        border-radius: 4px
+                        outline: none
+                        color: white
+                        font-family: "Montserrat"
+                        border: none

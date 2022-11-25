@@ -47,14 +47,6 @@ const SliderItem = ({ item }: { item: IDataTemplate }) => {
 		setItemBuy(contextFindItem('basket', item.personalKey) ? false : true);
 	}, [basket, likes]) // eslint-disable-line
 
-	useEffect(() => {
-		if (modalLayout) {
-			document.body.style.overflowY = "hidden";
-		} else {
-			document.body.style.overflowY = "unset";
-		}
-	});
-
 	return (
 		<div className={s.item}>
 			<div className={s.itemImg}>
