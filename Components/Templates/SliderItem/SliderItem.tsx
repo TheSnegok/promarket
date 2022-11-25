@@ -16,7 +16,7 @@ const SliderItem = ({ item }: { item: IDataTemplate }) => {
 
 	const [fill, setFill] = useState<boolean>(contextFindItem('likes', item.personalKey) ? false : true);
 	const [itemBuy, setItemBuy] = useState<boolean>(contextFindItem('basket', item.personalKey) ? false : true);
-	const [showModal, setShowModal] = useState<boolean>();
+	const [modalLayout, setModalLayout] = useState<boolean>(false);
 
 	const clickSetIn = (itemName: string) => {
 		if (itemName === 'likes') {
@@ -47,6 +47,14 @@ const SliderItem = ({ item }: { item: IDataTemplate }) => {
 		setItemBuy(contextFindItem('basket', item.personalKey) ? false : true);
 	}, [basket, likes]) // eslint-disable-line
 
+	useEffect(() => {
+		if (modalLayout) {
+			document.body.style.overflowY = "hidden";
+		} else {
+			document.body.style.overflowY = "unset";
+		}
+	});
+
 	return (
 		<div className={s.item}>
 			<div className={s.itemImg}>
@@ -58,7 +66,7 @@ const SliderItem = ({ item }: { item: IDataTemplate }) => {
 						<Image src={item.imgSrc} alt={item.imgSrc.toString()} className={s.itemImgMain} />
 					</a>
 				</Link>
-				<button className={s.itemImgFastLook} onClick={() => setShowModal(true)}>Быстрый просмотр</button>
+				<button className={s.itemImgFastLook} onClick={() => setModalLayout(true)}>Быстрый просмотр</button>
 				<div className={s.itemImgLike}>
 					<svg
 						width="32" height="29" viewBox="0 0 32 29"
@@ -97,8 +105,8 @@ const SliderItem = ({ item }: { item: IDataTemplate }) => {
 					В КОРЗИНУ
 				</button>
 			</div>
-			{showModal && (
-				<ModalLayout hideModal={setShowModal}>
+			{modalLayout && (
+				<ModalLayout setModal={setModalLayout}>
 					<GoodCard item={item} />
 				</ModalLayout>
 			)}
