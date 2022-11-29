@@ -8,18 +8,18 @@
     &Header
         display: flex
         justify-content: space-between
-        height: 4vh
+        height: 22px
         margin-bottom: 1vh
         &Name
             height: 100%
             display: flex
             align-items: center
             gap: 1vw
-            width: 80%
+            width: 75%
             padding-left: 10px
             span
                 font-family: 'Montserrat'
-                font-size: 24px
+                font-size: 20px
                 overflow: hidden
                 white-space: nowrap
                 text-overflow: ellipsis
@@ -51,8 +51,11 @@
                     font-size: .9em
                     display: flex
                     align-items: center
-                    img
-                        margin-right: .3vw
+                    &Img
+                        position: relative
+                        width: 13px
+                        height: 13px
+                        margin-right: 4px
             &Country
                 margin-bottom: 2vw
             &Buttons
@@ -60,8 +63,8 @@
                 flex-direction: column
                 row-gap: 10px
                 &Basket
-                    width: 90px
-                    height: 18px
+                    width: 100px
+                    height: 25px
                     background-color: var(--blue-third)
                     border-radius: 4px
                     outline: none
@@ -69,8 +72,8 @@
                     font-family: "Montserrat"
                     border: none
                     &Active
-                        width: 90px
-                        height: 18px
+                        width: 100px
+                        height: 25px
                         background-color: rgba(99, 202, 174, 0.5)
                         border-radius: 4px
                         outline: none
@@ -78,8 +81,8 @@
                         font-family: "Montserrat"
                         border: none
                 &Likes
-                    width: 90px
-                    height: 18px
+                    width: 100px
+                    height: 25px
                     background-color: var(--blue-third)
                     border-radius: 4px
                     outline: none
@@ -87,11 +90,117 @@
                     font-family: "Montserrat"
                     border: none
                     &Active
-                        width: 90px
-                        height: 18px
+                        width: 100px
+                        height: 25px
                         background-color: rgba(74, 156, 119, 0.5)
                         border-radius: 4px
                         outline: none
                         color: white
                         font-family: "Montserrat"
                         border: none
+
+@media ( max-width: 800px)
+    .Info
+        &Header
+            display: flex
+            justify-content: space-between
+            height: 18px
+            margin-bottom: 1vh
+            &Name
+                height: 100%
+                display: flex
+                align-items: center
+                gap: 1vw
+                width: 70%
+                padding-left: 10px
+                span
+                    font-size: 16px
+            &Tags
+                gap: 5px
+        &Wrapper
+            &Options
+                &Buttons
+                    flex-direction: column
+                    row-gap: 10px
+                    &Basket
+                        width: 95px
+                        height: 25px
+                        border-radius: 4px
+                        font-size: 12px
+                        &Active
+                            width: 90px
+                            height: 18px
+                            border-radius: 4px
+                            font-size: 12px
+                    &Likes
+                        width: 95px
+                        height: 25px
+                        border-radius: 4px
+                        font-size: 12px
+                        &Active
+                            width: 90px
+                            height: 18px
+                            border-radius: 4px
+                            font-size: 12px
+
+@media ( max-width: 520px )
+    .Info
+        &Wrapper
+            flex-direction: column
+            align-items: center
+            &Image
+                height: 110px
+                overflow: hidden
+            &Options
+                position: relative
+                width: 50%
+                &Tags
+                    position: absolute
+                    top: -127px
+                    margin-bottom: 1vw
+                &Reviews
+                    margin-bottom: 5px
+                    &Stars
+                        gap: 1px
+                        margin-right: 3px
+                    &Message
+                        font-size: 12px
+                        line-height: 15px
+                        display: flex
+                        align-items: flex-end
+                        img
+                            width: 10px
+                            margin-right: 2px
+                &Country
+                    font-size: 12px
+                    line-height: 14px
+                &Price
+                    font-size: 12px
+                    line-height: 16px
+                &Buttons
+                    justify-content: center
+                    align-items: center
+                    flex-direction: row
+                    width: 100%
+                    column-gap: 15px
+                    margin-bottom: 10px
+                    &Basket
+                        width: 90px
+                        height: 18px
+                        border-radius: 4px
+                        font-size: 8px
+                        &Active
+                            width: 90px
+                            height: 18px
+                            border-radius: 4px
+                            font-size: 8px
+                    &Likes
+                        width: 85px
+                        height: 18px
+                        border-radius: 4px
+                        font-size: 8px
+                        &Active
+                            width: 85px
+                            height: 18px
+                            border-radius: 4px
+                            font-size: 8px

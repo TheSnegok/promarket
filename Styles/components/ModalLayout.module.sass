@@ -23,7 +23,7 @@
     &Block
         display: flex
         flex-direction: column
-        width: 50vw
+        width: 60vw
         max-height: 80vh
         padding: 0 3vw
         background-color: rgb(255, 255, 255)
@@ -75,32 +75,7 @@
 @media ( max-width: 800px)
     .modal
         &Block
-            width: 60vw
-            &Info
-                &Options
-                    &Buttons
-                        flex-direction: column
-                        row-gap: 10px
-                        &Basket
-                            width: 90px
-                            height: 18px
-                            border-radius: 4px
-                            font-size: 12px
-                            &Active
-                                width: 90px
-                                height: 18px
-                                border-radius: 4px
-                                font-size: 12px
-                        &Likes
-                            width: 90px
-                            height: 18px
-                            border-radius: 4px
-                            font-size: 12px
-                            &Active
-                                width: 90px
-                                height: 18px
-                                border-radius: 4px
-                                font-size: 12px
+            width: 65vw
 
 @media ( max-width: 520px )
     .modal
@@ -112,67 +87,3 @@
                 &Close
                     width: 20px
                     height: 15px
-                &Name
-                    gap: 1vw
-                    width: 80%
-                    span
-                        font-size: 10px
-                        line-height: 15px
-            &Info
-                flex-direction: column
-                &Image
-                    height: 110px
-                    overflow: hidden
-                &Options
-                    position: relative
-                    width: 50%
-                    &Tags
-                        position: absolute
-                        top: -127px
-                        margin-bottom: 1vw
-                    &Reviews
-                        margin-bottom: 5px
-                        &Stars
-                            gap: 1px
-                            margin-right: 3px
-                        &Message
-                            font-size: 12px
-                            line-height: 15px
-                            display: flex
-                            align-items: flex-end
-                            img
-                                width: 10px
-                                margin-right: 2px
-                    &Country
-                        font-size: 12px
-                        line-height: 14px
-                    &Price
-                        font-size: 12px
-                        line-height: 16px
-                    &Buttons
-                        justify-content: center
-                        align-items: center
-                        flex-direction: row
-                        width: 100%
-                        column-gap: 15px
-                        margin-bottom: 10px
-                        &Basket
-                            width: 90px
-                            height: 18px
-                            border-radius: 4px
-                            font-size: 8px
-                            &Active
-                                width: 90px
-                                height: 18px
-                                border-radius: 4px
-                                font-size: 8px
-                        &Likes
-                            width: 85px
-                            height: 18px
-                            border-radius: 4px
-                            font-size: 8px
-                            &Active
-                                width: 85px
-                                height: 18px
-                                border-radius: 4px
-                                font-size: 8px

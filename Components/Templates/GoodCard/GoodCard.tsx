@@ -52,7 +52,7 @@ export const GoodCard = ({ item }) => {
                 </div>
                 <div className={s.InfoWrapper}>
                     <div className={s.InfoWrapperImage}>
-                        <Image src={item.imgSrc} alt="product-preview-ploto" />
+                        <Image src={item.imgSrc} alt="product-preview-ploto" layout="fill" />
                     </div>
                     <div className={s.InfoWrapperOptions}>
                         <div className={s.InfoWrapperOptionsReviews}>
@@ -60,7 +60,9 @@ export const GoodCard = ({ item }) => {
                                 <ItemStars stars={item.stars} />
                             </div>
                             <div className={s.InfoWrapperOptionsReviewsMessage}>
-                                <Image src={chat} alt="chat" />
+                                <div className={s.InfoWrapperOptionsReviewsMessageImg}>
+                                    <Image src={chat} alt="chat" layout="fill" />
+                                </div>
                                 <span className={s.messageCount}>{item.reviews}</span>
                             </div>
                         </div>
