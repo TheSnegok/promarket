@@ -24,12 +24,12 @@ const Header: FC = () => {
 			<div className={s.headerLogo}>
 				<Link href='/' >
 					<a className={s.headerLogoLink}>
-						<Image src={Logo} alt="logo" className={s.headerLogoLinkImg}  />
+						<Image src={Logo} alt="logo" className={s.headerLogoLinkImg} />
 					</a>
 				</Link>
 			</div>
 			<div className={s.headerLocation} onClick={() => toggleList('reg')} ref={regionRef}>
-				<Image src={Mark} alt="mark" className={s.mark}  />
+				<Image src={Mark} alt="mark" className={s.mark} />
 				<div className={s.regions}>
 					<span>{region}</span>
 					<div className={regList ? s.regionsListVisible : s.regionsList}>
@@ -63,31 +63,13 @@ const Header: FC = () => {
 				</div>
 			</div>
 			<div className={s.headerMenu}>
-				<div className={s.menuitem}>
-					<Link href={"/payment"}>
-						Оплата
-					</Link>
-				</div>
-				<div className={s.menuitem}>
-					<Link href={"/delivery"}>
-						Доставка
-					</Link>
-				</div>
-				<div className={s.menuitem}>
-					<Link href={"/providers"}>
-						Поставщикам
-					</Link>
-				</div>
-				<div className={s.menuitem}>
-					<Link href={"/articles"}>
-						Статьи
-					</Link>
-				</div>
-				<div className={s.menuitem}>
-					<Link href={"/contacts"}>
-						Контакты
-					</Link>
-				</div>
+				{data.footer.mainMenu.map((item, index) => (
+					<div className={s.menuitem} key={index} >
+						<Link href={item[0]}>
+							{item[1]}
+						</Link>
+					</div>
+				))}
 			</div>
 		</header>
 	)

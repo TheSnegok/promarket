@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
 import { createContext, FC, useContext, useState } from "react";
-import { articleList, hitsMenu, hitsSlideItems, stockMenu, stockSlideItems, regions, MenuListItems, footerSectionList, footerMenu, providers, slidesBanner, listLogoBrands, IBrand } from '../../pages/api/api';
+import { articleList, hitsMenu, hitsSlideItems, stockMenu, stockSlideItems, regions, MenuListItems, footerSectionList, mainMenu, providers, slidesBanner, listLogoBrands, IBrand } from '../../pages/api/api';
 
 interface IMenuListItems {
 	src: StaticImageData;
@@ -27,7 +27,7 @@ interface IData {
 	menu: IMenuListItems[];
 	footer: {
 		footerSectionList: string[][];
-		footerMenu: string[][];
+		mainMenu: string[][];
 	};
 	providers: IProviders[];
 	brands: IBrand[];
@@ -84,10 +84,6 @@ export interface IProfile {
 	password: string;
 }
 
-export interface IModal {
-	visible: boolean;
-}
-
 export interface IAuthData {
 	authorization: boolean;
 	email: string;
@@ -124,7 +120,6 @@ interface IContext {
 	article: IArticle | null;
 	profile: IProfile;
 	setProfile: (c: IProfile) => void;
-	modal: IModal;
 	callInput: ICallInput;
 	setCallInput: (c: ICallInput) => void;
 	authentication: IAuthData;
@@ -133,7 +128,6 @@ interface IContext {
 	setFindInput: (c: ISearch) => void;
 	region: string;
 	setRegion: (c: string) => void;
-	setModal: (c: IModal) => void;
 	setProduct: (c: IDataTemplate) => void;
 	setArticle: (c: IArticle) => void;
 	setLikes: (c: ILikes) => void;
@@ -159,7 +153,7 @@ export const Context = createContext<IContext>({
 		menu: MenuListItems,
 		footer: {
 			footerSectionList,
-			footerMenu
+			mainMenu
 		},
 		providers,
 		brands: listLogoBrands
@@ -183,9 +177,6 @@ export const Context = createContext<IContext>({
 		password: ''
 	},
 	setProfile: () => { },
-	modal: {
-		visible: false
-	},
 	callInput: {
 		phone: '',
 		name: ''
@@ -211,7 +202,6 @@ export const Context = createContext<IContext>({
 	setAuthentication: () => { },
 	region: 'Київ',
 	setRegion: () => { },
-	setModal: () => { },
 	setProduct: () => { },
 	setArticle: () => { },
 	setLikes: () => { },
@@ -240,7 +230,7 @@ export const Provider: FC = ({ children }) => {
 		menu: MenuListItems,
 		footer: {
 			footerSectionList,
-			footerMenu
+			mainMenu
 		},
 		providers,
 		brands: listLogoBrands,
@@ -253,10 +243,6 @@ export const Provider: FC = ({ children }) => {
 		phone: '',
 		email: '',
 		password: ''
-	});
-
-	const [modal, setModal] = useState<IModal>({
-		visible: false
 	});
 
 	const [callInput, setCallInput] = useState<ICallInput>({ name: '', phone: '' });
@@ -338,7 +324,7 @@ export const Provider: FC = ({ children }) => {
 	};
 
 	return (
-		<Context.Provider value={{ data, likes, basket, profile, setProfile, modal, setModal, authentication, setAuthentication, callInput, setCallInput, findInput, setFindInput, region, setRegion, product, setProduct, article, setArticle, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
+		<Context.Provider value={{ data, likes, basket, profile, setProfile, authentication, setAuthentication, callInput, setCallInput, findInput, setFindInput, region, setRegion, product, setProduct, article, setArticle, setLikes, setBasket, contextFindItem, contextRemoveItem, contextPushItem }} >
 			{children}
 		</Context.Provider>
 	)

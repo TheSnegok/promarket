@@ -103,7 +103,7 @@ export interface IBrand {
 
 export const footerSectionList = [['/', 'Плитка'], ['/', 'Сантехника'], ['/', 'Мебель для ванной'], ['/', 'Электроника и бытовая техника'], ['/', 'Отопление'], ['/', 'Напольное покрытие']];
 
-export const footerMenu = [['/', 'Оплата'], ['/', 'Доставка'], ['/', 'Поставщикам'], ['/', 'Статьи'], ['/', 'Контакты']];
+export const mainMenu = [['/payment', 'Оплата'], ['/delivery', 'Доставка'], ['/providers', 'Поставщикам'], ['/articles', 'Статьи'], ['/contacts', 'Контакты']];
 
 // in MenuListItems.list.first, first object in massive is subheader
 export const MenuListItems = [

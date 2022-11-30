@@ -40,7 +40,7 @@ const Footer: FC = () => {
                 </div>
                 <div className={s.footerMenu}>
                     <ul>
-                        {data.footer.footerMenu.map((item, index) => <li key={index}><Link href={item[0]}><a>{item[1]}</a></Link></li>)}
+                        {data.footer.mainMenu.map((item, index) => <li key={index}><Link href={item[0]}><a>{item[1]}</a></Link></li>)}
                     </ul>
                 </div>
                 <div className={s.footerContacts}>
