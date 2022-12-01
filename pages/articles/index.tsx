@@ -10,13 +10,12 @@ const Articles = () => {
 	const { data, setArticle } = useGlobalContext();
 
 	const [template, setTemplate] = useState<string>('box');
-	const [active, setActive] = useState('box');
+	const [hidden, setHidden] = useState<boolean>(false);
 
 	const changeTemplate = (type: string) => {
 		if (template !== type) {
-			setActive(type);
-			setTemplate('hide');
-			setTimeout(() => setTemplate(type), 400);
+			setHidden(true);
+			setTimeout(() => { setTemplate(type); setHidden(false); }, 1000);
 		}
 	}
 
@@ -25,12 +24,12 @@ const Articles = () => {
 			<div className={s.articlesWrapper}>
 				<div className={s.articlesWrapperOptions}>
 					<div className={s.articlesWrapperOptionsTemplate}>
-						<div className={active === 'line' ? s.articlesWrapperOptionsTemplateRowActive : s.articlesWrapperOptionsTemplateRow} onClick={() => changeTemplate('line')}>
+						<div className={template === 'line' ? s.articlesWrapperOptionsTemplateRowActive : s.articlesWrapperOptionsTemplateRow} onClick={() => changeTemplate('line')}>
 							<div className={s.articlesWrapperOptionsTemplateRowLine}></div>
 							<div className={s.articlesWrapperOptionsTemplateRowLine}></div>
 							<div className={s.articlesWrapperOptionsTemplateRowLine}></div>
 						</div>
-						<div className={active === 'box' ? s.articlesWrapperOptionsTemplateBoxActive : s.articlesWrapperOptionsTemplateBox} onClick={() => changeTemplate('box')}>
+						<div className={template === 'box' ? s.articlesWrapperOptionsTemplateBoxActive : s.articlesWrapperOptionsTemplateBox} onClick={() => changeTemplate('box')}>
 							<div className={s.articlesWrapperOptionsTemplateBoxItem}></div>
 							<div className={s.articlesWrapperOptionsTemplateBoxItem}></div>
 							<div className={s.articlesWrapperOptionsTemplateBoxItem}></div>
@@ -43,7 +42,7 @@ const Articles = () => {
 						</div>
 					</div>
 				</div>
-				<div className={template !== 'hide' ? (template === 'line' ? s.articlesWrapperItemsLine : s.articlesWrapperItemsBox) : s.articlesWrapperItemsHide}>
+				<div className={template === 'line' ? s.articlesWrapperItemsLine : s.articlesWrapperItemsBox} style={hidden ? { opacity: 0 } : { opacity: 1 }} >
 					{data.articleList.map((item, index) => <ArticleList key={index} image={item[0] as StaticImageData} header={item[1] as string} setArticle={setArticle} row={template === "line"} />)}
 				</div>
 			</div>
