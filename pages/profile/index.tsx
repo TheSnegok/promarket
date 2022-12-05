@@ -27,9 +27,9 @@ const ProfilePage = () => {
 	}
 
 	const logout = () => {
-		setAuthentication({ authorization: false, email: '', password: '', key: '', rememberMe: false });
+		setAuthentication({ signIn: false, email: '', password: '', key: '', rememberMe: false });
 		localStorage.removeItem('rememberMe');
-		Router.push("/authorization");
+		Router.push("/login");
 	}
 
 	return (

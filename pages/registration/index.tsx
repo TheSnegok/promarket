@@ -1,7 +1,7 @@
 import TypicalPage from "~/../Components/Templates/TypicalPage/TypicalPage"
 import s from "../../Styles/pages/Registration.module.sass";
 
-export const Registration = () => {
+const Registration = () => {
     return(
         <TypicalPage header="Регистрация">
             <div className={s.registration}>
@@ -20,3 +20,5 @@ export const Registration = () => {
         </TypicalPage>
     )
 }
+
+export default Registration;

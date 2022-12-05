@@ -186,7 +186,7 @@ const Menu: FC = () => {
 			</div>
 			<div className={s.menuActions} >
 				<div className={s.cabinet}>
-					<Link href={authentication.authorization ? '/profile' : '/authorization'} >
+					<Link href={authentication.signIn ? '/profile' : '/login'} >
 						<a href="#">
 							<Image src={cabinet} alt="cabinet" className={s.cabinetImg} />
 						</a>

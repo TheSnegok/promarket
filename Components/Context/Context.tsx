@@ -85,7 +85,7 @@ export interface IProfile {
 }
 
 export interface IAuthData {
-	authorization: boolean;
+	signIn: boolean;
 	email: string;
 	password: string;
 	key: string;
@@ -183,7 +183,7 @@ export const Context = createContext<IContext>({
 	},
 	setCallInput: () => { },
 	authentication: {
-		authorization: false, //we may get from cookies or session
+		signIn: false, //we may get from cookies or session
 		email: '', // there for inputs * 2 
 		password: '',
 		key: '',
@@ -258,7 +258,7 @@ export const Provider: FC = ({ children }) => {
 	});
 
 	const [authentication, setAuthentication] = useState<IAuthData>({
-		authorization: typeof window !== 'undefined' && localStorage.getItem('rememberMe') === 'true',
+		signIn: typeof window !== 'undefined' && localStorage.getItem('rememberMe') === 'true',
 		email: '',
 		password: '',
 		key: '',

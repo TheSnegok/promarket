@@ -62,7 +62,7 @@ const Basket = () => {
                                     )}
                                 </div>
                             </div>
-                            <button className={s.basketOrder} onClick={() => !authentication?.authorization ? router.push('/login') : null} >Сделать заказ</button>
+                            <button className={s.basketOrder} onClick={() => !authentication?.signIn ? router.push('/login') : null} >Сделать заказ</button>
                         </>
                     )
                 }

@@ -15,8 +15,8 @@ const Promarket = ({ Component, pageProps }) => {
 		case "/articles":
 			title += "- Articles";
 			break;
-		case "/authorization":
-			title += "- Authorization";
+		case "/login":
+			title += "- Login";
 			break;
 		case "/basket":
 			title += "- Basket";

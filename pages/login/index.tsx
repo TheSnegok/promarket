@@ -4,7 +4,7 @@ import TypicalPage from '~/../Components/Templates/TypicalPage/TypicalPage';
 import { useGlobalContext } from '../../Components/Context/Context';
 import s from '../../Styles/pages/Authentication.module.sass';
 
-const Authentication = () => {
+const Login = () => {
 
 	const { authentication, setAuthentication } = useGlobalContext();
 
@@ -17,7 +17,7 @@ const Authentication = () => {
 		e.preventDefault();
 		if (authentication.email === 'admin@surge.sh' && authentication.password === 'admin') {
 			setAuthentication({
-				authorization: true,
+				signIn: true,
 				key: authentication.key,
 				password: authentication.password,
 				email: authentication.email,
@@ -36,7 +36,7 @@ const Authentication = () => {
 
 	const toogleCheck = () => {
 		setAuthentication({
-			authorization: authentication.authorization,
+			signIn: authentication.signIn,
 			key: authentication.key,
 			password: authentication.password,
 			email: authentication.email,
@@ -57,7 +57,7 @@ const Authentication = () => {
 								value={authentication.email}
 								onChange={(e) => setAuthentication(
 									{
-										authorization: authentication.authorization,
+										signIn: authentication.signIn,
 										key: authentication.key,
 										password: authentication.password,
 										email: e.target.value,
@@ -68,7 +68,7 @@ const Authentication = () => {
 						<div className={s.autenticationFormInputsPassword}>
 							<input type="password" name="password" placeholder="admin" value={authentication.password} onChange={(e) => setAuthentication(
 								{
-									authorization: authentication.authorization,
+									signIn: authentication.signIn,
 									key: authentication.key,
 									password: e.target.value,
 									email: authentication.email,
@@ -84,7 +84,7 @@ const Authentication = () => {
 					</div>
 					<div className={s.autenticationFormBtn}>
 						<button type="submit" className={s.autenticationFormBtnLogin} onClick={(e) => checkDate(e)} >Войти</button>
-						<button type="submit" className={s.autenticationFormBtnRegistration}>Зарегестрироватся</button>
+						<button type="submit" className={s.autenticationFormBtnRegistration} onClick={(e) => { e.preventDefault; router.push('/registration'); }}>Зарегестрироватся</button>
 					</div>
 				</form>
 			</div>
@@ -92,4 +92,4 @@ const Authentication = () => {
 	)
 }
 
-export default Authentication;
+export default Login;
