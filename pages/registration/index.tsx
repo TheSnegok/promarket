@@ -1,44 +1,30 @@
 import { useRouter } from "next/router";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import TypicalPage from "~/../Components/Templates/TypicalPage/TypicalPage"
 import s from "../../Styles/pages/Registration.module.sass";
 
 const Registration = () => {
 
-    const button = useRef(null);
     const name = useRef(null);
     const secondName = useRef(null);
     const email = useRef(null);
     const pass = useRef(null);
     const router = useRouter();
 
-    useEffect(() => {
-        if (button !== null && button.current !== null) {
-            button.current.addEventListener("onsubmit", (e) => {
-                e.preventDefault();
-                console.log('i worked');
-            });
+    const registr = (e) => {
+        e.preventDefault();
+        if(name.current.value.length > 0 && secondName.current.value.length > 0 && email.current.value.length > 0 && pass.current.value.length > 0 ) {
+            console.log(document.cookie);
+        } else {
+            console.error('Empty date!');
         }
-        // return () => {
-        //     button.current.removeEventListener("submit", buttonEvent);
-        // }
-    });
-
-    // useEffect(() => {
-    //     if (button !== null && button.current !== null) {
-    //         button.current.addEventListener("onclick", buttonEvent);
-    //     }
-    //     return () => {
-    //         button.current.removeEventListener("onclick", buttonEvent);;
-    //         removeEventListener
-    //     }
-    // });
+    }
 
     return (
         <TypicalPage header="Регистрация">
             <div className={s.registration}>
                 <fieldset>
-                    <form action="POST">
+                    <form onSubmit={(e) => registr(e)}>
                         <div className={s.registrationField}>
                             <label htmlFor="name">Name:</label>
                             <input type="text" name="name" ref={name} />
@@ -56,7 +42,7 @@ const Registration = () => {
                             <input type="pass" name="pass" ref={pass} />
                         </div>
                         <div className={s.registrationButton}>
-                            <button type="submit" ref={button}>
+                            <button type="submit">
                                 <span>
                                     Зарегистрироваться
                                 </span>
