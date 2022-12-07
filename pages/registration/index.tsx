@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useRef } from "react";
+import { FormEvent, useRef } from "react";
 import TypicalPage from "~/../Components/Templates/TypicalPage/TypicalPage"
 import s from "../../Styles/pages/Registration.module.sass";
 
@@ -9,12 +9,18 @@ const Registration = () => {
     const secondName = useRef(null);
     const email = useRef(null);
     const pass = useRef(null);
+    const repeatPass = useRef(null);
     const router = useRouter();
 
-    const registr = (e) => {
+    const registr = (e: FormEvent) => {
         e.preventDefault();
-        if(name.current.value.length > 0 && secondName.current.value.length > 0 && email.current.value.length > 0 && pass.current.value.length > 0 ) {
-            console.log(document.cookie);
+        if(name.current.value.length > 0 && secondName.current.value.length > 0 && email.current.value.length > 0 && pass.current.value.length > 0 && repeatPass.current.value === pass.current.value) {
+            if(window.localStorage.getItem(email.current.value)) {
+                console.log('We have you date:' + window.localStorage.getItem(email.current.value));
+                router.push('/login');
+            } else {
+                window.localStorage.setItem(email.current.value, pass.current.value);
+            }
         } else {
             console.error('Empty date!');
         }
@@ -40,6 +46,10 @@ const Registration = () => {
                         <div className={s.registrationField}>
                             <label htmlFor="pass">Password:</label>
                             <input type="pass" name="pass" ref={pass} />
+                        </div>
+                        <div className={s.registrationField}>
+                            <label htmlFor="pass">Repeat password:</label>
+                            <input type="pass" name="repeatPass" ref={repeatPass} />
                         </div>
                         <div className={s.registrationButton}>
                             <button type="submit">

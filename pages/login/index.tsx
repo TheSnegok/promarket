@@ -15,7 +15,7 @@ const Login = () => {
 
 	const checkDate = (e: FormEvent) => {
 		e.preventDefault();
-		if (authentication.email === 'admin@surge.sh' && authentication.password === 'admin') {
+		if (window.localStorage.getItem(authentication.email) === authentication.password) {
 			setAuthentication({
 				signIn: true,
 				key: authentication.key,
@@ -25,7 +25,7 @@ const Login = () => {
 			})
 			setInvalid(false);
 			if (authentication.rememberMe && typeof window !== 'undefined') {
-				localStorage.setItem('rememberMe', 'true')
+				localStorage.setItem('rememberMe', 'true');
 			}
 			router.push('/profile');
 		} else {
@@ -53,7 +53,7 @@ const Login = () => {
 							<input
 								type="email"
 								name="email"
-								placeholder="admin@surge.sh"
+								placeholder="E-mail"
 								value={authentication.email}
 								onChange={(e) => setAuthentication(
 									{
@@ -66,7 +66,7 @@ const Login = () => {
 								)} required />
 						</div>
 						<div className={s.autenticationFormInputsPassword}>
-							<input type="password" name="password" placeholder="admin" value={authentication.password} onChange={(e) => setAuthentication(
+							<input type="password" name="password" placeholder="Password" value={authentication.password} onChange={(e) => setAuthentication(
 								{
 									signIn: authentication.signIn,
 									key: authentication.key,
