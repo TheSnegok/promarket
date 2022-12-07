@@ -14,9 +14,8 @@ const Registration = () => {
 
     const registr = (e: FormEvent) => {
         e.preventDefault();
-        if(name.current.value.length > 0 && secondName.current.value.length > 0 && email.current.value.length > 0 && pass.current.value.length > 0 && repeatPass.current.value === pass.current.value) {
-            if(window.localStorage.getItem(email.current.value)) {
-                console.log('We have you date:' + window.localStorage.getItem(email.current.value));
+        if (name.current.value.length > 0 && secondName.current.value.length > 0 && email.current.value.length > 0 && pass.current.value.length > 0 && repeatPass.current.value === pass.current.value) {
+            if (window.localStorage.getItem(email.current.value)) {
                 router.push('/login');
             } else {
                 window.localStorage.setItem(email.current.value, pass.current.value);
@@ -24,7 +23,7 @@ const Registration = () => {
         } else {
             console.error('Empty date!');
         }
-    }
+    }// added db for this app
 
     return (
         <TypicalPage header="Регистрация">
@@ -57,6 +56,9 @@ const Registration = () => {
                                     Зарегистрироваться
                                 </span>
                             </button>
+                            <div className={s.registrationError}>
+                                <span>Неправильные данные!</span>
+                            </div>
                         </div>
                     </form>
                 </fieldset>

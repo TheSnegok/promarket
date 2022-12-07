@@ -45,7 +45,7 @@ const Login = () => {
 	}
 
 	return (
-		<TypicalPage>
+		<TypicalPage header='Вход'>
 			<div className={s.autentication}>
 				<form className={s.autenticationForm}>
 					<div className={s.autenticationFormInputs}>
