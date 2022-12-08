@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { FormEvent, useRef } from "react";
+import { FormEvent, useRef, useState } from "react";
 import TypicalPage from "~/../Components/Templates/TypicalPage/TypicalPage"
 import s from "../../Styles/pages/Registration.module.sass";
 
@@ -12,6 +12,8 @@ const Registration = () => {
     const repeatPass = useRef(null);
     const router = useRouter();
 
+    const [errorInputDate, setErrorInputDate] = useState<boolean>(false);
+
     const registr = (e: FormEvent) => {
         e.preventDefault();
         if (name.current.value.length > 0 && secondName.current.value.length > 0 && email.current.value.length > 0 && pass.current.value.length > 0 && repeatPass.current.value === pass.current.value) {
@@ -21,9 +23,9 @@ const Registration = () => {
                 window.localStorage.setItem(email.current.value, pass.current.value);
             }
         } else {
-            console.error('Empty date!');
+            setErrorInputDate(true);
         }
-    }// added db for this app
+    }
 
     return (
         <TypicalPage header="Регистрация">
@@ -56,9 +58,9 @@ const Registration = () => {
                                     Зарегистрироваться
                                 </span>
                             </button>
-                            <div className={s.registrationError}>
-                                <span>Неправильные данные!</span>
-                            </div>
+                        </div>
+                        <div className={s.registrationError} style={errorInputDate ? {  display: 'block'  } : { display: 'none' }}>
+                            <span>Неправильные данные!</span>
                         </div>
                     </form>
                 </fieldset>
