@@ -59,7 +59,7 @@ const Registration = () => {
                                 </span>
                             </button>
                         </div>
-                        <div className={s.registrationError} style={errorInputDate ? {  display: 'block'  } : { display: 'none' }}>
+                        <div className={s.registrationError} style={errorInputDate ? {  opacity: 1  } : { opacity: 0 }}>
                             <span>Неправильные данные!</span>
                         </div>
                     </form>

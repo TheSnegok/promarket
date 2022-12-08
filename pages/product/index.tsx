@@ -59,7 +59,10 @@ const Product = () => {
 				<TypicalPage header={product.description}>
 					<div className={s.productInfo}>
 						<div className={s.productInfoImg}>
-							<Image src={product.imgSrc} alt={product.description} />
+							<div className={s.productInfoImgMain}>
+								<Image src={product.imgSrc} alt={product.description} layout='fill' />
+							</div>
+
 							<div className={s.productInfoImgOther}>
 								<Image src={product.imgSrc} alt={product!.description} />
 								<Image src={product.imgSrc} alt={product!.description} />
