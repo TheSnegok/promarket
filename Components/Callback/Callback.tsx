@@ -8,10 +8,14 @@ export const Callback = () => {
             </div>
             <form>
                 <div className={s.callbackInputs}>
-                    <label htmlFor="name">Ваше имя:</label>
-                    <input type="text" name="name" />
-                    <label htmlFor="number">Ваш телефон:</label>
-                    <input type="number" name="number" />
+                    <div className={s.callbackInputsName}>
+                        <label htmlFor="name">Ваше имя:</label>
+                        <input type="text" name="name" />
+                    </div>
+                    <div className={s.callbackInputsPhone}>
+                        <label htmlFor="number">Ваш телефон:</label>
+                        <input type="number" name="number" />
+                    </div>
                 </div>
                 <div className={s.callbackButton}>
                     <button>Заказать звонок</button>
