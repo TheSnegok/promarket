@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import s from '../../Styles/components/Footer.module.sass';
 import Logo from '../../public/logo.svg';
 import Telegram from '../../public/logo/telegram 1.svg';
@@ -7,10 +7,14 @@ import WhatsApp from '../../public/logo/whatsApp.svg';
 import { useGlobalContext } from "../Context/Context";
 import Link from "next/link";
 import Image from "next/image";
+import { ModalLayout } from "../ModalLayout/ModalLayout";
+import { Callback } from "../Callback/Callback";
 
 const Footer: FC = () => {
 
     const { data } = useGlobalContext();
+
+    const [modal, setModal] = useState(false);
 
     return (
         <>
@@ -31,11 +35,13 @@ const Footer: FC = () => {
                                 <Image src={Logo} alt="logo" />
                             </a>
                         </Link>
-                        <span>© 2022 <Link href="/">
-                            <a>
-                                ggpromarket.surge.sh
-                            </a>
-                        </Link></span>
+                        <span>© 2022
+                            <Link href="/">
+                                <a>
+                                    ggpromarket.surge.sh
+                                </a>
+                            </Link>
+                        </span>
                     </div>
                 </div>
                 <div className={s.footerMenu}>
@@ -48,7 +54,12 @@ const Footer: FC = () => {
                         <a className={s.footerContactsPhone}>8 495 018-32-10</a>
                     </Link>
                     <div className={s.footerContactsButton}>
-                        <button>ЗАКАЗАТЬ ЗВОНОК</button>
+                        <button onClick={() => setModal(true)}>ЗАКАЗАТЬ ЗВОНОК</button>
+                        {
+                            modal && <ModalLayout setModal={setModal}>
+                                <Callback />
+                            </ModalLayout>
+                        }
                     </div>
                     <div className={s.footerContactsShedule}>
                         <span>Пн-Пт: 10:00 — 20:00</span>
